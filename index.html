@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Tenés perfil Full Stack? — Henry</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --yellow: #F5E642;
+    --black: #0A0A0A;
+    --white: #FFFFFF;
+    --bg: #F5F5F5;
+    --gray: #6B6B6B;
+    --light-gray: #E8E8E8;
+    --card-bg: #1A1A1A;
+    --radius: 20px;
+  }
+  body { background: var(--bg); color: var(--black); font-family: 'Inter', sans-serif; min-height: 100vh; overflow-x: hidden; }
+
+  .top-bar { background: var(--yellow); text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 600; color: var(--black); }
+
+  nav { background: var(--white); padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--light-gray); position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; color: var(--black); text-decoration: none; }
+  .nav-cta { background: var(--yellow); color: var(--black); border: none; padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; }
+
+  .progress-wrap { background: var(--light-gray); height: 4px; }
+  #progress-bar { height: 4px; background: var(--black); transition: width 0.4s ease; width: 0%; }
+
+  .screen { display: none; min-height: calc(100vh - 120px); align-items: center; justify-content: center; padding: 60px 24px; animation: fadeUp 0.45s ease forwards; }
+  .screen.active { display: flex; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* INTRO */
+  .intro-content { max-width: 760px; width: 100%; }
+  .intro-card { background: var(--card-bg); border-radius: var(--radius); padding: 56px; color: var(--white); position: relative; overflow: hidden; }
+  .intro-card::after { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(245,230,66,0.15) 0%, transparent 70%); pointer-events: none; }
+  .intro-pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #333; border-radius: 100px; padding: 6px 16px; font-size: 13px; font-weight: 500; color: #aaa; margin-bottom: 28px; }
+  .intro-pill::before { content: ''; width: 8px; height: 8px; background: var(--yellow); border-radius: 50%; }
+  .intro-title { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 20px; }
+  .intro-title .hl { color: var(--yellow); }
+  .intro-sub { font-size: 1.05rem; color: #888; line-height: 1.6; margin-bottom: 40px; max-width: 480px; font-weight: 400; }
+  .intro-features { display: flex; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+  .intro-feature { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #ccc; font-weight: 500; }
+  .feat-icon { width: 22px; height: 22px; background: rgba(245,230,66,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; }
+  .btn-start { background: var(--yellow); color: var(--black); border: none; padding: 16px 40px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+  .btn-start:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(245,230,66,0.4); }
+  .intro-note { margin-top: 16px; font-size: 12px; color: #555; }
+
+  /* QUESTION */
+  .question-content { max-width: 680px; width: 100%; }
+  .q-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+  .q-step { font-size: 13px; font-weight: 600; color: var(--gray); }
+  .q-counter { font-size: 13px; font-weight: 500; color: var(--gray); background: var(--white); border: 1px solid var(--light-gray); padding: 4px 12px; border-radius: 100px; }
+  .q-text { font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 32px; color: var(--black); }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option { background: var(--white); border: 1.5px solid var(--light-gray); border-radius: 12px; padding: 16px 20px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; color: var(--black); text-align: left; transition: all 0.18s; display: flex; align-items: center; gap: 14px; }
+  .option:hover { border-color: var(--black); transform: translateX(3px); }
+  .option.selected { border-color: var(--black); background: var(--black); color: var(--white); }
+  .option-key { width: 28px; height: 28px; border: 1.5px solid var(--light-gray); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--gray); flex-shrink: 0; transition: all 0.18s; background: var(--bg); }
+  .option:hover .option-key { border-color: var(--black); color: var(--black); background: var(--white); }
+  .option.selected .option-key { border-color: var(--yellow); background: var(--yellow); color: var(--black); }
+  .btn-next { margin-top: 28px; background: var(--black); color: var(--white); border: none; padding: 16px 40px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: none; }
+  .btn-next.visible { display: inline-block; }
+  .btn-next:hover { background: #222; transform: translateY(-2px); }
+
+  /* RESULT */
+  .result-content { max-width: 700px; width: 100%; }
+  .result-card { background: var(--card-bg); border-radius: var(--radius); padding: 48px; color: var(--white); text-align: center; position: relative; overflow: hidden; margin-bottom: 20px; }
+  .result-card::after { content: ''; position: absolute; bottom: -100px; right: -100px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(245,230,66,0.1) 0%, transparent 70%); pointer-events: none; }
+  .result-emoji { font-size: 3rem; margin-bottom: 16px; display: block; }
+  .result-pill { display: inline-block; padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 20px; }
+  .result-pill.yes { background: var(--yellow); color: var(--black); }
+  .result-pill.maybe { background: #2A2A2A; color: #aaa; border: 1px solid #444; }
+  .result-pill.no { background: #2A2A2A; color: #888; border: 1px solid #333; }
+  .result-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px; }
+  .result-title .hl { color: var(--yellow); }
+  .result-desc { font-size: 1rem; color: #999; line-height: 1.7; max-width: 520px; margin: 0 auto 28px; font-weight: 400; }
+  .score-section { margin-bottom: 28px; }
+  .score-numbers { font-size: 13px; color: #666; margin-bottom: 10px; }
+  .score-numbers strong { color: var(--yellow); font-size: 18px; }
+  .score-track { background: #2A2A2A; border-radius: 100px; height: 6px; max-width: 300px; margin: 0 auto; overflow: hidden; }
+  .score-fill { height: 100%; background: var(--yellow); border-radius: 100px; transition: width 1s ease; width: 0%; }
+  .traits { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .trait { padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; border: 1px solid #333; color: #777; }
+  .trait.on { border-color: var(--yellow); color: var(--yellow); background: rgba(245,230,66,0.08); }
+
+  .cta-section { background: var(--white); border-radius: var(--radius); padding: 40px; text-align: center; }
+  .cta-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .cta-sub { font-size: 14px; color: var(--gray); margin-bottom: 28px; line-height: 1.5; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-cta-primary { background: var(--yellow); color: var(--black); border: none; padding: 16px 40px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+  .btn-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(245,230,66,0.4); }
+  .btn-cta-secondary { background: transparent; color: var(--black); border: 1.5px solid var(--black); padding: 16px 32px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+  .btn-cta-secondary:hover { background: var(--black); color: var(--white); }
+  .cta-note { margin-top: 14px; font-size: 12px; color: #aaa; }
+</style>
+</head>
+<body>
+
+<div class="top-bar">🔥 Full Stack AI — Empezá tu carrera tech hoy</div>
+
+<nav>
+  <a href="https://www.soyhenry.com" class="nav-logo">HENRY</a>
+  <a href="#" class="nav-cta" id="nav-meeting-btn" target="_blank">Agendar llamada</a>
+</nav>
+
+<div class="progress-wrap">
+  <div id="progress-bar"></div>
+</div>
+
+<!-- INTRO -->
+<div class="screen active" id="screen-intro">
+  <div class="intro-content">
+    <div class="intro-card">
+      <div class="intro-pill">Full Stack AI — Test de perfil</div>
+      <h1 class="intro-title">¿Tenés lo que hace falta<br>para <span class="hl">programar con IA?</span></h1>
+      <p class="intro-sub">10 preguntas para descubrir si el desarrollo Full Stack AI es tu próximo paso. Sin experiencia previa requerida.</p>
+      <div class="intro-features">
+        <div class="intro-feature"><div class="feat-icon">⏱</div>2 minutos</div>
+        <div class="intro-feature"><div class="feat-icon">✓</div>Sin registro previo</div>
+        <div class="intro-feature"><div class="feat-icon">🎯</div>Resultado inmediato</div>
+      </div>
+      <button class="btn-start" onclick="startQuiz()">Empezar el test →</button>
+      <p class="intro-note">+20K graduados en LATAM · 1st-ranked bootcamp</p>
+    </div>
+  </div>
+</div>
+
+<!-- QUESTION -->
+<div class="screen" id="screen-quiz">
+  <div class="question-content">
+    <div class="q-meta">
+      <span class="q-step" id="q-number"></span>
+      <span class="q-counter" id="q-counter"></span>
+    </div>
+    <div class="q-text" id="q-text"></div>
+    <div class="options" id="options-container"></div>
+    <button class="btn-next" id="btn-next" onclick="nextQuestion()">Siguiente →</button>
+  </div>
+</div>
+
+<!-- RESULT -->
+<div class="screen" id="screen-result">
+  <div class="result-content">
+    <div class="result-card">
+      <span class="result-emoji" id="result-emoji"></span>
+      <div class="result-pill" id="result-pill"></div>
+      <h2 class="result-title" id="result-title"></h2>
+      <p class="result-desc" id="result-desc"></p>
+      <div class="score-section">
+        <div class="score-numbers" id="score-numbers"></div>
+        <div class="score-track"><div class="score-fill" id="score-fill"></div></div>
+      </div>
+      <div class="traits" id="result-traits"></div>
+    </div>
+    <div class="cta-section">
+      <h3 class="cta-title" id="cta-title"></h3>
+      <p class="cta-sub" id="cta-sub"></p>
+      <div class="cta-buttons">
+        <a href="#" class="btn-cta-primary" id="cta-btn" target="_blank">Agendar con un asesor →</a>
+        <a href="https://www.soyhenry.com" class="btn-cta-secondary" target="_blank">Conocer más</a>
+      </div>
+      <p class="cta-note">Sin compromiso · 30 minutos · Online</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function getUTMs() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    utm_source: p.get('utm_source') || '',
+    utm_medium: p.get('utm_medium') || '',
+    utm_campaign: p.get('utm_campaign') || '',
+    utm_content: p.get('utm_content') || '',
+    utm_term: p.get('utm_term') || ''
+  };
+}
+
+function buildMeetingURL() {
+  const base = 'https://meetings.hubspot.com/federico104/b2c-sales-campanas?uuid=ae9927fa-ef04-44d3-869e-8aaf39e722a3';
+  const utms = getUTMs();
+  const params = Object.entries(utms).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+  return params ? `${base}&${params}` : base;
+}
+
+window.addEventListener('load', () => {
+  const url = buildMeetingURL();
+  document.getElementById('nav-meeting-btn').href = url;
+});
+
+const questions = [
+  { text: "¿Alguna vez aprendiste algo por tu cuenta mirando videos, tutoriales o leyendo artículos?", options: [{ text: "A veces, cuando algo me interesa mucho", score: 2 },{ text: "No, no suelo hacer eso", score: 0 },{ text: "Sí, es mi forma habitual de aprender", score: 3 },{ text: "Prefiero que me lo expliquen en un aula", score: 1 }] },
+  { text: "Cuando algo no te sale, ¿qué hacés?", options: [{ text: "Me frustra bastante y me cuesta seguir", score: 1 },{ text: "Busco la solución hasta encontrarla, aunque tarde horas", score: 3 },{ text: "Suelo abandonar si se complica", score: 0 },{ text: "Intento un rato y si no sale, pido ayuda", score: 2 }] },
+  { text: "¿Cómo te sentís trabajando en equipo en proyectos con fechas límite?", options: [{ text: "Me adapto, aunque prefiero trabajar solo", score: 2 },{ text: "Prefiero evitarlo si puedo", score: 0 },{ text: "Me cuesta coordinarme con el grupo", score: 1 },{ text: "Me encanta, rindo mejor con otros", score: 3 }] },
+  { text: "¿Cuántas horas semanales podrías dedicarle a estudiar?", options: [{ text: "Menos de 8 horas", score: 1 },{ text: "Entre 15 y 30 horas (part time intensivo)", score: 3 },{ text: "Más de 30 horas (full time)", score: 3 },{ text: "Entre 8 y 15 horas (part time moderado)", score: 2 }] },
+  { text: "¿Qué te atrae de trabajar en tecnología?", options: [{ text: "El salario y las oportunidades de trabajo remoto", score: 2 },{ text: "No sé bien, estoy explorando", score: 1 },{ text: "Crear cosas desde cero y ver cómo funcionan", score: 3 },{ text: "La posibilidad de cambiar de carrera", score: 2 }] },
+  { text: "¿Tenés experiencia previa con tecnología, programación o herramientas digitales?", options: [{ text: "Solo uso el celular y apps cotidianas", score: 1 },{ text: "Sí, ya programé o estudié algo relacionado", score: 3 },{ text: "No tengo ninguna experiencia tech", score: 1 },{ text: "Uso herramientas digitales en mi trabajo/estudio", score: 2 }] },
+  { text: "¿Qué nivel de estudios tenés o estás cursando?", options: [{ text: "Secundario incompleto", score: 1 },{ text: "Universidad completa o en curso", score: 3 },{ text: "Secundario completo", score: 2 },{ text: "Terciario completo o en curso", score: 2 }] },
+  { text: "Frente a un problema complejo, ¿cómo lo encarás?", options: [{ text: "Intento resolverlo todo junto de una vez", score: 1 },{ text: "Me paralizo, no sé por dónde empezar", score: 0 },{ text: "Busco si alguien ya lo resolvió antes", score: 2 },{ text: "Lo desgloso en partes más chicas y ataco de a una", score: 3 }] },
+  { text: "¿Qué tan cómodo/a te sentís con la incertidumbre o el cambio?", options: [{ text: "Me cuesta al principio pero me acostumbro", score: 2 },{ text: "El cambio me genera mucha ansiedad", score: 0 },{ text: "Me adapto rápido, me gusta lo nuevo", score: 3 },{ text: "Prefiero la estabilidad y los procesos conocidos", score: 1 }] },
+  { text: "¿Por qué considerarías estudiar Full Stack en Henry?", options: [{ text: "Todavía estoy comparando opciones", score: 1 },{ text: "Me lo recomendaron / vi publicidad", score: 2 },{ text: "El modelo de pago al conseguir trabajo me da seguridad", score: 3 },{ text: "Quiero un título o certificación reconocida", score: 2 }] }
+];
+
+let current = 0, scores = [], selectedOption = null;
+
+function startQuiz() {
+  document.getElementById('screen-intro').classList.remove('active');
+  document.getElementById('screen-quiz').classList.add('active');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[current], total = questions.length;
+  document.getElementById('progress-bar').style.width = (current / total * 100) + '%';
+  document.getElementById('q-number').textContent = 'Pregunta ' + (current + 1);
+  document.getElementById('q-counter').textContent = (current + 1) + ' de ' + total;
+  document.getElementById('q-text').textContent = q.text;
+  const container = document.getElementById('options-container');
+  container.innerHTML = '';
+  selectedOption = null;
+  document.getElementById('btn-next').classList.remove('visible');
+  ['A','B','C','D'].forEach((k, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.innerHTML = `<span class="option-key">${k}</span>${q.options[i].text}`;
+    btn.onclick = () => { document.querySelectorAll('.option').forEach(o => o.classList.remove('selected')); btn.classList.add('selected'); selectedOption = q.options[i].score; document.getElementById('btn-next').classList.add('visible'); };
+    container.appendChild(btn);
+  });
+}
+
+function nextQuestion() {
+  if (selectedOption === null) return;
+  scores.push(selectedOption);
+  current++;
+  if (current >= questions.length) showResult();
+  else renderQuestion();
+}
+
+function showResult() {
+  document.getElementById('progress-bar').style.width = '100%';
+  document.getElementById('screen-quiz').classList.remove('active');
+  document.getElementById('screen-result').classList.add('active');
+  const total = scores.reduce((a,b) => a+b, 0), max = questions.length * 3, pct = (total/max)*100;
+  setTimeout(() => { document.getElementById('score-fill').style.width = pct + '%'; }, 400);
+  document.getElementById('score-numbers').innerHTML = `Puntaje: <strong>${total}</strong> / ${max}`;
+
+  let emoji, pillClass, pill, title, desc, traits, ctaTitle, ctaSub;
+  if (pct >= 70) {
+    emoji = '⚡'; pillClass = 'yes'; pill = 'PERFIL ALTO';
+    title = 'Tenés madera de <span class="hl">programador/a</span>';
+    desc = 'Tu perfil encaja muy bien con lo que busca Henry. Sos autodidacta, tolerás la frustración y podés comprometerte con el proceso. El siguiente paso es una charla con un asesor.';
+    traits = [['Autodidacta',true],['Alta tolerancia a la frustración',true],['Orientado a resultados',true],['Pensamiento lógico',true],['Perfil tech',false]];
+    ctaTitle = '¡Tu momento es ahora!';
+    ctaSub = 'Agendá una llamada gratuita de 30 minutos con un asesor de Henry y conocé todos los detalles del programa.';
+  } else if (pct >= 45) {
+    emoji = '🔍'; pillClass = 'maybe'; pill = 'PERFIL EN DESARROLLO';
+    title = 'Tenés potencial. <span class="hl">Solo falta un empujón.</span>';
+    desc = 'Tu perfil tiene ingredientes importantes, pero hay algunas áreas donde podés crecer. Una charla con un asesor puede ayudarte a entender si este es el momento indicado.';
+    traits = [['Curiosidad presente',true],['Motivación clave',true],['Disponibilidad a revisar',false],['Potencial a desarrollar',true]];
+    ctaTitle = 'Despejá tus dudas';
+    ctaSub = 'Hablá con un asesor de Henry sin compromiso. Te orientamos sobre los primeros pasos para arrancar en tech.';
+  } else {
+    emoji = '🌱'; pillClass = 'no'; pill = 'INICIO DEL CAMINO';
+    title = 'Puede que necesites <span class="hl">prepararte un poco más</span>';
+    desc = 'Por ahora puede haber algunos aspectos a trabajar antes de una carrera tech intensiva. Pero eso no significa que no puedas llegar. Un asesor puede orientarte.';
+    traits = [['Inicio del camino',false],['Exploración activa',true],['Motivación a construir',false],['Próximos pasos por definir',false]];
+    ctaTitle = 'Igual podemos ayudarte';
+    ctaSub = 'Hablá con un asesor de Henry. Te contamos qué opciones tenés para prepararte y cuándo sería el mejor momento para arrancar.';
+  }
+
+  document.getElementById('result-emoji').textContent = emoji;
+  document.getElementById('result-pill').textContent = pill;
+  document.getElementById('result-pill').className = 'result-pill ' + pillClass;
+  document.getElementById('result-title').innerHTML = title;
+  document.getElementById('result-desc').textContent = desc;
+  document.getElementById('cta-title').textContent = ctaTitle;
+  document.getElementById('cta-sub').textContent = ctaSub;
+  const el = document.getElementById('result-traits');
+  el.innerHTML = '';
+  traits.forEach(([t, on]) => { const s = document.createElement('span'); s.className = 'trait' + (on ? ' on' : ''); s.textContent = t; el.appendChild(s); });
+  const url = buildMeetingURL();
+  document.getElementById('cta-btn').href = url;
+  document.getElementById('nav-meeting-btn').href = url;
+}
+</script>
+</body>
+</html>
