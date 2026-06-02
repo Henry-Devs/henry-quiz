@@ -179,7 +179,7 @@ function getUTMs() {
 }
 
 function buildMeetingURL() {
-  const base = 'https://meetings.hubspot.com/federico104/b2c-sales-campanas?uuid=ae9927fa-ef04-44d3-869e-8aaf39e722a3';
+  const base = 'https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g';
   const utms = getUTMs();
   const params = Object.entries(utms).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
   return params ? `${base}&${params}` : base;
