@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿Tenés perfil Full Stack? — Henry</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -95,6 +96,34 @@
   .btn-cta-secondary { background: transparent; color: var(--black); border: 1.5px solid var(--black); padding: 16px 32px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
   .btn-cta-secondary:hover { background: var(--black); color: var(--white); }
   .cta-note { margin-top: 14px; font-size: 12px; color: #aaa; }
+
+  /* FORM GATE */
+  .form-gate-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 48px;
+    color: var(--white);
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-gate-card::after { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(245,230,66,0.12) 0%, transparent 70%); pointer-events: none; }
+  .form-gate-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 28px; }
+  .form-gate-badge { display: inline-block; background: var(--yellow); color: var(--black); font-size: 0.68rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 16px; }
+  .form-gate-card h2 { font-size: 1.4rem; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 6px; line-height: 1.2; }
+  .form-gate-card .form-sub { font-size: 0.85rem; color: #888; margin-bottom: 24px; }
+
+  /* HubSpot overrides (dark theme) */
+  #hs-gate-container .hs-form-field { margin-bottom: 14px !important; }
+  #hs-gate-container .hs-form-field label { font-size: 0.8rem !important; font-weight: 600 !important; color: #ccc !important; margin-bottom: 6px !important; display: block !important; font-family: 'Inter', sans-serif !important; }
+  #hs-gate-container .hs-input { background: #2A2A2A !important; border: 1.5px solid #333 !important; border-radius: 8px !important; color: var(--white) !important; padding: 11px 14px !important; font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important; transition: border-color 0.15s !important; }
+  #hs-gate-container .hs-input:focus { outline: none !important; border-color: var(--yellow) !important; background: #1A1A1A !important; }
+  #hs-gate-container .hs-button { background: var(--yellow) !important; color: var(--black) !important; border: none !important; border-radius: 8px !important; padding: 14px 28px !important; font-size: 0.95rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; font-family: 'Inter', sans-serif !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; transition: transform 0.15s, opacity 0.15s !important; margin-top: 6px !important; }
+  #hs-gate-container .hs-button:hover { opacity: 0.9 !important; transform: translateY(-1px) !important; }
+  #hs-gate-container .hs-error-msgs { color: #ff6b6b !important; font-size: 0.78rem !important; margin-top: 4px !important; }
+  #hs-gate-container .hs_submit, #hs-gate-container .hs_submit .actions { width: 100% !important; text-align: center !important; }
+  .form-gate-privacy { font-size: 0.72rem; color: #555; text-align: center; margin-top: 14px; }
 </style>
 </head>
 <body>
@@ -125,6 +154,18 @@
       <button class="btn-start" onclick="startQuiz()">Empezar el test →</button>
       <p class="intro-note">+20K graduados en LATAM · 1st-ranked bootcamp</p>
     </div>
+  </div>
+</div>
+
+<!-- FORM GATE -->
+<div class="screen" id="screen-form">
+  <div class="form-gate-card">
+    <div class="form-gate-bar"></div>
+    <span class="form-gate-badge">Acceso gratuito</span>
+    <h2>Dejá tus datos para ver el resultado</h2>
+    <p class="form-sub">Solo te llevará un segundo. El test es 100% gratuito.</p>
+    <div id="hs-gate-container"></div>
+    <p class="form-gate-privacy">🔒 Sin spam. Tus datos están seguros.</p>
   </div>
 </div>
 
@@ -188,6 +229,32 @@ function buildMeetingURL() {
 window.addEventListener('load', () => {
   const url = buildMeetingURL();
   document.getElementById('nav-meeting-btn').href = url;
+
+  // HubSpot gate form
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "19612811",
+    formId: "ce8f2a08-f13f-41a7-a27e-9e57a5ffee61",
+    target: "#hs-gate-container",
+    onFormReady: function(form) {
+      setTimeout(() => {
+        const btn = form.querySelector('.hs-button');
+        if (btn) btn.value = 'Empezar el test →';
+        const utms = getUTMs();
+        form.querySelectorAll('input').forEach(input => {
+          const n = input.name || '';
+          if (n.includes('utm_source'))   input.value = utms.utm_source;
+          if (n.includes('utm_medium'))   input.value = utms.utm_medium;
+          if (n.includes('utm_campaign')) input.value = utms.utm_campaign;
+          if (n.includes('utm_content'))  input.value = utms.utm_content;
+          if (n.includes('utm_term'))     input.value = utms.utm_term;
+        });
+      }, 600);
+    },
+    onFormSubmit: function() {
+      setTimeout(launchQuiz, 600);
+    }
+  });
 });
 
 const questions = [
@@ -207,6 +274,11 @@ let current = 0, scores = [], selectedOption = null;
 
 function startQuiz() {
   document.getElementById('screen-intro').classList.remove('active');
+  document.getElementById('screen-form').classList.add('active');
+}
+
+function launchQuiz() {
+  document.getElementById('screen-form').classList.remove('active');
   document.getElementById('screen-quiz').classList.add('active');
   renderQuestion();
 }
