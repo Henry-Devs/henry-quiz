@@ -529,7 +529,7 @@
         }, 600);
       },
       onFormSubmit: function() {
-        if (window.fbq) fbq('track', 'Lead', { content_name: '5tools-fullstack' });
+        if (window.fbq) fbq('trackCustom', 'Descarga de contenido', { content_name: '5tools-fullstack' });
         setTimeout(() => {
           document.getElementById('form-wrapper').style.display = 'none';
           document.getElementById('success-state').style.display = 'block';

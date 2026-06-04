@@ -589,7 +589,7 @@
         }, 600);
       },
       onFormSubmit: function() {
-        if (window.fbq) fbq('track', 'Lead', { content_name: 'masterclass-n8n' });
+        if (window.fbq) fbq('trackCustom', 'Descarga de contenido', { content_name: 'masterclass-n8n' });
         setTimeout(() => {
           document.getElementById('form-wrapper').style.display = 'none';
           document.getElementById('success-state').style.display = 'block';

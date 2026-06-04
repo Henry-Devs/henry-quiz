@@ -258,7 +258,7 @@ window.addEventListener('load', () => {
       }, 600);
     },
     onFormSubmit: function() {
-      if (window.fbq) fbq('track', 'Lead', { content_name: 'quiz-fullstack' });
+      if (window.fbq) fbq('trackCustom', 'Descarga de contenido', { content_name: 'quiz-fullstack' });
       setTimeout(launchQuiz, 600);
     }
   });

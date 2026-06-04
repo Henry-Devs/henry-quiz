@@ -631,7 +631,7 @@
         }, 600);
       },
       onFormSubmit: function() {
-        if (window.fbq) fbq('track', 'Lead', { content_name: 'agente-5pasos' });
+        if (window.fbq) fbq('trackCustom', 'Descarga de contenido', { content_name: 'agente-5pasos' });
         setTimeout(() => {
           document.getElementById('form-wrapper').style.display = 'none';
           document.getElementById('success-state').style.display = 'block';
