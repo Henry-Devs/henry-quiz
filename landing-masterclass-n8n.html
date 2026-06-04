@@ -588,6 +588,7 @@
         }, 600);
       },
       onFormSubmit: function() {
+        if (window.fbq) fbq('track', 'Lead');
         setTimeout(() => {
           document.getElementById('form-wrapper').style.display = 'none';
           document.getElementById('success-state').style.display = 'block';

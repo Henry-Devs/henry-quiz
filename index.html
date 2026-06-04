@@ -257,6 +257,7 @@ window.addEventListener('load', () => {
       }, 600);
     },
     onFormSubmit: function() {
+      if (window.fbq) fbq('track', 'Lead');
       setTimeout(launchQuiz, 600);
     }
   });
