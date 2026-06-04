@@ -149,11 +149,20 @@
     .stats {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 0;
       margin-top: 24px;
-      flex-wrap: wrap;
     }
-    .stat-item { display: flex; align-items: baseline; gap: 8px; }
+    .stat-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding-right: 28px;
+    }
+    .stat-item + .stat-item {
+      padding-left: 28px;
+      padding-right: 0;
+      border-left: 1px solid var(--border);
+    }
     .stat-num {
       font-size: 1.8rem;
       font-weight: 900;
@@ -422,7 +431,6 @@
       </div>
 
       <div class="stats">
-        <span class="stat-badge">🏆 1st-ranked bootcamp</span>
         <div class="stat-item">
           <div class="stat-num">+20K</div>
           <div class="stat-label">graduados de todo latam</div>
