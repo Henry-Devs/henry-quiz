@@ -372,6 +372,37 @@
       to { opacity: 1; transform: translateY(0); }
     }
     .hero-left { animation: fadeUp 0.5s ease both; }
+    .stats {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 28px;
+    }
+    .stat-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding-right: 28px;
+    }
+    .stat-item + .stat-item {
+      padding-left: 28px;
+      padding-right: 0;
+      border-left: 1px solid var(--border);
+    }
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--black);
+      letter-spacing: -1.5px;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray-dark);
+      font-weight: 500;
+      line-height: 1.3;
+      max-width: 110px;
+    }
     .form-card { animation: fadeUp 0.5s 0.1s ease both; }
   </style>
 </head>
@@ -425,6 +456,17 @@
         <div class="learning-item">
           <div class="learning-num">06</div>
           <div class="learning-text">Probar, escalar y medir tus flujos para optimizar procesos de forma continua</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-num">+20K</div>
+          <div class="stat-label">graduados de todo latam</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">+3K</div>
+          <div class="stat-label">compañías contratan nuestro talento</div>
         </div>
       </div>
     </div>
