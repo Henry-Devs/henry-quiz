@@ -286,31 +286,26 @@
     .watch-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
 
     /* TOOLS */
-    .tools-section {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 32px 48px;
-      background: var(--gray-light);
-    }
-    .tools-inner { max-width: 1120px; margin: 0 auto; text-align: center; }
+    .tools-section { margin-top: 24px; }
+    .tools-inner { text-align: left; }
     .tools-label {
       font-size: 0.72rem;
       color: var(--gray-mid);
       text-transform: uppercase;
       letter-spacing: 1.5px;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
     .tools-logos {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 28px;
+      justify-content: flex-start;
+      gap: 16px;
       flex-wrap: wrap;
     }
-    .tool-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-    .tool-item img { width: 36px; height: 36px; object-fit: contain; filter: grayscale(20%); }
-    .tool-name { font-size: 0.68rem; font-weight: 600; color: var(--gray-dark); }
+    .tool-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .tool-item img { width: 28px; height: 28px; object-fit: contain; filter: grayscale(20%); }
+    .tool-name { font-size: 0.62rem; font-weight: 600; color: var(--gray-dark); }
 
     /* BOTTOM CTA */
     .bottom-cta {
@@ -437,6 +432,7 @@
       <p class="hero-desc">
         ¿Te imaginás que tus reportes se hagan solos? En esta clase construís tu primera automatización real con IA — sin escribir una sola línea de código.
       </p>
+      <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-mid);margin-bottom:12px;">¿Qué vas a aprender?</p>
       <div class="learnings-list">
         <div class="learning-item">
           <div class="learning-num">01</div>
@@ -464,16 +460,23 @@
         </div>
       </div>
 
-      <div class="stats">
-        <div class="stat-item">
-          <div class="stat-num">+20K</div>
-          <div class="stat-label">graduados de todo latam</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">+3K</div>
-          <div class="stat-label">compañías contratan nuestro talento</div>
+      <!-- TOOLS inline -->
+      <div class="tools-section">
+        <div class="tools-inner">
+          <p class="tools-label">Herramientas de la clase</p>
+          <div class="tools-logos">
+            <div class="tool-item"><img src="https://n8n.io/favicon.ico" alt="n8n" onerror="this.src='https://www.google.com/s2/favicons?domain=n8n.io&sz=64'" /><span class="tool-name">n8n</span></div>
+            <div class="tool-item"><img src="https://www.gstatic.com/images/branding/product/2x/sheets_2020q4_48dp.png" alt="Google Sheets" /><span class="tool-name">Google Sheets</span></div>
+            <div class="tool-item"><img src="https://www.gstatic.com/images/branding/product/2x/gmail_2020q4_48dp.png" alt="Gmail" /><span class="tool-name">Gmail</span></div>
+            <div class="tool-item"><img src="https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png" alt="Slack" onerror="this.src='https://www.google.com/s2/favicons?domain=slack.com&sz=64'" /><span class="tool-name">Slack</span></div>
+            <div class="tool-item"><img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini" onerror="this.src='https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64'" /><span class="tool-name">Gemini</span></div>
+            <div class="tool-item"><img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=64" alt="Mistral OCR" /><span class="tool-name">Mistral OCR</span></div>
+            <div class="tool-item"><img src="https://www.gstatic.com/images/branding/product/2x/drive_2020q4_48dp.png" alt="Google Drive" /><span class="tool-name">Google Drive</span></div>
+            <div class="tool-item"><img src="https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png" alt="Google Forms" /><span class="tool-name">Google Forms</span></div>
+          </div>
         </div>
       </div>
+
     </div>
 
     <!-- FORM CARD -->
@@ -482,7 +485,7 @@
         <div class="form-top-bar"></div>
         <span class="free-badge">Acceso gratuito</span>
         <h2>Mirá la Masterclass ahora</h2>
-        <p class="form-sub">Completá tus datos y accedés al video de forma inmediata.</p>
+        <p class="form-sub">Completá tus datos y accedé al video de forma inmediata.</p>
         <div id="hs-form-container"></div>
         <p class="privacy-note">🔒 Sin spam. Tus datos están seguros.</p>
       </div>
@@ -494,50 +497,9 @@
     </div>
   </section>
 
-  <!-- TOOLS -->
-  <div class="tools-section">
-    <div class="tools-inner">
-      <p class="tools-label">Herramientas de la clase</p>
-      <div class="tools-logos">
-        <div class="tool-item">
-          <img src="https://n8n.io/favicon.ico" alt="n8n" onerror="this.src='https://www.google.com/s2/favicons?domain=n8n.io&sz=64'" />
-          <span class="tool-name">n8n</span>
-        </div>
-        <div class="tool-item">
-          <img src="https://www.gstatic.com/images/branding/product/2x/sheets_2020q4_48dp.png" alt="Google Sheets" />
-          <span class="tool-name">Google Sheets</span>
-        </div>
-        <div class="tool-item">
-          <img src="https://www.gstatic.com/images/branding/product/2x/gmail_2020q4_48dp.png" alt="Gmail" />
-          <span class="tool-name">Gmail</span>
-        </div>
-        <div class="tool-item">
-          <img src="https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png" alt="Slack" onerror="this.src='https://www.google.com/s2/favicons?domain=slack.com&sz=64'" />
-          <span class="tool-name">Slack</span>
-        </div>
-        <div class="tool-item">
-          <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini" onerror="this.src='https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64'" />
-          <span class="tool-name">Gemini</span>
-        </div>
-        <div class="tool-item">
-          <img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=64" alt="Mistral OCR" />
-          <span class="tool-name">Mistral OCR</span>
-        </div>
-        <div class="tool-item">
-          <img src="https://www.gstatic.com/images/branding/product/2x/drive_2020q4_48dp.png" alt="Google Drive" />
-          <span class="tool-name">Google Drive</span>
-        </div>
-        <div class="tool-item">
-          <img src="https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png" alt="Google Forms" />
-          <span class="tool-name">Google Forms</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- BOTTOM CTA -->
   <section class="bottom-cta">
-    <h2>¿Querés dominar la AI Automation?</h2>
+    <h2>¿Querés aprender AI Automation?</h2>
     <p>Sumáte a la Carrera AI Automation y construí agentes reales con coaches de la industria.</p>
     <a class="cta-btn" href="https://www.soyhenry.com/carrera-ai-automation?utm_source=facebook&utm_medium=cpc&utm_campaign=masterclass-n8n" target="_blank">
       Aplicar a la Carrera de AI Automation →
