@@ -226,8 +226,16 @@ function getUTMs() {
 }
 
 function buildMeetingURL() {
-  const base = 'https://www.soyhenry.com/webfullstack?utm_source=facebook&utm_medium=cpc&utm_campaign=quiz-fullstack';
-  return base;
+  const utms = getUTMs();
+  const merged = {
+    utm_source: utms.utm_source || 'facebook',
+    utm_medium: utms.utm_medium || 'cpc',
+    utm_campaign: utms.utm_campaign || 'quiz-fullstack',
+    utm_content: utms.utm_content || '',
+    utm_term: utms.utm_term || '',
+  };
+  const params = Object.entries(merged).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+  return `https://www.soyhenry.com/webfullstack?${params}`;
 }
 
 window.addEventListener('load', () => {
