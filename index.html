@@ -226,10 +226,8 @@ function getUTMs() {
 }
 
 function buildMeetingURL() {
-  const base = 'https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g';
-  const utms = getUTMs();
-  const params = Object.entries(utms).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
-  return params ? `${base}&${params}` : base;
+  const base = 'https://www.soyhenry.com/webfullstack?utm_source=facebook&utm_medium=cpc&utm_campaign=quiz-fullstack';
+  return base;
 }
 
 window.addEventListener('load', () => {
