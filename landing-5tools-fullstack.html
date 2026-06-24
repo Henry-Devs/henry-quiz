@@ -508,13 +508,16 @@
         setTimeout(() => {
           const btn = form.querySelector('.hs-button');
           if (btn) btn.value = 'Descargar guía';
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
           form.querySelectorAll('input').forEach(input => {
             const n = input.name || '';
-            if (n.includes('utm_source'))   input.value = utms.utm_source;
-            if (n.includes('utm_medium'))   input.value = utms.utm_medium;
-            if (n.includes('utm_campaign')) input.value = utms.utm_campaign;
-            if (n.includes('utm_content'))  input.value = utms.utm_content;
-            if (n.includes('utm_term'))     input.value = utms.utm_term;
+            if (utmMap[n] !== undefined) input.value = utmMap[n];
           });
         }, 600);
       },
