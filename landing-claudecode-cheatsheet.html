@@ -504,15 +504,8 @@
 
     // Propagar UTMs al botón "Ver carrera"
     window.addEventListener('load', () => {
-      const merged = {
-        utm_source:   utms.utm_source || 'facebook',
-        utm_medium:   utms.utm_medium || 'cpc',
-        utm_campaign: utms.utm_campaign || 'cheatsheet-claudecode',
-        utm_content:  utms.utm_content || '',
-        utm_term:     utms.utm_term || '',
-      };
-      const params = Object.entries(merged).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
-      const url = `https://www.soyhenry.com/webfullstack?${params}`;
+      const params = Object.entries(utms).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+      const url = `https://www.soyhenry.com/webfullstack${params ? '?' + params : ''}`;
       document.querySelectorAll('a[href*="webfullstack"]').forEach(a => a.href = url);
     });
   </script>

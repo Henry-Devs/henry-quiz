@@ -637,14 +637,8 @@
 
     // ── UTMs en CTAs a soyhenry.com ──────────────────────────────
     function buildHenryURL(base) {
-      const params = new URLSearchParams({
-        utm_source:   utms.utm_source   || 'facebook',
-        utm_medium:   utms.utm_medium   || 'cpc',
-        utm_campaign: utms.utm_campaign || 'landing-agente-5pasos',
-        ...(utms.utm_content && { utm_content: utms.utm_content }),
-        ...(utms.utm_term    && { utm_term:    utms.utm_term }),
-      });
-      return base + '?' + params.toString();
+      const params = Object.entries(utms).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+      return params ? base + '?' + params : base;
     }
 
     const henryBase = 'https://www.soyhenry.com/carrera-ai-automation';

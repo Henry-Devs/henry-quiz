@@ -552,15 +552,8 @@
     });
 
     window.addEventListener('load', () => {
-      const merged = {
-        utm_source:   utms.utm_source || 'facebook',
-        utm_medium:   utms.utm_medium || 'cpc',
-        utm_campaign: utms.utm_campaign || 'dashboard-claude-streamlit',
-        utm_content:  utms.utm_content || '',
-        utm_term:     utms.utm_term || '',
-      };
-      const params = Object.entries(merged).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
-      const url = `https://www.soyhenry.com/carrera-data-science?${params}`;
+      const params = Object.entries(utms).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+      const url = `https://www.soyhenry.com/carrera-data-science${params ? '?' + params : ''}`;
       document.querySelectorAll('a[href*="carrera-data-science"]').forEach(a => a.href = url);
     });
   </script>
