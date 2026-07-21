@@ -40,18 +40,6 @@
       top: 0;
       z-index: 100;
     }
-    .nav-link {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--black);
-      text-decoration: none;
-      padding: 8px 18px;
-      border-radius: 8px;
-      border: 1.5px solid var(--black);
-      transition: background 0.15s;
-    }
-    .nav-link:hover { background: var(--gray-light); }
-
     /* HERO */
     .hero {
       display: grid;
@@ -108,40 +96,6 @@
       color: var(--gray-mid);
       margin-bottom: 12px;
     }
-
-    /* LEARNINGS */
-    .learnings-list {
-      display: flex;
-      flex-direction: column;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 28px;
-    }
-    .learning-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 13px 18px;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.15s;
-    }
-    .learning-item:last-child { border-bottom: none; }
-    .learning-item:hover { background: #fffde7; }
-    .learning-num {
-      min-width: 30px;
-      height: 30px;
-      background: var(--yellow);
-      color: var(--black);
-      border-radius: 7px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-    .learning-text { font-size: 0.88rem; font-weight: 500; color: var(--black); line-height: 1.4; }
 
     /* SPEAKER */
     .speaker-card {
@@ -314,11 +268,8 @@
     .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
 
     /* FOOTER */
-    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; }
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
     .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a { font-size: 0.78rem; color: var(--gray-mid); text-decoration: none; }
-    .footer-links a:hover { color: var(--black); }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
@@ -362,7 +313,6 @@
         <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
       </svg>
     </a>
-    <a class="nav-link" href="https://www.soyhenry.com/carrera-ai-automation?utm_source=instagram&utm_medium=organic&utm_campaign=clase-reportes-agentes-ia" target="_blank">Aplicar a la carrera</a>
   </nav>
 
   <!-- HERO -->
@@ -382,39 +332,19 @@
         <div class="value-item"><span class="value-dash"></span>La experiencia real de Lolo armando su propio sistema con IA</div>
       </div>
 
-      <p class="section-label">Vas a aprender</p>
-      <div class="learnings-list">
-        <div class="learning-item">
-          <div class="learning-num">01</div>
-          <div class="learning-text">Cómo se arma un "sistema operativo" de IA para manejar un negocio con agentes</div>
-        </div>
-        <div class="learning-item">
-          <div class="learning-num">02</div>
-          <div class="learning-text">Cómo crear agentes que generan reportes automáticos para clientes</div>
-        </div>
-        <div class="learning-item">
-          <div class="learning-num">03</div>
-          <div class="learning-text">Cómo automatizar el reporte de clientes de punta a punta</div>
-        </div>
-        <div class="learning-item">
-          <div class="learning-num">04</div>
-          <div class="learning-text">Un caso real de cómo se ve esto funcionando día a día</div>
-        </div>
-      </div>
-
       <p class="section-label">Quién lo da</p>
       <div class="speaker-card">
         <div class="speaker-card-text">
           <h3 class="speaker-name">Lolo Cappucci</h3>
           <div class="speaker-bullets">
-            <div class="value-item"><span class="value-dash"></span>Maneja su propia empresa con agentes de IA conectados a GitHub y Claude Code</div>
-            <div class="value-item"><span class="value-dash"></span>Viene a compartir exactamente cómo lo hace, paso a paso</div>
-            <div class="value-item"><span class="value-dash"></span>Nada de teoría: te muestra su sistema real, funcionando en producción</div>
-            <div class="value-item"><span class="value-dash"></span>Un caso que podés replicar directo en tu propio trabajo</div>
+            <div class="value-item"><span class="value-dash"></span>Profesional de marketing creativo y analítico, con sólida experiencia en publicidad, estrategia de redes sociales y gestión de ads</div>
+            <div class="value-item"><span class="value-dash"></span>Capacidad comprobada para el uso de herramientas tecnológicas y marketing digital</div>
+            <div class="value-item"><span class="value-dash"></span>Habilidades de comunicación e interpersonales que le permiten colaborar con equipos y lograr resultados sobresalientes</div>
+            <div class="value-item"><span class="value-dash"></span>Un perfil enfocado en generar valor real, a corto y largo plazo, para las organizaciones</div>
           </div>
         </div>
         <div class="speaker-card-photo">
-          <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=480,height=560/uploads/sx/6178364d-00f5-4612-b77e-f0d307fd7a1a.jpg" alt="Lolo Cappucci" />
+          <img src="lolo-cappucci.jpg" alt="Lolo Cappucci" />
         </div>
       </div>
     </div>
@@ -553,10 +483,6 @@
   <!-- FOOTER -->
   <footer>
     <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
-    <div class="footer-links">
-      <a href="https://www.soyhenry.com/carrera-ai-automation?utm_source=instagram&utm_medium=organic&utm_campaign=clase-reportes-agentes-ia" target="_blank">AI Automation</a>
-      <a href="https://www.soyhenry.com/webfullstack" target="_blank">Full Stack AI</a>
-    </div>
   </footer>
 
   <script>
@@ -572,22 +498,6 @@
     };
     Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
     Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
-
-    // UTMs en CTAs a la carrera AI Automation
-    function buildHenryURL(base) {
-      const params = new URLSearchParams({
-        utm_source:   utms.utm_source   || 'instagram',
-        utm_medium:   utms.utm_medium   || 'organic',
-        utm_campaign: utms.utm_campaign || 'clase-reportes-agentes-ia',
-        ...(utms.utm_content && { utm_content: utms.utm_content }),
-        ...(utms.utm_term    && { utm_term:    utms.utm_term }),
-      });
-      return base + '?' + params.toString();
-    }
-    const henryBase = 'https://www.soyhenry.com/carrera-ai-automation';
-    document.querySelectorAll('a[href*="soyhenry.com/carrera-ai-automation"]').forEach(a => {
-      a.href = buildHenryURL(henryBase);
-    });
 
     // Trackeo de clicks al registro en Luma (registro externo, sin form propio)
     document.querySelectorAll('.luma-cta').forEach(a => {
