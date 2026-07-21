@@ -81,11 +81,24 @@
       color: var(--black);
       margin-bottom: 20px;
     }
-    .hero-desc {
-      font-size: 0.98rem;
-      color: var(--gray-dark);
-      line-height: 1.7;
-      margin-bottom: 28px;
+    .value-bullets { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.4;
+    }
+    .value-dash {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+      border-radius: 2px;
+      margin-top: 6px;
+      flex-shrink: 0;
     }
     .section-label {
       font-size: 0.8rem;
@@ -132,49 +145,26 @@
 
     /* SPEAKER */
     .speaker-card {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--white);
+      margin-bottom: 8px;
+    }
+    .speaker-card-text {
+      padding: 28px;
       display: flex;
-      gap: 14px;
-      align-items: center;
-      padding: 16px;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      margin-bottom: 16px;
-      background: var(--gray-light);
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
     }
-    .speaker-photo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 2px solid var(--yellow);
-    }
-    .speaker-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--gray-mid);
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-    .speaker-name { font-size: 0.98rem; font-weight: 800; color: var(--black); }
-    .speaker-desc { font-size: 0.82rem; color: var(--gray-dark); line-height: 1.5; margin-top: 4px; }
-
-    /* AUDIENCE BOX */
-    .audience-box {
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 16px 18px;
-    }
-    .audience-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--gray-mid);
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .audience-box p { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.6; }
+    .speaker-name { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px; color: var(--black); }
+    .speaker-bullets { display: flex; flex-direction: column; gap: 10px; }
+    .speaker-bullets .value-item { font-size: 0.85rem; font-weight: 500; color: var(--gray-dark); }
+    .speaker-card-photo { position: relative; min-height: 240px; }
+    .speaker-card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     /* EVENT CARD */
     .form-card {
@@ -209,15 +199,6 @@
     }
     .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 22px; }
     .event-facts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
-    .event-fact { display: flex; align-items: center; gap: 12px; font-size: 0.85rem; font-weight: 600; color: var(--black); }
-    .event-fact-icon {
-      width: 32px; height: 32px;
-      background: var(--gray-light);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.95rem;
-      flex-shrink: 0;
-    }
     .join-btn {
       display: flex; align-items: center; justify-content: center;
       gap: 10px;
@@ -246,7 +227,15 @@
     }
     .bonus-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 36px; }
     .bonus-card { border: 1.5px solid var(--border); border-radius: 12px; padding: 22px 16px; text-align: center; }
-    .bonus-icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .bonus-num {
+      width: 30px; height: 30px;
+      background: var(--yellow);
+      color: var(--black);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 800;
+      margin: 0 auto 10px;
+    }
     .bonus-card p { font-size: 0.84rem; font-weight: 600; color: var(--black); line-height: 1.4; }
     .bonus-cta-wrap { text-align: center; }
 
@@ -303,7 +292,6 @@
     }
     .proof-name { font-size: 0.85rem; font-weight: 700; color: var(--black); }
     .proof-role { font-size: 0.75rem; color: var(--gray-mid); }
-    .why-cta { text-align: center; }
 
     /* COMPANIES */
     .companies-strip { max-width: 1120px; margin: 0 auto; padding: 56px 48px 64px; text-align: center; }
@@ -337,6 +325,8 @@
       nav { padding: 14px 20px; }
       .hero { grid-template-columns: 1fr; padding: 36px 24px 56px; gap: 40px; }
       .form-card { position: static; }
+      .speaker-card { grid-template-columns: 1fr; }
+      .speaker-card-photo { min-height: 200px; }
       .bonus-grid { grid-template-columns: repeat(2, 1fr); }
       .why-grid { grid-template-columns: 1fr; gap: 32px; }
       .proof-grid { grid-template-columns: 1fr; }
@@ -379,16 +369,20 @@
   <section class="hero">
     <div class="hero-left">
       <div class="badge-row">
-        <span class="badge primary">🎥 Clase en vivo gratuita</span>
-        <span class="badge outline">⏱ 1 hora</span>
-        <span class="badge outline">🤖 Automatización con IA</span>
+        <span class="badge primary">Clase en vivo gratuita</span>
+        <span class="badge outline">1 hora</span>
+        <span class="badge outline">Automatización con IA</span>
       </div>
       <h1>Cómo generar reportes automáticos con agentes de AI</h1>
-      <p class="hero-desc">
-        Imaginá manejar toda tu empresa, proyectos, clientes y reportes desde un solo lugar, con agentes de IA haciendo el trabajo pesado por vos. En esta clase en vivo vas a ver un caso real: una empresa completa conectada a GitHub y Claude Code, funcionando como un verdadero sistema operativo con IA 💻
-      </p>
 
-      <p class="section-label">✨ Vas a aprender</p>
+      <div class="value-bullets">
+        <div class="value-item"><span class="value-dash"></span>1 hora para ver un sistema real de agentes de IA en acción</div>
+        <div class="value-item"><span class="value-dash"></span>Más allá de la teoría: un caso real funcionando día a día</div>
+        <div class="value-item"><span class="value-dash"></span>Automatizá reportes y ahorrá horas de trabajo repetitivo</div>
+        <div class="value-item"><span class="value-dash"></span>La experiencia real de Lolo armando su propio sistema con IA</div>
+      </div>
+
+      <p class="section-label">Vas a aprender</p>
       <div class="learnings-list">
         <div class="learning-item">
           <div class="learning-num">01</div>
@@ -408,18 +402,20 @@
         </div>
       </div>
 
-      <p class="section-label">🎤 ¿Quién lo da?</p>
+      <p class="section-label">Quién lo da</p>
       <div class="speaker-card">
-        <img class="speaker-photo" src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=160,height=160/uploads/sx/6178364d-00f5-4612-b77e-f0d307fd7a1a.jpg" alt="Lolo Cappucci" />
-        <div>
-          <div class="speaker-name">Lolo Cappucci</div>
-          <div class="speaker-desc">Maneja su empresa con agentes de IA conectados a GitHub y Claude Code, y viene a compartir exactamente cómo lo hace. Nada de teoría: es su sistema real, funcionando.</div>
+        <div class="speaker-card-text">
+          <h3 class="speaker-name">Lolo Cappucci</h3>
+          <div class="speaker-bullets">
+            <div class="value-item"><span class="value-dash"></span>Maneja su propia empresa con agentes de IA conectados a GitHub y Claude Code</div>
+            <div class="value-item"><span class="value-dash"></span>Viene a compartir exactamente cómo lo hace, paso a paso</div>
+            <div class="value-item"><span class="value-dash"></span>Nada de teoría: te muestra su sistema real, funcionando en producción</div>
+            <div class="value-item"><span class="value-dash"></span>Un caso que podés replicar directo en tu propio trabajo</div>
+          </div>
         </div>
-      </div>
-
-      <div class="audience-box">
-        <p class="audience-label">🙋 ¿Es para vos?</p>
-        <p>Si trabajás en una empresa (o tenés la tuya) y sentís que perdés horas armando reportes a mano, coordinando onboardings o repitiendo tareas que ya deberían resolverse solas, esta clase es para vos. No hace falta saber programar 🚀</p>
+        <div class="speaker-card-photo">
+          <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=480,height=560/uploads/sx/6178364d-00f5-4612-b77e-f0d307fd7a1a.jpg" alt="Lolo Cappucci" />
+        </div>
       </div>
     </div>
 
@@ -430,12 +426,12 @@
       <h2>Reservá tu lugar</h2>
       <p class="form-sub">Cupos limitados. Te inscribís en un click.</p>
       <div class="event-facts">
-        <div class="event-fact"><span class="event-fact-icon">📅</span> Miércoles 29 de julio</div>
-        <div class="event-fact"><span class="event-fact-icon">🕖</span> 19:00 a 20:00 hs (ARG)</div>
-        <div class="event-fact"><span class="event-fact-icon">💻</span> Online, en vivo</div>
+        <div class="value-item"><span class="value-dash"></span>Miércoles 29 de julio</div>
+        <div class="value-item"><span class="value-dash"></span>19:00 a 20:00 hs (ARG)</div>
+        <div class="value-item"><span class="value-dash"></span>Online, en vivo</div>
       </div>
       <a href="https://luma.com/henry-y48a" class="join-btn luma-cta" target="_blank">Unirme gratis →</a>
-      <p class="privacy-note">🔒 Sin costo. Cancelá tu inscripción cuando quieras.</p>
+      <p class="privacy-note">Sin costo. Cancelá tu inscripción cuando quieras.</p>
     </div>
   </section>
 
@@ -443,10 +439,10 @@
   <section class="bonus-section">
     <h2 class="bonus-title">Al terminar te llevás</h2>
     <div class="bonus-grid">
-      <div class="bonus-card"><div class="bonus-icon">🧭</div><p>Un quiz de carrera personalizado</p></div>
-      <div class="bonus-card"><div class="bonus-icon">💼</div><p>Un certificado para comunicar en LinkedIn</p></div>
-      <div class="bonus-card"><div class="bonus-icon">🎯</div><p>Una sesión gratuita con un asesor de carrera</p></div>
-      <div class="bonus-card"><div class="bonus-icon">🏷️</div><p>Un descuento exclusivo para asistentes</p></div>
+      <div class="bonus-card"><div class="bonus-num">01</div><p>Un quiz de carrera personalizado</p></div>
+      <div class="bonus-card"><div class="bonus-num">02</div><p>Un certificado para comunicar en LinkedIn</p></div>
+      <div class="bonus-card"><div class="bonus-num">03</div><p>Una sesión gratuita con un asesor de carrera</p></div>
+      <div class="bonus-card"><div class="bonus-num">04</div><p>Un descuento exclusivo para asistentes</p></div>
     </div>
     <div class="bonus-cta-wrap">
       <a href="https://luma.com/henry-y48a" class="cta-btn luma-cta" target="_blank">Reservá tu lugar →</a>
@@ -529,10 +525,6 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="why-cta">
-        <a class="cta-btn" href="https://www.soyhenry.com/carrera-ai-automation?utm_source=instagram&utm_medium=organic&utm_campaign=clase-reportes-agentes-ia" target="_blank">Aplicar a la Carrera de AI Automation →</a>
       </div>
     </div>
   </section>
