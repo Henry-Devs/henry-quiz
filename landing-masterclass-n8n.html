@@ -428,9 +428,9 @@
   <section class="hero">
     <div class="hero-left">
       <div class="tag">⚡ Clase gratuita · Henry Masterclasses</div>
-      <h1>Automatizá tareas con IA <em>sin programar</em>: tu primer flujo con n8n</h1>
+      <h1>Automatiza tareas con IA <em>sin programar</em>: tu primer flujo con n8n</h1>
       <p class="hero-desc">
-        ¿Te imaginás que tus reportes se hagan solos? En esta clase construís tu primera automatización real con IA — sin escribir una sola línea de código.
+        ¿Te imaginas que tus reportes se hagan solos? En esta clase construyes tu primera automatización real con IA, sin escribir una sola línea de código.
       </p>
       <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-mid);margin-bottom:12px;">¿Qué vas a aprender?</p>
       <div class="learnings-list">
@@ -484,8 +484,7 @@
       <div id="form-wrapper">
         <div class="form-top-bar"></div>
         <span class="free-badge">Acceso gratuito</span>
-        <h2>Mirá la Masterclass ahora</h2>
-        <p class="form-sub">Completá tus datos y accedé al video de forma inmediata.</p>
+        <h2>Completa tus datos y accede a la masterclass gratuita</h2>
         <div id="hs-form-container"></div>
         <p class="privacy-note">🔒 Sin spam. Tus datos están seguros.</p>
       </div>
@@ -499,8 +498,8 @@
 
   <!-- BOTTOM CTA -->
   <section class="bottom-cta">
-    <h2>¿Querés aprender AI Automation?</h2>
-    <p>Sumáte a la Carrera AI Automation y construí agentes reales con coaches de la industria.</p>
+    <h2>¿Quieres aprender AI Automation?</h2>
+    <p>Aprende a construir agentes reales con IA en la Carrera AI Automation de Henry.</p>
     <a class="cta-btn" href="https://www.soyhenry.com/carrera-ai-automation?utm_source=facebook&utm_medium=cpc&utm_campaign=masterclass-n8n" target="_blank">
       Aplicar a la Carrera de AI Automation →
     </a>
@@ -560,6 +559,12 @@
           document.getElementById('success-state').style.display = 'block';
         }, 800);
       }
+    });
+
+    window.addEventListener('load', () => {
+      const params = Object.entries(utms).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+      const url = `https://www.soyhenry.com/carrera-ai-automation${params ? '?' + params : ''}`;
+      document.querySelectorAll('a[href*="carrera-ai-automation"]').forEach(a => a.href = url);
     });
   </script>
 </body>

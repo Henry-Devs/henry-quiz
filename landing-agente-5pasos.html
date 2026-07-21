@@ -544,8 +544,7 @@
       <div id="form-wrapper">
         <div class="form-top-bar"></div>
         <span class="free-badge">Descarga gratuita</span>
-        <h2>Descargá la guía ahora</h2>
-        <p class="form-sub">Completá tus datos y accedé al PDF de forma inmediata.</p>
+        <h2>Completa tus datos y accede a tu guía gratuita</h2>
         <div id="hs-form-container"></div>
         <p class="privacy-note">🔒 Sin spam. Tus datos están seguros.</p>
       </div>
@@ -572,7 +571,7 @@
 
   <section class="cta-section">
     <h2>¿Querés ir más allá de la guía?</h2>
-    <p>Sumáte a la Carrera AI Automation y construí agentes reales con coaches de la industria.</p>
+    <p>Aprende a construir agentes reales con IA en la Carrera AI Automation de Henry.</p>
     <a class="cta-btn" href="https://www.soyhenry.com/carrera-ai-automation" target="_blank">Aplicar a la Carrera de AI Automation →</a>
   </section>
 
@@ -638,14 +637,8 @@
 
     // ── UTMs en CTAs a soyhenry.com ──────────────────────────────
     function buildHenryURL(base) {
-      const params = new URLSearchParams({
-        utm_source:   utms.utm_source   || 'facebook',
-        utm_medium:   utms.utm_medium   || 'cpc',
-        utm_campaign: utms.utm_campaign || 'landing-agente-5pasos',
-        ...(utms.utm_content && { utm_content: utms.utm_content }),
-        ...(utms.utm_term    && { utm_term:    utms.utm_term }),
-      });
-      return base + '?' + params.toString();
+      const params = Object.entries(utms).filter(([_,v]) => v).map(([k,v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+      return params ? base + '?' + params : base;
     }
 
     const henryBase = 'https://www.soyhenry.com/carrera-ai-automation';
