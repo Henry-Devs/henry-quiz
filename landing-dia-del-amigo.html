@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lo bueno se comparte: conocé la experiencia Henry desde adentro — Henry</title>
+  <title>Lo bueno se comparte: conoce la experiencia Henry desde adentro — Henry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -109,29 +109,20 @@
       top: 80px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.07);
     }
-    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
-    .free-badge {
-      display: inline-block;
-      background: var(--black);
-      color: var(--white);
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 14px;
+    .event-photo {
+      margin: -36px -36px 20px;
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
     }
-    .form-card h2 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--black);
-      margin-bottom: 6px;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
+    .event-photo img { width: 100%; height: auto; display: block; }
+    .event-compact-facts {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-dark);
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.4;
     }
-    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 22px; }
-    .event-facts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
     .join-btn {
       display: flex; align-items: center; justify-content: center;
       gap: 10px;
@@ -187,6 +178,21 @@
       padding-bottom: 2px;
       align-self: flex-start;
     }
+
+    /* CAREERS */
+    .careers-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 64px; }
+    .careers-header { text-align: center; margin-bottom: 36px; }
+    .careers-header p.section-label { text-align: center; }
+    .careers-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 10px; }
+    .careers-header p.careers-sub { font-size: 0.95rem; color: var(--gray-dark); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+    .career-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .career-card { border: 1.5px solid var(--border); border-radius: 14px; padding: 22px; background: var(--white); display: flex; flex-direction: column; gap: 12px; }
+    .career-name { font-size: 1.02rem; font-weight: 800; color: var(--black); letter-spacing: -0.2px; }
+    .career-desc { font-size: 0.82rem; color: var(--gray-dark); line-height: 1.55; }
+    .career-meta { display: flex; flex-direction: column; gap: 5px; font-size: 0.78rem; color: var(--gray-dark); }
+    .career-meta strong { color: var(--black); font-weight: 700; }
+    .career-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+    .career-tool-badge { font-size: 0.68rem; background: var(--gray-light); border-radius: 12px; padding: 3px 10px; font-weight: 600; color: var(--black); }
 
     /* BONUSES */
     .bonus-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 64px; }
@@ -314,10 +320,10 @@
     <div class="hero-left">
       <div class="badge-row">
         <span class="badge primary">Charla en vivo gratuita</span>
-        <span class="badge outline">1 hora</span>
+        <span class="badge outline">45 minutos</span>
         <span class="badge outline">Comunidad Henry</span>
       </div>
-      <h1>Lo bueno <em>se comparte</em>: conocé la experiencia Henry desde adentro</h1>
+      <h1>Lo bueno <em>se comparte</em>: conoce la experiencia Henry desde adentro</h1>
 
       <div class="value-bullets">
         <div class="value-item"><span class="value-dash"></span>La historia real de Flor y Paloma, dos amigas que se conocieron estudiando en Henry</div>
@@ -329,24 +335,19 @@
 
     <!-- EVENT / CTA CARD -->
     <div class="form-card">
-      <div class="form-top-bar"></div>
-      <span class="free-badge">100% gratis</span>
-      <h2>Reservá tu lugar</h2>
-      <p class="form-sub">Cupos limitados. Te inscribís en un click.</p>
-      <div class="event-facts">
-        <div class="value-item"><span class="value-dash"></span>Martes 28 de julio</div>
-        <div class="value-item"><span class="value-dash"></span>19:00 a 20:00 hs (ARG)</div>
-        <div class="value-item"><span class="value-dash"></span>Online, en vivo</div>
+      <div class="event-photo">
+        <img src="foto-base.png" alt="Día de la amistad - Conoce la experiencia Henry" />
       </div>
-      <a href="https://luma.com/henry-go02" class="join-btn luma-cta" target="_blank">Reservá tu lugar →</a>
-      <p class="privacy-note">Sin costo. Cancelá tu inscripción cuando quieras.</p>
+      <p class="event-compact-facts">Martes 28 de julio · 19:00 a 19:45 hs (ARG) · Online, en vivo</p>
+      <a href="https://luma.com/henry-go02" class="join-btn luma-cta" target="_blank">Reserva tu lugar →</a>
+      <p class="privacy-note">Sin costo. Cancela tu inscripción cuando quieras.</p>
     </div>
   </section>
 
   <!-- DUO SECTION -->
   <section class="duo-section">
     <div class="duo-header">
-      <p class="section-label">Las protagonistas</p>
+      <p class="section-label">Invitadas</p>
       <h2>Dos amigas, un mismo camino</h2>
     </div>
 
@@ -392,16 +393,101 @@
     </div>
   </section>
 
+  <!-- CAREERS -->
+  <section class="careers-section">
+    <div class="careers-header">
+      <p class="section-label">Carreras en Henry</p>
+      <h2>Elige tu camino en tecnología</h2>
+      <p class="careers-sub">Programas online, con clases en vivo y acompañamiento de expertos. Estas son las 5 carreras que ofrece Henry.</p>
+    </div>
+    <div class="career-grid">
+      <div class="career-card">
+        <div class="career-name">AI Automation</div>
+        <p class="career-desc">Aprende a automatizar procesos, diseñar flujos y crear agentes con herramientas no-code y low-code.</p>
+        <div class="career-meta">
+          <div><strong>Modalidad:</strong> Part time, 2 meses (+10 hs semanales)</div>
+          <div><strong>Requisitos:</strong> No se necesitan conocimientos técnicos previos</div>
+        </div>
+        <div class="career-tools">
+          <span class="career-tool-badge">n8n</span>
+          <span class="career-tool-badge">Make</span>
+          <span class="career-tool-badge">Airtable</span>
+          <span class="career-tool-badge">OpenAI</span>
+        </div>
+      </div>
+
+      <div class="career-card">
+        <div class="career-name">AI Engineering</div>
+        <p class="career-desc">Aprende a construir soluciones de IA generativa, integrar LLMs con datos propios y crear agentes autónomos.</p>
+        <div class="career-meta">
+          <div><strong>Modalidad:</strong> Part time, 2 meses (+10 hs semanales)</div>
+          <div><strong>Requisitos:</strong> Conocimientos previos de programación (Python o similar)</div>
+        </div>
+        <div class="career-tools">
+          <span class="career-tool-badge">Python</span>
+          <span class="career-tool-badge">LangChain</span>
+          <span class="career-tool-badge">RAG</span>
+          <span class="career-tool-badge">Hugging Face</span>
+        </div>
+      </div>
+
+      <div class="career-card">
+        <div class="career-name">Full Stack Development</div>
+        <p class="career-desc">Aprende a desarrollar páginas y aplicaciones web completas, de principio a fin, para trabajar en tecnología.</p>
+        <div class="career-meta">
+          <div><strong>Modalidad:</strong> Part time, 8 meses (20 hs/semana) o Full time, 4 meses (40 hs/semana)</div>
+          <div><strong>Requisitos:</strong> No se necesitan conocimientos técnicos previos</div>
+        </div>
+        <div class="career-tools">
+          <span class="career-tool-badge">JavaScript</span>
+          <span class="career-tool-badge">React</span>
+          <span class="career-tool-badge">Node.js</span>
+          <span class="career-tool-badge">AWS</span>
+        </div>
+      </div>
+
+      <div class="career-card">
+        <div class="career-name">Data Science</div>
+        <p class="career-desc">Aprende análisis de datos y Machine Learning para descubrir insights y potenciar decisiones de negocio.</p>
+        <div class="career-meta">
+          <div><strong>Modalidad:</strong> Part time, 8 meses (+15 hs semanales)</div>
+          <div><strong>Requisitos:</strong> No se necesitan conocimientos técnicos previos</div>
+        </div>
+        <div class="career-tools">
+          <span class="career-tool-badge">Python</span>
+          <span class="career-tool-badge">SQL</span>
+          <span class="career-tool-badge">Scikit-learn</span>
+          <span class="career-tool-badge">Power BI</span>
+        </div>
+      </div>
+
+      <div class="career-card">
+        <div class="career-name">Data Engineering</div>
+        <p class="career-desc">Aprende a diseñar pipelines, gestionar bases de datos complejas y construir arquitecturas en la nube.</p>
+        <div class="career-meta">
+          <div><strong>Modalidad:</strong> Part time, 8 meses (+15 hs semanales)</div>
+          <div><strong>Requisitos:</strong> Experiencia previa con SQL y Python (con módulo de refuerzo si hace falta)</div>
+        </div>
+        <div class="career-tools">
+          <span class="career-tool-badge">Apache Spark</span>
+          <span class="career-tool-badge">Airflow</span>
+          <span class="career-tool-badge">AWS</span>
+          <span class="career-tool-badge">BigQuery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- BONUSES -->
   <section class="bonus-section">
-    <h2 class="bonus-title">Al terminar te llevás</h2>
+    <h2 class="bonus-title">Al terminar te llevas</h2>
     <div class="bonus-grid">
       <div class="bonus-card"><div class="bonus-num">01</div><p>Un quiz de carrera personalizado</p></div>
       <div class="bonus-card"><div class="bonus-num">02</div><p>Una sesión gratuita con un asesor de carrera</p></div>
       <div class="bonus-card"><div class="bonus-num">03</div><p>Un descuento exclusivo para asistentes</p></div>
     </div>
     <div class="bonus-cta-wrap">
-      <a href="https://luma.com/henry-go02" class="cta-btn luma-cta" target="_blank">Reservá tu lugar →</a>
+      <a href="https://luma.com/henry-go02" class="cta-btn luma-cta" target="_blank">Reserva tu lugar →</a>
     </div>
   </section>
 
@@ -485,7 +571,7 @@
   <section class="cta-section">
     <h2>¿Todo listo para escuchar esta historia en vivo?</h2>
     <p>Es en vivo, gratis y con cupos limitados. Martes 28 de julio, 19hs (ARG).</p>
-    <a class="cta-btn luma-cta" href="https://luma.com/henry-go02" target="_blank">Reservá tu lugar →</a>
+    <a class="cta-btn luma-cta" href="https://luma.com/henry-go02" target="_blank">Reserva tu lugar →</a>
   </section>
 
   <!-- FOOTER -->
