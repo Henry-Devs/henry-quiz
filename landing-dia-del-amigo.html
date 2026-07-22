@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lo bueno se comparte: conocé la experiencia Henry desde adentro — Henry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 56px 48px 80px;
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+    h1 em { font-style: normal; background: var(--yellow); padding: 0 4px; }
+    .value-bullets { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.4;
+    }
+    .value-dash {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+      border-radius: 2px;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-mid);
+      margin-bottom: 12px;
+    }
+
+    /* EVENT CARD */
+    .form-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      position: sticky;
+      top: 80px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .free-badge {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 14px;
+    }
+    .form-card h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 22px; }
+    .event-facts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .join-btn {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px;
+      background: var(--yellow); color: var(--black);
+      font-size: 0.95rem; font-weight: 800;
+      padding: 16px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s;
+      width: 100%;
+    }
+    .join-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+    .privacy-note { font-size: 0.72rem; color: var(--gray-mid); text-align: center; margin-top: 14px; }
+
+    /* DUO SECTION */
+    .duo-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 64px; }
+    .duo-header { text-align: center; margin-bottom: 32px; }
+    .duo-header p.section-label { text-align: center; }
+    .duo-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; color: var(--black); }
+    .friend-quote {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--black);
+      padding: 8px 24px;
+      border-left: none;
+    }
+    .friend-quote span { color: var(--gray-mid); font-weight: 500; font-size: 0.85rem; display: block; margin-top: 14px; }
+    .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .duo-card { border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--white); display: flex; flex-direction: column; }
+    .duo-photo { background: var(--gray-light); height: 280px; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; }
+    .duo-photo img { height: 100%; width: auto; max-width: 100%; object-fit: contain; object-position: bottom; }
+    .duo-text { padding: 24px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+    .duo-name { font-size: 1.15rem; font-weight: 800; color: var(--black); letter-spacing: -0.3px; }
+    .duo-role { font-size: 0.8rem; color: var(--gray-mid); font-weight: 600; margin-top: 2px; }
+    .duo-bullets { display: flex; flex-direction: column; gap: 8px; }
+    .duo-bullets .value-item { font-size: 0.85rem; font-weight: 500; color: var(--gray-dark); }
+    .duo-linkedin {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--yellow);
+      padding-bottom: 2px;
+      align-self: flex-start;
+    }
+
+    /* BONUSES */
+    .bonus-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 64px; }
+    .bonus-title {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--black);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+    .bonus-card { border: 1.5px solid var(--border); border-radius: 12px; padding: 22px 16px; text-align: center; }
+    .bonus-num {
+      width: 30px; height: 30px;
+      background: var(--yellow);
+      color: var(--black);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 800;
+      margin: 0 auto 10px;
+    }
+    .bonus-card p { font-size: 0.84rem; font-weight: 600; color: var(--black); line-height: 1.4; }
+    .bonus-cta-wrap { text-align: center; }
+
+    /* WHY HENRY */
+    .why-section { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 48px; }
+    .why-inner { max-width: 1120px; margin: 0 auto; }
+    .why-header { text-align: center; margin-bottom: 40px; }
+    .why-header h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 12px; }
+    .why-header p { font-size: 1rem; color: var(--gray-dark); max-width: 640px; margin: 0 auto; line-height: 1.6; }
+
+    .stats { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; margin-bottom: 40px; }
+    .stat-item { display: flex; align-items: center; gap: 8px; padding: 0 28px; }
+    .stat-item + .stat-item { border-left: 1px solid var(--border); }
+    .stat-num { font-size: 1.7rem; font-weight: 900; color: var(--black); letter-spacing: -1px; line-height: 1; white-space: nowrap; }
+    .stat-label { font-size: 0.78rem; color: var(--gray-dark); font-weight: 500; line-height: 1.3; max-width: 130px; }
+
+    .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .proof-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 12px; padding: 22px; }
+    .proof-stars { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 12px; color: var(--black); }
+    .proof-card p { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.65; margin-bottom: 16px; }
+    .proof-author { display: flex; align-items: center; gap: 10px; }
+    .proof-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--yellow);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 800; color: var(--black);
+      flex-shrink: 0;
+    }
+    .proof-name { font-size: 0.85rem; font-weight: 700; color: var(--black); }
+    .proof-role { font-size: 0.75rem; color: var(--gray-mid); }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 56px 48px 64px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* BOTTOM CTA */
+    .cta-section { background: var(--black); color: var(--white); padding: 64px 48px; text-align: center; }
+    .cta-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 14px; }
+    .cta-section p { font-size: 1rem; color: #aaa; margin-bottom: 28px; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--yellow); color: var(--black); font-size: 0.95rem;
+      font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 36px 24px 56px; gap: 40px; }
+      .form-card { position: static; }
+      .duo-grid { grid-template-columns: 1fr; }
+      .duo-section { padding: 8px 24px 48px; }
+      .friend-quote { font-size: 1.05rem; }
+      .bonus-grid { grid-template-columns: 1fr; }
+      .bonus-section { padding: 8px 24px 48px; }
+      .why-section { padding: 44px 24px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .stat-item { padding: 0 16px; }
+      .companies-strip { padding: 40px 24px; }
+      .cta-section { padding: 48px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left { animation: fadeUp 0.5s ease both; }
+    .form-card { animation: fadeUp 0.5s 0.1s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge-row">
+        <span class="badge primary">Charla en vivo gratuita</span>
+        <span class="badge outline">1 hora</span>
+        <span class="badge outline">Comunidad Henry</span>
+      </div>
+      <h1>Lo bueno <em>se comparte</em>: conocé la experiencia Henry desde adentro</h1>
+
+      <div class="value-bullets">
+        <div class="value-item"><span class="value-dash"></span>La historia real de Flor y Paloma, dos amigas que se conocieron estudiando en Henry</div>
+        <div class="value-item"><span class="value-dash"></span>Cómo es la comunidad y el acompañamiento de Henry, contado por quienes ya lo vivieron</div>
+        <div class="value-item"><span class="value-dash"></span>La dinámica real de las clases y los desafíos del camino hasta graduarse</div>
+        <div class="value-item"><span class="value-dash"></span>Pensada para quienes todavía tienen dudas de dar el salto a tech</div>
+      </div>
+    </div>
+
+    <!-- EVENT / CTA CARD -->
+    <div class="form-card">
+      <div class="form-top-bar"></div>
+      <span class="free-badge">100% gratis</span>
+      <h2>Reservá tu lugar</h2>
+      <p class="form-sub">Cupos limitados. Te inscribís en un click.</p>
+      <div class="event-facts">
+        <div class="value-item"><span class="value-dash"></span>Martes 28 de julio</div>
+        <div class="value-item"><span class="value-dash"></span>19:00 a 20:00 hs (ARG)</div>
+        <div class="value-item"><span class="value-dash"></span>Online, en vivo</div>
+      </div>
+      <a href="https://luma.com/henry-go02" class="join-btn luma-cta" target="_blank">Reservá tu lugar →</a>
+      <p class="privacy-note">Sin costo. Cancelá tu inscripción cuando quieras.</p>
+    </div>
+  </section>
+
+  <!-- DUO SECTION -->
+  <section class="duo-section">
+    <div class="duo-header">
+      <p class="section-label">Las protagonistas</p>
+      <h2>Dos amigas, un mismo camino</h2>
+    </div>
+
+    <blockquote class="friend-quote">
+      "Nos conocimos en Data Science 01 Part Time. Desde el primer momento en el Zoom supe que íbamos a ser amigas. Hicimos todo el recorrido juntas hasta la graduación y hoy somos TAs juntas. Nada más lindo. Aunque vivamos a más de 1.400 km y jamás nos vimos en persona, sentimos que nos conocemos de toda la vida."
+      <span>Flor y Paloma, graduadas de Data Science Part Time en Henry</span>
+    </blockquote>
+
+    <div class="duo-grid">
+      <div class="duo-card">
+        <div class="duo-photo">
+          <img src="flor-sosa.png" alt="Flor Sosa Comisso" />
+        </div>
+        <div class="duo-text">
+          <div>
+            <div class="duo-name">Flor Sosa Comisso</div>
+            <div class="duo-role">Antes en marketing, hoy Data Scientist</div>
+          </div>
+          <div class="duo-bullets">
+            <div class="value-item"><span class="value-dash"></span>Se graduó en Data Science Part Time en Henry</div>
+            <div class="value-item"><span class="value-dash"></span>Hoy es TA en Henry, acompañando a nuevos estudiantes</div>
+          </div>
+          <a class="duo-linkedin" href="https://www.linkedin.com/in/florenciasosacomisso/" target="_blank">Ver LinkedIn de Flor →</a>
+        </div>
+      </div>
+
+      <div class="duo-card">
+        <div class="duo-photo">
+          <img src="paloma-marquez.png" alt="Paloma Marquez" />
+        </div>
+        <div class="duo-text">
+          <div>
+            <div class="duo-name">Paloma Marquez</div>
+            <div class="duo-role">Antes recepcionista de hotel, hoy Data Analyst en un hotel</div>
+          </div>
+          <div class="duo-bullets">
+            <div class="value-item"><span class="value-dash"></span>Se graduó en Data Science Part Time en Henry</div>
+            <div class="value-item"><span class="value-dash"></span>Hoy es TA en Henry, acompañando a nuevos estudiantes</div>
+          </div>
+          <a class="duo-linkedin" href="https://www.linkedin.com/in/paloma-marquez-9233b9211/" target="_blank">Ver LinkedIn de Paloma →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="bonus-section">
+    <h2 class="bonus-title">Al terminar te llevás</h2>
+    <div class="bonus-grid">
+      <div class="bonus-card"><div class="bonus-num">01</div><p>Un quiz de carrera personalizado</p></div>
+      <div class="bonus-card"><div class="bonus-num">02</div><p>Una sesión gratuita con un asesor de carrera</p></div>
+      <div class="bonus-card"><div class="bonus-num">03</div><p>Un descuento exclusivo para asistentes</p></div>
+    </div>
+    <div class="bonus-cta-wrap">
+      <a href="https://luma.com/henry-go02" class="cta-btn luma-cta" target="_blank">Reservá tu lugar →</a>
+    </div>
+  </section>
+
+  <!-- WHY HENRY -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header">
+        <h2>¿Por qué confiar en Henry?</h2>
+        <p>Henry es la comunidad tech más grande de LATAM. Así lo viven quienes ya pasaron por ahí.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-item">
+          <div>
+            <div class="stat-num">1st</div>
+            <div class="stat-label">Bootcamp mejor rankeado</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div>
+            <div class="stat-num">+20.000</div>
+            <div class="stat-label">Graduados en toda LATAM</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div>
+            <div class="stat-num">+3.000</div>
+            <div class="stat-label">Compañías que contratan nuestro talento</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div>
+            <div class="stat-num">1 semana</div>
+            <div class="stat-label">De prueba o te devolvemos el dinero</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <div class="proof-stars">★★★★★</div>
+          <p>"De Henry destaco cómo crean comunidad. Un espacio para seguir aprendiendo, resolver y avanzar mucho más rápido."</p>
+          <div class="proof-author">
+            <div class="proof-avatar">DM</div>
+            <div>
+              <div class="proof-name">Darwin Moreno</div>
+              <div class="proof-role">Data Scientist · MaterCell</div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-stars">★★★★★</div>
+          <p>"Henry me dio las herramientas y la confianza para dar un giro a mi carrera. En menos de un año pasé de no saber programar a tener el trabajo de mis sueños."</p>
+          <div class="proof-author">
+            <div class="proof-avatar">AP</div>
+            <div>
+              <div class="proof-name">Alberto Perrone</div>
+              <div class="proof-role">Data Scientist · Globant</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google" />
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture" />
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal" />
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander" />
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak" />
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá" />
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <section class="cta-section">
+    <h2>¿Todo listo para escuchar esta historia en vivo?</h2>
+    <p>Es en vivo, gratis y con cupos limitados. Martes 28 de julio, 19hs (ARG).</p>
+    <a class="cta-btn luma-cta" href="https://luma.com/henry-go02" target="_blank">Reservá tu lugar →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    // Trackeo de clicks al registro en Luma (registro externo, sin form propio)
+    document.querySelectorAll('.luma-cta').forEach(a => {
+      a.addEventListener('click', function () {
+        if (window.fbq) {
+          fbq('trackCustom', 'Registro clase en vivo', {
+            content_name: 'dia-del-amigo-henry',
+            utm_source: utms.utm_source || '',
+            utm_medium: utms.utm_medium || '',
+            utm_campaign: utms.utm_campaign || '',
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
