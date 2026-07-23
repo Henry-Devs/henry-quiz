@@ -103,6 +103,8 @@
       border: 1.5px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
+      background: var(--white);
+      margin-bottom: 28px;
     }
     .tool-item {
       display: flex;
@@ -300,37 +302,37 @@
     .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
     .companies-logos img:hover { opacity: 0.7; }
 
-    /* BOTTOM CTA */
-    .cta-section {
-      background: var(--black);
-      padding: 72px 48px;
-      text-align: center;
-    }
-    .cta-section h2 {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
+    /* SOBRE EL CURSO */
+    .course-section { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 48px; }
+    .course-inner { max-width: 720px; margin: 0 auto; }
+    .course-section h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2.1rem);
       font-weight: 900;
       letter-spacing: -1px;
-      color: var(--white);
-      margin-bottom: 12px;
-      line-height: 1.1;
-    }
-    .cta-section p { font-size: 0.95rem; color: #aaa; margin-bottom: 32px; }
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--yellow);
       color: var(--black);
-      font-size: 0.95rem;
-      font-weight: 800;
-      padding: 16px 36px;
-      border-radius: 10px;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: transform 0.15s, background 0.15s;
+      margin-bottom: 14px;
+      line-height: 1.15;
     }
-    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+    .course-desc { font-size: 0.95rem; color: var(--gray-dark); line-height: 1.65; margin-bottom: 28px; }
+    .course-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-mid);
+      margin-bottom: 12px;
+    }
+    .audience-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .audience-tag {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .course-note { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.6; margin-top: 24px; }
 
     /* FOOTER */
     footer {
@@ -351,7 +353,7 @@
       .hero { grid-template-columns: 1fr; padding: 40px 24px 60px; gap: 48px; }
       .form-card { position: static; }
       .companies-strip { padding: 40px 24px; }
-      .cta-section { padding: 48px 24px; }
+      .course-section { padding: 44px 24px; }
       footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
     }
 
@@ -477,13 +479,49 @@
     </div>
   </div>
 
-  <!-- BOTTOM CTA -->
-  <section class="cta-section">
-    <h2>¿Querés ir más allá de la guía?</h2>
-    <p>Sumate al Workshop de IA para Finanzas y aplicá estos flujos a tu día a día, en vivo.</p>
-    <a class="cta-btn" href="https://academia.soyhenry.com/ai-para-finanzas?utm_source=instagram&utm_medium=organic&utm_campaign=rentabilidad-negocio-claude" target="_blank">
-      Reservar workshop gratis →
-    </a>
+  <!-- SOBRE EL CURSO -->
+  <section class="course-section">
+    <div class="course-inner">
+      <div class="tag">Sobre IA para Finanzas</div>
+      <h2>El cierre de mes que termina a las 18 horas, no a las 23</h2>
+      <p class="course-desc">Proyectos intensivos de IA aplicados para analistas financieros, contadores, economistas y gerentes financieros en LATAM. Sin código, sin humo innecesario — solo flujos que se aplican el lunes a la mañana.</p>
+
+      <p class="course-label">Pensado para</p>
+      <div class="audience-tags">
+        <span class="audience-tag">Analista financiero</span>
+        <span class="audience-tag">Economista</span>
+        <span class="audience-tag">Contador</span>
+        <span class="audience-tag">Tesorero</span>
+        <span class="audience-tag">Gerente financiero</span>
+        <span class="audience-tag">Emprendedor</span>
+      </div>
+
+      <p class="course-label">5 tareas financieras que la IA ya puede hacer por vos</p>
+      <div class="tools-list">
+        <div class="tool-item">
+          <div class="tool-num">01</div>
+          <div class="tool-info"><div class="tool-name">Conciliación bancaria asistida en 2 minutos</div></div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-num">02</div>
+          <div class="tool-info"><div class="tool-name">Análisis de varianza con narrativa, no solo números</div></div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-num">03</div>
+          <div class="tool-info"><div class="tool-name">Notas a EEFF redactadas con tu estilo</div></div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-num">04</div>
+          <div class="tool-info"><div class="tool-name">Análisis de cobranza con segmentación de cartera</div></div>
+        </div>
+        <div class="tool-item">
+          <div class="tool-num">05</div>
+          <div class="tool-info"><div class="tool-name">Mail al gerente listo para enviar</div></div>
+        </div>
+      </div>
+
+      <p class="course-note">El programa arranca con un workshop en vivo de 90 minutos, gratis, y continúa con especializaciones en Cierre y Reporting, Planificación Financiera, y Tesorería Inteligente con IA — con certificado Henry al finalizar.</p>
+    </div>
   </section>
 
   <!-- FOOTER -->
