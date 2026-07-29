@@ -360,11 +360,12 @@
   const CONFIG = {
     hsRegion:   "na1",
     hsPortalId: "19612811",
-    // Form PROPIO de este quiz (NO el "Descarga de contenido" compartido por las guías), así el
-    // lead se distingue de una descarga de guía. Campos: Correo / Nombre / Apellidos / Teléfono
-    // + ocultos UTM. Evento de conversión resultante:
-    //   "¿Tu trabajo tiene futuro? — Henry: Quiz - Tu trabajo tiene futuro"
-    hsFormId:   "a7c29b5b-02c0-498c-9927-17b86e547ddb",
+    // Form COMPARTIDO "Descarga de contenido" — el mismo que usan las 7 landings de guías (y el
+    // quiz de perfil Full Stack). Se diferencia por el TÍTULO de la página: HubSpot arma
+    // recent_conversion_event_name = "<título de la página>: <nombre del form>", o sea:
+    //   "¿Tu trabajo tiene futuro? — Henry: Descarga de contenido"
+    // Campos: Correo / Nombre / Apellidos / Teléfono (obligatorios) + ocultos UTM.
+    hsFormId:   "ce8f2a08-f13f-41a7-a27e-9e57a5ffee61",
     discount:   "30%",
     coupon:     "FUTURO30",
     // Evento de conversión que ya usan para este tipo de contenido (dispara los flows).
