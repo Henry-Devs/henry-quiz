@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Tu trabajo tiene futuro? — Henry</title>
+  <meta name="description" content="La IA ya está redefiniendo casi todos los trabajos. Hacé el quiz de 2 minutos y descubrí de qué lado te deja tu forma de trabajar.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- HubSpot (mismo portal que las landings de guías) -->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px; border-bottom: 1px solid var(--border);
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+    }
+    .nav-link {
+      font-size: 0.85rem; font-weight: 600; color: var(--black);
+      text-decoration: none; padding: 8px 18px; border-radius: 8px;
+      border: 1.5px solid var(--black); transition: background 0.15s;
+    }
+    .nav-link:hover { background: var(--gray-light); }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      align-items: start; max-width: 1120px; margin: 0 auto;
+      padding: 64px 48px 80px;
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--yellow); color: var(--black); font-size: 0.72rem;
+      font-weight: 800; padding: 5px 14px; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 900; line-height: 1.32;
+      letter-spacing: -1.5px; color: var(--black); margin-bottom: 20px;
+    }
+    h1 em { font-style: normal; background: var(--yellow); padding: 2px 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .hero-desc { font-size: 1rem; color: var(--gray-dark); line-height: 1.7; margin-bottom: 28px; }
+    .hero-statement {
+      font-size: clamp(1.25rem, 2vw, 1.55rem); font-weight: 800; line-height: 1.3;
+      letter-spacing: -0.4px; color: var(--black); border-left: 4px solid var(--yellow);
+      padding-left: 20px; margin-bottom: 8px;
+    }
+    .hero-statement em { font-style: normal; background: var(--yellow); padding: 0 4px; }
+
+    .section-label {
+      font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 1.2px; color: var(--gray-mid); margin-bottom: 14px;
+    }
+    .tools-list {
+      display: flex; flex-direction: column; gap: 0;
+      border: 1.5px solid var(--border); border-radius: 12px;
+      overflow: hidden; margin-bottom: 28px;
+    }
+    .tool-item {
+      display: flex; align-items: center; gap: 16px; padding: 14px 20px;
+      border-bottom: 1px solid var(--border); transition: background 0.15s;
+    }
+    .tool-item:last-child { border-bottom: none; }
+    .tool-item:hover { background: #fffde7; }
+    .tool-num {
+      min-width: 32px; height: 32px; background: var(--yellow); color: var(--black);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 800; flex-shrink: 0;
+    }
+    .tool-info { flex: 1; }
+    .tool-name { font-size: 0.92rem; font-weight: 800; color: var(--black); line-height: 1.2; }
+    .tool-arrow { margin-left: auto; font-size: 0.9rem; color: var(--gray-mid); }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 36px; position: sticky; top: 80px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .free-badge {
+      display: inline-block; background: var(--black); color: var(--white);
+      font-size: 0.68rem; font-weight: 700; padding: 4px 10px; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px;
+    }
+    .form-card h2 {
+      font-size: 1.35rem; font-weight: 800; color: var(--black); margin-bottom: 6px;
+      letter-spacing: -0.5px; line-height: 1.2;
+    }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 24px; }
+
+    /* HubSpot overrides */
+    #hs-form-container .hs-form-field { margin-bottom: 14px !important; }
+    #hs-form-container .hs-form-field label {
+      font-size: 0.8rem !important; font-weight: 600 !important; color: var(--black) !important;
+      margin-bottom: 6px !important; display: block !important; font-family: 'Inter', sans-serif !important;
+    }
+    #hs-form-container .hs-input {
+      background: var(--gray-light) !important; border: 1.5px solid var(--border) !important;
+      border-radius: 8px !important; color: var(--black) !important; padding: 11px 14px !important;
+      font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important;
+      transition: border-color 0.15s !important;
+    }
+    #hs-form-container .hs-input:focus { outline: none !important; border-color: var(--black) !important; background: var(--white) !important; }
+    #hs-form-container .hs-button, .native-submit {
+      background: var(--yellow) !important; color: var(--black) !important; border: none !important;
+      border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important;
+      font-weight: 800 !important; width: 100% !important; cursor: pointer !important;
+      font-family: 'Inter', sans-serif !important; text-transform: uppercase !important;
+      letter-spacing: 0.5px !important; transition: transform 0.15s, background 0.15s !important;
+      margin-top: 6px !important; display: block !important; box-sizing: border-box !important;
+    }
+    #hs-form-container .hs-button:hover, .native-submit:hover { background: var(--yellow-dark) !important; transform: translateY(-1px) !important; }
+    #hs-form-container .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; margin-top: 4px !important; }
+    #hs-form-container .hs_submit, #hs-form-container .hs_submit .actions { width: 100% !important; }
+    .privacy-note { font-size: 0.72rem; color: var(--gray-mid); text-align: center; margin-top: 14px; }
+
+    /* Native fallback form (cuando HubSpot no está disponible: preview / bloqueo de scripts) */
+    .native-field { margin-bottom: 14px; }
+    .native-field label { font-size: 0.8rem; font-weight: 600; color: var(--black); margin-bottom: 6px; display: block; }
+    .native-field input {
+      background: var(--gray-light); border: 1.5px solid var(--border); border-radius: 8px;
+      color: var(--black); padding: 11px 14px; font-size: 0.9rem; width: 100%;
+      font-family: 'Inter', sans-serif;
+    }
+    .native-field input:focus { outline: none; border-color: var(--black); background: var(--white); }
+    .native-field select {
+      background: var(--gray-light); border: 1.5px solid var(--border); border-radius: 8px;
+      color: var(--black); padding: 11px 10px; font-size: 0.9rem; font-family: 'Inter', sans-serif;
+    }
+    .phone-row { display: flex; gap: 8px; }
+    .phone-row input { flex: 1; }
+
+    /* ===== QUIZ ===== */
+    .quiz-section { display: none; max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; animation: fadeUp 0.4s ease both; }
+    .quiz-progress-wrap { margin-bottom: 40px; }
+    .quiz-progress-meta { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; }
+    .quiz-progress-track { height: 8px; background: var(--gray-light); border-radius: 4px; overflow: hidden; }
+    .quiz-progress-fill { height: 100%; width: 0%; background: var(--yellow); border-radius: 4px; transition: width 0.35s ease; }
+
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; animation: fadeUp 0.35s ease both; }
+    .quiz-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gray-mid); margin-bottom: 12px; }
+    .quiz-question { font-size: clamp(1.3rem, 2.6vw, 1.9rem); font-weight: 900; letter-spacing: -0.8px; line-height: 1.15; margin-bottom: 28px; }
+    .quiz-options { display: flex; flex-direction: column; gap: 12px; }
+    .quiz-option {
+      text-align: left; background: var(--white); border: 1.5px solid var(--border); border-radius: 12px;
+      padding: 18px 20px; font-size: 0.98rem; font-weight: 600; color: var(--black); cursor: pointer;
+      font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 14px;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+    .quiz-option:hover { border-color: var(--black); background: #fffde7; }
+    .quiz-option .opt-key {
+      min-width: 30px; height: 30px; border-radius: 8px; background: var(--gray-light);
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;
+      flex-shrink: 0; transition: background 0.15s;
+    }
+    .quiz-option:hover .opt-key { background: var(--yellow); }
+    .quiz-back { margin-top: 26px; background: none; border: none; color: var(--gray-mid); font-weight: 700; font-size: 0.85rem; cursor: pointer; font-family: 'Inter', sans-serif; }
+    .quiz-back:hover { color: var(--black); }
+
+    /* ===== RESULT ===== */
+    .result-section { display: none; max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; animation: fadeUp 0.45s ease both; }
+    .result-verdict { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.4px; color: var(--gray-mid); margin-bottom: 14px; }
+    .result-card { border: 1.5px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+    .result-head { background: var(--black); color: var(--white); padding: 40px 40px 36px; }
+    .result-career-tag { display: inline-block; background: var(--yellow); color: var(--black); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 5px 12px; border-radius: 4px; margin-bottom: 18px; }
+    .result-head h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: -1.2px; line-height: 1.05; }
+    .result-head h2 em { font-style: normal; color: var(--yellow); }
+    .result-body { padding: 36px 40px 40px; }
+    .result-desc { font-size: 1.02rem; color: var(--gray-dark); line-height: 1.7; margin-bottom: 28px; }
+    .discount-box {
+      display: flex; align-items: center; gap: 20px; background: #fffde7;
+      border: 1.5px dashed var(--yellow-dark); border-radius: 14px; padding: 22px 24px; margin-bottom: 30px;
+    }
+    .discount-pct { font-size: 2.6rem; font-weight: 900; letter-spacing: -2px; color: var(--black); line-height: 1; }
+    .discount-copy { font-size: 0.9rem; color: var(--gray-dark); line-height: 1.5; }
+    .discount-copy strong { color: var(--black); }
+    .discount-code { display: inline-block; margin-top: 6px; background: var(--black); color: var(--white); font-weight: 800; letter-spacing: 1px; padding: 4px 12px; border-radius: 6px; font-size: 0.85rem; }
+    .result-actions { display: flex; flex-direction: column; gap: 12px; }
+    .btn-primary, .btn-secondary {
+      display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.98rem;
+      font-weight: 800; padding: 16px 32px; border-radius: 12px; text-decoration: none;
+      text-transform: uppercase; letter-spacing: 0.5px; transition: transform 0.15s, background 0.15s;
+      cursor: pointer; font-family: 'Inter', sans-serif; border: none;
+    }
+    .btn-primary { background: var(--yellow); color: var(--black); }
+    .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+    .btn-secondary { background: var(--white); color: var(--black); border: 1.5px solid var(--black); }
+    .btn-secondary:hover { background: var(--gray-light); }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.78rem; color: var(--gray-mid); text-decoration: none; }
+    .footer-links a:hover { color: var(--black); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 40px 24px 60px; gap: 48px; }
+      .form-card { position: static; }
+      .companies-strip { padding: 40px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+      .discount-box { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .result-head, .result-body { padding-left: 24px; padding-right: 24px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left { animation: fadeUp 0.5s ease both; }
+    .form-card { animation: fadeUp 0.5s 0.1s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com/" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"></path>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"></path>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"></path>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"></path>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"></path>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"></path>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"></path>
+      </svg>
+    </a>
+    <a class="nav-link" id="nav-cta" href="https://www.soyhenry.com/" target="_blank">Ver carreras</a>
+  </nav>
+
+  <!-- ===== INTRO (hero + captura) ===== -->
+  <section class="hero" id="intro-section">
+    <div class="hero-left">
+      <div class="tag">⚡ Quiz</div>
+      <h1>¿Tu trabajo tiene <em>futuro</em>?</h1>
+      <p class="hero-desc">
+        La IA ya está redefiniendo casi todos los trabajos. La pregunta no es <em>si</em> te va a tocar,
+        sino de qué lado vas a estar.
+      </p>
+
+      <p class="hero-statement">Descubrí en 2 minutos de qué lado <em>del futuro</em> estás.</p>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div id="form-wrapper">
+        <div class="form-top-bar"></div>
+        <h2>Dejanos tus datos y descubrilo</h2>
+        <p class="form-sub">Te toma 2 minutos.</p>
+        <div id="hs-form-container" data-hs-forms-root="true"></div>
+        <p class="privacy-note">🔒 Sin spam. Tus datos están seguros.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUIZ ===== -->
+  <section class="quiz-section" id="quiz-section">
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-meta">
+        <span id="quiz-count">Pregunta 1</span>
+        <span>¿Tu trabajo tiene futuro?</span>
+      </div>
+      <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quiz-fill"></div></div>
+    </div>
+    <div id="quiz-steps"></div>
+  </section>
+
+  <!-- ===== RESULT ===== -->
+  <section class="result-section" id="result-section">
+    <p class="result-verdict" id="result-verdict">Tu diagnóstico</p>
+    <div class="result-card">
+      <div class="result-head">
+        <span class="result-career-tag" id="r-tag"></span>
+        <h2 id="r-title"></h2>
+      </div>
+      <div class="result-body">
+        <p class="result-desc" id="r-desc"></p>
+        <div class="discount-box">
+          <div class="discount-pct" id="r-pct">30%</div>
+          <div class="discount-copy">
+            <strong>OFF para empezar esta carrera.</strong><br>
+            Usá este cupón al inscribirte:
+            <span class="discount-code" id="r-code">FUTURO30</span>
+          </div>
+        </div>
+        <div class="result-actions">
+          <a class="btn-primary" id="r-cta" href="#" target="_blank">Inscribirme con 30% OFF →</a>
+          <a class="btn-secondary" id="r-call" href="#" target="_blank">Agendar una llamada</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google">
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre">
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture">
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal">
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander">
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak">
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá">
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+    <div class="footer-links">
+      <a href="https://www.soyhenry.com/" target="_blank">Henry</a>
+      <a href="https://www.soyhenry.com/carrera-ai-engineering" target="_blank">Carreras</a>
+    </div>
+  </footer>
+
+  <script>
+  /* =========================================================================
+     CONFIG — lo editable vive todo acá arriba
+     ========================================================================= */
+  const CONFIG = {
+    hsRegion:   "na1",
+    hsPortalId: "19612811",
+    // Form PROPIO de este quiz (NO el "Descarga de contenido" compartido por las guías), así el
+    // lead se distingue de una descarga de guía. Campos: Correo / Nombre / Apellidos / Teléfono
+    // + ocultos UTM. Evento de conversión resultante:
+    //   "¿Tu trabajo tiene futuro? — Henry: Quiz - Tu trabajo tiene futuro"
+    hsFormId:   "a7c29b5b-02c0-498c-9927-17b86e547ddb",
+    discount:   "30%",
+    coupon:     "FUTURO30",
+    // Evento de conversión que ya usan para este tipo de contenido (dispara los flows).
+    fbEvent:     "Descarga de contenido",
+    contentName: "quiz-tu-trabajo-tiene-futuro",
+  };
+
+  // Las 4 carreras. URLs y copy tomados de las páginas oficiales de soyhenry.com.
+  const CAREERS = {
+    automation: {
+      name: "AI Automation",
+      tag:  "Intelligent Automation",
+      desc: "Automatizás procesos, diseñás flujos y creás agentes de IA con herramientas no-code y low-code. Te convertís en AI Automation Specialist, AI Agent Developer o Consultor de Automatización: el perfil que usa la IA para multiplicar su trabajo. No requiere conocimientos técnicos previos y en 2 meses armás tu portafolio de agentes.",
+      url:  "https://www.soyhenry.com/carrera-ai-automation",
+      careerId: "5ce873af-9562-4502-9b7a-4241a8d740b8",
+    },
+    fullstack: {
+      name: "Full Stack",
+      tag:  "AI Product Development",
+      desc: "Desarrollás aplicaciones completas de punta a punta —frontend, backend y bases de datos— con la IA integrada en tu workflow de desarrollo. Te convertís en Desarrollador Full Stack, Backend o Frontend. Podés empezar desde cero, aunque nunca hayas programado, y terminar construyendo productos reales.",
+      url:  "https://www.soyhenry.com/webfullstack",
+      careerId: "3d3f9be9-b2c5-434e-872d-b2f65ec23a86",
+    },
+    datascience: {
+      name: "Data Science",
+      tag:  "Data Science & AI",
+      desc: "Transformás datos en decisiones. Te convertís en Data Analyst, Data Scientist, Machine Learning Analyst o BI Analyst. Una carrera potenciada con IA, diseñada para arrancar desde cero — sin conocimientos técnicos previos.",
+      url:  "https://www.soyhenry.com/carrera-data-science",
+      careerId: "e99351ba-fc54-4875-a515-77ddef98cfc0",
+    },
+    aieng: {
+      name: "AI Engineering",
+      tag:  "Applied AI Engineering",
+      desc: "Diseñás, entrenás y desplegás modelos de IA que resuelven problemas complejos a escala. Trabajás como AI Engineer, AI Developer o AI Integrator, integrando modelos, APIs y agentes en sistemas reales. Sos quien construye la IA que hoy está transformando al resto de los trabajos.",
+      url:  "https://www.soyhenry.com/carrera-ai-engineering",
+      careerId: "b32d9e29-fd8b-432a-8edc-a81c3e7a04fb",
+    },
+  };
+
+  // "Inscribirme" -> registro de la app de Henry (por carrera). "Agendar" -> form de HubSpot.
+  const APP_REGISTER_BASE = "https://www.auth.soyhenry.com/register";
+  const APP_REDIRECT_BASE = "https://www.app.soyhenry.com/redirects/landing/?to=";
+  const CALL_URL = "https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g";
+
+  // Arma el link de registro de la app con nuestras UTMs + el career_id de la carrera.
+  function appRegisterUrl(careerId) {
+    const info = {
+      utm_source:   utms.utm_source,
+      utm_medium:   utms.utm_medium,
+      utm_campaign: utms.utm_campaign,
+      utm_content:  utms.utm_content,
+      career_id:    careerId,
+    };
+    Object.keys(info).forEach(k => { if (!info[k]) delete info[k]; });
+    const redirect = APP_REDIRECT_BASE + careerId;
+    return APP_REGISTER_BASE + "?additionalInfo=" + encodeURIComponent(JSON.stringify(info)) +
+           "&redirect_url=" + encodeURIComponent(redirect);
+  }
+
+  /* =========================================================================
+     QUIZ — preguntas
+       diag:true -> pregunta de diagnóstico (ancla el claim, NO puntúa carrera)
+       s: {carrera:puntos} -> pregunta de preferencia (define el resultado)
+     ========================================================================= */
+  const QUESTIONS = [
+    // --- Diagnóstico (arma el relato "tu trabajo tiene futuro") ---
+    { id:"trabajo", diag:true, kicker:"Tu situación hoy",
+      q:"¿A qué te dedicás hoy?",
+      a:[
+        { t:"Trabajo en tecnología" },
+        { t:"Trabajo, pero fuera de tecnología" },
+        { t:"Estudio o estoy buscando trabajo" },
+      ]},
+    { id:"ia_uso", diag:true, kicker:"Tu situación hoy",
+      q:"¿Usás herramientas de IA (ChatGPT, Claude, otras) en tu día a día?",
+      a:[
+        { t:"Todavía no" },
+        { t:"A veces, para tareas puntuales" },
+        { t:"Sí, ya son parte de cómo trabajo" },
+      ]},
+    { id:"impacto", diag:true, kicker:"Tu situación hoy",
+      q:"¿Cuánto creés que la IA va a cambiar tu trabajo en los próximos 2 años?",
+      a:[
+        { t:"Poco o nada" },
+        { t:"Bastante" },
+        { t:"Lo va a transformar por completo" },
+      ]},
+
+    // --- Preferencia (deciden la carrera: +1 a la carrera afín) ---
+    { id:"problema", kicker:"Cómo trabajás",
+      q:"Cuando resolvés un problema, preferís…",
+      a:[
+        { t:"Automatizarlo para que quede resuelto solo", s:{automation:1} },
+        { t:"Construir una app o producto que lo resuelva", s:{fullstack:1} },
+        { t:"Analizar los datos para entender qué está pasando", s:{datascience:1} },
+        { t:"Diseñar un sistema con IA que lo maneje", s:{aieng:1} },
+      ]},
+    { id:"disfrutas", kicker:"Qué te mueve",
+      q:"Lo que más disfrutás es…",
+      a:[
+        { t:"Hacer las cosas más rápidas y eficientes", s:{automation:1} },
+        { t:"Ver funcionando algo que construiste vos", s:{fullstack:1} },
+        { t:"Descubrir un patrón escondido en la información", s:{datascience:1} },
+        { t:"Entender cómo funciona una tecnología por dentro", s:{aieng:1} },
+      ]},
+    { id:"aprender", kicker:"Cómo pensás",
+      q:"Cuando aprendés algo nuevo, te sale más natural…",
+      a:[
+        { t:"Probarlo hasta que funcione y optimizarlo", s:{automation:1} },
+        { t:"Armar la solución paso a paso", s:{fullstack:1} },
+        { t:"Mirar los números y los gráficos", s:{datascience:1} },
+        { t:"Ver cómo se conectan las piezas del sistema", s:{aieng:1} },
+      ]},
+    { id:"proyecto", kicker:"Último paso",
+      q:"Si tuvieras un día libre para un proyecto, harías…",
+      a:[
+        { t:"Conectar tus apps para que trabajen solas", s:{automation:1} },
+        { t:"Crear una app desde cero", s:{fullstack:1} },
+        { t:"Analizar un set de datos que te interese", s:{datascience:1} },
+        { t:"Montar un asistente o agente de IA", s:{aieng:1} },
+      ]},
+  ];
+
+  /* =========================================================================
+     Estado + motor del quiz
+     ========================================================================= */
+  const state = { idx: 0, answers: {}, counts: { automation:0, fullstack:0, datascience:0, aieng:0 } };
+  const LETTERS = ["A","B","C","D"];
+
+  function renderStep() {
+    const wrap = document.getElementById("quiz-steps");
+    const total = QUESTIONS.length;
+    const qi = QUESTIONS[state.idx];
+    document.getElementById("quiz-count").textContent = `Pregunta ${state.idx + 1} de ${total}`;
+    document.getElementById("quiz-fill").style.width = `${(state.idx / total) * 100}%`;
+
+    wrap.innerHTML = "";
+    const step = document.createElement("div");
+    step.className = "quiz-step active";
+    step.innerHTML = `
+      <p class="quiz-kicker">${qi.kicker || ""}</p>
+      <h2 class="quiz-question">${qi.q}</h2>
+      <div class="quiz-options"></div>
+      ${state.idx > 0 ? '<button class="quiz-back" id="quiz-back">← Volver</button>' : ""}
+    `;
+    const opts = step.querySelector(".quiz-options");
+    qi.a.forEach((opt, i) => {
+      const b = document.createElement("button");
+      b.className = "quiz-option";
+      b.innerHTML = `<span class="opt-key">${LETTERS[i]}</span><span>${opt.t}</span>`;
+      b.addEventListener("click", () => chooseAnswer(qi, opt));
+      opts.appendChild(b);
+    });
+    wrap.appendChild(step);
+    const back = document.getElementById("quiz-back");
+    if (back) back.addEventListener("click", goBack);
+    document.getElementById("quiz-section").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function chooseAnswer(qi, opt) {
+    state.answers[qi.id] = opt.t;
+    if (opt.s) for (const k in opt.s) state.counts[k] += opt.s[k];
+
+    if (state.idx < QUESTIONS.length - 1) {
+      state.idx++;
+      renderStep();
+    } else {
+      showResult();
+    }
+  }
+
+  function goBack() {
+    if (state.idx === 0) return;
+    state.idx--;
+    recomputeUpTo(state.idx);
+    renderStep();
+  }
+
+  function recomputeUpTo(upto) {
+    state.counts = { automation:0, fullstack:0, datascience:0, aieng:0 };
+    for (let i = 0; i < upto; i++) {
+      const qi = QUESTIONS[i];
+      const opt = qi.a.find(o => o.t === state.answers[qi.id]);
+      if (opt && opt.s) for (const k in opt.s) state.counts[k] += opt.s[k];
+    }
+  }
+
+  // Resultado = la carrera con más afinidad. Empate -> orden de prioridad de abajo.
+  function computeResult() {
+    const c = state.counts;
+    const order = ["automation", "fullstack", "datascience", "aieng"];
+    let best = order[0];
+    for (const k of order) if (c[k] > c[best]) best = k;
+    return best;
+  }
+
+  function showResult() {
+    document.getElementById("quiz-fill").style.width = "100%";
+    const career = CAREERS[computeResult()];
+
+    // El "veredicto" ancla el claim según cuánto cree que la IA lo va a impactar.
+    let verdict = "Tu diagnóstico";
+    if (state.answers.impacto === "Poco o nada") verdict = "Ojo: puede que estés subestimando el cambio";
+    else if (state.answers.impacto === "Lo va a transformar por completo") verdict = "Lo tenés claro — este es el próximo paso";
+
+    document.getElementById("result-verdict").textContent = verdict;
+    document.getElementById("r-tag").textContent = career.tag;
+    document.getElementById("r-title").innerHTML = `El futuro de tu trabajo se llama <em>${career.name}</em>`;
+    document.getElementById("r-desc").textContent = career.desc;
+    document.getElementById("r-pct").textContent = CONFIG.discount;
+    document.getElementById("r-code").textContent = CONFIG.coupon;
+
+    const params = utmQueryString();
+    document.getElementById("r-cta").href = appRegisterUrl(career.careerId);
+    document.getElementById("r-cta").textContent = `Inscribirme a ${career.name} con ${CONFIG.discount} OFF →`;
+    document.getElementById("r-call").href = CALL_URL + (params ? "?" + params : "");
+    document.getElementById("nav-cta").href = career.url + (params ? "?" + params : "");
+
+    if (window.fbq) fbq("trackCustom", CONFIG.fbEvent + " - Resultado", { carrera: career.name });
+
+    document.getElementById("quiz-section").style.display = "none";
+    const r = document.getElementById("result-section");
+    r.style.display = "block";
+    r.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  /* =========================================================================
+     UTMs + captura HubSpot
+     ========================================================================= */
+  function getParam(name) { return new URLSearchParams(window.location.search).get(name) || ""; }
+  const utms = {
+    utm_source:   getParam("utm_source"),
+    utm_medium:   getParam("utm_medium"),
+    utm_campaign: getParam("utm_campaign"),
+    utm_content:  getParam("utm_content"),
+    utm_term:     getParam("utm_term"),
+  };
+  Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+  Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ""; });
+  function utmQueryString() {
+    return Object.entries(utms).filter(([_, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
+  }
+
+  function startQuiz() {
+    document.getElementById("intro-section").style.display = "none";
+    document.getElementById("quiz-section").style.display = "block";
+    renderStep();
+  }
+
+  function buildHubSpotForm() {
+    if (!window.hbspt || !hbspt.forms) return false;
+    hbspt.forms.create({
+      region: CONFIG.hsRegion,
+      portalId: CONFIG.hsPortalId,
+      formId: CONFIG.hsFormId,
+      target: "#hs-form-container",
+      onFormReady: function (form) {
+        setTimeout(() => {
+          const btn = form.querySelector(".hs-button");
+          if (btn) btn.value = "Empezar el quiz";
+          const utmMap = {
+            "ultima_fuente_utm":  utms.utm_source,
+            "ultimo_medio_utm":   utms.utm_medium,
+            "ultima_campana_utm": utms.utm_campaign,
+            "utm_content":        utms.utm_content,
+            "utm_term":           utms.utm_term,
+          };
+          form.querySelectorAll("input").forEach(input => {
+            const n = input.name || "";
+            if (utmMap[n] !== undefined && utmMap[n] !== "") input.value = utmMap[n];
+          });
+        }, 600);
+      },
+      onFormSubmit: function () {
+        // Mismo evento de conversión que las guías ("Descarga de contenido") -> alimenta los flows.
+        if (window.fbq) fbq("trackCustom", CONFIG.fbEvent, { content_name: CONFIG.contentName });
+        setTimeout(startQuiz, 700);
+      },
+    });
+    return true;
+  }
+
+  // Fallback nativo: si HubSpot no cargó (preview / scripts bloqueados), mostramos un form
+  // simple para poder recorrer el flujo igual. Los campos reales salen del form de HubSpot.
+  function buildFallbackForm() {
+    const c = document.getElementById("hs-form-container");
+    if (c.children.length > 0) return; // HubSpot ya lo llenó
+    c.innerHTML = `
+      <div class="native-field"><label>Correo</label><input type="email" id="fb-email"></div>
+      <div class="native-field"><label>Nombre</label><input type="text" id="fb-name"></div>
+      <div class="native-field"><label>Apellidos</label><input type="text" id="fb-lastname"></div>
+      <div class="native-field"><label>Número de teléfono</label>
+        <div class="phone-row">
+          <select id="fb-country">
+            <option value="+54">🇦🇷 Argentina</option>
+            <option value="+52">🇲🇽 México</option>
+            <option value="+57">🇨🇴 Colombia</option>
+            <option value="+56">🇨🇱 Chile</option>
+            <option value="+51">🇵🇪 Perú</option>
+            <option value="+598">🇺🇾 Uruguay</option>
+            <option value="+">🌎 Otro</option>
+          </select>
+          <input type="tel" id="fb-phone" placeholder="+54 11 2808 0318">
+        </div>
+      </div>
+      <button class="native-submit" id="fb-submit">Empezar el quiz</button>
+      <p style="font-size:0.68rem;color:var(--gray-mid);text-align:center;margin-top:10px;">Modo demo — sin HubSpot conectado.</p>
+    `;
+    document.getElementById("fb-submit").addEventListener("click", () => {
+      const email = document.getElementById("fb-email").value.trim();
+      const name = document.getElementById("fb-name").value.trim();
+      if (!name || !email) { alert("Completá nombre y correo para continuar."); return; }
+      if (window.fbq) fbq("trackCustom", CONFIG.fbEvent, { content_name: CONFIG.contentName });
+      startQuiz();
+    });
+  }
+
+  // Intentamos HubSpot; si en 2.5s no cargó, fallback.
+  window.addEventListener("load", () => {
+    let built = buildHubSpotForm();
+    setTimeout(() => {
+      if (!built) built = buildHubSpotForm();
+      buildFallbackForm();
+    }, 2500);
+  });
+  </script>
+</body>
+</html>
