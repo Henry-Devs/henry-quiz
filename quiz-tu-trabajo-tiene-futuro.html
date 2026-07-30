@@ -198,7 +198,11 @@
     .result-head h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: -1.2px; line-height: 1.05; }
     .result-head h2 em { font-style: normal; color: var(--yellow); }
     .result-body { padding: 36px 40px 40px; }
-    .result-desc { font-size: 1.02rem; color: var(--gray-dark); line-height: 1.7; margin-bottom: 28px; }
+    .result-desc { font-size: 1.02rem; color: var(--gray-dark); line-height: 1.7; margin-bottom: 24px; }
+    .result-stat {
+      font-size: 1rem; font-weight: 700; line-height: 1.55; color: var(--black);
+      border-left: 4px solid var(--yellow); padding-left: 18px; margin-bottom: 28px;
+    }
     .discount-box {
       display: flex; align-items: center; gap: 20px; background: #fffde7;
       border: 1.5px dashed var(--yellow-dark); border-radius: 14px; padding: 22px 24px; margin-bottom: 30px;
@@ -218,6 +222,56 @@
     .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px); }
     .btn-secondary { background: var(--white); color: var(--black); border: 1.5px solid var(--black); }
     .btn-secondary:hover { background: var(--gray-light); }
+
+    /* ===== BANDAS DE CONTENIDO (argumento) ===== */
+    .band { padding: 72px 48px; }
+    .band-inner { max-width: 1120px; margin: 0 auto; }
+    .band h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; line-height: 1.15;
+      letter-spacing: -1.2px; margin-bottom: 18px; text-wrap: balance;
+    }
+    .band p.band-copy {
+      font-size: 1.05rem; line-height: 1.75; max-width: 62ch; margin-bottom: 40px;
+    }
+    .band--dark { background: var(--black); color: var(--white); }
+    .band--dark h2 em { font-style: normal; color: var(--yellow); }
+    .band--dark p.band-copy { color: #c9c9c9; }
+    .band--dark p.band-copy strong { color: var(--white); }
+    .band--light { background: var(--white); color: var(--black); }
+    .band--light p.band-copy { color: var(--gray-dark); }
+    .band--light h2 em { font-style: normal; background: var(--yellow); padding: 2px 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .band--quiet { background: var(--gray-light); color: var(--black); text-align: center; }
+    .band--quiet p.band-copy { color: var(--gray-dark); margin: 0 auto 32px; }
+
+    /* Stat cards */
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .stat { border: 1.5px solid rgba(255,255,255,0.16); border-radius: 14px; padding: 26px 24px; }
+    .stat-num {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 900; letter-spacing: -2px;
+      line-height: 1; color: var(--yellow); font-variant-numeric: tabular-nums; margin-bottom: 10px;
+    }
+    .stat-label { font-size: 0.9rem; font-weight: 600; line-height: 1.45; color: #d6d6d6; }
+
+    /* Puntos LATAM */
+    .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .point { border: 1.5px solid var(--border); border-left: 4px solid var(--yellow); border-radius: 10px; padding: 20px 22px; }
+    .point-num { font-size: 1.5rem; font-weight: 900; letter-spacing: -1px; font-variant-numeric: tabular-nums; margin-bottom: 6px; }
+    .point-label { font-size: 0.88rem; font-weight: 500; color: var(--gray-dark); line-height: 1.5; }
+
+    .sources { font-size: 0.72rem; line-height: 1.7; margin-top: 28px; }
+    .band--dark .sources, .band--dark .sources a { color: #8f8f8f; }
+    .band--light .sources, .band--light .sources a { color: var(--gray-mid); }
+    .sources a { text-decoration: underline; }
+    .sources a:hover { color: var(--yellow-dark); }
+
+    .btn-scroll {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--yellow); color: var(--black); font-size: 0.95rem; font-weight: 800;
+      padding: 16px 36px; border-radius: 12px; text-decoration: none; text-transform: uppercase;
+      letter-spacing: 0.5px; border: none; cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .btn-scroll:hover { background: var(--yellow-dark); transform: translateY(-2px); }
 
     /* COMPANIES */
     .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
@@ -242,6 +296,8 @@
       footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
       .discount-box { flex-direction: column; align-items: flex-start; gap: 12px; }
       .result-head, .result-body { padding-left: 24px; padding-right: 24px; }
+      .band { padding: 52px 24px; }
+      .stats, .points { grid-template-columns: 1fr; }
     }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -267,14 +323,15 @@
     <a class="nav-link" id="nav-cta" href="https://www.soyhenry.com/" target="_blank">Ver carreras</a>
   </nav>
 
-  <!-- ===== INTRO (hero + captura) ===== -->
+  <!-- ===== INTRO (hero + captura + argumento) ===== -->
+  <div id="intro-wrap">
   <section class="hero" id="intro-section">
     <div class="hero-left">
       <div class="tag">⚡ Quiz</div>
       <h1>¿Tu trabajo tiene <em>futuro</em>?</h1>
       <p class="hero-desc">
-        La IA ya está redefiniendo casi todos los trabajos. La pregunta no es <em>si</em> te va a tocar,
-        sino de qué lado vas a estar.
+        La IA ya está redefiniendo casi todos los trabajos. La pregunta no es <em>si</em> te va a
+        cambiar — es si vos vas a ser quien la use a tu favor.
       </p>
 
       <p class="hero-statement">Descubrí en 2 minutos de qué lado <em>del futuro</em> estás.</p>
@@ -291,6 +348,81 @@
       </div>
     </div>
   </section>
+
+  <!-- ARGUMENTO 1: no te saca el lugar, sube la vara -->
+  <section class="band band--dark">
+    <div class="band-inner">
+      <h2>No te está sacando el lugar.<br><em>Te está subiendo la vara.</em></h2>
+      <p class="band-copy">
+        Quienes ya usan IA en su trabajo ganan hasta <strong>56% más</strong>. Y los sueldos crecen
+        el doble de rápido en las industrias donde más se usa. <strong>La brecha no es entre humanos
+        y máquinas</strong> — es entre quién se sube ahora y quién se queda mirando.
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num">56%</div>
+          <div class="stat-label">más de sueldo, en promedio, para quienes tienen habilidades de IA</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">x4</div>
+          <div class="stat-label">crecimiento de productividad en las industrias que más adoptan IA</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">+78M</div>
+          <div class="stat-label">empleos netos nuevos hacia 2030: es reconversión, no pérdida</div>
+        </div>
+      </div>
+      <p class="sources">
+        Fuentes:
+        <a href="https://www.pwc.com/gx/en/news-room/press-releases/2025/ai-linked-to-a-fourfold-increase-in-productivity-growth.html" target="_blank" rel="noopener">PwC Global AI Jobs Barometer 2025</a> ·
+        <a href="https://www.weforum.org/stories/2025/01/future-of-jobs-report-2025-jobs-of-the-future-and-the-skills-you-need-to-get-them/" target="_blank" rel="noopener">WEF Future of Jobs 2025</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ARGUMENTO 2: LATAM -->
+  <section class="band band--light">
+    <div class="band-inner">
+      <h2>En LATAM, <em>todavía estás a tiempo</em></h2>
+      <p class="band-copy">
+        La región adopta IA más rápido que el resto del mundo, pero todavía le faltan miles de
+        personas formadas para sostener esa demanda. Esa brecha, hoy, es tu ventaja.
+      </p>
+      <div class="points">
+        <div class="point">
+          <div class="point-num">47%</div>
+          <div class="point-label">de adopción de IA en LATAM, por encima del promedio global (45%)</div>
+        </div>
+        <div class="point">
+          <div class="point-num">+886%</div>
+          <div class="point-label">crecieron las inscripciones en IA generativa en México en un año</div>
+        </div>
+        <div class="point">
+          <div class="point-num">59%</div>
+          <div class="point-label">de los empleos potenciados por IA piden título universitario, contra 66% en 2019: la puerta se abre</div>
+        </div>
+      </div>
+      <p class="sources">
+        Fuentes:
+        <a href="https://www.cepal.org/en/pressreleases/latin-america-and-caribbean-accelerate-adoption-artificial-intelligence-though" target="_blank" rel="noopener">CEPAL</a> ·
+        <a href="https://www.infobae.com/america/agencias/2026/03/31/el-informe-de-habilidades-laborales-2026-de-coursera-revela-una-rapida-aceleracion-de-la-ia-en-mexico-con-un-aumento-del-886-en-el-aprendizaje-de-la-generacion-ia/" target="_blank" rel="noopener">Coursera Skills Report 2026</a> ·
+        <a href="https://www.pwc.com/gx/en/news-room/press-releases/2025/ai-linked-to-a-fourfold-increase-in-productivity-growth.html" target="_blank" rel="noopener">PwC 2025</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ARGUMENTO 3: diferenciación -->
+  <section class="band band--quiet">
+    <div class="band-inner">
+      <h2>Esto no es un test que te asusta</h2>
+      <p class="band-copy">
+        No te vamos a tirar un puntaje de ansiedad y dejarte ahí, como cualquier quiz genérico.
+        Te decimos, con datos reales, qué mover primero.
+      </p>
+      <button class="btn-scroll" id="scroll-to-form">Hacer el quiz →</button>
+    </div>
+  </section>
+  </div><!-- /intro-wrap -->
 
   <!-- ===== QUIZ ===== -->
   <section class="quiz-section" id="quiz-section">
@@ -314,6 +446,7 @@
       </div>
       <div class="result-body">
         <p class="result-desc" id="r-desc"></p>
+        <p class="result-stat" id="r-stat"></p>
         <div class="discount-box">
           <div class="discount-pct" id="r-pct">30%</div>
           <div class="discount-copy">
@@ -380,6 +513,7 @@
       tag:  "Intelligent Automation",
       desc: "Automatizás procesos, diseñás flujos y creás agentes de IA con herramientas no-code y low-code. Te convertís en AI Automation Specialist, AI Agent Developer o Consultor de Automatización: el perfil que usa la IA para multiplicar su trabajo. No requiere conocimientos técnicos previos y en 2 meses armás tu portafolio de agentes.",
       url:  "https://www.soyhenry.com/carrera-ai-automation",
+      skill: "la mejora de procesos",
       careerId: "5ce873af-9562-4502-9b7a-4241a8d740b8",
     },
     fullstack: {
@@ -387,6 +521,7 @@
       tag:  "AI Product Development",
       desc: "Desarrollás aplicaciones completas de punta a punta —frontend, backend y bases de datos— con la IA integrada en tu workflow de desarrollo. Te convertís en Desarrollador Full Stack, Backend o Frontend. Podés empezar desde cero, aunque nunca hayas programado, y terminar construyendo productos reales.",
       url:  "https://www.soyhenry.com/webfullstack",
+      skill: "el desarrollo de software",
       careerId: "3d3f9be9-b2c5-434e-872d-b2f65ec23a86",
     },
     datascience: {
@@ -394,6 +529,7 @@
       tag:  "Data Science & AI",
       desc: "Transformás datos en decisiones. Te convertís en Data Analyst, Data Scientist, Machine Learning Analyst o BI Analyst. Una carrera potenciada con IA, diseñada para arrancar desde cero — sin conocimientos técnicos previos.",
       url:  "https://www.soyhenry.com/carrera-data-science",
+      skill: "el análisis de datos",
       careerId: "e99351ba-fc54-4875-a515-77ddef98cfc0",
     },
     aieng: {
@@ -401,6 +537,7 @@
       tag:  "Applied AI Engineering",
       desc: "Diseñás, entrenás y desplegás modelos de IA que resuelven problemas complejos a escala. Trabajás como AI Engineer, AI Developer o AI Integrator, integrando modelos, APIs y agentes en sistemas reales. Sos quien construye la IA que hoy está transformando al resto de los trabajos.",
       url:  "https://www.soyhenry.com/carrera-ai-engineering",
+      skill: "el diseño de sistemas",
       careerId: "b32d9e29-fd8b-432a-8edc-a81c3e7a04fb",
     },
   };
@@ -575,6 +712,9 @@
     document.getElementById("r-tag").textContent = career.tag;
     document.getElementById("r-title").innerHTML = `El futuro de tu trabajo se llama <em>${career.name}</em>`;
     document.getElementById("r-desc").textContent = career.desc;
+    // Cierre del argumento: prima salarial (PwC 2025) atada al perfil que le salió.
+    document.getElementById("r-stat").textContent =
+      `Quienes combinan habilidades de IA con ${career.skill} ganan en promedio 56% más. Esta es la carrera que te lleva ahí.`;
     document.getElementById("r-pct").textContent = CONFIG.discount;
     document.getElementById("r-code").textContent = CONFIG.coupon;
 
@@ -610,10 +750,16 @@
   }
 
   function startQuiz() {
-    document.getElementById("intro-section").style.display = "none";
+    // Oculta el hero + las bandas de argumento (todo lo previo al quiz).
+    document.getElementById("intro-wrap").style.display = "none";
     document.getElementById("quiz-section").style.display = "block";
     renderStep();
   }
+
+  // CTA de la banda "Esto no es un test que te asusta" -> sube al form.
+  document.getElementById("scroll-to-form").addEventListener("click", () => {
+    document.querySelector(".form-card").scrollIntoView({ behavior: "smooth", block: "center" });
+  });
 
   function buildHubSpotForm() {
     if (!window.hbspt || !hbspt.forms) return false;
