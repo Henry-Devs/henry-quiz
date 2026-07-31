@@ -238,6 +238,84 @@
     }
     .watch-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
 
+    /* BONUSES */
+    .bonus-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 64px; }
+    .bonus-title {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--black);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .bonus-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 36px; }
+    .bonus-card { border: 1.5px solid var(--border); border-radius: 12px; padding: 22px 16px; text-align: center; }
+    .bonus-num {
+      width: 30px; height: 30px;
+      background: var(--yellow);
+      color: var(--black);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 800;
+      margin: 0 auto 10px;
+    }
+    .bonus-card p { font-size: 0.84rem; font-weight: 600; color: var(--black); line-height: 1.4; }
+    .bonus-cta-wrap { text-align: center; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--yellow); color: var(--black); font-size: 0.95rem;
+      font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* WHY DATA SCIENCE */
+    .why-section { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 48px; }
+    .why-inner { max-width: 1120px; margin: 0 auto; }
+    .why-header { text-align: center; margin-bottom: 40px; }
+    .why-header h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 12px; }
+    .why-header p { font-size: 1rem; color: var(--gray-dark); max-width: 640px; margin: 0 auto; line-height: 1.6; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+
+    .why-tools-list { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .why-tools-list .tool-item { padding: 13px 18px; }
+    .why-tools-list .tool-num { min-width: 30px; height: 30px; font-size: 0.75rem; }
+    .why-tools-list .tool-name { font-size: 0.88rem; font-weight: 600; line-height: 1.4; }
+
+    .stack-col { display: flex; flex-direction: column; gap: 24px; }
+    .stack-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 12px; }
+    .stack-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stack-badge {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .stats { display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
+    .stat-item { display: flex; align-items: center; gap: 8px; padding-right: 28px; }
+    .stat-item + .stat-item { padding-left: 28px; padding-right: 0; border-left: 1px solid var(--border); }
+    .stat-num { font-size: 1.7rem; font-weight: 900; color: var(--black); letter-spacing: -1px; line-height: 1; white-space: nowrap; }
+    .stat-label { font-size: 0.78rem; color: var(--gray-dark); font-weight: 500; line-height: 1.3; max-width: 120px; }
+
+    .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .proof-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 12px; padding: 22px; }
+    .proof-stars { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 12px; color: var(--black); }
+    .proof-card p { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.65; margin-bottom: 16px; }
+    .proof-author { display: flex; align-items: center; gap: 10px; }
+    .proof-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--yellow);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 800; color: var(--black);
+      flex-shrink: 0;
+    }
+    .proof-name { font-size: 0.85rem; font-weight: 700; color: var(--black); }
+    .proof-role { font-size: 0.75rem; color: var(--gray-mid); }
+
     /* COMPANIES */
     .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
     .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
@@ -256,6 +334,11 @@
       .form-card { position: static; }
       .speaker-card { grid-template-columns: 1fr; }
       .speaker-card-photo { min-height: 220px; }
+      .bonus-grid { grid-template-columns: repeat(2, 1fr); }
+      .bonus-section { padding: 8px 24px 48px; }
+      .why-section { padding: 44px 24px; }
+      .why-grid { grid-template-columns: 1fr; gap: 32px; }
+      .proof-grid { grid-template-columns: 1fr; }
       .companies-strip { padding: 40px 24px; }
       footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
     }
@@ -366,6 +449,100 @@
         <p>Ya podés acceder a la clase.</p>
         <!-- TODO: reemplazar "#" por el link real de YouTube -->
         <a href="#" class="watch-btn" target="_blank">Ver la clase →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="bonus-section">
+    <h2 class="bonus-title">Al terminar te llevás</h2>
+    <div class="bonus-grid">
+      <div class="bonus-card"><div class="bonus-num">01</div><p>Un quiz de carrera personalizado</p></div>
+      <div class="bonus-card"><div class="bonus-num">02</div><p>Un certificado para comunicar en LinkedIn</p></div>
+      <div class="bonus-card"><div class="bonus-num">03</div><p>Una sesión gratuita con un asesor de carrera</p></div>
+      <div class="bonus-card"><div class="bonus-num">04</div><p>Un descuento exclusivo para asistentes</p></div>
+    </div>
+    <div class="bonus-cta-wrap">
+      <a href="#hs-form-container" class="cta-btn">Reservá tu lugar →</a>
+    </div>
+  </section>
+
+  <!-- WHY DATA SCIENCE -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header">
+        <h2>¿Por qué Data Science en Henry?</h2>
+        <p>Aprendé análisis de datos y Machine Learning para descubrir insights y potenciar decisiones de negocio.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-tools-list">
+          <div class="tool-item"><div class="tool-num">01</div><div class="tool-name">Formación práctica en análisis, modelado y trabajo con datos reales</div></div>
+          <div class="tool-item"><div class="tool-num">02</div><div class="tool-name">Dominio de las herramientas clave para decisiones basadas en datos</div></div>
+          <div class="tool-item"><div class="tool-num">03</div><div class="tool-name">Construcción de proyectos que muestran tu capacidad técnica end-to-end</div></div>
+          <div class="tool-item"><div class="tool-num">04</div><div class="tool-name">Entrenamiento para desarrollar criterios analíticos y resolver problemas con impacto</div></div>
+          <div class="tool-item"><div class="tool-num">05</div><div class="tool-name">Acompañamiento profesional y preparación laboral para ingresar al mundo data</div></div>
+        </div>
+
+        <div class="stack-col">
+          <div>
+            <p class="stack-label">Herramientas que vas a usar</p>
+            <div class="stack-badges">
+              <span class="stack-badge">Python</span>
+              <span class="stack-badge">Pandas</span>
+              <span class="stack-badge">NumPy</span>
+              <span class="stack-badge">Scikit-learn</span>
+              <span class="stack-badge">SQL</span>
+              <span class="stack-badge">Power BI</span>
+              <span class="stack-badge">Snowflake</span>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat-item">
+              <div>
+                <div class="stat-num">+20.000</div>
+                <div class="stat-label">Estudiantes en la comunidad Henry</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div>
+                <div class="stat-num">8 meses</div>
+                <div class="stat-label">Part time, +15hs semanales</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div>
+                <div class="stat-num">1 semana</div>
+                <div class="stat-label">De prueba o te devolvemos el dinero</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <div class="proof-stars">★★★★★</div>
+          <p>"Henry me dio las herramientas y la confianza para dar un giro a mi carrera. En menos de un año pasé de no saber programar a tener el trabajo de mis sueños."</p>
+          <div class="proof-author">
+            <div class="proof-avatar">AP</div>
+            <div>
+              <div class="proof-name">Alberto Perrone</div>
+              <div class="proof-role">Data Scientist · Globant</div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-stars">★★★★★</div>
+          <p>"De Henry destaco cómo crean comunidad. Un espacio para seguir aprendiendo, resolver y avanzar mucho más rápido."</p>
+          <div class="proof-author">
+            <div class="proof-avatar">DM</div>
+            <div>
+              <div class="proof-name">Darwin Moreno</div>
+              <div class="proof-role">Data Scientist · MaterCell</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
