@@ -581,11 +581,12 @@
 
     const MASTERCLASS = {
       // HubSpot tiene este campo registrado como tipo "Fecha" (no texto libre):
-      // necesita epoch en milisegundos a medianoche UTC, no un string ISO con hora.
-      // Un string como '2026-08-11T19:00:00-03:00' rompe la validacion de HubSpot
-      // y bloquea el envio del formulario entero, sin mostrar ningun error visible
-      // (el campo esta oculto). La hora real de la clase va en masterclass_hora (texto).
-      masterclass_fecha_evento:   String(Date.UTC(2026, 7, 11)), // 11 de agosto de 2026
+      // su validacion SOLO acepta el formato plano 'YYYY-MM-DD' (probado en vivo:
+      // ni el ISO con hora/offset ni el epoch en milisegundos pasan la validacion).
+      // Un valor invalido bloquea el envio del formulario entero, sin mostrar ningun
+      // error visible (el campo esta oculto). La hora real de la clase va aparte,
+      // en el campo de texto masterclass_hora.
+      masterclass_fecha_evento:   '2026-08-11',
 
       masterclass_nombre:         'Claude para análisis de datos',
       masterclass_fecha_larga:    'Martes 11 de agosto',
