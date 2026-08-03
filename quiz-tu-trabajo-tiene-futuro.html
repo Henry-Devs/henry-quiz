@@ -501,6 +501,8 @@
     // Evento de conversión que ya usan para este tipo de contenido (dispara los flows).
     fbEvent:     "Descarga de contenido",
     contentName: "quiz-tu-trabajo-tiene-futuro",
+    // Propiedad de contacto donde se guarda la carrera que recomendó el quiz.
+    hsCareerProperty: "career_interest",
   };
 
   // Las 4 carreras. URLs y copy tomados de las páginas oficiales de soyhenry.com.
@@ -511,6 +513,7 @@
       desc: "Automatizás procesos, diseñás flujos y creás agentes de IA con herramientas no-code y low-code. Te convertís en AI Automation Specialist, AI Agent Developer o Consultor de Automatización: el perfil que usa la IA para multiplicar su trabajo. No requiere conocimientos técnicos previos y en 2 meses armás tu portafolio de agentes.",
       url:  "https://www.soyhenry.com/carrera-ai-automation",
       skill: "la mejora de procesos",
+      hsValue: "AI Automation",
       careerId: "5ce873af-9562-4502-9b7a-4241a8d740b8",
     },
     fullstack: {
@@ -519,6 +522,7 @@
       desc: "Desarrollás aplicaciones completas de punta a punta —frontend, backend y bases de datos— con la IA integrada en tu workflow de desarrollo. Te convertís en Desarrollador Full Stack, Backend o Frontend. Podés empezar desde cero, aunque nunca hayas programado, y terminar construyendo productos reales.",
       url:  "https://www.soyhenry.com/webfullstack",
       skill: "el desarrollo de software",
+      hsValue: "Full Stack",
       careerId: "3d3f9be9-b2c5-434e-872d-b2f65ec23a86",
     },
     datascience: {
@@ -527,6 +531,7 @@
       desc: "Transformás datos en decisiones. Te convertís en Data Analyst, Data Scientist, Machine Learning Analyst o BI Analyst. Una carrera potenciada con IA, diseñada para arrancar desde cero — sin conocimientos técnicos previos.",
       url:  "https://www.soyhenry.com/carrera-data-science",
       skill: "el análisis de datos",
+      hsValue: "Data Science",
       careerId: "e99351ba-fc54-4875-a515-77ddef98cfc0",
     },
     aieng: {
@@ -535,6 +540,7 @@
       desc: "Diseñás, entrenás y desplegás modelos de IA que resuelven problemas complejos a escala. Trabajás como AI Engineer, AI Developer o AI Integrator, integrando modelos, APIs y agentes en sistemas reales. Sos quien construye la IA que hoy está transformando al resto de los trabajos.",
       url:  "https://www.soyhenry.com/carrera-ai-engineering",
       skill: "el diseño de sistemas",
+      hsValue: "AI Engineering",
       careerId: "b32d9e29-fd8b-432a-8edc-a81c3e7a04fb",
     },
   };
@@ -628,6 +634,22 @@
      ========================================================================= */
   const state = { idx: 0, answers: {}, counts: { automation:0, fullstack:0, datascience:0, aieng:0 } };
   const LETTERS = ["A","B","C","D"];
+  let leadEmail = ""; // se llena al enviar el form; lo usa sendCareerInterest()
+
+  /* Guarda la carrera que recomendó el quiz en la propiedad de contacto de HubSpot.
+     Usa el tracking code (identify + trackPageView) y NO un segundo form a propósito:
+     un form nuevo sobrescribiría recent_conversion_event_name y rompería la ramificación
+     por "¿Tu trabajo tiene futuro? — Henry: Descarga de contenido". */
+  function sendCareerInterest(career) {
+    try {
+      const props = {};
+      props[CONFIG.hsCareerProperty] = career.hsValue;
+      if (leadEmail) props.email = leadEmail;
+      window._hsq = window._hsq || [];
+      window._hsq.push(["identify", props]);
+      window._hsq.push(["trackPageView"]);
+    } catch (e) { /* nunca bloquear el resultado del quiz */ }
+  }
 
   function renderStep() {
     const wrap = document.getElementById("quiz-steps");
@@ -722,6 +744,7 @@
     document.getElementById("nav-cta").href = career.url + (params ? "?" + params : "");
 
     if (window.fbq) fbq("trackCustom", CONFIG.fbEvent + " - Resultado", { carrera: career.name });
+    sendCareerInterest(career); // escribe career_interest en el contacto de HubSpot
 
     document.getElementById("quiz-section").style.display = "none";
     const r = document.getElementById("result-section");
@@ -782,7 +805,12 @@
           });
         }, 600);
       },
-      onFormSubmit: function () {
+      onFormSubmit: function (form) {
+        // Guardamos el email para poder identificar el contacto al final del quiz.
+        try {
+          const el = form && form.querySelector ? form.querySelector('input[name="email"]') : null;
+          if (el && el.value) leadEmail = el.value.trim().toLowerCase();
+        } catch (e) { /* si no se puede leer, el hutk igual identifica al contacto */ }
         // Mismo evento de conversión que las guías ("Descarga de contenido") -> alimenta los flows.
         if (window.fbq) fbq("trackCustom", CONFIG.fbEvent, { content_name: CONFIG.contentName });
         setTimeout(startQuiz, 700);
