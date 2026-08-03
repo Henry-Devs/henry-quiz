@@ -219,24 +219,7 @@
       font-size: 2rem;
     }
     .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
-    .success-state p { font-size: 0.9rem; color: var(--gray-mid); margin-bottom: 24px; line-height: 1.6; }
-    .watch-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: var(--yellow);
-      color: var(--black);
-      font-size: 0.95rem;
-      font-weight: 800;
-      padding: 16px 32px;
-      border-radius: 10px;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: transform 0.15s, background 0.15s;
-    }
-    .watch-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+    .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
 
     /* BONUSES */
     .bonus-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 64px; }
@@ -443,11 +426,9 @@
         <p class="privacy-note">Sin spam. Tus datos están seguros.</p>
       </div>
       <div class="success-state" id="success-state">
-        <div class="success-icon">▶</div>
+        <div class="success-icon">✓</div>
         <h3>¡Listo!</h3>
-        <p>Ya podés acceder a la clase.</p>
-        <!-- TODO: reemplazar "#" por el link real de YouTube -->
-        <a href="#" class="watch-btn" target="_blank">Ver la clase →</a>
+        <p>Te registraste correctamente. Te vamos a avisar por mail antes de la clase.</p>
       </div>
     </div>
   </section>
@@ -631,6 +612,9 @@
             .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; }
           `;
           idoc.head.appendChild(style);
+
+          const btn = idoc.querySelector('input[type="submit"]');
+          if (btn) btn.value = 'Registrarme';
 
           const utmMap = {
             'ultima_fuente_utm':  utms.utm_source,
