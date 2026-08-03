@@ -580,9 +580,12 @@
     Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
 
     const MASTERCLASS = {
-      // fecha-hora de inicio, ISO 8601 con offset (-03:00 = ARG).
-      // define los tiempos de todo el flujo de emails.
-      masterclass_fecha_evento:   '2026-08-11T19:00:00-03:00',
+      // HubSpot tiene este campo registrado como tipo "Fecha" (no texto libre):
+      // necesita epoch en milisegundos a medianoche UTC, no un string ISO con hora.
+      // Un string como '2026-08-11T19:00:00-03:00' rompe la validacion de HubSpot
+      // y bloquea el envio del formulario entero, sin mostrar ningun error visible
+      // (el campo esta oculto). La hora real de la clase va en masterclass_hora (texto).
+      masterclass_fecha_evento:   String(Date.UTC(2026, 7, 11)), // 11 de agosto de 2026
 
       masterclass_nombre:         'Claude para análisis de datos',
       masterclass_fecha_larga:    'Martes 11 de agosto',
