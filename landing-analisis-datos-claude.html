@@ -579,6 +579,33 @@
     Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
     Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
 
+    const MASTERCLASS = {
+      // fecha-hora de inicio, ISO 8601 con offset (-03:00 = ARG).
+      // define los tiempos de todo el flujo de emails.
+      masterclass_fecha_evento:   '2026-08-11T19:00:00-03:00',
+
+      masterclass_nombre:         'Claude para análisis de datos',
+      masterclass_fecha_larga:    'Martes 11 de agosto',
+      masterclass_hora:           '19hs ARG 🇦🇷 / 16hs MX 🇲🇽 / 17hs COL 🇨🇴',
+
+      masterclass_speaker_nombre: 'Raúl Montesinos',
+      masterclass_speaker_bio:    'CRM Manager en Nespresso y creador de contenido de datos en TikTok @raulmontesin',
+
+      masterclass_tema_1:         'Limpieza de datos sin edición manual fila por fila',
+      masterclass_tema_2:         'Análisis exploratorio (EDA): patrones, outliers y relaciones clave',
+      masterclass_tema_3:         'Creación de reportes en HTML compartibles',
+
+      masterclass_youtube_link:   'https://www.youtube.com/watch?v=tW0LkbBrRP0',
+      masterclass_carrera:        'Data Science',
+
+      // dates = UTC en formato YYYYMMDDTHHMMSSZ. 19hs ARG = 22:00 UTC.
+      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('Masterclass: Claude para análisis de datos')
+        + '&dates=20260811T220000Z/20260811T230000Z'
+        + '&details=' + encodeURIComponent('Masterclass en vivo de Henry con Raúl Montesinos.')
+        + '&location=Online',
+    };
+
     hbspt.forms.create({
       region: "na1",
       portalId: "19612811",
@@ -611,8 +638,15 @@
             'utm_content':        utms.utm_content,
             'utm_term':           utms.utm_term,
           };
+
+          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
+
           idoc.querySelectorAll('input').forEach(input => {
-            if (utmMap[input.name] !== undefined) input.value = utmMap[input.name];
+            if (fieldMap[input.name] !== undefined) {
+              input.value = fieldMap[input.name];
+              input.dispatchEvent(new Event('input',  { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
           });
         }, 600);
       },
