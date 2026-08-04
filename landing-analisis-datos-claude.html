@@ -421,7 +421,7 @@
         <span class="free-badge">100% gratis</span>
         <h2>Anótate a la clase</h2>
         <p class="form-sub">Completa tus datos para reservar tu lugar.</p>
-        <p class="event-compact-facts">Martes 11 de agosto · 19hs ARG / 16hs MX / 17hs COL · Online, en vivo</p>
+        <p class="event-compact-facts">Martes 11 de agosto · 21hs ARG / 18hs MX / 19hs COL · Online, en vivo</p>
         <div id="hs-form-container"></div>
         <p class="privacy-note">Sin spam. Tus datos están seguros.</p>
       </div>
@@ -564,11 +564,11 @@
       // Este campo en HubSpot es de tipo texto (antes era selector de fecha, que
       // descartaba la hora). Se manda como timestamp en milisegundos: escribi la
       // fecha/hora legible adentro de new Date(...) y el .getTime() la convierte.
-      masterclass_fecha_evento:   String(new Date('2026-08-11T19:00:00-03:00').getTime()),
+      masterclass_fecha_evento:   String(new Date('2026-08-11T21:00:00-03:00').getTime()),
 
       masterclass_nombre:         'Claude para análisis de datos',
       masterclass_fecha_larga:    'Martes 11 de agosto',
-      masterclass_hora:           '19hs ARG 🇦🇷 / 16hs MX 🇲🇽 / 17hs COL 🇨🇴',
+      masterclass_hora:           '21hs ARG 🇦🇷 / 18hs MX 🇲🇽 / 19hs COL 🇨🇴',
 
       masterclass_speaker_nombre: 'Raúl Montesinos',
       masterclass_speaker_bio:    'CRM Manager en Nespresso y creador de contenido de datos en TikTok @raulmontesin',
@@ -580,10 +580,10 @@
       masterclass_youtube_link:   'https://www.youtube.com/watch?v=tW0LkbBrRP0',
       masterclass_carrera:        'Data Science',
 
-      // dates = UTC en formato YYYYMMDDTHHMMSSZ. 19hs ARG = 22:00 UTC.
+      // dates = UTC en formato YYYYMMDDTHHMMSSZ. 21hs ARG = 00:00 UTC del dia siguiente.
       masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
         + '&text=' + encodeURIComponent('Masterclass: Claude para análisis de datos')
-        + '&dates=20260811T220000Z/20260811T230000Z'
+        + '&dates=20260812T000000Z/20260812T010000Z'
         + '&details=' + encodeURIComponent('Masterclass en vivo de Henry con Raúl Montesinos.')
         + '&location=Online',
     };
