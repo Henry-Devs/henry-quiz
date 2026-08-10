@@ -203,14 +203,13 @@
       font-size: 1rem; font-weight: 700; line-height: 1.55; color: var(--black);
       border-left: 4px solid var(--yellow); padding-left: 18px; margin-bottom: 28px;
     }
-    .discount-box {
-      display: flex; align-items: center; gap: 20px; background: #fffde7;
+    .advisor-box {
+      display: flex; align-items: center; gap: 18px; background: #fffde7;
       border: 1.5px dashed var(--yellow-dark); border-radius: 14px; padding: 22px 24px; margin-bottom: 30px;
     }
-    .discount-pct { font-size: 2.6rem; font-weight: 900; letter-spacing: -2px; color: var(--black); line-height: 1; }
-    .discount-copy { font-size: 0.9rem; color: var(--gray-dark); line-height: 1.5; }
-    .discount-copy strong { color: var(--black); }
-    .discount-code { display: inline-block; margin-top: 6px; background: var(--black); color: var(--white); font-weight: 800; letter-spacing: 1px; padding: 4px 12px; border-radius: 6px; font-size: 0.85rem; }
+    .advisor-icon { font-size: 1.9rem; line-height: 1; flex-shrink: 0; }
+    .advisor-copy { font-size: 1rem; color: var(--gray-dark); line-height: 1.55; }
+    .advisor-copy strong { color: var(--black); }
     .result-actions { display: flex; flex-direction: column; gap: 12px; }
     .btn-primary, .btn-secondary {
       display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.98rem;
@@ -295,7 +294,7 @@
       .form-card { position: static; }
       .companies-strip { padding: 40px 24px; }
       footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
-      .discount-box { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .advisor-box { flex-direction: column; align-items: flex-start; gap: 12px; }
       .result-head, .result-body { padding-left: 24px; padding-right: 24px; }
       .band { padding: 52px 24px; }
       .stats, .points { grid-template-columns: 1fr; }
@@ -444,17 +443,15 @@
       <div class="result-body">
         <p class="result-desc" id="r-desc"></p>
         <p class="result-stat" id="r-stat"></p>
-        <div class="discount-box">
-          <div class="discount-pct" id="r-pct">30%</div>
-          <div class="discount-copy">
-            <strong>OFF para empezar esta carrera.</strong><br>
-            Usá este cupón al inscribirte:
-            <span class="discount-code" id="r-code">FUTURO30</span>
-          </div>
+        <div class="advisor-box">
+          <span class="advisor-icon">🎁</span>
+          <p class="advisor-copy">
+            Hablá con un asesor y accedé a un <strong>descuento exclusivo para vos</strong>.
+          </p>
         </div>
         <div class="result-actions">
-          <a class="btn-primary" id="r-cta" href="#" target="_blank">Inscribirme con 30% OFF →</a>
-          <a class="btn-secondary" id="r-call" href="#" target="_blank">Agendar una llamada</a>
+          <a class="btn-primary" id="r-call" href="#" target="_blank">Agendar llamada</a>
+          <a class="btn-secondary" id="r-wa" href="#" target="_blank">Hablá por WhatsApp con nosotros</a>
         </div>
       </div>
     </div>
@@ -496,8 +493,8 @@
     //   "¿Tu trabajo tiene futuro? — Henry: Descarga de contenido"
     // Campos: Correo / Nombre / Apellidos / Teléfono (obligatorios) + ocultos UTM.
     hsFormId:   "ce8f2a08-f13f-41a7-a27e-9e57a5ffee61",
-    discount:   "30%",
-    coupon:     "FUTURO30",
+    // El descuento ya NO es self-serve: no se muestra % ni cupón en el resultado.
+    // La oferta se entrega en la conversación (llamada o WhatsApp).
     // Evento de conversión que ya usan para este tipo de contenido (dispara los flows).
     fbEvent:     "Descarga de contenido",
     contentName: "quiz-tu-trabajo-tiene-futuro",
@@ -549,6 +546,11 @@
   const APP_REGISTER_BASE = "https://www.auth.soyhenry.com/register";
   const APP_REDIRECT_BASE = "https://www.app.soyhenry.com/redirects/landing/?to=";
   const CALL_URL = "https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g";
+  // WhatsApp de Henry (el mismo que usan los creativos del motor). El texto pre-cargado
+  // es lo ÚNICO que permite atribuir el click-to-WhatsApp: HubSpot no expone el referral,
+  // así que si se cambia, se pierde la trazabilidad de que el lead vino del quiz.
+  const WA_NUMBER = "18632709976";
+  const WA_TEXT = "¡Hola! Hice el quiz \"¿Tu trabajo tiene futuro?\" y quiero saber más sobre el descuento.";
 
   // Arma el link de registro de la app con nuestras UTMs + el career_id de la carrera.
   function appRegisterUrl(careerId) {
@@ -734,13 +736,13 @@
     // Cierre del argumento: prima salarial (PwC 2025) atada al perfil que le salió.
     document.getElementById("r-stat").textContent =
       `Quienes combinan habilidades de IA con ${career.skill} ganan en promedio 56% más. Esta es la carrera que te lleva ahí.`;
-    document.getElementById("r-pct").textContent = CONFIG.discount;
-    document.getElementById("r-code").textContent = CONFIG.coupon;
 
     const params = utmQueryString();
-    document.getElementById("r-cta").href = appRegisterUrl(career.careerId);
-    document.getElementById("r-cta").textContent = `Inscribirme a ${career.name} con ${CONFIG.discount} OFF →`;
+    // CTA 1: agendar llamada (form de HubSpot, con las UTMs con las que llegó la persona).
     document.getElementById("r-call").href = CALL_URL + (params ? "?" + params : "");
+    // CTA 2: WhatsApp con texto pre-cargado (única forma de atribuir el click-to-WA).
+    document.getElementById("r-wa").href =
+      `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT)}`;
     document.getElementById("nav-cta").href = career.url + (params ? "?" + params : "");
 
     if (window.fbq) fbq("trackCustom", CONFIG.fbEvent + " - Resultado", { carrera: career.name });
