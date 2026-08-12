@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>De análisis a Machine Learning — Henry</title>
+  <title>Curso gratis: Data Science desde cero en 2 clases | Henry</title>
+  <meta name="description" content="Curso introductorio de Data Science en vivo y gratis, 17 y 18 de agosto: limpia un archivo real, sácale respuestas y entrena tu primer modelo de Machine Learning. Sin experiencia previa." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="henry-favicon.png" />
   <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Data Science desde cero: del análisis de datos a Machine Learning" />
+  <meta property="og:description" content="Curso introductorio en vivo y gratis, 17 y 18 de agosto. Dos clases para pasar de un archivo desordenado a tu primer modelo que predice." />
   <meta property="og:image" content="https://usuario-ai.github.io/henry-quiz/henry-favicon.png" />
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
   <style>
@@ -44,18 +47,6 @@
       top: 0;
       z-index: 100;
     }
-    .nav-link {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--gray-dark);
-      text-decoration: none;
-      padding: 7px 16px;
-      border-radius: 8px;
-      border: 1.5px solid var(--border);
-      transition: background 0.15s, border-color 0.15s;
-    }
-    .nav-link:hover { background: var(--gray-light); border-color: var(--black); }
-
     /* HERO */
     .hero {
       display: grid;
@@ -77,13 +68,21 @@
     }
     .badge.primary { background: var(--yellow); color: var(--black); }
     .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    .badge.lg { font-size: 0.82rem; padding: 8px 20px; letter-spacing: 0.4px; }
     h1 {
       font-size: clamp(1.8rem, 3vw, 2.5rem);
       font-weight: 900;
       line-height: 1.1;
       letter-spacing: -1.5px;
       color: var(--black);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--gray-dark);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 520px;
     }
     .value-bullets { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
     .value-item {
@@ -130,19 +129,8 @@
     }
     .class-title { font-size: 1rem; font-weight: 800; color: var(--black); line-height: 1.25; margin-bottom: 4px; }
     .class-topic { font-size: 0.8rem; color: var(--gray-mid); font-weight: 600; margin-bottom: 14px; }
-    .class-meta { display: flex; flex-direction: column; gap: 7px; font-size: 0.8rem; color: var(--gray-dark); margin-bottom: 14px; }
+    .class-meta { display: flex; flex-direction: column; gap: 7px; font-size: 0.8rem; color: var(--gray-dark); }
     .class-meta strong { color: var(--black); }
-    .class-takeaway { font-size: 0.78rem; font-weight: 700; color: var(--black); border-top: 1px solid var(--border); padding-top: 12px; }
-
-    /* SPEAKER */
-    .speaker-card {
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      padding: 24px 28px;
-      background: var(--white);
-    }
-    .speaker-name { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.5px; color: var(--black); }
-    .speaker-role { font-size: 0.82rem; color: var(--gray-mid); font-weight: 600; margin-top: 2px; }
 
     /* EVENT / FORM CARD */
     .form-card {
@@ -228,6 +216,7 @@
     }
     .bonus-card p { font-size: 0.84rem; font-weight: 600; color: var(--black); line-height: 1.4; }
     .bonus-cta-wrap { text-align: center; }
+    .why-cta-wrap { text-align: center; margin-top: 40px; }
     .cta-btn {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--yellow); color: var(--black); font-size: 0.95rem;
@@ -335,23 +324,27 @@
         <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
       </svg>
     </a>
-    <a class="nav-link" id="nav-cta" href="https://www.soyhenry.com/carrera-data-science?utm_source=instagram&utm_medium=organic&utm_campaign=analisis-a-ml" target="_blank">Ver carrera</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
       <div class="badge-row">
-        <span class="badge primary">Curso en vivo gratuito</span>
-        <span class="badge outline">2 clases · 45 min c/u</span>
-        <span class="badge outline">Con Andrés Agualdo</span>
+        <span class="badge primary lg">Curso introductorio en vivo</span>
+        <span class="badge outline">Gratuito</span>
+        <span class="badge outline">2 clases</span>
       </div>
-      <h1>De análisis a Machine Learning</h1>
+      <h1>Data Science desde cero: del análisis de datos a Machine Learning</h1>
+
+      <p class="hero-desc">
+        Todos los días se toman decisiones con datos que nadie ordenó. En dos clases en vivo vas a
+        limpiar un archivo real, sacarle respuestas claras y entrenar tu primer modelo que predice.
+      </p>
 
       <div class="value-bullets">
-        <div class="value-item"><span class="value-dash"></span>Curso introductorio de Data Science, sin experiencia previa ni instalar nada</div>
-        <div class="value-item"><span class="value-dash"></span>Es una demostración en vivo con Claude, no un taller: miras y aprendes el proceso completo</div>
-        <div class="value-item"><span class="value-dash"></span>Un solo momento práctico por clase, de 5 minutos: copias y pegas un prompt</div>
+        <div class="value-item"><span class="value-dash"></span>No necesitas experiencia técnica previa ni instalar nada</div>
+        <div class="value-item"><span class="value-dash"></span>Aprende a ordenar datos desordenados y a hacerles las preguntas correctas</div>
+        <div class="value-item"><span class="value-dash"></span>Entrena tu primer modelo de Machine Learning sin escribir código</div>
         <div class="value-item"><span class="value-dash"></span>Te llevas el archivo, el modelo y los prompts para repetirlo solo cuando quieras</div>
       </div>
 
@@ -362,29 +355,21 @@
           <div class="class-title">De un archivo caótico a respuestas claras</div>
           <div class="class-topic">Limpieza y análisis de datos</div>
           <div class="class-meta">
-            <div><strong>Dataset:</strong> Salarios tech LATAM, crudo</div>
-            <div><strong>Se nombra en pantalla:</strong> Python · Pandas</div>
-            <div><strong>Hands-on:</strong> generas tu propio informe</div>
+            <div><strong>Los datos:</strong> sueldos reales del sector tech en LATAM, tal como vienen</div>
+            <div><strong>Herramientas:</strong> Python · Pandas</div>
+            <div><strong>Hands-on:</strong> armas tu informe</div>
           </div>
-          <div class="class-takeaway">Te llevas: archivo limpio + informe + prompts</div>
         </div>
         <div class="class-card">
           <span class="class-tag">Clase 2 · Martes 18 de agosto</span>
-          <div class="class-title">Tu primer modelo de Machine Learning (sin escribir código)</div>
+          <div class="class-title">Tu primer modelo de Machine Learning, sin escribir código</div>
           <div class="class-topic">Machine Learning: predecir</div>
           <div class="class-meta">
-            <div><strong>Dataset:</strong> el mismo, ya limpio en la Clase 1</div>
-            <div><strong>Se nombra en pantalla:</strong> Machine Learning · Scikit-learn</div>
-            <div><strong>Hands-on:</strong> predices tu propio salario</div>
+            <div><strong>Los datos:</strong> los mismos, ya ordenados en la Clase 1</div>
+            <div><strong>Herramientas:</strong> Scikit-learn</div>
+            <div><strong>Hands-on:</strong> predices tu sueldo</div>
           </div>
-          <div class="class-takeaway">Te llevas: tu predicción + el modelo + prompts</div>
         </div>
-      </div>
-
-      <p class="section-label">Speaker</p>
-      <div class="speaker-card">
-        <h3 class="speaker-name">Andrés Agualdo</h3>
-        <div class="speaker-role">Data Scientist e instructor en Henry</div>
       </div>
     </div>
 
@@ -498,6 +483,10 @@
           </div>
         </div>
       </div>
+
+      <div class="why-cta-wrap">
+        <a href="#hs-form-container" class="cta-btn">Quiero mi lugar en el curso →</a>
+      </div>
     </div>
   </section>
 
@@ -547,9 +536,9 @@
       masterclass_speaker_nombre: 'Andrés Agualdo',
       masterclass_speaker_bio:    'Data Scientist e instructor en Henry',
 
-      masterclass_tema_1:         'Limpieza y análisis de datos con Claude (Clase 1)',
+      masterclass_tema_1:         'Limpieza y análisis de datos (Clase 1)',
       masterclass_tema_2:         'Tu primer modelo de Machine Learning, sin código (Clase 2)',
-      masterclass_tema_3:         'Predice tu propio salario y qué variables pesan más',
+      masterclass_tema_3:         'Predice tu sueldo y descubre qué variables pesan más',
 
       masterclass_youtube_link:   '',
       masterclass_carrera:        'Data Science',
@@ -558,7 +547,7 @@
       masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
         + '&text=' + encodeURIComponent('Clase 1: De un archivo caótico a respuestas claras')
         + '&dates=20260818T000000Z/20260818T010000Z'
-        + '&details=' + encodeURIComponent('Curso introductorio de Data Science con Andrés Agualdo. Clase 1 de 2.')
+        + '&details=' + encodeURIComponent('Curso introductorio de Data Science de Henry. Clase 1 de 2.')
         + '&location=Online',
     };
 
