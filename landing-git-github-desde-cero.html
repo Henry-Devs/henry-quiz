@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Masterclass gratis: Git y GitHub desde cero 2026 | Henry</title>
+  <title>Masterclass gratis: Git y GitHub desde cero | Henry</title>
   <meta name="description" content="Masterclass en vivo y gratis el 25/8: aprende Git y GitHub desde cero y sube tu primer proyecto a internet en 1 hora. Sin experiencia previa. Reserva tu lugar." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,8 +32,7 @@
     },
     "description": "Masterclass en vivo y gratis. Git y GitHub desde cero: creamos un proyecto, lo subimos a GitHub y lo publicamos en internet.",
     "isAccessibleForFree": true,
-    "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" },
-    "performer": { "@type": "Person", "name": "Camilo" }
+    "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" }
   }
   </script>
 
@@ -181,29 +180,12 @@
     .tool-name { font-size: 0.92rem; font-weight: 700; color: var(--black); line-height: 1.3; }
 
     /* PARA QUIEN ES */
-    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
-    .fit-card { border: 1.5px solid var(--border); border-radius: 14px; padding: 20px 22px; }
-    .fit-card.yes { border-color: var(--black); }
+    .fit-card { border: 1.5px solid var(--black); border-radius: 14px; padding: 20px 22px; margin-bottom: 32px; }
     .fit-label {
       font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
-      letter-spacing: 0.8px; margin-bottom: 10px;
+      letter-spacing: 0.8px; margin-bottom: 10px; color: var(--black);
     }
-    .fit-card.yes .fit-label { color: var(--black); }
-    .fit-card.no .fit-label { color: var(--gray-mid); }
     .fit-card p { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.55; font-weight: 500; }
-
-    /* SPEAKER */
-    .speaker-card {
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      padding: 26px 28px;
-      background: var(--white);
-      margin-bottom: 32px;
-    }
-    .speaker-name { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.5px; color: var(--black); }
-    .speaker-role { font-size: 0.82rem; color: var(--gray-mid); font-weight: 600; margin-top: 2px; margin-bottom: 16px; }
-    .speaker-bullets { display: flex; flex-direction: column; gap: 10px; }
-    .speaker-bullets .value-item { font-size: 0.85rem; font-weight: 500; color: var(--gray-dark); }
 
     /* FAQ */
     .faq-list { display: flex; flex-direction: column; gap: 0; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -296,6 +278,7 @@
     }
     .bonus-card p { font-size: 0.84rem; font-weight: 600; color: var(--black); line-height: 1.4; }
     .bonus-cta-wrap { text-align: center; }
+    .inline-cta-wrap { text-align: center; margin-top: 32px; }
     .cta-btn {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--yellow); color: var(--black); font-size: 0.95rem;
@@ -355,7 +338,6 @@
       nav { padding: 14px 20px; }
       .hero { grid-template-columns: 1fr; padding: 36px 24px 56px; gap: 40px; }
       .form-card { position: static; }
-      .fit-grid { grid-template-columns: 1fr; }
       .bonus-grid { grid-template-columns: repeat(2, 1fr); }
       .bonus-section { padding: 8px 24px 48px; }
       .why-section { padding: 44px 24px; }
@@ -389,26 +371,25 @@
         <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
       </svg>
     </a>
-    <a class="nav-link" id="nav-cta" href="https://www.soyhenry.com/webfullstack" target="_blank">Ver carrera</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
       <div class="badge-row">
-        <span class="badge primary">Masterclass en vivo · Gratis</span>
-        <span class="badge outline">60 minutos</span>
-        <span class="badge outline">Con Camilo</span>
+        <span class="badge primary">Masterclass en vivo</span>
+        <span class="badge outline">Gratuita</span>
+        <span class="badge outline">1 hora</span>
       </div>
-      <h1>Git y GitHub desde cero 2026: sube tu primer proyecto en 1 hora</h1>
+      <h1>Git y GitHub desde cero: sube tu primer proyecto en 1 hora</h1>
 
       <p class="hero-desc">
-        Una hora en vivo, sin experiencia previa. Terminamos la clase con un proyecto subido a
-        GitHub y publicado en internet, con un link que puedes compartir.
+        Todos hablan de GitHub, pero nadie te dice por dónde empezar. Aprende las bases de Git y
+        GitHub y llévate tu primer proyecto publicado en internet, con un link que puedes compartir.
       </p>
 
       <div class="value-bullets">
-        <div class="value-item"><span class="value-dash"></span>Aprende Git y GitHub, y entiende de una vez en qué se diferencian</div>
+        <div class="value-item"><span class="value-dash"></span>Sin necesidad de conocimientos técnicos previos</div>
         <div class="value-item"><span class="value-dash"></span>Control de versiones para cualquier proyecto, no solo para programar</div>
         <div class="value-item"><span class="value-dash"></span>Sin instalar nada de antemano: arrancamos de cero, en vivo</div>
         <div class="value-item"><span class="value-dash"></span>Te llevas un link propio con tu proyecto publicado</div>
@@ -443,28 +424,9 @@
       </div>
 
       <p class="section-label">Para quién es</p>
-      <div class="fit-grid">
-        <div class="fit-card yes">
-          <div class="fit-label">✓ Es para ti si</div>
-          <p>Estás empezando en tecnología, no sabes programar todavía, o manejas proyectos y nunca usaste control de versiones.</p>
-        </div>
-        <div class="fit-card no">
-          <div class="fit-label">✕ No es para ti si</div>
-          <p>Ya trabajas con Git todos los días. Esta clase arranca de cero.</p>
-        </div>
-      </div>
-
-      <p class="section-label">Instructor</p>
-      <div class="speaker-card">
-        <div>
-          <h3 class="speaker-name">Camilo</h3>
-          <div class="speaker-role">Instructor de Henry</div>
-        </div>
-        <div class="speaker-bullets">
-          <div class="value-item"><span class="value-dash"></span>Enseña desarrollo en Henry y acompaña a estudiantes que arrancan desde cero</div>
-          <div class="value-item"><span class="value-dash"></span>Trabaja Git y GitHub como herramienta de gestión de proyectos, no solo de código</div>
-          <div class="value-item"><span class="value-dash"></span>La clase es una demostración en vivo: construimos, publicamos y lo vemos funcionando</div>
-        </div>
+      <div class="fit-card yes">
+        <div class="fit-label">✓ Es para ti si</div>
+        <p>Quieres guardar y ordenar tus proyectos, o escuchaste hablar de Git y GitHub y nunca tuviste claro cuál es cuál. Arrancamos de cero.</p>
       </div>
 
       <p class="section-label">Preguntas frecuentes</p>
@@ -485,6 +447,10 @@
           <div class="faq-q">¿Sirve si no me dedico al desarrollo?</div>
           <div class="faq-a">Sí. Cualquier proyecto con versiones —documentación, análisis de datos, automatizaciones— se versiona y se comparte igual.</div>
         </div>
+      </div>
+
+      <div class="inline-cta-wrap">
+        <a href="#hs-form-container" class="cta-btn">Registrarme gratis →</a>
       </div>
     </div>
 
@@ -577,7 +543,7 @@
       </div>
 
       <div class="why-cta-wrap">
-        <a class="cta-btn" id="career-cta" href="https://www.soyhenry.com/webfullstack" target="_blank">Aprende a construir aplicaciones con IA en la Carrera Full Stack AI de Henry →</a>
+        <a href="#hs-form-container" class="cta-btn">Quiero mi lugar en la masterclass →</a>
       </div>
     </div>
   </section>
@@ -615,20 +581,6 @@
     Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
     Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
 
-    // Los links a la carrera arrastran las UTMs de la visita. Sin UTMs en la URL
-    // van a la URL base sin parametros (sin fallbacks hardcodeados).
-    window.addEventListener('load', function () {
-      const qs = Object.entries(utms)
-        .filter(([, v]) => v)
-        .map(([k, v]) => k + '=' + encodeURIComponent(v))
-        .join('&');
-      if (!qs) return;
-      ['nav-cta', 'career-cta'].forEach(function (id) {
-        const el = document.getElementById(id);
-        if (el) el.href = 'https://www.soyhenry.com/webfullstack?' + qs;
-      });
-    });
-
     const MASTERCLASS = {
       // Este campo en HubSpot es de tipo texto (antes era selector de fecha, que
       // descartaba la hora). Se manda como timestamp en milisegundos: escribi la
@@ -655,7 +607,7 @@
       masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
         + '&text=' + encodeURIComponent('Masterclass: Git y GitHub desde cero')
         + '&dates=20260825T233000Z/20260826T003000Z'
-        + '&details=' + encodeURIComponent('Masterclass en vivo y gratis de Henry con Camilo. Subimos un proyecto a GitHub y lo publicamos en internet.')
+        + '&details=' + encodeURIComponent('Masterclass en vivo y gratis de Henry. Subimos un proyecto a GitHub y lo publicamos en internet.')
         + '&location=Online',
     };
 
