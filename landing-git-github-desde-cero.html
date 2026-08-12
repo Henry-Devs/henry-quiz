@@ -577,12 +577,28 @@
     Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
 
     const MASTERCLASS = {
-      // Este campo en HubSpot es de tipo texto (antes era selector de fecha, que
-      // descartaba la hora). Se manda como timestamp en milisegundos: escribi la
-      // fecha/hora legible adentro de new Date(...) y el .getTime() la convierte.
-      // 🛑 Es el ancla del flow 1861306136 (los 5 mails del evento). Si no se
-      // setea, el inscripto no recibe NI la confirmacion NI la oferta del 30% OFF.
-      masterclass_fecha_evento:   String(new Date('2026-08-25T20:30:00-03:00').getTime()),
+      // 🛑 ANCLA del flow 1861306136 (los 5 mails del evento). Si no se setea, el
+      // inscripto no recibe NI la confirmacion NI la oferta del 30% OFF.
+      //
+      // OJO: la propiedad en HubSpot es type=datetime / fieldType=date -> NO guarda
+      // la hora, guarda MEDIANOCHE UTC. Y el flow calcula los delays sobre ese valor
+      // (-1d 10:00 / +0 / +2h / +1d 10:00). Por eso el ancla NO es la hora real del
+      // evento: es un reloj para el flow, y tiene que ser medianoche UTC exacta.
+      //
+      // La clase es el 25/8 a las 20:30 ARG = 23:30 UTC, que NO es medianoche: si se
+      // mandara ese instante, HubSpot lo redondearia a 2026-08-25T00:00Z = 24/8 21:00
+      // ARG y todos los mails saldrian ~1 dia antes (el 30% OFF, ~21h ANTES de la
+      // clase). Las masterclass anteriores no tuvieron el problema porque fueron a las
+      // 21:00 ARG, que cae exacto en medianoche UTC.
+      //
+      // Se ancla entonces a 2026-08-26T00:00Z = 25/8 21:00 ARG, 30 min despues del
+      // arranque: es medianoche UTC exacta (asi que truncar es un no-op y el valor
+      // guardado es el mismo pase lo que pase) y reproduce la misma cadencia relativa
+      // que las clases que funcionaron.
+      //
+      // Lo que la persona LEE no sale de aca, sale de masterclass_fecha_larga y
+      // masterclass_hora, que si dicen la hora real (25/8, 20:30 ARG).
+      masterclass_fecha_evento:   String(new Date('2026-08-26T00:00:00Z').getTime()),
 
       masterclass_nombre:         'Git y GitHub desde cero',
       masterclass_fecha_larga:    'Martes 25 de agosto',
@@ -595,7 +611,7 @@
       masterclass_tema_2:         'Tu primer repositorio y los tres comandos que se usan el 90% del tiempo',
       masterclass_tema_3:         'Publica tu proyecto en la nube y compártelo con un link',
 
-      masterclass_youtube_link:   '',
+      masterclass_youtube_link:   'https://www.youtube.com/watch?v=t2PV51gas6I',
       masterclass_carrera:        'Full Stack AI',
 
       // dates = UTC en formato YYYYMMDDTHHMMSSZ. 20:30 ARG = 23:30 UTC del mismo dia.
