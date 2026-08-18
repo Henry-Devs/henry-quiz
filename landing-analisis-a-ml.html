@@ -284,6 +284,57 @@
     footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
     .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
 
+
+    /* ===== CAMPANA "TU TRABAJO TIENE FUTURO" =====
+       Argumento y numeros tomados de quiz-tu-trabajo-tiene-futuro.html para que
+       los eventos en vivo pertenezcan a la misma campana. Copy pasado a espanol
+       neutro (el quiz esta en voseo; estas landings listan MX y COL primero). */
+    .kicker {
+      font-size: 0.9rem; font-weight: 800; color: var(--gray-dark);
+      line-height: 1.45; margin-bottom: 14px; max-width: 520px;
+    }
+    .kicker em { font-style: normal; background: var(--yellow); padding: 0 4px; }
+    .camp-band {
+      background: var(--black); color: var(--white);
+      border-radius: 18px; padding: 40px; margin-bottom: 40px;
+    }
+    .camp-band h3 {
+      font-size: clamp(1.3rem, 2.4vw, 1.9rem); font-weight: 900;
+      letter-spacing: -0.8px; line-height: 1.15; margin-bottom: 14px;
+    }
+    .camp-band h3 em { font-style: normal; color: var(--yellow); }
+    .camp-band > p { font-size: 0.95rem; line-height: 1.65; color: #d8d8d8; max-width: 700px; }
+    .camp-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: 28px; padding-top: 26px; border-top: 1px solid #333;
+    }
+    .camp-stat .camp-num {
+      font-size: 1.9rem; font-weight: 900; color: var(--yellow);
+      letter-spacing: -1px; line-height: 1; margin-bottom: 8px;
+    }
+    .camp-stat p { font-size: 0.82rem; line-height: 1.45; color: #c4c4c4; }
+    .camp-src { font-size: 0.7rem; color: var(--gray-mid); margin-top: 22px; }
+    .camp-latam {
+      border: 1.5px solid var(--border); border-left: 4px solid var(--yellow);
+      border-radius: 12px; background: var(--white);
+      padding: 24px 26px; margin-bottom: 40px;
+    }
+    .camp-latam h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; }
+    .camp-latam p { font-size: 0.9rem; line-height: 1.6; color: var(--gray-dark); }
+    .camp-latam-nums { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 18px; }
+    .camp-latam-nums div { max-width: 260px; }
+    .camp-latam-nums .camp-num { font-size: 1.4rem; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 4px; }
+    .camp-tag {
+      display: inline-block; background: var(--yellow); color: var(--black);
+      font-size: 0.68rem; font-weight: 800; padding: 5px 12px; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .camp-band { padding: 28px 22px; border-radius: 14px; }
+      .camp-stats { grid-template-columns: 1fr; gap: 20px; }
+      .camp-latam-nums { flex-direction: column; gap: 18px; }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 14px 20px; }
@@ -334,6 +385,7 @@
         <span class="badge outline">Gratuito</span>
         <span class="badge outline">2 clases</span>
       </div>
+      <p class="kicker">La IA no te está sacando el lugar: <em>te está subiendo la vara.</em></p>
       <h1>Data Science desde cero: del análisis de datos a Machine Learning</h1>
 
       <p class="hero-desc">
@@ -380,7 +432,7 @@
         <span class="free-badge">100% gratis</span>
         <h2>Anótate al curso</h2>
         <p class="form-sub">Completa tus datos para reservar tu lugar en las 2 clases.</p>
-        <p class="event-compact-facts">Clase 1: lunes 17 de agosto · Clase 2: martes 18 de agosto<br>21hs ARG / 18hs MX / 19hs COL · Online, en vivo</p>
+        <p class="event-compact-facts">Clase 1: lunes 17 de agosto · Clase 2: martes 18 de agosto<br>18hs MX / 19hs COL / 21hs ARG · Online, en vivo</p>
         <div id="hs-form-container"></div>
         <p class="privacy-note">Sin spam. Tus datos están seguros.</p>
       </div>
@@ -396,7 +448,7 @@
   <section class="bonus-section">
     <h2 class="bonus-title">Al terminar te llevas</h2>
     <div class="bonus-grid">
-      <div class="bonus-card"><div class="bonus-num">01</div><p>Un quiz de carrera personalizado</p></div>
+      <div class="bonus-card"><div class="bonus-num">01</div><p>El archivo, el modelo y los prompts de las 2 clases</p></div>
       <div class="bonus-card"><div class="bonus-num">02</div><p>Un certificado para comunicar en LinkedIn</p></div>
       <div class="bonus-card"><div class="bonus-num">03</div><p>Una sesión gratuita con un asesor de carrera</p></div>
       <div class="bonus-card"><div class="bonus-num">04</div><p>Un descuento exclusivo para asistentes</p></div>
@@ -409,9 +461,34 @@
   <!-- WHY DATA SCIENCE -->
   <section class="why-section">
     <div class="why-inner">
+      <div class="camp-band">
+        <h3>La IA no te está sacando el lugar. <em>Te está subiendo la vara.</em></h3>
+        <p>Quienes ya usan IA en su trabajo ganan hasta 56% más, y los sueldos crecen el doble de
+        rápido en las industrias donde más se usa. La brecha no es entre humanos e IA: es entre
+        quién se sube ahora y quién se queda mirando.</p>
+        <div class="camp-stats">
+          <div class="camp-stat"><div class="camp-num">56%</div><p>más de sueldo, en promedio, para quienes tienen habilidades de IA</p></div>
+          <div class="camp-stat"><div class="camp-num">x4</div><p>crecimiento de productividad en las industrias que más adoptan IA</p></div>
+          <div class="camp-stat"><div class="camp-num">50%</div><p>de las búsquedas de empleo tech ya piden habilidades de IA</p></div>
+        </div>
+        <p class="camp-src">Fuentes: PwC Global AI Jobs Barometer 2025 · Dice Tech Job Report (sept. 2025)</p>
+      </div>
+
+      <div class="camp-latam">
+        <h3>En LATAM todavía estás a tiempo</h3>
+        <p>La región adopta IA más rápido que el resto del mundo, pero le faltan miles de personas
+        formadas para sostener esa demanda. Esa brecha, hoy, es tu ventaja.</p>
+        <div class="camp-latam-nums">
+          <div><div class="camp-num">47%</div><p>de adopción de IA en LATAM, por encima del promedio global</p></div>
+          <div><div class="camp-num">+425%</div><p>crecieron las inscripciones a cursos de IA generativa en la región en un año</p></div>
+        </div>
+        <p class="camp-src">Fuentes: CEPAL · Coursera Global Skills Report 2025</p>
+      </div>
+
       <div class="why-header">
+        <span class="camp-tag">Data Science &amp; AI</span>
         <h2>¿Por qué Data Science en Henry?</h2>
-        <p>Aprende análisis de datos y Machine Learning para descubrir insights y potenciar decisiones de negocio.</p>
+        <p>Transformas datos en decisiones. Te conviertes en Data Analyst, Data Scientist, Machine Learning Analyst o BI Analyst. Una carrera potenciada con IA, diseñada para arrancar desde cero, sin conocimientos técnicos previos.</p>
       </div>
 
       <div class="why-grid">
@@ -531,7 +608,7 @@
 
       masterclass_nombre:         'De análisis a Machine Learning',
       masterclass_fecha_larga:    'Lunes 17 y martes 18 de agosto',
-      masterclass_hora:           '21hs ARG 🇦🇷 / 18hs MX 🇲🇽 / 19hs COL 🇨🇴',
+      masterclass_hora:           '18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷',
 
       masterclass_speaker_nombre: 'Andrés Agualdo',
       masterclass_speaker_bio:    'Data Scientist e instructor en Henry',
@@ -541,6 +618,7 @@
       masterclass_tema_3:         'Predice tu sueldo y descubre qué variables pesan más',
 
       masterclass_youtube_link:   '',
+      career_interest:            'Data Science',
       masterclass_carrera:        'Data Science',
 
       // dates = UTC en formato YYYYMMDDTHHMMSSZ. 19hs COL = 00:00 UTC del dia siguiente.
@@ -589,7 +667,9 @@
 
           const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
 
-          idoc.querySelectorAll('input').forEach(input => {
+          // 'input, select': career_interest es un <select>, no un <input> -- con el
+          // selector viejo nunca se pre-cargaba y quedaba vacio.
+          idoc.querySelectorAll('input, select').forEach(input => {
             if (fieldMap[input.name] !== undefined) {
               input.value = fieldMap[input.name];
               input.dispatchEvent(new Event('input',  { bubbles: true }));
