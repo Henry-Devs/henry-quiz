@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El futuro de tu trabajo ya está publicado — Henry</title>
+<meta name="description" content="Un reporte con datos verificados del World Economic Forum, PwC, la OIT y más sobre qué cambió en el mercado laboral y qué se abre en América Latina hasta 2030.">
+
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+
+<style>
+  /* ============================================================
+     Documento digital de página fija (el PDF que la persona descarga
+     al dejar sus datos). Compromiso deliberado a un solo mundo visual
+     -página clara sobre fondo neutro-, sin invertir con el tema del
+     sistema: todos los colores se declaran explícitos.
+     ============================================================ */
+
+  :root{
+    --canvas:#131315;
+    --canvas-edge:rgba(255,255,255,.07);
+    --canvas-text:#C9C9C4;
+    --canvas-text-dim:#7A7A76;
+
+    --paper:#FDFDF8;
+    --paper-shadow:0 30px 60px -20px rgba(0,0,0,.55), 0 2px 0 rgba(0,0,0,.4);
+
+    --ink:#111111;
+    --ink-soft:#55554C;
+    --ink-faint:#8A8A80;
+    --line:#E7E5D8;
+    --line-strong:#D8D6C6;
+
+    --yellow:#FFFF00;
+    --yellow-soft:#FFF6A0;
+    --yellow-deep:#E6E600;
+    --grey-fill:#F4F3EC;
+
+    --note-bg:#1B1B16;
+    --note-border:#3A3A2E;
+    --note-text:#D8D6BE;
+    --note-accent:#E8E600;
+
+    --font-display:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --font-mono:'IBM Plex Mono','SFMono-Regular',Menlo,Consolas,monospace;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+
+  body{
+    background:var(--canvas);
+    color:var(--canvas-text);
+    font-family:var(--font-display);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .studio{
+    max-width:1180px;
+    margin:0 auto;
+    padding:56px 24px 96px;
+  }
+
+  /* ---------- page sequence ---------- */
+  .sheet{ display:flex; flex-direction:column; align-items:center; gap:28px; }
+
+  .page-block{ width:100%; max-width:900px; }
+
+  .page-frame{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:3px;
+    box-shadow:var(--paper-shadow);
+    min-height:min(1160px, 129vw);
+    width:100%;
+    padding:clamp(28px,5vw,68px) clamp(26px,6vw,72px);
+    display:flex; flex-direction:column;
+    position:relative;
+  }
+  .page-frame::before{
+    content:attr(data-pageno);
+    position:absolute; top:20px; right:24px;
+    font-family:var(--font-mono); font-size:.66rem; color:var(--ink-faint);
+    letter-spacing:.08em;
+  }
+
+  .page-logo{ width:52px; height:auto; display:block; margin-bottom:26px; }
+
+  .eyebrow{
+    font-family:var(--font-mono); font-size:.66rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;
+  }
+
+  .lede{
+    font-size:.86rem; color:var(--ink-soft); line-height:1.6; max-width:34ch;
+    margin-bottom:22px;
+  }
+
+  h2.big{
+    font-size:clamp(1.5rem,3.6vw,2.15rem); font-weight:900; letter-spacing:-.025em;
+    line-height:1.12; margin:0 0 18px; text-wrap:balance;
+  }
+  h2.big mark{
+    background:var(--yellow); color:var(--ink); padding:0 .12em;
+    box-decoration-break:clone; -webkit-box-decoration-break:clone;
+  }
+
+  .body-copy{ font-size:.86rem; line-height:1.68; color:var(--ink-soft); margin:0 0 14px; }
+  .body-copy strong{ color:var(--ink); font-weight:700; }
+  .body-copy.tight{ margin-bottom:8px; }
+
+  .cite{
+    font-family:var(--font-mono); font-size:.66rem; color:var(--ink-faint);
+    line-height:1.5; margin-top:6px;
+  }
+
+  /* ---------- stat hero (page 1) ---------- */
+  .stat-hero{ margin:14px 0 18px; }
+  .stat-hero .figs{
+    display:flex; align-items:baseline; gap:14px; font-family:var(--font-mono);
+    font-weight:700; margin-bottom:10px;
+  }
+  .stat-hero .figs .from{ font-size:clamp(1.6rem,4vw,2.2rem); color:var(--ink-faint); }
+  .stat-hero .figs .arrow{ font-size:1.1rem; color:var(--ink-faint); }
+  .stat-hero .figs .to{ font-size:clamp(2.6rem,7vw,4.2rem); color:var(--ink); background:var(--yellow); padding:0 .14em; }
+
+  .figs-caption{ font-size:.8rem; color:var(--ink-soft); margin:0 0 14px; }
+
+  .bar-track{
+    position:relative; height:34px; background:var(--grey-fill);
+    border-radius:4px; overflow:hidden; margin-bottom:8px;
+  }
+  .bar-fill{
+    position:absolute; inset:0 auto 0 0; width:15%;
+    background:var(--yellow);
+    animation:fillbar 1.4s .15s cubic-bezier(.16,.8,.3,1) forwards;
+  }
+  @keyframes fillbar{ to{ width:73%; } }
+  @media (prefers-reduced-motion: reduce){
+    .bar-fill{ animation:none; width:73%; }
+  }
+  .bar-ticks{
+    display:flex; justify-content:space-between; font-family:var(--font-mono);
+    font-size:.64rem; color:var(--ink-faint);
+  }
+  .stat-hero .caption{ font-size:.78rem; color:var(--ink-soft); margin-top:10px; }
+  .stat-hero .caption strong{ color:var(--ink); }
+
+  .signoff{
+    margin-top:auto; background:var(--ink); color:#fff;
+    margin-left:calc(-1 * clamp(26px,6vw,72px)); margin-right:calc(-1 * clamp(26px,6vw,72px));
+    margin-bottom:calc(-1 * clamp(28px,5vw,68px));
+    padding:26px clamp(26px,6vw,72px) 30px;
+    font-size:clamp(1.05rem,2.4vw,1.4rem); font-weight:800; letter-spacing:-.01em;
+    line-height:1.35; text-align:center;
+  }
+  .signoff mark{ background:none; color:var(--yellow); }
+
+  /* ---------- chips ---------- */
+  .chipwrap{ display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 8px; }
+  .chip{
+    font-size:.74rem; font-weight:600; padding:7px 14px; border-radius:999px;
+    border:1px solid var(--line-strong); background:var(--paper); color:var(--ink);
+    white-space:nowrap;
+  }
+  .chip.fill{ background:var(--yellow); border-color:var(--yellow-deep); }
+  .chip.soft{ background:var(--grey-fill); border-color:var(--line); color:var(--ink-soft); }
+
+  .block-label{ font-size:.94rem; font-weight:800; margin-bottom:2px; }
+
+  /* ---------- data rules (left bar) ---------- */
+  .rule-block{ border-left:4px solid var(--yellow); padding:2px 0 2px 16px; margin:14px 0; }
+  .rule-block .num{ font-family:var(--font-mono); font-weight:700; font-size:1.5rem; display:block; margin-bottom:2px; }
+
+  .balance{ margin:14px 0 4px; }
+  .balance-bars{ display:flex; gap:0; }
+  .balance-bars .seg{ height:20px; }
+  .balance-bars .seg.pos{ background:var(--yellow); border-radius:3px 0 0 3px; }
+  .balance-bars .seg.neg{ background:var(--grey-fill); border:1px solid var(--line-strong); border-left:none; border-radius:0 3px 3px 0; }
+  .balance-caption{ display:flex; font-family:var(--font-mono); font-size:.62rem; color:var(--ink-faint); margin-top:6px; }
+  .balance-caption span:first-child{ text-align:left; }
+  .balance-caption span:last-child{ text-align:right; }
+  .balance-net{ font-family:var(--font-mono); font-weight:800; font-size:1rem; color:var(--ink); margin:10px 0 0; }
+
+  .stack-row{ display:flex; align-items:center; gap:10px; margin-bottom:5px; }
+  .stack-row .stack-year{ font-family:var(--font-mono); font-size:.62rem; color:var(--ink-faint); width:32px; flex-shrink:0; }
+  .stack-bar{ display:flex; height:14px; border-radius:3px; overflow:hidden; border:1px solid var(--line); flex:1; }
+  .stack-bar span{ display:block; height:100%; }
+  .stack-legend{ display:flex; gap:14px; font-family:var(--font-mono); font-size:.6rem; color:var(--ink-faint); margin-bottom:6px; }
+  .dot{ width:8px; height:8px; border-radius:2px; display:inline-block; margin-right:4px; vertical-align:-1px; }
+
+  .callout{
+    background:var(--grey-fill); border-radius:6px; padding:16px 18px; margin-top:14px;
+  }
+  .callout .block-label mark{ background:var(--yellow); padding:0 .1em; }
+
+  /* ---------- page 3 specifics ---------- */
+  .trio{ display:flex; gap:0; margin:16px 0; }
+  .trio .cell{ flex:1; padding:0 16px; border-left:1px solid var(--line); }
+  .trio .cell:first-child{ border-left:none; padding-left:0; }
+  .trio .cell .num{ font-family:var(--font-mono); font-weight:800; font-size:clamp(1.5rem,4vw,2rem); display:block; }
+  .trio .cell .num.hi{ background:var(--yellow); display:inline-block; padding:0 .12em; }
+  .trio .cell p{ font-size:.72rem; color:var(--ink-soft); line-height:1.4; margin:4px 0 4px; }
+
+  .bleed-dark{
+    background:var(--ink); color:#fff; border-radius:6px;
+    padding:22px 24px; margin:16px 0;
+  }
+  .bleed-dark h3{ font-size:1.05rem; font-weight:800; margin:0 0 14px; color:#fff; }
+  .bleed-dark .num{ font-family:var(--font-mono); font-weight:800; color:var(--yellow); font-size:1.3rem; }
+  .bleed-dark .grid4{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .bleed-dark .grid4 p{ font-size:.68rem; color:#D9D9D2; line-height:1.4; margin:4px 0 0; }
+  .bleed-dark .src{ font-family:var(--font-mono); font-size:.6rem; color:#9A9A90; margin-top:14px; }
+
+  blockquote.pull{
+    border-left:3px solid var(--yellow); margin:14px 0; padding:2px 0 2px 16px;
+    font-size:.9rem; font-style:italic; color:var(--ink); line-height:1.55;
+  }
+  blockquote.pull cite{ display:block; font-style:normal; font-family:var(--font-mono); font-size:.62rem; color:var(--ink-faint); margin-top:6px; }
+
+  .duo-bar{ display:flex; align-items:flex-end; gap:18px; margin:12px 0 4px; height:70px; }
+  .duo-bar .col{ display:flex; flex-direction:column; align-items:center; gap:6px; width:70px; }
+  .duo-bar .col .b{ width:100%; border-radius:3px 3px 0 0; }
+  .duo-bar .col .b.yellow{ background:var(--yellow); }
+  .duo-bar .col .b.grey{ background:var(--grey-fill); border:1px solid var(--line-strong); border-bottom:none; }
+  .duo-bar .col .lbl{ font-family:var(--font-mono); font-size:.64rem; color:var(--ink-soft); text-align:center; }
+
+  /* ---------- page 4 specifics ---------- */
+  .skillbar-row{ display:grid; grid-template-columns:1fr; gap:8px; margin:14px 0; }
+  .skillbar{ display:flex; align-items:center; gap:10px; }
+  .skillbar .lbl{ font-size:.72rem; color:var(--ink-soft); width:172px; flex-shrink:0; }
+  .skillbar .track{ flex:1; height:8px; background:var(--grey-fill); border-radius:4px; overflow:hidden; }
+  .skillbar .fill{ height:100%; background:var(--yellow); }
+  .skillbar .pct{ font-family:var(--font-mono); font-size:.68rem; font-weight:700; width:34px; text-align:right; flex-shrink:0; }
+
+  .routes{ margin-top:16px; display:flex; flex-direction:column; gap:14px; }
+  .route{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:12px; }
+  .route:first-child{ border-top:none; padding-top:0; }
+  .route .from{ font-size:.76rem; color:var(--ink-faint); }
+  .route .arrow{ color:var(--ink-faint); }
+  .route .to{ font-weight:800; font-size:.95rem; }
+  .route .dur{ font-family:var(--font-mono); font-size:.7rem; color:var(--ink-soft); }
+  .route .wef{ width:100%; font-size:.7rem; font-style:italic; color:var(--ink-faint); margin-top:2px; }
+
+  .cta-block{
+    margin-top:auto; background:var(--ink); color:#fff; text-align:center;
+    margin-left:calc(-1 * clamp(26px,6vw,72px)); margin-right:calc(-1 * clamp(26px,6vw,72px));
+    margin-bottom:calc(-1 * clamp(28px,5vw,68px));
+    padding:26px clamp(26px,6vw,72px) 32px;
+  }
+  .cta-block p{ font-size:clamp(.95rem,2vw,1.15rem); font-weight:700; line-height:1.4; margin:0 0 16px; }
+  .cta-btn{
+    display:inline-block; background:var(--yellow); color:var(--ink); font-weight:800;
+    font-size:.78rem; letter-spacing:.03em; text-transform:uppercase; padding:12px 26px;
+    border-radius:8px;
+  }
+
+  @media (max-width:640px){
+    .trio{ flex-direction:column; gap:14px; }
+    .trio .cell{ border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:12px; }
+    .trio .cell:first-child{ border-top:none; padding-top:0; }
+    .bleed-dark .grid4{ grid-template-columns:1fr 1fr; }
+    .skillbar .lbl{ width:110px; font-size:.68rem; }
+  }
+</style>
+
+<div class="studio">
+
+  <div class="sheet">
+
+    <!-- ============================= PÁGINA 1 ============================= -->
+    <section class="page-block" id="p1">
+      <article class="page-frame" data-pageno="01 / 04">
+        <svg class="page-logo" viewBox="0 0 100 18" xmlns="http://www.w3.org/2000/svg" aria-label="Henry" role="img">
+          <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="#111111"></path>
+          <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="#111111"></path>
+          <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="#111111"></path>
+          <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="#111111"></path>
+          <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="#111111"></path>
+          <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="#111111"></path>
+          <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"></path>
+        </svg>
+        <p class="eyebrow" style="margin-bottom:26px; font-size:.78rem; color:var(--ink-soft); text-transform:none; letter-spacing:0; max-width:36ch; font-family:var(--font-display);">
+          Tal vez ya te lo pusiste a pensar. O ya te lo dijeron. O ya lo escuchaste en alguna noticia. Pero nadie te lo mostró con números.
+        </p>
+
+        <h2 class="big" style="font-size:clamp(1.9rem,5vw,2.9rem); max-width:15ch;">El futuro de tu trabajo ya está <mark>publicado</mark></h2>
+
+        <p class="lede" style="max-width:42ch;">No hace falta adivinarlo. Está escrito en los avisos de empleo que las empresas publican todos los días: en lo que empezaron a pedir, y en lo que dejaron de pedir.</p>
+
+        <p class="body-copy">Nadie te va a mandar un aviso. Llega mucho antes: <strong>el día en que cambia lo que te piden para el puesto que ya tienes</strong>. Y ese cambio se puede medir, porque queda escrito.</p>
+
+        <p class="body-copy">En enero de 2024, el 15% de las búsquedas de empleo tech en Estados Unidos mencionaba alguna habilidad de inteligencia artificial. En mayo de 2026, el 73%.</p>
+
+        <div class="stat-hero">
+          <div class="figs"><span class="from">15%</span><span class="arrow">→</span><span class="to">73%</span></div>
+          <p class="figs-caption">Avisos de empleo tech que piden al menos una habilidad de inteligencia artificial.</p>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+          <div class="bar-ticks"><span>ene. 2024</span><span>may. 2026</span></div>
+          <p class="caption"><strong>En poco más de dos años.</strong></p>
+          <p class="cite">Dice Tech Jobs Report, julio 2026 · Estados Unidos, 7 millones de avisos</p>
+        </div>
+
+        <p class="body-copy">Eso no es un pronóstico. <strong>Es el registro de algo que ya pasó</strong>. Y no pasó por una ley ni por un anuncio: pasó porque miles de empresas, una por una, reescribieron lo que buscaban.</p>
+
+        <div class="signoff">No te está sacando el lugar. <mark>Te está subiendo la vara.</mark></div>
+      </article>
+    </section>
+
+    <!-- ============================= PÁGINA 2 ============================= -->
+    <section class="page-block" id="p2">
+      <article class="page-frame" data-pageno="02 / 04">
+        <svg class="page-logo" viewBox="0 0 100 18" xmlns="http://www.w3.org/2000/svg" aria-label="Henry" role="img">
+          <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="#111111"></path>
+          <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="#111111"></path>
+          <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="#111111"></path>
+          <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="#111111"></path>
+          <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="#111111"></path>
+          <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="#111111"></path>
+          <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"></path>
+        </svg>
+        <p class="eyebrow">02 · Lo que se apagó</p>
+        <h2 class="big">Lo que las empresas dejaron de pedir</h2>
+
+        <p class="body-copy">Hay ocupaciones que están perdiendo demanda, y no es la opinión de un tecnólogo: son los propios empleadores los que lo declaran. El World Economic Forum les preguntó a empresas que emplean a más de mil millones de personas qué esperan hasta 2030. Y cuando miras esa lista completa, aparece un patrón: casi todo lo que cae es trabajo repetitivo, predecible, con reglas claras — cargar datos, procesar formularios, atender un mostrador. <strong>No está cayendo "el trabajo". Está cayendo un tipo de tarea.</strong></p>
+
+        <p class="block-label">Un ejemplo del patrón</p>
+        <div class="chipwrap">
+          <span class="chip">Carga de datos</span>
+          <span class="chip">Atención en mostrador</span>
+          <span class="chip">Tareas administrativas repetitivas</span>
+          <span class="chip">Procesamiento de formularios</span>
+          <span class="chip">Ventas puerta a puerta</span>
+        </div>
+        <p class="cite">World Economic Forum, Future of Jobs Report 2025 (Fig. 2.2) · ocupaciones con mayor caída esperada a 2030, según empleadores encuestados</p>
+
+        <p class="body-copy tight" style="margin-top:14px;">El patrón es lo que importa, no el puesto puntual. Y hay una prueba de que el mercado laboral no se está achicando: <strong>el saldo es positivo</strong>.</p>
+
+        <p class="block-label" style="margin-top:8px;">El mercado no se achica. Cambia de forma.</p>
+        <div class="balance">
+          <div class="balance-bars">
+            <div class="seg pos" style="flex:170;"></div>
+            <div class="seg neg" style="flex:92;"></div>
+          </div>
+          <div class="balance-caption"><span style="flex:170;">170M creados</span><span style="flex:92;">92M desplazados</span></div>
+        </div>
+        <p class="balance-net">= +78M de saldo neto</p>
+        <p class="cite">World Economic Forum, Future of Jobs Report 2025 · puestos globales, 2025–2030</p>
+
+        <p class="body-copy" style="margin-top:14px;"><strong>No se está destruyendo trabajo: se está redistribuyendo.</strong> Lo que se achica es un tipo de tarea muy específico. Lo que crece tiene nombre y apellido, y lo vas a ver en la página siguiente.</p>
+
+        <p class="body-copy">Los números lo confirman: en América Latina, entre el <strong>30% y 40%</strong> de los empleos tiene algún nivel de exposición a la IA generativa, pero <strong>sólo entre el 2% y el 5%</strong> enfrenta riesgo alto de automatización completa.</p>
+        <p class="cite" style="margin-top:-8px; margin-bottom:10px;">Banco Mundial, citado en Linux Foundation, diciembre 2025</p>
+
+        <p class="body-copy">El riesgo real no es quedarte sin trabajo de un día para el otro. Es quedarte con el mismo puesto y descubrir, dentro de dos años, <strong>que ya no calificas para él</strong>.</p>
+
+        <div class="stack-legend"><span><i class="dot" style="background:var(--ink)"></i>Personas</span><span><i class="dot" style="background:var(--yellow)"></i>Combinación</span><span><i class="dot" style="background:var(--grey-fill); border:1px solid var(--line-strong)"></i>Tecnología</span></div>
+        <div class="stack-row"><span class="stack-year">Hoy</span><div class="stack-bar"><span style="width:47%; background:var(--ink);"></span><span style="width:30%; background:var(--yellow);"></span><span style="width:23%; background:var(--grey-fill);"></span></div></div>
+        <div class="stack-row"><span class="stack-year">2030</span><div class="stack-bar"><span style="width:33%; background:var(--ink);"></span><span style="width:34%; background:var(--yellow);"></span><span style="width:33%; background:var(--grey-fill);"></span></div></div>
+        <p class="cite">% de tareas laborales por tipo de ejecución, según empleadores encuestados · WEF Future of Jobs Report 2025</p>
+
+        <div class="callout">
+          <p class="block-label"><mark>¿Y si ya trabajas en tecnología?</mark></p>
+          <p class="body-copy" style="margin-top:8px;">Tampoco quedas afuera, pero por el motivo contrario. Los puestos de entrada expuestos a IA <strong>crecieron 35%</strong> desde 2019, mientras el resto de los puestos de entrada <strong>cayó 10%</strong>. La diferencia: esos puestos exigen <strong>7 veces más</strong> habilidades que antes se le pedían a un senior.</p>
+          <p class="body-copy" style="margin-bottom:0;">Programar sigue valiendo. Programar <strong>sin</strong> IA es lo que dejó de alcanzar.</p>
+          <p class="cite">PwC Global AI Jobs Barometer 2026 · 1.000M+ avisos, 27 países</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============================= PÁGINA 3 ============================= -->
+    <section class="page-block" id="p3">
+      <article class="page-frame" data-pageno="03 / 04">
+        <svg class="page-logo" viewBox="0 0 100 18" xmlns="http://www.w3.org/2000/svg" aria-label="Henry" role="img">
+          <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="#111111"></path>
+          <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="#111111"></path>
+          <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="#111111"></path>
+          <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="#111111"></path>
+          <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="#111111"></path>
+          <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="#111111"></path>
+          <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"></path>
+        </svg>
+        <p class="eyebrow">03 · Lo que se abrió</p>
+        <h2 class="big">Lo que las empresas empezaron a pedir</h2>
+
+        <p class="body-copy">La misma encuesta que arma la lista de lo que cae arma la lista de lo que sube. <strong>Es la misma tabla, leída en la otra dirección.</strong></p>
+
+        <p class="block-label">Las 15 ocupaciones con mayor crecimiento esperado a 2030</p>
+        <div class="chipwrap">
+          <span class="chip fill">Big data</span><span class="chip fill">Fintech</span><span class="chip fill">IA y machine learning</span>
+          <span class="chip fill">Software y apps</span><span class="chip fill">Gestión de seguridad</span><span class="chip fill">Data warehousing</span>
+          <span class="chip fill">Vehículos autónomos</span><span class="chip fill">UI / UX</span><span class="chip fill">Choferes de reparto</span>
+          <span class="chip fill">IoT</span><span class="chip fill">Analistas de datos</span><span class="chip fill">Ingeniería ambiental</span>
+          <span class="chip fill">Seguridad de la información</span><span class="chip fill">DevOps</span><span class="chip fill">Energías renovables</span>
+        </div>
+        <p class="cite">World Economic Forum, Future of Jobs Report 2025 (Fig. 2.2) · crecimiento neto % esperado 2025–2030</p>
+
+        <div class="trio">
+          <div class="cell"><span class="num">+50%</span><p>Crecimiento esperado a 2030 de analistas de datos y especialistas en IA/ML en América Latina.</p><p class="cite" style="margin:0;">WEF, corte regional</p></div>
+          <div class="cell"><span class="num">+264%</span><p>Crecieron los puestos en ocupaciones expuestas a IA en Brasil desde 2021.</p><p class="cite" style="margin:0;">PwC vía Linux Foundation, dic. 2025</p></div>
+          <div class="cell"><span class="num hi">62%</span><p>Prima salarial de quienes tienen habilidades de IA. Era 57% el año anterior.</p><p class="cite" style="margin:0;">PwC AI Jobs Barometer 2026</p></div>
+        </div>
+
+        <div class="bleed-dark">
+          <h3>La región adopta rápido. Y no tiene quién lo haga.</h3>
+          <div class="grid4">
+            <div><span class="num">48%</span><p>menos especialistas en IT de los que la demanda requiere</p></div>
+            <div><span class="num">77%</span><p>sin ninguna formación en IA de su empleador — 13pp sobre el global</p></div>
+            <div><span class="num">55%</span><p>de las empresas de México: falta de skills, principal barrera</p></div>
+            <div><span class="num">5x</span><p>brecha de habilidades de IA en ingeniería vs. países industrializados</p></div>
+          </div>
+          <p class="src">Linux Foundation / Northern Arizona University, dic. 2025 — compila Banco Mundial, PwC y encuestas regionales</p>
+        </div>
+
+        <blockquote class="pull">
+          "La amenaza más significativa que enfrenta América Latina no es el desplazamiento laboral, sino el estancamiento económico por déficit de habilidades."
+          <cite>— Linux Foundation / Northern Arizona University, diciembre 2025</cite>
+        </blockquote>
+
+        <p class="body-copy">Esa frase es la mejor noticia de todo el reporte. El problema de la región no es que sobre gente: es que falta gente formada. Y un problema del que se queja el que contrata, mirado del otro lado del escritorio, es una <strong>vacante sin cubrir</strong>.</p>
+
+        <p class="body-copy tight">Ya hay gente moviéndose:</p>
+        <div class="duo-bar">
+          <div class="col"><div class="b yellow" style="height:56px;"></div><span class="lbl">+425%<br>LATAM</span></div>
+          <div class="col"><div class="b grey" style="height:26px;"></div><span class="lbl">+195%<br>Global</span></div>
+        </div>
+        <p class="cite">Inscripciones a cursos de IA generativa en un año · Coursera Global Skills Report 2025</p>
+      </article>
+    </section>
+
+    <!-- ============================= PÁGINA 4 ============================= -->
+    <section class="page-block" id="p4">
+      <article class="page-frame" data-pageno="04 / 04">
+        <svg class="page-logo" viewBox="0 0 100 18" xmlns="http://www.w3.org/2000/svg" aria-label="Henry" role="img">
+          <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="#111111"></path>
+          <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="#111111"></path>
+          <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="#111111"></path>
+          <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="#111111"></path>
+          <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="#111111"></path>
+          <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="#111111"></path>
+          <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"></path>
+        </svg>
+        <p class="eyebrow">04 · Por dónde se entra</p>
+        <h2 class="big">Cuatro rutas que ya están en la lista</h2>
+
+        <p class="body-copy">Todo lo anterior se resume en una sola cosa: <strong>el mercado dejó de premiar el puesto que tienes y empezó a premiar lo que sabes hacer adentro de ese puesto</strong>. Es una diferencia importante — lo primero tarda años en cambiar, lo segundo tarda meses.</p>
+
+        <div class="trio" style="margin-bottom:6px;">
+          <div class="cell" style="border-left:none; padding-left:0;"><span class="num">84%</span><p>de los empleadores de LATAM planea capacitar a su propia gente para cubrir la demanda tech.</p><p class="cite" style="margin:0;">WEF Future of Jobs 2025</p></div>
+          <div class="cell"><span class="num">62% / 53%</span><p>de las empresas de Brasil y Colombia ya invierte en formación en IA.</p><p class="cite" style="margin:0;">Linux Foundation, dic. 2025</p></div>
+        </div>
+
+        <p class="block-label" style="margin-top:14px;">Habilidades que más suben en la región a 2030</p>
+        <div class="skillbar-row">
+          <div class="skillbar"><span class="lbl">Inteligencia artificial</span><div class="track"><div class="fill" style="width:100%;"></div></div><span class="pct">100%</span></div>
+          <div class="skillbar"><span class="lbl">Pensamiento creativo</span><div class="track"><div class="fill" style="width:94%;"></div></div><span class="pct">94%</span></div>
+          <div class="skillbar"><span class="lbl">Alfabetización tecnológica</span><div class="track"><div class="fill" style="width:88%;"></div></div><span class="pct">88%</span></div>
+          <div class="skillbar"><span class="lbl">Diseño</span><div class="track"><div class="fill" style="width:81%;"></div></div><span class="pct">81%</span></div>
+          <div class="skillbar"><span class="lbl">Curiosidad y aprendizaje</span><div class="track"><div class="fill" style="width:81%;"></div></div><span class="pct">81%</span></div>
+        </div>
+        <p class="cite">% de empleadores de la región que espera que gane importancia · WEF Future of Jobs Report 2025</p>
+
+        <p class="body-copy" style="margin-top:10px;">Ese quinteto no es una lista abstracta de recursos humanos: es, <strong>letra por letra, lo que enseñan las cuatro carreras que siguen</strong>.</p>
+
+        <p class="block-label" style="margin-top:20px; font-size:1.05rem;">No las elegimos nosotros</p>
+        <p class="body-copy tight">Las cuatro carreras de Henry tienen el mismo nombre que cuatro de los puestos que <strong>el WEF ubica entre los de mayor crecimiento hasta 2030</strong>.</p>
+
+        <div class="routes">
+          <div class="route">
+            <span class="from">Nunca trabajaste en tecnología</span><span class="arrow">→</span><span class="to">Full Stack</span><span class="dur">8 meses</span>
+            <span class="wef">En la lista del WEF: "Full Stack Engineers" y "Desarrolladores de software y aplicaciones".</span>
+          </div>
+          <div class="route">
+            <span class="from">Ya programas</span><span class="arrow">→</span><span class="to">AI Engineering</span><span class="dur">3 meses</span>
+            <span class="wef">En la lista del WEF: "Especialistas en IA y machine learning" — 3er puesto de mayor crecimiento.</span>
+          </div>
+          <div class="route">
+            <span class="from">Ops, marketing, ventas o admin</span><span class="arrow">→</span><span class="to">AI Automation</span><span class="dur">4 meses</span>
+            <span class="wef">En la lista del WEF: "Especialistas en automatización de procesos".</span>
+          </div>
+          <div class="route">
+            <span class="from">Trabajas con datos o reportes</span><span class="arrow">→</span><span class="to">Data Science</span><span class="dur">—</span>
+            <span class="wef">En la lista del WEF: "Big data" (1er puesto), "Analistas y científicos de datos", "Ingenieros de datos".</span>
+          </div>
+        </div>
+
+        <div class="cta-block">
+          <p>Los avisos de empleo del año que viene se están escribiendo ahora.<br>La única pregunta que queda es si vas a calificar.</p>
+          <a class="cta-btn" href="https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=mail&utm_medium=organico&utm_campaign=tutrabajotienefuturo&utm_content=reporte" target="_blank" rel="noopener" style="text-decoration:none; cursor:pointer;">Agendar llamada</a>
+        </div>
+      </article>
+    </section>
+
+  </div>
+
+</div>
+
+<script>
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var bar = document.querySelector('.bar-fill');
+    if (!bar) return;
+    // reinicia la animación cuando la página 1 entra en pantalla (por si se navega directo)
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          bar.style.animation = 'none';
+          void bar.offsetWidth;
+          bar.style.animation = '';
+        }
+      });
+    }, { threshold: .5 });
+    io.observe(bar);
+  })();
+</script>
+
+</body>
+</html>
