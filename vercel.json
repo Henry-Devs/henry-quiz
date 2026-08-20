@@ -1,5 +1,6 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/landing-analisis-a-ml.html" }
+  "routes": [
+    { "src": "/$", "dest": "/landing-analisis-a-ml.html" },
+    { "handle": "filesystem" }
   ]
 }
