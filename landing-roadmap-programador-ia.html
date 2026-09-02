@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masterclass gratis: el roadmap para programar con IA en 2026 | Henry</title>
+  <meta name="description" content="Masterclass en vivo y gratis el 9/9: el mapa completo para convertirte en programador con IA en 2026, con los primeros pasos explicados a fondo. Semana del Día del Programador." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="El roadmap para convertirte en programador con IA en 2026" />
+  <meta property="og:description" content="Masterclass en vivo y gratis el 9 de septiembre. Semana del Día del Programador." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/henry-favicon.png" />
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+  <!-- JSON-LD de evento. Sin "performer": instructor todavia sin confirmar (§7 de la spec). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "El roadmap para convertirte en programador con IA en 2026",
+    "startDate": "2026-09-09T21:00:00-03:00",
+    "endDate": "2026-09-09T22:00:00-03:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://recursos.soyhenry.com/landing-roadmap-programador-ia.html"
+    },
+    "description": "Masterclass en vivo y gratis. El mapa completo para convertirte en programador con IA, con los primeros pasos explicados a fondo.",
+    "isAccessibleForFree": true,
+    "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 56px 48px 48px;
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--black);
+      margin-bottom: 18px;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-mid);
+      margin-bottom: 12px;
+    }
+
+    /* OFFER */
+    .offer-card {
+      border: 1.5px solid var(--black);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 4px;
+    }
+    .offer-card p { font-size: 0.88rem; font-weight: 700; color: var(--black); line-height: 1.5; }
+    .offer-card p em { font-style: normal; background: var(--yellow); padding: 0 3px; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 0; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 16px 20px; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-size: 0.88rem; font-weight: 800; color: var(--black); margin-bottom: 6px; }
+    .faq-a { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.6; }
+
+    /* EVENT / FORM CARD */
+    .form-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      position: sticky;
+      top: 80px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .free-badge {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 14px;
+    }
+    .form-card h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 18px; }
+    .event-compact-facts {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-dark);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    #hs-form-container iframe { width: 100%; border: none; }
+    .privacy-note { font-size: 0.72rem; color: var(--gray-mid); text-align: center; margin-top: 14px; }
+
+    /* Success state */
+    .success-state { display: none; text-align: center; padding: 16px 0; }
+    .success-icon {
+      width: 72px; height: 72px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem;
+    }
+    .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
+    .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* ROADMAP -- pieza central */
+    .roadmap-section { max-width: 1120px; margin: 0 auto; padding: 48px 48px 8px; }
+    .roadmap-header { text-align: center; margin-bottom: 36px; }
+    .roadmap-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 10px; }
+    .roadmap-header p { font-size: 0.95rem; color: var(--gray-dark); max-width: 620px; margin: 0 auto; line-height: 1.6; }
+
+    .roadmap-featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+    .roadmap-card {
+      border: 2px solid var(--black); border-radius: 14px; padding: 24px 20px;
+      background: var(--white);
+    }
+    .roadmap-card-num {
+      width: 40px; height: 40px; background: var(--yellow); color: var(--black);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 900; margin-bottom: 14px;
+    }
+    .roadmap-card-title { font-size: 1rem; font-weight: 800; color: var(--black); line-height: 1.3; margin-bottom: 6px; }
+    .roadmap-card-desc { font-size: 0.82rem; color: var(--gray-dark); line-height: 1.5; }
+
+    .roadmap-full-label { text-align: center; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gray-mid); margin-bottom: 20px; }
+    .roadmap-path { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 0; padding-bottom: 48px; position: relative; }
+    .roadmap-path::before {
+      content: ""; position: absolute; top: 12px; left: 4%; right: 4%; height: 2px;
+      background: var(--border); z-index: 0;
+    }
+    .roadmap-node { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; width: 8.2%; min-width: 78px; }
+    .roadmap-node-dot {
+      width: 26px; height: 26px; border-radius: 50%; background: var(--white);
+      border: 2px solid var(--border); color: var(--gray-mid);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.68rem; font-weight: 800; margin-bottom: 8px;
+    }
+    .roadmap-node.is-featured .roadmap-node-dot { background: var(--yellow); border-color: var(--black); color: var(--black); }
+    .roadmap-node-label { font-size: 0.68rem; color: var(--gray-mid); line-height: 1.3; }
+    .roadmap-node.is-featured .roadmap-node-label { color: var(--black); font-weight: 700; }
+
+    /* BONUSES */
+    .bonus-section { max-width: 1120px; margin: 0 auto; padding: 40px 48px 64px; }
+    .bonus-title { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 900; letter-spacing: -1px; color: var(--black); text-align: center; margin-bottom: 32px; }
+    .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+    .bonus-card { border: 1.5px solid var(--border); border-radius: 12px; padding: 22px 16px; text-align: center; }
+    .bonus-num {
+      width: 30px; height: 30px; background: var(--yellow); color: var(--black); border-radius: 7px;
+      display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 800; margin: 0 auto 10px;
+    }
+    .bonus-card p { font-size: 0.84rem; font-weight: 600; color: var(--black); line-height: 1.4; }
+    .bonus-cta-wrap { text-align: center; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black);
+      font-size: 0.95rem; font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* BOTTOM CTA */
+    .cta-section { background: var(--black); color: var(--white); padding: 56px 48px; text-align: center; }
+    .cta-section p { font-size: 1.05rem; font-weight: 700; margin-bottom: 24px; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 36px 24px 32px; gap: 40px; }
+      .form-card { position: static; }
+      .roadmap-section { padding: 36px 24px 8px; }
+      .roadmap-featured { grid-template-columns: 1fr; }
+      .roadmap-path { flex-direction: column; align-items: stretch; gap: 18px; padding-bottom: 8px; }
+      .roadmap-path::before { top: 0; bottom: 0; left: 12px; right: auto; width: 2px; height: auto; }
+      .roadmap-node { flex-direction: row; align-items: center; text-align: left; width: 100%; min-width: 0; gap: 12px; }
+      .roadmap-node-dot { margin-bottom: 0; flex-shrink: 0; }
+      .bonus-grid { grid-template-columns: 1fr; }
+      .bonus-section { padding: 24px 24px 48px; }
+      .companies-strip { padding: 40px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left { animation: fadeUp 0.5s ease both; }
+    .form-card { animation: fadeUp 0.5s 0.1s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge-row">
+        <span class="badge primary">Masterclass en vivo · Gratis</span>
+        <span class="badge outline">Semana del Día del Programador</span>
+      </div>
+      <h1>El roadmap para convertirte en programador con IA en 2026</h1>
+
+      <p class="hero-desc">
+        Un mapa completo, paso a paso, de cómo se llega a programar con inteligencia
+        artificial — y los primeros pasos explicados a fondo, para que el jueves ya sepas
+        exactamente por dónde arrancar.
+      </p>
+
+      <p class="section-label">Preguntas frecuentes</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">¿Necesito saber programar?</div>
+          <div class="faq-a">No. La clase está pensada para quien recién está viendo si este camino es para ella — arrancamos desde cero.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Vamos a ver el roadmap completo en la clase?</div>
+          <div class="faq-a">Vas a ver el mapa entero, pero profundizamos solo en los primeros pasos — los que de verdad te destraban para arrancar.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Hay oferta especial?</div>
+          <div class="faq-a">Sí, se desbloquea el día de la masterclass y corre hasta el Día del Programador (13/9).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div id="form-wrapper">
+        <div class="form-top-bar"></div>
+        <span class="free-badge">100% gratis</span>
+        <h2>Completa tus datos y reserva tu lugar</h2>
+        <p class="form-sub">Te enviamos el link de acceso por mail.</p>
+        <p class="event-compact-facts">Miércoles 9 de septiembre · 60 min<br>18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷<br>Online, en vivo</p>
+        <div id="hs-form-container"></div>
+        <p class="privacy-note">Sin spam. Tus datos están seguros.</p>
+      </div>
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <h3>¡Listo!</h3>
+        <p>Te registraste correctamente. Te vamos a avisar por mail antes de la clase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="roadmap-section">
+    <div class="roadmap-header">
+      <h2>El mapa completo, paso a paso</h2>
+      <p>En la clase profundizamos en los primeros pasos. El resto del camino lo ves completo, para que sepas exactamente hacia dónde vas.</p>
+    </div>
+
+    <!-- Los primeros 3 pasos, destacados: ⚠️ BORRADOR, ver comentario mas abajo -->
+    <div class="roadmap-featured">
+      <div class="roadmap-card">
+        <div class="roadmap-card-num">1</div>
+        <div class="roadmap-card-title">Entender cómo "piensa" una computadora</div>
+        <div class="roadmap-card-desc">La lógica detrás de todo lo que sigue.</div>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-card-num">2</div>
+        <div class="roadmap-card-title">Armar tu primer sitio: HTML + CSS</div>
+        <div class="roadmap-card-desc">Tu primera página, online.</div>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-card-num">3</div>
+        <div class="roadmap-card-title">JavaScript: que la página reaccione</div>
+        <div class="roadmap-card-desc">De una página estática a una que responde.</div>
+      </div>
+    </div>
+
+    <p class="roadmap-full-label">El camino completo</p>
+    <!-- ⚠️ BORRADOR (armado del temario publico de Full Stack AI) -- el owner va a
+         mandar el mapa oficial. Estructura de recorrido numerado lista para recibir
+         la lista final sin rehacer el diseño: cambiar solo el texto de cada
+         .roadmap-node-label y, si cambia la cantidad de pasos, el "is-featured" de
+         los primeros. -->
+    <div class="roadmap-path">
+      <div class="roadmap-node is-featured"><div class="roadmap-node-dot">1</div><div class="roadmap-node-label">Lógica</div></div>
+      <div class="roadmap-node is-featured"><div class="roadmap-node-dot">2</div><div class="roadmap-node-label">HTML + CSS</div></div>
+      <div class="roadmap-node is-featured"><div class="roadmap-node-dot">3</div><div class="roadmap-node-label">JavaScript</div></div>
+      <div class="roadmap-node"><div class="roadmap-node-dot">4</div><div class="roadmap-node-label">IA como copiloto</div></div>
+      <div class="roadmap-node"><div class="roadmap-node-dot">5</div><div class="roadmap-node-label">Backend</div></div>
+      <div class="roadmap-node"><div class="roadmap-node-dot">6</div><div class="roadmap-node-label">Bases de datos</div></div>
+      <div class="roadmap-node"><div class="roadmap-node-dot">7</div><div class="roadmap-node-label">React + TypeScript</div></div>
+      <div class="roadmap-node"><div class="roadmap-node-dot">8</div><div class="roadmap-node-label">Full Stack real</div></div>
+      <div class="roadmap-node"><div class="roadmap-node-dot">9</div><div class="roadmap-node-label">Git y GitHub</div></div>
+      <div class="roadmap-node"><div class="roadmap-node-dot">10</div><div class="roadmap-node-label">Subir a la nube</div></div>
+      <div class="roadmap-node"><div class="roadmap-node-dot">11</div><div class="roadmap-node-label">Proyecto final</div></div>
+      <div class="roadmap-node"><div class="roadmap-node-dot">12</div><div class="roadmap-node-label">Portfolio y empleo</div></div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="bonus-section" style="padding-top:8px; padding-bottom: 8px;">
+    <div class="offer-card">
+      <p>La oferta especial de la <em>semana del Día del Programador</em> se desbloquea el día de la masterclass.</p>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="bonus-section">
+    <h2 class="bonus-title">Al terminar te llevas</h2>
+    <div class="bonus-grid">
+      <div class="bonus-card"><div class="bonus-num">01</div><p>El mapa completo para consultar cuando quieras</p></div>
+      <div class="bonus-card"><div class="bonus-num">02</div><p>Un certificado para comunicar en LinkedIn</p></div>
+      <div class="bonus-card"><div class="bonus-num">03</div><p>Una sesión gratuita con un asesor de carrera</p></div>
+    </div>
+    <div class="bonus-cta-wrap">
+      <a href="#hs-form-container" class="cta-btn">Reserva tu lugar →</a>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="cta-section">
+    <p>Aprende a construir aplicaciones con IA en la Carrera Full Stack AI de Henry.</p>
+    <a class="cta-btn" href="https://www.soyhenry.com/webfullstack" target="_blank">Aplicar a la Carrera Full Stack AI →</a>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google" />
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture" />
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal" />
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander" />
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak" />
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá" />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    const MASTERCLASS = {
+      // Ancla del flow. ⚠️ Ver nota aparte: la migracion a un flow propio por
+      // evento (infra/17_masterclass_flujo_por_evento.md) para esta masterclass
+      // TODAVIA NO esta hecha -- este campo sigue alimentando el flow compartido
+      // 1861306136 hasta que se clone uno nuevo.
+      masterclass_fecha_evento:   String(new Date('2026-09-09T21:00:00-03:00').getTime()),
+
+      // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
+      // flow nuevo por evento (infra/17 §3), no solo un texto descriptivo.
+      masterclass_nombre:         'El roadmap para convertirte en programador con IA en 2026',
+      masterclass_fecha_larga:    'Miércoles 9 de septiembre',
+      masterclass_hora:           '18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷',
+
+      // ⚠️ Instructor A CONFIRMAR (§7 de la spec) -- no se inventa.
+      masterclass_speaker_nombre: '',
+      masterclass_speaker_bio:    '',
+
+      masterclass_tema_1:         'Entender cómo "piensa" una computadora (lógica)',
+      masterclass_tema_2:         'Armar tu primer sitio: HTML + CSS',
+      masterclass_tema_3:         'JavaScript: que la página reaccione',
+
+      // ⚠️ PENDIENTES -- no inventar valores, completar cuando esten definidos:
+      masterclass_youtube_link:   '',
+      masterclass_cupon_code:      '',
+      masterclass_cohorte_texto:   '',
+      masterclass_cta_url:         '',
+
+      career_interest:            'Full Stack AI',
+      masterclass_carrera:        'Full Stack AI',
+
+      // dates = UTC. 21:00 ARG = 00:00 UTC del dia siguiente.
+      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('Masterclass: El roadmap para convertirte en programador con IA en 2026')
+        + '&dates=20260910T000000Z/20260910T010000Z'
+        + '&details=' + encodeURIComponent('Masterclass en vivo y gratis de Henry. Semana del Día del Programador.')
+        + '&location=Online',
+    };
+
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "19612811",
+      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      target: "#hs-form-container",
+      onFormReady: function() {
+        setTimeout(() => {
+          const iframe = document.querySelector('#hs-form-container iframe');
+          const idoc = iframe && iframe.contentDocument;
+          if (!idoc) return;
+
+          const style = idoc.createElement('style');
+          style.textContent = `
+            body { font-family: 'Inter', sans-serif !important; }
+            .hs-form-field label { font-size: 0.8rem !important; font-weight: 600 !important; color: #111111 !important; margin-bottom: 6px !important; }
+            .hs-input { background: #f5f5f5 !important; border: 1.5px solid #e2e2e2 !important; border-radius: 8px !important; padding: 11px 14px !important; font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important; box-sizing: border-box !important; }
+            .hs-input:focus { outline: none !important; border-color: #111111 !important; background: #ffffff !important; }
+            .hs-button { background: #FFFF00 !important; color: #111111 !important; border: none !important; border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; font-family: 'Inter', sans-serif !important; }
+            .hs-button:hover { background: #e6e600 !important; }
+            .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; }
+          `;
+          idoc.head.appendChild(style);
+
+          const btn = idoc.querySelector('input[type="submit"]');
+          if (btn) btn.value = 'Registrarme';
+
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
+
+          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
+
+          idoc.querySelectorAll('input, select').forEach(input => {
+            if (fieldMap[input.name] !== undefined) {
+              input.value = fieldMap[input.name];
+              input.dispatchEvent(new Event('input',  { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+        }, 600);
+      },
+      onFormSubmit: function() {
+        if (window.fbq) {
+          fbq('trackCustom', 'Registro clase en vivo', {
+            content_name: 'landing-roadmap-programador-ia',
+            utm_source: utms.utm_source || '',
+            utm_medium: utms.utm_medium || '',
+            utm_campaign: utms.utm_campaign || '',
+          });
+        }
+        setTimeout(() => {
+          document.getElementById('form-wrapper').style.display = 'none';
+          document.getElementById('success-state').style.display = 'block';
+        }, 800);
+      }
+    });
+  </script>
+</body>
+</html>
