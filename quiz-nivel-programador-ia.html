@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Arrancas o subes de nivel? El test de programar con IA — Henry</title>
+  <meta name="description" content="Test de 2 minutos: descubre tu % de match programando con IA y qué carrera de Henry es tu próximo paso. Semana del Programador.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="henry-favicon.png">
+  <link rel="apple-touch-icon" href="henry-favicon.png">
+
+  <meta property="og:title" content="¿Arrancas o subes de nivel? El test de programar con IA">
+  <meta property="og:description" content="2 minutos. Descubre tu % de match y tu próximo paso: Full Stack AI o AI Engineering.">
+  <meta property="og:image" content="https://recursos.soyhenry.com/henry-favicon.png">
+
+  <!-- HubSpot (mismo portal que las landings de guías y el quiz de Full Stack) -->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px; border-bottom: 1px solid var(--border);
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+    }
+    .nav-link {
+      font-size: 0.85rem; font-weight: 600; color: var(--black);
+      text-decoration: none; padding: 8px 18px; border-radius: 8px;
+      border: 1.5px solid var(--black); transition: background 0.15s;
+    }
+    .nav-link:hover { background: var(--gray-light); }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      align-items: start; max-width: 1120px; margin: 0 auto;
+      padding: 56px 48px 64px;
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge {
+      font-size: 0.7rem; font-weight: 800; padding: 6px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    h1 {
+      font-size: clamp(1.9rem, 3.2vw, 2.7rem); font-weight: 900; line-height: 1.15;
+      letter-spacing: -1.3px; color: var(--black); margin-bottom: 18px;
+    }
+    h1 em { font-style: normal; background: var(--yellow); padding: 2px 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .hero-desc { font-size: 1rem; color: var(--gray-dark); line-height: 1.7; margin-bottom: 8px; }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 36px; position: sticky; top: 80px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .form-card h2 { font-size: 1.35rem; font-weight: 800; color: var(--black); margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.2; }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 24px; }
+
+    #hs-form-container .hs-form-field { margin-bottom: 14px !important; }
+    #hs-form-container .hs-form-field label {
+      font-size: 0.8rem !important; font-weight: 600 !important; color: var(--black) !important;
+      margin-bottom: 6px !important; display: block !important; font-family: 'Inter', sans-serif !important;
+    }
+    #hs-form-container .hs-input {
+      background: var(--gray-light) !important; border: 1.5px solid var(--border) !important;
+      border-radius: 8px !important; color: var(--black) !important; padding: 11px 14px !important;
+      font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important;
+      transition: border-color 0.15s !important;
+    }
+    #hs-form-container .hs-input:focus { outline: none !important; border-color: var(--black) !important; background: var(--white) !important; }
+    #hs-form-container .hs-button, .native-submit {
+      background: var(--yellow) !important; color: var(--black) !important; border: none !important;
+      border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important;
+      font-weight: 800 !important; width: 100% !important; cursor: pointer !important;
+      font-family: 'Inter', sans-serif !important; text-transform: uppercase !important;
+      letter-spacing: 0.5px !important; transition: transform 0.15s, background 0.15s !important;
+      margin-top: 6px !important; display: block !important; box-sizing: border-box !important;
+    }
+    #hs-form-container .hs-button:hover, .native-submit:hover { background: var(--yellow-dark) !important; transform: translateY(-1px) !important; }
+    #hs-form-container .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; margin-top: 4px !important; }
+    #hs-form-container .hs_submit, #hs-form-container .hs_submit .actions { width: 100% !important; }
+    .privacy-note { font-size: 0.72rem; color: var(--gray-mid); text-align: center; margin-top: 14px; }
+
+    .native-field { margin-bottom: 14px; }
+    .native-field label { font-size: 0.8rem; font-weight: 600; color: var(--black); margin-bottom: 6px; display: block; }
+    .native-field input {
+      background: var(--gray-light); border: 1.5px solid var(--border); border-radius: 8px;
+      color: var(--black); padding: 11px 14px; font-size: 0.9rem; width: 100%; font-family: 'Inter', sans-serif;
+    }
+    .native-field input:focus { outline: none; border-color: var(--black); background: var(--white); }
+    .native-field select {
+      background: var(--gray-light); border: 1.5px solid var(--border); border-radius: 8px;
+      color: var(--black); padding: 11px 10px; font-size: 0.9rem; font-family: 'Inter', sans-serif;
+    }
+    .phone-row { display: flex; gap: 8px; }
+    .phone-row input { flex: 1; }
+
+    /* ===== QUIZ ===== */
+    .quiz-section { display: none; max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; animation: fadeUp 0.4s ease both; }
+    .quiz-progress-wrap { margin-bottom: 40px; }
+    .quiz-progress-meta { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; }
+    .quiz-progress-track { height: 8px; background: var(--gray-light); border-radius: 4px; overflow: hidden; }
+    .quiz-progress-fill { height: 100%; width: 0%; background: var(--yellow); border-radius: 4px; transition: width 0.35s ease; }
+
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; animation: fadeUp 0.35s ease both; }
+    .quiz-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gray-mid); margin-bottom: 12px; }
+    .quiz-question { font-size: clamp(1.3rem, 2.6vw, 1.9rem); font-weight: 900; letter-spacing: -0.8px; line-height: 1.15; margin-bottom: 28px; }
+    .quiz-options { display: flex; flex-direction: column; gap: 12px; }
+    .quiz-option {
+      text-align: left; background: var(--white); border: 1.5px solid var(--border); border-radius: 12px;
+      padding: 18px 20px; font-size: 0.98rem; font-weight: 600; color: var(--black); cursor: pointer;
+      font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 14px;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+    .quiz-option:hover { border-color: var(--black); background: #fffde7; }
+    .quiz-option .opt-key {
+      min-width: 30px; height: 30px; border-radius: 8px; background: var(--gray-light);
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;
+      flex-shrink: 0; transition: background 0.15s;
+    }
+    .quiz-option:hover .opt-key { background: var(--yellow); }
+    .quiz-back { margin-top: 26px; background: none; border: none; color: var(--gray-mid); font-weight: 700; font-size: 0.85rem; cursor: pointer; font-family: 'Inter', sans-serif; }
+    .quiz-back:hover { color: var(--black); }
+
+    /* Paso de dato de mercado (no interactivo, solo "seguir") */
+    .stat-step-card {
+      border: 1.5px solid var(--black); border-radius: 16px; padding: 32px 28px; text-align: center;
+    }
+    .stat-step-num {
+      font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 900; letter-spacing: -2px; line-height: 1;
+      margin-bottom: 14px;
+    }
+    .stat-step-label { font-size: 1rem; color: var(--gray-dark); line-height: 1.6; margin-bottom: 26px; max-width: 46ch; margin-left: auto; margin-right: auto; }
+
+    /* Mini-challenge visual */
+    .challenge-seq { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 8px; }
+    .challenge-shape {
+      width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .challenge-shape svg { width: 100%; height: 100%; }
+    .challenge-arrow { font-size: 1.3rem; color: var(--gray-mid); font-weight: 700; }
+    .challenge-q-mark {
+      width: 46px; height: 46px; border: 2px dashed var(--gray-mid); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--gray-mid); font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .challenge-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 28px; }
+    .challenge-options .quiz-option { justify-content: center; }
+
+    /* ===== RESULT ===== */
+    .result-section { display: none; max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; animation: fadeUp 0.45s ease both; }
+    .result-verdict { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.4px; color: var(--gray-mid); margin-bottom: 14px; }
+    .result-card { border: 1.5px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+    .result-head { background: var(--black); color: var(--white); padding: 40px 40px 32px; }
+    .result-match { display: flex; align-items: baseline; gap: 10px; margin-bottom: 18px; }
+    .result-match-pct { font-size: clamp(2.4rem, 6vw, 3.4rem); font-weight: 900; color: var(--yellow); letter-spacing: -2px; line-height: 1; }
+    .result-match-label { font-size: 0.85rem; color: #c9c9c9; font-weight: 600; }
+    .result-career-tag { display: inline-block; background: var(--yellow); color: var(--black); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 5px 12px; border-radius: 4px; margin-bottom: 16px; }
+    .result-head h2 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: 900; letter-spacing: -1px; line-height: 1.15; }
+    .result-head h2 em { font-style: normal; color: var(--yellow); }
+    .result-body { padding: 36px 40px 40px; }
+    .result-desc { font-size: 1.02rem; color: var(--gray-dark); line-height: 1.7; margin-bottom: 24px; }
+    .result-stat {
+      font-size: 1rem; font-weight: 700; line-height: 1.55; color: var(--black);
+      border-left: 4px solid var(--yellow); padding-left: 18px; margin-bottom: 30px;
+    }
+    .result-actions { display: flex; flex-direction: column; gap: 12px; }
+    .btn-primary, .btn-secondary {
+      display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.98rem;
+      font-weight: 800; padding: 16px 32px; border-radius: 12px; text-decoration: none;
+      text-transform: uppercase; letter-spacing: 0.5px; transition: transform 0.15s, background 0.15s;
+      cursor: pointer; font-family: 'Inter', sans-serif; border: none;
+    }
+    .btn-primary { background: var(--yellow); color: var(--black); }
+    .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+    .btn-secondary { background: var(--white); color: var(--black); border: 1.5px solid var(--black); }
+    .btn-secondary:hover { background: var(--gray-light); }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.78rem; color: var(--gray-mid); text-decoration: none; }
+    .footer-links a:hover { color: var(--black); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 40px 24px 48px; gap: 40px; }
+      .form-card { position: static; }
+      .companies-strip { padding: 40px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+      .result-head, .result-body { padding-left: 24px; padding-right: 24px; }
+      .challenge-options { grid-template-columns: 1fr; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left { animation: fadeUp 0.5s ease both; }
+    .form-card { animation: fadeUp 0.5s 0.1s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com/" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"></path>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"></path>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"></path>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"></path>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"></path>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"></path>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"></path>
+      </svg>
+    </a>
+    <a class="nav-link" id="nav-cta" href="https://www.soyhenry.com/" target="_blank">Ver carreras</a>
+  </nav>
+
+  <!-- ===== INTRO (hero + captura) ===== -->
+  <div id="intro-wrap">
+  <section class="hero" id="intro-section">
+    <div class="hero-left">
+      <div class="badge-row">
+        <span class="badge primary">⚡ Test · 2 minutos</span>
+        <span class="badge outline">Semana del Programador</span>
+      </div>
+      <h1>¿Arrancas o <em>subes de nivel?</em></h1>
+      <p class="hero-desc">
+        La IA cambió las reglas de cómo se programa. En 2 minutos descubre tu % de match
+        y cuál es tu próximo paso concreto: arrancar desde cero o subir de nivel lo que ya sabes.
+      </p>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div id="form-wrapper">
+        <div class="form-top-bar"></div>
+        <h2>Déjanos tus datos y arranca</h2>
+        <p class="form-sub">Te toma 2 minutos.</p>
+        <div id="hs-form-container" data-hs-forms-root="true"></div>
+        <p class="privacy-note">🔒 Sin spam. Tus datos están seguros.</p>
+      </div>
+    </div>
+  </section>
+  </div><!-- /intro-wrap -->
+
+  <!-- ===== QUIZ ===== -->
+  <section class="quiz-section" id="quiz-section">
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-meta">
+        <span id="quiz-count">Pregunta 1</span>
+        <span>Test de programar con IA</span>
+      </div>
+      <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quiz-fill"></div></div>
+    </div>
+    <div id="quiz-steps"></div>
+  </section>
+
+  <!-- ===== RESULT ===== -->
+  <section class="result-section" id="result-section">
+    <p class="result-verdict" id="result-verdict">Tu resultado</p>
+    <div class="result-card">
+      <div class="result-head">
+        <div class="result-match">
+          <span class="result-match-pct" id="r-pct"></span>
+          <span class="result-match-label">de match</span>
+        </div>
+        <span class="result-career-tag" id="r-tag"></span>
+        <h2 id="r-title"></h2>
+      </div>
+      <div class="result-body">
+        <p class="result-desc" id="r-desc"></p>
+        <p class="result-stat" id="r-stat"></p>
+        <div class="result-actions">
+          <a class="btn-primary" id="r-primary" href="#" target="_blank"></a>
+          <a class="btn-secondary" id="r-wa" href="#" target="_blank">Hablá por WhatsApp con nosotros</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google">
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre">
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture">
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal">
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander">
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak">
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá">
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+    <div class="footer-links">
+      <a href="https://www.soyhenry.com/" target="_blank">Henry</a>
+      <a href="https://www.soyhenry.com/webfullstack" target="_blank">Full Stack AI</a>
+    </div>
+  </footer>
+
+  <script>
+  /* =========================================================================
+     CONFIG
+     ========================================================================= */
+  const CONFIG = {
+    hsRegion:   "na1",
+    hsPortalId: "19612811",
+    // Form COMPARTIDO "Descarga de contenido" (mismo que las landings de guías y el
+    // quiz "¿Tu trabajo tiene futuro?"). Se diferencia por el <title> de la página.
+    hsFormId:   "ce8f2a08-f13f-41a7-a27e-9e57a5ffee61",
+    fbEvent:     "Descarga de contenido",
+    contentName: "quiz-nivel-programador-ia",
+    // Reusamos career_interest -- ya existe, ya está wireado, y es la MISMA propiedad
+    // que escribe el quiz "¿Tu trabajo tiene futuro?" con estos mismos valores exactos.
+    hsCareerProperty: "career_interest",
+  };
+
+  const CAREERS = {
+    fullstack: {
+      name: "Full Stack AI",
+      tag:  "AI Product Development",
+      desc: "No hace falta que sepas programar hoy — hace falta que quieras aprender con las herramientas que ya están cambiando cómo se construye software. Arrancas desde la lógica y en semanas ya estás construyendo productos reales, con IA integrada en tu flujo de trabajo.",
+      hsValue: "Full Stack AI",
+      ctaLabel: "Súmate a la masterclass en vivo →",
+      ctaUrl: "https://recursos.soyhenry.com/landing-roadmap-programador-ia.html",
+      ctaAppendUtms: true,
+      statTemplate: n => `Con tu perfil (${n}% de match), tu próximo paso es la masterclass en vivo del 9/9: "El roadmap para convertirte en programador con IA en 2026".`,
+    },
+    aieng: {
+      name: "AI Engineering",
+      tag:  "Applied AI Engineering",
+      desc: "Esto no es para arrancar de cero — es para subir de nivel con IA sobre lo que ya sabes. Ya programas: el próximo paso es integrar modelos, APIs y agentes en sistemas reales, el tipo de perfil que hoy más buscan las empresas.",
+      hsValue: "AI Engineer",
+      ctaLabel: "Mira la clase grabada →",
+      ctaUrl: "https://www.youtube.com/watch?v=u8hgIp-0YIY",
+      ctaAppendUtms: false,
+      statTemplate: n => `Con tu perfil (${n}% de match), tu próximo paso es esta clase grabada pensada para quien ya programa y quiere subir de nivel con IA.`,
+    },
+  };
+
+  const WA_NUMBER = "18632709976";
+  const WA_TEXT = "¡Hola! Hice el test \"¿Arrancas o subes de nivel?\" de Día del Programador y quiero saber más.";
+
+  /* =========================================================================
+     QUIZ -- 8 preguntas
+     tipo: "hook" | "score" | "stat" | "challenge" | "gate"
+     Las de tipo "score" y "challenge" (6 en total) reparten hasta 30pp de match, con
+     pesos deliberadamente separados (1 a 5) para que combinaciones distintas de
+     respuestas den porcentajes distintos -- no todas las rutas razonables convergen
+     al mismo número.
+     El piso es 60 siempre; el techo 90 (nunca 100).
+     El gate (última pregunta) decide la carrera sin excepción.
+     ========================================================================= */
+  const MAX_MATCH_POINTS = 30;
+  const SCORING_QUESTIONS = 6; // Q2,Q3,Q4,Q5,Q6(challenge),Q7
+  const POINTS_PER_Q = MAX_MATCH_POINTS / SCORING_QUESTIONS; // 5
+
+  const QUESTIONS = [
+    { id: "hook", tipo: "hook", kicker: "Para arrancar",
+      q: "¿Sientes que tu carrera profesional tiene futuro?",
+      a: [
+        { t: "Sí, totalmente" },
+        { t: "No, la verdad que no" },
+      ]},
+
+    { id: "resolver", tipo: "score", kicker: "Cómo trabajas",
+      q: "Cuando algo no funciona, ¿qué haces primero?",
+      a: [
+        { t: "Lo googleo hasta encontrar la solución", w: 5 },
+        { t: "Le pido ayuda a alguien", w: 2 },
+        { t: "Pruebo y repruebo hasta que funcione", w: 4 },
+        { t: "Lo dejo para después", w: 1 },
+      ]},
+
+    { id: "tech_fit", tipo: "score", kicker: "Sobre ti",
+      q: "¿Crees que una carrera en el mundo digital / tech es adecuada para ti?",
+      a: [
+        { t: "Sí, totalmente", w: 5 },
+        { t: "Creo que sí, pero no sé por dónde empezar", w: 3 },
+        { t: "Nunca lo pensé, pero me interesa", w: 4 },
+        { t: "No, prefiero otra cosa", w: 1 },
+      ]},
+
+    { id: "dato_mercado", tipo: "stat",
+      statNum: "92%",
+      statLabel: "de las empresas en LATAM ya busca perfiles con nociones de IA — no solo desarrolladores senior." },
+
+    { id: "objetivo", tipo: "score", kicker: "Tu meta",
+      q: "¿Cuál es tu objetivo profesional?",
+      a: [
+        { t: "Conseguir mi primer trabajo en tech", w: 5 },
+        { t: "Cambiar de carrera", w: 3 },
+        { t: "Ganar mejor", w: 1 },
+        { t: "Ser más independiente (freelance / remoto)", w: 4 },
+        { t: "Subir de nivel en lo que ya hago", w: 5 },
+      ]},
+
+    { id: "logica", tipo: "score", kicker: "Cómo piensas",
+      q: "Cuando tienes que resolver un problema complejo, ¿qué prefieres?",
+      a: [
+        { t: "Desarmarlo en partes pequeñas y avanzar paso a paso", w: 5 },
+        { t: "Buscar patrones o atajos", w: 4 },
+        { t: "Pedir ayuda o ver cómo lo resolvieron otros", w: 1 },
+        { t: "Probar distintas soluciones hasta que una funcione", w: 3 },
+      ]},
+
+    { id: "challenge", tipo: "challenge", kicker: "Un desafío rápido",
+      q: "Mira la secuencia. Cada figura cambia de FORMA y de RELLENO según una regla fija. ¿Cuál sigue?",
+      // forma cicla cada 3 (círculo, cuadrado, triángulo), relleno cicla cada 2 (amarillo, negro)
+      // secuencia mostrada: 1..4, se pregunta el paso 5 -> forma idx (5-1)%3=1 -> cuadrado, relleno idx (5-1)%2=0 -> amarillo
+      correctShape: "square", correctFill: "yellow",
+      options: [
+        { shape: "square", fill: "yellow", correct: true },
+        { shape: "square", fill: "black", correct: false },
+        { shape: "triangle", fill: "yellow", correct: false },
+        { shape: "circle", fill: "yellow", correct: false },
+      ]},
+
+    { id: "personalidad", tipo: "score", kicker: "Última antes del resultado",
+      q: "¿Cómo te describirías mejor?",
+      a: [
+        { t: "Curioso/a: me gusta entender cómo funcionan las cosas", w: 4 },
+        { t: "Creativo/a: me gusta armar cosas desde cero", w: 5 },
+        { t: "Organizado/a: me gusta tener todo bajo control", w: 1 },
+        { t: "Resolutivo/a: me gusta encontrar soluciones rápido", w: 3 },
+      ]},
+
+    { id: "gate", tipo: "gate", kicker: "Última pregunta",
+      q: "¿Programas hoy en día?",
+      sub: "Mi experiencia programando es:",
+      a: [
+        { t: "No programo", career: "fullstack" },
+        { t: "He hecho cursos o proyectos chicos", career: "fullstack" },
+        { t: "Trabajo programando hace menos de tres años", career: "fullstack" },
+        { t: "Trabajo programando hace tres años o más", career: "aieng" },
+      ]},
+  ];
+
+  const PERSONALITY_OPEN = {
+    "Curioso/a: me gusta entender cómo funcionan las cosas": "Se nota que te gusta entender cómo funcionan las cosas por dentro,",
+    "Creativo/a: me gusta armar cosas desde cero": "Tienes esa cosa de querer construir algo propio, desde cero,",
+    "Organizado/a: me gusta tener todo bajo control": "Te gusta tener el control y ver las cosas avanzar en orden,",
+    "Resolutivo/a: me gusta encontrar soluciones rápido": "Cuando hay un problema, ya estás pensando en la solución,",
+  };
+  const OBJETIVO_CLOSE = {
+    "Conseguir mi primer trabajo en tech": "y eso es justo lo que hace falta para dar el salto a tu primer trabajo en tech.",
+    "Cambiar de carrera": "y es la base para animarte a cambiar de carrera sin arrancar de cero.",
+    "Ganar mejor": "y con las herramientas correctas, eso se traduce directo en mejores oportunidades.",
+    "Ser más independiente (freelance / remoto)": "y es el tipo de perfil que hoy puede trabajar remoto o de forma independiente.",
+    "Subir de nivel en lo que ya hago": "y es exactamente el perfil que las empresas están buscando potenciar con IA.",
+  };
+
+  /* =========================================================================
+     Estado + motor
+     ========================================================================= */
+  const state = { idx: 0, answers: {}, matchPoints: 0, career: null };
+  const LETTERS = ["A", "B", "C", "D", "E"];
+  let leadEmail = "";
+
+  function sendCareerInterest(career) {
+    try {
+      const props = {};
+      props[CONFIG.hsCareerProperty] = career.hsValue;
+      if (leadEmail) props.email = leadEmail;
+      window._hsq = window._hsq || [];
+      window._hsq.push(["identify", props]);
+      window._hsq.push(["trackPageView"]);
+    } catch (e) { /* nunca bloquear el resultado */ }
+  }
+
+  function shapeSvg(shape, fill) {
+    const color = fill === "yellow" ? "#FFFF00" : "#111111";
+    const stroke = fill === "yellow" ? "#111111" : "#111111";
+    if (shape === "circle") return `<svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="19" fill="${color}" stroke="${stroke}" stroke-width="2"/></svg>`;
+    if (shape === "square") return `<svg viewBox="0 0 46 46"><rect x="5" y="5" width="36" height="36" rx="4" fill="${color}" stroke="${stroke}" stroke-width="2"/></svg>`;
+    return `<svg viewBox="0 0 46 46"><polygon points="23,4 42,40 4,40" fill="${color}" stroke="${stroke}" stroke-width="2"/></svg>`;
+  }
+
+  const COUNTABLE = QUESTIONS.filter(q => q.tipo !== "stat");
+  const TOTAL_COUNTABLE = COUNTABLE.length;
+
+  function renderStep() {
+    const wrap = document.getElementById("quiz-steps");
+    const qi = QUESTIONS[state.idx];
+    document.getElementById("quiz-fill").style.width = `${(state.idx / QUESTIONS.length) * 100}%`;
+    if (qi.tipo === "stat") {
+      document.getElementById("quiz-count").textContent = "Un dato antes de seguir";
+    } else {
+      const countableIdx = COUNTABLE.indexOf(qi);
+      document.getElementById("quiz-count").textContent = `Pregunta ${countableIdx + 1} de ${TOTAL_COUNTABLE}`;
+    }
+
+    wrap.innerHTML = "";
+    const step = document.createElement("div");
+    step.className = "quiz-step active";
+
+    if (qi.tipo === "stat") {
+      step.innerHTML = `
+        <div class="stat-step-card">
+          <div class="stat-step-num">${qi.statNum}</div>
+          <p class="stat-step-label">${qi.statLabel}</p>
+          <button class="quiz-option" id="stat-continue" style="justify-content:center; display:inline-flex;">Seguir →</button>
+        </div>
+        ${state.idx > 0 ? '<button class="quiz-back" id="quiz-back">← Volver</button>' : ""}
+      `;
+      wrap.appendChild(step);
+      document.getElementById("stat-continue").addEventListener("click", advance);
+      const back = document.getElementById("quiz-back");
+      if (back) back.addEventListener("click", goBack);
+      document.getElementById("quiz-section").scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    if (qi.tipo === "challenge") {
+      const seq = [
+        { shape: "circle", fill: "yellow" },
+        { shape: "square", fill: "black" },
+        { shape: "triangle", fill: "yellow" },
+        { shape: "circle", fill: "black" },
+      ];
+      const seqHtml = seq.map((s, i) => `
+        <div class="challenge-shape">${shapeSvg(s.shape, s.fill)}</div>
+        ${i < seq.length - 1 ? '<span class="challenge-arrow">→</span>' : ""}
+      `).join("");
+      step.innerHTML = `
+        <p class="quiz-kicker">${qi.kicker}</p>
+        <h2 class="quiz-question">${qi.q}</h2>
+        <div class="challenge-seq">
+          ${seqHtml}
+          <span class="challenge-arrow">→</span>
+          <div class="challenge-q-mark">?</div>
+        </div>
+        <div class="quiz-options challenge-options"></div>
+        ${state.idx > 0 ? '<button class="quiz-back" id="quiz-back">← Volver</button>' : ""}
+      `;
+      const opts = step.querySelector(".quiz-options");
+      qi.options.forEach(opt => {
+        const b = document.createElement("button");
+        b.className = "quiz-option";
+        b.innerHTML = `<span class="challenge-shape">${shapeSvg(opt.shape, opt.fill)}</span>`;
+        b.addEventListener("click", () => {
+          state.answers[qi.id] = opt.correct ? "correcto" : "incorrecto";
+          state.matchPoints += opt.correct ? POINTS_PER_Q : POINTS_PER_Q * 0.2;
+          advance();
+        });
+        opts.appendChild(b);
+      });
+      wrap.appendChild(step);
+      const back = document.getElementById("quiz-back");
+      if (back) back.addEventListener("click", goBack);
+      document.getElementById("quiz-section").scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    // hook / score / gate
+    step.innerHTML = `
+      <p class="quiz-kicker">${qi.kicker || ""}</p>
+      <h2 class="quiz-question">${qi.q}</h2>
+      ${qi.sub ? `<p style="font-size:0.95rem;color:var(--gray-dark);margin-top:-16px;margin-bottom:24px;font-weight:600;">${qi.sub}</p>` : ""}
+      <div class="quiz-options"></div>
+      ${state.idx > 0 ? '<button class="quiz-back" id="quiz-back">← Volver</button>' : ""}
+    `;
+    const opts = step.querySelector(".quiz-options");
+    qi.a.forEach((opt, i) => {
+      const b = document.createElement("button");
+      b.className = "quiz-option";
+      b.innerHTML = `<span class="opt-key">${LETTERS[i]}</span><span>${opt.t}</span>`;
+      b.addEventListener("click", () => chooseAnswer(qi, opt));
+      opts.appendChild(b);
+    });
+    wrap.appendChild(step);
+    const back = document.getElementById("quiz-back");
+    if (back) back.addEventListener("click", goBack);
+    document.getElementById("quiz-section").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function chooseAnswer(qi, opt) {
+    state.answers[qi.id] = opt.t;
+    if (qi.tipo === "score" && typeof opt.w === "number") state.matchPoints += opt.w;
+    if (qi.tipo === "gate") state.career = opt.career;
+    advance();
+  }
+
+  function advance() {
+    if (state.idx < QUESTIONS.length - 1) {
+      state.idx++;
+      renderStep();
+    } else {
+      showResult();
+    }
+  }
+
+  function goBack() {
+    if (state.idx === 0) return;
+    state.idx--;
+    recomputeUpTo(state.idx);
+    renderStep();
+  }
+
+  function recomputeUpTo(upto) {
+    state.matchPoints = 0;
+    state.career = null;
+    for (let i = 0; i < upto; i++) {
+      const qi = QUESTIONS[i];
+      if (qi.tipo === "score") {
+        const opt = (qi.a || []).find(o => o.t === state.answers[qi.id]);
+        if (opt && typeof opt.w === "number") state.matchPoints += opt.w;
+      } else if (qi.tipo === "challenge") {
+        state.matchPoints += state.answers[qi.id] === "correcto" ? POINTS_PER_Q : (state.answers[qi.id] === "incorrecto" ? POINTS_PER_Q * 0.2 : 0);
+      } else if (qi.tipo === "gate") {
+        const opt = (qi.a || []).find(o => o.t === state.answers[qi.id]);
+        if (opt) state.career = opt.career;
+      }
+    }
+  }
+
+  function showResult() {
+    document.getElementById("quiz-fill").style.width = "100%";
+    const career = CAREERS[state.career || "fullstack"];
+    const pct = Math.max(60, Math.min(90, Math.round(60 + state.matchPoints)));
+
+    const openLine = PERSONALITY_OPEN[state.answers.personalidad] || "Tienes un perfil que combina lógica y ganas de aprender,";
+    const closeLine = OBJETIVO_CLOSE[state.answers.objetivo] || "y ese es exactamente el tipo de perfil que buscamos potenciar.";
+
+    document.getElementById("result-verdict").textContent = "Tu resultado";
+    document.getElementById("r-pct").textContent = `${pct}%`;
+    document.getElementById("r-tag").textContent = career.tag;
+    document.getElementById("r-title").innerHTML = `Tu carrera: <em>${career.name}</em>`;
+    document.getElementById("r-desc").textContent = `${openLine} ${closeLine} ${career.desc}`;
+    document.getElementById("r-stat").textContent = career.statTemplate(pct);
+
+    const params = utmQueryString();
+    const primaryHref = career.ctaAppendUtms && params ? `${career.ctaUrl}?${params}` : career.ctaUrl;
+    const primaryBtn = document.getElementById("r-primary");
+    primaryBtn.href = primaryHref;
+    primaryBtn.textContent = career.ctaLabel;
+
+    document.getElementById("r-wa").href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT)}`;
+    document.getElementById("nav-cta").href = (career.hsValue === "Full Stack AI" ? "https://www.soyhenry.com/webfullstack" : "https://www.soyhenry.com/carrera-ai-engineering") + (params ? "?" + params : "");
+
+    if (window.fbq) fbq("trackCustom", CONFIG.fbEvent + " - Resultado", { carrera: career.name, match_pct: pct });
+    sendCareerInterest(career);
+
+    document.getElementById("quiz-section").style.display = "none";
+    const r = document.getElementById("result-section");
+    r.style.display = "block";
+    r.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  /* =========================================================================
+     UTMs + captura HubSpot
+     ========================================================================= */
+  function getParam(name) { return new URLSearchParams(window.location.search).get(name) || ""; }
+  const utms = {
+    utm_source:   getParam("utm_source"),
+    utm_medium:   getParam("utm_medium"),
+    utm_campaign: getParam("utm_campaign"),
+    utm_content:  getParam("utm_content"),
+    utm_term:     getParam("utm_term"),
+  };
+  Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+  Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ""; });
+  function utmQueryString() {
+    return Object.entries(utms).filter(([_, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
+  }
+
+  function startQuiz() {
+    document.getElementById("intro-wrap").style.display = "none";
+    document.getElementById("quiz-section").style.display = "block";
+    renderStep();
+  }
+
+  function buildHubSpotForm() {
+    if (!window.hbspt || !hbspt.forms) return false;
+    hbspt.forms.create({
+      region: CONFIG.hsRegion,
+      portalId: CONFIG.hsPortalId,
+      formId: CONFIG.hsFormId,
+      target: "#hs-form-container",
+      onFormReady: function (form) {
+        setTimeout(() => {
+          const btn = form.querySelector(".hs-button");
+          if (btn) btn.value = "Empezar el test";
+          const utmMap = {
+            "ultima_fuente_utm":  utms.utm_source,
+            "ultimo_medio_utm":   utms.utm_medium,
+            "ultima_campana_utm": utms.utm_campaign,
+            "utm_content":        utms.utm_content,
+            "utm_term":           utms.utm_term,
+          };
+          form.querySelectorAll("input").forEach(input => {
+            const n = input.name || "";
+            if (utmMap[n] !== undefined && utmMap[n] !== "") input.value = utmMap[n];
+          });
+        }, 600);
+      },
+      onFormSubmit: function (form) {
+        try {
+          const el = form && form.querySelector ? form.querySelector('input[name="email"]') : null;
+          if (el && el.value) leadEmail = el.value.trim().toLowerCase();
+        } catch (e) { /* el hutk igual identifica al contacto */ }
+        if (window.fbq) fbq("trackCustom", CONFIG.fbEvent, { content_name: CONFIG.contentName });
+        setTimeout(startQuiz, 700);
+      },
+    });
+    return true;
+  }
+
+  function buildFallbackForm() {
+    const c = document.getElementById("hs-form-container");
+    if (c.children.length > 0) return;
+    c.innerHTML = `
+      <div class="native-field"><label>Correo</label><input type="email" id="fb-email"></div>
+      <div class="native-field"><label>Nombre</label><input type="text" id="fb-name"></div>
+      <div class="native-field"><label>Apellidos</label><input type="text" id="fb-lastname"></div>
+      <div class="native-field"><label>Número de teléfono</label>
+        <div class="phone-row">
+          <select id="fb-country">
+            <option value="+54">🇦🇷 Argentina</option>
+            <option value="+52">🇲🇽 México</option>
+            <option value="+57">🇨🇴 Colombia</option>
+            <option value="+56">🇨🇱 Chile</option>
+            <option value="+51">🇵🇪 Perú</option>
+            <option value="+598">🇺🇾 Uruguay</option>
+            <option value="+">🌎 Otro</option>
+          </select>
+          <input type="tel" id="fb-phone" placeholder="+54 11 2808 0318">
+        </div>
+      </div>
+      <button class="native-submit" id="fb-submit">Empezar el test</button>
+      <p style="font-size:0.68rem;color:var(--gray-mid);text-align:center;margin-top:10px;">Modo demo — sin HubSpot conectado.</p>
+    `;
+    document.getElementById("fb-submit").addEventListener("click", () => {
+      const email = document.getElementById("fb-email").value.trim();
+      const name = document.getElementById("fb-name").value.trim();
+      if (!name || !email) { alert("Completá nombre y correo para continuar."); return; }
+      leadEmail = email.toLowerCase();
+      if (window.fbq) fbq("trackCustom", CONFIG.fbEvent, { content_name: CONFIG.contentName });
+      startQuiz();
+    });
+  }
+
+  window.addEventListener("load", () => {
+    let built = buildHubSpotForm();
+    setTimeout(() => {
+      if (!built) built = buildHubSpotForm();
+      buildFallbackForm();
+    }, 2500);
+  });
+  </script>
+</body>
+</html>
