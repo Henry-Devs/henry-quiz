@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineering 101: diseña, evalúa y despliega IA en producción | Henry</title>
+  <meta name="description" content="Masterclass en vivo y gratis con Alexander Vicondoa (ElevenLabs): cómo se diseña, evalúa y despliega un sistema de IA en producción. Ex Mercado Libre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Cómo se diseña, evalúa y despliega un sistema de IA en producción" />
+  <meta property="og:description" content="Masterclass en vivo y gratis con Alexander Vicondoa, quien dirige el equipo de Deployment de ElevenLabs." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/henry-favicon.png" />
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+  <!-- ⚠️ Sin JSON-LD de evento: la spec no trae fecha/hora de la masterclass
+       (el 28/9 dado es la proxima cohorte de la CARRERA, no el evento). Sin
+       startDate no se puede declarar un schema.org/Event valido -- se agrega
+       cuando se confirme la fecha. -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 56px 48px 48px;
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--black);
+      margin-bottom: 18px;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-mid);
+      margin-bottom: 12px;
+    }
+
+    /* EVENT / FORM CARD */
+    .form-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      position: sticky;
+      top: 80px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .free-badge {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 14px;
+    }
+    .form-card h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 18px; }
+    .event-compact-facts {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-dark);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .event-compact-facts .pending { color: #b8860b; background: #fff8e1; padding: 1px 5px; border-radius: 4px; }
+    #hs-form-container iframe { width: 100%; border: none; }
+    .privacy-note { font-size: 0.72rem; color: var(--gray-mid); text-align: center; margin-top: 14px; }
+
+    /* Success state */
+    .success-state { display: none; text-align: center; padding: 16px 0; }
+    .success-icon {
+      width: 72px; height: 72px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem;
+    }
+    .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
+    .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* SPEAKER -- MUCHISIMO foco visual, pedido explicito */
+    .speaker-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 48px; }
+    .speaker-block {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      align-items: center;
+      border: 2px solid var(--black);
+      border-radius: 20px;
+      padding: 32px;
+      background: var(--white);
+    }
+    .speaker-photo-wrap {
+      width: 220px; height: 220px; border-radius: 16px; overflow: hidden;
+      background: var(--gray-light); flex-shrink: 0;
+    }
+    .speaker-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .speaker-photo-placeholder { display: flex; align-items: center; justify-content: center; }
+    .speaker-photo-placeholder span { font-size: 3.5rem; font-weight: 900; color: var(--border); }
+    .speaker-name-lg { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.5px; color: var(--black); margin-bottom: 4px; }
+    .speaker-role-lg { font-size: 0.9rem; color: var(--gray-mid); font-weight: 700; margin-bottom: 16px; }
+    .speaker-bio { font-size: 0.95rem; color: var(--gray-dark); line-height: 1.65; margin-bottom: 20px; }
+    .speaker-logos { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .speaker-logos img { height: 34px; width: auto; }
+    .speaker-logos .meli-logo { height: 30px; }
+
+    /* ELEVENLABS BLOCK */
+    .info-band { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 48px; }
+    .info-band-inner { max-width: 1120px; margin: 0 auto; }
+    .info-band h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 14px; }
+    .info-band p { font-size: 0.95rem; color: var(--gray-dark); line-height: 1.7; max-width: 760px; }
+    .info-band strong { color: var(--black); }
+
+    /* PARA QUIEN */
+    .fit-section { max-width: 1120px; margin: 0 auto; padding: 48px 48px 8px; }
+    .fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .fit-card { border: 1.5px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+    .fit-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray-mid); margin-bottom: 8px; }
+    .fit-card p { font-size: 0.88rem; color: var(--black); font-weight: 600; line-height: 1.5; }
+    .fit-card.no p { color: var(--gray-dark); font-weight: 500; }
+
+    /* AGENDA */
+    .agenda-section { max-width: 1120px; margin: 0 auto; padding: 48px 48px 8px; }
+    .agenda-section h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 24px; text-align: center; }
+    .agenda-list { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .agenda-row { display: flex; gap: 18px; padding: 18px 22px; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .agenda-row:last-child { border-bottom: none; }
+    .agenda-row.is-close { background: var(--gray-light); }
+    .agenda-num {
+      min-width: 34px; height: 34px; background: var(--yellow); color: var(--black);
+      border-radius: 9px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 800; flex-shrink: 0;
+    }
+    .agenda-row.is-close .agenda-num { background: var(--black); color: var(--white); }
+    .agenda-title { font-size: 0.92rem; font-weight: 800; color: var(--black); margin-bottom: 4px; }
+    .agenda-desc { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.55; }
+
+    /* CIERRE / CARRERA */
+    .why-section { background: var(--black); color: var(--white); padding: 56px 48px; }
+    .why-inner { max-width: 1120px; margin: 0 auto; }
+    .why-header { text-align: center; margin-bottom: 36px; }
+    .why-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; }
+    .why-header p { font-size: 0.95rem; color: #ccc; max-width: 620px; margin: 0 auto; line-height: 1.6; }
+    .career-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px; }
+    .career-fact { border: 1.5px solid #333; border-radius: 12px; padding: 18px 20px; }
+    .career-fact-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1px; color: #999; font-weight: 700; margin-bottom: 8px; }
+    .career-fact-value { font-size: 1rem; font-weight: 800; color: var(--white); line-height: 1.3; }
+    .career-fact-value em { font-style: normal; color: var(--yellow); }
+    .includes-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 32px; }
+    .includes-chip {
+      border: 1.5px solid var(--yellow); border-radius: 20px; padding: 8px 16px;
+      font-size: 0.82rem; font-weight: 700; color: var(--yellow);
+    }
+    .why-cta-wrap { text-align: center; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black);
+      font-size: 0.95rem; font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 36px 24px 32px; gap: 40px; }
+      .form-card { position: static; }
+      .speaker-section { padding: 8px 24px 40px; }
+      .speaker-block { grid-template-columns: 1fr; text-align: center; padding: 24px; }
+      .speaker-photo-wrap { width: 160px; height: 160px; margin: 0 auto; }
+      .speaker-logos { justify-content: center; }
+      .info-band { padding: 40px 24px; }
+      .fit-section { padding: 40px 24px 8px; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .agenda-section { padding: 40px 24px 8px; }
+      .why-section { padding: 44px 24px; }
+      .career-facts { grid-template-columns: 1fr; }
+      .companies-strip { padding: 40px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left { animation: fadeUp 0.5s ease both; }
+    .form-card { animation: fadeUp 0.5s 0.1s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge-row">
+        <span class="badge primary">AI Engineering 101</span>
+        <span class="badge outline">Masterclass en vivo con Alexander Vicondoa (ElevenLabs)</span>
+      </div>
+      <h1>Cómo se diseña, evalúa y despliega un sistema de IA en producción</h1>
+
+      <p class="hero-desc">
+        Construir un prototipo funcional de IA es, hoy, relativamente accesible. Diseñar un
+        sistema que opere de forma confiable en producción requiere un conjunto de competencias
+        distinto. Esta masterclass presenta ese proceso de la mano de quien lo ejecuta a diario
+        en ElevenLabs.
+      </p>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div id="form-wrapper">
+        <div class="form-top-bar"></div>
+        <span class="free-badge">100% gratis</span>
+        <h2>Completa tus datos y reserva tu lugar</h2>
+        <p class="form-sub">Te enviamos el link de acceso por mail.</p>
+        <!-- ⚠️ FECHA Y HORA A CONFIRMAR -- no dadas en la spec. El 28/9 es la
+             proxima cohorte de la CARRERA, no el evento. No se inventa. -->
+        <p class="event-compact-facts"><span class="pending">Fecha y hora a confirmar</span><br>Online, en vivo</p>
+        <div id="hs-form-container"></div>
+        <p class="privacy-note">Sin spam. Tus datos están seguros.</p>
+      </div>
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <h3>¡Listo!</h3>
+        <p>Te registraste correctamente. Te vamos a avisar por mail antes de la clase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKER -- foco visual fuerte, pedido explicito -->
+  <section class="speaker-section">
+    <div class="speaker-block">
+      <div class="speaker-photo-wrap speaker-photo-placeholder">
+        <!-- 🛑 SIN FOTO: el archivo del Drive compartido (Retratos/images.jpeg)
+             esta corrupto en origen, la mitad inferior es gris solido -- no es
+             un problema de crop ni de CSS. Reemplazar este placeholder por una
+             etiqueta img (src alexander-vicondoa.jpg) en cuanto llegue una foto
+             completa. Pedido explicito de "muchisimo foco visual en el
+             experto": una foto rota es peor que ninguna. -->
+        <span>AV</span>
+      </div>
+      <div>
+        <div class="speaker-name-lg">Alexander Vicondoa</div>
+        <div class="speaker-role-lg">Head of Deployment en ElevenLabs</div>
+        <p class="speaker-bio">
+          Alexander Vicondoa dirige el equipo de Deployment de ElevenLabs, la compañía de IA de
+          voz de mayor valuación a nivel global. Previamente, lideró durante seis años el equipo
+          de Agentes de Generative AI en Mercado Libre. Hoy, es el referente experto de la
+          carrera AI Engineering de Henry.
+        </p>
+        <div class="speaker-logos">
+          <img src="eleven-labs-logo.png" alt="ElevenLabs" />
+          <img class="meli-logo" src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUE ES ELEVENLABS -->
+  <section class="info-band">
+    <div class="info-band-inner">
+      <h2>¿Qué es ElevenLabs?</h2>
+      <p>ElevenLabs es la compañía de IA de voz de mayor valuación del mundo: <strong>USD 11.000
+      millones</strong> (febrero de 2026) y aproximadamente <strong>USD 500 millones</strong> de
+      ingresos anuales. Su tecnología es utilizada por bancos, aplicaciones y productos de todo
+      el mundo para dotar de voz a sus agentes de IA.</p>
+    </div>
+  </section>
+
+  <!-- PARA QUIEN -->
+  <section class="fit-section">
+    <p class="section-label" style="text-align:center;">Para quién está dirigida esta actividad</p>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <div class="fit-label">Perfil</div>
+        <p>Desarrolladores con 3+ años de experiencia profesional (backend, full-stack o data).</p>
+      </div>
+      <div class="fit-card">
+        <div class="fit-label">Objetivo</div>
+        <p>Incorporar IA aplicada a la práctica de desarrollo de software.</p>
+      </div>
+      <div class="fit-card no">
+        <div class="fit-label">No es</div>
+        <p>Una introducción a la programación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="agenda-section">
+    <h2>Los pilares reales de AI Engineering</h2>
+    <div class="agenda-list">
+      <div class="agenda-row">
+        <div class="agenda-num">1</div>
+        <div>
+          <div class="agenda-title">Qué es AI Engineering</div>
+          <div class="agenda-desc">La distinción entre AI Engineering aplicado y ML/research — el rol que hoy encabeza el ranking Jobs on the Rise 2026 de LinkedIn.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">2</div>
+        <div>
+          <div class="agenda-title">LLMs y Context Engineering</div>
+          <div class="agenda-desc">Cómo se diseña el contexto que determina el comportamiento de un modelo.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">3</div>
+        <div>
+          <div class="agenda-title">RAG, Agentes y Orquestación</div>
+          <div class="agenda-desc">Cómo un sistema conecta datos propios, decide y coordina múltiples agentes.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">4</div>
+        <div>
+          <div class="agenda-title">Producción y Evaluación</div>
+          <div class="agenda-desc">Demostración en vivo: despliegue de un agente de IA, con los mecanismos de evaluación y monitoreo que sostienen un sistema en producción — la especialidad de Alexander en ElevenLabs.</div>
+        </div>
+      </div>
+      <div class="agenda-row is-close">
+        <div class="agenda-num">—</div>
+        <div>
+          <div class="agenda-title">Cierre</div>
+          <div class="agenda-desc">Presentación de la carrera AI Engineering de Henry.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE / CARRERA -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header">
+        <h2>La Carrera AI Engineering de Henry</h2>
+        <p>El cierre de la masterclass presenta la carrera de la mano de su referente experto.</p>
+      </div>
+
+      <div class="career-facts">
+        <div class="career-fact">
+          <div class="career-fact-label">Duración</div>
+          <div class="career-fact-value">10 semanas <em>+ nivelación</em></div>
+        </div>
+        <div class="career-fact">
+          <div class="career-fact-label">Modalidad</div>
+          <div class="career-fact-value">Part Time, 10 hs semanales</div>
+        </div>
+        <div class="career-fact">
+          <div class="career-fact-label">Horario en vivo</div>
+          <div class="career-fact-value">Martes y jueves, 20 a 22 h</div>
+        </div>
+        <div class="career-fact">
+          <div class="career-fact-label">Próxima cohorte</div>
+          <div class="career-fact-value">28 de septiembre de 2026</div>
+        </div>
+        <div class="career-fact">
+          <div class="career-fact-label">Precio</div>
+          <div class="career-fact-value">Valor vigente de la carrera</div>
+        </div>
+        <div class="career-fact">
+          <div class="career-fact-label">Módulo de nivelación</div>
+          <div class="career-fact-value">Asincrónico, previo a la cohorte</div>
+        </div>
+      </div>
+
+      <div class="includes-list">
+        <span class="includes-chip">Garantía de empleo</span>
+        <span class="includes-chip">7 días de prueba</span>
+        <span class="includes-chip">Venta asistida por el equipo comercial</span>
+      </div>
+
+      <div class="why-cta-wrap">
+        <a href="#hs-form-container" class="cta-btn">Reserva tu lugar en la masterclass →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google" />
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture" />
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal" />
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander" />
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak" />
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá" />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    const MASTERCLASS = {
+      // 🛑 SIN FECHA/HORA CONFIRMADA. La spec no trae fecha/hora de la
+      // masterclass (el 28/9 es la proxima cohorte de la CARRERA). No se
+      // inventa: este campo queda vacio hasta que se confirme, y el flow
+      // 1861306136 NO va a anclar nada mientras este asi -- sin este campo,
+      // el inscripto probablemente no recibe la secuencia de mails del evento.
+      masterclass_fecha_evento:   '',
+      masterclass_fecha_larga:    '',
+      masterclass_hora:           '',
+
+      masterclass_nombre:         'Cómo se diseña, evalúa y despliega un sistema de IA en producción',
+
+      masterclass_speaker_nombre: 'Alexander Vicondoa',
+      masterclass_speaker_bio:    'Dirige el equipo de Deployment de ElevenLabs. Antes lideró 6 años el equipo de Agentes de Generative AI en Mercado Libre.',
+
+      masterclass_tema_1:         'Qué es AI Engineering: aplicado vs. ML/research',
+      masterclass_tema_2:         'LLMs y Context Engineering',
+      masterclass_tema_3:         'RAG, Agentes y Orquestación',
+
+      // ⚠️ PENDIENTES -- no inventar valores:
+      masterclass_youtube_link:   '',
+      masterclass_cupon_code:      '',
+      masterclass_cohorte_texto:   '28 de septiembre de 2026',
+      masterclass_cta_url:         '',
+
+      career_interest:            'AI Engineer',
+      masterclass_carrera:        'AI Engineer',
+
+      // 🛑 Sin fecha de evento no hay como armar un calendar link real.
+      masterclass_calendar_link:  '',
+    };
+
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "19612811",
+      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      target: "#hs-form-container",
+      onFormReady: function() {
+        setTimeout(() => {
+          const iframe = document.querySelector('#hs-form-container iframe');
+          const idoc = iframe && iframe.contentDocument;
+          if (!idoc) return;
+
+          const style = idoc.createElement('style');
+          style.textContent = `
+            body { font-family: 'Inter', sans-serif !important; }
+            .hs-form-field label { font-size: 0.8rem !important; font-weight: 600 !important; color: #111111 !important; margin-bottom: 6px !important; }
+            .hs-input { background: #f5f5f5 !important; border: 1.5px solid #e2e2e2 !important; border-radius: 8px !important; padding: 11px 14px !important; font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important; box-sizing: border-box !important; }
+            .hs-input:focus { outline: none !important; border-color: #111111 !important; background: #ffffff !important; }
+            .hs-button { background: #FFFF00 !important; color: #111111 !important; border: none !important; border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; font-family: 'Inter', sans-serif !important; }
+            .hs-button:hover { background: #e6e600 !important; }
+            .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; }
+          `;
+          idoc.head.appendChild(style);
+
+          const btn = idoc.querySelector('input[type="submit"]');
+          if (btn) btn.value = 'Registrarme';
+
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
+
+          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
+
+          idoc.querySelectorAll('input, select').forEach(input => {
+            if (fieldMap[input.name] !== undefined && fieldMap[input.name] !== '') {
+              input.value = fieldMap[input.name];
+              input.dispatchEvent(new Event('input',  { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+        }, 600);
+      },
+      onFormSubmit: function() {
+        if (window.fbq) {
+          fbq('trackCustom', 'Registro clase en vivo', {
+            content_name: 'landing-ai-engineering-101-alexander-vicondoa',
+            utm_source: utms.utm_source || '',
+            utm_medium: utms.utm_medium || '',
+            utm_campaign: utms.utm_campaign || '',
+          });
+        }
+        setTimeout(() => {
+          document.getElementById('form-wrapper').style.display = 'none';
+          document.getElementById('success-state').style.display = 'block';
+        }, 800);
+      }
+    });
+  </script>
+</body>
+</html>
