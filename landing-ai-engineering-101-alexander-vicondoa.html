@@ -136,8 +136,7 @@
     .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
     .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
 
-    /* SPEAKER -- arriba de todo (antes del hero), formato vertical: foto arriba, texto abajo */
-    .speaker-section { max-width: 680px; margin: 0 auto; padding: 40px 48px 8px; }
+    /* SPEAKER -- debajo del parrafo del hero, formato vertical: foto arriba, texto abajo */
     .speaker-block {
       display: flex;
       flex-direction: column;
@@ -145,8 +144,9 @@
       text-align: center;
       border: 2px solid var(--black);
       border-radius: 20px;
-      padding: 36px 40px;
+      padding: 28px 32px;
       background: var(--white);
+      margin-top: 28px;
     }
     .speaker-photo-wrap {
       width: 180px; height: 220px; border-radius: 14px; overflow: hidden;
@@ -234,8 +234,7 @@
       nav { padding: 14px 20px; }
       .hero { grid-template-columns: 1fr; padding: 36px 24px 32px; gap: 40px; }
       .form-card { position: static; }
-      .speaker-section { padding: 24px 24px 8px; }
-      .speaker-block { padding: 24px; }
+      .speaker-block { padding: 24px; margin-top: 24px; }
       .speaker-photo-wrap { width: 150px; height: 185px; }
       .info-band { padding: 24px; }
       .info-card p { text-align: left; }
@@ -274,27 +273,6 @@
     </a>
   </nav>
 
-  <!-- SPEAKER -- arriba de todo, formato vertical (foto arriba, texto abajo), maxima relevancia -->
-  <section class="speaker-section">
-    <div class="speaker-block">
-      <div class="speaker-photo-wrap">
-        <img src="alexander-vicondoa.jpg" alt="Alexander Vicondoa" />
-      </div>
-      <div class="speaker-name-lg">Alexander Vicondoa</div>
-      <div class="speaker-role-lg">Head of Deployment en ElevenLabs</div>
-      <p class="speaker-bio">
-        Dirige el equipo de Deployment de ElevenLabs, la compañía de IA de voz de mayor
-        valuación a nivel global. Previamente, lideró durante seis años el equipo de Agentes de
-        Generative AI en Mercado Libre. Hoy es el referente experto de la carrera AI Engineering
-        de Henry.
-      </p>
-      <div class="speaker-logos">
-        <img src="eleven-labs-logo.png" alt="ElevenLabs" />
-        <img class="meli-logo" src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
-      </div>
-    </div>
-  </section>
-
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
@@ -311,6 +289,25 @@
         distinto. Esta masterclass presenta ese proceso de la mano de quien lo ejecuta a diario
         en ElevenLabs.
       </p>
+
+      <!-- SPEAKER -- debajo del parrafo del hero, formato vertical (foto arriba, texto abajo) -->
+      <div class="speaker-block">
+        <div class="speaker-photo-wrap">
+          <img src="alexander-vicondoa.jpg" alt="Alexander Vicondoa" />
+        </div>
+        <div class="speaker-name-lg">Alexander Vicondoa</div>
+        <div class="speaker-role-lg">Head of Deployment en ElevenLabs</div>
+        <p class="speaker-bio">
+          Dirige el equipo de Deployment de ElevenLabs, la compañía de IA de voz de mayor
+          valuación a nivel global. Previamente, lideró durante seis años el equipo de Agentes de
+          Generative AI en Mercado Libre. Hoy es el referente experto de la carrera AI Engineering
+          de Henry.
+        </p>
+        <div class="speaker-logos">
+          <img src="eleven-labs-logo.png" alt="ElevenLabs" />
+          <img class="meli-logo" src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+        </div>
+      </div>
     </div>
 
     <!-- FORM CARD -->
