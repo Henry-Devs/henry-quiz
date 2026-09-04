@@ -193,11 +193,27 @@
     .result-head h2 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: 900; letter-spacing: -1px; line-height: 1.15; }
     .result-head h2 em { font-style: normal; color: var(--yellow); }
     .result-body { padding: 36px 40px 40px; }
-    .result-desc { font-size: 1.02rem; color: var(--gray-dark); line-height: 1.7; margin-bottom: 24px; }
-    .result-stat {
-      font-size: 1rem; font-weight: 700; line-height: 1.55; color: var(--black);
-      border-left: 4px solid var(--yellow); padding-left: 18px; margin-bottom: 30px;
+    .result-desc { font-size: 1.02rem; color: var(--gray-dark); line-height: 1.7; }
+    .result-desc p { margin-bottom: 16px; }
+    .result-desc p:last-child { margin-bottom: 0; }
+    .result-desc mark { background: var(--yellow); color: var(--black); padding: 1px 5px; border-radius: 3px; font-weight: 700; }
+
+    /* Spoiler de la masterclass -- teaser con contenido real de su landing */
+    .spoiler-card {
+      border: 1.5px dashed var(--yellow-dark); background: #fffde7; border-radius: 14px;
+      padding: 24px 26px; margin: 26px 0 30px;
     }
+    .spoiler-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-dark); margin-bottom: 14px; }
+    .spoiler-speaker { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .spoiler-speaker img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1.5px solid var(--black); }
+    .spoiler-speaker-name { font-size: 0.95rem; font-weight: 800; color: var(--black); line-height: 1.3; }
+    .spoiler-speaker-role { font-size: 0.78rem; color: var(--gray-mid); font-weight: 600; }
+    .spoiler-body { font-size: 0.92rem; color: var(--gray-dark); line-height: 1.65; margin-bottom: 14px; }
+    .spoiler-body strong { color: var(--black); }
+    .spoiler-topics { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .spoiler-topic { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 5px 12px; font-size: 0.76rem; font-weight: 700; color: var(--black); }
+    .spoiler-urgency { font-size: 0.92rem; font-weight: 800; color: var(--black); line-height: 1.5; }
+
     .result-actions { display: flex; flex-direction: column; gap: 12px; }
     .btn-primary, .btn-secondary {
       display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.98rem;
@@ -269,7 +285,7 @@
       <h1>Haz <em>match</em> con tu carrera en IA</h1>
       <p class="hero-desc">
         La IA cambió las reglas de cómo se programa. En 2 minutos, un test corto te dice tu
-        % de compatibilidad y cuál es tu próximo paso concreto para dar el salto.
+        compatibilidad y cuál es tu próximo paso concreto para dar el salto.
       </p>
     </div>
 
@@ -311,11 +327,11 @@
         <h2 id="r-title"></h2>
       </div>
       <div class="result-body">
-        <p class="result-desc" id="r-desc"></p>
-        <p class="result-stat" id="r-stat"></p>
+        <div class="result-desc" id="r-desc"></div>
+        <div class="spoiler-card" id="r-spoiler"></div>
         <div class="result-actions">
           <a class="btn-primary" id="r-primary" href="#" target="_blank"></a>
-          <a class="btn-secondary" id="r-wa" href="#" target="_blank">Hablá por WhatsApp con nosotros</a>
+          <a class="btn-secondary" id="r-secondary" href="#" target="_blank">Accede a asesoría gratuita con un asesor</a>
         </div>
       </div>
     </div>
@@ -365,27 +381,75 @@
     fullstack: {
       name: "Full Stack AI",
       tag:  "AI Product Development",
-      desc: "No hace falta que sepas programar hoy — hace falta que quieras aprender con las herramientas que ya están cambiando cómo se construye software. Arrancas desde la lógica y en semanas ya estás construyendo productos reales, con IA integrada en tu flujo de trabajo.",
+      // Párrafos cortos (no un bloque único) + hasta 2 <mark> resaltados en total.
+      descParas: [
+        "<mark>No hace falta que sepas programar hoy</mark> — hace falta que quieras aprender con las herramientas que ya están cambiando cómo se construye software.",
+        "Arrancas desde la lógica y en semanas <mark>ya estás construyendo productos reales</mark>, con IA integrada en tu flujo de trabajo.",
+      ],
       hsValue: "Full Stack AI",
       ctaLabel: "Súmate a la masterclass en vivo →",
       ctaUrl: "https://recursos.soyhenry.com/landing-roadmap-programador-ia.html",
       ctaAppendUtms: true,
-      statTemplate: n => `Con tu perfil (${n}% de match), tu próximo paso es la masterclass en vivo del 9/9: "El roadmap para convertirte en programador con IA en 2026".`,
+      // Spoiler con contenido real de landing-roadmap-programador-ia.html -- fecha, temario y bonuses.
+      spoilerHtml: `
+        <p class="spoiler-kicker">Tu próximo paso · Masterclass en vivo</p>
+        <p class="spoiler-body">
+          <strong>"El roadmap para convertirte en programador con IA en 2026"</strong> — miércoles 9 de
+          septiembre, 21h ARG 🇦🇷 / 19h COL 🇨🇴 / 18h MX 🇲🇽. En vivo vas a ver el mapa completo (12 pasos)
+          y profundizamos a fondo en los primeros 3.
+        </p>
+        <div class="spoiler-topics">
+          <span class="spoiler-topic">Lógica</span>
+          <span class="spoiler-topic">HTML + CSS</span>
+          <span class="spoiler-topic">JavaScript</span>
+        </div>
+        <p class="spoiler-body">
+          Te llevas el mapa completo, un certificado para LinkedIn y una sesión gratis con un asesor de
+          carrera — y ahí se desbloquea una oferta especial que corre hasta el Día del Programador (13/9).
+        </p>
+        <p class="spoiler-urgency">Ya tienes tu match. Esta es tu oportunidad de dar el salto.</p>
+      `,
     },
     aieng: {
       name: "AI Engineering",
       tag:  "Applied AI Engineering",
-      desc: "Esto no es para arrancar de cero — es para subir de nivel con IA sobre lo que ya sabes. Ya programas: el próximo paso es integrar modelos, APIs y agentes en sistemas reales, el tipo de perfil que hoy más buscan las empresas.",
+      descParas: [
+        "Esto no es para arrancar de cero — <mark>es para subir de nivel con IA</mark> sobre lo que ya sabes.",
+        "Ya programas: el próximo paso es integrar modelos, APIs y agentes en sistemas reales, <mark>el tipo de perfil que hoy más buscan las empresas</mark>.",
+      ],
       hsValue: "AI Engineer",
-      ctaLabel: "Mira la clase grabada →",
-      ctaUrl: "https://www.youtube.com/watch?v=u8hgIp-0YIY",
-      ctaAppendUtms: false,
-      statTemplate: n => `Con tu perfil (${n}% de match), tu próximo paso es esta clase grabada pensada para quien ya programa y quiere subir de nivel con IA.`,
+      ctaLabel: "Súmate a la masterclass de Alexander Vicondoa →",
+      ctaUrl: "https://recursos.soyhenry.com/landing-ai-engineering-101-alexander-vicondoa.html",
+      ctaAppendUtms: true,
+      // Spoiler con contenido real de landing-ai-engineering-101-alexander-vicondoa.html.
+      // Fecha y hora TODAVÍA a confirmar en esa landing -- no se inventa acá tampoco.
+      spoilerHtml: `
+        <p class="spoiler-kicker">Tu próximo paso · Masterclass en vivo</p>
+        <div class="spoiler-speaker">
+          <img src="alexander-vicondoa.jpg" alt="Alexander Vicondoa">
+          <div>
+            <div class="spoiler-speaker-name">Alexander Vicondoa</div>
+            <div class="spoiler-speaker-role">Head of Deployment en ElevenLabs · ex Mercado Libre</div>
+          </div>
+        </div>
+        <p class="spoiler-body">
+          <strong>AI Engineering 101: cómo se diseña, evalúa y despliega un sistema de IA en producción.</strong>
+          Pensada para devs con 3+ años de experiencia — justo tu perfil.
+        </p>
+        <div class="spoiler-topics">
+          <span class="spoiler-topic">AI Engineering aplicado vs. ML/research</span>
+          <span class="spoiler-topic">LLMs y Context Engineering</span>
+          <span class="spoiler-topic">RAG, Agentes y Orquestación</span>
+        </div>
+        <p class="spoiler-body">Fecha y hora: a confirmar. Online, en vivo.</p>
+        <p class="spoiler-urgency">Ya tienes tu match. Esta es tu oportunidad de subir de nivel con quien lo hace todos los días en ElevenLabs.</p>
+      `,
     },
   };
 
-  const WA_NUMBER = "18632709976";
-  const WA_TEXT = "¡Hola! Hice el test \"Haz match con tu carrera en IA\" de Día del Programador y quiero saber más.";
+  // CTA secundario -- igual para las dos carreras, UTMs fijas pedidas para atribuir
+  // toda reserva de asesoría que viene del quiz a esta campaña puntual.
+  const ADVISOR_URL = "https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=instagram&utm_medium=organico&utm_campaign=Quiz_FS_AIE&utm_content=";
 
   /* =========================================================================
      QUIZ -- 8 preguntas
@@ -672,8 +736,9 @@
     document.getElementById("r-pct").textContent = `${pct}%`;
     document.getElementById("r-tag").textContent = career.tag;
     document.getElementById("r-title").innerHTML = `Tu carrera: <em>${career.name}</em>`;
-    document.getElementById("r-desc").textContent = `${openLine} ${closeLine} ${career.desc}`;
-    document.getElementById("r-stat").textContent = career.statTemplate(pct);
+    document.getElementById("r-desc").innerHTML =
+      `<p>${openLine} ${closeLine}</p>` + career.descParas.map(p => `<p>${p}</p>`).join("");
+    document.getElementById("r-spoiler").innerHTML = career.spoilerHtml;
 
     const params = utmQueryString();
     const primaryHref = career.ctaAppendUtms && params ? `${career.ctaUrl}?${params}` : career.ctaUrl;
@@ -681,7 +746,7 @@
     primaryBtn.href = primaryHref;
     primaryBtn.textContent = career.ctaLabel;
 
-    document.getElementById("r-wa").href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT)}`;
+    document.getElementById("r-secondary").href = ADVISOR_URL;
     document.getElementById("nav-cta").href = (career.hsValue === "Full Stack AI" ? "https://www.soyhenry.com/webfullstack" : "https://www.soyhenry.com/carrera-ai-engineering") + (params ? "?" + params : "");
 
     if (window.fbq) fbq("trackCustom", CONFIG.fbEvent + " - Resultado", { carrera: career.name, match_pct: pct });
