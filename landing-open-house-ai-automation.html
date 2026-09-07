@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Open House AI Automation: el referente de IA de tu empresa | Henry</title>
-  <meta name="description" content="Open House en vivo y gratis, jueves 10 de septiembre. 45 minutos para entender el rol de referente de automatización con IA que se abre en las empresas y cómo se llega." />
+  <title>AI Automation: el referente de IA de tu empresa | Henry</title>
+  <meta name="description" content="En vivo y gratis, jueves 10 de septiembre. 45 minutos para entender el rol de referente de automatización con IA que se abre en las empresas y cómo se llega." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="henry-favicon.png" />
   <link rel="apple-touch-icon" href="henry-favicon.png" />
   <meta property="og:title" content="Cómo convertirte en el referente de IA de tu empresa" />
-  <meta property="og:description" content="Open House en vivo y gratis, jueves 10 de septiembre. 45 minutos para entender el rol y cómo se llega." />
+  <meta property="og:description" content="En vivo y gratis, jueves 10 de septiembre. 45 minutos para entender el rol y cómo se llega." />
   <meta property="og:image" content="https://recursos.soyhenry.com/henry-favicon.png" />
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 
@@ -20,7 +20,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "Open House AI Automation",
+    "name": "Cómo convertirte en el referente de IA de tu empresa",
     "startDate": "2026-09-10T21:00:00-03:00",
     "endDate": "2026-09-10T21:45:00-03:00",
     "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
@@ -29,7 +29,7 @@
       "@type": "VirtualLocation",
       "url": "https://recursos.soyhenry.com/landing-open-house-ai-automation.html"
     },
-    "description": "Open House en vivo y gratis sobre la carrera AI Automation de Henry.",
+    "description": "Clase en vivo y gratis sobre la carrera AI Automation de Henry.",
     "isAccessibleForFree": true,
     "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" }
   }
@@ -81,6 +81,12 @@
       letter-spacing: -1.5px; color: var(--black); margin-bottom: 18px;
     }
     .hero-desc { font-size: 1rem; color: var(--gray-dark); line-height: 1.7; }
+    .hero-insight { margin-top: 26px; padding-top: 22px; border-top: 1.5px solid var(--border); }
+    .hero-insight-num { font-size: clamp(2.6rem, 5.5vw, 3.6rem); font-weight: 900; letter-spacing: -2px; line-height: 1; }
+    .hero-insight-num mark { background: var(--yellow); color: var(--black); padding: 0 8px; }
+    .hero-insight-label { font-size: 0.95rem; color: var(--gray-dark); line-height: 1.5; margin-top: 8px; max-width: 40ch; }
+    .hero-insight-hook { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-top: 10px; }
+    .hero-insight-source { font-size: 0.7rem; color: var(--gray-mid); margin-top: 8px; }
     .section-label {
       font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
       color: var(--gray-mid); margin-bottom: 12px;
@@ -108,7 +114,6 @@
 
     /* NARRATIVE BLOCKS (Bloques 1-3) */
     .block-section { max-width: 720px; margin: 0 auto; padding: 40px 48px; }
-    .block-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gray-mid); margin-bottom: 10px; }
     .block-title { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 900; letter-spacing: -0.7px; line-height: 1.2; margin-bottom: 18px; }
     .block-body p { font-size: 1rem; color: var(--gray-dark); line-height: 1.75; margin-bottom: 14px; }
     .block-body p:last-child { margin-bottom: 0; }
@@ -176,10 +181,6 @@
     .outcomes-list { display: flex; flex-direction: column; gap: 6px; }
     .outcomes-list li { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; list-style: none; padding-left: 16px; position: relative; }
     .outcomes-list li::before { content: "—"; position: absolute; left: 0; color: var(--gray-mid); }
-    .why-note {
-      border: 1.5px solid var(--black); border-radius: 12px; padding: 18px 22px;
-      font-size: 0.9rem; color: var(--black); font-weight: 600; line-height: 1.6; margin-top: 32px;
-    }
     .why-cta-wrap { text-align: center; margin-top: 32px; }
     .cta-btn {
       display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black);
@@ -253,8 +254,7 @@
   <section class="hero">
     <div class="hero-left">
       <div class="badge-row">
-        <span class="badge primary">Open House</span>
-        <span class="badge outline">En vivo y gratis</span>
+        <span class="badge primary">En vivo y gratis</span>
         <span class="badge outline">Jueves 10 de septiembre</span>
       </div>
       <h1>Cómo convertirte en el referente de IA de tu empresa</h1>
@@ -263,31 +263,38 @@
         45 minutos para entender el rol que se está abriendo en todas las empresas, qué hace
         exactamente y cómo se llega.
       </p>
+
+      <div class="hero-insight">
+        <div class="hero-insight-num"><mark>72%</mark></div>
+        <p class="hero-insight-label">de los empleadores no encuentra el talento que necesita:
+        alguien que entienda el negocio y pueda implementar IA.</p>
+        <p class="hero-insight-hook">Ahí entras tú.</p>
+        <p class="hero-insight-source">ManpowerGroup Talent Shortage Survey 2026</p>
+      </div>
     </div>
 
     <!-- FORM CARD -->
     <div class="form-card">
       <div id="form-wrapper">
         <div class="form-top-bar"></div>
-        <h2>Reservá tu lugar</h2>
+        <h2>Reserva tu lugar</h2>
         <p class="form-sub">Te enviamos el link de acceso por mail.</p>
-        <p class="event-compact-facts">Jueves 10/9 · 21:00 ART · 45 minutos<br>Online, en vivo</p>
+        <p class="event-compact-facts">Jueves 10/9 · 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷 · 45 minutos<br>Online, en vivo</p>
         <div id="hs-form-container"></div>
       </div>
       <div class="success-state" id="success-state">
         <div class="success-icon">✓</div>
         <h3>¡Listo!</h3>
-        <p>Te registraste correctamente. Te vamos a avisar por mail antes del Open House.</p>
+        <p>Te registraste correctamente. Te vamos a avisar por mail antes de la clase.</p>
       </div>
     </div>
   </section>
 
   <!-- BLOQUE 1 -->
   <section class="block-section">
-    <p class="block-kicker">La tensión</p>
-    <h2 class="block-title">Usás IA todos los días. Tu trabajo sigue igual.</h2>
+    <h2 class="block-title">Usas IA todos los días. Tu trabajo sigue igual.</h2>
     <div class="block-body">
-      <p>Le pedís textos, resúmenes, ideas. Ahorrás minutos sueltos.</p>
+      <p>Le pides textos, resúmenes, ideas. Ahorras minutos sueltos.</p>
       <p>Pero los procesos que te ocupan el día —el reporte de todos los lunes, la carga de
       datos, los seguimientos, los mails de siempre— siguen pasando por tus manos, uno por uno.</p>
     </div>
@@ -296,23 +303,21 @@
 
   <!-- BLOQUE 2 -->
   <section class="block-section" style="padding-top:8px;">
-    <p class="block-kicker">Ese puesto podés ocuparlo vos</p>
     <div class="block-body">
       <p>En tu empresa nadie sabe cuál de los cuarenta procesos hay que tocar primero. Tecnología
-      puede construir cualquier cosa, pero no sabe cuál está perdiendo plata. Vos sí.</p>
+      puede construir cualquier cosa, pero no sabe cuál está perdiendo plata. Tú sí.</p>
     </div>
     <p class="pull-quote">El que sabe construir no conoce los procesos. El que conoce los procesos no sabe construir.</p>
     <div class="block-body">
       <p>Ahí hay un lugar vacío, y lo puede ocupar la persona que ya trabaja adentro. Esa persona
-      podés ser vos.</p>
+      puedes ser tú.</p>
     </div>
   </section>
 
   <!-- BLOQUE 3 -->
   <section class="block-section" style="padding-top:8px;">
-    <p class="block-kicker">Ya tenés la mitad difícil</p>
     <div class="block-body">
-      <p>Conocés los procesos, sabés cuál duele y entendés a quién hay que convencer. Ese contexto
+      <p>Conoces los procesos, sabes cuál duele y entiendes a quién hay que convencer. Ese contexto
       es lo caro, y ya está pagado.</p>
     </div>
     <div class="stat-callout">
@@ -358,22 +363,22 @@
     </div>
     <p class="agenda-note">Y preguntas abiertas al final. Sin libreto.</p>
     <div class="agenda-cta-wrap">
-      <a href="#hs-form-container" class="cta-btn">Registrate gratis</a>
+      <a href="#hs-form-container" class="cta-btn">Regístrate gratis</a>
     </div>
   </section>
 
   <!-- BLOQUE 5 -->
   <section class="fit-section">
-    <p class="fit-lead">Es para vos si:</p>
+    <p class="fit-lead">Es para ti si:</p>
     <div class="check-list">
       <div class="check-item">
         <span class="check-mark">✓</span>
-        <p>Tenés 3 años o más en un área de negocio: marketing, operaciones, producto, ventas o
-        RRHH — no necesitás saber programar.</p>
+        <p>Tienes 3 años o más en un área de negocio: marketing, operaciones, producto, ventas o
+        RRHH — no necesitas saber programar.</p>
       </div>
       <div class="check-item">
         <span class="check-mark">✓</span>
-        <p>Querés ser el referente de automatización con IA en tu empresa.</p>
+        <p>Quieres ser el referente de automatización con IA en tu empresa.</p>
       </div>
       <div class="check-item">
         <span class="check-mark">✓</span>
@@ -431,7 +436,7 @@
             </div>
           </div>
           <div>
-            <p class="stack-label">Al terminar podés ser</p>
+            <p class="stack-label">Al terminar puedes ser</p>
             <ul class="outcomes-list">
               <li>Referente de automatización en tu empresa (el camino más frecuente y más rápido)</li>
               <li>AI Automation Engineer / AI Agent Builder</li>
@@ -442,12 +447,8 @@
         </div>
       </div>
 
-      <p class="why-note">Por qué ahora: el Open House es el jueves 10 y la cohorte arranca el 22.
-      Son doce días — es la última instancia para ver la carrera por dentro y preguntar todo antes
-      de que empiece.</p>
-
       <div class="why-cta-wrap">
-        <a href="#hs-form-container" class="cta-btn">Quiero mi lugar en el Open House →</a>
+        <a href="#hs-form-container" class="cta-btn">Quiero mi lugar →</a>
       </div>
     </div>
   </section>
@@ -455,8 +456,8 @@
   <!-- CIERRE FINAL -->
   <section class="final-section">
     <h2 class="final-title">45 minutos ahora, o seguir mirando cómo lo resuelve otro.</h2>
-    <a href="#hs-form-container" class="cta-btn">Reservá tu lugar →</a>
-    <p class="final-facts">Jueves 10 de septiembre · 21:00 ART · 45 minutos · En vivo y gratis</p>
+    <a href="#hs-form-container" class="cta-btn">Reserva tu lugar →</a>
+    <p class="final-facts">Jueves 10 de septiembre · 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷 · 45 minutos · En vivo y gratis</p>
   </section>
 
   <!-- COMPANIES -->
@@ -521,9 +522,9 @@
 
       // dates = UTC. 21:00 ARG = 00:00 UTC del dia siguiente; dura 45min -> 00:45.
       masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
-        + '&text=' + encodeURIComponent('Open House: Cómo convertirte en el referente de IA de tu empresa')
+        + '&text=' + encodeURIComponent('Cómo convertirte en el referente de IA de tu empresa')
         + '&dates=20260911T000000Z/20260911T004500Z'
-        + '&details=' + encodeURIComponent('Open House en vivo y gratis de Henry sobre la carrera AI Automation.')
+        + '&details=' + encodeURIComponent('Clase en vivo y gratis de Henry sobre la carrera AI Automation.')
         + '&location=Online',
     };
 
