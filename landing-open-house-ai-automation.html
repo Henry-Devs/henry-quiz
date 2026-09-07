@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open House AI Automation: el referente de IA de tu empresa | Henry</title>
+  <meta name="description" content="Open House en vivo y gratis, jueves 10 de septiembre. 45 minutos para entender el rol de referente de automatización con IA que se abre en las empresas y cómo se llega." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Cómo convertirte en el referente de IA de tu empresa" />
+  <meta property="og:description" content="Open House en vivo y gratis, jueves 10 de septiembre. 45 minutos para entender el rol y cómo se llega." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/henry-favicon.png" />
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+  <!-- JSON-LD de evento -- fecha y hora confirmadas (10/9 21:00 ART, 45 min). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Open House AI Automation",
+    "startDate": "2026-09-10T21:00:00-03:00",
+    "endDate": "2026-09-10T21:45:00-03:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://recursos.soyhenry.com/landing-open-house-ai-automation.html"
+    },
+    "description": "Open House en vivo y gratis sobre la carrera AI Automation de Henry.",
+    "isAccessibleForFree": true,
+    "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px; border-bottom: 1px solid var(--border);
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      align-items: start; max-width: 1120px; margin: 0 auto;
+      padding: 56px 48px 48px;
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge {
+      font-size: 0.7rem; font-weight: 800; padding: 6px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900; line-height: 1.1;
+      letter-spacing: -1.5px; color: var(--black); margin-bottom: 18px;
+    }
+    .hero-desc { font-size: 1rem; color: var(--gray-dark); line-height: 1.7; }
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--gray-mid); margin-bottom: 12px;
+    }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white); border: 1.5px solid var(--border); border-radius: 16px;
+      padding: 36px; position: sticky; top: 80px; box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .form-card h2 { font-size: 1.35rem; font-weight: 800; color: var(--black); margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.2; }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 18px; }
+    .event-compact-facts { font-size: 0.82rem; font-weight: 600; color: var(--gray-dark); margin-bottom: 20px; line-height: 1.5; }
+    #hs-form-container iframe { width: 100%; border: none; }
+
+    /* Success state */
+    .success-state { display: none; text-align: center; padding: 16px 0; }
+    .success-icon {
+      width: 72px; height: 72px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem;
+    }
+    .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
+    .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* NARRATIVE BLOCKS (Bloques 1-3) */
+    .block-section { max-width: 720px; margin: 0 auto; padding: 40px 48px; }
+    .block-kicker { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gray-mid); margin-bottom: 10px; }
+    .block-title { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 900; letter-spacing: -0.7px; line-height: 1.2; margin-bottom: 18px; }
+    .block-body p { font-size: 1rem; color: var(--gray-dark); line-height: 1.75; margin-bottom: 14px; }
+    .block-body p:last-child { margin-bottom: 0; }
+    .pull-quote {
+      border-left: 3px solid var(--yellow); background: var(--gray-light);
+      padding: 16px 22px; margin: 20px 0; font-size: 1.05rem; font-weight: 800;
+      color: var(--black); line-height: 1.5;
+    }
+    .stat-callout {
+      border: 1.5px solid var(--black); border-radius: 14px; padding: 22px 26px; margin-top: 20px;
+    }
+    .stat-callout p { font-size: 1rem; color: var(--black); line-height: 1.7; margin-bottom: 8px; font-weight: 600; }
+    .stat-callout p mark { background: var(--yellow); padding: 1px 5px; border-radius: 3px; font-weight: 800; }
+    .stat-source { font-size: 0.75rem; color: var(--gray-mid); }
+
+    /* AGENDA (Bloque 4) */
+    .agenda-section { max-width: 720px; margin: 0 auto; padding: 24px 48px 8px; }
+    .agenda-list { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 18px; }
+    .agenda-row { display: flex; gap: 18px; padding: 18px 22px; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .agenda-row:last-child { border-bottom: none; }
+    .agenda-num {
+      min-width: 30px; height: 30px; background: var(--yellow); color: var(--black);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 800; flex-shrink: 0;
+    }
+    .agenda-title { font-size: 0.92rem; font-weight: 800; color: var(--black); margin-bottom: 4px; }
+    .agenda-desc { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; }
+    .agenda-note { font-size: 0.88rem; color: var(--gray-mid); font-style: italic; margin-bottom: 24px; }
+    .agenda-cta-wrap { text-align: center; }
+
+    /* PARA QUIEN (Bloque 5) */
+    .fit-section { max-width: 720px; margin: 0 auto; padding: 24px 48px; }
+    .fit-lead { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 20px; }
+    .check-list { display: flex; flex-direction: column; gap: 16px; }
+    .check-item { display: flex; gap: 14px; align-items: flex-start; }
+    .check-mark {
+      min-width: 26px; height: 26px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-weight: 900;
+      font-size: 0.8rem; color: var(--black); flex-shrink: 0; margin-top: 2px;
+    }
+    .check-item p { font-size: 0.96rem; color: var(--gray-dark); line-height: 1.55; }
+
+    /* CIERRE / CARRERA (Bloque 6) */
+    .why-section { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 48px; }
+    .why-inner { max-width: 1120px; margin: 0 auto; }
+    .why-header { text-align: center; margin-bottom: 36px; }
+    .why-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 10px; }
+    .career-chip {
+      display: inline-block; background: var(--yellow); color: var(--black);
+      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 32px; }
+    .spec-table { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .spec-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 18px; border-bottom: 1px solid var(--border); }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-label { font-size: 0.82rem; font-weight: 700; color: var(--gray-mid); }
+    .spec-value { font-size: 0.86rem; font-weight: 700; color: var(--black); text-align: right; }
+    .stack-col { display: flex; flex-direction: column; gap: 22px; }
+    .stack-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 12px; }
+    .stack-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stack-badge { background: var(--white); border: 1.5px solid var(--border); border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 600; color: var(--black); }
+    .includes-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .includes-chip { border: 1px solid var(--black); border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; color: var(--black); }
+    .outcomes-list { display: flex; flex-direction: column; gap: 6px; }
+    .outcomes-list li { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; list-style: none; padding-left: 16px; position: relative; }
+    .outcomes-list li::before { content: "—"; position: absolute; left: 0; color: var(--gray-mid); }
+    .why-note {
+      border: 1.5px solid var(--black); border-radius: 12px; padding: 18px 22px;
+      font-size: 0.9rem; color: var(--black); font-weight: 600; line-height: 1.6; margin-top: 32px;
+    }
+    .why-cta-wrap { text-align: center; margin-top: 32px; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black);
+      font-size: 0.95rem; font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s; border: none; cursor: pointer;
+    }
+    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* CIERRE FINAL */
+    .final-section { max-width: 720px; margin: 0 auto; padding: 56px 48px 64px; text-align: center; }
+    .final-title { font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 28px; line-height: 1.2; }
+    .final-facts { font-size: 0.85rem; color: var(--gray-mid); font-weight: 600; margin-top: 16px; }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 36px 24px 32px; gap: 40px; }
+      .form-card { position: static; }
+      .block-section { padding: 32px 24px; }
+      .agenda-section { padding: 20px 24px 8px; }
+      .fit-section { padding: 20px 24px; }
+      .why-section { padding: 44px 24px; }
+      .why-grid { grid-template-columns: 1fr; gap: 32px; }
+      .spec-row { flex-direction: column; gap: 2px; }
+      .spec-value { text-align: left; }
+      .final-section { padding: 44px 24px 48px; }
+      .companies-strip { padding: 40px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left { animation: fadeUp 0.5s ease both; }
+    .form-card { animation: fadeUp 0.5s 0.1s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge-row">
+        <span class="badge primary">Open House</span>
+        <span class="badge outline">En vivo y gratis</span>
+        <span class="badge outline">Jueves 10 de septiembre</span>
+      </div>
+      <h1>Cómo convertirte en el referente de IA de tu empresa</h1>
+
+      <p class="hero-desc">
+        45 minutos para entender el rol que se está abriendo en todas las empresas, qué hace
+        exactamente y cómo se llega.
+      </p>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div id="form-wrapper">
+        <div class="form-top-bar"></div>
+        <h2>Reservá tu lugar</h2>
+        <p class="form-sub">Te enviamos el link de acceso por mail.</p>
+        <p class="event-compact-facts">Jueves 10/9 · 21:00 ART · 45 minutos<br>Online, en vivo</p>
+        <div id="hs-form-container"></div>
+      </div>
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <h3>¡Listo!</h3>
+        <p>Te registraste correctamente. Te vamos a avisar por mail antes del Open House.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 1 -->
+  <section class="block-section">
+    <p class="block-kicker">La tensión</p>
+    <h2 class="block-title">Usás IA todos los días. Tu trabajo sigue igual.</h2>
+    <div class="block-body">
+      <p>Le pedís textos, resúmenes, ideas. Ahorrás minutos sueltos.</p>
+      <p>Pero los procesos que te ocupan el día —el reporte de todos los lunes, la carga de
+      datos, los seguimientos, los mails de siempre— siguen pasando por tus manos, uno por uno.</p>
+    </div>
+    <p class="pull-quote">Entre usar IA y automatizar con IA hay un puesto entero de diferencia.</p>
+  </section>
+
+  <!-- BLOQUE 2 -->
+  <section class="block-section" style="padding-top:8px;">
+    <p class="block-kicker">Ese puesto podés ocuparlo vos</p>
+    <div class="block-body">
+      <p>En tu empresa nadie sabe cuál de los cuarenta procesos hay que tocar primero. Tecnología
+      puede construir cualquier cosa, pero no sabe cuál está perdiendo plata. Vos sí.</p>
+    </div>
+    <p class="pull-quote">El que sabe construir no conoce los procesos. El que conoce los procesos no sabe construir.</p>
+    <div class="block-body">
+      <p>Ahí hay un lugar vacío, y lo puede ocupar la persona que ya trabaja adentro. Esa persona
+      podés ser vos.</p>
+    </div>
+  </section>
+
+  <!-- BLOQUE 3 -->
+  <section class="block-section" style="padding-top:8px;">
+    <p class="block-kicker">Ya tenés la mitad difícil</p>
+    <div class="block-body">
+      <p>Conocés los procesos, sabés cuál duele y entendés a quién hay que convencer. Ese contexto
+      es lo caro, y ya está pagado.</p>
+    </div>
+    <div class="stat-callout">
+      <p>Falta la otra mitad, y esa se aprende. Por eso el <mark>72%</mark> de los empleadores no
+      encuentra el talento que necesita: no buscan a alguien que programe, buscan a alguien que
+      entienda el negocio y pueda implementar.</p>
+      <p class="stat-source">ManpowerGroup Talent Shortage Survey 2026</p>
+    </div>
+  </section>
+
+  <!-- BLOQUE 4 -->
+  <section class="agenda-section">
+    <p class="section-label" style="text-align:center;">45 minutos, cuatro cosas concretas</p>
+    <div class="agenda-list">
+      <div class="agenda-row">
+        <div class="agenda-num">1</div>
+        <div>
+          <div class="agenda-title">Qué hace un referente de automatización</div>
+          <div class="agenda-desc">El día a día real del rol, no el título.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">2</div>
+        <div>
+          <div class="agenda-title">Por dónde se empieza</div>
+          <div class="agenda-desc">Cómo se relevan procesos y se elige cuál automatizar primero.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">3</div>
+        <div>
+          <div class="agenda-title">Con qué se trabaja</div>
+          <div class="agenda-desc">n8n, agentes y Claude Code, en vivo.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">4</div>
+        <div>
+          <div class="agenda-title">Cómo se llega</div>
+          <div class="agenda-desc">El camino completo, paso por paso.</div>
+        </div>
+      </div>
+    </div>
+    <p class="agenda-note">Y preguntas abiertas al final. Sin libreto.</p>
+    <div class="agenda-cta-wrap">
+      <a href="#hs-form-container" class="cta-btn">Registrate gratis</a>
+    </div>
+  </section>
+
+  <!-- BLOQUE 5 -->
+  <section class="fit-section">
+    <p class="fit-lead">Es para vos si:</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Tenés 3 años o más en un área de negocio: marketing, operaciones, producto, ventas o
+        RRHH — no necesitás saber programar.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Querés ser el referente de automatización con IA en tu empresa.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>O te interesa ofrecer automatización como servicio propio a otras empresas.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Te atrae meterte en el motor de los procesos y encontrar dónde se traban.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 6 · CIERRE / CARRERA -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header">
+        <span class="career-chip">La carrera, en números</span>
+        <h2>Próxima cohorte: 22 de septiembre de 2026</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="spec-table">
+          <div class="spec-row"><span class="spec-label">Modalidad</span><span class="spec-value">Part Time</span></div>
+          <div class="spec-row"><span class="spec-label">Duración</span><span class="spec-value">17 semanas</span></div>
+          <div class="spec-row"><span class="spec-label">Dedicación</span><span class="spec-value">~10 horas por semana</span></div>
+          <div class="spec-row"><span class="spec-label">Clases en vivo</span><span class="spec-value">Martes y jueves, 17-19h MX 🇲🇽 / 18-20h COL 🇨🇴 / 20-22h ARG 🇦🇷</span></div>
+          <div class="spec-row"><span class="spec-label">Total</span><span class="spec-value">25 clases en vivo · ~150 horas</span></div>
+          <div class="spec-row"><span class="spec-label">Estructura</span><span class="spec-value">3 módulos + Proyecto Final con defensa ante panel</span></div>
+          <div class="spec-row"><span class="spec-label">Proyectos</span><span class="spec-value">4 proyectos reales, de punta a punta</span></div>
+        </div>
+
+        <div class="stack-col">
+          <div>
+            <p class="stack-label">Tecnologías</p>
+            <div class="stack-badges">
+              <span class="stack-badge">n8n</span>
+              <span class="stack-badge">Claude</span>
+              <span class="stack-badge">GPT</span>
+              <span class="stack-badge">Gemini</span>
+              <span class="stack-badge">Supabase</span>
+              <span class="stack-badge">PostgreSQL</span>
+              <span class="stack-badge">HubSpot</span>
+              <span class="stack-badge">Git</span>
+              <span class="stack-badge">Docker</span>
+              <span class="stack-badge">Google Workspace</span>
+              <span class="stack-badge">Miro</span>
+            </div>
+          </div>
+          <div>
+            <p class="stack-label">Incluye</p>
+            <div class="includes-list">
+              <span class="includes-chip">Garantía de empleo</span>
+              <span class="includes-chip">Período de prueba</span>
+              <span class="includes-chip">Acompañamiento del equipo comercial</span>
+            </div>
+          </div>
+          <div>
+            <p class="stack-label">Al terminar podés ser</p>
+            <ul class="outcomes-list">
+              <li>Referente de automatización en tu empresa (el camino más frecuente y más rápido)</li>
+              <li>AI Automation Engineer / AI Agent Builder</li>
+              <li>Consultor freelance de automatización</li>
+              <li>Analista de operaciones con capacidad técnica</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="why-note">Por qué ahora: el Open House es el jueves 10 y la cohorte arranca el 22.
+      Son doce días — es la última instancia para ver la carrera por dentro y preguntar todo antes
+      de que empiece.</p>
+
+      <div class="why-cta-wrap">
+        <a href="#hs-form-container" class="cta-btn">Quiero mi lugar en el Open House →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE FINAL -->
+  <section class="final-section">
+    <h2 class="final-title">45 minutos ahora, o seguir mirando cómo lo resuelve otro.</h2>
+    <a href="#hs-form-container" class="cta-btn">Reservá tu lugar →</a>
+    <p class="final-facts">Jueves 10 de septiembre · 21:00 ART · 45 minutos · En vivo y gratis</p>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google" />
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture" />
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal" />
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander" />
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak" />
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá" />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    const MASTERCLASS = {
+      masterclass_fecha_evento:   String(new Date('2026-09-10T21:00:00-03:00').getTime()),
+
+      // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
+      // flow por evento (infra/17 §3), no solo un texto descriptivo.
+      masterclass_nombre:         'Open House AI Automation',
+      masterclass_fecha_larga:    'Jueves 10 de septiembre',
+      masterclass_hora:           '18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷',
+
+      // ⚠️ Speaker NO dado en la spec -- no se inventa.
+      masterclass_speaker_nombre: '',
+      masterclass_speaker_bio:    '',
+
+      masterclass_tema_1:         'Qué hace un referente de automatización en el día a día',
+      masterclass_tema_2:         'Por dónde se empieza: cómo relevar y elegir qué automatizar primero',
+      masterclass_tema_3:         'Con qué se trabaja: n8n, agentes y Claude Code',
+
+      // ⚠️ PENDIENTES -- no inventar valores, completar cuando esten definidos:
+      masterclass_youtube_link:   '',
+      masterclass_cupon_code:     '',
+      masterclass_cta_url:        '',
+
+      masterclass_cohorte_texto:  '22 de septiembre de 2026, Part Time',
+
+      career_interest:            'AI Automation',
+      masterclass_carrera:        'AI Automation',
+
+      // dates = UTC. 21:00 ARG = 00:00 UTC del dia siguiente; dura 45min -> 00:45.
+      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('Open House: Cómo convertirte en el referente de IA de tu empresa')
+        + '&dates=20260911T000000Z/20260911T004500Z'
+        + '&details=' + encodeURIComponent('Open House en vivo y gratis de Henry sobre la carrera AI Automation.')
+        + '&location=Online',
+    };
+
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "19612811",
+      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      target: "#hs-form-container",
+      onFormReady: function() {
+        setTimeout(() => {
+          const iframe = document.querySelector('#hs-form-container iframe');
+          const idoc = iframe && iframe.contentDocument;
+          if (!idoc) return;
+
+          const style = idoc.createElement('style');
+          style.textContent = `
+            body { font-family: 'Inter', sans-serif !important; }
+            .hs-form-field label { font-size: 0.8rem !important; font-weight: 600 !important; color: #111111 !important; margin-bottom: 6px !important; }
+            .hs-input { background: #f5f5f5 !important; border: 1.5px solid #e2e2e2 !important; border-radius: 8px !important; padding: 11px 14px !important; font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important; box-sizing: border-box !important; }
+            .hs-input:focus { outline: none !important; border-color: #111111 !important; background: #ffffff !important; }
+            .hs-button { background: #FFFF00 !important; color: #111111 !important; border: none !important; border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; font-family: 'Inter', sans-serif !important; }
+            .hs-button:hover { background: #e6e600 !important; }
+            .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; }
+          `;
+          idoc.head.appendChild(style);
+
+          const btn = idoc.querySelector('input[type="submit"]');
+          if (btn) btn.value = 'Registrarme';
+
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
+
+          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
+
+          idoc.querySelectorAll('input, select').forEach(input => {
+            if (fieldMap[input.name] !== undefined && fieldMap[input.name] !== '') {
+              input.value = fieldMap[input.name];
+              input.dispatchEvent(new Event('input',  { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+        }, 600);
+      },
+      onFormSubmit: function() {
+        if (window.fbq) {
+          fbq('trackCustom', 'Registro clase en vivo', {
+            content_name: 'landing-open-house-ai-automation',
+            utm_source: utms.utm_source || '',
+            utm_medium: utms.utm_medium || '',
+            utm_campaign: utms.utm_campaign || '',
+          });
+        }
+        setTimeout(() => {
+          document.getElementById('form-wrapper').style.display = 'none';
+          document.getElementById('success-state').style.display = 'block';
+        }, 800);
+      }
+    });
+  </script>
+</body>
+</html>
