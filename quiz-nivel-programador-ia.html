@@ -375,6 +375,13 @@
     // Reusamos career_interest -- ya existe, ya está wireado, y es la MISMA propiedad
     // que escribe el quiz "¿Tu trabajo tiene futuro?" con estos mismos valores exactos.
     hsCareerProperty: "career_interest",
+    // "Formulario Masterclass" -- el mismo que usan las dos landings de masterclass.
+    // El quiz lo somete de forma invisible (Forms Submission API) al mostrar el
+    // resultado: es la ÚNICA forma de que dispare el flujo de HubSpot, que entra
+    // por FORM_SUBMISSION de este form + masterclass_nombre exacto (infra/17 §3).
+    // Un _hsq.identify() (lo que ya hacía sendCareerInterest) deja las propiedades
+    // bien pero NO es un submit de este formulario, así que no dispara el flujo.
+    masterclassFormId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
   };
 
   const CAREERS = {
@@ -613,6 +620,9 @@
   const state = { idx: 0, answers: {}, matchPoints: 0, career: null };
   const LETTERS = ["A", "B", "C", "D", "E"];
   let leadEmail = "";
+  let leadFirstname = "";
+  let leadLastname = "";
+  let leadPhone = "";
 
   function sendCareerInterest(career) {
     try {
@@ -628,6 +638,41 @@
       window._hsq = window._hsq || [];
       window._hsq.push(["identify", props]);
       window._hsq.push(["trackPageView"]);
+    } catch (e) { /* nunca bloquear el resultado */ }
+  }
+
+  // Submit INVISIBLE del "Formulario Masterclass" real (Forms Submission API) --
+  // es lo que efectivamente enrola a la persona en el flujo de esa masterclass
+  // (ver nota en CONFIG.masterclassFormId). No reemplaza sendCareerInterest(): la
+  // dejamos como red de respaldo si este fetch fallara (ad-blocker, red, etc.).
+  function submitMasterclassForm(career) {
+    try {
+      if (!leadEmail) return; // sin email no hay a quien asociar el submit
+      const fields = [];
+      const push = (name, value) => {
+        if (value !== undefined && value !== null && value !== "") fields.push({ name, value: String(value) });
+      };
+      push("email", leadEmail);
+      push("firstname", leadFirstname);
+      push("lastname", leadLastname);
+      push("phone", leadPhone);
+      push(CONFIG.hsCareerProperty, career.hsValue);
+      Object.entries(career.masterclassFields || {}).forEach(([k, v]) => push(k, v));
+      push("ultima_fuente_utm",  utms.utm_source);
+      push("ultimo_medio_utm",   utms.utm_medium);
+      push("ultima_campana_utm", utms.utm_campaign);
+      push("utm_content",        utms.utm_content);
+      push("utm_term",           utms.utm_term);
+
+      const hutkMatch = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+      const context = { pageUri: window.location.href, pageName: document.title };
+      if (hutkMatch) context.hutk = hutkMatch[1];
+
+      fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${CONFIG.hsPortalId}/${CONFIG.masterclassFormId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fields, context }),
+      }).catch(() => { /* nunca bloquear el resultado */ });
     } catch (e) { /* nunca bloquear el resultado */ }
   }
 
@@ -804,6 +849,7 @@
 
     if (window.fbq) fbq("trackCustom", CONFIG.fbEvent + " - Resultado", { carrera: career.name, match_pct: pct });
     sendCareerInterest(career);
+    submitMasterclassForm(career);
 
     document.getElementById("quiz-section").style.display = "none";
     const r = document.getElementById("result-section");
@@ -860,8 +906,14 @@
       },
       onFormSubmit: function (form) {
         try {
-          const el = form && form.querySelector ? form.querySelector('input[name="email"]') : null;
-          if (el && el.value) leadEmail = el.value.trim().toLowerCase();
+          const val = (name) => {
+            const el = form && form.querySelector ? form.querySelector(`[name="${name}"]`) : null;
+            return el && el.value ? el.value.trim() : "";
+          };
+          leadEmail     = val("email").toLowerCase();
+          leadFirstname = val("firstname");
+          leadLastname  = val("lastname");
+          leadPhone     = val("phone");
         } catch (e) { /* el hutk igual identifica al contacto */ }
         if (window.fbq) fbq("trackCustom", CONFIG.fbEvent, { content_name: CONFIG.contentName });
         setTimeout(startQuiz, 700);
