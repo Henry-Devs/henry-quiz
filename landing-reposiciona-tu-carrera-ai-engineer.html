@@ -21,8 +21,8 @@
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Cómo reposicionar tu carrera como AI Engineer",
-    "startDate": "2026-09-10T18:00:00-03:00",
-    "endDate": "2026-09-10T19:00:00-03:00",
+    "startDate": "2026-09-10T18:30:00-03:00",
+    "endDate": "2026-09-10T19:30:00-03:00",
     "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -281,7 +281,7 @@
         <div class="form-top-bar"></div>
         <h2>Reserva tu lugar</h2>
         <p class="form-sub">Te enviamos el link de acceso por mail.</p>
-        <p class="event-compact-facts">Jueves 10/9 · 15h MX 🇲🇽 / 16h COL 🇨🇴 / 18h ARG 🇦🇷 · 1 hora<br>Online, en vivo</p>
+        <p class="event-compact-facts">Jueves 10/9 · 15:30h MX 🇲🇽 / 16:30h COL 🇨🇴 / 18:30h ARG 🇦🇷 · 1 hora<br>Online, en vivo</p>
         <div id="hs-form-container"></div>
       </div>
       <div class="success-state" id="success-state">
@@ -403,7 +403,7 @@
   <section class="final-section">
     <h2 class="final-title">El mercado ya reposicionó el rol. Falta que lo hagas tú.</h2>
     <a href="#hs-form-container" class="cta-btn">Reserva tu lugar →</a>
-    <p class="final-facts">Jueves 10 de septiembre · 15h MX 🇲🇽 / 16h COL 🇨🇴 / 18h ARG 🇦🇷 · En vivo y gratis</p>
+    <p class="final-facts">Jueves 10 de septiembre · 15:30h MX 🇲🇽 / 16:30h COL 🇨🇴 / 18:30h ARG 🇦🇷 · En vivo y gratis</p>
   </section>
 
   <!-- COMPANIES -->
@@ -440,7 +440,7 @@
     Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
 
     const MASTERCLASS = {
-      masterclass_fecha_evento:   String(new Date('2026-09-10T18:00:00-03:00').getTime()),
+      masterclass_fecha_evento:   String(new Date('2026-09-10T18:30:00-03:00').getTime()),
 
       // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
       // flow por evento (infra/17 §3). Internamente es un "open house", pero esa
@@ -448,7 +448,7 @@
       // Automation) -- el nombre de la pieza creativa es este.
       masterclass_nombre:         'Cómo reposicionar tu carrera como AI Engineer',
       masterclass_fecha_larga:    'Jueves 10 de septiembre',
-      masterclass_hora:           '15h MX 🇲🇽 / 16h COL 🇨🇴 / 18h ARG 🇦🇷',
+      masterclass_hora:           '15:30h MX 🇲🇽 / 16:30h COL 🇨🇴 / 18:30h ARG 🇦🇷',
 
       masterclass_speaker_nombre: 'Alexander Vicondoa y Sofía Petinaroli',
       masterclass_speaker_bio:    'Alexander Vicondoa (Head of Deployment en ElevenLabs, ex Mercado Libre) y Sofía Petinaroli (Head of Business en Henry).',
@@ -470,10 +470,10 @@
       career_interest:            'AI Engineer',
       masterclass_carrera:        'AI Engineer',
 
-      // dates = UTC. 18:00 ARG = 21:00 UTC del mismo dia; dura 1h -> 22:00.
+      // dates = UTC. 18:30 ARG = 21:30 UTC del mismo dia; dura 1h -> 22:30.
       masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
         + '&text=' + encodeURIComponent('Cómo reposicionar tu carrera como AI Engineer')
-        + '&dates=20260910T210000Z/20260910T220000Z'
+        + '&dates=20260910T213000Z/20260910T223000Z'
         + '&details=' + encodeURIComponent('Clase en vivo y gratis de Henry sobre la carrera AI Engineering, con Alexander Vicondoa y Sofía Petinaroli.')
         + '&location=Online',
     };
