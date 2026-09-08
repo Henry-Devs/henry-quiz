@@ -116,11 +116,6 @@
     }
     .speaker-photo-wrap { width: 140px; height: 172px; border-radius: 14px; overflow: hidden; background: var(--gray-light); margin-bottom: 18px; }
     .speaker-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .speaker-avatar-fallback {
-      width: 88px; height: 88px; border-radius: 50%; background: var(--gray-light);
-      border: 2px solid var(--black); display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; font-weight: 900; color: var(--black); margin-bottom: 18px;
-    }
     .speaker-name-lg { font-size: 1.25rem; font-weight: 900; letter-spacing: -0.5px; color: var(--black); margin-bottom: 4px; }
     .speaker-role-lg { font-size: 0.85rem; color: var(--gray-mid); font-weight: 700; margin-bottom: 14px; }
     .speaker-bio { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.55; }
@@ -289,7 +284,9 @@
         </p>
       </div>
       <div class="speaker-card">
-        <div class="speaker-avatar-fallback">SP</div>
+        <div class="speaker-photo-wrap">
+          <img src="sofia-petinaroli.jpg" alt="Sofía Petinaroli" />
+        </div>
         <div class="speaker-name-lg">Sofía Petinaroli</div>
         <div class="speaker-role-lg">Head of Business en Henry</div>
         <p class="speaker-bio">
