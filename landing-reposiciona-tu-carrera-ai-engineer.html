@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo reposicionar tu carrera como AI Engineer | Henry</title>
+  <meta name="description" content="En vivo y gratis, jueves 10 de septiembre. Con Alexander Vicondoa (ElevenLabs) y Sofía Petinaroli (Henry): por qué es el momento, qué exige el rol y cómo se llega." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Cómo reposicionar tu carrera como AI Engineer" />
+  <meta property="og:description" content="En vivo y gratis, jueves 10 de septiembre. Con Alexander Vicondoa (ElevenLabs) y Sofía Petinaroli (Henry)." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/henry-favicon.png" />
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+  <!-- JSON-LD de evento -- fecha y hora confirmadas (10/9 18:00 ART). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Cómo reposicionar tu carrera como AI Engineer",
+    "startDate": "2026-09-10T18:00:00-03:00",
+    "endDate": "2026-09-10T19:00:00-03:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://recursos.soyhenry.com/landing-reposiciona-tu-carrera-ai-engineer.html"
+    },
+    "description": "Clase en vivo y gratis sobre la carrera AI Engineering de Henry, con Alexander Vicondoa (ElevenLabs) y Sofía Petinaroli (Henry).",
+    "isAccessibleForFree": true,
+    "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px; border-bottom: 1px solid var(--border);
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      align-items: start; max-width: 1120px; margin: 0 auto;
+      padding: 56px 48px 48px;
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge {
+      font-size: 0.7rem; font-weight: 800; padding: 6px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900; line-height: 1.1;
+      letter-spacing: -1.5px; color: var(--black); margin-bottom: 18px;
+    }
+    .hero-desc { font-size: 1rem; color: var(--gray-dark); line-height: 1.7; }
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--gray-mid); margin-bottom: 12px;
+    }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white); border: 1.5px solid var(--border); border-radius: 16px;
+      padding: 36px; position: sticky; top: 80px; box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .form-card h2 { font-size: 1.35rem; font-weight: 800; color: var(--black); margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.2; }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 18px; }
+    .event-compact-facts { font-size: 0.82rem; font-weight: 600; color: var(--gray-dark); margin-bottom: 20px; line-height: 1.5; }
+    #hs-form-container iframe { width: 100%; border: none; }
+
+    /* Success state */
+    .success-state { display: none; text-align: center; padding: 16px 0; }
+    .success-icon {
+      width: 72px; height: 72px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem;
+    }
+    .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
+    .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* SPEAKERS */
+    .speakers-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 40px; }
+    .speakers-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: stretch; }
+    .speaker-card {
+      border: 2px solid var(--black); border-radius: 20px; padding: 28px 32px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      background: var(--white);
+    }
+    .speaker-photo-wrap { width: 140px; height: 172px; border-radius: 14px; overflow: hidden; background: var(--gray-light); margin-bottom: 18px; }
+    .speaker-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .speaker-avatar-fallback {
+      width: 88px; height: 88px; border-radius: 50%; background: var(--gray-light);
+      border: 2px solid var(--black); display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; font-weight: 900; color: var(--black); margin-bottom: 18px;
+    }
+    .speaker-name-lg { font-size: 1.25rem; font-weight: 900; letter-spacing: -0.5px; color: var(--black); margin-bottom: 4px; }
+    .speaker-role-lg { font-size: 0.85rem; color: var(--gray-mid); font-weight: 700; margin-bottom: 14px; }
+    .speaker-bio { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.55; }
+
+    /* WHY NOW (data) */
+    .whynow-section { max-width: 720px; margin: 0 auto; padding: 8px 48px 40px; }
+    .whynow-stats { display: flex; flex-direction: column; gap: 16px; }
+    .whynow-stat { border: 1.5px solid var(--black); border-radius: 14px; padding: 22px 26px; }
+    .whynow-stat-num { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 6px; }
+    .whynow-stat-num mark { background: var(--yellow); padding: 0 6px; }
+    .whynow-stat p { font-size: 0.92rem; color: var(--gray-dark); line-height: 1.6; }
+    .whynow-source { font-size: 0.72rem; color: var(--gray-mid); margin-top: 8px; }
+    .whynow-source a { color: var(--gray-mid); }
+
+    /* REQUISITOS + AGENDA (reuso check-list / agenda-list) */
+    .fit-section { max-width: 720px; margin: 0 auto; padding: 24px 48px; }
+    .fit-lead { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 20px; }
+    .check-list { display: flex; flex-direction: column; gap: 16px; }
+    .check-item { display: flex; gap: 14px; align-items: flex-start; }
+    .check-mark {
+      min-width: 26px; height: 26px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-weight: 900;
+      font-size: 0.8rem; color: var(--black); flex-shrink: 0; margin-top: 2px;
+    }
+    .check-item p { font-size: 0.96rem; color: var(--gray-dark); line-height: 1.55; }
+
+    .agenda-section { max-width: 720px; margin: 0 auto; padding: 24px 48px 8px; }
+    .agenda-list { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 18px; }
+    .agenda-row { display: flex; gap: 18px; padding: 18px 22px; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .agenda-row:last-child { border-bottom: none; }
+    .agenda-num {
+      min-width: 30px; height: 30px; background: var(--yellow); color: var(--black);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 800; flex-shrink: 0;
+    }
+    .agenda-title { font-size: 0.92rem; font-weight: 800; color: var(--black); margin-bottom: 4px; }
+    .agenda-desc { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; }
+    .agenda-cta-wrap { text-align: center; }
+
+    /* CIERRE / CARRERA */
+    .why-section { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 48px; }
+    .why-inner { max-width: 1120px; margin: 0 auto; }
+    .why-header { text-align: center; margin-bottom: 36px; }
+    .why-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 10px; }
+    .why-header p { font-size: 0.95rem; color: var(--gray-dark); max-width: 640px; margin: 0 auto; line-height: 1.6; }
+    .career-chip {
+      display: inline-block; background: var(--yellow); color: var(--black);
+      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 32px; }
+    .spec-table { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .spec-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 18px; border-bottom: 1px solid var(--border); }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-row.wraps { flex-direction: column; gap: 4px; }
+    .spec-label { font-size: 0.82rem; font-weight: 700; color: var(--gray-mid); }
+    .spec-value { font-size: 0.86rem; font-weight: 700; color: var(--black); text-align: right; max-width: 60%; }
+    .spec-row.wraps .spec-value { text-align: left; max-width: 100%; }
+    .stack-col { display: flex; flex-direction: column; gap: 22px; }
+    .stack-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 12px; }
+    .stack-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stack-badge { background: var(--white); border: 1.5px solid var(--border); border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 600; color: var(--black); }
+    .why-cta-wrap { text-align: center; margin-top: 32px; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black);
+      font-size: 0.95rem; font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s; border: none; cursor: pointer;
+    }
+    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* CIERRE FINAL */
+    .final-section { max-width: 720px; margin: 0 auto; padding: 56px 48px 64px; text-align: center; }
+    .final-title { font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 28px; line-height: 1.2; }
+    .final-facts { font-size: 0.85rem; color: var(--gray-mid); font-weight: 600; margin-top: 16px; }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 36px 24px 32px; gap: 40px; }
+      .form-card { position: static; }
+      .speakers-section { padding: 8px 24px 32px; }
+      .speakers-grid { grid-template-columns: 1fr; }
+      .whynow-section { padding: 8px 24px 32px; }
+      .fit-section { padding: 20px 24px; }
+      .agenda-section { padding: 20px 24px 8px; }
+      .why-section { padding: 44px 24px; }
+      .why-grid { grid-template-columns: 1fr; gap: 32px; }
+      .final-section { padding: 44px 24px 48px; }
+      .companies-strip { padding: 40px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left { animation: fadeUp 0.5s ease both; }
+    .form-card { animation: fadeUp 0.5s 0.1s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge-row">
+        <span class="badge primary">En vivo y gratis</span>
+        <span class="badge outline">Jueves 10 de septiembre</span>
+      </div>
+      <h1>Cómo reposicionar tu carrera como AI Engineer</h1>
+
+      <p class="hero-desc">
+        No es una clase sobre cómo se cursa una carrera. Es una conversación sobre cómo se lee el
+        momento: qué cambió en el mercado, qué espera hoy de ti una empresa que busca este perfil,
+        y qué hay que mover para pasar de "uso IA" a "construyo con IA".
+      </p>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div id="form-wrapper">
+        <div class="form-top-bar"></div>
+        <h2>Reserva tu lugar</h2>
+        <p class="form-sub">Te enviamos el link de acceso por mail.</p>
+        <p class="event-compact-facts">Jueves 10/9 · 15h MX 🇲🇽 / 16h COL 🇨🇴 / 18h ARG 🇦🇷 · 1 hora<br>Online, en vivo</p>
+        <div id="hs-form-container"></div>
+      </div>
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <h3>¡Listo!</h3>
+        <p>Te registraste correctamente. Te vamos a avisar por mail antes de la clase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKERS -->
+  <section class="speakers-section">
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <div class="speaker-photo-wrap">
+          <img src="alexander-vicondoa.jpg" alt="Alexander Vicondoa" />
+        </div>
+        <div class="speaker-name-lg">Alexander Vicondoa</div>
+        <div class="speaker-role-lg">Head of Deployment en ElevenLabs · ex Mercado Libre</div>
+        <p class="speaker-bio">
+          Dirige el equipo de Deployment de ElevenLabs, la compañía de IA de voz de mayor valuación
+          a nivel global. Previamente, lideró durante seis años el equipo de Agentes de Generative AI
+          en Mercado Libre.
+        </p>
+      </div>
+      <div class="speaker-card">
+        <div class="speaker-avatar-fallback">SP</div>
+        <div class="speaker-name-lg">Sofía Petinaroli</div>
+        <div class="speaker-role-lg">Head of Business en Henry</div>
+        <p class="speaker-bio">
+          Lidera el área de Business en Henry. Va a presentar la carrera AI Engineering: estructura,
+          tecnologías y cómo se cursa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE AHORA -->
+  <section class="whynow-section">
+    <p class="section-label" style="text-align:center;">Por qué es el momento</p>
+    <div class="whynow-stats">
+      <div class="whynow-stat">
+        <div class="whynow-stat-num"><mark>#1</mark></div>
+        <p>AI Engineer es, hoy, el rol de más rápido crecimiento en Estados Unidos según el reporte
+        Jobs on the Rise 2026 de LinkedIn — por delante de cualquier otro puesto de tecnología.</p>
+        <p class="whynow-source">Fuente: <a href="https://www.dice.com/career-advice/ai-related-jobs-top-linkedins-fastest-growing-roles-list-for-2026" target="_blank">LinkedIn Jobs on the Rise 2026, vía Dice.com</a></p>
+      </div>
+      <div class="whynow-stat">
+        <div class="whynow-stat-num"><mark>+50-100%</mark></div>
+        <p>Es lo que crecieron las búsquedas de AI Engineering en las empresas de tecnología más
+        grandes en el último año, según el relevamiento de The Pragmatic Engineer sobre el mercado
+        laboral 2026.</p>
+        <p class="whynow-source">Fuente: <a href="https://newsletter.pragmaticengineer.com/p/state-of-the-job-market-2026" target="_blank">The Pragmatic Engineer, State of the Job Market 2026</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUISITOS -->
+  <section class="fit-section">
+    <p class="fit-lead">Requisitos para sumarte</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>3 años o más de experiencia profesional en desarrollo (backend, full-stack o data).</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Ya programas: esto no es para arrancar de cero, es para subir de nivel con IA sobre lo
+        que ya sabes.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Buscas integrar modelos, APIs y agentes en sistemas reales, no solo usar IA como
+        copiloto ocasional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="agenda-section">
+    <p class="section-label" style="text-align:center;">Qué vamos a ver</p>
+    <div class="agenda-list">
+      <div class="agenda-row">
+        <div class="agenda-num">1</div>
+        <div>
+          <div class="agenda-title">Por qué el mercado ya no busca "usar IA" sino "construir con IA"</div>
+          <div class="agenda-desc">El contexto detrás de los datos de la sección anterior.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">2</div>
+        <div>
+          <div class="agenda-title">Cómo se ve un rol de AI Engineer por dentro</div>
+          <div class="agenda-desc">El caso real de ElevenLabs, con Alexander Vicondoa.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">3</div>
+        <div>
+          <div class="agenda-title">De tu perfil actual a AI Engineer</div>
+          <div class="agenda-desc">Qué cambia y qué se conserva de tu experiencia hoy.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">4</div>
+        <div>
+          <div class="agenda-title">La carrera AI Engineering de Henry</div>
+          <div class="agenda-desc">Estructura, tecnologías y cómo se cursa, con Sofía Petinaroli.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">5</div>
+        <div>
+          <div class="agenda-title">Preguntas abiertas</div>
+          <div class="agenda-desc">Con Alexander y Sofía, sin libreto.</div>
+        </div>
+      </div>
+    </div>
+    <div class="agenda-cta-wrap">
+      <a href="#hs-form-container" class="cta-btn">Reserva tu lugar</a>
+    </div>
+  </section>
+
+  <!-- CIERRE / CARRERA -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header">
+        <span class="career-chip">La carrera, en números</span>
+        <h2>AI Engineering</h2>
+        <p>Diseña, entrena y despliega sistemas de IA que resuelven problemas complejos a escala,
+        con las mismas herramientas que usa un AI Engineer real.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="spec-table">
+          <div class="spec-row"><span class="spec-label">Modalidad</span><span class="spec-value">Part Time</span></div>
+          <div class="spec-row"><span class="spec-label">Duración</span><span class="spec-value">14 semanas</span></div>
+          <div class="spec-row"><span class="spec-label">Dedicación</span><span class="spec-value">~10 horas por semana</span></div>
+          <div class="spec-row wraps"><span class="spec-label">Clases en vivo</span><span class="spec-value">Martes y jueves, 17-19h MX 🇲🇽 / 18-20h COL 🇨🇴 / 20-22h ARG 🇦🇷</span></div>
+          <div class="spec-row"><span class="spec-label">Próxima cohorte</span><span class="spec-value">29 de septiembre de 2026</span></div>
+          <div class="spec-row wraps"><span class="spec-label">Para quién</span><span class="spec-value">Perfiles con trayectoria técnica, sin proyectos bloqueantes ni migraciones obligatorias</span></div>
+        </div>
+
+        <div class="stack-col">
+          <div>
+            <p class="stack-label">Herramientas que vas a usar</p>
+            <div class="stack-badges">
+              <span class="stack-badge">Python</span>
+              <span class="stack-badge">OpenAI</span>
+              <span class="stack-badge">Claude</span>
+              <span class="stack-badge">Gemini</span>
+              <span class="stack-badge">LangChain</span>
+              <span class="stack-badge">Hugging Face</span>
+              <span class="stack-badge">Pinecone</span>
+              <span class="stack-badge">RAG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-cta-wrap">
+        <a href="#hs-form-container" class="cta-btn">Quiero mi lugar →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE FINAL -->
+  <section class="final-section">
+    <h2 class="final-title">El mercado ya reposicionó el rol. Falta que lo hagas tú.</h2>
+    <a href="#hs-form-container" class="cta-btn">Reserva tu lugar →</a>
+    <p class="final-facts">Jueves 10 de septiembre · 15h MX 🇲🇽 / 16h COL 🇨🇴 / 18h ARG 🇦🇷 · En vivo y gratis</p>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google" />
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture" />
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal" />
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander" />
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak" />
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá" />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    const MASTERCLASS = {
+      masterclass_fecha_evento:   String(new Date('2026-09-10T18:00:00-03:00').getTime()),
+
+      // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
+      // flow por evento (infra/17 §3). Internamente es un "open house", pero esa
+      // palabra no se usa en copy visible (mismo criterio que la landing de AI
+      // Automation) -- el nombre de la pieza creativa es este.
+      masterclass_nombre:         'Cómo reposicionar tu carrera como AI Engineer',
+      masterclass_fecha_larga:    'Jueves 10 de septiembre',
+      masterclass_hora:           '15h MX 🇲🇽 / 16h COL 🇨🇴 / 18h ARG 🇦🇷',
+
+      masterclass_speaker_nombre: 'Alexander Vicondoa y Sofía Petinaroli',
+      masterclass_speaker_bio:    'Alexander Vicondoa (Head of Deployment en ElevenLabs, ex Mercado Libre) y Sofía Petinaroli (Head of Business en Henry).',
+
+      masterclass_tema_1:         'Por qué el mercado ya no busca "usar IA" sino "construir con IA"',
+      masterclass_tema_2:         'Cómo se ve un rol de AI Engineer por dentro (el caso real de ElevenLabs)',
+      masterclass_tema_3:         'La carrera AI Engineering de Henry: estructura, tecnologías y cómo se cursa',
+
+      // ⚠️ PENDIENTES -- no inventar valores:
+      masterclass_youtube_link:   '',
+      masterclass_cupon_code:     '',
+      masterclass_cta_url:        '',
+
+      // Programa actualizado (8/9/2026): 14 semanas, Part Time, cohorte 29/9 --
+      // reemplaza el dato viejo (10 semanas, cohorte 13/10) que todavia tiene la
+      // landing de Alexander Vicondoa / AI Engineering 101, pendiente de corregir ahi.
+      masterclass_cohorte_texto:  '29 de septiembre de 2026, Part Time',
+
+      career_interest:            'AI Engineer',
+      masterclass_carrera:        'AI Engineer',
+
+      // dates = UTC. 18:00 ARG = 21:00 UTC del mismo dia; dura 1h -> 22:00.
+      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('Cómo reposicionar tu carrera como AI Engineer')
+        + '&dates=20260910T210000Z/20260910T220000Z'
+        + '&details=' + encodeURIComponent('Clase en vivo y gratis de Henry sobre la carrera AI Engineering, con Alexander Vicondoa y Sofía Petinaroli.')
+        + '&location=Online',
+    };
+
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "19612811",
+      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      target: "#hs-form-container",
+      onFormReady: function() {
+        setTimeout(() => {
+          const iframe = document.querySelector('#hs-form-container iframe');
+          const idoc = iframe && iframe.contentDocument;
+          if (!idoc) return;
+
+          const style = idoc.createElement('style');
+          style.textContent = `
+            body { font-family: 'Inter', sans-serif !important; }
+            .hs-form-field label { font-size: 0.8rem !important; font-weight: 600 !important; color: #111111 !important; margin-bottom: 6px !important; }
+            .hs-input { background: #f5f5f5 !important; border: 1.5px solid #e2e2e2 !important; border-radius: 8px !important; padding: 11px 14px !important; font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important; box-sizing: border-box !important; }
+            .hs-input:focus { outline: none !important; border-color: #111111 !important; background: #ffffff !important; }
+            .hs-button { background: #FFFF00 !important; color: #111111 !important; border: none !important; border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; font-family: 'Inter', sans-serif !important; }
+            .hs-button:hover { background: #e6e600 !important; }
+            .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; }
+          `;
+          idoc.head.appendChild(style);
+
+          const btn = idoc.querySelector('input[type="submit"]');
+          if (btn) btn.value = 'Registrarme';
+
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
+
+          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
+
+          idoc.querySelectorAll('input, select').forEach(input => {
+            if (fieldMap[input.name] !== undefined && fieldMap[input.name] !== '') {
+              input.value = fieldMap[input.name];
+              input.dispatchEvent(new Event('input',  { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+        }, 600);
+      },
+      onFormSubmit: function() {
+        if (window.fbq) {
+          fbq('trackCustom', 'Registro clase en vivo', {
+            content_name: 'landing-reposiciona-tu-carrera-ai-engineer',
+            utm_source: utms.utm_source || '',
+            utm_medium: utms.utm_medium || '',
+            utm_campaign: utms.utm_campaign || '',
+          });
+        }
+        setTimeout(() => {
+          document.getElementById('form-wrapper').style.display = 'none';
+          document.getElementById('success-state').style.display = 'block';
+        }, 800);
+      }
+    });
+  </script>
+</body>
+</html>
