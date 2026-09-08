@@ -106,15 +106,14 @@
     .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
     .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
 
-    /* SPEAKERS */
-    .speakers-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 40px; }
-    .speakers-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: stretch; }
+    /* SPEAKERS -- dentro de hero-left, debajo del parrafo, apilados */
+    .speakers-stack { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
     .speaker-card {
-      border: 2px solid var(--black); border-radius: 20px; padding: 28px 32px;
+      border: 2px solid var(--black); border-radius: 20px; padding: 24px 28px;
       display: flex; flex-direction: column; align-items: center; text-align: center;
       background: var(--white);
     }
-    .speaker-photo-wrap { width: 140px; height: 172px; border-radius: 14px; overflow: hidden; background: var(--gray-light); margin-bottom: 18px; }
+    .speaker-photo-wrap { width: 130px; height: 160px; border-radius: 14px; overflow: hidden; background: var(--gray-light); margin-bottom: 16px; }
     .speaker-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .speaker-name-lg { font-size: 1.25rem; font-weight: 900; letter-spacing: -0.5px; color: var(--black); margin-bottom: 4px; }
     .speaker-role-lg { font-size: 0.85rem; color: var(--gray-mid); font-weight: 700; margin-bottom: 14px; }
@@ -196,8 +195,6 @@
       nav { padding: 14px 20px; }
       .hero { grid-template-columns: 1fr; padding: 36px 24px 32px; gap: 40px; }
       .form-card { position: static; }
-      .speakers-section { padding: 8px 24px 32px; }
-      .speakers-grid { grid-template-columns: 1fr; }
       .whynow-section { padding: 8px 24px 32px; }
       .fit-section { padding: 20px 24px; }
       .why-section { padding: 44px 24px; }
@@ -248,6 +245,34 @@
         cómo dar el próximo paso en tu carrera profesional: reposicionarte como AI Engineer, de
         la mano de quien lo hace todos los días en ElevenLabs.
       </p>
+
+      <!-- SPEAKERS -->
+      <div class="speakers-stack">
+        <p class="section-label">Nuestros speakers</p>
+        <div class="speaker-card">
+          <div class="speaker-photo-wrap">
+            <img src="alexander-vicondoa.jpg" alt="Alexander Vicondoa" />
+          </div>
+          <div class="speaker-name-lg">Alexander Vicondoa</div>
+          <div class="speaker-role-lg">Head of Deployment en ElevenLabs · ex Mercado Libre</div>
+          <p class="speaker-bio">
+            Dirige el equipo de Deployment de ElevenLabs, la compañía de IA de voz de mayor
+            valuación a nivel global. Previamente, lideró durante seis años el equipo de Agentes
+            de Generative AI en Mercado Libre.
+          </p>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-photo-wrap">
+            <img src="sofia-petinaroli.jpg" alt="Sofía Petinaroli" />
+          </div>
+          <div class="speaker-name-lg">Sofía Petinaroli</div>
+          <div class="speaker-role-lg">Head of Business en Henry</div>
+          <p class="speaker-bio">
+            Lidera el área de Business en Henry. Va a presentar la carrera AI Engineering:
+            estructura, tecnologías y cómo se cursa.
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- FORM CARD -->
@@ -263,36 +288,6 @@
         <div class="success-icon">✓</div>
         <h3>¡Listo!</h3>
         <p>Te registraste correctamente. Te vamos a avisar por mail antes de la clase.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPEAKERS -->
-  <section class="speakers-section">
-    <p class="section-label" style="text-align:center;">Nuestros speakers</p>
-    <div class="speakers-grid">
-      <div class="speaker-card">
-        <div class="speaker-photo-wrap">
-          <img src="alexander-vicondoa.jpg" alt="Alexander Vicondoa" />
-        </div>
-        <div class="speaker-name-lg">Alexander Vicondoa</div>
-        <div class="speaker-role-lg">Head of Deployment en ElevenLabs · ex Mercado Libre</div>
-        <p class="speaker-bio">
-          Dirige el equipo de Deployment de ElevenLabs, la compañía de IA de voz de mayor valuación
-          a nivel global. Previamente, lideró durante seis años el equipo de Agentes de Generative AI
-          en Mercado Libre.
-        </p>
-      </div>
-      <div class="speaker-card">
-        <div class="speaker-photo-wrap">
-          <img src="sofia-petinaroli.jpg" alt="Sofía Petinaroli" />
-        </div>
-        <div class="speaker-name-lg">Sofía Petinaroli</div>
-        <div class="speaker-role-lg">Head of Business en Henry</div>
-        <p class="speaker-bio">
-          Lidera el área de Business en Henry. Va a presentar la carrera AI Engineering: estructura,
-          tecnologías y cómo se cursa.
-        </p>
       </div>
     </div>
   </section>
