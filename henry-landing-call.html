@@ -101,15 +101,14 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
   <div class="welcome-outer">
     <div class="welcome-card">
       <div class="welcome-eyebrow">Antes de tu llamada</div>
-      <h1 class="welcome-title">Contanos un poco<br>sobre vos para que<br>tu asesor llegue<br><span class="hl">listo para ayudarte</span></h1>
-      <p class="welcome-body">Son <strong>2 minutos</strong>. Sin formularios raros &mdash; solo unas preguntas para que la llamada sea útil de verdad.</p>
+      <h1 class="welcome-title">Unas preguntas<br>rápidas para que<br>tu asesor llegue<br><span class="hl">preparado</span></h1>
+      <p class="welcome-body">Son <strong>2 minutos</strong>. Solo unas preguntas para que la llamada sea útil de verdad.</p>
       <div class="welcome-feats">
         <div class="wfeat"><div class="wfeat-dot"></div>2 minutos</div>
         <div class="wfeat"><div class="wfeat-dot"></div>Atención personalizada</div>
         <div class="wfeat"><div class="wfeat-dot"></div>Sin compromiso</div>
       </div>
       <button class="btn-start" onclick="startFlow()">Empezar &rarr;</button>
-      <p class="welcome-foot">+20K graduados &middot; Full Stack AI &amp; AI Automation</p>
     </div>
   </div>
 </div>
@@ -126,7 +125,7 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
     <div class="q-text" id="q-text"></div>
     <div class="q-hint" id="q-hint"></div>
     <div class="options" id="options-container"></div>
-    <input type="text" class="otra-input" id="otra-input" placeholder="Contanos tu razon..." />
+    <input type="text" class="otra-input" id="otra-input" placeholder="Cuéntanos tu razón..." />
     <div class="btn-row">
       <button class="btn-prev-bottom" id="btn-prev-bottom" onclick="goBack()">&larr; Anterior</button>
       <button class="btn-next" id="btn-next" onclick="nextStep()">Siguiente &rarr;</button>
@@ -143,10 +142,10 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
         <button class="q-arrow" disabled title="Siguiente">&#8594;</button>
       </div>
     </div>
-    <div class="q-text" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:900;text-transform:uppercase;margin-bottom:8px;">¿Algo que nos querés<br>adelantar?</div>
-    <div class="q-hint" style="font-size:13px;color:var(--gray);margin-bottom:16px;font-style:italic;">Contanos cualquier cosa que quieras hablar con tu asesor.</div>
+    <div class="q-text" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:900;text-transform:uppercase;margin-bottom:8px;">¿Algo que nos quieras<br>adelantar?</div>
+    <div class="q-hint" style="font-size:13px;color:var(--gray);margin-bottom:16px;font-style:italic;">Cuéntanos cualquier cosa que quieras hablar con tu asesor.</div>
     <textarea class="open-textarea" id="open-answer" placeholder="Una duda, una situación particular, lo que sea..."></textarea>
-    <p class="open-note">Campo opcional — si lo completás, tu asesor llega mejor preparado.</p>
+    <p class="open-note">Campo opcional. Si lo completas, tu asesor llega mejor preparado.</p>
     <div class="btn-row">
       <button class="btn-prev-bottom visible" onclick="backToQuestions()">&larr; Anterior</button>
       <button class="btn-next visible" onclick="showCTA()">Ver mi resumen &rarr;</button>
@@ -160,7 +159,7 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
       <span class="cta-emoji">&#128640;</span>
       <div class="cta-badge">¡Todo listo!</div>
       <h2 class="cta-title">Tu asesor te está<br><span class="hl">esperando</span></h2>
-      <p class="cta-sub">Ya tenemos todo lo que necesitamos. Elegí un horario y en 30 minutos te orientamos sobre tu próximo paso en tech.</p>
+      <p class="cta-sub">Ya tenemos todo lo que necesitamos. Elige un horario y en 30 minutos te orientamos sobre tu próximo paso en tech.</p>
       <div class="summary-pills" id="summary-pills"></div>
       <a href="#" class="btn-cta" id="cta-final-btn" target="_blank">Agendar llamada &rarr;</a>
       <p class="cta-note">Sin compromiso &middot; 30 minutos &middot; Online &middot; Gratis</p>
@@ -180,18 +179,22 @@ function getUTMs() {
   };
 }
 function buildMeetingURL() {
-  var base = 'https://meetings.hubspot.com/federico104/b2c-sales-campanas?uuid=ae9927fa-ef04-44d3-869e-8aaf39e722a3';
+  /* El CTA va al formulario de agendamiento de HubSpot, no al link de
+     meetings: el formulario pide los datos y desde ahi se elige el horario.
+     Ojo, esta base NO trae query propia, asi que las UTMs se pegan con "?"
+     y no con "&" como la anterior. */
+  var base = 'https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g';
   var utms = getUTMs();
   var params = [];
   for (var k in utms) { if (utms[k]) params.push(k + '=' + encodeURIComponent(utms[k])); }
-  return params.length ? base + '&' + params.join('&') : base;
+  return params.length ? base + '?' + params.join('&') : base;
 }
 
 var questions = [
   {
     step: 'Pregunta 1 de 4',
     text: '¿Qué te motiva a dar este paso con Henry?',
-    hint: 'Podés elegir más de una',
+    hint: 'Puedes elegir más de una',
     multi: true,
     hasOtra: true,
     options: [
@@ -220,7 +223,7 @@ var questions = [
   },
   {
     step: 'Pregunta 3 de 4',
-    text: '¿Cuándo querés empezar?',
+    text: '¿Cuándo quieres empezar?',
     hint: '',
     multi: false,
     options: [
@@ -233,12 +236,11 @@ var questions = [
   {
     step: 'Pregunta 4 de 4',
     text: '¿Cómo te gustaría pagar tu carrera?',
-    hint: 'Cada plan tiene su lógica — tu asesor te explica los valores al detalle',
+    hint: '',
     multi: false,
     options: [
-      'Mejor precio: un solo pago (la opción más económica)',
-      'Oportunidad: 12 cuotas mensuales — Full Stack o AI Automation',
-      'Plan AIC: pago mínimo mientras estudiás + resto al conseguir empleo — solo Full Stack',
+      'Un solo pago (la opción más económica)',
+      '12 cuotas mensuales',
       'Todavía no lo sé, quiero que me expliquen'
     ]
   }
