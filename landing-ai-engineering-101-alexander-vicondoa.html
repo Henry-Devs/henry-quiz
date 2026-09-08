@@ -15,10 +15,25 @@
   <meta property="og:image" content="https://recursos.soyhenry.com/henry-favicon.png" />
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 
-  <!-- ⚠️ Sin JSON-LD de evento: la spec no trae fecha/hora de la masterclass
-       (el 28/9 dado es la proxima cohorte de la CARRERA, no el evento). Sin
-       startDate no se puede declarar un schema.org/Event valido -- se agrega
-       cuando se confirme la fecha. -->
+  <!-- JSON-LD de evento -- fecha y hora confirmadas (24/9 19:00 ART). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "AI Engineering 101",
+    "startDate": "2026-09-24T19:00:00-03:00",
+    "endDate": "2026-09-24T20:00:00-03:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://recursos.soyhenry.com/landing-ai-engineering-101-alexander-vicondoa.html"
+    },
+    "description": "Masterclass en vivo y gratis con Alexander Vicondoa (ElevenLabs): cómo se diseña, evalúa y despliega un sistema de IA en producción.",
+    "isAccessibleForFree": true,
+    "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" }
+  }
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -123,7 +138,6 @@
       margin-bottom: 20px;
       line-height: 1.5;
     }
-    .event-compact-facts .pending { color: #b8860b; background: #fff8e1; padding: 1px 5px; border-radius: 4px; }
     #hs-form-container iframe { width: 100%; border: none; }
 
     /* Success state */
@@ -313,9 +327,7 @@
         <div class="form-top-bar"></div>
         <h2>Reserva tu lugar gratis</h2>
         <p class="form-sub">Te enviamos el link de acceso por mail.</p>
-        <!-- ⚠️ FECHA Y HORA A CONFIRMAR -- no dadas en la spec. El 28/9 es la
-             proxima cohorte de la CARRERA, no el evento. No se inventa. -->
-        <p class="event-compact-facts"><span class="pending">Fecha y hora a confirmar</span><br>Online, en vivo</p>
+        <p class="event-compact-facts">Jueves 24/9 · 16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷<br>Online, en vivo</p>
         <div id="hs-form-container"></div>
       </div>
       <div class="success-state" id="success-state">
@@ -456,14 +468,9 @@
     Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
 
     const MASTERCLASS = {
-      // 🛑 SIN FECHA/HORA CONFIRMADA. La spec no trae fecha/hora de la
-      // masterclass (el 28/9 es la proxima cohorte de la CARRERA). No se
-      // inventa: este campo queda vacio hasta que se confirme, y el flow
-      // 1861306136 NO va a anclar nada mientras este asi -- sin este campo,
-      // el inscripto probablemente no recibe la secuencia de mails del evento.
-      masterclass_fecha_evento:   '',
-      masterclass_fecha_larga:    '',
-      masterclass_hora:           '',
+      masterclass_fecha_evento:   String(new Date('2026-09-24T19:00:00-03:00').getTime()),
+      masterclass_fecha_larga:    'Jueves 24 de septiembre',
+      masterclass_hora:           '16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷',
 
       // Cambio de nombre (4/9/2026): antes el texto descriptivo largo. Tiene que
       // ser EXACTO -- es la condicion de entrada del flow nuevo por evento
@@ -486,8 +493,12 @@
       career_interest:            'AI Engineer',
       masterclass_carrera:        'AI Engineer',
 
-      // 🛑 Sin fecha de evento no hay como armar un calendar link real.
-      masterclass_calendar_link:  '',
+      // dates = UTC. 19:00 ARG = 22:00 UTC del mismo dia; dura 1h -> 23:00.
+      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('AI Engineering 101')
+        + '&dates=20260924T220000Z/20260924T230000Z'
+        + '&details=' + encodeURIComponent('Masterclass en vivo y gratis de Henry con Alexander Vicondoa (ElevenLabs).')
+        + '&location=Online',
     };
 
     hbspt.forms.create({
