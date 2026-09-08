@@ -147,42 +147,30 @@
     }
     .check-item p { font-size: 0.96rem; color: var(--gray-dark); line-height: 1.55; }
 
-    .agenda-section { max-width: 720px; margin: 0 auto; padding: 24px 48px 8px; }
-    .agenda-list { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 18px; }
-    .agenda-row { display: flex; gap: 18px; padding: 18px 22px; border-bottom: 1px solid var(--border); align-items: flex-start; }
-    .agenda-row:last-child { border-bottom: none; }
-    .agenda-num {
-      min-width: 30px; height: 30px; background: var(--yellow); color: var(--black);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      font-size: 0.8rem; font-weight: 800; flex-shrink: 0;
-    }
-    .agenda-title { font-size: 0.92rem; font-weight: 800; color: var(--black); margin-bottom: 4px; }
-    .agenda-desc { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; }
-    .agenda-cta-wrap { text-align: center; }
-
     /* CIERRE / CARRERA */
     .why-section { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 48px; }
     .why-inner { max-width: 1120px; margin: 0 auto; }
     .why-header { text-align: center; margin-bottom: 36px; }
     .why-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 10px; }
     .why-header p { font-size: 0.95rem; color: var(--gray-dark); max-width: 640px; margin: 0 auto; line-height: 1.6; }
-    .career-chip {
-      display: inline-block; background: var(--yellow); color: var(--black);
-      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;
-      padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
-    }
     .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 32px; }
-    .spec-table { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
-    .spec-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 18px; border-bottom: 1px solid var(--border); }
-    .spec-row:last-child { border-bottom: none; }
-    .spec-row.wraps { flex-direction: column; gap: 4px; }
-    .spec-label { font-size: 0.82rem; font-weight: 700; color: var(--gray-mid); }
-    .spec-value { font-size: 0.86rem; font-weight: 700; color: var(--black); text-align: right; max-width: 60%; }
-    .spec-row.wraps .spec-value { text-align: left; max-width: 100%; }
+    .why-tools-list { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .why-tools-list .tool-item { display: flex; align-items: center; gap: 16px; padding: 13px 18px; border-bottom: 1px solid var(--border); }
+    .why-tools-list .tool-item:last-child { border-bottom: none; }
+    .why-tools-list .tool-num { min-width: 30px; height: 30px; background: var(--yellow); color: var(--black); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0; }
+    .why-tools-list .tool-name { font-size: 0.88rem; font-weight: 600; line-height: 1.4; }
     .stack-col { display: flex; flex-direction: column; gap: 22px; }
     .stack-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 12px; }
     .stack-badges { display: flex; flex-wrap: wrap; gap: 8px; }
     .stack-badge { background: var(--white); border: 1.5px solid var(--border); border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 600; color: var(--black); }
+    .stats { display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
+    .stat-item { display: flex; align-items: center; gap: 8px; padding-right: 24px; }
+    .stat-item + .stat-item { padding-left: 24px; padding-right: 0; border-left: 1px solid var(--border); }
+    .stat-num { font-size: 1.5rem; font-weight: 900; color: var(--black); letter-spacing: -1px; line-height: 1; white-space: nowrap; }
+    .stat-label { font-size: 0.75rem; color: var(--gray-dark); font-weight: 500; line-height: 1.3; max-width: 120px; }
+    .proxima-cohorte { border-top: 1px solid var(--border); padding-top: 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .proxima-cohorte-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+    .proxima-cohorte-value { font-size: 0.95rem; font-weight: 800; color: var(--black); }
     .why-cta-wrap { text-align: center; margin-top: 32px; }
     .cta-btn {
       display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black);
@@ -217,7 +205,6 @@
       .speakers-grid { grid-template-columns: 1fr; }
       .whynow-section { padding: 8px 24px 32px; }
       .fit-section { padding: 20px 24px; }
-      .agenda-section { padding: 20px 24px 8px; }
       .why-section { padding: 44px 24px; }
       .why-grid { grid-template-columns: 1fr; gap: 32px; }
       .final-section { padding: 44px 24px 48px; }
@@ -262,9 +249,9 @@
       <h1>Cómo reposicionar tu carrera como AI Engineer</h1>
 
       <p class="hero-desc">
-        No es una clase sobre cómo se cursa una carrera. Es una conversación sobre cómo se lee el
-        momento: qué cambió en el mercado, qué espera hoy de ti una empresa que busca este perfil,
-        y qué hay que mover para pasar de "uso IA" a "construyo con IA".
+        Si ya llevas años programando o desarrollando software, esta es la oportunidad de ver
+        cómo dar el próximo paso en tu carrera profesional: reposicionarte como AI Engineer, de
+        la mano de quien lo hace todos los días en ElevenLabs.
       </p>
     </div>
 
@@ -287,6 +274,7 @@
 
   <!-- SPEAKERS -->
   <section class="speakers-section">
+    <p class="section-label" style="text-align:center;">Nuestros speakers</p>
     <div class="speakers-grid">
       <div class="speaker-card">
         <div class="speaker-photo-wrap">
@@ -353,69 +341,23 @@
     </div>
   </section>
 
-  <!-- AGENDA -->
-  <section class="agenda-section">
-    <p class="section-label" style="text-align:center;">Qué vamos a ver</p>
-    <div class="agenda-list">
-      <div class="agenda-row">
-        <div class="agenda-num">1</div>
-        <div>
-          <div class="agenda-title">Por qué el mercado ya no busca "usar IA" sino "construir con IA"</div>
-          <div class="agenda-desc">El contexto detrás de los datos de la sección anterior.</div>
-        </div>
-      </div>
-      <div class="agenda-row">
-        <div class="agenda-num">2</div>
-        <div>
-          <div class="agenda-title">Cómo se ve un rol de AI Engineer por dentro</div>
-          <div class="agenda-desc">El caso real de ElevenLabs, con Alexander Vicondoa.</div>
-        </div>
-      </div>
-      <div class="agenda-row">
-        <div class="agenda-num">3</div>
-        <div>
-          <div class="agenda-title">De tu perfil actual a AI Engineer</div>
-          <div class="agenda-desc">Qué cambia y qué se conserva de tu experiencia hoy.</div>
-        </div>
-      </div>
-      <div class="agenda-row">
-        <div class="agenda-num">4</div>
-        <div>
-          <div class="agenda-title">La carrera AI Engineering de Henry</div>
-          <div class="agenda-desc">Estructura, tecnologías y cómo se cursa, con Sofía Petinaroli.</div>
-        </div>
-      </div>
-      <div class="agenda-row">
-        <div class="agenda-num">5</div>
-        <div>
-          <div class="agenda-title">Preguntas abiertas</div>
-          <div class="agenda-desc">Con Alexander y Sofía, sin libreto.</div>
-        </div>
-      </div>
-    </div>
-    <div class="agenda-cta-wrap">
-      <a href="#hs-form-container" class="cta-btn">Reserva tu lugar</a>
-    </div>
-  </section>
 
   <!-- CIERRE / CARRERA -->
   <section class="why-section">
     <div class="why-inner">
       <div class="why-header">
-        <span class="career-chip">La carrera, en números</span>
-        <h2>AI Engineering</h2>
+        <h2>¿Por qué AI Engineering en Henry?</h2>
         <p>Diseña, entrena y despliega sistemas de IA que resuelven problemas complejos a escala,
         con las mismas herramientas que usa un AI Engineer real.</p>
       </div>
 
       <div class="why-grid">
-        <div class="spec-table">
-          <div class="spec-row"><span class="spec-label">Modalidad</span><span class="spec-value">Part Time</span></div>
-          <div class="spec-row"><span class="spec-label">Duración</span><span class="spec-value">14 semanas</span></div>
-          <div class="spec-row"><span class="spec-label">Dedicación</span><span class="spec-value">~10 horas por semana</span></div>
-          <div class="spec-row wraps"><span class="spec-label">Clases en vivo</span><span class="spec-value">Martes y jueves, 17-19h MX 🇲🇽 / 18-20h COL 🇨🇴 / 20-22h ARG 🇦🇷</span></div>
-          <div class="spec-row"><span class="spec-label">Próxima cohorte</span><span class="spec-value">29 de septiembre de 2026</span></div>
-          <div class="spec-row wraps"><span class="spec-label">Para quién</span><span class="spec-value">Perfiles con trayectoria técnica, sin proyectos bloqueantes ni migraciones obligatorias</span></div>
+        <div class="why-tools-list">
+          <div class="tool-item"><div class="tool-num">01</div><div class="tool-name">Diseña, entrena y despliega modelos de IA que resuelven problemas complejos a escala</div></div>
+          <div class="tool-item"><div class="tool-num">02</div><div class="tool-name">Construye aplicaciones impulsadas por IA integrando modelos y APIs</div></div>
+          <div class="tool-item"><div class="tool-num">03</div><div class="tool-name">Crea agentes autónomos y soluciones multimodales</div></div>
+          <div class="tool-item"><div class="tool-num">04</div><div class="tool-name">Implementa arquitecturas end-to-end de IA con servicios cloud</div></div>
+          <div class="tool-item"><div class="tool-num">05</div><div class="tool-name">Desarrolla proyectos técnicos para portfolio profesional</div></div>
         </div>
 
         <div class="stack-col">
@@ -431,6 +373,30 @@
               <span class="stack-badge">Pinecone</span>
               <span class="stack-badge">RAG</span>
             </div>
+          </div>
+          <div class="stats">
+            <div class="stat-item">
+              <div>
+                <div class="stat-num">+20.000</div>
+                <div class="stat-label">Estudiantes en la comunidad Henry</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div>
+                <div class="stat-num">14 semanas</div>
+                <div class="stat-label">Part time, 10hs semanales</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div>
+                <div class="stat-num">7 días</div>
+                <div class="stat-label">De prueba</div>
+              </div>
+            </div>
+          </div>
+          <div class="proxima-cohorte">
+            <span class="proxima-cohorte-label">Próxima cohorte</span>
+            <span class="proxima-cohorte-value">29 de septiembre de 2026</span>
           </div>
         </div>
       </div>
