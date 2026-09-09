@@ -136,7 +136,7 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
 <div class="screen" id="screen-open">
   <div class="open-wrap">
     <div class="q-nav" style="margin-bottom:20px;">
-      <div class="q-step">Última pregunta &middot; 5 de 5</div>
+      <div class="q-step">Última pregunta &middot; 4 de 4</div>
       <div class="q-arrows">
         <button class="q-arrow" onclick="backToQuestions()" title="Anterior">&#8592;</button>
         <button class="q-arrow" disabled title="Siguiente">&#8594;</button>
@@ -192,7 +192,7 @@ function buildMeetingURL() {
 
 var questions = [
   {
-    step: 'Pregunta 1 de 4',
+    step: 'Pregunta 1 de 3',
     text: '¿Qué te motiva a dar este paso con Henry?',
     hint: 'Puedes elegir más de una',
     multi: true,
@@ -208,7 +208,7 @@ var questions = [
     ]
   },
   {
-    step: 'Pregunta 2 de 4',
+    step: 'Pregunta 2 de 3',
     text: '¿Cuál es tu situación laboral hoy?',
     hint: '',
     multi: false,
@@ -222,7 +222,7 @@ var questions = [
     ]
   },
   {
-    step: 'Pregunta 3 de 4',
+    step: 'Pregunta 3 de 3',
     text: '¿Cuándo quieres empezar?',
     hint: '',
     multi: false,
@@ -231,17 +231,6 @@ var questions = [
       'En los próximos 1 a 3 meses',
       'En los próximos 3 a 6 meses',
       'Todavía lo estoy evaluando'
-    ]
-  },
-  {
-    step: 'Pregunta 4 de 4',
-    text: '¿Cómo te gustaría pagar tu carrera?',
-    hint: '',
-    multi: false,
-    options: [
-      'Un solo pago (la opción más económica)',
-      '12 cuotas mensuales',
-      'Todavía no lo sé, quiero que me expliquen'
     ]
   }
 ];
@@ -259,7 +248,7 @@ function startFlow() {
 
 function renderQuestion() {
   var q = questions[current];
-  var pct = ((current + 1) / 6) * 100;
+  var pct = ((current + 1) / 5) * 100;
   document.getElementById('progress-bar').style.width = pct + '%';
   document.getElementById('q-step').textContent = q.step;
   document.getElementById('q-text').textContent = q.text;
@@ -384,7 +373,7 @@ function showCTA() {
   document.getElementById('progress-bar').style.width = '100%';
   var container = document.getElementById('summary-pills');
   container.innerHTML = '';
-  for (var i = 1; i <= 4; i++) {
+  for (var i = 1; i <= 3; i++) {
     var a = answers['q' + i];
     if (a && a.answers.length > 0) {
       var text = a.answers[0];
