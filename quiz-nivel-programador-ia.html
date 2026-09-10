@@ -394,6 +394,10 @@
         "Arrancas desde la lógica y en semanas <mark>ya estás construyendo productos reales</mark>, con IA integrada en tu flujo de trabajo.",
       ],
       hsValue: "Full Stack AI",
+      // La masterclass del 9/9 ya pasó -- se oculta el CTA primario y queda
+      // solo la asesoría gratuita (r-secondary). ctaLabel/ctaUrl quedan sin
+      // uso mientras showPrimaryCta sea false; no borrar por si se reactiva.
+      showPrimaryCta: false,
       ctaLabel: "Súmate a la masterclass en vivo →",
       ctaUrl: "https://recursos.soyhenry.com/landing-roadmap-programador-ia.html",
       ctaAppendUtms: true,
@@ -839,10 +843,15 @@
     document.getElementById("r-spoiler").innerHTML = career.spoilerHtml;
 
     const params = utmQueryString();
-    const primaryHref = career.ctaAppendUtms && params ? `${career.ctaUrl}?${params}` : career.ctaUrl;
     const primaryBtn = document.getElementById("r-primary");
-    primaryBtn.href = primaryHref;
-    primaryBtn.textContent = career.ctaLabel;
+    if (career.showPrimaryCta === false) {
+      primaryBtn.hidden = true;
+    } else {
+      primaryBtn.hidden = false;
+      const primaryHref = career.ctaAppendUtms && params ? `${career.ctaUrl}?${params}` : career.ctaUrl;
+      primaryBtn.href = primaryHref;
+      primaryBtn.textContent = career.ctaLabel;
+    }
 
     document.getElementById("r-secondary").href = ADVISOR_URL;
     document.getElementById("nav-cta").href = (career.hsValue === "Full Stack AI" ? "https://www.soyhenry.com/webfullstack" : "https://www.soyhenry.com/carrera-ai-engineering") + (params ? "?" + params : "");
