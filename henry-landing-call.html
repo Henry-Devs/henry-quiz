@@ -65,11 +65,6 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
 .btn-prev-bottom:hover{border-color:var(--black);color:var(--black);}
 
 /* OPEN */
-.open-wrap{max-width:640px;width:100%;}
-.open-textarea{width:100%;background:var(--white);border:1.5px solid #DDDDD8;border-radius:12px;padding:18px;color:var(--black);font-family:'Barlow',sans-serif;font-size:15px;resize:none;height:150px;outline:none;transition:border-color 0.2s;margin-top:4px;}
-.open-textarea:focus{border-color:var(--black);}
-.open-textarea::placeholder{color:#bbb;}
-.open-note{font-size:13px;color:var(--gray);margin-top:10px;font-style:italic;}
 
 /* CTA */
 .cta-outer{max-width:680px;width:100%;}
@@ -80,12 +75,8 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
 .cta-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:14px;}
 .cta-title .hl{color:var(--yellow);}
 .cta-sub{font-size:1rem;color:#999;line-height:1.7;max-width:480px;margin:0 auto 32px;}
-.summary-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:36px;}
-.pill{background:#222;border:1px solid #333;border-radius:100px;padding:7px 16px;font-size:12px;font-weight:600;color:#ccc;display:flex;align-items:center;gap:6px;}
-.pill-dot{width:6px;height:6px;background:var(--yellow);border-radius:50%;}
 .btn-cta{background:var(--yellow);color:var(--black);border:none;padding:18px 52px;border-radius:10px;font-family:'Barlow',sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;text-transform:uppercase;letter-spacing:0.04em;}
 .btn-cta:hover{transform:translateY(-3px);box-shadow:0 12px 44px rgba(245,230,66,0.4);}
-.cta-note{margin-top:14px;font-size:12px;color:#555;}
 </style>
 </head>
 <body>
@@ -133,26 +124,6 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
   </div>
 </div>
 
-<div class="screen" id="screen-open">
-  <div class="open-wrap">
-    <div class="q-nav" style="margin-bottom:20px;">
-      <div class="q-step">Última pregunta &middot; 4 de 4</div>
-      <div class="q-arrows">
-        <button class="q-arrow" onclick="backToQuestions()" title="Anterior">&#8592;</button>
-        <button class="q-arrow" disabled title="Siguiente">&#8594;</button>
-      </div>
-    </div>
-    <div class="q-text" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:900;text-transform:uppercase;margin-bottom:8px;">¿Algo que nos quieras<br>adelantar?</div>
-    <div class="q-hint" style="font-size:13px;color:var(--gray);margin-bottom:16px;font-style:italic;">Cuéntanos cualquier cosa que quieras hablar con tu asesor.</div>
-    <textarea class="open-textarea" id="open-answer" placeholder="Una duda, una situación particular, lo que sea..."></textarea>
-    <p class="open-note">Campo opcional. Si lo completas, tu asesor llega mejor preparado.</p>
-    <div class="btn-row">
-      <button class="btn-prev-bottom visible" onclick="backToQuestions()">&larr; Anterior</button>
-      <button class="btn-next visible" onclick="showCTA()">Ver mi resumen &rarr;</button>
-    </div>
-  </div>
-</div>
-
 <div class="screen" id="screen-cta">
   <div class="cta-outer">
     <div class="cta-card">
@@ -160,9 +131,7 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
       <div class="cta-badge">¡Todo listo!</div>
       <h2 class="cta-title">Tu asesor te está<br><span class="hl">esperando</span></h2>
       <p class="cta-sub">Ya tenemos todo lo que necesitamos. Elige un horario y en 30 minutos te orientamos sobre tu próximo paso en tech.</p>
-      <div class="summary-pills" id="summary-pills"></div>
       <a href="#" class="btn-cta" id="cta-final-btn" target="_blank">Agendar llamada &rarr;</a>
-      <p class="cta-note">Sin compromiso &middot; 30 minutos &middot; Online &middot; Gratis</p>
     </div>
   </div>
 </div>
@@ -249,7 +218,7 @@ function startFlow() {
 
 function renderQuestion() {
   var q = questions[current];
-  var pct = ((current + 1) / 5) * 100;
+  var pct = ((current + 1) / 4) * 100;
   document.getElementById('progress-bar').style.width = pct + '%';
   document.getElementById('q-step').textContent = q.step;
   document.getElementById('q-text').textContent = q.text;
@@ -339,9 +308,7 @@ function nextStep() {
   saveCurrentAnswer();
   current++;
   if (current >= questions.length) {
-    document.getElementById('screen-question').classList.remove('active');
-    document.getElementById('screen-open').classList.add('active');
-    document.getElementById('progress-bar').style.width = '90%';
+    showCTA();
   } else {
     renderQuestion();
   }
@@ -359,32 +326,11 @@ function goForward() {
   nextStep();
 }
 
-function backToQuestions() {
-  document.getElementById('screen-open').classList.remove('active');
-  document.getElementById('screen-question').classList.add('active');
-  current = questions.length - 1;
-  renderQuestion();
-}
 
 function showCTA() {
-  var openAnswer = document.getElementById('open-answer').value;
-  if (openAnswer.trim()) answers.open = openAnswer;
-  document.getElementById('screen-open').classList.remove('active');
+  document.getElementById('screen-question').classList.remove('active');
   document.getElementById('screen-cta').classList.add('active');
   document.getElementById('progress-bar').style.width = '100%';
-  var container = document.getElementById('summary-pills');
-  container.innerHTML = '';
-  for (var i = 1; i <= 3; i++) {
-    var a = answers['q' + i];
-    if (a && a.answers.length > 0) {
-      var text = a.answers[0];
-      var short = text.length > 38 ? text.substring(0, 38) + '...' : text;
-      var pill = document.createElement('div');
-      pill.className = 'pill';
-      pill.innerHTML = '<span class="pill-dot"></span>' + short;
-      container.appendChild(pill);
-    }
-  }
   document.getElementById('cta-final-btn').href = buildMeetingURL();
 }
 </script>
