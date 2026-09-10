@@ -87,6 +87,20 @@
     .hero-insight-label { font-size: 0.95rem; color: var(--gray-dark); line-height: 1.5; margin-top: 8px; max-width: 40ch; }
     .hero-insight-hook { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-top: 10px; }
     .hero-insight-source { font-size: 0.7rem; color: var(--gray-mid); margin-top: 8px; }
+
+    /* SPEAKER -- dentro de hero-left, debajo del insight */
+    .speakers-stack { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
+    .speaker-card {
+      border: 2px solid var(--black); border-radius: 20px; padding: 24px 28px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      background: var(--white);
+    }
+    .speaker-photo-wrap { width: 130px; height: 160px; border-radius: 14px; overflow: hidden; background: var(--gray-light); margin-bottom: 16px; }
+    .speaker-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .speaker-name-lg { font-size: 1.25rem; font-weight: 900; letter-spacing: -0.5px; color: var(--black); margin-bottom: 4px; }
+    .speaker-role-lg { font-size: 0.85rem; color: var(--gray-mid); font-weight: 700; margin-bottom: 14px; }
+    .speaker-bio { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.55; }
+
     .section-label {
       font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
       color: var(--gray-mid); margin-bottom: 12px;
@@ -265,6 +279,22 @@
         alguien que entienda el negocio y pueda implementar IA.</p>
         <p class="hero-insight-hook">Ahí entras tú.</p>
         <p class="hero-insight-source">ManpowerGroup Talent Shortage Survey 2026</p>
+      </div>
+
+      <!-- SPEAKER -->
+      <div class="speakers-stack">
+        <p class="section-label">Speaker</p>
+        <div class="speaker-card">
+          <div class="speaker-photo-wrap">
+            <img src="alexander-vicondoa.jpg" alt="Alexander Vicondoa" />
+          </div>
+          <div class="speaker-name-lg">Alexander Vicondoa</div>
+          <div class="speaker-role-lg">Head of Deployment en ElevenLabs</div>
+          <p class="speaker-bio">
+            Dirige el equipo de Deployment de ElevenLabs, la compañía de IA de voz de mayor
+            valuación a nivel global.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -492,18 +522,16 @@
       masterclass_fecha_larga:    'Jueves 10 de septiembre',
       masterclass_hora:           '18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷',
 
-      // ⚠️ Speaker NO dado en la spec -- no se inventa.
-      masterclass_speaker_nombre: '',
-      masterclass_speaker_bio:    '',
+      masterclass_speaker_nombre: 'Alexander Vicondoa',
+      masterclass_speaker_bio:    'Dirige el equipo de Deployment de ElevenLabs.',
 
       masterclass_tema_1:         'Qué hace un referente de automatización en el día a día',
       masterclass_tema_2:         'Por dónde se empieza: cómo relevar y elegir qué automatizar primero',
       masterclass_tema_3:         'Con qué se trabaja: n8n, agentes y Claude Code',
 
-      // ⚠️ PENDIENTES -- no inventar valores, completar cuando esten definidos:
-      masterclass_youtube_link:   '',
-      masterclass_cupon_code:     '',
-      masterclass_cta_url:        '',
+      masterclass_youtube_link:   'https://www.youtube.com/watch?v=VRezpIcvG4U',
+      masterclass_cupon_code:     'MASTERCLASS30',
+      masterclass_cta_url:        'https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=instagram&utm_medium=organico&utm_campaign=Masterclass&utm_content=10-09',
 
       masterclass_cohorte_texto:  '22 de septiembre de 2026, Part Time',
 
