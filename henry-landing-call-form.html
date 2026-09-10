@@ -21,7 +21,7 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
 
 /* WELCOME */
 .welcome-outer{max-width:1200px;width:100%;}
-.welcome-grid{display:grid;grid-template-columns:1.06fr 0.94fr;gap:24px;align-items:stretch;}
+.welcome-grid{display:grid;grid-template-columns:1.18fr 0.82fr;gap:28px;align-items:center;}
 
 .welcome-card{background:var(--dark);border-radius:var(--radius);padding:clamp(40px,6vw,64px);color:var(--white);position:relative;overflow:hidden;}
 .welcome-card::after{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;background:radial-gradient(circle,rgba(245,230,66,0.12) 0%,transparent 70%);pointer-events:none;}
@@ -38,35 +38,36 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
 .btn-start:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(245,230,66,0.35);}
 .welcome-foot{margin-top:14px;font-size:12px;color:#555;}
 
-/* FORM: tarjeta propia a la derecha, con el molde del form de masterclasses
-   (barra amarilla, pill, titulo, campos apilados) pero sobre fondo negro.
+/* FORM: caja BLANCA a la derecha, con el molde del form de masterclasses
+   (barra amarilla, pill negro, titulo, campos apilados, boton amarillo).
    Es nativo y no el embed de HubSpot: ese form es V4 y renderiza en un iframe
    cross-origin, asi que trae su propio tema y no se puede pintar desde aca.
    (El de masterclasses SI se puede porque es legacy v2 y su iframe es
    accesible: ver landing-analisis-a-ml.html.) Los datos van por la Forms API. */
-.form-card{background:var(--dark);border:1px solid #262626;border-radius:var(--radius);padding:clamp(28px,3.4vw,40px);display:flex;flex-direction:column;justify-content:center;}
-.form-top-bar{height:4px;background:var(--yellow);border-radius:2px;margin-bottom:24px;}
-.form-badge{align-self:flex-start;background:var(--yellow);color:var(--black);font-size:0.68rem;font-weight:800;padding:5px 11px;border-radius:4px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;}
-.form-card h2{font-family:'Barlow',sans-serif;font-size:1.45rem;font-weight:800;color:var(--white);margin-bottom:6px;letter-spacing:-0.02em;line-height:1.2;}
-.form-sub{font-size:0.88rem;color:#8d8d8d;margin-bottom:22px;line-height:1.55;}
-.f-field{display:flex;flex-direction:column;margin-bottom:14px;}
-.f-field label{font-size:0.8rem;font-weight:600;color:#ccc;margin-bottom:6px;}
-.f-field label .req{color:var(--yellow);}
-.f-input{background:#1B1B1B;border:1.5px solid #333;border-radius:8px;padding:11px 14px;font-family:'Barlow',sans-serif;font-size:0.95rem;color:var(--white);transition:border-color 0.15s,background 0.15s;width:100%;}
-.f-input::placeholder{color:#5a5a5a;}
-.f-input:focus{outline:none;border-color:var(--yellow);background:#202020;}
+.form-card{background:var(--white);border:1.5px solid #E2E2DC;border-radius:16px;padding:clamp(22px,2.2vw,28px);box-shadow:0 4px 24px rgba(0,0,0,0.07);}
+.form-top-bar{height:4px;background:var(--yellow);border-radius:2px;margin-bottom:16px;}
+.form-badge{display:inline-block;background:var(--black);color:var(--white);font-size:0.68rem;font-weight:700;padding:4px 10px;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;}
+.form-card h2{font-family:'Barlow',sans-serif;font-size:1.35rem;font-weight:800;color:var(--black);margin-bottom:6px;letter-spacing:-0.02em;line-height:1.2;}
+.form-sub{font-size:0.85rem;color:#6b6b6b;margin-bottom:16px;line-height:1.5;}
+.f-field{display:flex;flex-direction:column;margin-bottom:11px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.f-field label{font-size:0.8rem;font-weight:600;color:var(--black);margin-bottom:5px;}
+.f-field label .req{color:#d32f2f;}
+.f-input{background:#F5F5F5;border:1.5px solid #E2E2E2;border-radius:8px;padding:10px 13px;font-family:'Barlow',sans-serif;font-size:0.9rem;color:var(--black);transition:border-color 0.15s,background 0.15s;width:100%;}
+.f-input::placeholder{color:#a5a5a5;}
+.f-input:focus{outline:none;border-color:var(--black);background:var(--white);}
 .f-input:disabled{opacity:0.5;}
 .f-phone{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:8px;}
-.f-phone select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23888'/></svg>");background-repeat:no-repeat;background-position:right 12px center;padding-right:28px;cursor:pointer;}
-.f-error{display:none;font-size:0.75rem;color:#FF8A7A;margin-top:5px;}
-.f-field.invalid .f-input{border-color:#FF8A7A;}
+.f-phone select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23777'/></svg>");background-repeat:no-repeat;background-position:right 11px center;padding-right:26px;cursor:pointer;}
+.f-error{display:none;font-size:0.75rem;color:#d32f2f;margin-top:4px;}
+.f-field.invalid .f-input{border-color:#d32f2f;}
 .f-field.invalid .f-error{display:block;}
-.btn-submit{background:var(--yellow);color:var(--black);border:none;padding:14px 28px;border-radius:10px;font-family:'Barlow',sans-serif;font-size:0.95rem;font-weight:800;cursor:pointer;transition:all 0.2s;text-transform:uppercase;letter-spacing:0.05em;width:100%;margin-top:8px;}
-.btn-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 36px rgba(245,230,66,0.35);}
-.btn-submit:disabled{cursor:default;opacity:0.65;transform:none;box-shadow:none;}
-.privacy-note{font-size:0.72rem;color:#666;text-align:center;margin-top:14px;}
-.form-alert{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(255,138,122,0.1);border:1px solid rgba(255,138,122,0.35);font-size:0.8rem;color:#FFB3A8;line-height:1.5;}
-.form-alert a{color:var(--yellow);}
+.btn-submit{background:var(--yellow);color:var(--black);border:none;padding:13px 28px;border-radius:10px;font-family:'Barlow',sans-serif;font-size:0.95rem;font-weight:800;cursor:pointer;transition:all 0.2s;text-transform:uppercase;letter-spacing:0.05em;width:100%;margin-top:6px;}
+.btn-submit:hover:not(:disabled){background:#EBDC2E;}
+.btn-submit:disabled{cursor:default;opacity:0.65;}
+.privacy-note{font-size:0.72rem;color:#8b8b8b;text-align:center;margin-top:10px;}
+.form-alert{display:none;margin-top:12px;padding:11px 13px;border-radius:8px;background:#FDECEA;border:1px solid #F5C6C0;font-size:0.8rem;color:#A8322A;line-height:1.5;}
+.form-alert a{color:var(--black);}
 
 /* QUESTION */
 .question-wrap{max-width:640px;width:100%;}
@@ -153,7 +154,7 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
       <div class="form-top-bar"></div>
       <span class="form-badge">Antes de tu llamada</span>
       <h2>Dej&aacute;nos tus datos</h2>
-      <p class="form-sub">Complet&aacute; el formulario y segu&iacute;s con las preguntas. As&iacute; tu asesor sabe con qui&eacute;n va a hablar.</p>
+      <p class="form-sub">Dos datos y segu&iacute;s con las preguntas.</p>
 
       <form id="lead-form" novalidate>
         <div class="f-field" id="fld-email">
@@ -161,6 +162,7 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
           <input class="f-input" type="email" id="in-email" name="email" autocomplete="email" placeholder="tu@mail.com">
           <span class="f-error">Revis&aacute; el correo.</span>
         </div>
+        <div class="f-row">
         <div class="f-field" id="fld-firstname">
           <label for="in-firstname">Nombre <span class="req">*</span></label>
           <input class="f-input" type="text" id="in-firstname" name="firstname" autocomplete="given-name" placeholder="Tu nombre">
@@ -170,6 +172,7 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
           <label for="in-lastname">Apellidos <span class="req">*</span></label>
           <input class="f-input" type="text" id="in-lastname" name="lastname" autocomplete="family-name" placeholder="Tu apellido">
           <span class="f-error">Complet&aacute; tu apellido.</span>
+        </div>
         </div>
         <div class="f-field" id="fld-phone">
           <label for="in-phone">N&uacute;mero de tel&eacute;fono <span class="req">*</span></label>
@@ -542,13 +545,31 @@ function showCTA() {
     btn.disabled = true;
     btn.textContent = 'Enviando...';
 
+    var campos = [
+      { objectTypeId: '0-1', name: 'firstname', value: valor('in-firstname') },
+      { objectTypeId: '0-1', name: 'lastname',  value: valor('in-lastname')  },
+      { objectTypeId: '0-1', name: 'email',     value: valor('in-email')     },
+      { objectTypeId: '0-1', name: 'phone',     value: telefono()            }
+    ];
+
+    /* El form declara estos 5 ocultos, con los mismos nombres que el resto de
+       las landings del repo. La Forms API descarta en silencio cualquier campo
+       que el form no declare, asi que los nombres tienen que ser exactos.
+       Los vacios no se mandan: pisarian una atribucion previa con "". */
+    var utms = getUTMs();
+    var mapa = {
+      ultima_fuente_utm:  utms.utm_source,
+      ultimo_medio_utm:   utms.utm_medium,
+      ultima_campana_utm: utms.utm_campaign,
+      utm_content:        utms.utm_content,
+      utm_term:           utms.utm_term
+    };
+    for (var k in mapa) {
+      if (mapa[k]) campos.push({ objectTypeId: '0-1', name: k, value: mapa[k] });
+    }
+
     var payload = {
-      fields: [
-        { objectTypeId: '0-1', name: 'firstname', value: valor('in-firstname') },
-        { objectTypeId: '0-1', name: 'lastname',  value: valor('in-lastname')  },
-        { objectTypeId: '0-1', name: 'email',     value: valor('in-email')     },
-        { objectTypeId: '0-1', name: 'phone',     value: telefono()            }
-      ],
+      fields: campos,
       context: {
         pageUri: window.location.href,
         pageName: document.title
