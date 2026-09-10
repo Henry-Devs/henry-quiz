@@ -427,23 +427,20 @@
           + '&details=' + encodeURIComponent('Masterclass en vivo y gratis de Henry. Semana del Programador.')
           + '&location=Online',
       },
-      // Spoiler con contenido real de landing-roadmap-programador-ia.html -- fecha, temario y bonuses.
+      // La masterclass del 9/9 ya pasó -- spoiler reescrito 10/9 alrededor de la
+      // asesoría gratuita (único CTA que queda activo para esta carrera).
       spoilerHtml: `
-        <p class="spoiler-kicker">Tu próximo paso · Masterclass en vivo</p>
+        <p class="spoiler-kicker">Tu próximo paso · Asesoría gratuita</p>
         <p class="spoiler-body">
-          <strong>"El roadmap para convertirte en programador con IA en 2026"</strong> — miércoles 9 de
-          septiembre, 21h ARG 🇦🇷 / 19h COL 🇨🇴 / 18h MX 🇲🇽. En vivo vas a ver el mapa completo (12 pasos)
-          y profundizamos a fondo en los primeros 3.
+          Hablas sin costo con un asesor de carrera: te contamos cómo es el día a día de
+          <strong>Full Stack AI</strong>, qué modalidad te conviene y cuál es el camino más corto para
+          arrancar a programar con IA desde cero.
         </p>
         <div class="spoiler-topics">
-          <span class="spoiler-topic">Lógica</span>
-          <span class="spoiler-topic">HTML + CSS</span>
-          <span class="spoiler-topic">JavaScript</span>
+          <span class="spoiler-topic">Cómo es la carrera</span>
+          <span class="spoiler-topic">Modalidades y horarios</span>
+          <span class="spoiler-topic">Tus dudas, resueltas</span>
         </div>
-        <p class="spoiler-body">
-          Te llevas el mapa completo, un certificado para LinkedIn y una sesión gratis con un asesor de
-          carrera — y ahí se desbloquea una oferta especial que corre hasta el Día del Programador (13/9).
-        </p>
         <p class="spoiler-urgency">Ya tienes tu match. Esta es tu oportunidad de dar el salto.</p>
       `,
     },
@@ -633,7 +630,9 @@
       // Se enrola segun la ULTIMA pantalla (el resultado del match), no segun
       // que formulario lleno antes: todas las masterclass_* de la carrera que
       // le hizo match se pushean aca, apenas se conoce el resultado.
-      const props = Object.assign({}, career.masterclassFields);
+      // Si la masterclass de esta carrera ya pasó, no pisamos las propiedades
+      // masterclass_* del contacto con la de un evento muerto.
+      const props = career.showPrimaryCta === false ? {} : Object.assign({}, career.masterclassFields);
       props[CONFIG.hsCareerProperty] = career.hsValue;
       if (leadEmail) props.email = leadEmail;
       // No pisar con vacio -- mismo criterio que el injection de las landings
@@ -845,9 +844,12 @@
     const params = utmQueryString();
     const primaryBtn = document.getElementById("r-primary");
     if (career.showPrimaryCta === false) {
-      primaryBtn.hidden = true;
+      // `.btn-primary` fija display:flex con más especificidad que el estilo
+      // por defecto de [hidden] -- hay que forzar el display inline, si no
+      // queda un botón vacío pero clickeable (bug reportado 10/9).
+      primaryBtn.style.display = "none";
     } else {
-      primaryBtn.hidden = false;
+      primaryBtn.style.display = "";
       const primaryHref = career.ctaAppendUtms && params ? `${career.ctaUrl}?${params}` : career.ctaUrl;
       primaryBtn.href = primaryHref;
       primaryBtn.textContent = career.ctaLabel;
@@ -858,7 +860,9 @@
 
     if (window.fbq) fbq("trackCustom", CONFIG.fbEvent + " - Resultado", { carrera: career.name, match_pct: pct });
     sendCareerInterest(career);
-    submitMasterclassForm(career);
+    // La masterclass de esta carrera ya pasó (showPrimaryCta:false) -- no la
+    // enrolamos en ese flujo, sería un recordatorio de un evento ya ocurrido.
+    if (career.showPrimaryCta !== false) submitMasterclassForm(career);
 
     document.getElementById("quiz-section").style.display = "none";
     const r = document.getElementById("result-section");
