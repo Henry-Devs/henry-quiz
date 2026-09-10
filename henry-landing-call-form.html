@@ -271,15 +271,16 @@ function getUTMs() {
   };
 }
 function buildMeetingURL() {
-  /* El CTA va al formulario de agendamiento de HubSpot, no al link de
-     meetings: el formulario pide los datos y desde ahi se elige el horario.
-     Ojo, esta base NO trae query propia, asi que las UTMs se pegan con "?"
-     y no con "&" como la anterior. */
-  var base = 'https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g';
+  /* El CTA va al link de meetings, que elige horario directo.
+     El separador NO se escribe a mano: esta base ya trae ?uuid= y la anterior
+     no traia query, asi que cada vez que se cambia el link hay que acordarse
+     de pasar "?" a "&". Se deduce de la base y deja de ser un problema. */
+  var base = 'https://meetings.hubspot.com/federico104/b2c-sales-campanas?uuid=ae9927fa-ef04-44d3-869e-8aaf39e722a3';
   var utms = getUTMs();
   var params = [];
   for (var k in utms) { if (utms[k]) params.push(k + '=' + encodeURIComponent(utms[k])); }
-  return params.length ? base + '?' + params.join('&') : base;
+  if (!params.length) return base;
+  return base + (base.indexOf('?') === -1 ? '?' : '&') + params.join('&');
 }
 
 var questions = [
