@@ -418,6 +418,7 @@ function goForward() {
 
 
 function showCTA() {
+  if (typeof window.guardarRespuestas === 'function') window.guardarRespuestas(answers);
   document.getElementById('screen-question').classList.remove('active');
   document.getElementById('screen-cta').classList.add('active');
   document.getElementById('progress-bar').style.width = '100%';
@@ -436,6 +437,7 @@ function showCTA() {
   var FORM   = '3f6089cd-d058-4307-a470-7c0e3fdff246';
   var URL_HS = 'https://api.hsforms.com/submissions/v3/integration/submit/' + PORTAL + '/' + FORM;
 
+  var identidad = null;
   var form   = document.getElementById('lead-form');
   var btn    = document.getElementById('btn-submit');
   var alerta = document.getElementById('form-alert');
@@ -476,6 +478,34 @@ function showCTA() {
       startFlow();
     });
   }
+
+  /* 2do envio: completa el contacto con lo que contesto en las preguntas.
+     Solo sale si el formulario se envio bien; por el camino de "segui igual"
+     no hay email y no habria a quien pegarle las respuestas. */
+  window.guardarRespuestas = function (respuestas) {
+    if (!identidad) return;
+    var extra = [];
+    var mapa = {
+      q1: 'precall_motivacion',
+      q2: 'precall_situacion_laboral',
+      q3: 'precall_cuando_empezar'
+    };
+    for (var k in mapa) {
+      var a = respuestas[k];
+      /* La 1ra es multiple, asi que puede traer varias; las otras una sola. */
+      if (a && a.answers && a.answers.length) {
+        extra.push({ objectTypeId: '0-1', name: mapa[k], value: a.answers.join(' | ') });
+      }
+    }
+    if (!extra.length) return;
+
+    var payload = { fields: identidad.concat(extra), context: { pageUri: window.location.href, pageName: document.title } };
+    var hutk = cookie('hubspotutk');
+    if (hutk) payload.context.hutk = hutk;
+    /* Sin then ni catch: si falla, la persona ya esta capturada y ya tiene el
+       link para agendar. No hay nada que avisarle ni que reintentar. */
+    fetch(URL_HS, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  };
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -531,7 +561,15 @@ function showCTA() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     }).then(function (r) {
-      if (r.ok) { startFlow(); return; }
+      if (r.ok) {
+        /* Las 3 preguntas vienen DESPUES del formulario, asi que no entran en
+           este envio: se mandan al final, en un 2do submit que HubSpot pega al
+           mismo contacto por el email. Guardamos la identidad para poder
+           armarlo (el form exige sus 4 campos obligatorios en cada envio). */
+        identidad = campos.slice();
+        startFlow();
+        return;
+      }
       return r.json().catch(function () { return {}; }).then(function (d) {
         var errs = (d.errors || []).map(function (x) { return x.errorType || ''; });
         btn.disabled = false;
