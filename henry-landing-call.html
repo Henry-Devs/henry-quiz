@@ -20,21 +20,50 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 
 /* WELCOME */
-.welcome-outer{max-width:720px;width:100%;}
-.welcome-card{background:var(--dark);border-radius:var(--radius);padding:clamp(40px,6vw,64px);color:var(--white);position:relative;overflow:hidden;}
+.welcome-outer{max-width:1200px;width:100%;}
+.welcome-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(24px,3vw,44px);align-items:center;position:relative;z-index:1;}
+
+.welcome-card{background:var(--dark);border-radius:var(--radius);padding:clamp(28px,3.6vw,48px);color:var(--white);position:relative;overflow:hidden;}
 .welcome-card::after{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;background:radial-gradient(circle,rgba(245,230,66,0.12) 0%,transparent 70%);pointer-events:none;}
 .welcome-eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #333;border-radius:100px;padding:6px 16px;font-size:13px;font-weight:600;color:#aaa;margin-bottom:24px;}
 .welcome-eyebrow::before{content:'';width:7px;height:7px;background:var(--yellow);border-radius:50%;}
-.welcome-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.4rem,6vw,4rem);font-weight:900;line-height:1.0;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:16px;}
+.welcome-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.2rem,4.4vw,3.4rem);font-weight:900;line-height:1.0;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:16px;}
 .welcome-title .hl{color:var(--yellow);}
 .welcome-body{font-size:1.05rem;color:#999;line-height:1.7;margin-bottom:36px;max-width:460px;font-weight:400;}
 .welcome-body strong{color:#ccc;font-weight:600;}
-.welcome-feats{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:36px;}
+.welcome-feats{display:flex;flex-wrap:wrap;gap:16px;}
 .wfeat{display:flex;align-items:center;gap:8px;font-size:14px;color:#bbb;font-weight:500;}
 .wfeat-dot{width:8px;height:8px;background:var(--yellow);border-radius:50%;}
 .btn-start{background:var(--yellow);color:var(--black);border:none;padding:16px 44px;border-radius:10px;font-family:'Barlow',sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:all 0.2s;text-transform:uppercase;letter-spacing:0.04em;}
 .btn-start:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(245,230,66,0.35);}
 .welcome-foot{margin-top:14px;font-size:12px;color:#555;}
+
+/* FORM: caja BLANCA a la derecha, con el molde del form de masterclasses
+   (barra amarilla, pill negro, titulo, campos apilados, boton amarillo).
+   Es nativo y no el embed de HubSpot: ese form es V4 y renderiza en un iframe
+   cross-origin, asi que trae su propio tema y no se puede pintar desde aca.
+   (El de masterclasses SI se puede porque es legacy v2 y su iframe es
+   accesible: ver landing-analisis-a-ml.html.) Los datos van por la Forms API. */
+.form-card{background:var(--white);border:1.5px solid #E2E2DC;border-radius:16px;padding:clamp(22px,2.2vw,28px);box-shadow:0 4px 24px rgba(0,0,0,0.07);}
+.form-top-bar{height:4px;background:var(--yellow);border-radius:2px;margin-bottom:22px;}
+.f-field{display:flex;flex-direction:column;margin-bottom:11px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.f-field label{font-size:0.8rem;font-weight:600;color:var(--black);margin-bottom:5px;}
+.f-field label .req{color:#d32f2f;}
+.f-input{background:#F5F5F5;border:1.5px solid #E2E2E2;border-radius:8px;padding:10px 13px;font-family:'Barlow',sans-serif;font-size:0.9rem;color:var(--black);transition:border-color 0.15s,background 0.15s;width:100%;}
+.f-input::placeholder{color:#a5a5a5;}
+.f-input:focus{outline:none;border-color:var(--black);background:var(--white);}
+.f-input:disabled{opacity:0.5;}
+.f-phone{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:8px;}
+.f-phone select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23777'/></svg>");background-repeat:no-repeat;background-position:right 11px center;padding-right:26px;cursor:pointer;}
+.f-error{display:none;font-size:0.75rem;color:#d32f2f;margin-top:4px;}
+.f-field.invalid .f-input{border-color:#d32f2f;}
+.f-field.invalid .f-error{display:block;}
+.btn-submit{background:var(--yellow);color:var(--black);border:none;padding:13px 28px;border-radius:10px;font-family:'Barlow',sans-serif;font-size:0.95rem;font-weight:800;cursor:pointer;transition:all 0.2s;text-transform:uppercase;letter-spacing:0.05em;width:100%;margin-top:6px;}
+.btn-submit:hover:not(:disabled){background:#EBDC2E;}
+.btn-submit:disabled{cursor:default;opacity:0.65;}
+.form-alert{display:none;margin-top:12px;padding:11px 13px;border-radius:8px;background:#FDECEA;border:1px solid #F5C6C0;font-size:0.8rem;color:#A8322A;line-height:1.5;}
+.form-alert a{color:var(--black);}
 
 /* QUESTION */
 .question-wrap{max-width:640px;width:100%;}
@@ -77,6 +106,12 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
 .cta-sub{font-size:1rem;color:#999;line-height:1.7;max-width:480px;margin:0 auto 32px;}
 .btn-cta{background:var(--yellow);color:var(--black);border:none;padding:18px 52px;border-radius:10px;font-family:'Barlow',sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;text-transform:uppercase;letter-spacing:0.04em;}
 .btn-cta:hover{transform:translateY(-3px);box-shadow:0 12px 44px rgba(245,230,66,0.4);}
+@media (max-width:900px){
+  .welcome-outer{max-width:640px;}
+  .welcome-grid{grid-template-columns:1fr;gap:16px;}
+  .welcome-card{padding:32px 26px;}
+  .welcome-title{font-size:clamp(2rem,8vw,2.6rem);}
+}
 </style>
 </head>
 <body>
@@ -91,6 +126,8 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
 <div class="screen active" id="screen-welcome">
   <div class="welcome-outer">
     <div class="welcome-card">
+      <div class="welcome-grid">
+        <div class="welcome-copy">
       <div class="welcome-eyebrow">Antes de tu llamada</div>
       <h1 class="welcome-title">Unas preguntas<br>rápidas para que<br>tu asesor llegue<br><span class="hl">preparado</span></h1>
       <p class="welcome-body">Son <strong>2 minutos</strong>. Solo unas preguntas para que la llamada sea útil de verdad.</p>
@@ -99,7 +136,60 @@ nav{background:var(--white);padding:14px 32px;display:flex;align-items:center;ju
         <div class="wfeat"><div class="wfeat-dot"></div>Atención personalizada</div>
         <div class="wfeat"><div class="wfeat-dot"></div>Sin compromiso</div>
       </div>
-      <button class="btn-start" onclick="startFlow()">Empezar &rarr;</button>
+        </div>
+
+    <div class="form-card">
+      <div class="form-top-bar"></div>
+      <form id="lead-form" novalidate>
+        <div class="f-field" id="fld-email">
+          <label for="in-email">Correo <span class="req">*</span></label>
+          <input class="f-input" type="email" id="in-email" name="email" autocomplete="email" placeholder="tu@mail.com">
+          <span class="f-error">Revis&aacute; el correo.</span>
+        </div>
+        <div class="f-row">
+        <div class="f-field" id="fld-firstname">
+          <label for="in-firstname">Nombre <span class="req">*</span></label>
+          <input class="f-input" type="text" id="in-firstname" name="firstname" autocomplete="given-name" placeholder="Tu nombre">
+          <span class="f-error">Complet&aacute; tu nombre.</span>
+        </div>
+        <div class="f-field" id="fld-lastname">
+          <label for="in-lastname">Apellidos <span class="req">*</span></label>
+          <input class="f-input" type="text" id="in-lastname" name="lastname" autocomplete="family-name" placeholder="Tu apellido">
+          <span class="f-error">Complet&aacute; tu apellido.</span>
+        </div>
+        </div>
+        <div class="f-field" id="fld-phone">
+          <label for="in-phone">N&uacute;mero de tel&eacute;fono <span class="req">*</span></label>
+          <div class="f-phone">
+            <select class="f-input" id="in-cc" aria-label="Pa&iacute;s">
+              <option value="+54" selected>Argentina</option>
+              <option value="+52">M&eacute;xico</option>
+              <option value="+57">Colombia</option>
+              <option value="+51">Per&uacute;</option>
+              <option value="+56">Chile</option>
+              <option value="+593">Ecuador</option>
+              <option value="+598">Uruguay</option>
+              <option value="+595">Paraguay</option>
+              <option value="+591">Bolivia</option>
+              <option value="+58">Venezuela</option>
+              <option value="+506">Costa Rica</option>
+              <option value="+507">Panam&aacute;</option>
+              <option value="+502">Guatemala</option>
+              <option value="+503">El Salvador</option>
+              <option value="+504">Honduras</option>
+              <option value="+1">Rep. Dominicana / US</option>
+              <option value="+34">Espa&ntilde;a</option>
+            </select>
+            <input class="f-input" type="tel" id="in-phone" name="phone" autocomplete="tel" placeholder="11 2222 3333">
+          </div>
+          <span class="f-error">Revis&aacute; el tel&eacute;fono.</span>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btn-submit">Continuar &rarr;</button>
+        <div class="form-alert" id="form-alert"></div>
+      </form>
+    </div>
+      </div>
     </div>
   </div>
 </div>
@@ -333,6 +423,133 @@ function showCTA() {
   document.getElementById('progress-bar').style.width = '100%';
   document.getElementById('cta-final-btn').href = buildMeetingURL();
 }
+</script>
+
+<!-- Tracking de HubSpot: setea la cookie hubspotutk. La mandamos como hutk en
+     el submit para que la carga quede pegada a la sesion de esta persona, y de
+     paso el formulario de agendamiento del final le llega precargado. -->
+<script id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+
+<script>
+(function () {
+  var PORTAL = '19612811';
+  var FORM   = '3f6089cd-d058-4307-a470-7c0e3fdff246';
+  var URL_HS = 'https://api.hsforms.com/submissions/v3/integration/submit/' + PORTAL + '/' + FORM;
+
+  var form   = document.getElementById('lead-form');
+  var btn    = document.getElementById('btn-submit');
+  var alerta = document.getElementById('form-alert');
+
+  function cookie(n) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+  function marcar(id, mal) {
+    document.getElementById(id).classList.toggle('invalid', mal);
+    return !mal;
+  }
+  function valor(id) { return document.getElementById(id).value.trim(); }
+
+  /* El telefono va en E.164: HubSpot guarda una cadena, y sin prefijo un numero
+     argentino y uno mexicano quedan indistinguibles para ventas. */
+  function telefono() {
+    var n = valor('in-phone').replace(/[^0-9]/g, '');
+    return n ? document.getElementById('in-cc').value + n : '';
+  }
+
+  function valida() {
+    var ok = true;
+    ok = marcar('fld-firstname', !valor('in-firstname')) && ok;
+    ok = marcar('fld-lastname',  !valor('in-lastname'))  && ok;
+    ok = marcar('fld-email',     !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(valor('in-email'))) && ok;
+    ok = marcar('fld-phone',     telefono().replace(/[^0-9]/g, '').length < 8) && ok;
+    return ok;
+  }
+
+  /* Si HubSpot no contesta no dejamos a la persona encerrada en la pantalla 1,
+     pero tampoco la mandamos sola: primero puede reintentar. */
+  function falla(msg) {
+    alerta.innerHTML = msg + ' <a href="#" id="seguir-igual">Segu&iacute; igual con las preguntas</a>.';
+    alerta.style.display = 'block';
+    document.getElementById('seguir-igual').addEventListener('click', function (e) {
+      e.preventDefault();
+      startFlow();
+    });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    alerta.style.display = 'none';
+    if (!valida()) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    var campos = [
+      { objectTypeId: '0-1', name: 'firstname', value: valor('in-firstname') },
+      { objectTypeId: '0-1', name: 'lastname',  value: valor('in-lastname')  },
+      { objectTypeId: '0-1', name: 'email',     value: valor('in-email')     },
+      { objectTypeId: '0-1', name: 'phone',     value: telefono()            },
+      /* HubSpot manda los templates de WhatsApp al numero de ESTE campo, no al
+         de 'phone': si esta vacio no manda y no falla (workflow en verde,
+         contacto enrolado, cero mensajes). Los rieles de WhatsApp del CRM
+         apuntan aca, asi que se escribe siempre.
+         Ojo: la Forms API descarta EN SILENCIO los campos que el form no
+         declara, asi que esto no hace nada hasta que el campo este en el
+         form; el dia que se agregue, empieza a viajar solo. */
+      { objectTypeId: '0-1', name: 'hs_whatsapp_phone_number', value: telefono() }
+    ];
+
+    /* El form declara estos 5 ocultos, con los mismos nombres que el resto de
+       las landings del repo. La Forms API descarta en silencio cualquier campo
+       que el form no declare, asi que los nombres tienen que ser exactos.
+       Los vacios no se mandan: pisarian una atribucion previa con "". */
+    var utms = getUTMs();
+    var mapa = {
+      ultima_fuente_utm:  utms.utm_source,
+      ultimo_medio_utm:   utms.utm_medium,
+      ultima_campana_utm: utms.utm_campaign,
+      utm_content:        utms.utm_content,
+      utm_term:           utms.utm_term
+    };
+    for (var k in mapa) {
+      if (mapa[k]) campos.push({ objectTypeId: '0-1', name: k, value: mapa[k] });
+    }
+
+    var payload = {
+      fields: campos,
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title
+      }
+    };
+    var hutk = cookie('hubspotutk');
+    if (hutk) payload.context.hutk = hutk;
+
+    fetch(URL_HS, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (r) {
+      if (r.ok) { startFlow(); return; }
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        var errs = (d.errors || []).map(function (x) { return x.errorType || ''; });
+        btn.disabled = false;
+        btn.textContent = 'Continuar →';
+        if (errs.indexOf('INVALID_EMAIL') !== -1) {
+          marcar('fld-email', true);
+          falla('Ese correo no parece válido.');
+        } else {
+          falla('No pudimos guardar tus datos.');
+        }
+      });
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Continuar →';
+      falla('No pudimos guardar tus datos.');
+    });
+  });
+})();
 </script>
 </body>
 </html>

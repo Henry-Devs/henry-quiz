@@ -489,7 +489,15 @@ function showCTA() {
       { objectTypeId: '0-1', name: 'firstname', value: valor('in-firstname') },
       { objectTypeId: '0-1', name: 'lastname',  value: valor('in-lastname')  },
       { objectTypeId: '0-1', name: 'email',     value: valor('in-email')     },
-      { objectTypeId: '0-1', name: 'phone',     value: telefono()            }
+      { objectTypeId: '0-1', name: 'phone',     value: telefono()            },
+      /* HubSpot manda los templates de WhatsApp al numero de ESTE campo, no al
+         de 'phone': si esta vacio no manda y no falla (workflow en verde,
+         contacto enrolado, cero mensajes). Los rieles de WhatsApp del CRM
+         apuntan aca, asi que se escribe siempre.
+         Ojo: la Forms API descarta EN SILENCIO los campos que el form no
+         declara, asi que esto no hace nada hasta que el campo este en el
+         form; el dia que se agregue, empieza a viajar solo. */
+      { objectTypeId: '0-1', name: 'hs_whatsapp_phone_number', value: telefono() }
     ];
 
     /* El form declara estos 5 ocultos, con los mismos nombres que el resto de
