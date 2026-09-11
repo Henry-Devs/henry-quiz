@@ -485,17 +485,49 @@ function showCTA() {
   window.guardarRespuestas = function (respuestas) {
     if (!identidad) return;
     var extra = [];
-    var mapa = {
+
+    /* Las respuestas van a DOS lados y no es duplicacion al azar:
+       - precall_* es texto libre y guarda lo que la persona eligio, tal cual.
+       - las dos propiedades de abajo son DESPLEGABLES que ya usa el form
+         "Agenda Sales Extra", asi que son las que agregan en los reportes.
+       El texto de la landing no coincide con el de las opciones, asi que hay
+       que traducirlo. Y si alguien edita una opcion de la landing sin tocar
+       este mapa, HubSpot descarta el valor EN SILENCIO: por eso el texto crudo
+       se sigue guardando aparte y la respuesta no se pierde nunca. */
+    var OPCION_HS = {
+      q2: {
+        'Empleado/a en relación de dependencia': 'Trabajo en relación de dependencia',
+        'Freelancer o trabajo independiente':    'Soy Freelancer / Independiente',
+        'Emprendedor/a con negocio propio':      'Tengo mi propio negocio / Emprendimiento',
+        'Estudiante universitario o terciario':  'Estudiante',
+        'En búsqueda de trabajo':                'En búsqueda de trabajo',
+        'Sin actividad laboral actualmente':     'No tengo trabajo actualmente'
+      },
+      q3: {
+        'Este mes, ¡cuanto antes mejor!': 'Lo antes posible',
+        'En los próximos 1 a 3 meses':    'En 1 a 3 meses',
+        'En los próximos 3 a 6 meses':    'En 3 a 6 meses',
+        'Todavía lo estoy evaluando':     'Todavía estoy evaluando'
+      }
+    };
+    var PROP_HS = { q2: 'cual_es_tu_situacion_laboral_actual', q3: 'cuando_te_gustaria_empezar' };
+
+    var crudo = {
       q1: 'precall_motivacion',
       q2: 'precall_situacion_laboral',
       q3: 'precall_cuando_empezar'
     };
-    for (var k in mapa) {
+    for (var k in crudo) {
       var a = respuestas[k];
+      if (!a || !a.answers || !a.answers.length) continue;
       /* La 1ra es multiple, asi que puede traer varias; las otras una sola. */
-      if (a && a.answers && a.answers.length) {
-        extra.push({ objectTypeId: '0-1', name: mapa[k], value: a.answers.join(' | ') });
-      }
+      extra.push({ objectTypeId: '0-1', name: crudo[k], value: a.answers.join(' | ') });
+
+      /* La multiple no va al desplegable: no hay una propiedad de motivacion
+         con opciones, y meter dos valores en una sola no da un dato agregable. */
+      if (!PROP_HS[k]) continue;
+      var op = OPCION_HS[k][a.answers[0]];
+      if (op) extra.push({ objectTypeId: '0-1', name: PROP_HS[k], value: op });
     }
     if (!extra.length) return;
 
