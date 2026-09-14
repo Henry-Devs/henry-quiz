@@ -220,6 +220,9 @@
     }
     .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
     .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+    .video-embed-wrap { position: relative; width: 100%; padding-top: 56.25%; margin: 16px 0 10px; border-radius: 10px; overflow: hidden; background: #000; }
+    .video-embed-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-link-fallback { display: inline-block; margin-top: 4px; font-size: 0.85rem; font-weight: 700; color: var(--black); text-decoration: underline; }
 
     /* BONUSES */
     .bonus-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 64px; }
@@ -357,7 +360,7 @@
   <section class="hero">
     <div class="hero-left">
       <div class="badge-row">
-        <span class="badge primary">Clase en vivo gratuita</span>
+        <span class="badge primary">Grabación disponible</span>
         <span class="badge outline">Análisis de datos</span>
         <span class="badge outline">Con Raúl Montesinos</span>
       </div>
@@ -419,16 +422,20 @@
       <div id="form-wrapper">
         <div class="form-top-bar"></div>
         <span class="free-badge">100% gratis</span>
-        <h2>Anótate a la clase</h2>
-        <p class="form-sub">Completa tus datos para reservar tu lugar.</p>
-        <p class="event-compact-facts">Martes 11 de agosto · 21hs ARG / 18hs MX / 19hs COL · Online, en vivo</p>
+        <h2>Mira la grabación</h2>
+        <p class="form-sub">Deja tu mail y accede al video al instante.</p>
+        <p class="event-compact-facts">Se grabó el martes 11 de agosto · Grabación disponible ahora</p>
         <div id="hs-form-container"></div>
         <p class="privacy-note">Sin spam. Tus datos están seguros.</p>
       </div>
       <div class="success-state" id="success-state">
         <div class="success-icon">✓</div>
-        <h3>¡Listo!</h3>
-        <p>Te registraste correctamente. Te vamos a avisar por mail antes de la clase.</p>
+        <h3>¡Acá está tu clase!</h3>
+        <p>Mírala cuando quieras.</p>
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/tW0LkbBrRP0" title="Claude para análisis de datos de punta a punta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <a href="https://www.youtube.com/watch?v=tW0LkbBrRP0" target="_blank" class="video-link-fallback">Ver en YouTube →</a>
       </div>
     </div>
   </section>
@@ -443,7 +450,7 @@
       <div class="bonus-card"><div class="bonus-num">04</div><p>Un descuento exclusivo para asistentes</p></div>
     </div>
     <div class="bonus-cta-wrap">
-      <a href="#hs-form-container" class="cta-btn">Reserva tu lugar →</a>
+      <a href="#hs-form-container" class="cta-btn">Ver la grabación →</a>
     </div>
   </section>
 
@@ -566,7 +573,11 @@
       // fecha/hora legible adentro de new Date(...) y el .getTime() la convierte.
       masterclass_fecha_evento:   String(new Date('2026-08-11T21:00:00-03:00').getTime()),
 
-      masterclass_nombre:         'Claude para análisis de datos',
+      // La masterclass ya pasó: se deja vacío a propósito para que esta
+      // resubmisión NO vuelva a entrar al flow por evento (infra/17 §3, cuya
+      // condición de entrada es masterclass_nombre exacto) -- ese flow manda
+      // recordatorios de "antes de la clase" que ya no tienen sentido.
+      masterclass_nombre:         '',
       masterclass_fecha_larga:    'Martes 11 de agosto',
       masterclass_hora:           '21hs ARG 🇦🇷 / 18hs MX 🇲🇽 / 19hs COL 🇨🇴',
 

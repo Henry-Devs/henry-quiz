@@ -180,6 +180,9 @@
     }
     .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
     .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+    .video-embed-wrap { position: relative; width: 100%; padding-top: 56.25%; margin: 16px 0 10px; border-radius: 10px; overflow: hidden; background: #000; }
+    .video-embed-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-link-fallback { display: inline-block; margin-top: 4px; font-size: 0.85rem; font-weight: 700; color: var(--black); text-decoration: underline; }
 
     /* ROADMAP -- pieza central */
     .roadmap-section { max-width: 1120px; margin: 0 auto; padding: 48px 48px 8px; }
@@ -325,7 +328,7 @@
   <section class="hero">
     <div class="hero-left">
       <div class="badge-row">
-        <span class="badge primary">Masterclass en vivo · Gratis</span>
+        <span class="badge primary">Grabación disponible</span>
         <span class="badge outline">Semana del Programador</span>
       </div>
       <h1>El roadmap para convertirte en programador con IA en 2026</h1>
@@ -343,16 +346,20 @@
       <div id="form-wrapper">
         <div class="form-top-bar"></div>
         <span class="free-badge">100% gratis</span>
-        <h2>Completa tus datos y reserva tu lugar</h2>
-        <p class="form-sub">Te enviamos el link de acceso por mail.</p>
-        <p class="event-compact-facts">Miércoles 9 de septiembre · 60 min<br>18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷<br>Online, en vivo</p>
+        <h2>Mira la grabación</h2>
+        <p class="form-sub">Deja tu mail y accede al video al instante.</p>
+        <p class="event-compact-facts">Se grabó el miércoles 9 de septiembre · Grabación disponible ahora</p>
         <div id="hs-form-container"></div>
         <p class="privacy-note">Sin spam. Tus datos están seguros.</p>
       </div>
       <div class="success-state" id="success-state">
         <div class="success-icon">✓</div>
-        <h3>¡Listo!</h3>
-        <p>Te registraste correctamente. Te vamos a avisar por mail antes de la clase.</p>
+        <h3>¡Acá está tu clase!</h3>
+        <p>Mírala cuando quieras.</p>
+        <div class="video-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/y8eky45aNv4" title="El roadmap para convertirte en programador con IA en 2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <a href="https://www.youtube.com/watch?v=y8eky45aNv4" target="_blank" class="video-link-fallback">Ver en YouTube →</a>
       </div>
     </div>
   </section>
@@ -421,7 +428,7 @@
       <div class="bonus-card"><div class="bonus-num">03</div><p>Una sesión gratuita con un asesor de carrera</p></div>
     </div>
     <div class="bonus-cta-wrap">
-      <a href="#hs-form-container" class="cta-btn">Reserva tu lugar →</a>
+      <a href="#hs-form-container" class="cta-btn">Ver la grabación →</a>
     </div>
   </section>
 
@@ -501,7 +508,7 @@
       </div>
 
       <div class="why-cta-wrap">
-        <a href="#hs-form-container" class="cta-btn">Quiero mi lugar en la masterclass →</a>
+        <a href="#hs-form-container" class="cta-btn">Ver la grabación →</a>
       </div>
     </div>
   </section>
@@ -546,9 +553,11 @@
       // 1861306136 hasta que se clone uno nuevo.
       masterclass_fecha_evento:   String(new Date('2026-09-09T21:00:00-03:00').getTime()),
 
-      // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
-      // flow nuevo por evento (infra/17 §3), no solo un texto descriptivo.
-      masterclass_nombre:         'El roadmap para convertirte en programador con IA en 2026',
+      // La masterclass ya pasó: se deja vacío a propósito para que esta
+      // resubmisión NO vuelva a alimentar el flow (compartido 1861306136, ver
+      // nota arriba) con recordatorios de "antes de la clase" que ya no
+      // corresponden.
+      masterclass_nombre:         '',
       masterclass_fecha_larga:    'Miércoles 9 de septiembre',
       masterclass_hora:           '18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷',
 
@@ -564,7 +573,7 @@
       masterclass_cohorte_texto:  '28 de septiembre, Full Time y Part Time',
 
       // ⚠️ PENDIENTE -- no inventar valor, completar cuando este definido:
-      masterclass_cta_url:        'https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g??utm_source=instagram&utm_medium=organico&utm_campaign=MasterclassFS_AI&utm_content=46274',
+      masterclass_cta_url:        'https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=instagram&utm_medium=organico&utm_campaign=MasterclassFS_AI&utm_content=46274',
 
       career_interest:            'Full Stack AI',
       masterclass_carrera:        'Full Stack AI',
