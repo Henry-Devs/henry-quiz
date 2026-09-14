@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masterclasses gratuitas | Henry</title>
+  <meta name="description" content="Todas las masterclasses en vivo y gratis de Henry: la próxima y el archivo completo de las anteriores, por carrera." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Masterclasses gratuitas | Henry" />
+  <meta property="og:description" content="Todas las masterclasses en vivo y gratis de Henry: la próxima y el archivo completo de las anteriores, por carrera." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/henry-favicon.png" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px; border-bottom: 1px solid var(--border);
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+    }
+
+    /* PAGE HERO */
+    .page-hero {
+      max-width: 1120px; margin: 0 auto; padding: 56px 48px 32px; text-align: center;
+    }
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 900; letter-spacing: -1.5px;
+      line-height: 1.05; margin-bottom: 16px;
+    }
+    .page-hero h1 mark { background: var(--yellow); color: var(--black); padding: 0 10px; }
+    .page-hero p { font-size: 1.05rem; color: var(--gray-dark); max-width: 60ch; margin: 0 auto; line-height: 1.6; }
+
+    /* FILTER CHIPS */
+    .filters {
+      max-width: 1120px; margin: 32px auto 0; padding: 0 48px;
+      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+    }
+    .chip {
+      font-family: inherit; font-size: 0.85rem; font-weight: 700; padding: 10px 20px;
+      border-radius: 30px; border: 1.5px solid var(--border); background: var(--white);
+      color: var(--black); cursor: pointer; transition: all 0.15s ease;
+    }
+    .chip:hover { border-color: var(--black); }
+    .chip.active { background: var(--black); border-color: var(--black); color: var(--white); }
+
+    /* NEXT MASTERCLASS HERO */
+    .next-wrap { max-width: 1120px; margin: 56px auto 0; padding: 0 48px; }
+    .next-label {
+      font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--gray-mid); margin-bottom: 14px;
+    }
+    .next-card {
+      border: 2.5px solid var(--black); border-radius: 24px; padding: 48px;
+      display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center;
+      background: var(--white);
+    }
+    .next-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+    .badge {
+      font-size: 0.7rem; font-weight: 800; padding: 6px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    .next-card h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; letter-spacing: -1px;
+      line-height: 1.15; margin-bottom: 14px;
+    }
+    .next-card .next-desc { font-size: 0.98rem; color: var(--gray-dark); line-height: 1.6; margin-bottom: 20px; max-width: 46ch; }
+    .next-facts { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.9; }
+    .next-facts strong { color: var(--black); }
+    .next-side {
+      border: 1.5px solid var(--border); border-radius: 18px; padding: 28px; text-align: center;
+    }
+    .next-speakers { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .next-speaker-photo {
+      width: 76px; height: 76px; border-radius: 50%; overflow: hidden; background: var(--gray-light);
+      margin: 0 auto 8px;
+    }
+    .next-speaker-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .next-speaker-fallback {
+      width: 76px; height: 76px; border-radius: 50%; background: var(--yellow); color: var(--black);
+      display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.3rem;
+      margin: 0 auto 8px;
+    }
+    .next-speaker-name { font-size: 0.82rem; font-weight: 800; }
+    .next-speaker-role { font-size: 0.72rem; color: var(--gray-mid); }
+    .next-cta {
+      display: inline-block; background: var(--yellow); color: var(--black); font-weight: 800;
+      font-size: 0.95rem; padding: 15px 28px; border-radius: 10px; text-decoration: none;
+      margin-top: 6px; transition: background 0.15s ease;
+    }
+    .next-cta:hover { background: var(--yellow-dark); }
+    .next-cta-note { font-size: 0.72rem; color: var(--gray-mid); margin-top: 10px; }
+    .no-next {
+      border: 1.5px dashed var(--border); border-radius: 20px; padding: 40px; text-align: center;
+      color: var(--gray-dark);
+    }
+
+    /* CAREER SECTIONS */
+    .career-section { max-width: 1120px; margin: 64px auto 0; padding: 0 48px; }
+    .career-section:last-of-type { margin-bottom: 72px; }
+    .career-header {
+      display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 22px;
+      border-bottom: 1.5px solid var(--border); padding-bottom: 14px;
+    }
+    .career-header h2 { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.5px; }
+    .career-count { font-size: 0.8rem; color: var(--gray-mid); font-weight: 600; }
+    .mc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+    .mc-card {
+      display: block; text-decoration: none; color: var(--black);
+      border: 1.5px solid var(--border); border-radius: 18px; overflow: hidden;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+      background: var(--white);
+    }
+    .mc-card:hover { border-color: var(--black); transform: translateY(-2px); }
+    .mc-card-top {
+      height: 130px; background: var(--gray-light); position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mc-card-top img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .mc-card-fallback {
+      width: 64px; height: 64px; border-radius: 50%; background: var(--yellow); color: var(--black);
+      display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem;
+    }
+    .mc-status {
+      position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 800;
+      padding: 5px 11px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    .mc-status.future { background: var(--yellow); color: var(--black); }
+    .mc-status.past { background: var(--white); color: var(--gray-mid); border: 1px solid var(--border); }
+    .mc-card-body { padding: 20px 22px 22px; }
+    .mc-date { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-mid); margin-bottom: 8px; }
+    .mc-card-body h3 { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.3px; line-height: 1.3; margin-bottom: 8px; }
+    .mc-desc { font-size: 0.82rem; color: var(--gray-dark); line-height: 1.5; margin-bottom: 12px; }
+    .mc-speaker { font-size: 0.78rem; color: var(--gray-mid); font-weight: 600; }
+
+    @media (max-width: 760px) {
+      nav { padding: 14px 20px; }
+      .page-hero { padding: 40px 20px 24px; }
+      .filters { padding: 0 20px; }
+      .next-wrap { padding: 0 20px; }
+      .next-card { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
+      .career-section { padding: 0 20px; }
+      .mc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <h1>Masterclasses <mark>gratuitas</mark></h1>
+    <p>Clases en vivo, dictadas por gente que trabaja en esto todos los días. Encuentra la próxima y repasa las anteriores por carrera.</p>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="filters" id="filters"></div>
+
+  <!-- NEXT MASTERCLASS -->
+  <div class="next-wrap">
+    <p class="next-label">Próxima masterclass</p>
+    <div id="next-mc-container"></div>
+  </div>
+
+  <!-- CAREER SECTIONS -->
+  <div id="career-sections"></div>
+
+  <script>
+    // Fuente única de los datos de esta página: se arma a mano con lo que hay
+    // publicado hoy (14/9/2026). fechaEpoch decide "próxima" vs "ya pasó" en
+    // cada visita, así la página no necesita edición manual con el tiempo.
+    const MASTERCLASSES = [
+      {
+        nombre: 'AI Engineering 101',
+        desc: 'Cómo diseñar sistemas de IA que operan de forma confiable en producción.',
+        carrera: 'AI Engineering',
+        fechaEpoch: new Date('2026-09-24T19:00:00-03:00').getTime(),
+        fechaCorta: '24 SEP',
+        fechaLarga: 'Jueves 24 de septiembre',
+        hora: '16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷',
+        speakers: [
+          { nombre: 'Alexander Vicondoa', rol: 'Head of Deployment en ElevenLabs', foto: 'alexander-vicondoa.jpg' },
+        ],
+        link: 'landing-ai-engineering-101-alexander-vicondoa.html',
+      },
+      {
+        nombre: 'Cómo reposicionar tu carrera como AI Engineer',
+        desc: 'Cómo reposicionarte como AI Engineer, de la mano de quien lo hace todos los días en ElevenLabs.',
+        carrera: 'AI Engineering',
+        fechaEpoch: new Date('2026-09-10T18:30:00-03:00').getTime(),
+        fechaCorta: '10 SEP',
+        fechaLarga: 'Jueves 10 de septiembre',
+        hora: '15:30h MX 🇲🇽 / 16:30h COL 🇨🇴 / 18:30h ARG 🇦🇷',
+        speakers: [
+          { nombre: 'Alexander Vicondoa', rol: 'Head of Deployment en ElevenLabs', foto: 'alexander-vicondoa.jpg' },
+          { nombre: 'Sofía Petinaroli', rol: 'Head of Business en Henry', foto: 'sofia-petinaroli.jpg' },
+        ],
+        link: 'landing-reposiciona-tu-carrera-ai-engineer.html',
+      },
+      {
+        nombre: 'Cómo construir tu primer equipo de agentes de IA',
+        desc: 'Cómo se piensa y se diseña un sistema de agentes de IA que trabaja en equipo, con los fundamentos reales.',
+        carrera: 'AI Automation',
+        fechaEpoch: new Date('2026-09-15T20:00:00-03:00').getTime(),
+        fechaCorta: '15 SEP',
+        fechaLarga: 'Martes 15 de septiembre',
+        hora: '17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷',
+        speakers: [
+          { nombre: 'Rubén Galindo Steckel', rol: 'Cofundador y CEO de Airtm', foto: 'ruben-galindo.jpg' },
+        ],
+        link: 'landing-primer-equipo-de-agentes-ia.html',
+      },
+      {
+        nombre: 'Cómo convertirte en el referente de IA de tu empresa',
+        desc: '45 minutos para entender el rol de referente de IA que se está abriendo en todas las empresas.',
+        carrera: 'AI Automation',
+        fechaEpoch: new Date('2026-09-16T21:00:00-03:00').getTime(),
+        fechaCorta: '16 SEP',
+        fechaLarga: 'Miércoles 16 de septiembre',
+        hora: '18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷',
+        speakers: [
+          { nombre: 'Milagros Savino', rol: 'Business Lead en Henry', foto: 'milagros-savino.jpg' },
+          { nombre: 'Mariano Gobea Alcoba', rol: 'Tech Lead en Mercado Libre', foto: 'mariano-gobea-alcoba.jpg' },
+        ],
+        link: 'landing-open-house-ai-automation.html',
+      },
+      {
+        nombre: 'El roadmap para convertirte en programador con IA en 2026',
+        desc: 'Un mapa completo, paso a paso, de cómo se llega a programar con inteligencia artificial.',
+        carrera: 'Full Stack AI',
+        fechaEpoch: new Date('2026-09-09T21:00:00-03:00').getTime(),
+        fechaCorta: '9 SEP',
+        fechaLarga: 'Miércoles 9 de septiembre',
+        hora: '18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷',
+        speakers: [
+          { nombre: 'Gamaiel Camey', rol: 'Full Stack Developer', foto: null },
+        ],
+        link: 'landing-roadmap-programador-ia.html',
+      },
+      {
+        nombre: 'Git y GitHub desde cero: sube tu primer proyecto en 1 hora',
+        desc: 'Aprende las bases de Git y GitHub y llévate tu primer proyecto publicado en internet.',
+        carrera: 'Full Stack AI',
+        fechaEpoch: new Date('2026-08-25T20:30:00-03:00').getTime(),
+        fechaCorta: '25 AGO',
+        fechaLarga: 'Martes 25 de agosto',
+        hora: '17:30 MX 🇲🇽 / 18:30 COL 🇨🇴 / 20:30 ARG 🇦🇷',
+        speakers: [
+          { nombre: 'Camilo', rol: 'Instructor de Henry', foto: null },
+        ],
+        link: 'landing-git-github-desde-cero.html',
+      },
+      {
+        nombre: 'Data Science desde cero: del análisis de datos a Machine Learning',
+        desc: 'Limpia un archivo real, sácale respuestas claras y entrena tu primer modelo que predice.',
+        carrera: 'Data Science',
+        fechaEpoch: new Date('2026-08-26T19:00:00-05:00').getTime(),
+        fechaCorta: '26 AGO',
+        fechaLarga: 'Miércoles 26 y jueves 27 de agosto',
+        hora: 'Clase 1: 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷 · Clase 2: 19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷',
+        speakers: [
+          { nombre: 'Andrés Agualdo', rol: 'Data Scientist e instructor en Henry', foto: null },
+        ],
+        link: 'landing-analisis-a-ml.html',
+      },
+      {
+        nombre: 'Claude para análisis de datos de punta a punta',
+        desc: 'Limpia y prepara tus datos con Claude, sin fórmulas manuales, de punta a punta.',
+        carrera: 'Data Science',
+        fechaEpoch: new Date('2026-08-11T21:00:00-03:00').getTime(),
+        fechaCorta: '11 AGO',
+        fechaLarga: 'Martes 11 de agosto',
+        hora: '21h ARG 🇦🇷 / 18h MX 🇲🇽 / 19h COL 🇨🇴',
+        speakers: [
+          { nombre: 'Raúl Montesinos', rol: 'CRM Manager en Nespresso', foto: 'raul-montesinos.jpg' },
+        ],
+        link: 'landing-analisis-datos-claude.html',
+      },
+    ];
+
+    const CARRERAS = ['AI Engineering', 'AI Automation', 'Full Stack AI', 'Data Science'];
+    const now = Date.now();
+
+    function initials(name) {
+      return name.split(' ').filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
+    }
+
+    function speakerNamesLine(speakers) {
+      return speakers.map(s => s.nombre).join(' y ');
+    }
+
+    // ---- FILTROS ----
+    const filtersEl = document.getElementById('filters');
+    const allChip = document.createElement('button');
+    allChip.className = 'chip active';
+    allChip.textContent = 'Todas';
+    allChip.dataset.carrera = 'todas';
+    filtersEl.appendChild(allChip);
+    CARRERAS.forEach(c => {
+      const chip = document.createElement('button');
+      chip.className = 'chip';
+      chip.textContent = c;
+      chip.dataset.carrera = c;
+      filtersEl.appendChild(chip);
+    });
+    filtersEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('.chip');
+      if (!btn) return;
+      filtersEl.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const selected = btn.dataset.carrera;
+      document.querySelectorAll('.career-section').forEach(sec => {
+        sec.style.display = (selected === 'todas' || sec.dataset.carrera === selected) ? '' : 'none';
+      });
+    });
+
+    // ---- PRÓXIMA MASTERCLASS ----
+    const futuras = MASTERCLASSES.filter(m => m.fechaEpoch > now).sort((a, b) => a.fechaEpoch - b.fechaEpoch);
+    const nextContainer = document.getElementById('next-mc-container');
+
+    if (futuras.length > 0) {
+      const next = futuras[0];
+      const card = document.createElement('div');
+      card.className = 'next-card';
+      card.innerHTML = `
+        <div>
+          <div class="next-badges">
+            <span class="badge primary">En vivo y gratis</span>
+            <span class="badge outline">${next.carrera}</span>
+          </div>
+          <h2>${next.nombre}</h2>
+          <p class="next-desc">${next.desc}</p>
+          <p class="next-facts">
+            <strong>Cuándo:</strong> ${next.fechaLarga}<br>
+            <strong>Hora:</strong> ${next.hora}
+          </p>
+        </div>
+        <div class="next-side">
+          <div class="next-speakers">
+            ${next.speakers.map(s => `
+              <div>
+                ${s.foto
+                  ? `<div class="next-speaker-photo"><img src="${s.foto}" alt="${s.nombre}" /></div>`
+                  : `<div class="next-speaker-fallback">${initials(s.nombre)}</div>`}
+                <div class="next-speaker-name">${s.nombre}</div>
+                <div class="next-speaker-role">${s.rol}</div>
+              </div>
+            `).join('')}
+          </div>
+          <a class="next-cta" href="${next.link}" target="_blank">Reservar mi lugar →</a>
+          <p class="next-cta-note">Te lleva a la landing de esta masterclass.</p>
+        </div>
+      `;
+      nextContainer.appendChild(card);
+    } else {
+      nextContainer.innerHTML = `<div class="no-next">No hay masterclasses programadas por ahora. Mira el archivo de anteriores más abajo.</div>`;
+    }
+
+    // ---- SECCIONES POR CARRERA ----
+    const sectionsEl = document.getElementById('career-sections');
+    CARRERAS.forEach(carrera => {
+      const items = MASTERCLASSES.filter(m => m.carrera === carrera).sort((a, b) => a.fechaEpoch - b.fechaEpoch);
+      if (items.length === 0) return;
+
+      const section = document.createElement('section');
+      section.className = 'career-section';
+      section.dataset.carrera = carrera;
+
+      const grid = items.map(m => {
+        const isFuture = m.fechaEpoch > now;
+        const mainSpeaker = m.speakers[0];
+        return `
+          <a class="mc-card" href="${m.link}" target="_blank">
+            <div class="mc-card-top">
+              ${mainSpeaker.foto
+                ? `<img src="${mainSpeaker.foto}" alt="${mainSpeaker.nombre}" />`
+                : `<div class="mc-card-fallback">${initials(mainSpeaker.nombre)}</div>`}
+              <span class="mc-status ${isFuture ? 'future' : 'past'}">${isFuture ? 'Próxima' : 'Ya pasó'}</span>
+            </div>
+            <div class="mc-card-body">
+              <div class="mc-date">${m.fechaCorta}</div>
+              <h3>${m.nombre}</h3>
+              <p class="mc-desc">${m.desc}</p>
+              <p class="mc-speaker">${speakerNamesLine(m.speakers)}</p>
+            </div>
+          </a>
+        `;
+      }).join('');
+
+      section.innerHTML = `
+        <div class="career-header">
+          <h2>${carrera}</h2>
+          <span class="career-count">${items.length} masterclass${items.length > 1 ? 'es' : ''}</span>
+        </div>
+        <div class="mc-grid">${grid}</div>
+      `;
+      sectionsEl.appendChild(section);
+    });
+  </script>
+
+</body>
+</html>
