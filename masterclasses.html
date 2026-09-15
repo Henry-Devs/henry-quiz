@@ -180,6 +180,14 @@
       color: var(--gray-dark);
     }
 
+    /* COMING SOON -- todas las próximas masterclasses juntas, cruzando carreras */
+    .coming-soon-wrap { max-width: 1120px; margin: 64px auto 0; padding: 0 48px; }
+    .coming-soon-header { margin-bottom: 22px; border-bottom: 1.5px solid var(--border); padding-bottom: 14px; }
+    .coming-soon-header h2 { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 4px; }
+    .coming-soon-header p { font-size: 0.9rem; color: var(--gray-mid); }
+    .mc-grid-plain { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .coming-soon-wrap:has(.mc-grid-plain:empty) { display: none; }
+
     /* CAREER SECTIONS */
     .career-section { max-width: 1120px; margin: 64px auto 0; padding: 0 48px; }
     .career-section:last-of-type { margin-bottom: 72px; }
@@ -357,6 +365,15 @@
     <p class="next-label">Próxima masterclass</p>
     <div id="next-mc-container"></div>
   </div>
+
+  <!-- COMING SOON -->
+  <section class="coming-soon-wrap" id="coming-soon">
+    <div class="coming-soon-header">
+      <h2>Coming Soon</h2>
+      <p>Todas las masterclasses que se vienen, en un solo lugar.</p>
+    </div>
+    <div class="mc-grid-plain" id="coming-soon-grid"></div>
+  </section>
 
   <!-- CAREER SECTIONS -->
   <div id="career-sections"></div>
@@ -584,6 +601,34 @@
       nextContainer.innerHTML = `<div class="no-next">No hay masterclasses programadas por ahora. Mira el archivo de anteriores más abajo.</div>`;
     }
 
+    // Markup de una card, reusado por "Coming Soon" y por los carruseles de carrera.
+    function mcCardHTML(m) {
+      const isFuture = m.fechaEpoch > now;
+      return `
+        <a class="mc-card" href="${m.link}" target="_blank">
+          <div class="mc-card-top">
+            <img src="${m.banner}" alt="${m.nombre}" />
+            <span class="mc-status ${isFuture ? 'future' : 'past'}">${isFuture ? 'Próxima' : 'Ver ahora'}</span>
+          </div>
+          <div class="mc-card-body">
+            <div class="mc-date">${m.fechaCorta}</div>
+            <h3>${m.nombre}</h3>
+            <p class="mc-desc">${m.desc}</p>
+            <p class="mc-speaker"><strong>${speakerLabel(m.speakers)}:</strong> ${speakerNamesLine(m.speakers)}</p>
+          </div>
+        </a>
+      `;
+    }
+
+    // ---- COMING SOON -- todas las próximas, cruzando carreras ----
+    const comingSoonGrid = document.getElementById('coming-soon-grid');
+    const comingSoonWrap = document.getElementById('coming-soon');
+    if (futuras.length > 0) {
+      comingSoonGrid.innerHTML = futuras.map(mcCardHTML).join('');
+    } else {
+      comingSoonWrap.style.display = 'none';
+    }
+
     // ---- SECCIONES POR CARRERA ----
     const sectionsEl = document.getElementById('career-sections');
     CARRERAS.forEach(carrera => {
@@ -594,23 +639,7 @@
       section.className = 'career-section';
       section.dataset.carrera = carrera;
 
-      const cards = items.map(m => {
-        const isFuture = m.fechaEpoch > now;
-        return `
-          <a class="mc-card" href="${m.link}" target="_blank">
-            <div class="mc-card-top">
-              <img src="${m.banner}" alt="${m.nombre}" />
-              <span class="mc-status ${isFuture ? 'future' : 'past'}">${isFuture ? 'Próxima' : 'Ya pasó'}</span>
-            </div>
-            <div class="mc-card-body">
-              <div class="mc-date">${m.fechaCorta}</div>
-              <h3>${m.nombre}</h3>
-              <p class="mc-desc">${m.desc}</p>
-              <p class="mc-speaker"><strong>${speakerLabel(m.speakers)}:</strong> ${speakerNamesLine(m.speakers)}</p>
-            </div>
-          </a>
-        `;
-      }).join('');
+      const cards = items.map(mcCardHTML).join('');
 
       section.innerHTML = `
         <div class="career-header">
