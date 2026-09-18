@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "masterclasses": [
+    {
+      "slug": "ai-engineering-101-alexander-vicondoa",
+      "nombre": "AI Engineering 101",
+      "desc": "Cómo diseñar sistemas de IA que operan de forma confiable en producción.",
+      "carrera": "AI Engineering",
+      "fecha": "2026-09-24T19:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "24 SEP",
+      "fechaLarga": "Jueves 24 de septiembre",
+      "hora": "16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷",
+      "banner": "banner-ai-engineering-101.jpg",
+      "speakers": [
+        {
+          "nombre": "Alexander Vicondoa",
+          "rol": "Head of Deployment en ElevenLabs"
+        }
+      ],
+      "link": "landing-ai-engineering-101-alexander-vicondoa.html"
+    },
+    {
+      "slug": "reposiciona-tu-carrera-ai-engineer",
+      "nombre": "Cómo reposicionar tu carrera como AI Engineer",
+      "desc": "Cómo reposicionarte como AI Engineer, de la mano de quien lo hace todos los días en ElevenLabs.",
+      "carrera": "AI Engineering",
+      "fecha": "2026-09-10T18:30:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "10 SEP",
+      "fechaLarga": "Jueves 10 de septiembre",
+      "hora": "15:30h MX 🇲🇽 / 16:30h COL 🇨🇴 / 18:30h ARG 🇦🇷",
+      "banner": "banner-reposiciona.jpg",
+      "speakers": [
+        {
+          "nombre": "Alexander Vicondoa",
+          "rol": "Head of Deployment en ElevenLabs"
+        },
+        {
+          "nombre": "Sofía Petinaroli",
+          "rol": "Head of Business en Henry"
+        }
+      ],
+      "link": "landing-reposiciona-tu-carrera-ai-engineer.html"
+    },
+    {
+      "slug": "primer-equipo-de-agentes-ia",
+      "nombre": "Cómo construir tu primer equipo de agentes de IA",
+      "desc": "Cómo se piensa y se diseña un sistema de agentes de IA que trabaja en equipo, con los fundamentos reales.",
+      "carrera": "AI Automation",
+      "fecha": "2026-09-15T20:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "15 SEP",
+      "fechaLarga": "Martes 15 de septiembre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-airtm.jpg",
+      "speakers": [
+        {
+          "nombre": "Rubén Galindo Steckel",
+          "rol": "Cofundador y CEO de Airtm"
+        }
+      ],
+      "link": "landing-primer-equipo-de-agentes-ia.html"
+    },
+    {
+      "slug": "open-house-ai-automation",
+      "nombre": "Cómo convertirte en el referente de IA de tu empresa",
+      "desc": "45 minutos para entender el rol de referente de IA que se está abriendo en todas las empresas.",
+      "carrera": "AI Automation",
+      "fecha": "2026-09-16T21:00:00-03:00",
+      "duracionMin": 45,
+      "fechaCorta": "16 SEP",
+      "fechaLarga": "Miércoles 16 de septiembre",
+      "hora": "18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷",
+      "banner": "banner-open-house-aia.jpg",
+      "speakers": [
+        {
+          "nombre": "Milagros Savino",
+          "rol": "Business Lead en Henry"
+        },
+        {
+          "nombre": "Mariano Gobea Alcoba",
+          "rol": "Tech Lead en Mercado Libre"
+        }
+      ],
+      "link": "landing-open-house-ai-automation.html"
+    },
+    {
+      "slug": "clase-reportes-agentes-ia",
+      "nombre": "Cómo generar reportes automáticos con agentes de AI",
+      "desc": "Un caso real funcionando día a día: cómo automatizar reportes y ahorrar horas de trabajo repetitivo.",
+      "carrera": "AI Automation",
+      "fecha": "2026-07-29T19:00:00-03:00",
+      "fechaCorta": "29 JUL",
+      "fechaLarga": "Miércoles 29 de julio",
+      "hora": "16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷",
+      "banner": "banner-lolo-cappucci.jpg",
+      "speakers": [
+        {
+          "nombre": "Lolo Cappucci",
+          "rol": "Co-founder y Head of Growth en Ninjō"
+        }
+      ],
+      "link": "landing-clase-reportes-agentes-ia.html"
+    },
+    {
+      "slug": "roadmap-programador-ia",
+      "nombre": "El roadmap para convertirte en programador con IA en 2026",
+      "desc": "Un mapa completo, paso a paso, de cómo se llega a programar con inteligencia artificial.",
+      "carrera": "Full Stack AI",
+      "fecha": "2026-09-09T21:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "9 SEP",
+      "fechaLarga": "Miércoles 9 de septiembre",
+      "hora": "18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷",
+      "banner": "banner-roadmap.jpg",
+      "speakers": [
+        {
+          "nombre": "Gamaiel Camey",
+          "rol": "Full Stack Developer"
+        }
+      ],
+      "link": "landing-roadmap-programador-ia.html"
+    },
+    {
+      "slug": "git-github-desde-cero",
+      "nombre": "Git y GitHub desde cero: sube tu primer proyecto en 1 hora",
+      "desc": "Aprende las bases de Git y GitHub y llévate tu primer proyecto publicado en internet.",
+      "carrera": "Full Stack AI",
+      "fecha": "2026-08-25T20:30:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "25 AGO",
+      "fechaLarga": "Martes 25 de agosto",
+      "hora": "17:30 MX 🇲🇽 / 18:30 COL 🇨🇴 / 20:30 ARG 🇦🇷",
+      "banner": "banner-git-github.jpg",
+      "speakers": [
+        {
+          "nombre": "Camilo",
+          "rol": "Instructor de Henry"
+        }
+      ],
+      "link": "landing-git-github-desde-cero.html"
+    },
+    {
+      "slug": "analisis-a-ml",
+      "nombre": "Data Science desde cero: del análisis de datos a Machine Learning",
+      "desc": "Limpia un archivo real, sácale respuestas claras y entrena tu primer modelo que predice.",
+      "carrera": "Data Science",
+      "fecha": "2026-08-26T19:00:00-05:00",
+      "duracionMin": 60,
+      "fechaCorta": "26 AGO",
+      "fechaLarga": "Miércoles 26 y jueves 27 de agosto",
+      "hora": "Clase 1: 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷 · Clase 2: 19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+      "banner": "banner-curso-intro-ds.jpg",
+      "speakers": [
+        {
+          "nombre": "Andrés Agualdo",
+          "rol": "Data Scientist e instructor en Henry"
+        }
+      ],
+      "link": "landing-analisis-a-ml.html"
+    },
+    {
+      "slug": "analisis-datos-claude",
+      "nombre": "Claude para análisis de datos de punta a punta",
+      "desc": "Limpia y prepara tus datos con Claude, sin fórmulas manuales, de punta a punta.",
+      "carrera": "Data Science",
+      "fecha": "2026-08-11T21:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "11 AGO",
+      "fechaLarga": "Martes 11 de agosto",
+      "hora": "21h ARG 🇦🇷 / 18h MX 🇲🇽 / 19h COL 🇨🇴",
+      "banner": "banner-claude-analisis-datos.jpg",
+      "speakers": [
+        {
+          "nombre": "Raúl Montesinos",
+          "rol": "CRM Manager en Nespresso"
+        }
+      ],
+      "link": "landing-analisis-datos-claude.html"
+    }
+  ]
+}
