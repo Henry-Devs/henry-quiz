@@ -15,5 +15,6 @@ Antes de pushear:
 node scripts/validate-masterclasses.mjs
 ```
 
-El HTML viejo de masterclasses (`masterclasses.html` y las `landing-*.html` que el JSON nombra en
-`link`) está congelado: editarlo no cambia nada en soyhenry.com.
+El hub viejo (`masterclasses.html`) ya no existe: redirige a `soyhenry.com/masterclasses`. Las
+`landing-*.html` que el JSON nombra en `link` siguen publicadas hasta que terminen sus campañas,
+pero editarlas no cambia nada en soyhenry.com.

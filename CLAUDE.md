@@ -24,17 +24,19 @@ escribir: la página de cada masterclass sale del JSON.
    lo que no cumple. La misma validación corre en GitHub con cada push que toque el JSON o las
    imágenes.
 4. Commit y push a `main`. Vercel publica recursos.soyhenry.com y soyhenry.com toma el cambio en
-   menos de una hora, sin deploy de por medio.
+   segundos —una GitHub Action se lo avisa cuando el deploy termina— o, como mucho, en una hora.
+   No hace falta ningún deploy de soyhenry.com.
 
 **No hace falta crear una landing HTML nueva ni tocar nada de soyhenry.com.** Una masterclass con
 `landing` en el JSON tiene su página sola.
 
-### El HTML viejo de masterclasses está congelado
+### El HTML viejo de masterclasses ya no está
 
-`masterclasses.html` y las `landing-*.html` que el JSON nombra en `link` son el hub anterior.
-Siguen publicadas hasta que el hub nuevo salga a producción, y entonces se borran y redirigen.
-**No las edites**: un cambio ahí no llega a soyhenry.com y se pierde cuando se borren. Todo cambio
-de contenido de una masterclass va al JSON.
+`masterclasses.html` se borró: `recursos.soyhenry.com/masterclasses.html` redirige a
+`soyhenry.com/masterclasses`. Las `landing-*.html` que el JSON nombra en `link` siguen publicadas
+hasta que terminen las campañas que las usan, y después redirigen igual. **No las edites**: un
+cambio ahí no llega a soyhenry.com y se pierde cuando se borren. Todo cambio de contenido de una
+masterclass va al JSON.
 
 ### Reglas
 

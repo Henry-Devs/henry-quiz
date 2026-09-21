@@ -7,6 +7,11 @@
       "headers": { "Location": "https://recursos.soyhenry.com/$1" }
     },
     {
+      "src": "/masterclasses(\\.html)?/?$",
+      "status": 301,
+      "headers": { "Location": "https://www.soyhenry.com/masterclasses" }
+    },
+    {
       "src": "/$",
       "dest": "/landing-analisis-a-ml.html",
       "headers": { "Cache-Control": "no-store, max-age=0, must-revalidate" },

@@ -2,11 +2,11 @@
 
 Las masterclasses viven en **`masterclasses.json`**. De ese archivo leen el hub,
 `soyhenry.com/masterclasses`, y la página de cada una, `soyhenry.com/masterclasses/<slug>`. El
-cambio se ve en menos de una hora después del push, sin tocar nada de soyhenry.com.
+cambio se ve segundos después del push, sin tocar nada de soyhenry.com.
 
-> **El HTML viejo está congelado.** `masterclasses.html` y las `landing-*.html` de masterclasses
-> son el hub anterior: siguen publicadas hasta que el nuevo salga a producción y después se
-> borran. Editarlas no cambia nada en soyhenry.com. Todo va al JSON.
+> **El HTML viejo no se edita.** `masterclasses.html` ya no existe: redirige al hub nuevo. Las
+> `landing-*.html` de masterclasses siguen publicadas hasta que terminen sus campañas y después
+> redirigen igual. Editarlas no cambia nada en soyhenry.com. Todo va al JSON.
 
 ## Sumar una masterclass
 
@@ -77,3 +77,11 @@ La página se arma sola a partir de estos datos, así que no hay HTML que escrib
 - **Para reemplazar una imagen, subila con un nombre nuevo.** Se cachean una hora.
 - El orden de la lista no importa: las páginas ordenan por `fecha`.
 - `schemaVersion` no se toca.
+
+## Qué hace el aviso a soyhenry.com
+
+`.github/workflows/revalidate-masterclasses.yml` corre cuando termina un deploy de producción de
+este repo y le pide a soyhenry.com que vuelva a leer el JSON. Usa el secret
+`MASTERCLASSES_REVALIDATE_SECRET` de GitHub Actions, con el mismo valor que la variable del mismo
+nombre en el proyecto `fe-c-landing` de Vercel. Sin el secret no falla: solo avisa que no está
+configurado, y el cambio se ve igual con la revalidación de cada hora.
