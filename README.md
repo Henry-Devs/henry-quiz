@@ -15,6 +15,6 @@ Antes de pushear:
 node scripts/validate-masterclasses.mjs
 ```
 
-El hub viejo (`masterclasses.html`) ya no existe: redirige a `soyhenry.com/masterclasses`. Las
-`landing-*.html` que el JSON nombra en `link` siguen publicadas hasta que terminen sus campañas,
-pero editarlas no cambia nada en soyhenry.com.
+El hub viejo (`masterclasses.html`) ya no existe: redirige a `soyhenry.com/masterclasses`, y cada
+`landing-*.html` de masterclass redirige a su página nueva. La de AI Engineering 101 sigue
+publicada hasta que termine su campaña. Editarlas no cambia nada en soyhenry.com.

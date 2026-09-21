@@ -33,8 +33,10 @@ escribir: la página de cada masterclass sale del JSON.
 ### El HTML viejo de masterclasses ya no está
 
 `masterclasses.html` se borró: `recursos.soyhenry.com/masterclasses.html` redirige a
-`soyhenry.com/masterclasses`. Las `landing-*.html` que el JSON nombra en `link` siguen publicadas
-hasta que terminen las campañas que las usan, y después redirigen igual. **No las edites**: un
+`soyhenry.com/masterclasses`. Las `landing-*.html` que el JSON nombra en `link` redirigen cada una
+a su página nueva, `soyhenry.com/masterclasses/<slug>`. La única que sigue publicada es la de AI
+Engineering 101, hasta que termine su campaña; cuando cierre, se suma su slug a la misma regla de
+`vercel.json`. **No las edites**: un
 cambio ahí no llega a soyhenry.com y se pierde cuando se borren. Todo cambio de contenido de una
 masterclass va al JSON.
 

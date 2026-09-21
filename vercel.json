@@ -12,6 +12,11 @@
       "headers": { "Location": "https://www.soyhenry.com/masterclasses" }
     },
     {
+      "src": "/landing-(reposiciona-tu-carrera-ai-engineer|primer-equipo-de-agentes-ia|open-house-ai-automation|clase-reportes-agentes-ia|roadmap-programador-ia|git-github-desde-cero|analisis-a-ml|analisis-datos-claude)(\\.html)?/?$",
+      "status": 301,
+      "headers": { "Location": "https://www.soyhenry.com/masterclasses/$1" }
+    },
+    {
       "src": "/$",
       "dest": "/landing-analisis-a-ml.html",
       "headers": { "Cache-Control": "no-store, max-age=0, must-revalidate" },
