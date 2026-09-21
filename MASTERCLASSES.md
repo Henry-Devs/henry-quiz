@@ -4,9 +4,9 @@ Las masterclasses viven en **`masterclasses.json`**. De ese archivo leen el hub,
 `soyhenry.com/masterclasses`, y la página de cada una, `soyhenry.com/masterclasses/<slug>`. El
 cambio se ve segundos después del push, sin tocar nada de soyhenry.com.
 
-> **El HTML viejo no se edita.** `masterclasses.html` ya no existe: redirige al hub nuevo. Las
-> `landing-*.html` de masterclasses siguen publicadas hasta que terminen sus campañas y después
-> redirigen igual. Editarlas no cambia nada en soyhenry.com. Todo va al JSON.
+> **El HTML viejo no se edita.** `masterclasses.html` ya no existe: redirige al hub nuevo, y cada
+> `landing-*.html` de masterclass redirige a su página nueva. La de AI Engineering 101 sigue
+> publicada hasta que termine su campaña. Editarlas no cambia nada en soyhenry.com. Todo va al JSON.
 
 ## Sumar una masterclass
 
