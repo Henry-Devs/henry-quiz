@@ -3,7 +3,7 @@
   "masterclasses": [
     {
       "slug": "ai-engineering-101-alexander-vicondoa",
-      "nombre": "AI Engineering 101",
+      "nombre": "Cómo llevar un prototipo de IA a producción",
       "desc": "Cómo diseñar sistemas de IA que operan de forma confiable en producción.",
       "carrera": "AI Engineering",
       "fecha": "2026-09-24T19:00:00-03:00",
@@ -16,7 +16,7 @@
         {
           "nombre": "Alexander Vicondoa",
           "rol": "Head of Deployment en ElevenLabs",
-          "foto": "alexander-vicondoa-creative.png",
+          "foto": "alexander-vicondoa-prototipo-produccion.png",
           "bio": [
             "Dirige el equipo de Deployment de ElevenLabs, la compañía de IA de voz de mayor valuación a nivel global. Hoy es el referente experto de la carrera AI Engineering de Henry."
           ],
