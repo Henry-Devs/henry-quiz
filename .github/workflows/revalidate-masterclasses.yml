@@ -6,6 +6,11 @@ name: Revalidate masterclasses on soyhenry.com
 # Escucha el deploy y no el push: Vercel publica un deployment de GitHub por cada deploy, y
 # recién cuando el de producción queda en `success` el JSON nuevo está servido. Avisar en el
 # push revalidaría contra el JSON viejo.
+#
+# Si al mergear un PR borrás la rama, vas a ver en Actions un run rojo "(Unknown event)" de este
+# mismo evento: es el deploy de preview de esa rama avisando cuando el ref ya no existe, así que
+# GitHub no llega ni a arrancar el job. No es la revalidación fallando. La de producción es la que
+# corre sobre `main` y termina en `{"revalidated":true}`.
 
 on:
   deployment_status:
