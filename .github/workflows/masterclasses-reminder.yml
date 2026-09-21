@@ -1,0 +1,48 @@
+name: Masterclasses reminder
+
+# Las masterclasses se cargan editando masterclasses.json, no creando HTML: soyhenry.com lee ese
+# archivo y nada más. Este job avisa en el PR cuando un cambio toca una masterclass por fuera del
+# JSON (un HTML viejo editado, una landing o un banner nuevo sin JSON). No bloquea el merge.
+
+on:
+  pull_request:
+    paths:
+      - '*.html'
+      - '*.jpg'
+      - '*.jpeg'
+      - '*.png'
+      - '*.webp'
+      - '*.svg'
+      - '*.gif'
+      - masterclasses.json
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - '*.jpg'
+      - '*.jpeg'
+      - '*.png'
+      - '*.webp'
+      - '*.svg'
+      - '*.gif'
+      - masterclasses.json
+
+jobs:
+  reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Las masterclasses van en masterclasses.json
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          base="$BASE_SHA"
+          if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            base="$(git rev-parse HEAD~1)"
+          fi
+          git diff --name-status "$base" HEAD | node scripts/check-masterclasses-touched.mjs

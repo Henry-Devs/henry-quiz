@@ -1,0 +1,40 @@
+name: Validate masterclasses.json
+
+# soyhenry.com descarta en silencio lo que no respeta el contrato de masterclasses.json:
+# una masterclass mal cargada no aparece y un bloque roto desaparece de su landing. Esta
+# validación lo marca en el commit (y en el PR) con el campo exacto que hay que corregir.
+#
+# Corre también cuando cambian imágenes: el validador chequea que cada banner, foto y logo
+# que nombra el JSON exista en el repo.
+
+on:
+  push:
+    paths:
+      - masterclasses.json
+      - scripts/validate-masterclasses.mjs
+      - '*.jpg'
+      - '*.jpeg'
+      - '*.png'
+      - '*.webp'
+      - '*.svg'
+      - '*.gif'
+  pull_request:
+    paths:
+      - masterclasses.json
+      - scripts/validate-masterclasses.mjs
+      - '*.jpg'
+      - '*.jpeg'
+      - '*.png'
+      - '*.webp'
+      - '*.svg'
+      - '*.gif'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/validate-masterclasses.mjs
