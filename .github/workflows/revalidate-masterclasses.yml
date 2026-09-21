@@ -1,0 +1,33 @@
+name: Revalidate masterclasses on soyhenry.com
+
+# soyhenry.com/masterclasses lee masterclasses.json de recursos.soyhenry.com y lo cachea una hora.
+# Este aviso hace que un cambio al JSON se vea en segundos en vez de esperar esa hora.
+#
+# Escucha el deploy y no el push: Vercel publica un deployment de GitHub por cada deploy, y
+# recién cuando el de producción queda en `success` el JSON nuevo está servido. Avisar en el
+# push revalidaría contra el JSON viejo.
+
+on:
+  deployment_status:
+
+jobs:
+  revalidate:
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Revalidate /masterclasses
+        env:
+          SECRET: ${{ secrets.MASTERCLASSES_REVALIDATE_SECRET }}
+        run: |
+          # Sin el secret no hay nada que avisar: soyhenry.com igual se actualiza con la
+          # revalidación de cada hora. Se configura recién cuando el endpoint esté en producción.
+          if [ -z "$SECRET" ]; then
+            echo "::notice::MASTERCLASSES_REVALIDATE_SECRET no está configurado; soyhenry.com se actualiza con la revalidación de cada hora."
+            exit 0
+          fi
+
+          curl --fail --silent --show-error --max-time 30 -X POST \
+            -H "Authorization: Bearer $SECRET" \
+            https://www.soyhenry.com/api/revalidate-masterclasses
