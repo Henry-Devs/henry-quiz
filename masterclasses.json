@@ -1585,6 +1585,151 @@
           }
         ]
       }
+    },
+    {
+      "slug": "primer-analisis-de-datos",
+      "nombre": "Encuentra el patrón oculto en tus gastos: tu primer análisis de datos",
+      "desc": "Masterclass en vivo: explora un Excel real de gastos personales, encuentra un patrón oculto y saca una conclusión accionable.",
+      "carrera": "Data Science",
+      "fecha": "2026-10-07T20:00:00-03:00",
+      "duracionMin": 45,
+      "fechaCorta": "7 OCT",
+      "fechaLarga": "Miércoles 7 de octubre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-primer-analisis-de-datos.png",
+      "speakers": [
+        {
+          "nombre": "Flavio Bavilacqua",
+          "rol": "Data AI Scientist",
+          "bio": [
+            "Data AI Scientist, especializado en encontrar patrones e insights accionables en datos reales."
+          ]
+        }
+      ],
+      "link": "landing-primer-analisis-de-datos.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Análisis de datos",
+            "Con Flavio Bavilacqua"
+          ],
+          "bajada": "En 45 minutos en vivo vas a explorar un Excel real de gastos personales, encontrar un patrón oculto y sacar una conclusión accionable — tu primer análisis de datos, de punta a punta."
+        },
+        "grabaciones": [
+          {
+            "url": "https://www.youtube.com/watch?v=DHTOqTitnAg"
+          }
+        ],
+        "hubspot": {
+          "masterclass_nombre": "Primer análisis de datos",
+          "masterclass_fecha_larga": "Miércoles 7 de octubre",
+          "masterclass_hora": "17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷",
+          "masterclass_speaker_nombre": "Flavio Bavilacqua",
+          "masterclass_speaker_bio": "Data AI Scientist",
+          "masterclass_tema_1": "Cómo explorar un dataset real (un Excel de gastos) paso a paso",
+          "masterclass_tema_2": "Cómo encontrar un patrón o insight oculto en los datos",
+          "masterclass_tema_3": "Cómo convertir ese insight en un gráfico y una conclusión accionable",
+          "masterclass_youtube_link": "https://www.youtube.com/watch?v=DHTOqTitnAg",
+          "masterclass_cupon_code": "MASTERCLASS25",
+          "masterclass_cohorte_texto": "19 de octubre de 2026",
+          "career_interest": "Data Science",
+          "masterclass_carrera": "Data Science",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Tu%20Primer%20An%C3%A1lisis%20de%20Datos&dates=20261007T230000Z/20261007T234500Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry%20con%20Flavio%20Bavilacqua.&location=Online"
+        },
+        "pixelContentName": "primer-analisis-de-datos",
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "viñetas",
+            "items": [
+              "Explora un Excel real de gastos personales, en vivo",
+              "Encuentra un patrón oculto que no se ve a simple vista",
+              "Aprende el recorrido completo: datos → insight → gráfico → conclusión",
+              "Sin necesidad de experiencia previa en análisis de datos"
+            ]
+          },
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Vas a ver",
+            "items": [
+              {
+                "titulo": "Explorar los datos",
+                "texto": "Cómo mirar un dataset real (un extracto de banco o tarjeta) para entender qué hay adentro"
+              },
+              {
+                "titulo": "Encontrar el insight",
+                "texto": "Cómo detectar un patrón oculto — por ejemplo, que gastás 3 veces más los fines de semana"
+              },
+              {
+                "titulo": "Del gráfico a la conclusión",
+                "texto": "Cómo armar una visualización que muestre el patrón y sacar una conclusión accionable"
+              }
+            ]
+          },
+          {
+            "tipo": "lista",
+            "estilo": "tarjetas",
+            "titulo": "Al terminar te llevas",
+            "items": [
+              "Un quiz de carrera personalizado",
+              "Un certificado para comunicar en LinkedIn",
+              "Una sesión gratuita con un asesor de carrera",
+              "Un descuento exclusivo para asistentes"
+            ],
+            "cta": true
+          },
+          {
+            "tipo": "seccion",
+            "titulo": "¿Por qué Data Science en Henry?",
+            "bajada": "Aprende análisis de datos y Machine Learning para descubrir insights y potenciar decisiones de negocio.",
+            "bloques": [
+              {
+                "tipo": "lista",
+                "estilo": "numerada",
+                "items": [
+                  "Formación práctica en análisis, modelado y trabajo con datos reales",
+                  "Dominio de las herramientas clave para decisiones basadas en datos",
+                  "Construcción de proyectos que muestran tu capacidad técnica end-to-end",
+                  "Entrenamiento para desarrollar criterios analíticos y resolver problemas con impacto",
+                  "Acompañamiento profesional y preparación laboral para ingresar al mundo data"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Herramientas que vas a usar",
+                "items": [
+                  "Python",
+                  "Pandas",
+                  "NumPy",
+                  "Scikit-learn",
+                  "SQL",
+                  "Power BI",
+                  "Snowflake"
+                ]
+              },
+              {
+                "tipo": "cifras",
+                "items": [
+                  {
+                    "valor": "+20.000",
+                    "texto": "Estudiantes en la comunidad Henry"
+                  },
+                  {
+                    "valor": "8 meses",
+                    "texto": "Part time, +15hs semanales"
+                  },
+                  {
+                    "valor": "1 semana",
+                    "texto": "De prueba o te devolvemos el dinero"
+                  }
+                ]
+              }
+            ],
+            "cta": true
+          }
+        ]
+      }
     }
   ]
 }
