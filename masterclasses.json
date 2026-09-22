@@ -1600,7 +1600,8 @@
       "speakers": [
         {
           "nombre": "Flavio Bavilacqua",
-          "rol": "Data AI Scientist"
+          "rol": "Data AI Scientist",
+          "foto": "flavio-bavilacqua.png"
         }
       ],
       "link": "landing-primer-analisis-de-datos.html",
