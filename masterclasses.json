@@ -1588,8 +1588,8 @@
     },
     {
       "slug": "primer-analisis-de-datos",
-      "nombre": "Encuentra el patrón oculto en tus gastos: tu primer análisis de datos",
-      "desc": "Masterclass en vivo: explora un Excel real de gastos personales, encuentra un patrón oculto y saca una conclusión accionable.",
+      "nombre": "Tu primer análisis de datos: encuentra el patrón oculto en tus gastos",
+      "desc": "Masterclass en vivo: explora un Google Sheets real de gastos personales, encuentra un patrón oculto y saca una conclusión accionable.",
       "carrera": "Data Science",
       "fecha": "2026-10-07T20:00:00-03:00",
       "duracionMin": 45,
@@ -1600,10 +1600,7 @@
       "speakers": [
         {
           "nombre": "Flavio Bavilacqua",
-          "rol": "Data AI Scientist",
-          "bio": [
-            "Data AI Scientist, especializado en encontrar patrones e insights accionables en datos reales."
-          ]
+          "rol": "Data AI Scientist"
         }
       ],
       "link": "landing-primer-analisis-de-datos.html",
@@ -1611,9 +1608,9 @@
         "hero": {
           "badges": [
             "Análisis de datos",
-            "Con Flavio Bavilacqua"
+            "Speaker: Flavio Bavilacqua, Data AI Scientist"
           ],
-          "bajada": "En 45 minutos en vivo vas a explorar un Excel real de gastos personales, encontrar un patrón oculto y sacar una conclusión accionable — tu primer análisis de datos, de punta a punta."
+          "bajada": "En 45 minutos en vivo vas a explorar un Google Sheets real de gastos personales, encontrar un patrón oculto y sacar una conclusión accionable — tu primer análisis de datos, de punta a punta."
         },
         "grabaciones": [
           {
@@ -1626,7 +1623,7 @@
           "masterclass_hora": "17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷",
           "masterclass_speaker_nombre": "Flavio Bavilacqua",
           "masterclass_speaker_bio": "Data AI Scientist",
-          "masterclass_tema_1": "Cómo explorar un dataset real (un Excel de gastos) paso a paso",
+          "masterclass_tema_1": "Cómo explorar un dataset real (un Google Sheets de gastos) paso a paso",
           "masterclass_tema_2": "Cómo encontrar un patrón o insight oculto en los datos",
           "masterclass_tema_3": "Cómo convertir ese insight en un gráfico y una conclusión accionable",
           "masterclass_youtube_link": "https://www.youtube.com/watch?v=DHTOqTitnAg",
@@ -1638,16 +1635,6 @@
         },
         "pixelContentName": "primer-analisis-de-datos",
         "bloques": [
-          {
-            "tipo": "lista",
-            "estilo": "viñetas",
-            "items": [
-              "Explora un Excel real de gastos personales, en vivo",
-              "Encuentra un patrón oculto que no se ve a simple vista",
-              "Aprende el recorrido completo: datos → insight → gráfico → conclusión",
-              "Sin necesidad de experiencia previa en análisis de datos"
-            ]
-          },
           {
             "tipo": "lista",
             "estilo": "numerada",
@@ -1668,14 +1655,29 @@
             ]
           },
           {
-            "tipo": "lista",
-            "estilo": "tarjetas",
+            "tipo": "tarjetas",
             "titulo": "Al terminar te llevas",
             "items": [
-              "Un quiz de carrera personalizado",
-              "Un certificado para comunicar en LinkedIn",
-              "Una sesión gratuita con un asesor de carrera",
-              "Un descuento exclusivo para asistentes"
+              {
+                "etiqueta": "Orientación",
+                "titulo": "Quiz de carrera",
+                "texto": "Personalizado, para ver qué camino te queda mejor"
+              },
+              {
+                "etiqueta": "Certificado",
+                "titulo": "Para LinkedIn",
+                "texto": "De haber participado, listo para compartir"
+              },
+              {
+                "etiqueta": "Asesoría",
+                "titulo": "Sesión gratuita",
+                "texto": "Con un asesor de carrera, sin costo"
+              },
+              {
+                "etiqueta": "Descuento",
+                "titulo": "Beneficio exclusivo",
+                "texto": "Para quienes asistan en vivo"
+              }
             ],
             "cta": true
           },
@@ -1722,6 +1724,15 @@
                   {
                     "valor": "1 semana",
                     "texto": "De prueba o te devolvemos el dinero"
+                  }
+                ]
+              },
+              {
+                "tipo": "ficha",
+                "filas": [
+                  {
+                    "label": "Próxima cohorte",
+                    "valor": "19 de octubre de 2026"
                   }
                 ]
               }
