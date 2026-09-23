@@ -458,23 +458,36 @@
       // ⚠️ Mantener EN SINCRONIA A MANO con el objeto MASTERCLASS de
       // landing-ai-engineering-101-alexander-vicondoa.html. Ver nota igual en
       // CAREERS.fullstack.
+      // 23/9/2026 -- RESINCRONIZADO con la landing. Estaba desviado en 7 campos y
+      // eso rompia los mails de quien entraba por aca:
+      //   fecha_evento/fecha_larga/hora VACIOS -> las 5 esperas del flow se calculan
+      //     contra masterclass_fecha_evento, asi que esa gente quedaba sin reminder
+      //     ni "en vivo" (16 casos detectados a mano el 16/9)
+      //   youtube_link apuntaba a 4UKbT-QQj2M, que es el Open House del 10/9 -> 18
+      //     personas con el link de un evento que ya habia pasado
+      //   cupon MASTERCLASS30 cuando la landing da MASTERCLASS25
+      //   cta_url con "??" (doble query string) -> el link se rompe
       masterclassFields: {
-        masterclass_fecha_evento:   '',
-        masterclass_fecha_larga:    '',
-        masterclass_hora:           '',
-        masterclass_nombre:         'AI Engineering 101',
+        masterclass_fecha_evento:   String(new Date('2026-09-24T19:00:00-03:00').getTime()),
+        masterclass_fecha_larga:    'Jueves 24 de septiembre',
+        masterclass_hora:           '16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷',
+        masterclass_nombre:         'Cómo llevar un prototipo de IA a producción',
         masterclass_speaker_nombre: 'Alexander Vicondoa',
         masterclass_speaker_bio:    'Dirige el equipo de Deployment de ElevenLabs.',
         masterclass_tema_1:         'Qué es AI Engineering: aplicado vs. ML/research',
         masterclass_tema_2:         'LLMs y Context Engineering',
         masterclass_tema_3:         'RAG, Agentes y Orquestación',
-        masterclass_youtube_link:   'https://www.youtube.com/watch?v=4UKbT-QQj2M',
-        masterclass_cupon_code:     'MASTERCLASS30',
-        masterclass_cohorte_texto:  '13 de octubre, Part Time',
-        masterclass_cta_url:        'https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g??utm_source=instagram&utm_medium=organico&utm_campaign=MasterclassAIE&utm_content=chino',
+        masterclass_youtube_link:   'https://www.youtube.com/watch?v=Ogi2yF-7wRA',
+        masterclass_cupon_code:     'MASTERCLASS25',
+        masterclass_cohorte_texto:  '13 de octubre de 2026, Part Time',
+        masterclass_cta_url:        'https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=instagram&utm_medium=organico&utm_campaign=MasterclassAIE&utm_content=chino',
         masterclass_carrera:        'AI Engineer',
-        // 🛑 Sin fecha de evento no hay como armar un calendar link real (a igual que en la landing).
-        masterclass_calendar_link:  '',
+        // dates = UTC. 19:00 ARG = 22:00 UTC del mismo dia; dura 1h -> 23:00.
+        masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+          + '&text=' + encodeURIComponent('Cómo llevar un prototipo de IA a producción')
+          + '&dates=20260924T220000Z/20260924T230000Z'
+          + '&details=' + encodeURIComponent('Masterclass en vivo y gratis de Henry con Alexander Vicondoa (ElevenLabs).')
+          + '&location=Online',
       },
       // Spoiler con contenido real de landing-ai-engineering-101-alexander-vicondoa.html.
       // Fecha y hora TODAVÍA a confirmar en esa landing -- no se inventa acá tampoco.
@@ -488,7 +501,7 @@
           </div>
         </div>
         <p class="spoiler-body">
-          <strong>AI Engineering 101: cómo se diseña, evalúa y despliega un sistema de IA en producción.</strong>
+          <strong>Cómo llevar un prototipo de IA a producción: cómo se diseña, evalúa y despliega un sistema de IA real.</strong>
           Pensada para devs con 3+ años de experiencia — justo tu perfil.
         </p>
         <div class="spoiler-topics">

@@ -471,7 +471,13 @@
       // Cambio de nombre (4/9/2026): antes el texto descriptivo largo. Tiene que
       // ser EXACTO -- es la condicion de entrada del flow nuevo por evento
       // (infra/17 §3), no solo un texto descriptivo.
-      masterclass_nombre:         'AI Engineering 101',
+      //
+      // 23/9/2026: pasa a coincidir con el titulo visible de la landing y con el
+      // del video de YouTube. Este campo ES el asunto que ve la persona
+      // ("Manana es el dia: {{ masterclass_nombre }}"), asi que mientras decia
+      // 'AI Engineering 101' la landing mostraba un titulo y los mails otro --
+      // y cada inscripcion nueva volvia a pisar el valor ya corregido en HubSpot.
+      masterclass_nombre:         'Cómo llevar un prototipo de IA a producción',
 
       masterclass_speaker_nombre: 'Alexander Vicondoa',
       masterclass_speaker_bio:    'Dirige el equipo de Deployment de ElevenLabs.',
