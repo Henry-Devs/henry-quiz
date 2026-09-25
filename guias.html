@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guías y recursos gratuitos de IA — Henry</title>
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Guías y recursos gratuitos de IA — Henry" />
+  <meta property="og:description" content="Frameworks, cheat sheets y guías paso a paso para aplicar IA a tu carrera, gratis." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/henry-favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #F2F1EE;
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--black);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      border: 1.5px solid var(--black);
+      transition: background 0.15s;
+    }
+    .nav-link:hover { background: var(--gray-light); }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 48px 40px;
+      text-align: center;
+    }
+    .hero-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 620px;
+      height: 620px;
+      max-width: none;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.85;
+      -webkit-mask-image: radial-gradient(circle, black 0%, black 30%, transparent 65%);
+      mask-image: radial-gradient(circle, black 0%, black 30%, transparent 65%);
+    }
+    .hero > *:not(.hero-glow) {
+      position: relative;
+      z-index: 1;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: var(--black);
+      margin-bottom: 18px;
+    }
+    h1 em {
+      font-style: normal;
+      background: var(--yellow);
+      padding: 0 4px;
+    }
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* FILTERS */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-width: 1120px;
+      margin: 32px auto 0;
+      padding: 0 48px;
+    }
+    .filter-chip {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--black);
+      background: var(--white);
+      border: none;
+      border-radius: 20px;
+      padding: 8px 18px;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      transition: all 0.15s;
+    }
+    .filter-chip:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .filter-chip.active {
+      background: var(--black);
+      color: var(--white);
+      box-shadow: none;
+    }
+
+    /* GRID */
+    .guias-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 48px 48px 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .guia-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: none;
+      border-radius: 16px;
+      padding: 28px;
+      text-decoration: none;
+      color: var(--black);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .guia-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+    }
+    .guia-card-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--gray-mid);
+      margin-bottom: 10px;
+    }
+    .guia-card h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+      margin-bottom: 10px;
+    }
+    .guia-card p {
+      font-size: 0.86rem;
+      color: var(--gray-mid);
+      line-height: 1.55;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .guia-cta {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--black);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .guia-card:hover .guia-cta { text-decoration: underline; }
+
+    /* COMPANIES */
+    .companies-strip {
+      max-width: 1120px; margin: 0 auto;
+      padding: 0 48px 64px; text-align: center;
+    }
+    .companies-label {
+      font-size: 0.72rem; color: var(--gray-mid);
+      text-transform: uppercase; letter-spacing: 1.5px;
+      font-weight: 700; margin-bottom: 28px;
+    }
+    .companies-logos {
+      display: flex; align-items: center;
+      justify-content: center; gap: 40px; flex-wrap: wrap;
+    }
+    .companies-logos img {
+      height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s;
+    }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border); padding: 24px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.78rem; color: var(--gray-mid); text-decoration: none; }
+    .footer-links a:hover { color: var(--black); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 40px 24px 32px; }
+      .filters { padding: 0 24px; }
+      .guias-grid { grid-template-columns: 1fr; padding: 40px 24px 60px; }
+      .companies-strip { padding: 0 24px 48px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+    @media (min-width: 901px) and (max-width: 1180px) {
+      .guias-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero { animation: fadeUp 0.5s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+    <a class="nav-link" href="https://www.soyhenry.com" target="_blank">Ver carreras</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-glow" src="halo-amarillo.png" alt="" />
+    <div class="tag">Guías gratuitas</div>
+    <h1>Todo lo que necesitas para empezar a trabajar con <em>IA</em></h1>
+    <p class="hero-desc">
+      Guías, cheat sheets y reportes gratuitos para aplicar IA a tu día a día.
+    </p>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="filters" id="filters">
+    <button class="filter-chip active" data-filter="todas">Todas</button>
+    <button class="filter-chip" data-filter="trending">Trending</button>
+    <button class="filter-chip" data-filter="Full Stack AI">Full Stack AI</button>
+    <button class="filter-chip" data-filter="AI Automation">AI Automation</button>
+    <button class="filter-chip" data-filter="AI Engineering">AI Engineering</button>
+    <button class="filter-chip" data-filter="Data Science">Data Science</button>
+  </div>
+
+  <!-- GRID -->
+  <section class="guias-grid" id="guias-grid">
+
+    <a class="guia-card" href="landing-5tools-fullstack.html" data-carrera="Full Stack AI">
+      <span class="guia-card-tag">Full Stack AI</span>
+      <h3>Las 5 herramientas de IA que todo dev Full Stack usa hoy</h3>
+      <p>Quienes las dominan construyen entre 2 y 3 veces más rápido, cometen menos errores y dedican su tiempo a lógica y arquitectura, no a tareas repetitivas.</p>
+      <span class="guia-cta">Descargar guía →</span>
+    </a>
+
+    <a class="guia-card" href="landing-agente-5pasos.html" data-carrera="AI Automation">
+      <span class="guia-card-tag">AI Automation</span>
+      <h3>Cómo construir un agente de IA en 5 pasos</h3>
+      <p>El framework para pasar de la idea a un agente funcionando: qué lo activa, cómo razona, qué recuerda y qué acciones ejecuta.</p>
+      <span class="guia-cta">Descargar guía →</span>
+    </a>
+
+    <a class="guia-card" href="landing-anatomia-agente.html" data-trending="true" data-carrera="AI Engineering">
+      <span class="guia-card-tag">AI Engineering</span>
+      <h3>Anatomía de un agente de producción</h3>
+      <p>Una radiografía completa de cómo se ve un agente de IA real: las 7 partes que necesita y los errores que casi nadie resuelve bien la primera vez.</p>
+      <span class="guia-cta">Descargar guía →</span>
+    </a>
+
+    <a class="guia-card" href="landing-bandeja-claude.html" data-carrera="AI Automation">
+      <span class="guia-card-tag">AI Automation</span>
+      <h3>40 minutos para que tu bandeja se responda sola</h3>
+      <p>Conecta tu Gmail a Claude, arma tu kit de respuestas y automatiza el flujo completo con n8n para que categorice y responda por ti.</p>
+      <span class="guia-cta">Descargar guía →</span>
+    </a>
+
+    <a class="guia-card" href="landing-claudecode-cheatsheet.html" data-trending="true" data-carrera="Full Stack AI">
+      <span class="guia-card-tag">Cheat Sheet · Full Stack AI</span>
+      <h3>El cheat sheet definitivo de Claude Code para programadores</h3>
+      <p>Instalación, comandos del día a día, atajos, permisos y errores comunes: todo lo que necesitas saber sobre Claude Code en una sola hoja.</p>
+      <span class="guia-cta">Descargar cheat sheet →</span>
+    </a>
+
+    <a class="guia-card" href="landing-dashboard-streamlit.html" data-trending="true" data-carrera="Data Science">
+      <span class="guia-card-tag">Data Science</span>
+      <h3>Arma un dashboard interactivo con Claude y Streamlit</h3>
+      <p>Un dashboard funcionando en tu navegador, con filtros, gráficos y métricas propias. No necesitas saber programar: el código lo escribe Claude por ti.</p>
+      <span class="guia-cta">Descargar guía →</span>
+    </a>
+
+    <a class="guia-card" href="landing-mapa-aia.html" data-trending="true" data-carrera="AI Automation">
+      <span class="guia-card-tag">AI Automation</span>
+      <h3>El mapa del AI Automation Analyst</h3>
+      <p>Los puestos que piden habilidades de IA pagan 56% más que los que no las piden. Descubre las capas que puedes sumar a tu perfil, sin ser programador.</p>
+      <span class="guia-cta">Descargar guía →</span>
+    </a>
+
+    <a class="guia-card" href="landing-rentabilidad-negocio-claude.html" data-carrera="Finanzas">
+      <span class="guia-card-tag">IA para Finanzas</span>
+      <h3>Calcula la rentabilidad de tu negocio en 20 minutos con Claude</h3>
+      <p>Deja de cruzar planillas a mano: sube tus datos, deja que Claude calcule el margen y valide el resultado, y obtén un panel visual en minutos.</p>
+      <span class="guia-cta">Descargar guía →</span>
+    </a>
+
+    <a class="guia-card" href="landing-reporte-mkt-claude.html" data-trending="true" data-carrera="AI Automation">
+      <span class="guia-card-tag">AI Automation</span>
+      <h3>Cómo crear un reporte de marketing con Claude en 40 minutos</h3>
+      <p>Carga tus métricas de la semana y deja que Claude detecte variaciones, arme el resumen ejecutivo y te diga los próximos pasos.</p>
+      <span class="guia-cta">Descargar guía →</span>
+    </a>
+
+    <a class="guia-card" href="landing-reporte-futuro-del-trabajo.html" data-carrera="General">
+      <span class="guia-card-tag">Reporte gratuito</span>
+      <h3>El futuro de tu trabajo ya está publicado</h3>
+      <p>Datos verificados del World Economic Forum, PwC, la OIT y otras fuentes sobre qué cambió en el mercado laboral y qué oportunidades se abren en América Latina hasta 2030.</p>
+      <span class="guia-cta">Ver reporte →</span>
+    </a>
+
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google" />
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture" />
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal" />
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander" />
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak" />
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá" />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+    <div class="footer-links">
+      <a href="https://www.soyhenry.com/webfullstack" target="_blank">Full Stack AI</a>
+      <a href="https://www.soyhenry.com/carrera-ai-automation" target="_blank">AI Automation</a>
+      <a href="https://www.soyhenry.com/carrera-ai-engineering" target="_blank">AI Engineering</a>
+      <a href="https://www.soyhenry.com/carrera-data-science" target="_blank">Data Science</a>
+    </div>
+  </footer>
+
+  <script>
+    const chips = document.querySelectorAll('.filter-chip');
+    const cards = document.querySelectorAll('.guia-card');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const filter = chip.dataset.filter;
+        cards.forEach(card => {
+          let show;
+          if (filter === 'todas') show = true;
+          else if (filter === 'trending') show = card.dataset.trending === 'true';
+          else show = card.dataset.carrera === filter;
+          card.style.display = show ? 'flex' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
