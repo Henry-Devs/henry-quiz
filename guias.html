@@ -143,8 +143,8 @@
     }
     .filter-chip:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     .filter-chip.active {
-      background: var(--black);
-      color: var(--white);
+      background: var(--yellow);
+      color: var(--black);
       box-shadow: none;
     }
 
@@ -167,11 +167,12 @@
       text-decoration: none;
       color: var(--black);
       box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      transition: transform 0.15s, box-shadow 0.15s;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
     }
     .guia-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+      background: var(--yellow);
     }
     .guia-card-tag {
       display: inline-block;
@@ -181,7 +182,9 @@
       letter-spacing: 0.6px;
       color: var(--gray-mid);
       margin-bottom: 10px;
+      transition: color 0.15s;
     }
+    .guia-card:hover .guia-card-tag { color: rgba(17,17,17,0.6); }
     .guia-card h3 {
       font-size: 1.08rem;
       font-weight: 800;
@@ -195,16 +198,23 @@
       line-height: 1.55;
       margin-bottom: 20px;
       flex: 1;
+      transition: color 0.15s;
     }
+    .guia-card:hover p { color: rgba(17,17,17,0.75); }
     .guia-cta {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 800;
       color: var(--black);
+      background: var(--yellow);
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      align-self: flex-start;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background 0.15s;
     }
-    .guia-card:hover .guia-cta { text-decoration: underline; }
+    .guia-card:hover .guia-cta { background: var(--black); color: var(--white); }
 
     /* COMPANIES */
     .companies-strip {
