@@ -1,0 +1,38 @@
+name: Revalidate guias on soyhenry.com
+
+# soyhenry.com/guias lee guias.json de recursos.soyhenry.com y lo cachea una hora. Este aviso
+# hace que un cambio al JSON se vea en segundos en vez de esperar esa hora.
+#
+# Escucha el deploy y no el push: Vercel publica un deployment de GitHub por cada deploy, y
+# recién cuando el de producción queda en `success` el JSON nuevo está servido. Avisar en el
+# push revalidaría contra el JSON viejo.
+#
+# Si al mergear un PR borrás la rama, vas a ver en Actions un run rojo "(Unknown event)" de este
+# mismo evento: es el deploy de preview de esa rama avisando cuando el ref ya no existe, así que
+# GitHub no llega ni a arrancar el job. No es la revalidación fallando. La de producción es la que
+# corre sobre `main` y termina en `{"revalidated":true}`.
+
+on:
+  deployment_status:
+
+jobs:
+  revalidate:
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Revalidate /guias
+        env:
+          SECRET: ${{ secrets.GUIDES_REVALIDATE_SECRET }}
+        run: |
+          # Sin el secret no hay nada que avisar: soyhenry.com igual se actualiza con la
+          # revalidación de cada hora. Se configura recién cuando el endpoint esté en producción.
+          if [ -z "$SECRET" ]; then
+            echo "::notice::GUIDES_REVALIDATE_SECRET no está configurado; soyhenry.com se actualiza con la revalidación de cada hora."
+            exit 0
+          fi
+
+          curl --fail --silent --show-error --max-time 30 -X POST \
+            -H "Authorization: Bearer $SECRET" \
+            https://www.soyhenry.com/api/revalidate-guides
