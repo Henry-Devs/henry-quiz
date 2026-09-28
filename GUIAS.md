@@ -4,10 +4,9 @@ Las guías viven en **`guias.json`**. De ese archivo leen el hub, `soyhenry.com/
 página de cada una, `soyhenry.com/guias/<slug>`. El cambio se ve segundos después del push, sin
 tocar nada de soyhenry.com.
 
-> **El HTML viejo no se edita.** `guias.html` y las `landing-*.html` de guías siguen publicadas
-> hasta que se activen los redirects al hub nuevo (ver la tarea de redirects). Hasta entonces
-> conviven con `guias.json`, pero editarlas no cambia nada en soyhenry.com: todo lo que ve
-> soyhenry.com sale del JSON.
+> **El HTML viejo no se edita.** `guias.html` y las `landing-*.html` de guías ya no se tocan:
+> redirigen con 301 a `soyhenry.com/guias` y `soyhenry.com/guias/<slug>` (ver "Redirects al hub
+> nuevo" más abajo). La fuente de verdad es `guias.json`.
 
 ## Sumar una guía
 
@@ -66,6 +65,16 @@ Una guía `externo` no lleva `landing`: la card enlaza directo a `url`.
 - El orden de la lista no importa: el hub ordena las cards como venga el JSON.
 - `schemaVersion` no se toca.
 - Los textos van en español neutro (sin voseo): "Descarga", no "Descargá".
+
+## Redirects al hub nuevo
+
+`guias.html` y las landings de guías (`landing-*.html` de guías) ya no se editan: quedan
+redirigidas con 301 a `soyhenry.com/guias` y `soyhenry.com/guias/<slug>` (reglas en
+`vercel.json`). La fuente de verdad pasó a ser `guias.json`.
+
+El reporte `reporte-futuro-del-trabajo.html` y su landing `landing-reporte-futuro-del-trabajo.html`
+son la excepción: siguen viviendo acá, sin redirect, porque la landing todavía captura el lead con
+su propio formulario.
 
 ## Qué hace el aviso a soyhenry.com
 
