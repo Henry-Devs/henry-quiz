@@ -17,6 +17,21 @@
       "headers": { "Location": "https://www.soyhenry.com/masterclasses/$1" }
     },
     {
+      "src": "/guias(\\.html)?/?$",
+      "status": 301,
+      "headers": { "Location": "https://www.soyhenry.com/guias" }
+    },
+    {
+      "src": "/landing-(5tools-fullstack|agente-5pasos|anatomia-agente|bandeja-claude|claudecode-cheatsheet|dashboard-streamlit|mapa-aia|rentabilidad-negocio-claude|reporte-mkt-claude)(\\.html)?/?$",
+      "status": 301,
+      "headers": { "Location": "https://www.soyhenry.com/guias/$1" }
+    },
+    {
+      "src": "/landing-cheatsheet-claude-code(\\.html)?/?$",
+      "status": 301,
+      "headers": { "Location": "https://www.soyhenry.com/guias/claudecode-cheatsheet" }
+    },
+    {
       "src": "/$",
       "dest": "/landing-analisis-a-ml.html",
       "headers": { "Cache-Control": "no-store, max-age=0, must-revalidate" },

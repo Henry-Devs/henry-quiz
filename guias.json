@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "guias": [
+    {
+      "slug": "5tools-fullstack",
+      "titulo": "Las 5 herramientas de IA que todo dev Full Stack usa hoy",
+      "desc": "Quienes las dominan construyen entre 2 y 3 veces más rápido, cometen menos errores y dedican su tiempo a lógica y arquitectura, no a tareas repetitivas.",
+      "carrera": "Full Stack AI",
+      "tipo": "pdf",
+      "pdf": "5tools-fullstack.pdf",
+      "cta": "Descargar guía",
+      "landing": {
+        "kicker": "Guía gratuita",
+        "bajada": "La IA no es solo un atajo — es una habilidad core del desarrollo. Los devs que las dominan construyen 2–3× más rápido, reducen errores y se enfocan en lógica y arquitectura.",
+        "aprenderas": [
+          "Claude Code: asistente de ingeniería con IA que debuggea y planifica implementaciones complejas",
+          "Cursor AI: editor de código con IA que refactoriza y genera features con contexto completo",
+          "v0.dev: generador de UI con IA que convierte ideas en componentes listos en segundos",
+          "Bolt.new: constructor de apps full-stack que genera y publica apps completas desde el navegador",
+          "Builder.io: plataforma de desarrollo visual que convierte diseños de Figma en UI de producción"
+        ],
+        "carreraPath": "/webfullstack",
+        "carreraCta": "Aplicar a la Carrera Full Stack AI",
+        "contentName": "5tools-fullstack"
+      }
+    },
+    {
+      "slug": "agente-5pasos",
+      "titulo": "Cómo construir un agente de IA en 5 pasos",
+      "desc": "El framework para pasar de la idea a un agente funcionando: qué lo activa, cómo razona, qué recuerda y qué acciones ejecuta.",
+      "carrera": "AI Automation",
+      "tipo": "pdf",
+      "pdf": "agente-5pasos.pdf",
+      "cta": "Descargar guía",
+      "landing": {
+        "kicker": "Guía gratuita",
+        "bajada": "La guía práctica para developers que quieren automatizar con IA. Sin teoría de más — solo el framework que usamos para construir agentes reales en producción.",
+        "aprenderas": [
+          "Definir el objetivo y alcance del agente",
+          "Elegir el modelo y las herramientas",
+          "Diseñar el loop de razonamiento",
+          "Conectar memoria y contexto",
+          "Deploy y monitoreo en producción"
+        ],
+        "carreraPath": "/carrera-ai-automation",
+        "carreraCta": "Aplicar a la Carrera de AI Automation",
+        "contentName": "agente-5pasos"
+      }
+    },
+    {
+      "slug": "anatomia-agente",
+      "titulo": "Anatomía de un agente de producción",
+      "desc": "Una radiografía completa de cómo se ve un agente de IA real: las 7 partes que necesita y los errores que casi nadie resuelve bien la primera vez.",
+      "carrera": "AI Engineering",
+      "trending": true,
+      "tipo": "pdf",
+      "pdf": "AIE_IG_GuiaAnatomiaDeUnAgente.pdf",
+      "cta": "Descargar guía",
+      "landing": {
+        "kicker": "Guía gratuita",
+        "bajada": "Esta guía te muestra las 7 partes que todo agente real necesita y los errores que casi nadie arma bien la primera vez.",
+        "aprenderas": [
+          "Cerebro → Modelo (LLM)",
+          "Memoria → RAG / contexto",
+          "Manos → Tools / APIs",
+          "Sistema Nervioso → Orquestación",
+          "Sistema Inmune → Guardrails",
+          "Ojos → Observabilidad",
+          "Metabolismo → Costos / performance"
+        ],
+        "carreraPath": "/carrera-ai-engineering",
+        "carreraCta": "Aplicar a la Carrera AI Engineering",
+        "contentName": "anatomia-agente"
+      }
+    },
+    {
+      "slug": "bandeja-claude",
+      "titulo": "40 minutos para que tu bandeja se responda sola",
+      "desc": "Conecta tu Gmail a Claude, arma tu kit de respuestas y automatiza el flujo completo con n8n para que categorice y responda por ti.",
+      "carrera": "AI Automation",
+      "tipo": "pdf",
+      "pdf": "bandeja-claude.pdf",
+      "cta": "Descargar guía",
+      "landing": {
+        "kicker": "Guía gratuita",
+        "bajada": "Ya sabes qué responder. Lo que te quita tiempo es escribirlo mail por mail. Esta guía conecta tu Gmail a Claude para que categorice y redacte tus respuestas.",
+        "aprenderas": [
+          "Conecta Gmail a Claude: autoriza el acceso a tu correo real",
+          "Categoriza tus mails reales: precio, disponibilidad, reclamos y más",
+          "Redacta cada respuesta: con tu info real, lista en tus borradores",
+          "Se guarda como tu agente: no repites el set-up la próxima vez",
+          "Automatización opcional con n8n: que las de bajo riesgo salgan solas"
+        ],
+        "carreraPath": "/carrera-ai-automation",
+        "carreraCta": "Aplicar a la Carrera de AI Automation",
+        "contentName": "bandeja-claude"
+      }
+    },
+    {
+      "slug": "claudecode-cheatsheet",
+      "titulo": "El cheat sheet definitivo de Claude Code para programadores",
+      "desc": "Instalación, comandos del día a día, atajos, permisos y errores comunes: todo lo que necesitas saber sobre Claude Code en una sola hoja.",
+      "carrera": "Full Stack AI",
+      "trending": true,
+      "tipo": "pdf",
+      "pdf": "FSAI_IG_CheatSheet.pdf",
+      "cta": "Descargar guía",
+      "landing": {
+        "kicker": "Guía gratuita",
+        "bajada": "Los devs que usan Claude Code bien construyen más rápido, cometen menos errores y dejan de perder tiempo en tareas repetitivas. Todo lo que necesitas saber, en una sola hoja.",
+        "aprenderas": [
+          "Qué es Claude Code y cómo instalarlo",
+          "El flujo de trabajo recomendado",
+          "Comandos del día a día",
+          "Permisos, MCP y extensiones",
+          "Errores comunes y cómo evitarlos"
+        ],
+        "carreraPath": "/webfullstack",
+        "carreraCta": "Aplicar a la Carrera Full Stack AI",
+        "contentName": "cheatsheet-claudecode"
+      }
+    },
+    {
+      "slug": "dashboard-streamlit",
+      "titulo": "Arma un dashboard interactivo con Claude y Streamlit",
+      "desc": "Un dashboard funcionando en tu navegador, con filtros, gráficos y métricas propias. No necesitas saber programar: el código lo escribe Claude por ti.",
+      "carrera": "Data Science",
+      "trending": true,
+      "tipo": "pdf",
+      "pdf": "DSAI_IG_CheatSheet.pdf",
+      "cta": "Descargar guía",
+      "landing": {
+        "kicker": "Guía gratuita",
+        "bajada": "Al final de esta guía vas a tener un dashboard interactivo funcionando en tu navegador — con filtros, gráficos y métricas — hecho con Streamlit. No necesitas saber programar: el código lo escribe Claude con los prompts exactos que te damos.",
+        "aprenderas": [
+          "Preparativos: Python y Streamlit instalados y listos en tu computadora (una sola vez)",
+          "Elige tu dataset: tus propios datos en CSV, o un caso de ejemplo generado por Claude en segundos",
+          "Primera versión del dashboard: Claude escribe el código, tú lo corres y ves tu tabla en el navegador",
+          "Agrega métricas y gráficos: KPI grande, gráfico de barras por categoría y evolución temporal en líneas",
+          "Hazlo interactivo: filtros de fechas y categorías en el sidebar que actualizan todo al instante",
+          "Toque profesional y publícalo: layout ancho, KPIs en columnas y URL pública gratis con Streamlit Community Cloud"
+        ],
+        "carreraPath": "/carrera-data-science",
+        "carreraCta": "Aplicar a la Carrera Data Science",
+        "contentName": "dashboard-claude-streamlit"
+      }
+    },
+    {
+      "slug": "mapa-aia",
+      "titulo": "El mapa del AI Automation Analyst",
+      "desc": "Los puestos que piden habilidades de IA pagan 56% más que los que no las piden. Descubre las capas que puedes sumar a tu perfil, sin ser programador.",
+      "carrera": "AI Automation",
+      "trending": true,
+      "tipo": "pdf",
+      "pdf": "mapa-aia.pdf",
+      "cta": "Descargar guía",
+      "landing": {
+        "kicker": "Guía gratuita",
+        "bajada": "Los puestos que piden habilidades de IA pagan 56% más que los que no. Esta guía te muestra las 5 capas para sumar ese perfil a tu rol actual, sin necesitar conocimientos técnicos.",
+        "aprenderas": [
+          "Ver: identificas qué tarea de tu día a día vale la pena automatizar",
+          "Conectar: unes tus herramientas con plataformas no-code como n8n o Make",
+          "Decidir con IA: usas un modelo como Claude para clasificar y resolver",
+          "Poner el semáforo: defines qué corre solo y qué siempre revisas tú",
+          "Medir el impacto: calculas el ROI real de cada automatización"
+        ],
+        "carreraPath": "/carrera-ai-automation",
+        "carreraCta": "Aplicar a la Carrera de AI Automation",
+        "contentName": "mapa-aia"
+      }
+    },
+    {
+      "slug": "rentabilidad-negocio-claude",
+      "titulo": "Calcula la rentabilidad de tu negocio en 20 minutos con Claude",
+      "desc": "Deja de cruzar planillas a mano: sube tus datos, deja que Claude calcule el margen y valide el resultado, y obtén un panel visual en minutos.",
+      "carrera": "Finanzas",
+      "tipo": "pdf",
+      "pdf": "rentabilidad-negocio-claude.pdf",
+      "cta": "Descargar guía",
+      "landing": {
+        "kicker": "Guía gratuita",
+        "bajada": "Deja de cruzar planillas a mano: sube tus datos, deja que Claude calcule el margen y valide el resultado, y obtén un panel visual en minutos.",
+        "aprenderas": [
+          "Reúne los datos que necesitas: ingresos, costos variables y costos fijos de un período, en una planilla o CSV",
+          "Prepara el archivo antes de subirlo: una fila por concepto, sin subtotales ni celdas combinadas",
+          "Pide que Claude clasifique antes de calcular: confirmas ingreso, costo variable o costo fijo de cada concepto",
+          "Pide el cálculo con auto-verificación: margen bruto y neto, con las cifras chequeadas antes de mostrarte el resultado",
+          "Separa por producto o línea: para ver qué está sosteniendo la rentabilidad y qué la está arrastrando",
+          "Interpreta el resultado para decidir: si el precio está bien puesto y dónde pesa más el costo",
+          "Conviértelo en una Skill reutilizable: para repetir el análisis cada cierre de mes con una sola línea"
+        ],
+        "carreraPath": "/ai-para-finanzas",
+        "carreraCta": "Aplicar al Curso de IA para Finanzas",
+        "contentName": "rentabilidad-negocio-claude"
+      }
+    },
+    {
+      "slug": "reporte-mkt-claude",
+      "titulo": "Cómo crear un reporte de marketing con Claude en 40 minutos",
+      "desc": "Carga tus métricas de la semana y deja que Claude detecte variaciones, arme el resumen ejecutivo y te diga los próximos pasos.",
+      "carrera": "AI Automation",
+      "trending": true,
+      "tipo": "pdf",
+      "pdf": "AIA_IG_ReporteDeMKT.pdf",
+      "cta": "Descargar guía",
+      "landing": {
+        "kicker": "Guía gratuita",
+        "bajada": "Los números de la semana están dispersos entre Google Ads, redes, email y una planilla que alguien actualiza a medias. Esta guía te muestra cómo convertirlos en un reporte ejecutivo real — con análisis, resumen y próximos pasos — sin depender de nadie del equipo técnico.",
+        "aprenderas": [
+          "Prompts exactos para Claude: los 3 prompts que generan variaciones, resumen ejecutivo y próximos pasos",
+          "Set-up de Airtable en minutos: estructura exacta de la tabla de métricas con los nombres de columna para Claude",
+          "Bonus, dashboard visual con Claude: convierte el análisis en tarjetas y gráfico para presentar en reunión o Slack",
+          "Automatización completa con n8n: el flujo que corre solo cada lunes — trae datos, Claude analiza y te manda el reporte",
+          "Troubleshooting real: qué hacer cuando Claude es genérico, la tabla queda desordenada o n8n no dispara"
+        ],
+        "carreraPath": "/carrera-ai-automation",
+        "carreraCta": "Aplicar a la Carrera AI Automation",
+        "contentName": "reporte-mkt-claude"
+      }
+    },
+    {
+      "slug": "reporte-futuro-del-trabajo",
+      "titulo": "El futuro de tu trabajo ya está publicado",
+      "desc": "Datos verificados del World Economic Forum, PwC, la OIT y otras fuentes sobre qué cambió en el mercado laboral y qué oportunidades se abren en América Latina hasta 2030.",
+      "carrera": "General",
+      "tipo": "externo",
+      "url": "reporte-futuro-del-trabajo.html",
+      "cta": "Ver reporte"
+    }
+  ]
+}

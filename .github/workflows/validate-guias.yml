@@ -1,0 +1,20 @@
+name: Validate guias.json
+
+# soyhenry.com/guias descarta en silencio la guía que no respeta el contrato. Esto lo marca en el
+# commit y en el PR. Corre también cuando cambian PDFs: el validador chequea que existan.
+
+on:
+  push:
+    paths: [guias.json, scripts/validate-guias.mjs, '*.pdf']
+  pull_request:
+    paths: [guias.json, scripts/validate-guias.mjs, '*.pdf']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/validate-guias.mjs
