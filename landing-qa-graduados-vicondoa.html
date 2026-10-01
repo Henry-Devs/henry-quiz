@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q&amp;A en vivo con Alexander Vicondoa — Exclusivo para graduados — Henry</title>
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Q&amp;A en vivo con Alexander Vicondoa — Exclusivo para graduados" />
+  <meta property="og:description" content="Pregúntale directo al co-creador de la nueva carrera de AI Engineering. Jueves 8 de octubre, en vivo por Zoom." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/foto-qa-vicondoa.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .nav-badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #e8453c; flex-shrink: 0;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, #f2f1ec 0%, #fdfccb 55%, #fff85e 100%);
+      padding: 56px 48px 72px;
+    }
+    .hero-inner { max-width: 1040px; margin: 0 auto; }
+    .hero-kicker {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gray-dark);
+      margin-bottom: 4px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.02;
+      margin-bottom: 20px;
+    }
+    .role-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.55);
+      border: 1.5px solid rgba(17,17,17,0.12);
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
+    .role-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--yellow); border: 1.5px solid var(--black); flex-shrink: 0; }
+
+    .hero-photo {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px -20px rgba(17,17,17,0.35);
+    }
+    .hero-photo img { display: block; width: 100%; height: 260px; object-fit: cover; object-position: center 30%; }
+    .photo-cards {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: min(360px, 92%);
+    }
+    .photo-card {
+      background: rgba(60,60,60,0.72);
+      backdrop-filter: blur(6px);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 12px 16px;
+    }
+    .photo-card small {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.6px; color: #d8d8d8; margin-bottom: 4px;
+    }
+    .photo-card small::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #aaa; }
+    .photo-card.speaker small::before { background: var(--yellow); }
+    .photo-card strong { display: block; font-size: 1.02rem; font-weight: 800; margin-bottom: 2px; }
+    .photo-card span { display: block; font-size: 0.8rem; color: #d8d8d8; line-height: 1.4; }
+    .photo-card span b { color: var(--white); font-weight: 700; }
+
+    .hero-bottom {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: stretch;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .when-bar {
+      flex: 1;
+      min-width: 280px;
+      background: rgba(255,255,255,0.6);
+      border: 1.5px solid rgba(17,17,17,0.12);
+      border-radius: 16px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .when-meta {
+      font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.6px; color: var(--gray-dark);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .when-meta::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--black); }
+    .when-date { font-size: 1.1rem; font-weight: 900; line-height: 1.2; }
+    .when-times { display: flex; gap: 18px; margin-left: auto; }
+    .when-time { text-align: center; }
+    .when-time .h { font-size: 1.1rem; font-weight: 900; }
+    .when-time .tz { font-size: 0.68rem; font-weight: 700; color: var(--gray-mid); text-transform: uppercase; }
+    .hero-cta {
+      background: var(--yellow);
+      color: var(--black);
+      font-weight: 900;
+      font-size: 1.05rem;
+      border: none;
+      border-radius: 16px;
+      padding: 20px 32px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: transform 0.15s, background 0.15s;
+      box-shadow: 0 8px 24px -8px rgba(230,230,0,0.6);
+    }
+    .hero-cta:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* FORM SECTION */
+    .form-section { padding: 64px 48px; background: var(--white); }
+    .form-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .form-inner h2 { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .form-inner .sub { font-size: 0.92rem; color: var(--gray-mid); margin-bottom: 28px; }
+
+    .success-state { display: none; text-align: center; padding: 12px 0; }
+    .success-icon {
+      width: 72px; height: 72px; background: var(--yellow);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 20px; font-size: 2rem; font-weight: 900;
+    }
+    .success-state h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; }
+    .success-state p { font-size: 0.92rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* WHY SECTION */
+    .section { max-width: 1040px; margin: 0 auto; padding: 24px 48px 64px; }
+    .eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-mid); margin-bottom: 10px; }
+    .why { background: var(--black); color: var(--white); border-radius: 24px; padding: 48px; }
+    .why h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 900; letter-spacing: -1px; line-height: 1.15; margin-bottom: 14px; }
+    .why h2 span { color: #cfcfcf; font-weight: 700; }
+    .why-lead { color: #d6d6cc; font-size: 1rem; line-height: 1.6; max-width: 60ch; margin-bottom: 32px; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .why-col .eyebrow { color: #a8a89c; }
+    .roles, .mods { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .roles li { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2c2c2c; padding-bottom: 10px; font-weight: 800; }
+    .roles li span { font-weight: 500; color: #a8a89c; font-size: 0.82rem; }
+    .mods li { display: flex; gap: 10px; align-items: center; border-bottom: 1px solid #2c2c2c; padding-bottom: 10px; font-weight: 600; }
+    .mods li span { background: var(--yellow); color: var(--black); font-weight: 900; font-size: 0.72rem; border-radius: 6px; padding: 3px 8px; }
+    .why-strip { display: flex; flex-wrap: wrap; gap: 10px 28px; border-top: 1px solid #2c2c2c; padding-top: 24px; font-size: 0.9rem; color: #d6d6cc; }
+    .why-strip b { color: var(--white); }
+
+    /* GRADS SECTION */
+    .grads { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; max-width: 1040px; margin: 0 auto; padding: 24px 48px 64px; }
+    .grads .photo-wrap img { width: 100%; border-radius: 20px; display: block; }
+    .grads h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 16px; }
+    .grads h2 mark { background: var(--yellow); color: var(--black); padding: 0 4px; }
+    .grads p { color: var(--gray-dark); font-size: 0.96rem; line-height: 1.7; margin-bottom: 12px; }
+    .grads p strong { color: var(--black); }
+
+    /* TOPICS SECTION */
+    .topics-section { max-width: 1040px; margin: 0 auto; padding: 24px 48px 64px; text-align: center; }
+    .topics-section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 36px; }
+    .topics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; text-align: left; }
+    .topic { background: var(--gray-light); border-radius: 16px; padding: 24px; }
+    .topic h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 10px; }
+    .topic q { font-size: 0.88rem; color: var(--gray-dark); font-style: italic; }
+    .topic-note { margin-top: 24px; font-size: 0.82rem; color: var(--gray-mid); }
+
+    /* FINAL CTA */
+    .final-cta { background: var(--yellow); text-align: center; padding: 64px 48px; }
+    .final-cta h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 24px; max-width: 700px; margin-inline: auto; }
+    .final-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--black); color: var(--white); font-size: 0.95rem;
+      font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s;
+    }
+    .final-btn:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border); padding: 24px 48px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 32px 20px 48px; }
+      .hero-bottom { flex-direction: column; }
+      .when-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .when-times { margin-left: 0; gap: 20px; }
+      .hero-cta { width: 100%; }
+      .photo-cards { left: 12px; right: 12px; max-width: none; }
+      .form-section { padding: 40px 20px; }
+      .form-inner { padding: 28px; }
+      .section { padding: 16px 20px 48px; }
+      .why { padding: 28px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .grads { grid-template-columns: 1fr; padding: 16px 20px 48px; gap: 24px; }
+      .topics-section { padding: 16px 20px 48px; }
+      .topics { grid-template-columns: 1fr; }
+      .final-cta { padding: 48px 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-inner { animation: fadeUp 0.5s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+    <span class="nav-badge"><span class="dot"></span>Exclusivo para graduados</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-kicker">Q&amp;A en vivo con</p>
+      <h1>Alexander Vicondoa.</h1>
+      <div class="role-pill"><span class="dot"></span>Co-creador de la nueva carrera de AI Engineering</div>
+
+      <div class="hero-bottom">
+        <div class="when-bar">
+          <div>
+            <div class="when-meta">En vivo · Zoom · 1 hora</div>
+            <div class="when-date">Jueves<br>8 de octubre</div>
+          </div>
+          <div class="when-times">
+            <div class="when-time"><div class="h">19 h</div><div class="tz">ARG</div></div>
+            <div class="when-time"><div class="h">17 h</div><div class="tz">COL</div></div>
+            <div class="when-time"><div class="h">16 h</div><div class="tz">MX</div></div>
+          </div>
+        </div>
+        <a href="#form-card" class="hero-cta">Regístrate<br>gratis</a>
+      </div>
+
+      <div class="hero-photo">
+        <img src="foto-qa-vicondoa.jpg" alt="Alexander Vicondoa y Luz Borchardt" />
+        <div class="photo-cards">
+          <div class="photo-card speaker">
+            <small>Speaker</small>
+            <strong>Alexander Vicondoa</strong>
+            <span>Head of LATAM Forward Deployed Engineering · <b>ElevenLabs</b></span>
+            <span>Ex Director de Gen AI · <b>Mercado Libre</b></span>
+          </div>
+          <div class="photo-card">
+            <small>Modera</small>
+            <strong>Luz Borchardt</strong>
+            <span>Founder de <b>Henry</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="form-card">
+    <div class="form-inner">
+      <div id="form-wrapper">
+        <div class="form-top-bar"></div>
+        <h2>Regístrate y deja tu pregunta</h2>
+        <p class="sub">Te guardamos el lugar y llevamos tu pregunta al vivo.</p>
+        <div id="hs-form-container"></div>
+      </div>
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <h3>¡Listo!</h3>
+        <p>Tu lugar está guardado y tu pregunta ya está en la lista. Nos vemos el jueves 8 a las 19 hs (ARG). El link de Zoom te llega por mail y Slack.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ AI ENGINEERING -->
+  <section class="section">
+    <div class="why">
+      <p class="eyebrow" style="color:#a8a89c">Por qué AI Engineering</p>
+      <h2>AI Engineer es #1 <span>del ranking Jobs on the Rise 2026 de LinkedIn.</span></h2>
+      <p class="why-lead">Sumar IA a un perfil técnico con experiencia es hoy el movimiento de carrera con más demanda del mercado. Y como grad de Henry, ya tienes la base.</p>
+
+      <div class="why-grid">
+        <div class="why-col">
+          <p class="eyebrow">Roles a los que vas a poder aplicar</p>
+          <ul class="roles">
+            <li>AI Engineer <span>RAG · Agentes · MCP</span></li>
+            <li>AI Developer <span>OpenAI · LangChain · FastAPI</span></li>
+            <li>AI Integrator <span>Agentes · APIs · Orquestación</span></li>
+            <li>ML Engineer <span>Hugging Face · Ollama · Cloud</span></li>
+          </ul>
+        </div>
+        <div class="why-col">
+          <p class="eyebrow">Qué vas a construir</p>
+          <ul class="mods">
+            <li><span>M1</span>LLMs y Context Engineering</li>
+            <li><span>M2</span>RAG y sistemas de conocimiento</li>
+            <li><span>M3</span>Agentes y orquestación</li>
+            <li><span>M4</span>Producción y deploy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="why-strip">
+        <span><b>14 semanas</b> part time</span>
+        <span><b>Online</b> y en vivo</span>
+        <span><b>+200 horas</b> de código</span>
+        <span>Próxima cohorte: <b>13 de octubre</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ SOLO GRADS -->
+  <section class="grads">
+    <div class="photo-wrap">
+      <img src="foto-qa-vicondoa.jpg" alt="Alexander Vicondoa y Luz Borchardt" />
+    </div>
+    <div>
+      <p class="eyebrow">Por qué es solo para grads</p>
+      <h2>Lo nuevo de Henry, <mark>primero con ustedes</mark></h2>
+      <p>Cuando lanzamos una nueva carrera, queremos que nuestra comunidad sea la primera en tener las novedades.</p>
+      <p>Este vivo es eso: un espacio cercano, sin presentaciones armadas, para que hables <strong>directamente con el Chino y con Luz</strong>. Le preguntas a quien co-creó la nueva carrera de AI Engineering y a quien fundó Henry, y te responden en el momento.</p>
+      <p>Es una oportunidad única y la pensamos solo para ustedes.</p>
+    </div>
+  </section>
+
+  <!-- TEMAS -->
+  <section class="topics-section">
+    <p class="eyebrow">Ideas para tu pregunta</p>
+    <h2>¿Qué le puedes preguntar?</h2>
+    <div class="topics">
+      <div class="topic"><h3>La carrera y su contenido</h3><q>¿Qué voy a saber hacer cuando termine AI Engineering?</q></div>
+      <div class="topic"><h3>Salida laboral</h3><q>¿Qué perfiles buscan hoy las empresas que trabajan con IA y cómo me prepara Henry para llegar a esos puestos?</q></div>
+      <div class="topic"><h3>La experiencia del Chino</h3><q>¿Qué hace un Forward Deployed Engineer en ElevenLabs?</q></div>
+      <div class="topic"><h3>Cómo encaja con lo que ya estudié</h3><q>Estudié Full Stack, ¿por dónde empiezo?</q></div>
+    </div>
+    <p class="topic-note">Son ejemplos. Pregunta lo que quieras saber de verdad.</p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Nos vemos el jueves 8 a las 19 hs. Trae tu pregunta.</h2>
+    <a class="final-btn" href="#form-card">Dejar mi pregunta →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    const MASTERCLASS = {
+      masterclass_fecha_evento:   String(new Date('2026-10-08T19:00:00-03:00').getTime()),
+      masterclass_fecha_larga:    'Jueves 8 de octubre',
+      masterclass_hora:           '19h ARG 🇦🇷 / 17h COL 🇨🇴 / 16h MX 🇲🇽',
+
+      // EXACTO -- condicion de entrada del flow por evento (infra/17 §3).
+      masterclass_nombre:         'Q&A AI Engineering con Alexander Vicondoa',
+
+      masterclass_speaker_nombre: 'Alexander Vicondoa',
+      masterclass_speaker_bio:    'Head of LATAM Forward Deployed Engineering en ElevenLabs. Ex Director de Gen AI en Mercado Libre.',
+
+      masterclass_cohorte_texto:  '13 de octubre de 2026, Part Time',
+
+      career_interest:            'AI Engineer',
+      masterclass_carrera:        'AI Engineer',
+
+      // 19:00 ARG = 22:00 UTC; dura 1h -> 23:00.
+      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('Q&A en vivo con Alexander Vicondoa (Henry)')
+        + '&dates=20261008T220000Z/20261008T230000Z'
+        + '&details=' + encodeURIComponent('Q&A exclusivo para graduados de Henry con Alexander Vicondoa (ElevenLabs) sobre la nueva carrera de AI Engineering.')
+        + '&location=Online',
+    };
+
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "19612811",
+      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      target: "#hs-form-container",
+      onFormReady: function() {
+        setTimeout(() => {
+          const iframe = document.querySelector('#hs-form-container iframe');
+          const idoc = iframe && iframe.contentDocument;
+          if (!idoc) return;
+
+          const style = idoc.createElement('style');
+          style.textContent = `
+            body { font-family: 'Inter', sans-serif !important; }
+            .hs-form-field label { font-size: 0.8rem !important; font-weight: 600 !important; color: #111111 !important; margin-bottom: 6px !important; }
+            .hs-input { background: #f5f5f5 !important; border: 1.5px solid #e2e2e2 !important; border-radius: 8px !important; padding: 11px 14px !important; font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important; box-sizing: border-box !important; }
+            textarea.hs-input { min-height: 90px !important; resize: vertical !important; }
+            .hs-input:focus { outline: none !important; border-color: #111111 !important; background: #ffffff !important; }
+            .hs-form-field .hs-description { font-size: 0.76rem !important; color: #888888 !important; margin-top: 4px !important; }
+            .hs-fieldtype-radio .inputs-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex !important; flex-wrap: wrap !important; gap: 8px !important; }
+            .hs-fieldtype-radio .hs-form-radio { margin: 0 !important; display: inline-flex !important; width: auto !important; flex: 0 0 auto !important; }
+            .hs-fieldtype-radio .hs-form-radio-display { display: inline-flex !important; align-items: center !important; gap: 6px !important; background: #f5f5f5 !important; border: 1.5px solid #e2e2e2 !important; border-radius: 999px !important; padding: 7px 14px !important; font-size: 0.8rem !important; font-weight: 600 !important; cursor: pointer !important; }
+            .hs-fieldtype-radio label.hs-form-radio-display:has(input:checked) { background: #FFFF00 !important; border-color: #111111 !important; }
+            .hs-button { background: #FFFF00 !important; color: #111111 !important; border: none !important; border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; font-family: 'Inter', sans-serif !important; }
+            .hs-button:hover { background: #e6e600 !important; }
+            .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; }
+          `;
+          idoc.head.appendChild(style);
+
+          const btn = idoc.querySelector('input[type="submit"]');
+          if (btn) btn.value = 'Anotarme y enviar mi pregunta';
+
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
+
+          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
+
+          idoc.querySelectorAll('input, select').forEach(input => {
+            if (fieldMap[input.name] !== undefined && fieldMap[input.name] !== '') {
+              input.value = fieldMap[input.name];
+              input.dispatchEvent(new Event('input',  { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+        }, 600);
+      },
+      onFormSubmit: function() {
+        if (window.fbq) {
+          fbq('trackCustom', 'Registro evento graduados', {
+            content_name: 'qa-graduados-vicondoa',
+            utm_source: utms.utm_source || '',
+            utm_medium: utms.utm_medium || '',
+            utm_campaign: utms.utm_campaign || '',
+          });
+        }
+        setTimeout(() => {
+          document.getElementById('form-wrapper').style.display = 'none';
+          document.getElementById('success-state').style.display = 'block';
+        }, 800);
+      }
+    });
+  </script>
+
+</body>
+</html>
