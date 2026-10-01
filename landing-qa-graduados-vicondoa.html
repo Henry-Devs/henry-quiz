@@ -447,34 +447,10 @@
     Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
     Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
 
-    const MASTERCLASS = {
-      masterclass_fecha_evento:   String(new Date('2026-10-08T19:00:00-03:00').getTime()),
-      masterclass_fecha_larga:    'Jueves 8 de octubre',
-      masterclass_hora:           '19h ARG 🇦🇷 / 17h COL 🇨🇴 / 16h MX 🇲🇽',
-
-      // EXACTO -- condicion de entrada del flow por evento (infra/17 §3).
-      masterclass_nombre:         'Q&A AI Engineering con Alexander Vicondoa',
-
-      masterclass_speaker_nombre: 'Alexander Vicondoa',
-      masterclass_speaker_bio:    'Head of LATAM Forward Deployed Engineering en ElevenLabs. Ex Director de Gen AI en Mercado Libre.',
-
-      masterclass_cohorte_texto:  '13 de octubre de 2026, Part Time',
-
-      career_interest:            'AI Engineer',
-      masterclass_carrera:        'AI Engineer',
-
-      // 19:00 ARG = 22:00 UTC; dura 1h -> 23:00.
-      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
-        + '&text=' + encodeURIComponent('Q&A en vivo con Alexander Vicondoa (Henry)')
-        + '&dates=20261008T220000Z/20261008T230000Z'
-        + '&details=' + encodeURIComponent('Q&A exclusivo para graduados de Henry con Alexander Vicondoa (ElevenLabs) sobre la nueva carrera de AI Engineering.')
-        + '&location=Online',
-    };
-
     hbspt.forms.create({
       region: "na1",
       portalId: "19612811",
-      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      formId: "aa8c1644-60ca-49e7-8188-faa2688891e6",
       target: "#hs-form-container",
       onFormReady: function() {
         setTimeout(() => {
@@ -500,18 +476,13 @@
           `;
           idoc.head.appendChild(style);
 
-          const btn = idoc.querySelector('input[type="submit"]');
-          if (btn) btn.value = 'Anotarme y enviar mi pregunta';
-
-          const utmMap = {
+          const fieldMap = {
             'ultima_fuente_utm':  utms.utm_source,
             'ultimo_medio_utm':   utms.utm_medium,
             'ultima_campana_utm': utms.utm_campaign,
             'utm_content':        utms.utm_content,
             'utm_term':           utms.utm_term,
           };
-
-          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
 
           idoc.querySelectorAll('input, select').forEach(input => {
             if (fieldMap[input.name] !== undefined && fieldMap[input.name] !== '') {
