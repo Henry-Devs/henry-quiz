@@ -1819,6 +1819,9 @@
               },
               {
                 "texto": "Una sesión gratuita con un asesor de carrera"
+              },
+              {
+                "texto": "25% de descuento para anotarte a Full Stack AI"
               }
             ]
           },
@@ -1849,15 +1852,15 @@
             "bajada": "Desarrollas aplicaciones completas de punta a punta —frontend, backend y bases de datos— con la IA integrada en tu workflow. Te conviertes en Desarrollador Full Stack, Backend o Frontend. Puedes empezar desde cero, aunque nunca hayas programado, y terminar construyendo productos reales.",
             "bloques": [
               {
-                "tipo": "lista",
-                "estilo": "numerada",
+                "tipo": "chips",
                 "items": [
-                  "Construir aplicaciones web completas, desde el frontend hasta el backend y las bases de datos",
-                  "Desarrollar APIs, lógica de negocio y sistemas con persistencia y validaciones",
-                  "Crear interfaces modernas y escalables con React y TypeScript",
-                  "Integrar inteligencia artificial en aplicaciones y workflows",
-                  "Implementar prácticas modernas: testing, arquitectura y despliegue en la nube"
-                ]
+                  "Aplicaciones web completas: frontend, backend y bases de datos",
+                  "APIs, lógica de negocio y sistemas con persistencia y validaciones",
+                  "Interfaces modernas y escalables con React y TypeScript",
+                  "Integración de IA en aplicaciones y workflows",
+                  "Testing, arquitectura y despliegue en la nube"
+                ],
+                "titulo": "Lo que vas a construir"
               },
               {
                 "tipo": "chips",
