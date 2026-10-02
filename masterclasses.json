@@ -1764,10 +1764,9 @@
       "landing": {
         "hero": {
           "badges": [
-            "Gratuita",
-            "1 hora"
+            "Gratuita"
           ],
-          "kicker": "Hoy no sabes armar una web. *En 1 hora, vas a tener la tuya publicada.*",
+          "kicker": "Sin necesidad de saber programar.",
           "bajada": "Tu primer sitio en internet, aunque nunca hayas programado. La IA genera la base desde un archivo vacío, la personalizamos, corregimos en vivo un error real de la IA y la publicamos con un link que puedes abrir desde tu celular."
         },
         "hubspot": {
@@ -1787,26 +1786,15 @@
         },
         "bloques": [
           {
-            "tipo": "lista",
-            "estilo": "viñetas",
-            "items": [
-              "Sin necesidad de saber programar",
-              "La IA genera la base de tu web en minutos, desde un archivo vacío",
-              "Corregimos en vivo un error real que comete la IA",
-              "Te llevas tu web publicada, con un link propio para compartir"
-            ]
-          },
-          {
-            "tipo": "lista",
-            "estilo": "numerada",
+            "tipo": "chips",
             "titulo": "Qué vas a aprender",
             "items": [
-              "Cómo funciona la web y qué es HTML",
-              "AI Prompting aplicado a desarrollo web",
-              "Cómo generar la base de un sitio con IA desde cero",
-              "Cómo detectar y corregir un error que comete la IA",
-              "Cómo publicar gratis con GitHub Pages",
-              "Esto es tu semana 1 de la carrera Full Stack AI"
+              "HTML y cómo funciona la web",
+              "AI Prompting para desarrollo web",
+              "Generar un sitio con IA",
+              "Corregir errores de la IA",
+              "Publicar con GitHub Pages",
+              "Tu semana 1 de Full Stack AI"
             ]
           },
           {
