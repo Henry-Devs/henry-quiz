@@ -1819,11 +1819,12 @@
               },
               {
                 "texto": "Una sesión gratuita con un asesor de carrera"
-              },
-              {
-                "texto": "25% de descuento para anotarte a Full Stack AI"
               }
             ]
+          },
+          {
+            "tipo": "aviso",
+            "texto": "*25% de descuento:* por anotarte a esta masterclass, te llevas un 25% de descuento para inscribirte a Full Stack AI."
           },
           {
             "tipo": "cifras",
