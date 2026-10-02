@@ -1808,12 +1808,18 @@
             ]
           },
           {
-            "tipo": "chips",
+            "tipo": "tarjetas",
             "titulo": "Al terminar te llevas",
             "items": [
-              "Tu web publicada y un link para compartir",
-              "Un certificado para comunicar en LinkedIn",
-              "Una sesión gratuita con un asesor de carrera"
+              {
+                "texto": "Tu web publicada y un link para compartir"
+              },
+              {
+                "texto": "Un certificado para comunicar en LinkedIn"
+              },
+              {
+                "texto": "Una sesión gratuita con un asesor de carrera"
+              }
             ]
           },
           {
