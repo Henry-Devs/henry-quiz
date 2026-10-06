@@ -1914,8 +1914,9 @@
       "banner": "banner-crea-tu-agente-de-ia.jpg",
       "speakers": [
         {
-          "nombre": "Equipo Henry",
-          "rol": "Instructores de Henry"
+          "nombre": "Gerardo Ruiz",
+          "rol": "Principal Software Engineer en Oracle",
+          "foto": "gerardo-ruiz.jpg"
         }
       ],
       "link": "landing-crea-tu-agente-de-ia.html",
@@ -1931,8 +1932,8 @@
           "masterclass_nombre": "Aprende a crear tu propio agente de IA",
           "masterclass_fecha_larga": "Miércoles 14 de octubre",
           "masterclass_hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
-          "masterclass_speaker_nombre": "Equipo Henry",
-          "masterclass_speaker_bio": "Instructores de Henry",
+          "masterclass_speaker_nombre": "Gerardo Ruiz",
+          "masterclass_speaker_bio": "Principal Software Engineer en Oracle",
           "masterclass_tema_1": "Cómo armar un agente de IA con n8n",
           "masterclass_tema_2": "Clasificación automática de mensajes con IA",
           "masterclass_tema_3": "Agentes autónomos y proyecto integrador con Telegram",
