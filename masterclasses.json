@@ -1906,10 +1906,10 @@
       "nombre": "Aprende a crear tu propio agente de IA",
       "desc": "Un bot que atiende clientes por Telegram y anota cada lead solo, armado en vivo con n8n.",
       "carrera": "AI Automation",
-      "fecha": "2026-10-15T22:00:00-03:00",
+      "fecha": "2026-10-14T22:00:00-03:00",
       "duracionMin": 60,
-      "fechaCorta": "15 OCT",
-      "fechaLarga": "Jueves 15 de octubre",
+      "fechaCorta": "14 OCT",
+      "fechaLarga": "Miércoles 14 de octubre",
       "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
       "banner": "banner-crea-tu-agente-de-ia.jpg",
       "speakers": [
@@ -1929,7 +1929,7 @@
         },
         "hubspot": {
           "masterclass_nombre": "Aprende a crear tu propio agente de IA",
-          "masterclass_fecha_larga": "Jueves 15 de octubre",
+          "masterclass_fecha_larga": "Miércoles 14 de octubre",
           "masterclass_hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
           "masterclass_speaker_nombre": "Equipo Henry",
           "masterclass_speaker_bio": "Instructores de Henry",
@@ -1939,8 +1939,8 @@
           "career_interest": "AI Automation",
           "masterclass_carrera": "AI Automation",
           "masterclass_cohorte_texto": "27 de octubre Part Time",
-          "masterclass_cta_url": "https://www.soyhenry.com/carrera-ai-automation?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=15/10",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Aprende%20a%20crear%20tu%20propio%20agente%20de%20IA&dates=20261016T010000Z/20261016T020000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry.%20Armamos%20un%20agente%20de%20IA%20con%20n8n%20que%20atiende%20Telegram%20y%20clasifica%20leads%20solo.&location=Online"
+          "masterclass_cta_url": "https://www.soyhenry.com/carrera-ai-automation?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=14/10",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Aprende%20a%20crear%20tu%20propio%20agente%20de%20IA&dates=20261015T010000Z/20261015T020000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry.%20Armamos%20un%20agente%20de%20IA%20con%20n8n%20que%20atiende%20Telegram%20y%20clasifica%20leads%20solo.&location=Online"
         },
         "bloques": [
           {
