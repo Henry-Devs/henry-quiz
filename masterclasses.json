@@ -1900,6 +1900,159 @@
           }
         ]
       }
+    },
+    {
+      "slug": "crea-tu-agente-de-ia",
+      "nombre": "Aprende a crear tu propio agente de IA",
+      "desc": "Un bot que atiende clientes por Telegram y anota cada lead solo, armado en vivo con n8n.",
+      "carrera": "AI Automation",
+      "fecha": "2026-10-15T22:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "15 OCT",
+      "fechaLarga": "Jueves 15 de octubre",
+      "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+      "banner": "banner-crea-tu-agente-de-ia.jpg",
+      "speakers": [
+        {
+          "nombre": "Equipo Henry",
+          "rol": "Instructores de Henry"
+        }
+      ],
+      "link": "landing-crea-tu-agente-de-ia.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Gratuita"
+          ],
+          "kicker": "No hace falta saber programar.",
+          "bajada": "En vivo armamos, con n8n, un agente que lee cada mensaje de Telegram, entiende si es una consulta, una compra o un reclamo, guarda el contacto solo y responde. Al final te metés vos: le escribís desde tu celular y ves tu mensaje clasificado aparecer en tiempo real."
+        },
+        "hubspot": {
+          "masterclass_nombre": "Aprende a crear tu propio agente de IA",
+          "masterclass_fecha_larga": "Jueves 15 de octubre",
+          "masterclass_hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+          "masterclass_speaker_nombre": "Equipo Henry",
+          "masterclass_speaker_bio": "Instructores de Henry",
+          "masterclass_tema_1": "Cómo armar un agente de IA con n8n",
+          "masterclass_tema_2": "Clasificación automática de mensajes con IA",
+          "masterclass_tema_3": "Agentes autónomos y proyecto integrador con Telegram",
+          "career_interest": "AI Automation",
+          "masterclass_carrera": "AI Automation",
+          "masterclass_cohorte_texto": "27 de octubre Part Time",
+          "masterclass_cta_url": "https://www.soyhenry.com/carrera-ai-automation?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=15/10",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Aprende%20a%20crear%20tu%20propio%20agente%20de%20IA&dates=20261016T010000Z/20261016T020000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry.%20Armamos%20un%20agente%20de%20IA%20con%20n8n%20que%20atiende%20Telegram%20y%20clasifica%20leads%20solo.&location=Online"
+        },
+        "bloques": [
+          {
+            "tipo": "chips",
+            "titulo": "Qué vas a aprender",
+            "items": [
+              "Cómo armar un agente con n8n",
+              "Clasificar mensajes con IA",
+              "Conectar Telegram a un flujo propio",
+              "Guardar leads sin trabajo manual",
+              "Agentes autónomos, sin código",
+              "Tu Módulo 2 de AI Automation"
+            ]
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Para quién es",
+            "items": [
+              {
+                "etiqueta": "✓ Es para ti si",
+                "texto": "Quieres que tu negocio responda solo en Telegram, sin escribir una línea de código, y ver en vivo cómo se arma ese agente de punta a punta."
+              }
+            ]
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Al terminar te llevas",
+            "items": [
+              {
+                "texto": "Un certificado para comunicar en LinkedIn"
+              },
+              {
+                "texto": "Una sesión gratuita con un asesor de carrera"
+              }
+            ]
+          },
+          {
+            "tipo": "aviso",
+            "texto": "*25% de descuento:* por anotarte a esta masterclass, te llevas un 25% de descuento para inscribirte a AI Automation."
+          },
+          {
+            "tipo": "cifras",
+            "titulo": "La IA no te está sacando el lugar. *Te está subiendo la vara.*",
+            "bajada": "Quienes ya usan IA en su trabajo ganan hasta 56% más, y los sueldos crecen el doble de rápido en las industrias donde más se usa. La brecha no es entre humanos e IA: es entre quién se sube ahora y quién se queda mirando.",
+            "items": [
+              {
+                "valor": "56%",
+                "texto": "más de sueldo, en promedio, para quienes tienen habilidades de IA"
+              },
+              {
+                "valor": "x4",
+                "texto": "crecimiento de productividad en las industrias que más adoptan IA"
+              },
+              {
+                "valor": "50%",
+                "texto": "de las búsquedas de empleo tech ya piden habilidades de IA"
+              }
+            ],
+            "fuente": "Fuentes: PwC Global AI Jobs Barometer 2025 · Dice Tech Job Report (sept. 2025)"
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "AI Automation",
+            "titulo": "¿Por qué AI Automation en Henry?",
+            "bajada": "Automatiza procesos, diseña flujos y crea agentes con herramientas no-code y low-code, con la IA integrada en tu workflow. Puedes empezar desde cero, sin background técnico, y terminar construyendo agentes reales.",
+            "bloques": [
+              {
+                "tipo": "chips",
+                "titulo": "Lo que vas a construir",
+                "items": [
+                  "Desarrollo completo de productos con IA",
+                  "Automatización de procesos con herramientas no-code y low-code",
+                  "Integración con APIs, webhooks y tecnologías de IA aplicada",
+                  "Creación y gestión de agentes inteligentes para atención al cliente",
+                  "Proyectos para tu portafolio y asesoría de carrera personalizada"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Herramientas que vas a usar",
+                "items": [
+                  "n8n",
+                  "Make",
+                  "Airtable",
+                  "Flowise AI",
+                  "HubSpot",
+                  "OpenAI",
+                  "Gemini"
+                ]
+              },
+              {
+                "tipo": "cifras",
+                "items": [
+                  {
+                    "valor": "+20.000",
+                    "texto": "Estudiantes en la comunidad Henry"
+                  },
+                  {
+                    "valor": "17 semanas",
+                    "texto": "Part time, ~10hs semanales"
+                  },
+                  {
+                    "valor": "1 semana",
+                    "texto": "De prueba o te devolvemos el dinero"
+                  }
+                ]
+              }
+            ],
+            "cta": true
+          }
+        ]
+      }
     }
   ]
 }
