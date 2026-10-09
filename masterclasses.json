@@ -2054,6 +2054,44 @@
           }
         ]
       }
+    },
+    {
+      "slug": "usa-la-ia-para-tu-proxima-chamba",
+      "nombre": "Usa la IA para buscar (y conseguir) tu próxima chamba",
+      "desc": "Con ChatGPT o Claude, de 10 vacantes mezcladas a una postulación lista y una entrevista ensayada.",
+      "carrera": "AI Automation",
+      "fecha": "2026-10-20T22:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "20 OCT",
+      "fechaLarga": "Martes 20 de octubre",
+      "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+      "banner": "banner-usa-la-ia-para-tu-proxima-chamba.jpg",
+      "speakers": [
+        {
+          "nombre": "Equipo Henry",
+          "rol": "Instructores de Henry"
+        }
+      ],
+      "link": "landing-usa-la-ia-para-tu-proxima-chamba.html"
+    },
+    {
+      "slug": "asistente-a-tu-medida",
+      "nombre": "Asistente a tu medida: la IA organiza tu proyecto",
+      "desc": "Le mandas una nota de voz y el asistente agenda la tarea en tu calendario y te avisa por mail.",
+      "carrera": "AI Automation",
+      "fecha": "2026-10-28T22:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "28 OCT",
+      "fechaLarga": "Miércoles 28 de octubre",
+      "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+      "banner": "banner-asistente-a-tu-medida.jpg",
+      "speakers": [
+        {
+          "nombre": "Equipo Henry",
+          "rol": "Instructores de Henry"
+        }
+      ],
+      "link": "landing-asistente-a-tu-medida.html"
     }
   ]
 }
