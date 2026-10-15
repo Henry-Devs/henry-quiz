@@ -90,13 +90,22 @@
 
     /* SPEAKERS CAROUSEL (dentro de hero-left) */
     .speakers-carousel { margin-top: 28px; }
-    .carousel-lead { font-size: 0.86rem; color: var(--gray-dark); line-height: 1.5; margin-bottom: 14px; }
+    .carousel-wrap { position: relative; }
     .carousel-track {
-      display: flex; gap: 14px; overflow-x: auto; padding-bottom: 10px;
+      display: flex; gap: 14px; overflow-x: auto; padding-bottom: 10px; scroll-behavior: smooth;
       scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
     }
     .carousel-track::-webkit-scrollbar { height: 6px; }
     .carousel-track::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+    .carousel-arrow {
+      position: absolute; top: 34px; width: 30px; height: 30px; border-radius: 50%;
+      background: var(--white); border: 1.5px solid var(--black); display: flex;
+      align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem;
+      font-weight: 900; z-index: 2; box-shadow: 0 2px 8px rgba(0,0,0,0.12); padding: 0;
+    }
+    .carousel-arrow:hover { background: var(--yellow); }
+    .carousel-arrow.prev { left: -4px; }
+    .carousel-arrow.next { right: -4px; }
     .speaker-slide {
       flex: 0 0 150px; scroll-snap-align: start; border: 1.5px solid var(--border);
       border-radius: 16px; padding: 18px 12px; text-align: center; background: var(--white);
@@ -112,11 +121,17 @@
     }
     .speaker-slide .sp-name { font-size: 0.84rem; font-weight: 800; color: var(--black); line-height: 1.25; margin-bottom: 3px; }
     .speaker-slide .sp-role { font-size: 0.68rem; color: var(--gray-mid); line-height: 1.3; }
-    .speaker-slide.mystery { border-style: dashed; }
-    .speaker-slide.mystery .sp-fallback { background: var(--gray-light); color: var(--gray-mid); font-size: 1.4rem; }
-    .speaker-slide.mystery .sp-name { color: var(--gray-mid); }
-    .lineup-mod { margin-top: 14px; font-size: 0.82rem; color: var(--gray-mid); }
-    .lineup-mod b { color: var(--black); }
+    .speaker-slide.mystery { border-style: dashed; border-color: var(--black); position: relative; }
+    .speaker-slide.mystery .sp-fallback {
+      background: radial-gradient(circle, var(--yellow) 0%, var(--gray-light) 72%);
+      border-style: dashed; font-size: 1.4rem; animation: mysteryPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes mysteryPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,0,0.55); }
+      50% { box-shadow: 0 0 0 7px rgba(255,255,0,0); }
+    }
+    .speaker-slide.mystery .sp-name { color: var(--black); font-style: italic; }
+    .speaker-slide.mystery .sp-role { color: var(--gray-mid); }
 
     .section-label {
       font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
@@ -168,7 +183,7 @@
     .evidence-source { font-size: 0.68rem; color: var(--gray-mid); margin-top: 8px; }
 
     /* AGENDA */
-    .agenda-section { max-width: 720px; margin: 0 auto; padding: 24px 48px 8px; }
+    .agenda-section { max-width: 1120px; margin: 0 auto; padding: 24px 48px 8px; }
     .agenda-list { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 18px; }
     .agenda-row { display: flex; gap: 18px; padding: 18px 22px; border-bottom: 1px solid var(--border); align-items: flex-start; }
     .agenda-row:last-child { border-bottom: none; }
@@ -183,7 +198,7 @@
     .agenda-cta-wrap { text-align: center; }
 
     /* PARA QUIEN */
-    .fit-section { max-width: 720px; margin: 0 auto; padding: 24px 48px; }
+    .fit-section { max-width: 1120px; margin: 0 auto; padding: 24px 48px; }
     .fit-lead { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 20px; }
     .check-list { display: flex; flex-direction: column; gap: 16px; }
     .check-item { display: flex; gap: 14px; align-items: flex-start; }
@@ -307,30 +322,32 @@
       <!-- SPEAKERS CAROUSEL -->
       <div class="speakers-carousel">
         <p class="section-label">Line-up</p>
-        <p class="carousel-lead">Forward Deployed Engineers de la industria — más dos invitados sorpresa que se revelan antes del evento.</p>
-        <div class="carousel-track">
-          <div class="speaker-slide">
-            <img src="alexander-vicondoa.jpg" alt="Alexander Vicondoa" />
-            <div class="sp-name">Alexander Vicondoa</div>
-            <div class="sp-role">Head of LATAM Forward Deployed Engineering · ElevenLabs</div>
+        <div class="carousel-wrap">
+          <button type="button" class="carousel-arrow prev" aria-label="Ver speaker anterior" onclick="document.getElementById('speakers-track').scrollBy({left:-166,behavior:'smooth'})">‹</button>
+          <div class="carousel-track" id="speakers-track">
+            <div class="speaker-slide">
+              <img src="alexander-vicondoa.jpg" alt="Alexander Vicondoa" />
+              <div class="sp-name">Alexander Vicondoa</div>
+              <div class="sp-role">Head of LATAM Forward Deployed Engineering · ElevenLabs</div>
+            </div>
+            <div class="speaker-slide">
+              <div class="sp-fallback">LB</div>
+              <div class="sp-name">Luz Borchardt</div>
+              <div class="sp-role">Founder de Henry</div>
+            </div>
+            <div class="speaker-slide mystery">
+              <div class="sp-fallback">🤫</div>
+              <div class="sp-name">¿Quién será?</div>
+              <div class="sp-role">Sorpresa en camino</div>
+            </div>
+            <div class="speaker-slide mystery">
+              <div class="sp-fallback">👀</div>
+              <div class="sp-name">Casi, casi...</div>
+              <div class="sp-role">Se revela antes del evento</div>
+            </div>
           </div>
-          <div class="speaker-slide">
-            <div class="sp-fallback">LB</div>
-            <div class="sp-name">Luz Borchardt</div>
-            <div class="sp-role">Founder de Henry</div>
-          </div>
-          <div class="speaker-slide mystery">
-            <div class="sp-fallback">?</div>
-            <div class="sp-name">Invitado sorpresa</div>
-            <div class="sp-role">Se revela antes del evento</div>
-          </div>
-          <div class="speaker-slide mystery">
-            <div class="sp-fallback">?</div>
-            <div class="sp-name">Invitado sorpresa</div>
-            <div class="sp-role">Se revela antes del evento</div>
-          </div>
+          <button type="button" class="carousel-arrow next" aria-label="Ver siguiente speaker" onclick="document.getElementById('speakers-track').scrollBy({left:166,behavior:'smooth'})">›</button>
         </div>
-        <p class="lineup-mod">+ <b>moderador/a de Henry</b></p>
       </div>
     </div>
 

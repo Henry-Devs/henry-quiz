@@ -95,11 +95,24 @@
       display: flex; flex-direction: column; align-items: center; text-align: center;
       background: var(--white);
     }
+    .speaker-photo-wrap {
+      width: 96px; height: 96px; border-radius: 50%; overflow: hidden;
+      border: 2px solid var(--black); margin-bottom: 16px; background: var(--gray-light);
+    }
+    .speaker-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .speaker-avatar-fallback {
       width: 88px; height: 88px; border-radius: 50%; background: var(--yellow);
       border: 2px solid var(--black); display: flex; align-items: center; justify-content: center;
       font-size: 1.6rem; font-weight: 900; color: var(--black); margin-bottom: 16px;
     }
+    /* GUÍA */
+    .guide-note {
+      display: flex; gap: 10px; align-items: flex-start; margin-top: 22px;
+      background: var(--gray-light); border-radius: 12px; padding: 14px 16px;
+      font-size: 0.84rem; color: var(--gray-dark); line-height: 1.5;
+    }
+    .guide-note .g-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .guide-note b { color: var(--black); }
     .speaker-name-lg { font-size: 1.25rem; font-weight: 900; letter-spacing: -0.5px; color: var(--black); margin-bottom: 4px; }
     .speaker-role-lg { font-size: 0.85rem; color: var(--gray-mid); font-weight: 700; margin-bottom: 14px; }
     .speaker-bio { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.55; }
@@ -267,14 +280,15 @@
     <div class="hero-left">
       <div class="badge-row">
         <span class="badge primary">En vivo y gratis</span>
+        <span class="badge outline">+ Guía gratis</span>
         <span class="badge outline">Lunes 9 de noviembre</span>
       </div>
       <h1>Cómo convertirte en Forward Deployed Engineer</h1>
 
       <p class="hero-desc">
-        1 hora para entender el camino completo: qué tienes que saber, cómo es la Especialización
-        de Henry y por qué conviene empezar ahora, mientras el rol todavía tiene poca oferta
-        de talento formado.
+        En esta clase en vivo te explicamos el camino completo hacia el rol que más rápido creció
+        en la industria — y al final te llevas una guía con los pasos concretos para empezar,
+        directo a tu mail.
       </p>
 
       <div class="hero-insight">
@@ -289,10 +303,16 @@
       <div class="speakers-stack">
         <p class="section-label">Da la clase</p>
         <div class="speaker-card">
-          <div class="speaker-avatar-fallback">F</div>
+          <div class="speaker-photo-wrap">
+            <img src="fer.jpg" alt="Fer" />
+          </div>
           <div class="speaker-name-lg">Fer</div>
-          <div class="speaker-role-lg">Teaching Assistant de FDE en Henry · ya es Forward Deployed Engineer</div>
-          <p class="speaker-bio">Vive el rol que te va a explicar: hoy trabaja como Forward Deployed Engineer y además acompaña a quienes se están formando en Henry para llegar ahí.</p>
+          <div class="speaker-role-lg">AI Solutions Specialist · Teaching Assistant de FDE en Henry</div>
+          <p class="speaker-bio">Ya es Forward Deployed Engineer y hoy trabaja como AI Solutions Specialist. En Henry acompaña como Teaching Assistant a quienes se están formando para llegar al rol.</p>
+        </div>
+        <div class="guide-note">
+          <span class="g-icon">📩</span>
+          <p><b>Te llevas una guía:</b> al registrarte te mandamos por mail "Cómo prepararte para ser Forward Deployed Engineer", con los pasos concretos para armar tu camino al rol.</p>
         </div>
       </div>
     </div>
@@ -309,38 +329,24 @@
       <div class="success-state" id="success-state">
         <div class="success-icon">✓</div>
         <h3>¡Listo!</h3>
-        <p>Te registraste correctamente. Te vamos a avisar por mail antes de la clase.</p>
+        <p>Te registraste correctamente. Ya te mandamos la guía "Cómo prepararte para ser Forward Deployed Engineer" por mail, y te vamos a avisar antes de la clase.</p>
       </div>
     </div>
   </section>
 
   <!-- BLOQUE 1 -->
   <section class="block-section">
-    <h2 class="block-title">El rol existe hace más de una década. La demanda recién ahora se disparó.</h2>
+    <h2 class="block-title">Por qué ahora: la demanda se disparó y el talento no llegó</h2>
     <div class="block-body">
-      <p>El Forward Deployed Engineer lo inventó Palantir a comienzos de la década de 2010. Lo que
-      cambió no es el trabajo en sí — traducir una necesidad ambigua del cliente en un sistema que
-      funciona — sino la escala de la demanda: AWS invirtió USD 1.000 millones en junio de 2026 para
-      formar y contratar FDEs, y un mes después Microsoft respondió con un programa de USD 2.500
-      millones. Dos de las compañías más grandes del mundo apostando al mismo perfil no es casualidad.</p>
+      <p>En un semestre, el porcentaje de empresas que planea contratar Forward Deployed Engineers
+      pasó del 5-10% al 70%. AWS y Microsoft ya invirtieron miles de millones de dólares para formar
+      y contratar este perfil — y casi nadie en la región enseña la capa que lo distingue: traducir
+      un problema de negocio ambiguo en un sistema que funciona en producción.</p>
     </div>
     <p class="pull-quote">La inteligencia artificial es fácil de demostrar y difícil de implementar. El FDE existe para cerrar esa brecha.</p>
   </section>
 
   <!-- BLOQUE 2 -->
-  <section class="block-section" style="padding-top:8px;">
-    <div class="block-body">
-      <p>Un estudio del MIT de 2025 encontró que casi el 95% de los pilotos de IA empresarial
-      fracasan — no por la calidad del modelo, sino por datos dispersos y procesos reales que nadie
-      tradujo bien. No falta gente que sepa de modelos, ni gente que entienda de negocio: falta
-      gente que tenga las dos cosas a la vez.</p>
-      <p>Esa combinación es la que hoy casi nadie forma en la región. Hay competencia técnica real,
-      pero está en Estados Unidos, en inglés, a USD 4.000 — y ninguna enseña la capa de traducción
-      al negocio que es, justamente, lo que distingue a un FDE.</p>
-    </div>
-  </section>
-
-  <!-- BLOQUE 3 -->
   <section class="block-section" style="padding-top:8px;">
     <div class="block-body">
       <p>No es un rol de entrada: solo el 12% de las búsquedas son para perfiles junior. Pero si ya
@@ -351,7 +357,7 @@
 
   <!-- AGENDA -->
   <section class="agenda-section">
-    <p class="section-label" style="text-align:center;">1 hora, cuatro cosas concretas</p>
+    <p class="section-label" style="text-align:center;">¿Qué vamos a ver?</p>
     <div class="agenda-list">
       <div class="agenda-row">
         <div class="agenda-num">1</div>
@@ -470,9 +476,9 @@
 
   <!-- CIERRE FINAL -->
   <section class="final-section">
-    <h2 class="final-title">1 hora con alguien que ya hace este trabajo todos los días.</h2>
+    <h2 class="final-title">1 hora con alguien que ya hace este trabajo todos los días. Y te llevas la guía.</h2>
     <a href="#hs-form-container" class="cta-btn">Reserva tu lugar →</a>
-    <p class="final-facts">Lunes 9 de noviembre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 1 hora · En vivo y gratis</p>
+    <p class="final-facts">Lunes 9 de noviembre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 1 hora · En vivo y gratis + guía por mail</p>
   </section>
 
   <!-- COMPANIES -->
@@ -518,7 +524,7 @@
       masterclass_hora:           '17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷',
 
       masterclass_speaker_nombre: 'Fer',
-      masterclass_speaker_bio:    'Fer, Teaching Assistant de la Especialización FDE en Henry y ya Forward Deployed Engineer.',
+      masterclass_speaker_bio:    'Fer, AI Solutions Specialist y Forward Deployed Engineer. Teaching Assistant de la Especialización FDE en Henry.',
 
       masterclass_tema_1:         'Qué hace un FDE en el día a día y por qué explotó la demanda',
       masterclass_tema_2:         'Qué vas a construir en la Especialización FDE de Henry',
