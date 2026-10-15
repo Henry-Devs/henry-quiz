@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convertite en AI Builder — Curso intro gratis de AI Product Builder | Henry</title>
+  <meta name="description" content="2 clases en vivo y gratis, 4 y 5 de noviembre. Construí tu primer sistema con IA y aprendé arquitectura de agentes con Claude. La puerta de entrada a AI Product Builder, la carrera de Henry para dejar de solo escribir specs y empezar a construir." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Convertite en AI Builder — Curso intro gratis de AI Product Builder" />
+  <meta property="og:description" content="2 clases en vivo y gratis, 4 y 5 de noviembre. Construí tu primer sistema con IA y aprendé arquitectura de agentes con Claude." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/banner-curso-intro-ai-product-builder.jpg" />
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+  <!-- JSON-LD de evento -- Clase 1 (4/11 20hs ARG) como trigger principal; Clase 2 el 5/11, mismo horario. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Curso intro AI Product Builder: Convertite en AI Builder + Claude Masterclass",
+    "startDate": "2026-11-04T20:00:00-03:00",
+    "endDate": "2026-11-05T22:00:00-03:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://recursos.soyhenry.com/landing-curso-intro-ai-product-builder.html"
+    },
+    "description": "Curso intro en vivo y gratis de Henry Live Sessions sobre la carrera AI Product Builder: dos clases, 4 y 5 de noviembre.",
+    "isAccessibleForFree": true,
+    "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px; border-bottom: 1px solid var(--border);
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      align-items: start; max-width: 1120px; margin: 0 auto;
+      padding: 56px 48px 48px;
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge {
+      font-size: 0.7rem; font-weight: 800; padding: 6px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900; line-height: 1.1;
+      letter-spacing: -1.5px; color: var(--black); margin-bottom: 18px;
+    }
+    .hero-desc { font-size: 1rem; color: var(--gray-dark); line-height: 1.7; }
+    .hero-insight { margin-top: 26px; padding-top: 22px; border-top: 1.5px solid var(--border); }
+    .hero-insight-quote { font-size: 1.2rem; font-weight: 800; line-height: 1.4; color: var(--black); }
+    .hero-insight-quote mark { background: var(--yellow); color: var(--black); padding: 0 6px; }
+    .hero-insight-hook { font-size: 0.92rem; color: var(--gray-dark); margin-top: 10px; line-height: 1.5; }
+
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--gray-mid); margin-bottom: 12px;
+    }
+
+    /* CLASS CARDS (hero) */
+    .classes-stack { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+    .class-card { border: 1.5px solid var(--border); border-radius: 16px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start; }
+    .class-card .class-num {
+      min-width: 34px; height: 34px; background: var(--black); color: var(--yellow);
+      border-radius: 9px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 900; flex-shrink: 0;
+    }
+    .class-card .class-date { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-mid); margin-bottom: 4px; }
+    .class-card .class-title { font-size: 0.98rem; font-weight: 800; color: var(--black); margin-bottom: 4px; line-height: 1.3; }
+    .class-card .class-desc { font-size: 0.84rem; color: var(--gray-dark); line-height: 1.5; }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white); border: 1.5px solid var(--border); border-radius: 16px;
+      padding: 36px; position: sticky; top: 80px; box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .form-card h2 { font-size: 1.35rem; font-weight: 800; color: var(--black); margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.2; }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 18px; }
+    .event-compact-facts { font-size: 0.82rem; font-weight: 600; color: var(--gray-dark); margin-bottom: 20px; line-height: 1.5; }
+    #hs-form-container iframe { width: 100%; border: none; }
+
+    /* Success state */
+    .success-state { display: none; text-align: center; padding: 16px 0; }
+    .success-icon {
+      width: 72px; height: 72px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem;
+    }
+    .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
+    .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* NARRATIVE BLOCKS */
+    .block-section { max-width: 720px; margin: 0 auto; padding: 40px 48px; }
+    .block-title { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 900; letter-spacing: -0.7px; line-height: 1.2; margin-bottom: 18px; }
+    .block-body p { font-size: 1rem; color: var(--gray-dark); line-height: 1.75; margin-bottom: 14px; }
+    .block-body p:last-child { margin-bottom: 0; }
+    .pull-quote {
+      border-left: 3px solid var(--yellow); background: var(--gray-light);
+      padding: 16px 22px; margin: 20px 0; font-size: 1.05rem; font-weight: 800;
+      color: var(--black); line-height: 1.5;
+    }
+
+    /* HENRY STRIP */
+    .henry-strip { max-width: 1120px; margin: 0 auto; padding: 8px 48px 48px; }
+    .henry-box { background: var(--black); color: var(--white); border-radius: 24px; padding: 40px 44px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    .henry-box h3 { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.6px; margin-bottom: 12px; }
+    .henry-box p { color: #d6d6cc; font-size: 0.92rem; line-height: 1.6; }
+    .henry-stats { display: flex; flex-direction: column; gap: 14px; }
+    .henry-stat { border-top: 1px solid #2c2c2c; padding-top: 12px; }
+    .henry-stat:first-child { border-top: none; padding-top: 0; }
+    .henry-stat b { display: block; font-size: 1.3rem; font-weight: 900; }
+    .henry-stat span { font-size: 0.8rem; color: #a8a89c; }
+
+    /* AGENDA (por clase, detallado) */
+    .agenda-section { max-width: 820px; margin: 0 auto; padding: 24px 48px 8px; }
+    .class-detail { border: 1.5px solid var(--border); border-radius: 16px; padding: 28px 30px; margin-bottom: 20px; }
+    .class-detail-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+    .class-detail-head .cd-num { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; background: var(--yellow); padding: 4px 10px; border-radius: 20px; }
+    .class-detail-head .cd-date { font-size: 0.8rem; font-weight: 700; color: var(--gray-mid); }
+    .class-detail h3 { font-size: 1.15rem; font-weight: 900; letter-spacing: -0.4px; margin-bottom: 10px; line-height: 1.3; }
+    .class-detail p { font-size: 0.92rem; color: var(--gray-dark); line-height: 1.65; margin-bottom: 10px; }
+    .class-detail ul { margin: 10px 0 0; padding-left: 20px; }
+    .class-detail li { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.6; margin-bottom: 4px; }
+    .agenda-note { font-size: 0.88rem; color: var(--gray-mid); font-style: italic; margin: 18px 0 24px; text-align: center; }
+    .agenda-cta-wrap { text-align: center; }
+
+    /* PARA QUIEN */
+    .fit-section { max-width: 720px; margin: 0 auto; padding: 24px 48px; }
+    .fit-lead { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 20px; }
+    .check-list { display: flex; flex-direction: column; gap: 16px; }
+    .check-item { display: flex; gap: 14px; align-items: flex-start; }
+    .check-mark {
+      min-width: 26px; height: 26px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-weight: 900;
+      font-size: 0.8rem; color: var(--black); flex-shrink: 0; margin-top: 2px;
+    }
+    .check-item p { font-size: 0.96rem; color: var(--gray-dark); line-height: 1.55; }
+    .fit-not { margin-top: 24px; padding: 16px 20px; background: var(--gray-light); border-radius: 12px; font-size: 0.86rem; color: var(--gray-dark); line-height: 1.6; }
+    .fit-not b { color: var(--black); }
+
+    /* CIERRE / CARRERA */
+    .why-section { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 48px; }
+    .why-inner { max-width: 1120px; margin: 0 auto; }
+    .why-header { text-align: center; margin-bottom: 36px; }
+    .why-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 10px; }
+    .career-chip {
+      display: inline-block; background: var(--yellow); color: var(--black);
+      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 32px; }
+    .spec-table { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .spec-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 18px; border-bottom: 1px solid var(--border); }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-label { font-size: 0.82rem; font-weight: 700; color: var(--gray-mid); }
+    .spec-value { font-size: 0.86rem; font-weight: 700; color: var(--black); text-align: right; max-width: 60%; }
+    .spec-row.wraps { flex-direction: column; gap: 4px; }
+    .spec-row.wraps .spec-value { text-align: left; max-width: 100%; }
+    .stack-col { display: flex; flex-direction: column; gap: 22px; }
+    .stack-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 12px; }
+    .includes-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .includes-chip { border: 1px solid var(--black); border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; color: var(--black); }
+    .outcomes-list { display: flex; flex-direction: column; gap: 6px; }
+    .outcomes-list li { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; list-style: none; padding-left: 16px; position: relative; }
+    .outcomes-list li::before { content: "—"; position: absolute; left: 0; color: var(--gray-mid); }
+
+    /* MODULOS */
+    .modules-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 32px; }
+    .module-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; padding: 18px 16px; }
+    .module-card .m-num { font: 800 0.72rem Inter, sans-serif; background: var(--yellow); display: inline-block; padding: 2px 9px; border-radius: 20px; margin-bottom: 10px; }
+    .module-card .m-title { font-size: 0.86rem; font-weight: 800; color: var(--black); line-height: 1.35; margin-bottom: 6px; }
+    .module-card .m-weeks { font-size: 0.72rem; color: var(--gray-mid); font-weight: 600; }
+
+    .why-cta-wrap { text-align: center; margin-top: 32px; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black);
+      font-size: 0.95rem; font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s; border: none; cursor: pointer;
+    }
+    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* CIERRE FINAL */
+    .final-section { max-width: 720px; margin: 0 auto; padding: 56px 48px 64px; text-align: center; }
+    .final-title { font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 28px; line-height: 1.2; }
+    .final-facts { font-size: 0.85rem; color: var(--gray-mid); font-weight: 600; margin-top: 16px; }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 36px 24px 32px; gap: 40px; }
+      .form-card { position: static; }
+      .block-section { padding: 32px 24px; }
+      .henry-strip { padding: 8px 24px 32px; }
+      .henry-box { grid-template-columns: 1fr; padding: 32px 26px; }
+      .agenda-section { padding: 20px 24px 8px; }
+      .fit-section { padding: 20px 24px; }
+      .why-section { padding: 44px 24px; }
+      .why-grid { grid-template-columns: 1fr; gap: 32px; }
+      .modules-row { grid-template-columns: 1fr 1fr; }
+      .spec-row { flex-direction: column; gap: 2px; }
+      .spec-value { text-align: left; }
+      .final-section { padding: 44px 24px 48px; }
+      .companies-strip { padding: 40px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left { animation: fadeUp 0.5s ease both; }
+    .form-card { animation: fadeUp 0.5s 0.1s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge-row">
+        <span class="badge primary">2 clases en vivo y gratis</span>
+        <span class="badge outline">4 y 5 de noviembre</span>
+      </div>
+      <h1>Convertite en AI Builder: de la idea al sistema funcionando, con IA</h1>
+
+      <p class="hero-desc">
+        Dos clases para pasar de describir lo que hay que construir a construirlo vos mismo con
+        un agente de IA — y probarlo con personas reales antes de pedirle nada a desarrollo.
+      </p>
+
+      <div class="hero-insight">
+        <p class="hero-insight-quote">Quien escribe la especificación y quien la construye suelen ser <mark>personas distintas</mark>.</p>
+        <p class="hero-insight-hook">Ahí es donde se pierden semanas. Estas dos clases te muestran cómo cerrar esa distancia vos mismo.</p>
+      </div>
+
+      <!-- CLASES -->
+      <div class="classes-stack">
+        <p class="section-label">Las dos clases</p>
+        <div class="class-card">
+          <div class="class-num">1</div>
+          <div>
+            <div class="class-date">Miércoles 4 de noviembre</div>
+            <div class="class-title">Convertite en AI Builder: construí tu primer sistema con IA</div>
+            <div class="class-desc">De una idea de producto a un sistema funcionando en vivo: frontend, base de datos y reglas de negocio, con un agente de IA construyendo y vos al mando.</div>
+          </div>
+        </div>
+        <div class="class-card">
+          <div class="class-num">2</div>
+          <div>
+            <div class="class-date">Jueves 5 de noviembre</div>
+            <div class="class-title">Claude Masterclass: arquitectura de agentes para PMs</div>
+            <div class="class-desc">Para quienes ya escriben specs y PRDs: cómo diseñar la arquitectura de un agente con Claude, no solo describirla en un documento.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div id="form-wrapper">
+        <div class="form-top-bar"></div>
+        <h2>Reserva tu lugar en las dos clases</h2>
+        <p class="form-sub">Un solo registro para las dos. Te enviamos el link de acceso por mail.</p>
+        <p class="event-compact-facts">Miércoles 4 y jueves 5/11 · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷<br>Online, en vivo</p>
+        <div id="hs-form-container"></div>
+      </div>
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <h3>¡Listo!</h3>
+        <p>Te registraste para las dos clases. Te vamos a avisar por mail antes de cada una.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉN ES HENRY -->
+  <section class="henry-strip">
+    <div class="henry-box">
+      <div>
+        <h3>Quién te lo enseña</h3>
+        <p>Henry es una escuela de tecnología de LATAM con más de 15.000 graduados, que entraron a
+        Henry sin experiencia previa y hoy trabajan en Google, Mercado Libre, Accenture, PayPal,
+        Santander, Kavak y Ualá, entre otras. Está en el top 3 mundial de bootcamps del ranking
+        Course Report 2026. Estas dos clases son la puerta de entrada a AI Product Builder, la
+        carrera más nueva del portfolio.</p>
+      </div>
+      <div class="henry-stats">
+        <div class="henry-stat"><b>+15.000</b><span>graduados en toda la región</span></div>
+        <div class="henry-stat"><b>Top 3</b><span>mundial, ranking Course Report 2026</span></div>
+        <div class="henry-stat"><b>Garantía</b><span>de empleo en AI Product Builder</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 1: QUÉ ES AI PRODUCT BUILDER -->
+  <section class="block-section">
+    <h2 class="block-title">No te formamos como Product Manager. Te formamos para construir.</h2>
+    <div class="block-body">
+      <p>AI Product Builder es la carrera de Henry para quienes quieren llevar una funcionalidad de
+      punta a punta: del pedido del negocio a un MVP funcional, probado con personas reales y listo
+      para que desarrollo lo escale. No es una carrera de estrategia de producto — eso exige años de
+      negocio que no se enseñan en 20 semanas. Es una carrera de ejecución: entender el problema,
+      priorizar, y esta vez, construir vos mismo con IA en vez de esperar el próximo sprint.</p>
+    </div>
+    <p class="pull-quote">Vas a salir con un portfolio de proyectos reales: no solo documentos, sistemas que funcionan.</p>
+  </section>
+
+  <!-- BLOQUE 2 -->
+  <section class="block-section" style="padding-top:8px;">
+    <div class="block-body">
+      <p>Hoy, quien define el problema escribe un PRD y espera. Semanas después, desarrollo entrega
+      algo — y recién ahí se descubre si la idea servía. Cada vuelta de esa rueda cuesta tiempo que
+      nadie recupera.</p>
+      <p>Con un agente de IA bien dirigido, ese ciclo se acorta a días: armás el prototipo, lo
+      probás con usuarios, corregís y recién ahí le pasás a desarrollo una idea ya validada —
+      no una hipótesis.</p>
+    </div>
+  </section>
+
+  <!-- DETALLE DE LAS CLASES -->
+  <section class="agenda-section">
+    <p class="section-label" style="text-align:center;">Qué vas a hacer en cada clase</p>
+
+    <div class="class-detail">
+      <div class="class-detail-head">
+        <span class="cd-num">Clase 1 · 4/11</span>
+        <span class="cd-date">Miércoles · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷</span>
+      </div>
+      <h3>Convertite en AI Builder: construí tu primer sistema con IA</h3>
+      <p>En vivo, de punta a punta: tomamos una idea de producto y la convertimos en un sistema
+      funcionando con un agente de código. No es una demo armada de antemano — lo construimos en
+      la clase, con vos viendo cada decisión.</p>
+      <ul>
+        <li>Del mockup a un prototipo real con un agente de IA</li>
+        <li>Front, base de datos y al menos una regla de negocio funcionando</li>
+        <li>Qué corregirle al agente y qué dejarle hacer solo</li>
+        <li>Qué le falta a lo que construiste para estar en producción</li>
+      </ul>
+    </div>
+
+    <div class="class-detail">
+      <div class="class-detail-head">
+        <span class="cd-num">Clase 2 · 5/11</span>
+        <span class="cd-date">Jueves · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷</span>
+      </div>
+      <h3>Claude Masterclass: arquitectura de agentes para PMs</h3>
+      <p>Para quienes ya escriben specs, historias de usuario y criterios de aceptación: esta clase
+      es sobre pasar de describir un agente a diseñar su arquitectura con Claude — qué contexto
+      necesita, dónde se puede equivocar y cómo revisás lo que te entrega.</p>
+      <ul>
+        <li>Cómo pensar la arquitectura de un agente, no solo su prompt</li>
+        <li>El ciclo de plan, aprobación, ejecución y verificación</li>
+        <li>Qué significa realmente "revisar el trabajo de la IA"</li>
+      </ul>
+    </div>
+
+    <p class="agenda-note">Las dos clases son hands-on. Vení con tu laptop.</p>
+    <div class="agenda-cta-wrap">
+      <a href="#hs-form-container" class="cta-btn">Regístrate gratis</a>
+    </div>
+  </section>
+
+  <!-- PARA QUIEN -->
+  <section class="fit-section">
+    <p class="fit-lead">Es para vos si:</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Trabajás en producto — PM, Product Owner, analista funcional — y hoy dependés al 100% de desarrollo para validar cualquier idea.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Querés entrar al mundo del producto con un camino hands-on: construyendo de verdad, no solo con teoría de frameworks.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Ya usás IA para escribir texto o resúmenes, pero querés aprender a construir sistemas reales con ella.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Te interesa un primer puesto como Product Owner junior o Product Builder.</p>
+      </div>
+    </div>
+    <div class="fit-not">
+      <b>Una aclaración importante:</b> AI Product Builder no forma Product Managers — dirigir la
+      estrategia de un producto exige experiencia de negocio que no se aprende en una carrera. Te
+      prepara para el primer puesto: entender el problema, construir el MVP con IA y entregarlo
+      probado.
+    </div>
+  </section>
+
+  <!-- CIERRE / CARRERA -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header">
+        <span class="career-chip">AI Product Builder, la carrera completa</span>
+        <h2>Próxima cohorte: 17 de noviembre de 2026</h2>
+      </div>
+
+      <div class="modules-row">
+        <div class="module-card">
+          <span class="m-num">M1</span>
+          <div class="m-title">Entender el producto y descubrir el problema</div>
+          <div class="m-weeks">Semanas 1-4</div>
+        </div>
+        <div class="module-card">
+          <span class="m-num">M2</span>
+          <div class="m-title">Del problema al backlog</div>
+          <div class="m-weeks">Semanas 5-9</div>
+        </div>
+        <div class="module-card">
+          <span class="m-num">M3</span>
+          <div class="m-title">Del backlog al MVP con IA</div>
+          <div class="m-weeks">Semanas 10-13</div>
+        </div>
+        <div class="module-card">
+          <span class="m-num">M4</span>
+          <div class="m-title">Uso real, decisión y entrega</div>
+          <div class="m-weeks">Semanas 14-16</div>
+        </div>
+      </div>
+
+      <div class="why-grid">
+        <div class="spec-table">
+          <div class="spec-row"><span class="spec-label">Modalidad</span><span class="spec-value">Part Time</span></div>
+          <div class="spec-row"><span class="spec-label">Duración</span><span class="spec-value">20 semanas</span></div>
+          <div class="spec-row"><span class="spec-label">Dedicación</span><span class="spec-value">~10 horas por semana</span></div>
+          <div class="spec-row wraps"><span class="spec-label">Clases en vivo</span><span class="spec-value">Martes y jueves, 17-19h MX 🇲🇽 / 18-20h COL 🇨🇴 / 20-22h ARG 🇦🇷</span></div>
+          <div class="spec-row wraps"><span class="spec-label">Estructura</span><span class="spec-value">4 módulos + Proyecto Final grupal (9 encuentros, semanas 16-20)</span></div>
+          <div class="spec-row"><span class="spec-label">Proyectos</span><span class="spec-value">4 proyectos integradores, uno por módulo</span></div>
+        </div>
+
+        <div class="stack-col">
+          <div>
+            <p class="stack-label">Al terminar podés ser</p>
+            <ul class="outcomes-list">
+              <li>Product Owner junior</li>
+              <li>Product Builder</li>
+            </ul>
+          </div>
+          <div>
+            <p class="stack-label">Qué te llevás</p>
+            <ul class="outcomes-list">
+              <li>Portfolio con una pieza real por módulo, no solo documentos</li>
+              <li>Backlogs que desarrollo construye y QA prueba sin preguntar</li>
+              <li>Un MVP propio, publicado y probado con personas</li>
+            </ul>
+          </div>
+          <div>
+            <p class="stack-label">Incluye</p>
+            <div class="includes-list">
+              <span class="includes-chip">Garantía de empleo</span>
+              <span class="includes-chip">Espacio semanal de comunidad y consultas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-cta-wrap">
+        <a href="#hs-form-container" class="cta-btn">Quiero mi lugar →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE FINAL -->
+  <section class="final-section">
+    <h2 class="final-title">Dos clases para dejar de describir lo que hay que construir, y construirlo vos.</h2>
+    <a href="#hs-form-container" class="cta-btn">Reserva tu lugar →</a>
+    <p class="final-facts">Miércoles 4 y jueves 5 de noviembre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · En vivo y gratis</p>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google" />
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture" />
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal" />
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander" />
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak" />
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá" />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    const MASTERCLASS = {
+      // Clase 1 (4/11) como trigger principal del flujo; la Clase 2 (5/11) se comunica en los temas.
+      masterclass_fecha_evento:   String(new Date('2026-11-04T20:00:00-03:00').getTime()),
+
+      // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
+      // flow por evento (infra/17 §3), no solo un texto descriptivo.
+      masterclass_nombre:         'Curso intro AI Product Builder: Convertite en AI Builder + Claude Masterclass',
+      masterclass_fecha_larga:    'Miércoles 4 y jueves 5 de noviembre',
+      masterclass_hora:           '17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷',
+
+      // Instructor de cada clase sin confirmar al armar esta landing — no inventar nombre.
+      masterclass_speaker_nombre: '',
+      masterclass_speaker_bio:    '',
+
+      masterclass_tema_1:         'Clase 1 (4/11): Convertite en AI Builder — construí tu primer sistema con IA',
+      masterclass_tema_2:         'Clase 2 (5/11): Claude Masterclass — arquitectura de agentes para PMs',
+      masterclass_tema_3:         'Qué es AI Product Builder y cómo te prepara Henry para el rol',
+
+      // Pendiente: armar en StreamYard y pasar el link de YouTube antes de T-1 (ver docs/masterclass_asistente.md §6a).
+      masterclass_youtube_link:   '',
+      masterclass_cupon_code:     'MASTERCLASS25',
+      masterclass_cta_url:        'https://www.soyhenry.com/ai-product-builder?utm_source=instagram&utm_medium=organico&utm_campaign=masterclass-4.11.26&utm_content=agenda',
+
+      masterclass_cohorte_texto:  '17 de noviembre de 2026, Part Time',
+
+      career_interest:            '',
+      masterclass_carrera:        'AI Product Builder',
+
+      // dates = UTC. 20:00 ARG 4/11 = 23:00 UTC 4/11; cierre tomado al final de la Clase 2 (5/11 22hs ARG = 6/11 01:00 UTC).
+      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('Curso intro AI Product Builder: Convertite en AI Builder + Claude Masterclass')
+        + '&dates=20261104T230000Z/20261105T000000Z'
+        + '&details=' + encodeURIComponent('Curso intro en vivo y gratis de Henry Live Sessions sobre AI Product Builder. Clase 1: 4/11. Clase 2: 5/11, mismo horario.')
+        + '&location=Online',
+    };
+
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "19612811",
+      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      target: "#hs-form-container",
+      onFormReady: function() {
+        setTimeout(() => {
+          const iframe = document.querySelector('#hs-form-container iframe');
+          const idoc = iframe && iframe.contentDocument;
+          if (!idoc) return;
+
+          const style = idoc.createElement('style');
+          style.textContent = `
+            body { font-family: 'Inter', sans-serif !important; }
+            .hs-form-field label { font-size: 0.8rem !important; font-weight: 600 !important; color: #111111 !important; margin-bottom: 6px !important; }
+            .hs-input { background: #f5f5f5 !important; border: 1.5px solid #e2e2e2 !important; border-radius: 8px !important; padding: 11px 14px !important; font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important; box-sizing: border-box !important; }
+            .hs-input:focus { outline: none !important; border-color: #111111 !important; background: #ffffff !important; }
+            .hs-button { background: #FFFF00 !important; color: #111111 !important; border: none !important; border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; font-family: 'Inter', sans-serif !important; }
+            .hs-button:hover { background: #e6e600 !important; }
+            .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; }
+          `;
+          idoc.head.appendChild(style);
+
+          const btn = idoc.querySelector('input[type="submit"]');
+          if (btn) btn.value = 'Registrarme';
+
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
+
+          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
+
+          idoc.querySelectorAll('input, select').forEach(input => {
+            if (fieldMap[input.name] !== undefined && fieldMap[input.name] !== '') {
+              input.value = fieldMap[input.name];
+              input.dispatchEvent(new Event('input',  { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+        }, 600);
+      },
+      onFormSubmit: function() {
+        if (window.fbq) {
+          fbq('trackCustom', 'Registro clase en vivo', {
+            content_name: 'landing-curso-intro-ai-product-builder',
+            utm_source: utms.utm_source || '',
+            utm_medium: utms.utm_medium || '',
+            utm_campaign: utms.utm_campaign || '',
+          });
+        }
+        setTimeout(() => {
+          document.getElementById('form-wrapper').style.display = 'none';
+          document.getElementById('success-state').style.display = 'block';
+        }, 800);
+      }
+    });
+  </script>
+</body>
+</html>

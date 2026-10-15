@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qué hace un Forward Deployed Engineer — Panel en vivo | Henry</title>
+  <meta name="description" content="En vivo y gratis, jueves 29 de octubre. Un panel con Forward Deployed Engineers de la industria: qué es el rol, qué hacen en el día a día y cómo está la búsqueda hoy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Qué hace un Forward Deployed Engineer — Panel en vivo con la industria" />
+  <meta property="og:description" content="En vivo y gratis, jueves 29 de octubre, 20hs ARG. Panel + Q&A con Forward Deployed Engineers de la industria." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/banner-qa-fde-industria.jpg" />
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+  <!-- JSON-LD de evento -- fecha y hora confirmadas por Agus (29/10 20hs ARG, 60 min). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Qué hace un Forward Deployed Engineer: Live Q&A con FDEs de la industria",
+    "startDate": "2026-10-29T20:00:00-03:00",
+    "endDate": "2026-10-29T21:00:00-03:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://recursos.soyhenry.com/landing-qa-fde-industria.html"
+    },
+    "description": "Panel en vivo y gratis de Henry Live Sessions sobre qué es y qué hace un Forward Deployed Engineer.",
+    "isAccessibleForFree": true,
+    "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px; border-bottom: 1px solid var(--border);
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      align-items: start; max-width: 1120px; margin: 0 auto;
+      padding: 56px 48px 48px;
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge {
+      font-size: 0.7rem; font-weight: 800; padding: 6px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900; line-height: 1.1;
+      letter-spacing: -1.5px; color: var(--black); margin-bottom: 18px;
+    }
+    .hero-desc { font-size: 1rem; color: var(--gray-dark); line-height: 1.7; }
+    .hero-insight { margin-top: 26px; padding-top: 22px; border-top: 1.5px solid var(--border); }
+    .hero-insight-num { font-size: clamp(2.6rem, 5.5vw, 3.6rem); font-weight: 900; letter-spacing: -2px; line-height: 1; }
+    .hero-insight-num mark { background: var(--yellow); color: var(--black); padding: 0 8px; }
+    .hero-insight-label { font-size: 0.95rem; color: var(--gray-dark); line-height: 1.5; margin-top: 8px; max-width: 40ch; }
+    .hero-insight-hook { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-top: 10px; }
+    .hero-insight-source { font-size: 0.7rem; color: var(--gray-mid); margin-top: 8px; }
+
+    /* LINEUP (dentro de hero-left, debajo del insight) */
+    .lineup-card {
+      margin-top: 28px; border: 2px dashed var(--border); border-radius: 20px;
+      padding: 24px 28px; background: var(--gray-light);
+    }
+    .lineup-card .section-label { margin-bottom: 8px; }
+    .lineup-title { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 6px; }
+    .lineup-desc { font-size: 0.86rem; color: var(--gray-dark); line-height: 1.55; }
+    .lineup-mod { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--gray-mid); }
+    .lineup-mod b { color: var(--black); }
+
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--gray-mid); margin-bottom: 12px;
+    }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white); border: 1.5px solid var(--border); border-radius: 16px;
+      padding: 36px; position: sticky; top: 80px; box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .form-card h2 { font-size: 1.35rem; font-weight: 800; color: var(--black); margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.2; }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 18px; }
+    .event-compact-facts { font-size: 0.82rem; font-weight: 600; color: var(--gray-dark); margin-bottom: 20px; line-height: 1.5; }
+    #hs-form-container iframe { width: 100%; border: none; }
+
+    /* Success state */
+    .success-state { display: none; text-align: center; padding: 16px 0; }
+    .success-icon {
+      width: 72px; height: 72px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem;
+    }
+    .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
+    .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* NARRATIVE BLOCKS */
+    .block-section { max-width: 720px; margin: 0 auto; padding: 40px 48px; }
+    .block-title { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 900; letter-spacing: -0.7px; line-height: 1.2; margin-bottom: 18px; }
+    .block-body p { font-size: 1rem; color: var(--gray-dark); line-height: 1.75; margin-bottom: 14px; }
+    .block-body p:last-child { margin-bottom: 0; }
+    .pull-quote {
+      border-left: 3px solid var(--yellow); background: var(--gray-light);
+      padding: 16px 22px; margin: 20px 0; font-size: 1.05rem; font-weight: 800;
+      color: var(--black); line-height: 1.5;
+    }
+
+    /* STATS STRIP */
+    .stats-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 40px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .stat-card { border: 1.5px solid var(--border); border-radius: 16px; padding: 22px 20px; }
+    .stat-num { font-size: 2rem; font-weight: 900; letter-spacing: -1px; color: var(--black); }
+    .stat-label { font-size: 0.8rem; color: var(--gray-dark); line-height: 1.4; margin-top: 6px; }
+    .stat-source { font-size: 0.68rem; color: var(--gray-mid); margin-top: 8px; }
+
+    /* AGENDA */
+    .agenda-section { max-width: 720px; margin: 0 auto; padding: 24px 48px 8px; }
+    .agenda-list { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 18px; }
+    .agenda-row { display: flex; gap: 18px; padding: 18px 22px; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .agenda-row:last-child { border-bottom: none; }
+    .agenda-num {
+      min-width: 30px; height: 30px; background: var(--yellow); color: var(--black);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 800; flex-shrink: 0;
+    }
+    .agenda-title { font-size: 0.92rem; font-weight: 800; color: var(--black); margin-bottom: 4px; }
+    .agenda-desc { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; }
+    .agenda-note { font-size: 0.88rem; color: var(--gray-mid); font-style: italic; margin-bottom: 24px; }
+    .agenda-cta-wrap { text-align: center; }
+
+    /* PARA QUIEN */
+    .fit-section { max-width: 720px; margin: 0 auto; padding: 24px 48px; }
+    .fit-lead { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 20px; }
+    .check-list { display: flex; flex-direction: column; gap: 16px; }
+    .check-item { display: flex; gap: 14px; align-items: flex-start; }
+    .check-mark {
+      min-width: 26px; height: 26px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-weight: 900;
+      font-size: 0.8rem; color: var(--black); flex-shrink: 0; margin-top: 2px;
+    }
+    .check-item p { font-size: 0.96rem; color: var(--gray-dark); line-height: 1.55; }
+
+    /* CIERRE / CARRERA */
+    .why-section { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 48px; }
+    .why-inner { max-width: 1120px; margin: 0 auto; }
+    .why-header { text-align: center; margin-bottom: 36px; }
+    .why-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 10px; }
+    .career-chip {
+      display: inline-block; background: var(--yellow); color: var(--black);
+      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 32px; }
+    .spec-table { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .spec-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 18px; border-bottom: 1px solid var(--border); }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-label { font-size: 0.82rem; font-weight: 700; color: var(--gray-mid); }
+    .spec-value { font-size: 0.86rem; font-weight: 700; color: var(--black); text-align: right; max-width: 60%; }
+    .spec-row.wraps { flex-direction: column; gap: 4px; }
+    .spec-row.wraps .spec-value { text-align: left; max-width: 100%; }
+    .stack-col { display: flex; flex-direction: column; gap: 22px; }
+    .stack-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 12px; }
+    .includes-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .includes-chip { border: 1px solid var(--black); border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; color: var(--black); }
+    .outcomes-list { display: flex; flex-direction: column; gap: 6px; }
+    .outcomes-list li { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; list-style: none; padding-left: 16px; position: relative; }
+    .outcomes-list li::before { content: "—"; position: absolute; left: 0; color: var(--gray-mid); }
+    .why-cta-wrap { text-align: center; margin-top: 32px; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black);
+      font-size: 0.95rem; font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s; border: none; cursor: pointer;
+    }
+    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* CIERRE FINAL */
+    .final-section { max-width: 720px; margin: 0 auto; padding: 56px 48px 64px; text-align: center; }
+    .final-title { font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 28px; line-height: 1.2; }
+    .final-facts { font-size: 0.85rem; color: var(--gray-mid); font-weight: 600; margin-top: 16px; }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 64px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 36px 24px 32px; gap: 40px; }
+      .form-card { position: static; }
+      .block-section { padding: 32px 24px; }
+      .stats-section { padding: 8px 24px 32px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .agenda-section { padding: 20px 24px 8px; }
+      .fit-section { padding: 20px 24px; }
+      .why-section { padding: 44px 24px; }
+      .why-grid { grid-template-columns: 1fr; gap: 32px; }
+      .spec-row { flex-direction: column; gap: 2px; }
+      .spec-value { text-align: left; }
+      .final-section { padding: 44px 24px 48px; }
+      .companies-strip { padding: 40px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left { animation: fadeUp 0.5s ease both; }
+    .form-card { animation: fadeUp 0.5s 0.1s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge-row">
+        <span class="badge primary">En vivo y gratis</span>
+        <span class="badge outline">Jueves 29 de octubre</span>
+      </div>
+      <h1>Qué hace un Forward Deployed Engineer</h1>
+
+      <p class="hero-desc">
+        Un panel en vivo con Forward Deployed Engineers de la industria: qué es el rol, qué hacen
+        en el día a día, y cómo está la búsqueda hoy. Si escuchaste el término y querés entender
+        si es para vos, este es el espacio para preguntarlo directo.
+      </p>
+
+      <div class="hero-insight">
+        <div class="hero-insight-num"><mark>+1.165%</mark></div>
+        <p class="hero-insight-label">creció interanual la demanda de Forward Deployed Engineers
+        entre enero y octubre de 2025. Es el rol técnico que más rápido se expandió en toda la industria.</p>
+        <p class="hero-insight-hook">Y casi nadie sabe todavía de qué se trata.</p>
+        <p class="hero-insight-source">bloomberry, análisis de 1.000 avisos de trabajo (2026)</p>
+      </div>
+
+      <!-- LINEUP -->
+      <div class="lineup-card">
+        <p class="section-label">Line-up</p>
+        <p class="lineup-title">Forward Deployed Engineers de la industria, en confirmación</p>
+        <p class="lineup-desc">Vamos a sumar los perfiles del panel a esta página a medida que se
+        confirman — va a haber nombres grosos. Registrate ahora para que te avisemos apenas estén
+        cerrados.</p>
+        <p class="lineup-mod">+ <b>moderador/a de Henry</b></p>
+      </div>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div id="form-wrapper">
+        <div class="form-top-bar"></div>
+        <h2>Reserva tu lugar</h2>
+        <p class="form-sub">Te enviamos el link de acceso por mail.</p>
+        <p class="event-compact-facts">Jueves 29/10 · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 1 hora<br>Online, en vivo</p>
+        <div id="hs-form-container"></div>
+      </div>
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <h3>¡Listo!</h3>
+        <p>Te registraste correctamente. Te vamos a avisar por mail antes del panel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 1 -->
+  <section class="block-section">
+    <h2 class="block-title">Lo viste en una oferta de trabajo y no sabías bien qué era</h2>
+    <div class="block-body">
+      <p>A comienzos de 2026, apenas entre el 5% y el 10% de las empresas tenía en su radar
+      contratar un Forward Deployed Engineer. Al cierre del segundo trimestre, esa cifra había
+      saltado al 70%. Si en los últimos meses te tocó ver este título en una búsqueda y no sabías
+      bien de qué se trataba, no sos el único.</p>
+    </div>
+    <p class="pull-quote">Es uno de los roles que más rápido creció en toda la industria del software — y la mayoría todavía no sabe bien en qué consiste.</p>
+  </section>
+
+  <!-- BLOQUE 2 -->
+  <section class="block-section" style="padding-top:8px;">
+    <div class="block-body">
+      <p>Un Forward Deployed Engineer no espera a que el problema llegue definido: se sienta con
+      quien lo tiene, lo entiende y construye la solución ahí mismo, en producción, con los datos
+      reales del cliente. Es el punto intermedio entre ingeniería de producto, ingeniería de
+      soluciones e implementación — y por eso el rol se ve distinto según la empresa que lo publica.</p>
+      <p>Eso es justo lo difícil de explicar en una definición de manual, y lo que un panel en vivo
+      con quienes lo viven todos los días puede responder mejor que cualquier artículo.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">17.000</div>
+        <div class="stat-label">FDEs en Estados Unidos hoy, pero solo ~2.000 combinan experiencia sectorial y manejo de IA aplicada al nivel que pide el mercado.</div>
+        <div class="stat-source">Censo de Plank</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">12%</div>
+        <div class="stat-label">de las búsquedas de FDE son para perfiles junior. El 60% pide entre 3 y 5 años de experiencia.</div>
+        <div class="stat-source">bloomberry, 2026</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">95%</div>
+        <div class="stat-label">de los pilotos de IA empresarial fracasan — no por el modelo, sino por datos aislados y mal estructurados. Ahí entra el FDE.</div>
+        <div class="stat-source">MIT, 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">USD 1.000M</div>
+        <div class="stat-label">invirtió AWS en junio de 2026 para formar y contratar FDEs. Un mes después, Microsoft respondió con un programa de USD 2.500M.</div>
+        <div class="stat-source">Anuncios públicos, 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="agenda-section">
+    <p class="section-label" style="text-align:center;">1 hora, con preguntas abiertas al final</p>
+    <div class="agenda-list">
+      <div class="agenda-row">
+        <div class="agenda-num">1</div>
+        <div>
+          <div class="agenda-title">Qué es (y qué no es) un Forward Deployed Engineer</div>
+          <div class="agenda-desc">La diferencia con Solutions Engineer, Implementation Engineer y Product Engineer, contada por quienes lo viven.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">2</div>
+        <div>
+          <div class="agenda-title">El día a día del rol</div>
+          <div class="agenda-desc">Cómo es sentarse con un cliente a resolver un problema que todavía no está definido.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">3</div>
+        <div>
+          <div class="agenda-title">Cómo está la búsqueda hoy</div>
+          <div class="agenda-desc">Qué evalúan las empresas, qué stack piden y por dónde se entra al rol.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">4</div>
+        <div>
+          <div class="agenda-title">Tu pregunta, en vivo</div>
+          <div class="agenda-desc">Preguntale directo al panel si este camino es para vos.</div>
+        </div>
+      </div>
+    </div>
+    <p class="agenda-note">Sin libreto cerrado: el panel responde lo que el público pregunte.</p>
+    <div class="agenda-cta-wrap">
+      <a href="#hs-form-container" class="cta-btn">Regístrate gratis</a>
+    </div>
+  </section>
+
+  <!-- PARA QUIEN -->
+  <section class="fit-section">
+    <p class="fit-lead">Te sirve si:</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Trabajás como developer, AI engineer, data engineer, analyst o en un rol técnico orientado al cliente, y querés entender si este camino es para vos.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Ya construís con LLMs y te interesa un rol con más contacto directo con el negocio y el cliente.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Querés tomar una decisión de carrera informada, no solo una definición de LinkedIn.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Te interesa Henry y su nueva Especialización Forward Deployed Engineer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE / CARRERA -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header">
+        <span class="career-chip">Sobre la Especialización FDE de Henry</span>
+        <h2>Lo que nadie más enseña en la región</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="spec-table">
+          <div class="spec-row"><span class="spec-label">Modalidad</span><span class="spec-value">Part Time</span></div>
+          <div class="spec-row"><span class="spec-label">Duración</span><span class="spec-value">8 semanas</span></div>
+          <div class="spec-row wraps"><span class="spec-label">Clases en vivo</span><span class="spec-value">Martes y jueves, 20 a 22h ARG</span></div>
+          <div class="spec-row wraps"><span class="spec-label">Formato</span><span class="spec-value">Engagement real: cada equipo recibe un cliente con un problema de negocio sin definir, y lo resuelve de punta a punta</span></div>
+          <div class="spec-row wraps"><span class="spec-label">Para quién</span><span class="spec-value">Developers con 3+ años de experiencia que ya construyen con LLMs — graduados de Henry AI Engineering o vía challenge técnico</span></div>
+        </div>
+
+        <div class="stack-col">
+          <div>
+            <p class="stack-label">Qué vas a construir</p>
+            <ul class="outcomes-list">
+              <li>Discovery y scoping de un problema ambiguo con un cliente real</li>
+              <li>Un POC funcional, demostrable, con iteración semanal</li>
+              <li>Integración con sistemas enterprise: identidad, compliance, producción</li>
+              <li>Un capstone defendido ante un panel con FDEs reales de empresas partner</li>
+            </ul>
+          </div>
+          <div>
+            <p class="stack-label">Al terminar podés apuntar a</p>
+            <ul class="outcomes-list">
+              <li>Forward Deployed Engineer</li>
+              <li>AI Solutions Engineer / Solutions Architect</li>
+            </ul>
+          </div>
+          <div>
+            <p class="stack-label">Incluye</p>
+            <div class="includes-list">
+              <span class="includes-chip">Capstone en inglés ante panel de FDEs reales</span>
+              <span class="includes-chip">Networking de contratación</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-cta-wrap">
+        <a href="#hs-form-container" class="cta-btn">Quiero mi lugar en el panel →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE FINAL -->
+  <section class="final-section">
+    <h2 class="final-title">1 hora para entender un rol que recién está explotando. Antes de que todos hablen de él.</h2>
+    <a href="#hs-form-container" class="cta-btn">Reserva tu lugar →</a>
+    <p class="final-facts">Jueves 29 de octubre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 1 hora · En vivo y gratis</p>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google" />
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture" />
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal" />
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander" />
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak" />
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá" />
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    const MASTERCLASS = {
+      masterclass_fecha_evento:   String(new Date('2026-10-29T20:00:00-03:00').getTime()),
+
+      // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
+      // flow por evento (infra/17 §3), no solo un texto descriptivo.
+      masterclass_nombre:         'Qué hace un Forward Deployed Engineer: Live Q&A con FDEs de la industria',
+      masterclass_fecha_larga:    'Jueves 29 de octubre',
+      masterclass_hora:           '17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷',
+
+      // Speakers todavía en confirmación (lineup "muy groso", TBD al armar esta landing) — no inventar nombres.
+      masterclass_speaker_nombre: '',
+      masterclass_speaker_bio:    '',
+
+      masterclass_tema_1:         'Qué es (y qué no es) un Forward Deployed Engineer',
+      masterclass_tema_2:         'Cómo es el día a día del rol, contado por quienes lo viven',
+      masterclass_tema_3:         'Cómo está la búsqueda hoy y qué evalúan las empresas',
+
+      // Pendiente: armar en StreamYard y pasar el link de YouTube antes de T-1 (ver docs/masterclass_asistente.md §6a).
+      masterclass_youtube_link:   '',
+      masterclass_cupon_code:     'MASTERCLASS25',
+      masterclass_cta_url:        'https://www.soyhenry.com/forward-deployed-engineer?utm_source=instagram&utm_medium=organico&utm_campaign=masterclass-29.10.26&utm_content=agenda',
+
+      // Próxima cohorte: 16/11/2026 según blog publicado; el business case interno todavía la marca "(pendiente)" — confirmar antes de escalar difusión paga.
+      masterclass_cohorte_texto:  '16 de noviembre de 2026, Part Time',
+
+      career_interest:            '',
+      masterclass_carrera:        'Forward Deployed Engineer',
+
+      // dates = UTC. 20:00 ARG = 23:00 UTC mismo dia; dura 60min -> 00:00 UTC del dia siguiente.
+      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('Qué hace un Forward Deployed Engineer: Live Q&A con FDEs de la industria')
+        + '&dates=20261029T230000Z/20261030T000000Z'
+        + '&details=' + encodeURIComponent('Panel en vivo y gratis de Henry Live Sessions sobre qué es y qué hace un Forward Deployed Engineer.')
+        + '&location=Online',
+    };
+
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "19612811",
+      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      target: "#hs-form-container",
+      onFormReady: function() {
+        setTimeout(() => {
+          const iframe = document.querySelector('#hs-form-container iframe');
+          const idoc = iframe && iframe.contentDocument;
+          if (!idoc) return;
+
+          const style = idoc.createElement('style');
+          style.textContent = `
+            body { font-family: 'Inter', sans-serif !important; }
+            .hs-form-field label { font-size: 0.8rem !important; font-weight: 600 !important; color: #111111 !important; margin-bottom: 6px !important; }
+            .hs-input { background: #f5f5f5 !important; border: 1.5px solid #e2e2e2 !important; border-radius: 8px !important; padding: 11px 14px !important; font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important; box-sizing: border-box !important; }
+            .hs-input:focus { outline: none !important; border-color: #111111 !important; background: #ffffff !important; }
+            .hs-button { background: #FFFF00 !important; color: #111111 !important; border: none !important; border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; font-family: 'Inter', sans-serif !important; }
+            .hs-button:hover { background: #e6e600 !important; }
+            .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; }
+          `;
+          idoc.head.appendChild(style);
+
+          const btn = idoc.querySelector('input[type="submit"]');
+          if (btn) btn.value = 'Registrarme';
+
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
+
+          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
+
+          idoc.querySelectorAll('input, select').forEach(input => {
+            if (fieldMap[input.name] !== undefined && fieldMap[input.name] !== '') {
+              input.value = fieldMap[input.name];
+              input.dispatchEvent(new Event('input',  { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+        }, 600);
+      },
+      onFormSubmit: function() {
+        if (window.fbq) {
+          fbq('trackCustom', 'Registro clase en vivo', {
+            content_name: 'landing-qa-fde-industria',
+            utm_source: utms.utm_source || '',
+            utm_medium: utms.utm_medium || '',
+            utm_campaign: utms.utm_campaign || '',
+          });
+        }
+        setTimeout(() => {
+          document.getElementById('form-wrapper').style.display = 'none';
+          document.getElementById('success-state').style.display = 'block';
+        }, 800);
+      }
+    });
+  </script>
+</body>
+</html>
