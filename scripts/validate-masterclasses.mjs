@@ -23,7 +23,7 @@ const file = resolve(args.find((a) => !a.startsWith('--')) ?? 'masterclasses.jso
 const root = dirname(file);
 const now = nowArg ? new Date(nowArg.slice('--now='.length)) : new Date();
 
-const CARRERAS = ['AI Engineering', 'AI Automation', 'Full Stack AI', 'Data Science'];
+const CARRERAS = ['AI Engineering', 'AI Automation', 'Full Stack AI', 'Data Science', 'Forward Deployed Engineer', 'AI Product Builder'];
 const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const OFFSET = /(Z|[+-]\d{2}:\d{2})$/;
 const YOUTUBE = /(?:youtube\.com\/watch\?|youtu\.be\/)/i;
