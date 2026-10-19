@@ -539,6 +539,27 @@ function showCTA() {
     fetch(URL_HS, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
   };
 
+  /* GRO-760: desde que pieza de soyhenry.com se abrio la landing (?origin=) y
+     de que carrera venia (?career=). La carrera ya queda en el pageUri de los
+     envios, que es esta URL con su query; el origen va a landing_origin_id, el
+     mismo desplegable que usa el formulario embebido de soyhenry.com para el
+     reporte de no-show por origen.
+     Va en un envio APARTE, sin then ni catch: si el form de esta landing no
+     declara landing_origin_id o el valor no esta en la lista, lo peor que puede
+     pasar es que se pierda el origen, nunca el lead ni las respuestas. */
+  var ORIGENES = ['cta_hero', 'preheader', 'sticky_banner', 'pop_up', 'anchor_agendar', 'cta_template_manager'];
+  function enviarOrigen(base) {
+    var origen = new URLSearchParams(window.location.search).get('origin') || '';
+    if (ORIGENES.indexOf(origen) === -1) return;
+    var payload = {
+      fields: base.concat([{ objectTypeId: '0-1', name: 'landing_origin_id', value: origen }]),
+      context: { pageUri: window.location.href, pageName: document.title }
+    };
+    var hutk = cookie('hubspotutk');
+    if (hutk) payload.context.hutk = hutk;
+    fetch(URL_HS, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     alerta.style.display = 'none';
@@ -599,6 +620,7 @@ function showCTA() {
            mismo contacto por el email. Guardamos la identidad para poder
            armarlo (el form exige sus 4 campos obligatorios en cada envio). */
         identidad = campos.slice();
+        enviarOrigen(campos);
         startFlow();
         return;
       }
