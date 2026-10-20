@@ -57,6 +57,13 @@ masterclass va al JSON.
   `docs/superpowers/specs/2026-09-18-migracion-masterclasses-a-soyhenry-design.md` (§4 y §8). Si
   cambia allá, se actualiza `scripts/validate-masterclasses.mjs`.
 
+## Imágenes de los mails: `mail/`
+
+Las imágenes de los mails de Henry viven en `mail/` y se publican en
+`recursos.soyhenry.com/mail/<nombre>` (reemplazan al administrador de archivos de Mailchimp, que se
+deja con la migración a SendGrid). **No se borran ni se reemplazan**: los mails ya enviados las
+siguen pidiendo. Cómo sumar una: `mail/README.md`.
+
 ## Cómo verificar sin romper nada
 
 - **No hagas polling ni loops contra `recursos.soyhenry.com`** (ni `curl` en un `while`, ni un
