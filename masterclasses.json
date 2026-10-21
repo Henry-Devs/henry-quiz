@@ -2094,30 +2094,6 @@
       "link": "landing-asistente-a-tu-medida.html"
     },
     {
-      "slug": "qa-fde-industria",
-      "nombre": "¿Qué hace un Forward Deployed Engineer? Te lo explicamos",
-      "desc": "Panel en vivo con la industria: qué es el rol, qué hace en el día a día y cómo está la búsqueda hoy.",
-      "carrera": "AI Engineering",
-      "fecha": "2026-10-29T20:00:00-03:00",
-      "duracionMin": 60,
-      "fechaCorta": "29 OCT",
-      "fechaLarga": "Jueves 29 de octubre",
-      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
-      "banner": "banner-qa-fde-industria.jpg",
-      "speakers": [
-        {
-          "nombre": "Alexander Vicondoa",
-          "rol": "Head of LATAM Forward Deployed Engineering · ElevenLabs",
-          "foto": "alexander-vicondoa.jpg"
-        },
-        {
-          "nombre": "Luz Borchardt",
-          "rol": "Founder de Henry"
-        }
-      ],
-      "link": "landing-qa-fde-industria.html"
-    },
-    {
       "slug": "open-house-fde",
       "nombre": "FDE en Henry: Open House con Fer",
       "desc": "Cómo convertirte en Forward Deployed Engineer, con alguien que ya hace este trabajo todos los días.",
