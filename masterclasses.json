@@ -2126,8 +2126,9 @@
       "banner": "banner-curso-intro-ai-product-builder.jpg",
       "speakers": [
         {
-          "nombre": "Equipo Henry",
-          "rol": "Instructores de AI Product Builder"
+          "nombre": "Camilo Pineda",
+          "rol": "AI Solutions Specialist en Henry",
+          "foto": "camilo.jpg"
         }
       ],
       "link": "landing-curso-intro-ai-product-builder.html"
