@@ -2094,26 +2094,6 @@
       "link": "landing-asistente-a-tu-medida.html"
     },
     {
-      "slug": "open-house-fde",
-      "nombre": "FDE en Henry: Open House con Fer",
-      "desc": "Cómo convertirte en Forward Deployed Engineer, con alguien que ya hace este trabajo todos los días.",
-      "carrera": "AI Engineering",
-      "fecha": "2026-11-09T20:00:00-03:00",
-      "duracionMin": 60,
-      "fechaCorta": "09 NOV",
-      "fechaLarga": "Lunes 9 de noviembre",
-      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
-      "banner": "banner-open-house-fde.jpg",
-      "speakers": [
-        {
-          "nombre": "Fer",
-          "rol": "AI Solutions Specialist · Teaching Assistant de FDE en Henry",
-          "foto": "fer.jpg"
-        }
-      ],
-      "link": "landing-open-house-fde.html"
-    },
-    {
       "slug": "curso-intro-ai-product-builder",
       "nombre": "Conviértete en AI Product Builder: de la idea al sistema funcionando con IA",
       "desc": "Arma un prototipo con IA en la Clase 1 y complétalo en sistema en la Clase 2, en vivo.",
