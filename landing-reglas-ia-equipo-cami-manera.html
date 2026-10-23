@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Las reglas de juego para la IA de tu equipo | Henry</title>
+  <meta name="description" content="En vivo y gratis, jueves 29 de octubre, 20hs ARG. Con Cami Manera, Data & AI leader y co-creadora de AI para Líderes: salí con el primer borrador de las reglas de IA de tu equipo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="henry-favicon.png" />
+  <link rel="apple-touch-icon" href="henry-favicon.png" />
+  <meta property="og:title" content="Las reglas de juego para la IA de tu equipo" />
+  <meta property="og:description" content="En vivo y gratis, jueves 29 de octubre, 20hs ARG. Con Cami Manera, Data & AI leader." />
+  <meta property="og:image" content="https://recursos.soyhenry.com/banner-reglas-ia-equipo-cami-manera.jpg" />
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+
+  <!-- JSON-LD de evento -- fecha y hora confirmadas por Agus (29/10 20hs ARG, 45 min). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "AI para Líderes: Las reglas de juego para la IA de tu equipo, con Cami Manera",
+    "startDate": "2026-10-29T20:00:00-03:00",
+    "endDate": "2026-10-29T20:45:00-03:00",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://recursos.soyhenry.com/landing-reglas-ia-equipo-cami-manera.html"
+    },
+    "description": "Clase en vivo y gratis de Henry Live Sessions sobre cómo poner reglas de uso de IA en tu equipo, con Cami Manera.",
+    "isAccessibleForFree": true,
+    "organizer": { "@type": "Organization", "name": "Henry", "url": "https://www.soyhenry.com" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFFF00;
+      --yellow-dark: #e6e600;
+      --black: #111111;
+      --dark: #1e1e1e;
+      --dark-border: #333333;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --gray-dark: #444444;
+      --border: #e2e2e2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px; border-bottom: 1px solid var(--border);
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+    }
+
+    /* HERO — alineado a la izquierda, sin sidebar de formulario */
+    .hero { max-width: 1120px; margin: 0 auto; padding: 56px 48px 40px; }
+    .hero-inner { max-width: 640px; }
+    .hero-info-card {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+      gap: 12px; border: 1.5px solid var(--border); border-radius: 14px;
+      padding: 14px 22px; margin-bottom: 22px;
+    }
+    .badge {
+      font-size: 0.7rem; font-weight: 800; padding: 6px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .badge.primary { background: var(--yellow); color: var(--black); }
+    .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
+    .hero-info-schedule { font-size: 0.85rem; font-weight: 700; color: var(--gray-dark); }
+    .hero-kicker {
+      display: inline-block; background: var(--yellow); color: var(--black);
+      font-size: 1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 8px 20px; border-radius: 10px; margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(2rem, 3.6vw, 2.8rem); font-weight: 900; line-height: 1.08;
+      letter-spacing: -1.5px; color: var(--black); margin-bottom: 20px;
+    }
+    .hero-desc { font-size: 1.05rem; color: var(--gray-dark); line-height: 1.7; margin-bottom: 28px; }
+    .hero-desc strong { color: var(--black); }
+
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--gray-mid); margin-bottom: 12px; text-align: center;
+    }
+
+    /* CAMI FEATURE — protagonismo, estética tipo tarjeta oscura de la landing de la carrera */
+    .cami-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 16px; }
+    .cami-card {
+      background: var(--dark); border-radius: 24px; overflow: hidden;
+      display: grid; grid-template-columns: 300px 1fr; align-items: stretch;
+    }
+    .cami-photo { position: relative; background: var(--dark); height: 440px; overflow: hidden; }
+    .cami-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .cami-info { padding: 40px 44px; color: var(--white); display: flex; flex-direction: column; justify-content: center; }
+    .cami-kicker { color: var(--yellow); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+    .cami-name { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 4px; }
+    .cami-role { color: #b0b0b0; font-size: 1rem; font-weight: 600; margin-bottom: 20px; }
+    .cami-bio { color: #d4d4d4; font-size: 0.92rem; line-height: 1.6; margin-bottom: 24px; max-width: 56ch; }
+    .cami-creds { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--dark-border); border-radius: 14px; overflow: hidden; margin-bottom: 24px; }
+    .cami-cred { padding: 16px 20px; border-right: 1px solid var(--dark-border); }
+    .cami-cred:last-child { border-right: none; }
+    .cami-cred-label { font-size: 0.68rem; color: #999999; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 6px; }
+    .cami-cred-value { font-size: 0.88rem; font-weight: 700; color: var(--white); line-height: 1.4; }
+    .cami-linkedin {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--black);
+      font-weight: 700; font-size: 0.85rem; padding: 10px 20px; border-radius: 10px;
+      text-decoration: none; width: fit-content;
+    }
+
+    /* AGENDA — "qué vas a aprender" */
+    .agenda-section { max-width: 1120px; margin: 0 auto; padding: 24px 48px 8px; }
+    .agenda-list { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 18px; }
+    .agenda-row { display: flex; gap: 18px; padding: 18px 22px; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .agenda-row:last-child { border-bottom: none; }
+    .agenda-num {
+      min-width: 30px; height: 30px; background: var(--yellow); color: var(--black);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 800; flex-shrink: 0;
+    }
+    .agenda-title { font-size: 0.92rem; font-weight: 800; color: var(--black); margin-bottom: 4px; }
+    .agenda-desc { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; }
+    .agenda-note { font-size: 0.88rem; color: var(--gray-mid); font-style: italic; margin-bottom: 24px; }
+    .agenda-cta-wrap { text-align: center; }
+
+    /* PARA QUIEN */
+    .fit-section { max-width: 1120px; margin: 0 auto; padding: 24px 48px; }
+    .check-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+    .check-item { display: flex; gap: 14px; align-items: flex-start; }
+    .check-mark {
+      min-width: 26px; height: 26px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-weight: 900;
+      font-size: 0.8rem; color: var(--black); flex-shrink: 0; margin-top: 2px;
+    }
+    .check-item p { font-size: 0.96rem; color: var(--gray-dark); line-height: 1.55; }
+    .not-for-note {
+      font-size: 0.85rem; color: var(--gray-mid); line-height: 1.6;
+      background: var(--gray-light); border-radius: 12px; padding: 14px 16px;
+    }
+    .not-for-note b { color: var(--black); }
+
+    /* STATS — "por qué ahora", pictogramas tipo soyhenry.com/ai-para-lideres */
+    .stats-section { max-width: 1120px; margin: 0 auto; padding: 40px 48px 16px; }
+    .stats-header { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 36px; }
+    .stats-header h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; letter-spacing: -1px; line-height: 1.15; color: var(--black); }
+    .stats-header-desc { font-size: 0.98rem; color: var(--gray-dark); line-height: 1.6; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .stat-card { border: 1.5px solid var(--border); border-radius: 20px; padding: 26px 24px; background: var(--white); display: flex; flex-direction: column; }
+    .stat-visual { margin-bottom: 22px; min-height: 86px; display: flex; align-items: center; }
+    .stat-number { font-size: 2.1rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; color: var(--black); }
+    .stat-desc { font-size: 0.9rem; color: var(--gray-dark); line-height: 1.5; margin-bottom: 14px; }
+    .stat-source { font-size: 0.74rem; color: var(--gray-mid); border-top: 1px solid var(--border); padding-top: 10px; margin-top: auto; }
+
+    .dot-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; width: 100%; }
+    .dot { width: 100%; aspect-ratio: 1; border-radius: 50%; border: 1.5px solid var(--black); background: var(--gray-light); }
+    .dot.filled { background: var(--yellow); box-shadow: 0 0 6px rgba(230,230,0,0.7); }
+
+    .people-row { display: flex; gap: 5px; flex-wrap: wrap; }
+    .people-row svg { width: 9%; min-width: 18px; height: 28px; }
+    .people-row svg circle, .people-row svg path { fill: var(--gray-light); stroke: var(--black); stroke-width: 1.2; }
+    .people-row svg.filled circle, .people-row svg.filled path { fill: var(--yellow); }
+
+    .bar-compare { position: relative; display: flex; flex-direction: column; gap: 12px; width: 100%; padding: 4px 0; }
+    .bar-track { position: relative; height: 22px; border-radius: 11px; background: var(--gray-light); border: 1.5px solid var(--border); overflow: hidden; }
+    .bar-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 11px 0 0 11px; }
+    .bar-fill.before { background: #a8acb3; }
+    .bar-fill.after { background: var(--yellow); }
+    .bar-marker { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px dashed var(--gray-mid); }
+
+    /* CIERRE / CARRERA */
+    .why-section { background: var(--gray-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 48px; }
+    .why-inner { max-width: 1120px; margin: 0 auto; }
+    .why-header { text-align: center; margin-bottom: 36px; }
+    .why-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; color: var(--black); margin-bottom: 8px; }
+    .why-subtitle { font-size: 1rem; color: var(--gray-dark); font-weight: 600; }
+    .career-chip {
+      display: inline-block; background: var(--yellow); color: var(--black);
+      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 32px; }
+    .spec-table { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .spec-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 18px; border-bottom: 1px solid var(--border); }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-label { font-size: 0.82rem; font-weight: 700; color: var(--gray-mid); }
+    .spec-value { font-size: 0.86rem; font-weight: 700; color: var(--black); text-align: right; max-width: 60%; }
+    .spec-row.wraps { flex-direction: column; gap: 4px; }
+    .spec-row.wraps .spec-value { text-align: left; max-width: 100%; }
+    .stack-col { display: flex; flex-direction: column; gap: 22px; }
+    .stack-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 12px; }
+    .outcomes-list { display: flex; flex-direction: column; gap: 6px; }
+    .outcomes-list li { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.5; list-style: none; padding-left: 16px; position: relative; }
+    .outcomes-list li::before { content: "—"; position: absolute; left: 0; color: var(--gray-mid); }
+    .includes-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .includes-chip { border: 1px solid var(--black); border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; color: var(--black); }
+    .why-cta-wrap { text-align: center; margin-top: 32px; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black);
+      font-size: 0.95rem; font-weight: 800; padding: 16px 36px; border-radius: 10px;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.15s, background 0.15s; border: none; cursor: pointer;
+    }
+    .cta-btn:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+    /* COMPANIES */
+    .companies-strip { max-width: 1120px; margin: 0 auto; padding: 48px 48px 56px; text-align: center; }
+    .companies-label { font-size: 0.72rem; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 28px; }
+    .companies-logos { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .companies-logos img { height: 22px; opacity: 0.45; filter: grayscale(100%); transition: opacity 0.2s; }
+    .companies-logos img:hover { opacity: 0.7; }
+
+    /* FORM — ahora al final, ancho completo de la landing */
+    .form-section { background: var(--dark); padding: 64px 48px; }
+    .form-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 420px; gap: 56px; align-items: center;
+    }
+    .form-recap-title { color: var(--white); font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; letter-spacing: -1px; line-height: 1.2; margin-bottom: 18px; }
+    .form-recap-facts { color: #aaaaaa; font-size: 0.9rem; font-weight: 600; line-height: 1.6; }
+    .form-card {
+      background: var(--white); border-radius: 16px;
+      padding: 36px; box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    }
+    .form-top-bar { height: 4px; background: var(--yellow); border-radius: 2px; margin-bottom: 24px; }
+    .form-card h2 { font-size: 1.35rem; font-weight: 800; color: var(--black); margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.2; }
+    .form-card .form-sub { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 18px; }
+    .event-compact-facts { font-size: 0.82rem; font-weight: 600; color: var(--gray-dark); margin-bottom: 20px; line-height: 1.5; }
+    #hs-form-container iframe { width: 100%; border: none; }
+
+    /* Success state */
+    .success-state { display: none; text-align: center; padding: 16px 0; }
+    .success-icon {
+      width: 72px; height: 72px; background: var(--yellow); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem;
+    }
+    .success-state h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin-bottom: 10px; letter-spacing: -0.5px; }
+    .success-state p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .footer-text { font-size: 0.78rem; color: var(--gray-mid); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 36px 24px 28px; }
+      .hero-inner { max-width: 100%; }
+      .cami-section { padding: 8px 24px 16px; }
+      .cami-card { grid-template-columns: 1fr; }
+      .cami-photo { height: 380px; }
+      .cami-info { padding: 32px 24px; }
+      .cami-creds { grid-template-columns: 1fr; }
+      .cami-cred { border-right: none; border-bottom: 1px solid var(--dark-border); }
+      .cami-cred:last-child { border-bottom: none; }
+      .agenda-section { padding: 20px 24px 8px; }
+      .fit-section { padding: 20px 24px; }
+      .stats-section { padding: 32px 24px 8px; }
+      .stats-header { grid-template-columns: 1fr; gap: 16px; }
+      .stats-grid { grid-template-columns: 1fr; gap: 16px; }
+      .why-section { padding: 44px 24px; }
+      .why-grid { grid-template-columns: 1fr; gap: 32px; }
+      .spec-row { flex-direction: column; gap: 2px; }
+      .spec-value { text-align: left; }
+      .companies-strip { padding: 40px 24px; }
+      .form-section { padding: 44px 24px; }
+      .form-inner { grid-template-columns: 1fr; gap: 28px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-inner { animation: fadeUp 0.5s ease both; }
+  </style>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=441627673220929&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.soyhenry.com" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;">
+      <svg width="80" height="14" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+        <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-kicker">AI para Líderes</div>
+      <h1>Las reglas de juego para la IA de tu equipo</h1>
+
+      <p class="hero-desc">
+        En esta clase en vivo, <strong>Cami Manera</strong> —Data & AI leader, hoy Manager de Data &amp; IA
+        en Naranja X y co-creadora de la carrera AI para Líderes de Henry— te muestra cómo salir con el
+        primer borrador de las reglas de uso de IA de tu equipo. Sin tecnicismos, sin esperar a que tu
+        empresa tenga un plan armado.
+      </p>
+
+      <div class="hero-info-card">
+        <span class="badge primary">En vivo y gratis</span>
+        <span class="hero-info-schedule">Jueves 29 de octubre · 20h ARG 🇦🇷 · 45 minutos</span>
+      </div>
+
+      <a href="#registro" class="cta-btn">Reserva tu lugar →</a>
+    </div>
+  </section>
+
+  <!-- CAMI FEATURE -->
+  <section class="cami-section">
+    <div class="cami-card">
+      <div class="cami-photo">
+        <img src="cami-manera.png" alt="Cami Manera, Data & AI leader" />
+      </div>
+      <div class="cami-info">
+        <div class="cami-kicker">Experto</div>
+        <div class="cami-name">Cami Manera</div>
+        <div class="cami-role">Data &amp; AI leader</div>
+        <p class="cami-bio">
+          Lidera equipos de Data &amp; IA hace años y hoy vive en carne propia lo que vas a resolver en
+          esta sesión: cómo lograr que un equipo adopte IA de verdad, no que la use a escondidas.
+          Co-creó la carrera AI para Líderes de Henry desde ese lugar.
+        </p>
+        <div class="cami-creds">
+          <div class="cami-cred">
+            <div class="cami-cred-label">Actualmente</div>
+            <div class="cami-cred-value">Manager Data &amp; IA en Naranja X</div>
+          </div>
+          <div class="cami-cred">
+            <div class="cami-cred-label">Trayectoria</div>
+            <div class="cami-cred-value">Chief Data Officer y AI Strategist</div>
+          </div>
+        </div>
+        <a class="cami-linkedin" href="https://www.linkedin.com/in/camilamanera/" target="_blank" rel="noopener">
+          Ver perfil en LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="agenda-section">
+    <p class="section-label">¿Qué vas a aprender?</p>
+    <div class="agenda-list">
+      <div class="agenda-row">
+        <div class="agenda-num">1</div>
+        <div>
+          <div class="agenda-title">Las preguntas que tu equipo necesita responder antes de usar IA</div>
+          <div class="agenda-desc">Las que separan una regla de uso real de un mail que nadie lee.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">2</div>
+        <div>
+          <div class="agenda-title">Un test para saber qué entra y qué no</div>
+          <div class="agenda-desc">Si no lo dirías en una reunión de equipo, no va en un prompt. Un criterio que tu gente puede aplicar sola.</div>
+        </div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-num">3</div>
+        <div>
+          <div class="agenda-title">Un primer borrador de reglas, no una lista de apps</div>
+          <div class="agenda-desc">Algo escrito para llevarle a tu equipo esa misma semana.</div>
+        </div>
+      </div>
+    </div>
+    <p class="agenda-note">Y preguntas abiertas con Cami al final.</p>
+    <div class="agenda-cta-wrap">
+      <a href="#registro" class="cta-btn">Reserva tu lugar →</a>
+    </div>
+  </section>
+
+  <!-- PARA QUIEN -->
+  <section class="fit-section">
+    <p class="section-label">Es para vos si:</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Lideras un equipo (como jefe, coordinadora, gerente o head de área) — no hace falta que seas técnico.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Tu equipo ya usa IA cada uno a su manera, y querés ordenarlo con criterio.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Tu empresa ya tiene una estrategia de IA y te toca bajarla a tu equipo — o todavía no la tiene y no querés esperar.</p>
+      </div>
+      <div class="check-item">
+        <span class="check-mark">✓</span>
+        <p>Buscás un criterio concreto para tu equipo, no otra charla sobre "el futuro de la IA".</p>
+      </div>
+    </div>
+    <p class="not-for-note"><b>No es para</b> quien busca aprender a programar, construir agentes o automatizaciones (eso es AI Automation / AI Engineering de Henry), ni para quien necesita diseñar la estrategia de IA de toda la compañía.</p>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-header">
+      <div>
+        <p class="section-label">Por qué ahora</p>
+        <h2>Tu equipo ya usa IA. ¿Vos sabés cómo?</h2>
+      </div>
+      <p class="stats-header-desc">La IA no se adopta porque alguien compró licencias. Se adopta cuando el líder del equipo la entiende, la usa, la ordena y acompaña a su gente.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-visual"><div class="dot-grid" data-percent="60" data-total="50"></div></div>
+        <div class="stat-number">60%</div>
+        <p class="stat-desc">De los líderes admite que su empresa no tiene plan ni visión para adoptar IA.</p>
+        <p class="stat-source">Microsoft + LinkedIn, Work Trend Index 2024 · 31.000 personas</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-visual"><div class="people-row" data-percent="78" data-total="10"></div></div>
+        <div class="stat-number">78%</div>
+        <p class="stat-desc">De quienes usan IA en el trabajo lleva sus propias herramientas, sin que la empresa lo sostenga.</p>
+        <p class="stat-source">Microsoft + LinkedIn, Work Trend Index 2024</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-visual">
+          <div class="bar-compare">
+            <div class="bar-track"><div class="bar-fill before" style="width:68%"></div></div>
+            <div class="bar-track"><div class="bar-fill after" style="width:83%"></div></div>
+            <div class="bar-marker" style="left:68%"></div>
+          </div>
+        </div>
+        <div class="stat-number">68% → 83%</div>
+        <p class="stat-desc">Sube la colaboración del equipo cuando la adopción de IA la dirige el liderazgo.</p>
+        <p class="stat-source">Perceptyx</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE / CARRERA -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header">
+        <span class="career-chip">Estudia en HENRY</span>
+        <h2>AI para Líderes</h2>
+        <p class="why-subtitle">Co-creada con Cami Manera</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="spec-table">
+          <div class="spec-row"><span class="spec-label">Modalidad</span><span class="spec-value">Part Time</span></div>
+          <div class="spec-row"><span class="spec-label">Duración</span><span class="spec-value">1 mes</span></div>
+          <div class="spec-row"><span class="spec-label">Dedicación</span><span class="spec-value">10 hs por semana</span></div>
+          <div class="spec-row wraps"><span class="spec-label">Días y horarios</span><span class="spec-value">Martes y jueves, 20 a 22h</span></div>
+          <div class="spec-row wraps"><span class="spec-label">Primera cohorte</span><span class="spec-value">10 de noviembre de 2026</span></div>
+        </div>
+
+        <div class="stack-col">
+          <div>
+            <p class="stack-label">Qué te llevás</p>
+            <ul class="outcomes-list">
+              <li>El roadmap de adopción de IA de tu equipo</li>
+              <li>Reglas de uso acordadas con tu gente</li>
+              <li>Criterio para elegir qué tareas priorizar y qué herramientas usar</li>
+            </ul>
+          </div>
+          <div>
+            <p class="stack-label">El diferencial</p>
+            <div class="includes-list">
+              <span class="includes-chip">Networking activo entre pares</span>
+            </div>
+            <p style="font-size:0.85rem; color:var(--gray-dark); line-height:1.55; margin-top:10px;">
+              No una comunidad pasiva: ves qué está implementando otro líder con su equipo, en qué
+              empresa y en qué etapa está.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-cta-wrap">
+        <a href="https://www.soyhenry.com/ai-para-lideres?utm_source=instagram&utm_medium=organico&utm_campaign=masterclass-29.10.26&utm_content=despues-de-la-clase" class="cta-btn" target="_blank" rel="noopener">Sumarme a la lista de espera →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANIES -->
+  <div class="companies-strip">
+    <p class="companies-label">Nuestros graduados trabajan en</p>
+    <div class="companies-logos">
+      <img src="https://www.soyhenry.com/companies/slider/google.svg" alt="Google" />
+      <img src="https://www.soyhenry.com/companies/slider/meli.svg" alt="Mercado Libre" />
+      <img src="https://www.soyhenry.com/companies/slider/accenture.svg" alt="Accenture" />
+      <img src="https://www.soyhenry.com/companies/slider/paypal.svg" alt="PayPal" />
+      <img src="https://www.soyhenry.com/companies/slider/santander.svg" alt="Santander" />
+      <img src="https://www.soyhenry.com/companies/slider/kavak.svg" alt="Kavak" />
+      <img src="https://www.soyhenry.com/companies/slider/uala.svg" alt="Ualá" />
+    </div>
+  </div>
+
+  <!-- FORM (al final, ancho completo) -->
+  <section class="form-section" id="registro">
+    <div class="form-inner">
+      <div class="form-recap">
+        <h2 class="form-recap-title">45 minutos con Cami Manera. Salís con el borrador de las reglas de tu equipo.</h2>
+        <p class="form-recap-facts">Jueves 29 de octubre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 45 minutos · En vivo y gratis</p>
+      </div>
+      <div class="form-card">
+        <div id="form-wrapper">
+          <div class="form-top-bar"></div>
+          <h2>Reserva tu lugar</h2>
+          <p class="form-sub">Te enviamos el link de acceso por mail.</p>
+          <p class="event-compact-facts">Jueves 29/10 · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 45 minutos<br>Online, en vivo</p>
+          <div id="hs-form-container"></div>
+        </div>
+        <div class="success-state" id="success-state">
+          <div class="success-icon">✓</div>
+          <h3>¡Listo!</h3>
+          <p>Te registraste correctamente. Te vamos a avisar antes de la clase, y si no podés ir en vivo, te mandamos la grabación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-text">© 2026 SoyHenry · Todos los derechos reservados</span>
+  </footer>
+
+  <!-- PICTOGRAMAS DE LA SECCION STATS -->
+  <script>
+    document.querySelectorAll('.dot-grid').forEach(function (el) {
+      var total = parseInt(el.dataset.total, 10);
+      var pct = parseInt(el.dataset.percent, 10);
+      var filled = Math.round(total * pct / 100);
+      for (var i = 0; i < total; i++) {
+        var d = document.createElement('div');
+        d.className = 'dot' + (i < filled ? ' filled' : '');
+        el.appendChild(d);
+      }
+    });
+    document.querySelectorAll('.people-row').forEach(function (el) {
+      var total = parseInt(el.dataset.total, 10);
+      var pct = parseInt(el.dataset.percent, 10);
+      var filled = Math.round(total * pct / 100);
+      for (var i = 0; i < total; i++) {
+        var isFilled = i < filled;
+        el.insertAdjacentHTML('beforeend',
+          '<svg viewBox="0 0 24 30" class="' + (isFilled ? 'filled' : '') + '">' +
+          '<circle cx="12" cy="7" r="6"/>' +
+          '<path d="M2 29c0-7 4-11 10-11s10 4 10 11"/>' +
+          '</svg>');
+      }
+    });
+  </script>
+
+  <script>
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    const MASTERCLASS = {
+      masterclass_fecha_evento:   String(new Date('2026-10-29T20:00:00-03:00').getTime()),
+
+      // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
+      // flow por evento (infra/17 §3), no solo un texto descriptivo.
+      // TODO: confirmar/crear este evento en el flujo de masterclass (1861306136) antes de publicar.
+      masterclass_nombre:         'AI para Líderes: Las reglas de juego para la IA de tu equipo',
+      masterclass_fecha_larga:    'Jueves 29 de octubre',
+      masterclass_hora:           '17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷',
+
+      masterclass_speaker_nombre: 'Cami Manera',
+      masterclass_speaker_bio:    'Cami Manera, Data & AI leader. Manager de Data & IA en Naranja X, ex Chief Data Officer y AI Strategist. Co-creadora de la carrera AI para Líderes de Henry.',
+
+      masterclass_tema_1:         'Las preguntas que tu equipo necesita responder antes de usar IA',
+      masterclass_tema_2:         'Un test para saber qué entra y qué no en un prompt',
+      masterclass_tema_3:         'Un primer borrador de reglas de uso de IA para tu equipo',
+
+      // Pendiente: armar en StreamYard y pasar el link de YouTube antes de T-1 (ver docs/masterclass_asistente.md §6a).
+      masterclass_youtube_link:   '',
+      masterclass_cupon_code:     '',
+      masterclass_cta_url:        'https://www.soyhenry.com/ai-para-lideres?utm_source=instagram&utm_medium=organico&utm_campaign=masterclass-29.10.26&utm_content=agenda',
+
+      masterclass_cohorte_texto:  '10 de noviembre de 2026, Part Time',
+
+      career_interest:            '',
+      masterclass_carrera:        'AI para Líderes',
+
+      // dates = UTC. 20:00 ARG = 23:00 UTC mismo dia; dura 45min -> 23:45 UTC mismo dia.
+      masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent('AI para Líderes: Las reglas de juego para la IA de tu equipo, con Cami Manera')
+        + '&dates=20261029T230000Z/20261029T234500Z'
+        + '&details=' + encodeURIComponent('Clase en vivo y gratis de Henry Live Sessions sobre cómo poner reglas de uso de IA en tu equipo, con Cami Manera.')
+        + '&location=Online',
+    };
+
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "19612811",
+      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      target: "#hs-form-container",
+      onFormReady: function() {
+        setTimeout(() => {
+          const iframe = document.querySelector('#hs-form-container iframe');
+          const idoc = iframe && iframe.contentDocument;
+          if (!idoc) return;
+
+          const style = idoc.createElement('style');
+          style.textContent = `
+            body { font-family: 'Inter', sans-serif !important; }
+            .hs-form-field label { font-size: 0.8rem !important; font-weight: 600 !important; color: #111111 !important; margin-bottom: 6px !important; }
+            .hs-input { background: #f5f5f5 !important; border: 1.5px solid #e2e2e2 !important; border-radius: 8px !important; padding: 11px 14px !important; font-size: 0.9rem !important; width: 100% !important; font-family: 'Inter', sans-serif !important; box-sizing: border-box !important; }
+            .hs-input:focus { outline: none !important; border-color: #111111 !important; background: #ffffff !important; }
+            .hs-button { background: #FFFF00 !important; color: #111111 !important; border: none !important; border-radius: 10px !important; padding: 14px 28px !important; font-size: 0.95rem !important; font-weight: 800 !important; width: 100% !important; cursor: pointer !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; font-family: 'Inter', sans-serif !important; }
+            .hs-button:hover { background: #e6e600 !important; }
+            .hs-error-msgs { color: #d32f2f !important; font-size: 0.78rem !important; }
+          `;
+          idoc.head.appendChild(style);
+
+          const btn = idoc.querySelector('input[type="submit"]');
+          if (btn) btn.value = 'Registrarme';
+
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
+
+          const fieldMap = Object.assign({}, utmMap, MASTERCLASS);
+
+          idoc.querySelectorAll('input, select').forEach(input => {
+            if (fieldMap[input.name] !== undefined && fieldMap[input.name] !== '') {
+              input.value = fieldMap[input.name];
+              input.dispatchEvent(new Event('input',  { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+        }, 600);
+      },
+      onFormSubmit: function() {
+        if (window.fbq) {
+          fbq('trackCustom', 'Registro clase en vivo', {
+            content_name: 'landing-reglas-ia-equipo-cami-manera',
+            utm_source: utms.utm_source || '',
+            utm_medium: utms.utm_medium || '',
+            utm_campaign: utms.utm_campaign || '',
+          });
+        }
+        setTimeout(() => {
+          document.getElementById('form-wrapper').style.display = 'none';
+          document.getElementById('success-state').style.display = 'block';
+        }, 800);
+      }
+    });
+  </script>
+</body>
+</html>
