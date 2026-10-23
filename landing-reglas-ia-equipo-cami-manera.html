@@ -68,18 +68,14 @@
     /* HERO — alineado a la izquierda, sin sidebar de formulario */
     .hero { max-width: 1120px; margin: 0 auto; padding: 56px 48px 40px; }
     .hero-inner { max-width: 640px; }
-    .hero-info-card {
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
-      gap: 12px; border: 1.5px solid var(--border); border-radius: 14px;
-      padding: 14px 22px; margin-bottom: 22px;
-    }
     .badge {
+      display: block; width: fit-content;
       font-size: 0.7rem; font-weight: 800; padding: 6px 14px; border-radius: 20px;
-      text-transform: uppercase; letter-spacing: 0.6px;
+      text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 18px;
     }
     .badge.primary { background: var(--yellow); color: var(--black); }
     .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
-    .hero-info-schedule { font-size: 0.85rem; font-weight: 700; color: var(--gray-dark); }
+    .hero-schedule-line { font-size: 0.88rem; font-weight: 700; color: var(--gray-dark); margin-bottom: 18px; }
     .hero-kicker {
       display: inline-block; background: var(--yellow); color: var(--black);
       font-size: 1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;
@@ -309,10 +305,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-info-card">
-        <span class="badge primary">En vivo y gratis</span>
-        <span class="hero-info-schedule">Jueves 29 de octubre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 45 minutos</span>
-      </div>
+      <span class="badge primary">En vivo y gratis</span>
 
       <div class="hero-kicker">AI para Líderes</div>
       <h1>Las reglas de juego para la IA de tu equipo</h1>
@@ -323,6 +316,8 @@
         primer borrador de las reglas de uso de IA de tu equipo. Sin tecnicismos, sin esperar a que tu
         empresa tenga un plan armado.
       </p>
+
+      <p class="hero-schedule-line">Jueves 29 de octubre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 45 minutos</p>
 
       <a href="#registro" class="cta-btn">Reserva tu lugar →</a>
     </div>
