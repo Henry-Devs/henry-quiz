@@ -131,6 +131,14 @@
     .hero-actions { margin-top: 32px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
     .hero-note { color: var(--muted); font-size: 14px; }
 
+    /* COUNTDOWN */
+    .countdown-wrap { margin-top: 36px; }
+    .countdown-wrap .lineup-label { margin-bottom: 14px; }
+    .countdown { display: flex; gap: 12px; }
+    .countdown-unit { background: var(--panel-2); border: 1px solid var(--line-dark); border-radius: 14px; padding: 14px 10px; min-width: 68px; text-align: center; }
+    .countdown-num { display: block; font-size: 28px; font-weight: 900; color: var(--yellow); letter-spacing: -1px; line-height: 1; font-variant-numeric: tabular-nums; }
+    .countdown-label { display: block; margin-top: 6px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); }
+
     .lineup-label { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
     .lineup { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .lineup-card {
@@ -392,6 +400,16 @@
               <a href="#registro" class="btn btn-yellow btn-lg">Reserva tu lugar
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
               </a>
+            </div>
+
+            <div class="countdown-wrap" id="countdown-wrap">
+              <p class="lineup-label">Empieza en</p>
+              <div class="countdown" id="countdown" aria-label="Cuenta regresiva hasta el panel en vivo">
+                <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-label">Días</span></div>
+                <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-label">Hs</span></div>
+                <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-label">Min</span></div>
+                <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-label">Seg</span></div>
+              </div>
             </div>
           </div>
           <div class="hero-right">
@@ -784,6 +802,38 @@
       + '&details=' + encodeURIComponent('Panel en vivo y gratis de Henry Live con Alexander Vicondoa, Camila Manera, David Dellacha y Luz Borchardt. El link de YouTube llega por mail.')
       + '&location=YouTube%20Live';
     document.getElementById('calendar-btn').href = CALENDAR_LINK;
+
+    // Countdown hasta el evento. Si ya paso, se oculta en vez de mostrar numeros negativos.
+    (function () {
+      const target = new Date('2026-11-03T20:00:00-03:00').getTime();
+      const wrap = document.getElementById('countdown-wrap');
+      const elDays = document.getElementById('cd-days');
+      const elHours = document.getElementById('cd-hours');
+      const elMins = document.getElementById('cd-mins');
+      const elSecs = document.getElementById('cd-secs');
+      if (!wrap || !elDays) return;
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function tick() {
+        const diff = target - Date.now();
+        if (diff <= 0) {
+          wrap.style.display = 'none';
+          clearInterval(timer);
+          return;
+        }
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        elDays.textContent = pad(days);
+        elHours.textContent = pad(hours);
+        elMins.textContent = pad(mins);
+        elSecs.textContent = pad(secs);
+      }
+      tick();
+      const timer = setInterval(tick, 1000);
+    })();
 
     const MASTERCLASS = {
       masterclass_fecha_evento:   String(new Date('2026-11-03T20:00:00-03:00').getTime()),
