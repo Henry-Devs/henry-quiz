@@ -2132,6 +2132,61 @@
         }
       ],
       "link": "landing-que-es-un-forward-deployed-engineer.html"
+    },
+    {
+      "slug": "reglas-ia-equipo-cami-manera",
+      "nombre": "Las reglas de juego para la IA de tu equipo",
+      "desc": "Con Cami Manera: sal con el primer borrador de las reglas de uso de IA de tu equipo, sin tecnicismos.",
+      "carrera": "AI Automation",
+      "fecha": "2026-10-29T20:00:00-03:00",
+      "duracionMin": 45,
+      "fechaCorta": "29 OCT",
+      "fechaLarga": "Jueves 29 de octubre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-reglas-ia-equipo-cami-manera.jpg",
+      "speakers": [
+        {
+          "nombre": "Cami Manera",
+          "rol": "Data & AI leader · Manager Data & IA en Naranja X",
+          "foto": "cami-manera.png"
+        }
+      ],
+      "link": "landing-reglas-ia-equipo-cami-manera.html"
+    },
+    {
+      "slug": "panel-ia-03-11",
+      "nombre": "¿Cómo trabajan hoy los que mejor usan IA?",
+      "desc": "Henry Live · Panel con expertos de ElevenLabs, Naranja X, Alephee y Henry: qué cambió de verdad en su forma de trabajar.",
+      "carrera": "AI Engineering",
+      "fecha": "2026-11-03T20:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "03 NOV",
+      "fechaLarga": "Martes 3 de noviembre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-panel-ia-03-11.jpg",
+      "speakers": [
+        {
+          "nombre": "Alexander Vicondoa",
+          "rol": "Head of LATAM Forward Deployed Engineering en ElevenLabs",
+          "foto": "panel-ia-alexander-vicondoa.webp"
+        },
+        {
+          "nombre": "Camila Manera",
+          "rol": "Manager Data & IA en Naranja X",
+          "foto": "panel-ia-camila-manera.webp"
+        },
+        {
+          "nombre": "David Dellacha",
+          "rol": "Head of UX & Product en Alephee",
+          "foto": "panel-ia-david-dellacha.webp"
+        },
+        {
+          "nombre": "Luz Borchardt",
+          "rol": "Co-fundadora de Henry",
+          "foto": "panel-ia-luz-borchardt-v3.webp"
+        }
+      ],
+      "link": "landing-panel-ia-03-11.html"
     }
   ]
 }
