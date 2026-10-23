@@ -559,7 +559,6 @@
 
       // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
       // flow por evento (infra/17 §3), no solo un texto descriptivo.
-      // TODO: confirmar/crear este evento en el flujo de masterclass (1861306136) antes de publicar.
       masterclass_nombre:         'El manual de FDE: Desde el requerimiento del cliente hasta la entrega técnica',
       masterclass_fecha_larga:    'Lunes 9 de noviembre',
       masterclass_hora:           '17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷',
@@ -594,7 +593,12 @@
     hbspt.forms.create({
       region: "na1",
       portalId: "19612811",
-      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      // Form propio del live. Dispara el flujo
+      // "live - El manual de FDE con Diego Sid - 09-11" (1908634798).
+      // 🛑 Antes usaba el formulario COMPARTIDO (7bd5e072), que enrola en el flujo
+      // generico viejo (1861306136): ese manda un 25% OFF con countdown de 24h y no
+      // separa old de first lead.
+      formId: "649698cf-ce54-4271-ab6b-47460e47b644",
       target: "#hs-form-container",
       onFormReady: function() {
         setTimeout(() => {
