@@ -2098,17 +2098,17 @@
       "nombre": "Conviértete en AI Product Builder: de la idea al sistema funcionando con IA",
       "desc": "Arma un prototipo con IA en la Clase 1 y complétalo en sistema en la Clase 2, en vivo.",
       "carrera": "AI Automation",
-      "fecha": "2026-11-04T21:00:00-03:00",
+      "fecha": "2026-11-10T21:00:00-03:00",
       "duracionMin": 60,
-      "fechaCorta": "04 NOV",
-      "fechaLarga": "Miércoles 4 y jueves 5 de noviembre",
+      "fechaCorta": "10 NOV",
+      "fechaLarga": "Martes 10 y miércoles 11 de noviembre",
       "hora": "18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷",
       "banner": "banner-curso-intro-ai-product-builder.jpg",
       "speakers": [
         {
-          "nombre": "Camilo Pineda",
-          "rol": "AI Solutions Specialist en Henry",
-          "foto": "camilo.jpg"
+          "nombre": "Verónica Vargas",
+          "rol": "AI Product Manager en Laburen.com",
+          "foto": "veronica-vargas.webp"
         }
       ],
       "link": "landing-curso-intro-ai-product-builder.html"
