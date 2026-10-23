@@ -141,7 +141,7 @@
     .feature-name { font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 900; letter-spacing: -1px; line-height: 1; }
     .feature-role { margin-top: 10px; font-size: 1.05rem; font-weight: 600; color: #b5b5b5; }
     .feature-bio { font-size: 0.95rem; line-height: 1.6; color: #c9ccd2; max-width: 60ch; }
-    .path { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #3a3a3a; border-radius: 12px; }
+    .path { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #3a3a3a; border-radius: 12px; }
     .step { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
     .step + .step { border-left: 1px solid #3a3a3a; }
     .step-logo { height: 34px; display: flex; align-items: center; }
@@ -368,7 +368,7 @@
 
       <p class="hero-desc">
         Dos clases para pasar de describir lo que hay que construir a <strong>construirlo tú mismo con IA</strong>.
-        Las da <strong>Verónica Vargas</strong>, AI Product Manager en Laburen.com y organizadora de ProductTank.
+        Las da <strong>Verónica Vargas</strong>, Fractional CPO en Laburen, profesora de Product Management en el ITBA y co-organizadora de ProductTank.
       </p>
 
       <p class="hero-schedule-line">Martes 10 y miércoles 11 de noviembre · 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷</p>
@@ -380,22 +380,26 @@
   <!-- SPEAKER -->
   <section class="cami-section">
     <article class="feature">
-      <div class="portrait"><img src="veronica-vargas-v2.webp" alt="Verónica Vargas, AI Product Manager en Laburen.com" /></div>
+      <div class="portrait"><img src="veronica-vargas-v2.webp" alt="Verónica Vargas, Fractional CPO en Laburen" /></div>
       <div class="profile">
         <div>
           <p class="feature-kicker">Experta</p>
           <h2 class="feature-name">Verónica Vargas</h2>
-          <p class="feature-role">AI Product Manager</p>
+          <p class="feature-role">Fractional CPO · Profesora de Product Management</p>
         </div>
-        <p class="feature-bio">Construye productos con IA todos los días y organiza ProductTank, los encuentros de la comunidad de producto. Te guía en vivo en las dos clases: de la idea al sistema funcionando.</p>
+        <p class="feature-bio">Lidera producto en Laburen, enseña Product Management en el ITBA y co-organiza ProductTank, los encuentros de la comunidad de producto. Te guía en vivo en las dos clases: de la idea al sistema funcionando.</p>
         <div class="path">
           <div class="step">
             <span class="step-logo"><img src="logo-laburen.png" alt="Laburen.com" /></span>
-            <div><p class="step-label">Actualmente</p><p class="step-text">AI Product Manager en Laburen.com</p></div>
+            <div><p class="step-label">Actualmente</p><p class="step-text">Fractional CPO</p></div>
+          </div>
+          <div class="step">
+            <span class="step-logo"><span class="wordmark">ITBA</span></span>
+            <div><p class="step-label">Docencia</p><p class="step-text">Profesora de Product Management</p></div>
           </div>
           <div class="step">
             <span class="step-logo"><span class="wordmark">ProductTank</span></span>
-            <div><p class="step-label">Comunidad</p><p class="step-text">Organizadora de ProductTank</p></div>
+            <div><p class="step-label">Comunidad</p><p class="step-text">Co-organizadora</p></div>
           </div>
         </div>
         <div>
@@ -643,7 +647,7 @@
       masterclass_hora:           '18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷',
 
       masterclass_speaker_nombre: 'Verónica Vargas',
-      masterclass_speaker_bio:    'Verónica Vargas, AI Product Manager en Laburen.com y organizadora de ProductTank. Da las dos clases en vivo.',
+      masterclass_speaker_bio:    'Verónica Vargas, Fractional CPO en Laburen, profesora de Product Management en el ITBA y co-organizadora de ProductTank. Da las dos clases en vivo.',
 
       masterclass_tema_1:         'Clase 1 (10/11): Conviértete en AI Builder — tu primer sistema con IA',
       masterclass_tema_2:         'Clase 2 (11/11): Claude Masterclass — arquitectura de agentes, aplicada a tu propio sistema',
