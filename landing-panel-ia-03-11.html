@@ -183,6 +183,9 @@
       display: grid; grid-template-columns: 40% 60%; background: var(--panel-3);
       border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; overflow: hidden; color: #fff;
     }
+    /* Zigzag: las tarjetas pares llevan la foto a la derecha. */
+    .feature:nth-child(even) { grid-template-columns: 60% 40%; }
+    .feature:nth-child(even) .portrait { order: 2; }
     .portrait {
       min-height: 460px; display: flex; align-items: flex-end; justify-content: center; padding-top: 32px; overflow: hidden;
       background: #2c2c2c radial-gradient(55% 50% at 50% 42%, rgba(255,255,255,0.12), rgba(0,0,0,0) 70%);
@@ -323,7 +326,8 @@
       .tiles { grid-template-columns: 1fr; }
       .hero-experts { margin-top: 36px; padding-top: 28px; }
       .head { grid-template-columns: 1fr; gap: 18px; }
-      .feature { grid-template-columns: 1fr; }
+      .feature, .feature:nth-child(even) { grid-template-columns: 1fr; }
+      .feature:nth-child(even) .portrait { order: 0; }
       .portrait { min-height: 300px; }
       .portrait img { height: 300px; }
       .portrait img.headshot { height: 260px; }
