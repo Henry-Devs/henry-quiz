@@ -584,7 +584,6 @@
 
       // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
       // flow por evento (infra/17 §3), no solo un texto descriptivo.
-      // TODO: confirmar/crear este evento en el flujo de masterclass (1861306136) antes de publicar.
       masterclass_nombre:         'AI para Líderes: Las reglas de juego para la IA de tu equipo',
       masterclass_fecha_larga:    'Jueves 29 de octubre',
       masterclass_hora:           '17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷',
@@ -617,7 +616,14 @@
     hbspt.forms.create({
       region: "na1",
       portalId: "19612811",
-      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      // Form propio del live. Dispara el flujo
+      // "live - AI para Lideres · Reglas de IA con Cami Manera - 29-10" (1908617302):
+      // confirmacion, recordatorio, en vivo y el post bifurcado old/first.
+      // 🛑 Antes usaba el formulario COMPARTIDO (7bd5e072), que enrola en el flujo
+      // generico viejo (1861306136): ese manda un 25% OFF con countdown de 24h para
+      // una carrera cuya inscripcion todavia no esta abierta (lista de espera, primera
+      // cohorte 10/11). Ademas no separa old de first lead.
+      formId: "8559084e-6ecc-4f77-9471-b05c76faf243",
       target: "#hs-form-container",
       onFormReady: function() {
         setTimeout(() => {
