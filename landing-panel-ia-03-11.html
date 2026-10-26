@@ -257,6 +257,21 @@
     .career-name { font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
     .career-time { font-size: 14px; color: var(--text); }
     .career svg { width: 32px; height: 32px; padding: 7px; border-radius: 10px; background: var(--yellow); color: #222; flex-shrink: 0; }
+    /* CARRERAS QUE SE REVELAN EN EL LIVE (FOMO). Los nombres reales NO van en el
+       HTML: el texto borroso es un placeholder, así no se descubren inspeccionando. */
+    .locked-row { margin-top: 12px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; list-style: none; }
+    .locked {
+      position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 22px 22px 22px 24px; border-radius: 18px; background: #222; color: #fff; border: 1px solid #222;
+    }
+    .locked::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(120% 140% at 100% 0%, rgba(255,255,0,0.16), rgba(255,255,0,0) 55%);
+    }
+    .locked > span { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+    .locked-name { font-size: 19px; font-weight: 700; letter-spacing: -0.3px; filter: blur(7px); user-select: none; }
+    .locked-time { font-size: 14px; color: #b0b0b0; filter: blur(5px); user-select: none; }
+    .locked svg { position: relative; width: 44px; height: 44px; padding: 11px; border-radius: 12px; background: rgba(255,255,255,0.08); color: var(--yellow); flex-shrink: 0; }
     /* PROOF */
     .proof { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; list-style: none; }
     .stat { background: #fff; border: 1px solid var(--border); border-radius: 24px; padding: 28px; }
@@ -359,6 +374,7 @@
       .step + .step { border-left: none; border-top: 1px solid #3a3a3a; }
       .proof { grid-template-columns: 1fr; }
       .careers { grid-template-columns: 1fr; }
+      .locked-row { grid-template-columns: 1fr; }
       .reg-panel { padding: 44px 20px 20px; border-radius: 28px; }
       .form-card { padding: 26px 18px 20px; }
       section.block { padding-top: 72px; }
@@ -728,6 +744,16 @@
             <span><span class="career-name">Forward Deployed Engineer</span><span class="career-time">Part time 3 meses</span></span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a></li>
+      </ul>
+      <ul class="locked-row">
+          <li class="locked">
+            <span><span class="locked-name" aria-hidden="true">Carrera nueva de IA aplicada</span><span class="locked-time" aria-hidden="true">Part time 3 meses</span></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </li>
+          <li class="locked">
+            <span><span class="locked-name" aria-hidden="true">Carrera nueva para equipos</span><span class="locked-time" aria-hidden="true">Part time 3 meses</span></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </li>
       </ul>
       <div class="logos reveal">
         <p>Nuestros graduados trabajan en</p>
