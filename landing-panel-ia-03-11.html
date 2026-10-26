@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="henry-favicon.png" />
   <meta property="og:title" content="¿Cómo trabajan hoy los que mejor usan IA? · Henry Live" />
   <meta property="og:description" content="Panel con expertos de ElevenLabs, Naranja X, Alephee y Henry. Martes 3 de noviembre, 20h ARG. En vivo y gratis." />
-  <meta property="og:image" content="https://recursos.soyhenry.com/banner-panel-ia-03-11.jpg" />
+  <meta property="og:image" content="https://recursos.soyhenry.com/banner-panel-ia-03-11-v2.jpg" />
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 
   <script type="application/ld+json">
@@ -268,9 +268,10 @@
       content: ""; position: absolute; inset: 0; pointer-events: none;
       background: radial-gradient(120% 140% at 100% 0%, rgba(255,255,0,0.16), rgba(255,255,0,0) 55%);
     }
-    .locked > span { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+    .locked > span:first-child { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
     .locked-name { font-size: 19px; font-weight: 700; letter-spacing: -0.3px; filter: blur(7px); user-select: none; }
     .locked-time { font-size: 14px; color: #b0b0b0; filter: blur(5px); user-select: none; }
+    .locked-cta { position: relative; display: flex; align-items: center; gap: 12px; flex-shrink: 0; font-size: 15px; font-weight: 700; color: var(--yellow); white-space: nowrap; }
     .locked svg { position: relative; width: 44px; height: 44px; padding: 11px; border-radius: 12px; background: rgba(255,255,255,0.08); color: var(--yellow); flex-shrink: 0; }
     /* PROOF */
     .proof { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; list-style: none; }
@@ -375,6 +376,8 @@
       .proof { grid-template-columns: 1fr; }
       .careers { grid-template-columns: 1fr; }
       .locked-row { grid-template-columns: 1fr; }
+      .locked { flex-direction: column; align-items: flex-start; }
+      .locked > span:first-child { align-self: stretch; }
       .reg-panel { padding: 44px 20px 20px; border-radius: 28px; }
       .form-card { padding: 26px 18px 20px; }
       section.block { padding-top: 72px; }
@@ -748,11 +751,11 @@
       <ul class="locked-row">
           <li class="locked">
             <span><span class="locked-name" aria-hidden="true">Carrera nueva de IA aplicada</span><span class="locked-time" aria-hidden="true">Part time 3 meses</span></span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <span class="locked-cta">Descúbrela en el panel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
           </li>
           <li class="locked">
             <span><span class="locked-name" aria-hidden="true">Carrera nueva para equipos</span><span class="locked-time" aria-hidden="true">Part time 3 meses</span></span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <span class="locked-cta">Descúbrela en el panel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
           </li>
       </ul>
       <div class="logos reveal">
