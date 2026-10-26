@@ -2114,6 +2114,25 @@
       "link": "landing-curso-intro-ai-product-builder.html"
     },
     {
+      "slug": "manual-fde-diego-sid",
+      "nombre": "El manual de FDE: desde el requerimiento del cliente hasta la entrega técnica",
+      "desc": "Henry Live · El método paso a paso para llevar un pedido ambiguo del cliente hasta un sistema en producción.",
+      "carrera": "AI Engineering",
+      "fecha": "2026-11-09T20:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "09 NOV",
+      "fechaLarga": "Lunes 9 de noviembre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-manual-fde-diego-sid.jpg",
+      "speakers": [
+        {
+          "nombre": "Diego Sid",
+          "rol": "Forward Deployed Engineer"
+        }
+      ],
+      "link": "landing-manual-fde-diego-sid.html"
+    },
+    {
       "slug": "que-es-un-forward-deployed-engineer",
       "nombre": "Qué es un Forward Deployed Engineer y cómo convertirte en uno en 2026",
       "desc": "Qué hace un FDE, de dónde nace el rol y por qué explotó en 2026. Una Q&A en vivo para entender si es tu próximo paso.",
