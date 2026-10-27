@@ -74,7 +74,9 @@
       text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 18px;
     }
     .badge.primary { background: var(--yellow); color: var(--black); }
-    .hero-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .hero-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+    .badge.dark { background: var(--black); color: var(--white); border: 1.5px solid var(--black); }
+    .badge.primary { border: 1.5px solid var(--yellow); }
     .hero-badges .badge { margin-bottom: 0; }
     .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
     .hero-schedule-line { font-size: 0.88rem; font-weight: 700; color: var(--gray-dark); margin-bottom: 18px; }
@@ -342,11 +344,10 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-badges">
+        <span class="badge dark">Henry × Wallbit</span>
         <span class="badge primary">En vivo y gratis</span>
         <span class="badge outline">AI Engineering</span>
       </div>
-
-      <div class="hero-kicker">Henry × Wallbit</div>
       <h1>MCP es el camino, no el destino</h1>
 
       <p class="hero-desc">
