@@ -219,6 +219,15 @@
     .companies-logos img:hover { opacity: 0.7; }
 
     /* FORM — ahora al final, ancho completo de la landing */
+    /* COMPARTIR — viral loop: cada red con su utm_source para medir el boca a boca */
+    .share { margin-top: 28px; padding: 20px; border-radius: 18px; background: #2a2a2a; border: 1px solid var(--dark-border); }
+    .share-title { font-size: 0.75rem; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--yellow); margin-bottom: 4px; }
+    .share-sub { font-size: 0.9rem; color: #bdbdbd; line-height: 1.5; }
+    .share-row { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .share-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; padding: 0 16px; border-radius: 12px; border: 1px solid #444; background: #1e1e1e; color: #fff; font: 700 0.88rem 'Inter', sans-serif; cursor: pointer; text-decoration: none; }
+    .share-btn:hover { border-color: #777; }
+    .share-btn.primary { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+    .share-btn:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
     .form-section { background: var(--dark); padding: 64px 48px; }
     .form-inner {
       max-width: 1120px; margin: 0 auto;
@@ -278,29 +287,25 @@
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* COLABORACION HENRY x WALLBIT */
-    .collab-section { max-width: 1120px; margin: 0 auto; padding: 40px 48px 8px; }
-    .collab-card { background: var(--dark); border-radius: 24px; padding: 40px 44px; color: var(--white); }
-    .collab-logos { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; }
-    .collab-logos svg { width: 96px; height: auto; }
-    .collab-logos img { height: 30px; width: auto; }
-    .collab-x { color: var(--yellow); font-weight: 900; font-size: 1.4rem; }
-    .collab-title { font-size: clamp(1.4rem, 2.6vw, 1.8rem); font-weight: 900; letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 26px; max-width: 30ch; }
-    .collab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .collab-col { border: 1px solid var(--dark-border); border-radius: 16px; padding: 22px 24px; }
-    .collab-col-label { color: var(--yellow); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-    .collab-col p { color: #d4d4d4; font-size: 0.92rem; line-height: 1.6; }
-    .collab-facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .collab-fact { font-size: 0.78rem; font-weight: 700; color: var(--white); border: 1px solid #4a4a4a; border-radius: 999px; padding: 5px 12px; }
+    /* COLABORACION HENRY x WALLBIT — franja clara, sin competir con el speaker */
+    .collab-section { max-width: 1120px; margin: 0 auto; padding: 8px 48px 8px; }
+    .collab-strip { display: flex; align-items: center; gap: 28px; border: 1.5px solid var(--border); border-radius: 18px; padding: 20px 26px; }
+    .collab-logos { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .collab-x { color: var(--gray-mid); font-weight: 800; font-size: 1.1rem; }
+    .collab-wallbit { display: inline-flex; align-items: center; gap: 7px; font-weight: 800; font-size: 1.05rem; color: var(--black); letter-spacing: -0.3px; }
+    .collab-wallbit img { width: 26px; height: 26px; border-radius: 6px; }
+    .collab-text { font-size: 0.92rem; color: var(--gray-dark); line-height: 1.6; }
+    .cred-logo { display: flex; align-items: center; gap: 10px; }
+    .cred-logo img { width: 26px; height: 26px; flex-shrink: 0; border-radius: 6px; }
+    .cami-creds { margin-bottom: 24px; }
     .cami-photo { background: radial-gradient(120% 90% at 50% 100%, #3a3a3a 0%, #1e1e1e 70%); }
     .cami-photo img { object-fit: cover; object-position: center 15%; }
     .speaker-company { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; }
     .speaker-company img { height: 22px; width: auto; }
     .roles-chips { display: flex; flex-wrap: wrap; gap: 8px; }
     @media (max-width: 820px) {
-      .collab-section { padding: 28px 24px 8px; }
-      .collab-card { padding: 30px 22px; }
-      .collab-grid { grid-template-columns: 1fr; }
+      .collab-section { padding: 8px 24px 8px; }
+      .collab-strip { flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px 20px; }
     }
     .hero-inner { animation: fadeUp 0.5s ease both; }
   </style>
@@ -336,10 +341,8 @@
       <h1>MCP es el camino, no el destino</h1>
 
       <p class="hero-desc">
-        Cómo se usan los MCPs para pasar de una conversación a la acción. En esta clase en vivo,
-        <strong>Martín Gira</strong>, cofundador y CTO de Wallbit, te muestra cómo un agente de IA deja
-        de solo responder y empieza a hacer cosas en un sistema real, y por qué el MCP es apenas el
-        primer paso.
+        Cómo se usan los MCPs para pasar de una conversación a la acción. Con <strong>Martín Gira</strong>,
+        cofundador y CTO de Wallbit.
       </p>
 
       <p class="hero-schedule-line">Jueves 5 de noviembre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 60 minutos</p>
@@ -359,60 +362,44 @@
         <div class="cami-name">Martín Gira</div>
         <div class="cami-role">Cofundador y CTO de Wallbit</div>
         <p class="cami-bio">
-          Lidera la tecnología de Wallbit, la fintech argentina que te da una cuenta global en dólares.
-          Wallbit ya publicó su propio MCP: un agente de IA puede conectarse a su API para consultar
-          saldos u operar. En esta clase cuenta qué implica abrir un producto real a agentes de IA.
+          Ingeniero en Sistemas de Información (UTN). Cofundó Wallbit en 2022 y hoy lidera su tecnología.
+          En esta clase cuenta qué implica abrir un producto real a agentes de IA.
         </p>
         <div class="cami-creds">
           <div class="cami-cred">
             <div class="cami-cred-label">Actualmente</div>
-            <div class="cami-cred-value">Cofundador y CTO de Wallbit</div>
+            <div class="cami-cred-value cred-logo"><img src="logo-wallbit-icono.png" alt="" />Cofundador y CTO de Wallbit</div>
           </div>
           <div class="cami-cred">
             <div class="cami-cred-label">Trayectoria</div>
             <div class="cami-cred-value">Ex cofundador y Tech Lead de Tixcode</div>
           </div>
         </div>
+        <a class="cami-linkedin" href="https://www.linkedin.com/in/martintg/" target="_blank" rel="noopener">
+          Ver perfil en LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- COLABORACION -->
   <section class="collab-section">
-    <div class="collab-card">
+    <div class="collab-strip">
       <div class="collab-logos">
-      <svg width="96" height="17" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
-        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="white"/>
-        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="white"/>
-        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="white"/>
-        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="white"/>
-        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="white"/>
-        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="white"/>
+        <svg width="88" height="16" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Henry">
+        <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+        <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+        <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+        <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+        <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+        <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
         <path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004L69.6042 6.08069Z" fill="#FFFF00"/>
       </svg>
         <span class="collab-x">×</span>
-        <img src="logo-wallbit.png" alt="Wallbit" />
+        <span class="collab-wallbit"><img src="logo-wallbit-icono.png" alt="" />Wallbit</span>
       </div>
-      <h2 class="collab-title">Una clase en conjunto: los que forman AI Engineers y los que ya ponen IA a operar.</h2>
-      <div class="collab-grid">
-        <div class="collab-col">
-          <p class="collab-col-label">Wallbit</p>
-          <p>La app para personas con ingresos globales: cobras, gastas e inviertes en dólares desde una sola cuenta. Fintech fundada por argentinos y respaldada por Y Combinator.</p>
-          <div class="collab-facts">
-            <span class="collab-fact">Y Combinator W23</span>
-            <span class="collab-fact">Cuenta en dólares en +150 países</span>
-            <span class="collab-fact">MCP propio</span>
-          </div>
-        </div>
-        <div class="collab-col">
-          <p class="collab-col-label">Henry</p>
-          <p>La academia de IA que forma a los perfiles tech más buscados de Latinoamérica, con clases en vivo y proyectos reales. Esta clase es la puerta de entrada a la carrera de AI Engineering.</p>
-          <div class="collab-facts">
-            <span class="collab-fact">+20.000 graduados</span>
-            <span class="collab-fact">+3.500 empresas contratan</span>
-          </div>
-        </div>
-      </div>
+      <p class="collab-text">Una clase en conjunto con <strong>Wallbit</strong>, la fintech argentina respaldada por Y Combinator que te da una cuenta global en dólares. Ya publicaron su propio MCP, y su CTO cuenta cómo lo hicieron.</p>
     </div>
   </section>
 
@@ -577,6 +564,16 @@
       <div class="form-recap">
         <h2 class="form-recap-title">Una hora con el CTO de Wallbit. Sales entendiendo cómo pasar de un chat a un agente que actúa.</h2>
         <p class="form-recap-facts">Jueves 5 de noviembre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 60 minutos · En vivo y gratis</p>
+        <div class="share" aria-label="Compartir la clase">
+          <p class="share-title">Compártela en LinkedIn</p>
+          <p class="share-sub">¿Conoces a alguien que está construyendo con IA? Pásale la clase: es gratis.</p>
+          <div class="share-row">
+            <button type="button" class="share-btn primary" id="share-post"><span id="share-post-label">Copiar post para LinkedIn</span></button>
+            <a class="share-btn" id="share-in" href="#" target="_blank" rel="noopener">Compartir en LinkedIn</a>
+            <button type="button" class="share-btn" id="share-copy"><span id="share-copy-label">Copiar link</span></button>
+            <a class="share-btn" id="share-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
       </div>
       <div class="form-card">
         <div id="form-wrapper">
@@ -590,6 +587,7 @@
           <div class="success-icon">✓</div>
           <h3>¡Listo!</h3>
           <p>Te registraste correctamente. Te vamos a avisar antes de la clase, y si no puedes conectarte en vivo, te mandamos la grabación.</p>
+          <p style="margin-top:12px;font-weight:700;">¿Quién más debería estar? Compártela desde el bloque de al lado 👈</p>
         </div>
       </div>
     </div>
@@ -625,6 +623,31 @@
           '</svg>');
       }
     });
+  </script>
+
+  <script>
+    // Compartir: cada canal lleva su utm_source (medium=share) para medir cuántos
+    // registros trae el boca a boca.
+    (function () {
+      const base = location.origin + location.pathname;
+      const link = src => base + '?utm_source=' + src + '&utm_medium=share&utm_campaign=henry-live-mcp-wallbit-05-11';
+      const msg = 'MCP es el camino, no el destino: clase en vivo y gratis de Henry × Wallbit con Martín Gira, CTO de Wallbit. Jueves 5/11, 20h ARG.';
+      const post = () => 'Me anoté a esta clase en vivo y gratis: "MCP es el camino, no el destino" 🔌🤖\n\n'
+        + 'Martín Gira, cofundador y CTO de Wallbit, cuenta cómo se usan los MCPs para que un agente de IA pase de conversar a actuar sobre un sistema real.\n\n'
+        + '📅 Jueves 5 de noviembre · 20h ARG / 18h COL / 17h MX\n'
+        + 'Una clase de Henry × Wallbit. Si estás construyendo con IA, te va a servir:\n' + link('linkedin_post');
+      document.getElementById('share-in').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(link('linkedin'));
+      document.getElementById('share-wa').href = 'https://wa.me/?text=' + encodeURIComponent(msg + ' ' + link('whatsapp'));
+      async function copiar(txt, el, ok, vuelta) {
+        try { await navigator.clipboard.writeText(txt); }
+        catch (e) { const t = document.createElement('textarea'); t.value = txt; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
+        el.textContent = ok; setTimeout(() => { el.textContent = vuelta; }, 2200);
+      }
+      document.getElementById('share-copy').addEventListener('click', () =>
+        copiar(link('copy_link'), document.getElementById('share-copy-label'), '¡Link copiado!', 'Copiar link'));
+      document.getElementById('share-post').addEventListener('click', () =>
+        copiar(post(), document.getElementById('share-post-label'), '¡Copiado! Pégalo en LinkedIn', 'Copiar post para LinkedIn'));
+    })();
   </script>
 
   <script>
