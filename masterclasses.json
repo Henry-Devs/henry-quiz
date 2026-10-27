@@ -2095,7 +2095,7 @@
     },
     {
       "slug": "reglas-ia-equipo-cami-manera",
-      "nombre": "Las reglas de juego para la IA de tu equipo",
+      "nombre": "Cómo implementar estrategias de IA en tu equipo",
       "desc": "Con Cami Manera: sal con el primer borrador de las reglas de uso de IA de tu equipo, sin tecnicismos.",
       "carrera": "AI para Líderes",
       "fecha": "2026-10-29T20:00:00-03:00",
