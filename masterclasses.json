@@ -2,107 +2,92 @@
   "schemaVersion": 1,
   "masterclasses": [
     {
-      "slug": "ai-engineering-101-alexander-vicondoa",
-      "nombre": "Cómo llevar un prototipo de IA a producción",
-      "desc": "Cómo diseñar sistemas de IA que operan de forma confiable en producción.",
-      "carrera": "AI Engineering",
-      "fecha": "2026-09-24T19:00:00-03:00",
-      "duracionMin": 60,
-      "fechaCorta": "24 SEP",
-      "fechaLarga": "Jueves 24 de septiembre",
+      "slug": "clase-reportes-agentes-ia",
+      "nombre": "Cómo generar reportes automáticos con agentes de AI",
+      "desc": "Un caso real funcionando día a día: cómo automatizar reportes y ahorrar horas de trabajo repetitivo.",
+      "carrera": "AI Automation",
+      "fecha": "2026-07-29T19:00:00-03:00",
+      "fechaCorta": "29 JUL",
+      "fechaLarga": "Miércoles 29 de julio",
       "hora": "16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷",
-      "banner": "banner-ai-engineering-101.jpg",
+      "banner": "banner-lolo-cappucci.jpg",
       "speakers": [
         {
-          "nombre": "Alexander Vicondoa",
-          "rol": "Head of Deployment en ElevenLabs",
-          "foto": "alexander-vicondoa-prototipo-produccion.png",
+          "nombre": "Lolo Cappucci",
+          "rol": "Co-founder y Head of Growth en Ninjō",
+          "foto": "lolo-cappucci.jpg",
           "bio": [
-            "Dirige el equipo de Deployment de ElevenLabs, la compañía de IA de voz de mayor valuación a nivel global. Hoy es el referente experto de la carrera AI Engineering de Henry."
-          ],
-          "logo": "eleven-labs-logo.png"
+            "Co-founder y Head of Growth en Ninjō, una plataforma de conversaciones con IA que suenan humanas, a escala",
+            "Experto en infraestructura de IA para escalar las ganancias de tu empresa o agencia",
+            "Casos de éxito reales: empresas y agencias que ya automatizaron sus reportes y operaciones con su sistema",
+            "Usa Claude Code y GitHub como su sistema operativo diario para llevarlo a la práctica"
+          ]
         }
       ],
-      "link": "landing-ai-engineering-101-alexander-vicondoa.html",
+      "link": "landing-clase-reportes-agentes-ia.html",
       "landing": {
         "hero": {
           "badges": [
-            "Con Alexander Vicondoa (ElevenLabs)"
-          ],
-          "bajada": "Construir un prototipo funcional de IA es, hoy, relativamente accesible. Diseñar un sistema que opere de forma confiable en producción requiere un conjunto de competencias distinto. Esta masterclass presenta ese proceso de la mano de quien lo ejecuta a diario en ElevenLabs."
+            "1 hora",
+            "Automatización con IA"
+          ]
         },
         "grabaciones": [
           {
-            "url": "https://www.youtube.com/watch?v=Ogi2yF-7wRA"
+            "url": "https://www.youtube.com/watch?v=nNMaq-WVM90"
           }
         ],
-        "hubspot": {
-          "masterclass_fecha_larga": "Jueves 24 de septiembre",
-          "masterclass_hora": "16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷",
-          "masterclass_nombre": "AI Engineering 101",
-          "masterclass_speaker_nombre": "Alexander Vicondoa",
-          "masterclass_speaker_bio": "Dirige el equipo de Deployment de ElevenLabs.",
-          "masterclass_tema_1": "Qué es AI Engineering: aplicado vs. ML/research",
-          "masterclass_tema_2": "LLMs y Context Engineering",
-          "masterclass_tema_3": "RAG, Agentes y Orquestación",
-          "masterclass_youtube_link": "https://www.youtube.com/watch?v=Ogi2yF-7wRA",
-          "masterclass_cupon_code": "MASTERCLASS25",
-          "masterclass_cohorte_texto": "13 de octubre de 2026, Part Time",
-          "masterclass_cta_url": "https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=instagram&utm_medium=organico&utm_campaign=MasterclassAIE&utm_content=chino",
-          "career_interest": "AI Engineer",
-          "masterclass_carrera": "AI Engineer",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%20Engineering%20101&dates=20260924T220000Z/20260924T230000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry%20con%20Alexander%20Vicondoa%20(ElevenLabs).&location=Online"
-        },
+        "pixelContentName": "clase-reportes-agentes-ia",
         "bloques": [
           {
-            "tipo": "empresa",
-            "logo": "eleven-labs-logo.png",
-            "texto": "ElevenLabs desarrolla los modelos de **voz por IA** más avanzados del mercado: texto a voz ultra realista, clonado de voz y conversación en tiempo real, en decenas de idiomas. Su tecnología es la que usan bancos, aplicaciones y productos de todo el mundo para dar voz a sus agentes de IA — la misma que Alexander despliega y evalúa a diario."
-          },
-          {
-            "tipo": "tarjetas",
-            "titulo": "Para quién está dirigida esta masterclass",
+            "tipo": "lista",
+            "estilo": "viñetas",
             "items": [
-              {
-                "etiqueta": "Perfil",
-                "texto": "Desarrolladores con 3+ años de experiencia profesional (backend, full-stack o data).",
-                "destacado": true
-              },
-              {
-                "etiqueta": "Objetivo",
-                "texto": "Incorporar IA aplicada a la práctica de desarrollo de software."
-              }
+              "1 hora para ver un sistema real de agentes de IA en acción",
+              "Más allá de la teoría: un caso real funcionando día a día",
+              "Automatizá reportes y ahorrá horas de trabajo repetitivo",
+              "La experiencia real de Lolo armando su propio sistema con IA"
             ]
           },
           {
+            "tipo": "lista",
+            "estilo": "tarjetas",
+            "titulo": "Al terminar te llevás",
+            "items": [
+              "Un quiz de carrera personalizado",
+              "Un certificado para comunicar en LinkedIn",
+              "Una sesión gratuita con un asesor de carrera",
+              "Un descuento exclusivo para asistentes"
+            ],
+            "cta": true
+          },
+          {
             "tipo": "seccion",
-            "etiqueta": "Carrera",
-            "titulo": "AI Engineering",
-            "bajada": "Diseña, entrena y despliega sistemas de IA que resuelven problemas complejos a escala, con las mismas herramientas que usa un AI Engineer real.",
+            "titulo": "¿Por qué AI Automation en Henry?",
+            "bajada": "Aprendé a automatizar procesos, diseñar flujos y crear agentes con herramientas no-code y low-code — sin necesitar background técnico.",
             "bloques": [
               {
                 "tipo": "lista",
                 "estilo": "numerada",
                 "items": [
-                  "Diseña, entrena y despliega modelos de IA que resuelven problemas complejos a escala",
-                  "Construye aplicaciones impulsadas por IA integrando modelos y APIs",
-                  "Crea agentes autónomos y soluciones multimodales",
-                  "Implementa arquitecturas end-to-end de IA con servicios cloud",
-                  "Desarrolla proyectos técnicos para portfolio profesional"
+                  "Desarrollo completo de productos con IA",
+                  "Automatización de procesos con herramientas no-code y low-code",
+                  "Integración con APIs, webhooks y tecnologías de IA aplicada",
+                  "Creación y gestión de agentes inteligentes para atención al cliente",
+                  "Proyectos para tu portafolio y career coach personalizado"
                 ]
               },
               {
                 "tipo": "chips",
                 "titulo": "Herramientas que vas a usar",
                 "items": [
-                  "Python",
+                  "n8n",
+                  "Make",
+                  "Airtable",
+                  "Flowise AI",
+                  "HubSpot",
                   "OpenAI",
-                  "Claude",
-                  "Gemini",
-                  "LangChain",
-                  "Hugging Face",
-                  "Pinecone",
-                  "RAG"
+                  "Gemini"
                 ]
               },
               {
@@ -113,36 +98,806 @@
                     "texto": "Estudiantes en la comunidad Henry"
                   },
                   {
-                    "valor": "14 semanas",
-                    "texto": "+ nivelación asincrónica previa"
+                    "valor": "2 meses",
+                    "texto": "Part time, 10hs semanales"
                   },
                   {
-                    "valor": "7 días",
-                    "texto": "De prueba, con garantía de empleo"
+                    "valor": "1 semana",
+                    "texto": "De prueba o te devolvemos el dinero"
                   }
                 ]
               },
               {
-                "tipo": "ficha",
-                "filas": [
+                "tipo": "testimonios",
+                "items": [
                   {
-                    "label": "Próxima cohorte",
-                    "valor": "13 de octubre de 2026"
+                    "texto": "Henry me dio las herramientas y la confianza para dar un giro a mi carrera. En menos de un año pasé de no saber programar a tener el trabajo de mis sueños.",
+                    "nombre": "Alberto Perrone",
+                    "rol": "Data Scientist · Globant"
                   },
                   {
-                    "label": "Modalidad",
-                    "valor": "Part Time, 10 hs semanales"
-                  },
-                  {
-                    "label": "Horario en vivo",
-                    "valor": "mar. y jue., 17-19h MX 🇲🇽 / 18-20h COL 🇨🇴 / 20-22h ARG 🇦🇷"
+                    "texto": "El bootcamp es intenso, pero vale cada segundo. Aprendés a resolver problemas del mundo real, que es lo que las empresas buscan hoy en día.",
+                    "nombre": "Josuara Caballera",
+                    "rol": "Full Stack Engineer · Kavak"
                   }
+                ]
+              }
+            ]
+          },
+          {
+            "tipo": "cierre",
+            "titulo": "¿Todo listo para ver la clase?"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "analisis-datos-claude",
+      "nombre": "Claude para análisis de datos de punta a punta",
+      "desc": "Limpia y prepara tus datos con Claude, sin fórmulas manuales, de punta a punta.",
+      "carrera": "Data Science",
+      "fecha": "2026-08-11T21:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "11 AGO",
+      "fechaLarga": "Martes 11 de agosto",
+      "hora": "21h ARG 🇦🇷 / 18h MX 🇲🇽 / 19h COL 🇨🇴",
+      "banner": "banner-claude-analisis-datos.jpg",
+      "speakers": [
+        {
+          "nombre": "Raúl Montesinos",
+          "rol": "CRM Manager en Nespresso",
+          "foto": "raul-montesinos.jpg",
+          "bio": [
+            "Lidera estrategias basadas en datos para fortalecer la relación con los clientes y apoyar la toma de decisiones",
+            "Experiencia en business intelligence, analítica y automatización de procesos con Excel, Power BI, SQL y Python",
+            "Creador de contenido de datos en TikTok (@raulmontesin), con más de 85 mil seguidores"
+          ]
+        }
+      ],
+      "link": "landing-analisis-datos-claude.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Análisis de datos",
+            "Con Raúl Montesinos"
+          ]
+        },
+        "grabaciones": [
+          {
+            "url": "https://www.youtube.com/watch?v=tW0LkbBrRP0"
+          }
+        ],
+        "hubspot": {
+          "masterclass_nombre": "Claude para análisis de datos",
+          "masterclass_fecha_larga": "Martes 11 de agosto",
+          "masterclass_hora": "21hs ARG 🇦🇷 / 18hs MX 🇲🇽 / 19hs COL 🇨🇴",
+          "masterclass_speaker_nombre": "Raúl Montesinos",
+          "masterclass_speaker_bio": "CRM Manager en Nespresso y creador de contenido de datos en TikTok @raulmontesin",
+          "masterclass_tema_1": "Limpieza de datos sin edición manual fila por fila",
+          "masterclass_tema_2": "Análisis exploratorio (EDA): patrones, outliers y relaciones clave",
+          "masterclass_tema_3": "Creación de reportes en HTML compartibles",
+          "masterclass_youtube_link": "https://www.youtube.com/watch?v=tW0LkbBrRP0",
+          "masterclass_carrera": "Data Science",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Claude%20para%20an%C3%A1lisis%20de%20datos&dates=20260812T000000Z/20260812T010000Z&details=Masterclass%20en%20vivo%20de%20Henry%20con%20Ra%C3%BAl%20Montesinos.&location=Online"
+        },
+        "pixelContentName": "analisis-datos-claude",
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "viñetas",
+            "items": [
+              "Limpia y prepara tus datos con Claude, sin fórmulas manuales",
+              "Haz un análisis exploratorio (EDA) completo en minutos",
+              "Genera reportes en HTML listos para compartir, sin escribir código",
+              "La experiencia real de Raúl usando Claude en su trabajo con datos"
+            ]
+          },
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Vas a ver",
+            "items": [
+              {
+                "titulo": "Limpieza de datos",
+                "texto": "Deja tus datasets listos para analizar, sin edición manual fila por fila"
+              },
+              {
+                "titulo": "Análisis exploratorio (EDA)",
+                "texto": "Encuentra patrones, outliers y relaciones clave con Claude haciendo el trabajo pesado"
+              },
+              {
+                "titulo": "Creación de reportes en HTML",
+                "texto": "Convierte tu análisis en un reporte visual y compartible, listo para enviar"
+              }
+            ]
+          },
+          {
+            "tipo": "lista",
+            "estilo": "tarjetas",
+            "titulo": "Al terminar te llevas",
+            "items": [
+              "Un quiz de carrera personalizado",
+              "Un certificado para comunicar en LinkedIn",
+              "Una sesión gratuita con un asesor de carrera",
+              "Un descuento exclusivo para asistentes"
+            ],
+            "cta": true
+          },
+          {
+            "tipo": "seccion",
+            "titulo": "¿Por qué Data Science en Henry?",
+            "bajada": "Aprende análisis de datos y Machine Learning para descubrir insights y potenciar decisiones de negocio.",
+            "bloques": [
+              {
+                "tipo": "lista",
+                "estilo": "numerada",
+                "items": [
+                  "Formación práctica en análisis, modelado y trabajo con datos reales",
+                  "Dominio de las herramientas clave para decisiones basadas en datos",
+                  "Construcción de proyectos que muestran tu capacidad técnica end-to-end",
+                  "Entrenamiento para desarrollar criterios analíticos y resolver problemas con impacto",
+                  "Acompañamiento profesional y preparación laboral para ingresar al mundo data"
                 ]
               },
               {
                 "tipo": "chips",
+                "titulo": "Herramientas que vas a usar",
                 "items": [
-                  "Garantía de empleo"
+                  "Python",
+                  "Pandas",
+                  "NumPy",
+                  "Scikit-learn",
+                  "SQL",
+                  "Power BI",
+                  "Snowflake"
+                ]
+              },
+              {
+                "tipo": "cifras",
+                "items": [
+                  {
+                    "valor": "+20.000",
+                    "texto": "Estudiantes en la comunidad Henry"
+                  },
+                  {
+                    "valor": "8 meses",
+                    "texto": "Part time, +15hs semanales"
+                  },
+                  {
+                    "valor": "1 semana",
+                    "texto": "De prueba o te devolvemos el dinero"
+                  }
+                ]
+              },
+              {
+                "tipo": "testimonios",
+                "items": [
+                  {
+                    "texto": "Henry me dio las herramientas y la confianza para dar un giro a mi carrera. En menos de un año pasé de no saber programar a tener el trabajo de mis sueños.",
+                    "nombre": "Alberto Perrone",
+                    "rol": "Data Scientist · Globant"
+                  },
+                  {
+                    "texto": "De Henry destaco cómo crean comunidad. Un espacio para seguir aprendiendo, resolver y avanzar mucho más rápido.",
+                    "nombre": "Darwin Moreno",
+                    "rol": "Data Scientist · MaterCell"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "git-github-desde-cero",
+      "nombre": "Git y GitHub desde cero: sube tu primer proyecto en 1 hora",
+      "desc": "Aprende las bases de Git y GitHub y llévate tu primer proyecto publicado en internet.",
+      "carrera": "Full Stack AI",
+      "fecha": "2026-08-25T20:30:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "25 AGO",
+      "fechaLarga": "Martes 25 de agosto",
+      "hora": "17:30 MX 🇲🇽 / 18:30 COL 🇨🇴 / 20:30 ARG 🇦🇷",
+      "banner": "banner-git-github.jpg",
+      "speakers": [
+        {
+          "nombre": "Camilo",
+          "rol": "Instructor de Henry"
+        }
+      ],
+      "link": "landing-git-github-desde-cero.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Gratuita",
+            "1 hora"
+          ],
+          "kicker": "La IA no te está sacando el lugar: *te está subiendo la vara.*",
+          "bajada": "Todos hablan de GitHub, pero nadie te dice por dónde empezar. Aprende las bases de Git y GitHub y llévate tu primer proyecto publicado en internet, con un link que puedes compartir."
+        },
+        "grabaciones": [
+          {
+            "url": "https://www.youtube.com/watch?v=t2PV51gas6I"
+          }
+        ],
+        "hubspot": {
+          "masterclass_nombre": "Git y GitHub desde cero",
+          "masterclass_fecha_larga": "Martes 25 de agosto",
+          "masterclass_hora": "17:30 MX 🇲🇽 / 18:30 COL 🇨🇴 / 20:30 ARG 🇦🇷",
+          "masterclass_speaker_nombre": "Camilo",
+          "masterclass_speaker_bio": "Instructor de Henry",
+          "masterclass_tema_1": "Qué es Git y qué es GitHub, y en qué se diferencian",
+          "masterclass_tema_2": "Tu primer repositorio y los tres comandos que se usan el 90% del tiempo",
+          "masterclass_tema_3": "Publica tu proyecto en la nube y compártelo con un link",
+          "masterclass_youtube_link": "https://www.youtube.com/watch?v=t2PV51gas6I",
+          "career_interest": "Full Stack AI",
+          "masterclass_carrera": "Full Stack AI",
+          "masterclass_cupon_code": "FULLSTACK30",
+          "masterclass_cohorte_texto": "31 de agosto Full Time, 7 de septiembre Part Time",
+          "masterclass_cta_url": "https://www.soyhenry.com/webfullstack?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=25/08",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Git%20y%20GitHub%20desde%20cero&dates=20260825T233000Z/20260826T003000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry.%20Subimos%20un%20proyecto%20a%20GitHub%20y%20lo%20publicamos%20en%20internet.&location=Online"
+        },
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "viñetas",
+            "items": [
+              "Sin necesidad de conocimientos técnicos previos",
+              "Control de versiones para cualquier proyecto, no solo para programar",
+              "Sin instalar nada de antemano: arrancamos de cero, en vivo",
+              "Te llevas un link propio con tu proyecto publicado"
+            ]
+          },
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Qué vas a aprender",
+            "items": [
+              "Qué es Git y qué es GitHub, y en qué se diferencian",
+              "Tu primer repositorio, paso a paso",
+              "Los tres comandos que se usan el 90% del tiempo",
+              "Cómo subir un proyecto desde tu computadora",
+              "Cómo publicarlo en la nube y compartirlo con un link",
+              "Tu perfil de GitHub como portfolio para buscar trabajo"
+            ]
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Para quién es",
+            "items": [
+              {
+                "etiqueta": "✓ Es para ti si",
+                "texto": "Quieres guardar y ordenar tus proyectos, o escuchaste hablar de Git y GitHub y nunca tuviste claro cuál es cuál. Arrancamos de cero."
+              }
+            ]
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Necesito saber programar?",
+                "respuesta": "No. Arrancamos desde cero y trabajamos sobre un proyecto ya empezado, así que puedes seguir la clase sin experiencia previa."
+              },
+              {
+                "pregunta": "¿Git y GitHub son lo mismo?",
+                "respuesta": "No. Git es el sistema de control de versiones que corre en tu computadora; GitHub es la plataforma en la nube donde se guarda y se comparte ese proyecto."
+              },
+              {
+                "pregunta": "¿GitHub es gratis?",
+                "respuesta": "Sí. La cuenta personal es gratuita e incluye repositorios públicos y privados."
+              },
+              {
+                "pregunta": "¿Sirve si no me dedico al desarrollo?",
+                "respuesta": "Sí. Cualquier proyecto con versiones —documentación, análisis de datos, automatizaciones— se versiona y se comparte igual."
+              }
+            ]
+          },
+          {
+            "tipo": "lista",
+            "estilo": "tarjetas",
+            "titulo": "Al terminar te llevas",
+            "items": [
+              "Tu proyecto publicado y un link para compartir",
+              "Un certificado para comunicar en LinkedIn",
+              "Una sesión gratuita con un asesor de carrera",
+              "Un descuento exclusivo para asistentes"
+            ],
+            "cta": true
+          },
+          {
+            "tipo": "cifras",
+            "titulo": "La IA no te está sacando el lugar. *Te está subiendo la vara.*",
+            "bajada": "Quienes ya usan IA en su trabajo ganan hasta 56% más, y los sueldos crecen el doble de rápido en las industrias donde más se usa. La brecha no es entre humanos e IA: es entre quién se sube ahora y quién se queda mirando.",
+            "items": [
+              {
+                "valor": "56%",
+                "texto": "más de sueldo, en promedio, para quienes tienen habilidades de IA"
+              },
+              {
+                "valor": "x4",
+                "texto": "crecimiento de productividad en las industrias que más adoptan IA"
+              },
+              {
+                "valor": "50%",
+                "texto": "de las búsquedas de empleo tech ya piden habilidades de IA"
+              }
+            ],
+            "fuente": "Fuentes: PwC Global AI Jobs Barometer 2025 · Dice Tech Job Report (sept. 2025)"
+          },
+          {
+            "tipo": "cifras",
+            "titulo": "En LATAM todavía estás a tiempo",
+            "bajada": "La región adopta IA más rápido que el resto del mundo, pero le faltan miles de personas formadas para sostener esa demanda. Esa brecha, hoy, es tu ventaja.",
+            "items": [
+              {
+                "valor": "47%",
+                "texto": "de adopción de IA en LATAM, por encima del promedio global"
+              },
+              {
+                "valor": "+425%",
+                "texto": "crecieron las inscripciones a cursos de IA generativa en la región en un año"
+              }
+            ],
+            "fuente": "Fuentes: CEPAL · Coursera Global Skills Report 2025"
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "AI Product Development",
+            "titulo": "¿Por qué Full Stack AI en Henry?",
+            "bajada": "Desarrollas aplicaciones completas de punta a punta —frontend, backend y bases de datos— con la IA integrada en tu workflow. Te conviertes en Desarrollador Full Stack, Backend o Frontend. Puedes empezar desde cero, aunque nunca hayas programado, y terminar construyendo productos reales.",
+            "bloques": [
+              {
+                "tipo": "lista",
+                "estilo": "numerada",
+                "items": [
+                  "Construir aplicaciones web completas, desde el frontend hasta el backend y las bases de datos",
+                  "Desarrollar APIs, lógica de negocio y sistemas con persistencia y validaciones",
+                  "Crear interfaces modernas y escalables con React y TypeScript",
+                  "Integrar inteligencia artificial en aplicaciones y workflows",
+                  "Implementar prácticas modernas: testing, arquitectura y despliegue en la nube"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Herramientas que vas a usar",
+                "items": [
+                  "Git y GitHub",
+                  "JavaScript",
+                  "TypeScript",
+                  "React",
+                  "Node.js",
+                  "Express",
+                  "PostgreSQL",
+                  "APIs REST",
+                  "AWS"
+                ]
+              },
+              {
+                "tipo": "cifras",
+                "items": [
+                  {
+                    "valor": "8 meses",
+                    "texto": "Part time, 20hs semanales"
+                  },
+                  {
+                    "valor": "4 meses",
+                    "texto": "Full time, 40hs semanales"
+                  },
+                  {
+                    "valor": "1 semana",
+                    "texto": "De prueba o te devolvemos el importe total"
+                  }
+                ]
+              }
+            ],
+            "cta": true
+          }
+        ]
+      }
+    },
+    {
+      "slug": "analisis-a-ml",
+      "nombre": "Data Science desde cero: del análisis de datos a Machine Learning",
+      "desc": "Limpia un archivo real, sácale respuestas claras y entrena tu primer modelo que predice.",
+      "carrera": "Data Science",
+      "fecha": "2026-08-26T19:00:00-05:00",
+      "duracionMin": 60,
+      "fechaCorta": "26 AGO",
+      "fechaLarga": "Miércoles 26 y jueves 27 de agosto",
+      "hora": "Clase 1: 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷 · Clase 2: 19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+      "banner": "banner-curso-intro-ds.jpg",
+      "speakers": [
+        {
+          "nombre": "Andrés Agualdo",
+          "rol": "Data Scientist e instructor en Henry"
+        }
+      ],
+      "link": "landing-analisis-a-ml.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Gratuito",
+            "2 clases"
+          ],
+          "kicker": "La IA no te está sacando el lugar: *te está subiendo la vara.*",
+          "bajada": "Todos los días se toman decisiones con datos que nadie ordenó. En dos clases en vivo vas a limpiar un archivo real, sacarle respuestas claras y entrenar tu primer modelo que predice."
+        },
+        "grabaciones": [
+          {
+            "titulo": "Clase 1 · De un archivo caótico a respuestas claras",
+            "url": "https://www.youtube.com/watch?v=b30BCjowbzY"
+          },
+          {
+            "titulo": "Clase 2 · Tu primer modelo de Machine Learning",
+            "url": "https://www.youtube.com/watch?v=NFx9m7j11m8"
+          }
+        ],
+        "hubspot": {
+          "masterclass_nombre": "De análisis a Machine Learning",
+          "masterclass_fecha_larga": "Miércoles 26 y jueves 27 de agosto",
+          "masterclass_hora": "Clase 1: 18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷 · Clase 2: 19hs MX 🇲🇽 / 20hs COL 🇨🇴 / 22hs ARG 🇦🇷",
+          "masterclass_speaker_nombre": "Andrés Agualdo",
+          "masterclass_speaker_bio": "Data Scientist e instructor en Henry",
+          "masterclass_tema_1": "Limpieza y análisis de datos (Clase 1)",
+          "masterclass_tema_2": "Tu primer modelo de Machine Learning, sin código (Clase 2)",
+          "masterclass_tema_3": "Predice tu sueldo y descubre qué variables pesan más",
+          "masterclass_youtube_link": "https://www.youtube.com/watch?v=b30BCjowbzY",
+          "career_interest": "Data Science",
+          "masterclass_carrera": "Data Science",
+          "masterclass_cupon_code": "DATASCIENCE30",
+          "masterclass_cohorte_texto": "7 de septiembre",
+          "masterclass_cta_url": "https://www.soyhenry.com/carrera-data-science?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=26y27/08",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Clase%201%3A%20De%20un%20archivo%20ca%C3%B3tico%20a%20respuestas%20claras&dates=20260827T000000Z/20260827T010000Z&details=Curso%20introductorio%20de%20Data%20Science%20de%20Henry.%20Clase%201%20de%202.&location=Online"
+        },
+        "pixelContentName": "analisis-a-ml",
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "viñetas",
+            "items": [
+              "No necesitas experiencia técnica previa ni instalar nada",
+              "Aprende a ordenar datos desordenados y a hacerles las preguntas correctas",
+              "Entrena tu primer modelo de Machine Learning sin escribir código",
+              "Te llevas el archivo, el modelo y los prompts para repetirlo solo cuando quieras"
+            ]
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Las 2 clases",
+            "items": [
+              {
+                "etiqueta": "Clase 1 · Miércoles 26 de agosto",
+                "titulo": "De un archivo caótico a respuestas claras",
+                "texto": "Limpieza y análisis de datos",
+                "filas": [
+                  {
+                    "label": "Hora",
+                    "valor": "18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷"
+                  },
+                  {
+                    "label": "Los datos",
+                    "valor": "sueldos reales del sector tech en LATAM, tal como vienen"
+                  },
+                  {
+                    "label": "Herramientas",
+                    "valor": "Python · Pandas"
+                  },
+                  {
+                    "label": "Hands-on",
+                    "valor": "armas tu informe"
+                  }
+                ]
+              },
+              {
+                "etiqueta": "Clase 2 · Jueves 27 de agosto",
+                "titulo": "Tu primer modelo de Machine Learning, sin escribir código",
+                "texto": "Machine Learning: predecir",
+                "filas": [
+                  {
+                    "label": "Hora",
+                    "valor": "19hs MX 🇲🇽 / 20hs COL 🇨🇴 / 22hs ARG 🇦🇷"
+                  },
+                  {
+                    "label": "Los datos",
+                    "valor": "los mismos, ya ordenados en la Clase 1"
+                  },
+                  {
+                    "label": "Herramientas",
+                    "valor": "Scikit-learn"
+                  },
+                  {
+                    "label": "Hands-on",
+                    "valor": "predices tu sueldo"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tipo": "lista",
+            "estilo": "tarjetas",
+            "titulo": "Al terminar te llevas",
+            "items": [
+              "El archivo, el modelo y los prompts de las 2 clases",
+              "Un certificado para comunicar en LinkedIn",
+              "Una sesión gratuita con un asesor de carrera",
+              "Un descuento exclusivo para asistentes"
+            ],
+            "cta": true
+          },
+          {
+            "tipo": "cifras",
+            "titulo": "La IA no te está sacando el lugar. *Te está subiendo la vara.*",
+            "bajada": "Quienes ya usan IA en su trabajo ganan hasta 56% más, y los sueldos crecen el doble de rápido en las industrias donde más se usa. La brecha no es entre humanos e IA: es entre quién se sube ahora y quién se queda mirando.",
+            "items": [
+              {
+                "valor": "56%",
+                "texto": "más de sueldo, en promedio, para quienes tienen habilidades de IA"
+              },
+              {
+                "valor": "x4",
+                "texto": "crecimiento de productividad en las industrias que más adoptan IA"
+              },
+              {
+                "valor": "50%",
+                "texto": "de las búsquedas de empleo tech ya piden habilidades de IA"
+              }
+            ],
+            "fuente": "Fuentes: PwC Global AI Jobs Barometer 2025 · Dice Tech Job Report (sept. 2025)"
+          },
+          {
+            "tipo": "cifras",
+            "titulo": "En LATAM todavía estás a tiempo",
+            "bajada": "La región adopta IA más rápido que el resto del mundo, pero le faltan miles de personas formadas para sostener esa demanda. Esa brecha, hoy, es tu ventaja.",
+            "items": [
+              {
+                "valor": "47%",
+                "texto": "de adopción de IA en LATAM, por encima del promedio global"
+              },
+              {
+                "valor": "+425%",
+                "texto": "crecieron las inscripciones a cursos de IA generativa en la región en un año"
+              }
+            ],
+            "fuente": "Fuentes: CEPAL · Coursera Global Skills Report 2025"
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "Data Science & AI",
+            "titulo": "¿Por qué Data Science en Henry?",
+            "bajada": "Transformas datos en decisiones. Te conviertes en Data Analyst, Data Scientist, Machine Learning Analyst o BI Analyst. Una carrera potenciada con IA, diseñada para arrancar desde cero, sin conocimientos técnicos previos.",
+            "bloques": [
+              {
+                "tipo": "lista",
+                "estilo": "numerada",
+                "items": [
+                  "Formación práctica en análisis, modelado y trabajo con datos reales",
+                  "Dominio de las herramientas clave para decisiones basadas en datos",
+                  "Construcción de proyectos que muestran tu capacidad técnica end-to-end",
+                  "Entrenamiento para desarrollar criterios analíticos y resolver problemas con impacto",
+                  "Acompañamiento profesional y preparación laboral para ingresar al mundo data"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Herramientas que vas a usar",
+                "items": [
+                  "Python",
+                  "Pandas",
+                  "NumPy",
+                  "Scikit-learn",
+                  "SQL",
+                  "Power BI",
+                  "Snowflake"
+                ]
+              },
+              {
+                "tipo": "cifras",
+                "items": [
+                  {
+                    "valor": "+20.000",
+                    "texto": "Estudiantes en la comunidad Henry"
+                  },
+                  {
+                    "valor": "8 meses",
+                    "texto": "Part time, +15hs semanales"
+                  },
+                  {
+                    "valor": "1 semana",
+                    "texto": "De prueba o te devolvemos el dinero"
+                  }
+                ]
+              },
+              {
+                "tipo": "testimonios",
+                "items": [
+                  {
+                    "texto": "Henry me dio las herramientas y la confianza para dar un giro a mi carrera. En menos de un año pasé de no saber programar a tener el trabajo de mis sueños.",
+                    "nombre": "Alberto Perrone",
+                    "rol": "Data Scientist · Globant"
+                  },
+                  {
+                    "texto": "De Henry destaco cómo crean comunidad. Un espacio para seguir aprendiendo, resolver y avanzar mucho más rápido.",
+                    "nombre": "Darwin Moreno",
+                    "rol": "Data Scientist · MaterCell"
+                  }
+                ]
+              }
+            ],
+            "cta": true
+          }
+        ]
+      }
+    },
+    {
+      "slug": "roadmap-programador-ia",
+      "nombre": "El roadmap para convertirte en programador con IA en 2026",
+      "desc": "Un mapa completo, paso a paso, de cómo se llega a programar con inteligencia artificial.",
+      "carrera": "Full Stack AI",
+      "fecha": "2026-09-09T21:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "9 SEP",
+      "fechaLarga": "Miércoles 9 de septiembre",
+      "hora": "18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷",
+      "banner": "banner-roadmap.jpg",
+      "speakers": [
+        {
+          "nombre": "Gamaiel Camey",
+          "rol": "Full Stack Developer"
+        }
+      ],
+      "link": "landing-roadmap-programador-ia.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Semana del Programador"
+          ],
+          "bajada": "Un mapa completo, paso a paso, de cómo se llega a programar con inteligencia artificial — y los primeros pasos explicados a fondo, para que el jueves ya sepas exactamente por dónde arrancar."
+        },
+        "grabaciones": [
+          {
+            "url": "https://www.youtube.com/watch?v=y8eky45aNv4"
+          }
+        ],
+        "hubspot": {
+          "masterclass_nombre": "El roadmap para convertirte en programador con IA en 2026",
+          "masterclass_fecha_larga": "Miércoles 9 de septiembre",
+          "masterclass_hora": "18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷",
+          "masterclass_speaker_nombre": "Gamaiel Camey",
+          "masterclass_speaker_bio": "Full Stack Developer",
+          "masterclass_tema_1": "Entender cómo \"piensa\" una computadora (lógica)",
+          "masterclass_tema_2": "Armar tu primer sitio: HTML + CSS",
+          "masterclass_tema_3": "JavaScript: que la página reaccione",
+          "masterclass_youtube_link": "https://www.youtube.com/watch?v=y8eky45aNv4",
+          "masterclass_cupon_code": "MASTERCLASS30",
+          "masterclass_cohorte_texto": "28 de septiembre, Full Time y Part Time",
+          "masterclass_cta_url": "https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=instagram&utm_medium=organico&utm_campaign=MasterclassFS_AI&utm_content=46274",
+          "career_interest": "Full Stack AI",
+          "masterclass_carrera": "Full Stack AI",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20El%20roadmap%20para%20convertirte%20en%20programador%20con%20IA%20en%202026&dates=20260910T000000Z/20260910T010000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry.%20Semana%20del%20Programador.&location=Online"
+        },
+        "bloques": [
+          {
+            "tipo": "mapa",
+            "titulo": "El mapa completo, paso a paso",
+            "bajada": "En la clase profundizamos en los primeros pasos. El resto del camino lo ves completo, para que sepas exactamente hacia dónde vas.",
+            "pasos": [
+              "Lógica",
+              "HTML + CSS",
+              "JavaScript",
+              "IA como copiloto",
+              "Backend",
+              "Bases de datos",
+              "React + TypeScript",
+              "Full Stack real",
+              "Git y GitHub",
+              "Subir a la nube",
+              "Proyecto final",
+              "Portfolio y empleo"
+            ],
+            "destacados": 3
+          },
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Hoy vemos a fondo",
+            "items": [
+              {
+                "titulo": "Entender cómo \"piensa\" una computadora",
+                "texto": "La lógica detrás de todo lo que sigue."
+              },
+              {
+                "titulo": "Armar tu primer sitio: HTML + CSS",
+                "texto": "Tu primera página, online."
+              },
+              {
+                "titulo": "JavaScript: que la página reaccione",
+                "texto": "De una página estática a una que responde."
+              }
+            ]
+          },
+          {
+            "tipo": "aviso",
+            "texto": "*Atención:* por asistir a la masterclass, desbloqueas una oferta especial por el Día del Programador."
+          },
+          {
+            "tipo": "lista",
+            "estilo": "tarjetas",
+            "titulo": "Al terminar te llevas",
+            "items": [
+              "El mapa completo para consultar cuando quieras",
+              "Un certificado para comunicar en LinkedIn",
+              "Una sesión gratuita con un asesor de carrera"
+            ],
+            "cta": true
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Necesito saber programar?",
+                "respuesta": "No. La clase está pensada para quien recién está viendo si este camino es para ella — arrancamos desde cero."
+              },
+              {
+                "pregunta": "¿Vamos a ver el roadmap completo en la clase?",
+                "respuesta": "Vas a ver el mapa entero, pero profundizamos solo en los primeros pasos — los que de verdad te destraban para arrancar."
+              },
+              {
+                "pregunta": "¿Hay oferta especial?",
+                "respuesta": "Sí, se desbloquea el día de la masterclass y corre hasta el Día del Programador (13/9)."
+              }
+            ]
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "Carrera",
+            "titulo": "Full Stack AI",
+            "bajada": "Desarrollas aplicaciones completas de punta a punta —frontend, backend y bases de datos— con la IA integrada en tu workflow. Te conviertes en Desarrollador Full Stack, Backend o Frontend. Puedes empezar desde cero, aunque nunca hayas programado, y terminar construyendo productos reales.",
+            "bloques": [
+              {
+                "tipo": "lista",
+                "estilo": "numerada",
+                "items": [
+                  "Construir aplicaciones web completas, desde el frontend hasta el backend y las bases de datos",
+                  "Desarrollar APIs, lógica de negocio y sistemas con persistencia y validaciones",
+                  "Crear interfaces modernas y escalables con React y TypeScript",
+                  "Integrar inteligencia artificial en aplicaciones y workflows",
+                  "Implementar prácticas modernas: testing, arquitectura y despliegue en la nube"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Herramientas que vas a usar",
+                "items": [
+                  "Git y GitHub",
+                  "JavaScript",
+                  "TypeScript",
+                  "React",
+                  "Node.js",
+                  "Express",
+                  "PostgreSQL",
+                  "APIs REST",
+                  "AWS"
+                ]
+              },
+              {
+                "tipo": "cifras",
+                "items": [
+                  {
+                    "valor": "8 meses",
+                    "texto": "Part time, 20hs semanales"
+                  },
+                  {
+                    "valor": "4 meses",
+                    "texto": "Full time, 40hs semanales"
+                  },
+                  {
+                    "valor": "1 semana",
+                    "texto": "De prueba o te devolvemos el importe total"
+                  }
                 ]
               }
             ],
@@ -682,699 +1437,93 @@
       }
     },
     {
-      "slug": "clase-reportes-agentes-ia",
-      "nombre": "Cómo generar reportes automáticos con agentes de AI",
-      "desc": "Un caso real funcionando día a día: cómo automatizar reportes y ahorrar horas de trabajo repetitivo.",
-      "carrera": "AI Automation",
-      "fecha": "2026-07-29T19:00:00-03:00",
-      "fechaCorta": "29 JUL",
-      "fechaLarga": "Miércoles 29 de julio",
-      "hora": "16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷",
-      "banner": "banner-lolo-cappucci.jpg",
-      "speakers": [
-        {
-          "nombre": "Lolo Cappucci",
-          "rol": "Co-founder y Head of Growth en Ninjō",
-          "foto": "lolo-cappucci.jpg",
-          "bio": [
-            "Co-founder y Head of Growth en Ninjō, una plataforma de conversaciones con IA que suenan humanas, a escala",
-            "Experto en infraestructura de IA para escalar las ganancias de tu empresa o agencia",
-            "Casos de éxito reales: empresas y agencias que ya automatizaron sus reportes y operaciones con su sistema",
-            "Usa Claude Code y GitHub como su sistema operativo diario para llevarlo a la práctica"
-          ]
-        }
-      ],
-      "link": "landing-clase-reportes-agentes-ia.html",
-      "landing": {
-        "hero": {
-          "badges": [
-            "1 hora",
-            "Automatización con IA"
-          ]
-        },
-        "grabaciones": [
-          {
-            "url": "https://www.youtube.com/watch?v=nNMaq-WVM90"
-          }
-        ],
-        "pixelContentName": "clase-reportes-agentes-ia",
-        "bloques": [
-          {
-            "tipo": "lista",
-            "estilo": "viñetas",
-            "items": [
-              "1 hora para ver un sistema real de agentes de IA en acción",
-              "Más allá de la teoría: un caso real funcionando día a día",
-              "Automatizá reportes y ahorrá horas de trabajo repetitivo",
-              "La experiencia real de Lolo armando su propio sistema con IA"
-            ]
-          },
-          {
-            "tipo": "lista",
-            "estilo": "tarjetas",
-            "titulo": "Al terminar te llevás",
-            "items": [
-              "Un quiz de carrera personalizado",
-              "Un certificado para comunicar en LinkedIn",
-              "Una sesión gratuita con un asesor de carrera",
-              "Un descuento exclusivo para asistentes"
-            ],
-            "cta": true
-          },
-          {
-            "tipo": "seccion",
-            "titulo": "¿Por qué AI Automation en Henry?",
-            "bajada": "Aprendé a automatizar procesos, diseñar flujos y crear agentes con herramientas no-code y low-code — sin necesitar background técnico.",
-            "bloques": [
-              {
-                "tipo": "lista",
-                "estilo": "numerada",
-                "items": [
-                  "Desarrollo completo de productos con IA",
-                  "Automatización de procesos con herramientas no-code y low-code",
-                  "Integración con APIs, webhooks y tecnologías de IA aplicada",
-                  "Creación y gestión de agentes inteligentes para atención al cliente",
-                  "Proyectos para tu portafolio y career coach personalizado"
-                ]
-              },
-              {
-                "tipo": "chips",
-                "titulo": "Herramientas que vas a usar",
-                "items": [
-                  "n8n",
-                  "Make",
-                  "Airtable",
-                  "Flowise AI",
-                  "HubSpot",
-                  "OpenAI",
-                  "Gemini"
-                ]
-              },
-              {
-                "tipo": "cifras",
-                "items": [
-                  {
-                    "valor": "+20.000",
-                    "texto": "Estudiantes en la comunidad Henry"
-                  },
-                  {
-                    "valor": "2 meses",
-                    "texto": "Part time, 10hs semanales"
-                  },
-                  {
-                    "valor": "1 semana",
-                    "texto": "De prueba o te devolvemos el dinero"
-                  }
-                ]
-              },
-              {
-                "tipo": "testimonios",
-                "items": [
-                  {
-                    "texto": "Henry me dio las herramientas y la confianza para dar un giro a mi carrera. En menos de un año pasé de no saber programar a tener el trabajo de mis sueños.",
-                    "nombre": "Alberto Perrone",
-                    "rol": "Data Scientist · Globant"
-                  },
-                  {
-                    "texto": "El bootcamp es intenso, pero vale cada segundo. Aprendés a resolver problemas del mundo real, que es lo que las empresas buscan hoy en día.",
-                    "nombre": "Josuara Caballera",
-                    "rol": "Full Stack Engineer · Kavak"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tipo": "cierre",
-            "titulo": "¿Todo listo para ver la clase?"
-          }
-        ]
-      }
-    },
-    {
-      "slug": "roadmap-programador-ia",
-      "nombre": "El roadmap para convertirte en programador con IA en 2026",
-      "desc": "Un mapa completo, paso a paso, de cómo se llega a programar con inteligencia artificial.",
-      "carrera": "Full Stack AI",
-      "fecha": "2026-09-09T21:00:00-03:00",
+      "slug": "ai-engineering-101-alexander-vicondoa",
+      "nombre": "Cómo llevar un prototipo de IA a producción",
+      "desc": "Cómo diseñar sistemas de IA que operan de forma confiable en producción.",
+      "carrera": "AI Engineering",
+      "fecha": "2026-09-24T19:00:00-03:00",
       "duracionMin": 60,
-      "fechaCorta": "9 SEP",
-      "fechaLarga": "Miércoles 9 de septiembre",
-      "hora": "18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷",
-      "banner": "banner-roadmap.jpg",
+      "fechaCorta": "24 SEP",
+      "fechaLarga": "Jueves 24 de septiembre",
+      "hora": "16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷",
+      "banner": "banner-ai-engineering-101.jpg",
       "speakers": [
         {
-          "nombre": "Gamaiel Camey",
-          "rol": "Full Stack Developer"
+          "nombre": "Alexander Vicondoa",
+          "rol": "Head of Deployment en ElevenLabs",
+          "foto": "alexander-vicondoa-prototipo-produccion.png",
+          "bio": [
+            "Dirige el equipo de Deployment de ElevenLabs, la compañía de IA de voz de mayor valuación a nivel global. Hoy es el referente experto de la carrera AI Engineering de Henry."
+          ],
+          "logo": "eleven-labs-logo.png"
         }
       ],
-      "link": "landing-roadmap-programador-ia.html",
+      "link": "landing-ai-engineering-101-alexander-vicondoa.html",
       "landing": {
         "hero": {
           "badges": [
-            "Semana del Programador"
+            "Con Alexander Vicondoa (ElevenLabs)"
           ],
-          "bajada": "Un mapa completo, paso a paso, de cómo se llega a programar con inteligencia artificial — y los primeros pasos explicados a fondo, para que el jueves ya sepas exactamente por dónde arrancar."
+          "bajada": "Construir un prototipo funcional de IA es, hoy, relativamente accesible. Diseñar un sistema que opere de forma confiable en producción requiere un conjunto de competencias distinto. Esta masterclass presenta ese proceso de la mano de quien lo ejecuta a diario en ElevenLabs."
         },
         "grabaciones": [
           {
-            "url": "https://www.youtube.com/watch?v=y8eky45aNv4"
+            "url": "https://www.youtube.com/watch?v=Ogi2yF-7wRA"
           }
         ],
         "hubspot": {
-          "masterclass_nombre": "El roadmap para convertirte en programador con IA en 2026",
-          "masterclass_fecha_larga": "Miércoles 9 de septiembre",
-          "masterclass_hora": "18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷",
-          "masterclass_speaker_nombre": "Gamaiel Camey",
-          "masterclass_speaker_bio": "Full Stack Developer",
-          "masterclass_tema_1": "Entender cómo \"piensa\" una computadora (lógica)",
-          "masterclass_tema_2": "Armar tu primer sitio: HTML + CSS",
-          "masterclass_tema_3": "JavaScript: que la página reaccione",
-          "masterclass_youtube_link": "https://www.youtube.com/watch?v=y8eky45aNv4",
-          "masterclass_cupon_code": "MASTERCLASS30",
-          "masterclass_cohorte_texto": "28 de septiembre, Full Time y Part Time",
-          "masterclass_cta_url": "https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=instagram&utm_medium=organico&utm_campaign=MasterclassFS_AI&utm_content=46274",
-          "career_interest": "Full Stack AI",
-          "masterclass_carrera": "Full Stack AI",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20El%20roadmap%20para%20convertirte%20en%20programador%20con%20IA%20en%202026&dates=20260910T000000Z/20260910T010000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry.%20Semana%20del%20Programador.&location=Online"
+          "masterclass_fecha_larga": "Jueves 24 de septiembre",
+          "masterclass_hora": "16h MX 🇲🇽 / 17h COL 🇨🇴 / 19h ARG 🇦🇷",
+          "masterclass_nombre": "AI Engineering 101",
+          "masterclass_speaker_nombre": "Alexander Vicondoa",
+          "masterclass_speaker_bio": "Dirige el equipo de Deployment de ElevenLabs.",
+          "masterclass_tema_1": "Qué es AI Engineering: aplicado vs. ML/research",
+          "masterclass_tema_2": "LLMs y Context Engineering",
+          "masterclass_tema_3": "RAG, Agentes y Orquestación",
+          "masterclass_youtube_link": "https://www.youtube.com/watch?v=Ogi2yF-7wRA",
+          "masterclass_cupon_code": "MASTERCLASS25",
+          "masterclass_cohorte_texto": "13 de octubre de 2026, Part Time",
+          "masterclass_cta_url": "https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=instagram&utm_medium=organico&utm_campaign=MasterclassAIE&utm_content=chino",
+          "career_interest": "AI Engineer",
+          "masterclass_carrera": "AI Engineer",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%20Engineering%20101&dates=20260924T220000Z/20260924T230000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry%20con%20Alexander%20Vicondoa%20(ElevenLabs).&location=Online"
         },
         "bloques": [
           {
-            "tipo": "mapa",
-            "titulo": "El mapa completo, paso a paso",
-            "bajada": "En la clase profundizamos en los primeros pasos. El resto del camino lo ves completo, para que sepas exactamente hacia dónde vas.",
-            "pasos": [
-              "Lógica",
-              "HTML + CSS",
-              "JavaScript",
-              "IA como copiloto",
-              "Backend",
-              "Bases de datos",
-              "React + TypeScript",
-              "Full Stack real",
-              "Git y GitHub",
-              "Subir a la nube",
-              "Proyecto final",
-              "Portfolio y empleo"
-            ],
-            "destacados": 3
+            "tipo": "empresa",
+            "logo": "eleven-labs-logo.png",
+            "texto": "ElevenLabs desarrolla los modelos de **voz por IA** más avanzados del mercado: texto a voz ultra realista, clonado de voz y conversación en tiempo real, en decenas de idiomas. Su tecnología es la que usan bancos, aplicaciones y productos de todo el mundo para dar voz a sus agentes de IA — la misma que Alexander despliega y evalúa a diario."
           },
           {
-            "tipo": "lista",
-            "estilo": "numerada",
-            "titulo": "Hoy vemos a fondo",
+            "tipo": "tarjetas",
+            "titulo": "Para quién está dirigida esta masterclass",
             "items": [
               {
-                "titulo": "Entender cómo \"piensa\" una computadora",
-                "texto": "La lógica detrás de todo lo que sigue."
+                "etiqueta": "Perfil",
+                "texto": "Desarrolladores con 3+ años de experiencia profesional (backend, full-stack o data).",
+                "destacado": true
               },
               {
-                "titulo": "Armar tu primer sitio: HTML + CSS",
-                "texto": "Tu primera página, online."
-              },
-              {
-                "titulo": "JavaScript: que la página reaccione",
-                "texto": "De una página estática a una que responde."
-              }
-            ]
-          },
-          {
-            "tipo": "aviso",
-            "texto": "*Atención:* por asistir a la masterclass, desbloqueas una oferta especial por el Día del Programador."
-          },
-          {
-            "tipo": "lista",
-            "estilo": "tarjetas",
-            "titulo": "Al terminar te llevas",
-            "items": [
-              "El mapa completo para consultar cuando quieras",
-              "Un certificado para comunicar en LinkedIn",
-              "Una sesión gratuita con un asesor de carrera"
-            ],
-            "cta": true
-          },
-          {
-            "tipo": "faq",
-            "titulo": "Preguntas frecuentes",
-            "items": [
-              {
-                "pregunta": "¿Necesito saber programar?",
-                "respuesta": "No. La clase está pensada para quien recién está viendo si este camino es para ella — arrancamos desde cero."
-              },
-              {
-                "pregunta": "¿Vamos a ver el roadmap completo en la clase?",
-                "respuesta": "Vas a ver el mapa entero, pero profundizamos solo en los primeros pasos — los que de verdad te destraban para arrancar."
-              },
-              {
-                "pregunta": "¿Hay oferta especial?",
-                "respuesta": "Sí, se desbloquea el día de la masterclass y corre hasta el Día del Programador (13/9)."
+                "etiqueta": "Objetivo",
+                "texto": "Incorporar IA aplicada a la práctica de desarrollo de software."
               }
             ]
           },
           {
             "tipo": "seccion",
             "etiqueta": "Carrera",
-            "titulo": "Full Stack AI",
-            "bajada": "Desarrollas aplicaciones completas de punta a punta —frontend, backend y bases de datos— con la IA integrada en tu workflow. Te conviertes en Desarrollador Full Stack, Backend o Frontend. Puedes empezar desde cero, aunque nunca hayas programado, y terminar construyendo productos reales.",
+            "titulo": "AI Engineering",
+            "bajada": "Diseña, entrena y despliega sistemas de IA que resuelven problemas complejos a escala, con las mismas herramientas que usa un AI Engineer real.",
             "bloques": [
               {
                 "tipo": "lista",
                 "estilo": "numerada",
                 "items": [
-                  "Construir aplicaciones web completas, desde el frontend hasta el backend y las bases de datos",
-                  "Desarrollar APIs, lógica de negocio y sistemas con persistencia y validaciones",
-                  "Crear interfaces modernas y escalables con React y TypeScript",
-                  "Integrar inteligencia artificial en aplicaciones y workflows",
-                  "Implementar prácticas modernas: testing, arquitectura y despliegue en la nube"
-                ]
-              },
-              {
-                "tipo": "chips",
-                "titulo": "Herramientas que vas a usar",
-                "items": [
-                  "Git y GitHub",
-                  "JavaScript",
-                  "TypeScript",
-                  "React",
-                  "Node.js",
-                  "Express",
-                  "PostgreSQL",
-                  "APIs REST",
-                  "AWS"
-                ]
-              },
-              {
-                "tipo": "cifras",
-                "items": [
-                  {
-                    "valor": "8 meses",
-                    "texto": "Part time, 20hs semanales"
-                  },
-                  {
-                    "valor": "4 meses",
-                    "texto": "Full time, 40hs semanales"
-                  },
-                  {
-                    "valor": "1 semana",
-                    "texto": "De prueba o te devolvemos el importe total"
-                  }
-                ]
-              }
-            ],
-            "cta": true
-          }
-        ]
-      }
-    },
-    {
-      "slug": "git-github-desde-cero",
-      "nombre": "Git y GitHub desde cero: sube tu primer proyecto en 1 hora",
-      "desc": "Aprende las bases de Git y GitHub y llévate tu primer proyecto publicado en internet.",
-      "carrera": "Full Stack AI",
-      "fecha": "2026-08-25T20:30:00-03:00",
-      "duracionMin": 60,
-      "fechaCorta": "25 AGO",
-      "fechaLarga": "Martes 25 de agosto",
-      "hora": "17:30 MX 🇲🇽 / 18:30 COL 🇨🇴 / 20:30 ARG 🇦🇷",
-      "banner": "banner-git-github.jpg",
-      "speakers": [
-        {
-          "nombre": "Camilo",
-          "rol": "Instructor de Henry"
-        }
-      ],
-      "link": "landing-git-github-desde-cero.html",
-      "landing": {
-        "hero": {
-          "badges": [
-            "Gratuita",
-            "1 hora"
-          ],
-          "kicker": "La IA no te está sacando el lugar: *te está subiendo la vara.*",
-          "bajada": "Todos hablan de GitHub, pero nadie te dice por dónde empezar. Aprende las bases de Git y GitHub y llévate tu primer proyecto publicado en internet, con un link que puedes compartir."
-        },
-        "grabaciones": [
-          {
-            "url": "https://www.youtube.com/watch?v=t2PV51gas6I"
-          }
-        ],
-        "hubspot": {
-          "masterclass_nombre": "Git y GitHub desde cero",
-          "masterclass_fecha_larga": "Martes 25 de agosto",
-          "masterclass_hora": "17:30 MX 🇲🇽 / 18:30 COL 🇨🇴 / 20:30 ARG 🇦🇷",
-          "masterclass_speaker_nombre": "Camilo",
-          "masterclass_speaker_bio": "Instructor de Henry",
-          "masterclass_tema_1": "Qué es Git y qué es GitHub, y en qué se diferencian",
-          "masterclass_tema_2": "Tu primer repositorio y los tres comandos que se usan el 90% del tiempo",
-          "masterclass_tema_3": "Publica tu proyecto en la nube y compártelo con un link",
-          "masterclass_youtube_link": "https://www.youtube.com/watch?v=t2PV51gas6I",
-          "career_interest": "Full Stack AI",
-          "masterclass_carrera": "Full Stack AI",
-          "masterclass_cupon_code": "FULLSTACK30",
-          "masterclass_cohorte_texto": "31 de agosto Full Time, 7 de septiembre Part Time",
-          "masterclass_cta_url": "https://www.soyhenry.com/webfullstack?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=25/08",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Git%20y%20GitHub%20desde%20cero&dates=20260825T233000Z/20260826T003000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry.%20Subimos%20un%20proyecto%20a%20GitHub%20y%20lo%20publicamos%20en%20internet.&location=Online"
-        },
-        "bloques": [
-          {
-            "tipo": "lista",
-            "estilo": "viñetas",
-            "items": [
-              "Sin necesidad de conocimientos técnicos previos",
-              "Control de versiones para cualquier proyecto, no solo para programar",
-              "Sin instalar nada de antemano: arrancamos de cero, en vivo",
-              "Te llevas un link propio con tu proyecto publicado"
-            ]
-          },
-          {
-            "tipo": "lista",
-            "estilo": "numerada",
-            "titulo": "Qué vas a aprender",
-            "items": [
-              "Qué es Git y qué es GitHub, y en qué se diferencian",
-              "Tu primer repositorio, paso a paso",
-              "Los tres comandos que se usan el 90% del tiempo",
-              "Cómo subir un proyecto desde tu computadora",
-              "Cómo publicarlo en la nube y compartirlo con un link",
-              "Tu perfil de GitHub como portfolio para buscar trabajo"
-            ]
-          },
-          {
-            "tipo": "tarjetas",
-            "titulo": "Para quién es",
-            "items": [
-              {
-                "etiqueta": "✓ Es para ti si",
-                "texto": "Quieres guardar y ordenar tus proyectos, o escuchaste hablar de Git y GitHub y nunca tuviste claro cuál es cuál. Arrancamos de cero."
-              }
-            ]
-          },
-          {
-            "tipo": "faq",
-            "titulo": "Preguntas frecuentes",
-            "items": [
-              {
-                "pregunta": "¿Necesito saber programar?",
-                "respuesta": "No. Arrancamos desde cero y trabajamos sobre un proyecto ya empezado, así que puedes seguir la clase sin experiencia previa."
-              },
-              {
-                "pregunta": "¿Git y GitHub son lo mismo?",
-                "respuesta": "No. Git es el sistema de control de versiones que corre en tu computadora; GitHub es la plataforma en la nube donde se guarda y se comparte ese proyecto."
-              },
-              {
-                "pregunta": "¿GitHub es gratis?",
-                "respuesta": "Sí. La cuenta personal es gratuita e incluye repositorios públicos y privados."
-              },
-              {
-                "pregunta": "¿Sirve si no me dedico al desarrollo?",
-                "respuesta": "Sí. Cualquier proyecto con versiones —documentación, análisis de datos, automatizaciones— se versiona y se comparte igual."
-              }
-            ]
-          },
-          {
-            "tipo": "lista",
-            "estilo": "tarjetas",
-            "titulo": "Al terminar te llevas",
-            "items": [
-              "Tu proyecto publicado y un link para compartir",
-              "Un certificado para comunicar en LinkedIn",
-              "Una sesión gratuita con un asesor de carrera",
-              "Un descuento exclusivo para asistentes"
-            ],
-            "cta": true
-          },
-          {
-            "tipo": "cifras",
-            "titulo": "La IA no te está sacando el lugar. *Te está subiendo la vara.*",
-            "bajada": "Quienes ya usan IA en su trabajo ganan hasta 56% más, y los sueldos crecen el doble de rápido en las industrias donde más se usa. La brecha no es entre humanos e IA: es entre quién se sube ahora y quién se queda mirando.",
-            "items": [
-              {
-                "valor": "56%",
-                "texto": "más de sueldo, en promedio, para quienes tienen habilidades de IA"
-              },
-              {
-                "valor": "x4",
-                "texto": "crecimiento de productividad en las industrias que más adoptan IA"
-              },
-              {
-                "valor": "50%",
-                "texto": "de las búsquedas de empleo tech ya piden habilidades de IA"
-              }
-            ],
-            "fuente": "Fuentes: PwC Global AI Jobs Barometer 2025 · Dice Tech Job Report (sept. 2025)"
-          },
-          {
-            "tipo": "cifras",
-            "titulo": "En LATAM todavía estás a tiempo",
-            "bajada": "La región adopta IA más rápido que el resto del mundo, pero le faltan miles de personas formadas para sostener esa demanda. Esa brecha, hoy, es tu ventaja.",
-            "items": [
-              {
-                "valor": "47%",
-                "texto": "de adopción de IA en LATAM, por encima del promedio global"
-              },
-              {
-                "valor": "+425%",
-                "texto": "crecieron las inscripciones a cursos de IA generativa en la región en un año"
-              }
-            ],
-            "fuente": "Fuentes: CEPAL · Coursera Global Skills Report 2025"
-          },
-          {
-            "tipo": "seccion",
-            "etiqueta": "AI Product Development",
-            "titulo": "¿Por qué Full Stack AI en Henry?",
-            "bajada": "Desarrollas aplicaciones completas de punta a punta —frontend, backend y bases de datos— con la IA integrada en tu workflow. Te conviertes en Desarrollador Full Stack, Backend o Frontend. Puedes empezar desde cero, aunque nunca hayas programado, y terminar construyendo productos reales.",
-            "bloques": [
-              {
-                "tipo": "lista",
-                "estilo": "numerada",
-                "items": [
-                  "Construir aplicaciones web completas, desde el frontend hasta el backend y las bases de datos",
-                  "Desarrollar APIs, lógica de negocio y sistemas con persistencia y validaciones",
-                  "Crear interfaces modernas y escalables con React y TypeScript",
-                  "Integrar inteligencia artificial en aplicaciones y workflows",
-                  "Implementar prácticas modernas: testing, arquitectura y despliegue en la nube"
-                ]
-              },
-              {
-                "tipo": "chips",
-                "titulo": "Herramientas que vas a usar",
-                "items": [
-                  "Git y GitHub",
-                  "JavaScript",
-                  "TypeScript",
-                  "React",
-                  "Node.js",
-                  "Express",
-                  "PostgreSQL",
-                  "APIs REST",
-                  "AWS"
-                ]
-              },
-              {
-                "tipo": "cifras",
-                "items": [
-                  {
-                    "valor": "8 meses",
-                    "texto": "Part time, 20hs semanales"
-                  },
-                  {
-                    "valor": "4 meses",
-                    "texto": "Full time, 40hs semanales"
-                  },
-                  {
-                    "valor": "1 semana",
-                    "texto": "De prueba o te devolvemos el importe total"
-                  }
-                ]
-              }
-            ],
-            "cta": true
-          }
-        ]
-      }
-    },
-    {
-      "slug": "analisis-a-ml",
-      "nombre": "Data Science desde cero: del análisis de datos a Machine Learning",
-      "desc": "Limpia un archivo real, sácale respuestas claras y entrena tu primer modelo que predice.",
-      "carrera": "Data Science",
-      "fecha": "2026-08-26T19:00:00-05:00",
-      "duracionMin": 60,
-      "fechaCorta": "26 AGO",
-      "fechaLarga": "Miércoles 26 y jueves 27 de agosto",
-      "hora": "Clase 1: 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷 · Clase 2: 19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
-      "banner": "banner-curso-intro-ds.jpg",
-      "speakers": [
-        {
-          "nombre": "Andrés Agualdo",
-          "rol": "Data Scientist e instructor en Henry"
-        }
-      ],
-      "link": "landing-analisis-a-ml.html",
-      "landing": {
-        "hero": {
-          "badges": [
-            "Gratuito",
-            "2 clases"
-          ],
-          "kicker": "La IA no te está sacando el lugar: *te está subiendo la vara.*",
-          "bajada": "Todos los días se toman decisiones con datos que nadie ordenó. En dos clases en vivo vas a limpiar un archivo real, sacarle respuestas claras y entrenar tu primer modelo que predice."
-        },
-        "grabaciones": [
-          {
-            "titulo": "Clase 1 · De un archivo caótico a respuestas claras",
-            "url": "https://www.youtube.com/watch?v=b30BCjowbzY"
-          },
-          {
-            "titulo": "Clase 2 · Tu primer modelo de Machine Learning",
-            "url": "https://www.youtube.com/watch?v=NFx9m7j11m8"
-          }
-        ],
-        "hubspot": {
-          "masterclass_nombre": "De análisis a Machine Learning",
-          "masterclass_fecha_larga": "Miércoles 26 y jueves 27 de agosto",
-          "masterclass_hora": "Clase 1: 18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷 · Clase 2: 19hs MX 🇲🇽 / 20hs COL 🇨🇴 / 22hs ARG 🇦🇷",
-          "masterclass_speaker_nombre": "Andrés Agualdo",
-          "masterclass_speaker_bio": "Data Scientist e instructor en Henry",
-          "masterclass_tema_1": "Limpieza y análisis de datos (Clase 1)",
-          "masterclass_tema_2": "Tu primer modelo de Machine Learning, sin código (Clase 2)",
-          "masterclass_tema_3": "Predice tu sueldo y descubre qué variables pesan más",
-          "masterclass_youtube_link": "https://www.youtube.com/watch?v=b30BCjowbzY",
-          "career_interest": "Data Science",
-          "masterclass_carrera": "Data Science",
-          "masterclass_cupon_code": "DATASCIENCE30",
-          "masterclass_cohorte_texto": "7 de septiembre",
-          "masterclass_cta_url": "https://www.soyhenry.com/carrera-data-science?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=26y27/08",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Clase%201%3A%20De%20un%20archivo%20ca%C3%B3tico%20a%20respuestas%20claras&dates=20260827T000000Z/20260827T010000Z&details=Curso%20introductorio%20de%20Data%20Science%20de%20Henry.%20Clase%201%20de%202.&location=Online"
-        },
-        "pixelContentName": "analisis-a-ml",
-        "bloques": [
-          {
-            "tipo": "lista",
-            "estilo": "viñetas",
-            "items": [
-              "No necesitas experiencia técnica previa ni instalar nada",
-              "Aprende a ordenar datos desordenados y a hacerles las preguntas correctas",
-              "Entrena tu primer modelo de Machine Learning sin escribir código",
-              "Te llevas el archivo, el modelo y los prompts para repetirlo solo cuando quieras"
-            ]
-          },
-          {
-            "tipo": "tarjetas",
-            "titulo": "Las 2 clases",
-            "items": [
-              {
-                "etiqueta": "Clase 1 · Miércoles 26 de agosto",
-                "titulo": "De un archivo caótico a respuestas claras",
-                "texto": "Limpieza y análisis de datos",
-                "filas": [
-                  {
-                    "label": "Hora",
-                    "valor": "18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷"
-                  },
-                  {
-                    "label": "Los datos",
-                    "valor": "sueldos reales del sector tech en LATAM, tal como vienen"
-                  },
-                  {
-                    "label": "Herramientas",
-                    "valor": "Python · Pandas"
-                  },
-                  {
-                    "label": "Hands-on",
-                    "valor": "armas tu informe"
-                  }
-                ]
-              },
-              {
-                "etiqueta": "Clase 2 · Jueves 27 de agosto",
-                "titulo": "Tu primer modelo de Machine Learning, sin escribir código",
-                "texto": "Machine Learning: predecir",
-                "filas": [
-                  {
-                    "label": "Hora",
-                    "valor": "19hs MX 🇲🇽 / 20hs COL 🇨🇴 / 22hs ARG 🇦🇷"
-                  },
-                  {
-                    "label": "Los datos",
-                    "valor": "los mismos, ya ordenados en la Clase 1"
-                  },
-                  {
-                    "label": "Herramientas",
-                    "valor": "Scikit-learn"
-                  },
-                  {
-                    "label": "Hands-on",
-                    "valor": "predices tu sueldo"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tipo": "lista",
-            "estilo": "tarjetas",
-            "titulo": "Al terminar te llevas",
-            "items": [
-              "El archivo, el modelo y los prompts de las 2 clases",
-              "Un certificado para comunicar en LinkedIn",
-              "Una sesión gratuita con un asesor de carrera",
-              "Un descuento exclusivo para asistentes"
-            ],
-            "cta": true
-          },
-          {
-            "tipo": "cifras",
-            "titulo": "La IA no te está sacando el lugar. *Te está subiendo la vara.*",
-            "bajada": "Quienes ya usan IA en su trabajo ganan hasta 56% más, y los sueldos crecen el doble de rápido en las industrias donde más se usa. La brecha no es entre humanos e IA: es entre quién se sube ahora y quién se queda mirando.",
-            "items": [
-              {
-                "valor": "56%",
-                "texto": "más de sueldo, en promedio, para quienes tienen habilidades de IA"
-              },
-              {
-                "valor": "x4",
-                "texto": "crecimiento de productividad en las industrias que más adoptan IA"
-              },
-              {
-                "valor": "50%",
-                "texto": "de las búsquedas de empleo tech ya piden habilidades de IA"
-              }
-            ],
-            "fuente": "Fuentes: PwC Global AI Jobs Barometer 2025 · Dice Tech Job Report (sept. 2025)"
-          },
-          {
-            "tipo": "cifras",
-            "titulo": "En LATAM todavía estás a tiempo",
-            "bajada": "La región adopta IA más rápido que el resto del mundo, pero le faltan miles de personas formadas para sostener esa demanda. Esa brecha, hoy, es tu ventaja.",
-            "items": [
-              {
-                "valor": "47%",
-                "texto": "de adopción de IA en LATAM, por encima del promedio global"
-              },
-              {
-                "valor": "+425%",
-                "texto": "crecieron las inscripciones a cursos de IA generativa en la región en un año"
-              }
-            ],
-            "fuente": "Fuentes: CEPAL · Coursera Global Skills Report 2025"
-          },
-          {
-            "tipo": "seccion",
-            "etiqueta": "Data Science & AI",
-            "titulo": "¿Por qué Data Science en Henry?",
-            "bajada": "Transformas datos en decisiones. Te conviertes en Data Analyst, Data Scientist, Machine Learning Analyst o BI Analyst. Una carrera potenciada con IA, diseñada para arrancar desde cero, sin conocimientos técnicos previos.",
-            "bloques": [
-              {
-                "tipo": "lista",
-                "estilo": "numerada",
-                "items": [
-                  "Formación práctica en análisis, modelado y trabajo con datos reales",
-                  "Dominio de las herramientas clave para decisiones basadas en datos",
-                  "Construcción de proyectos que muestran tu capacidad técnica end-to-end",
-                  "Entrenamiento para desarrollar criterios analíticos y resolver problemas con impacto",
-                  "Acompañamiento profesional y preparación laboral para ingresar al mundo data"
+                  "Diseña, entrena y despliega modelos de IA que resuelven problemas complejos a escala",
+                  "Construye aplicaciones impulsadas por IA integrando modelos y APIs",
+                  "Crea agentes autónomos y soluciones multimodales",
+                  "Implementa arquitecturas end-to-end de IA con servicios cloud",
+                  "Desarrolla proyectos técnicos para portfolio profesional"
                 ]
               },
               {
@@ -1382,12 +1531,13 @@
                 "titulo": "Herramientas que vas a usar",
                 "items": [
                   "Python",
-                  "Pandas",
-                  "NumPy",
-                  "Scikit-learn",
-                  "SQL",
-                  "Power BI",
-                  "Snowflake"
+                  "OpenAI",
+                  "Claude",
+                  "Gemini",
+                  "LangChain",
+                  "Hugging Face",
+                  "Pinecone",
+                  "RAG"
                 ]
               },
               {
@@ -1398,190 +1548,40 @@
                     "texto": "Estudiantes en la comunidad Henry"
                   },
                   {
-                    "valor": "8 meses",
-                    "texto": "Part time, +15hs semanales"
+                    "valor": "14 semanas",
+                    "texto": "+ nivelación asincrónica previa"
                   },
                   {
-                    "valor": "1 semana",
-                    "texto": "De prueba o te devolvemos el dinero"
+                    "valor": "7 días",
+                    "texto": "De prueba, con garantía de empleo"
                   }
                 ]
               },
               {
-                "tipo": "testimonios",
-                "items": [
+                "tipo": "ficha",
+                "filas": [
                   {
-                    "texto": "Henry me dio las herramientas y la confianza para dar un giro a mi carrera. En menos de un año pasé de no saber programar a tener el trabajo de mis sueños.",
-                    "nombre": "Alberto Perrone",
-                    "rol": "Data Scientist · Globant"
+                    "label": "Próxima cohorte",
+                    "valor": "13 de octubre de 2026"
                   },
                   {
-                    "texto": "De Henry destaco cómo crean comunidad. Un espacio para seguir aprendiendo, resolver y avanzar mucho más rápido.",
-                    "nombre": "Darwin Moreno",
-                    "rol": "Data Scientist · MaterCell"
+                    "label": "Modalidad",
+                    "valor": "Part Time, 10 hs semanales"
+                  },
+                  {
+                    "label": "Horario en vivo",
+                    "valor": "mar. y jue., 17-19h MX 🇲🇽 / 18-20h COL 🇨🇴 / 20-22h ARG 🇦🇷"
                   }
-                ]
-              }
-            ],
-            "cta": true
-          }
-        ]
-      }
-    },
-    {
-      "slug": "analisis-datos-claude",
-      "nombre": "Claude para análisis de datos de punta a punta",
-      "desc": "Limpia y prepara tus datos con Claude, sin fórmulas manuales, de punta a punta.",
-      "carrera": "Data Science",
-      "fecha": "2026-08-11T21:00:00-03:00",
-      "duracionMin": 60,
-      "fechaCorta": "11 AGO",
-      "fechaLarga": "Martes 11 de agosto",
-      "hora": "21h ARG 🇦🇷 / 18h MX 🇲🇽 / 19h COL 🇨🇴",
-      "banner": "banner-claude-analisis-datos.jpg",
-      "speakers": [
-        {
-          "nombre": "Raúl Montesinos",
-          "rol": "CRM Manager en Nespresso",
-          "foto": "raul-montesinos.jpg",
-          "bio": [
-            "Lidera estrategias basadas en datos para fortalecer la relación con los clientes y apoyar la toma de decisiones",
-            "Experiencia en business intelligence, analítica y automatización de procesos con Excel, Power BI, SQL y Python",
-            "Creador de contenido de datos en TikTok (@raulmontesin), con más de 85 mil seguidores"
-          ]
-        }
-      ],
-      "link": "landing-analisis-datos-claude.html",
-      "landing": {
-        "hero": {
-          "badges": [
-            "Análisis de datos",
-            "Con Raúl Montesinos"
-          ]
-        },
-        "grabaciones": [
-          {
-            "url": "https://www.youtube.com/watch?v=tW0LkbBrRP0"
-          }
-        ],
-        "hubspot": {
-          "masterclass_nombre": "Claude para análisis de datos",
-          "masterclass_fecha_larga": "Martes 11 de agosto",
-          "masterclass_hora": "21hs ARG 🇦🇷 / 18hs MX 🇲🇽 / 19hs COL 🇨🇴",
-          "masterclass_speaker_nombre": "Raúl Montesinos",
-          "masterclass_speaker_bio": "CRM Manager en Nespresso y creador de contenido de datos en TikTok @raulmontesin",
-          "masterclass_tema_1": "Limpieza de datos sin edición manual fila por fila",
-          "masterclass_tema_2": "Análisis exploratorio (EDA): patrones, outliers y relaciones clave",
-          "masterclass_tema_3": "Creación de reportes en HTML compartibles",
-          "masterclass_youtube_link": "https://www.youtube.com/watch?v=tW0LkbBrRP0",
-          "masterclass_carrera": "Data Science",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Claude%20para%20an%C3%A1lisis%20de%20datos&dates=20260812T000000Z/20260812T010000Z&details=Masterclass%20en%20vivo%20de%20Henry%20con%20Ra%C3%BAl%20Montesinos.&location=Online"
-        },
-        "pixelContentName": "analisis-datos-claude",
-        "bloques": [
-          {
-            "tipo": "lista",
-            "estilo": "viñetas",
-            "items": [
-              "Limpia y prepara tus datos con Claude, sin fórmulas manuales",
-              "Haz un análisis exploratorio (EDA) completo en minutos",
-              "Genera reportes en HTML listos para compartir, sin escribir código",
-              "La experiencia real de Raúl usando Claude en su trabajo con datos"
-            ]
-          },
-          {
-            "tipo": "lista",
-            "estilo": "numerada",
-            "titulo": "Vas a ver",
-            "items": [
-              {
-                "titulo": "Limpieza de datos",
-                "texto": "Deja tus datasets listos para analizar, sin edición manual fila por fila"
-              },
-              {
-                "titulo": "Análisis exploratorio (EDA)",
-                "texto": "Encuentra patrones, outliers y relaciones clave con Claude haciendo el trabajo pesado"
-              },
-              {
-                "titulo": "Creación de reportes en HTML",
-                "texto": "Convierte tu análisis en un reporte visual y compartible, listo para enviar"
-              }
-            ]
-          },
-          {
-            "tipo": "lista",
-            "estilo": "tarjetas",
-            "titulo": "Al terminar te llevas",
-            "items": [
-              "Un quiz de carrera personalizado",
-              "Un certificado para comunicar en LinkedIn",
-              "Una sesión gratuita con un asesor de carrera",
-              "Un descuento exclusivo para asistentes"
-            ],
-            "cta": true
-          },
-          {
-            "tipo": "seccion",
-            "titulo": "¿Por qué Data Science en Henry?",
-            "bajada": "Aprende análisis de datos y Machine Learning para descubrir insights y potenciar decisiones de negocio.",
-            "bloques": [
-              {
-                "tipo": "lista",
-                "estilo": "numerada",
-                "items": [
-                  "Formación práctica en análisis, modelado y trabajo con datos reales",
-                  "Dominio de las herramientas clave para decisiones basadas en datos",
-                  "Construcción de proyectos que muestran tu capacidad técnica end-to-end",
-                  "Entrenamiento para desarrollar criterios analíticos y resolver problemas con impacto",
-                  "Acompañamiento profesional y preparación laboral para ingresar al mundo data"
                 ]
               },
               {
                 "tipo": "chips",
-                "titulo": "Herramientas que vas a usar",
                 "items": [
-                  "Python",
-                  "Pandas",
-                  "NumPy",
-                  "Scikit-learn",
-                  "SQL",
-                  "Power BI",
-                  "Snowflake"
-                ]
-              },
-              {
-                "tipo": "cifras",
-                "items": [
-                  {
-                    "valor": "+20.000",
-                    "texto": "Estudiantes en la comunidad Henry"
-                  },
-                  {
-                    "valor": "8 meses",
-                    "texto": "Part time, +15hs semanales"
-                  },
-                  {
-                    "valor": "1 semana",
-                    "texto": "De prueba o te devolvemos el dinero"
-                  }
-                ]
-              },
-              {
-                "tipo": "testimonios",
-                "items": [
-                  {
-                    "texto": "Henry me dio las herramientas y la confianza para dar un giro a mi carrera. En menos de un año pasé de no saber programar a tener el trabajo de mis sueños.",
-                    "nombre": "Alberto Perrone",
-                    "rol": "Data Scientist · Globant"
-                  },
-                  {
-                    "texto": "De Henry destaco cómo crean comunidad. Un espacio para seguir aprendiendo, resolver y avanzar mucho más rápido.",
-                    "nombre": "Darwin Moreno",
-                    "rol": "Data Scientist · MaterCell"
-                  }
+                  "Garantía de empleo"
                 ]
               }
-            ]
+            ],
+            "cta": true
           }
         ]
       }
@@ -2094,69 +2094,10 @@
       "link": "landing-asistente-a-tu-medida.html"
     },
     {
-      "slug": "curso-intro-ai-product-builder",
-      "nombre": "Conviértete en AI Product Builder: de la idea al sistema funcionando con IA",
-      "desc": "Clase 1: los fundamentals y el criterio para decidir qué construir. Clase 2: lo construyes con IA, en vivo.",
-      "carrera": "AI Automation",
-      "fecha": "2026-11-10T21:00:00-03:00",
-      "duracionMin": 60,
-      "fechaCorta": "10 NOV",
-      "fechaLarga": "Martes 10 y miércoles 11 de noviembre",
-      "hora": "18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷",
-      "banner": "banner-curso-intro-ai-product-builder.jpg",
-      "speakers": [
-        {
-          "nombre": "Verónica Vargas",
-          "rol": "Fractional CPO en Laburen · Profesora de Product Management en ITBA",
-          "foto": "veronica-vargas-v2.webp"
-        }
-      ],
-      "link": "landing-curso-intro-ai-product-builder.html"
-    },
-    {
-      "slug": "manual-fde-diego-sid",
-      "nombre": "El manual de FDE: desde el requerimiento del cliente hasta la entrega técnica",
-      "desc": "Henry Live · El método paso a paso para llevar un pedido ambiguo del cliente hasta un sistema en producción.",
-      "carrera": "AI Engineering",
-      "fecha": "2026-11-09T20:00:00-03:00",
-      "duracionMin": 60,
-      "fechaCorta": "09 NOV",
-      "fechaLarga": "Lunes 9 de noviembre",
-      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
-      "banner": "banner-manual-fde-diego-sid.jpg",
-      "speakers": [
-        {
-          "nombre": "Diego Sid",
-          "rol": "Forward Deployed Engineer"
-        }
-      ],
-      "link": "landing-manual-fde-diego-sid.html"
-    },
-    {
-      "slug": "que-es-un-forward-deployed-engineer",
-      "nombre": "Qué es un Forward Deployed Engineer y cómo convertirte en uno en 2026",
-      "desc": "Qué hace un FDE, de dónde nace el rol y por qué explotó en 2026. Una Q&A en vivo para entender si es tu próximo paso.",
-      "carrera": "AI Engineering",
-      "fecha": "2026-11-12T20:00:00-03:00",
-      "duracionMin": 60,
-      "fechaCorta": "12 NOV",
-      "fechaLarga": "Jueves 12 de noviembre",
-      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
-      "banner": "banner-que-es-un-fde.jpg",
-      "speakers": [
-        {
-          "nombre": "Milagros Savino",
-          "rol": "Business Lead en Henry",
-          "foto": "milagros-savino.jpg"
-        }
-      ],
-      "link": "landing-que-es-un-forward-deployed-engineer.html"
-    },
-    {
       "slug": "reglas-ia-equipo-cami-manera",
       "nombre": "Las reglas de juego para la IA de tu equipo",
       "desc": "Con Cami Manera: sal con el primer borrador de las reglas de uso de IA de tu equipo, sin tecnicismos.",
-      "carrera": "AI Automation",
+      "carrera": "AI para Líderes",
       "fecha": "2026-10-29T20:00:00-03:00",
       "duracionMin": 45,
       "fechaCorta": "29 OCT",
@@ -2206,6 +2147,65 @@
         }
       ],
       "link": "landing-panel-ia-03-11.html"
+    },
+    {
+      "slug": "manual-fde-diego-sid",
+      "nombre": "El manual de FDE: desde el requerimiento del cliente hasta la entrega técnica",
+      "desc": "Henry Live · El método paso a paso para llevar un pedido ambiguo del cliente hasta un sistema en producción.",
+      "carrera": "Forward Deployed Engineer",
+      "fecha": "2026-11-09T20:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "09 NOV",
+      "fechaLarga": "Lunes 9 de noviembre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-manual-fde-diego-sid.jpg",
+      "speakers": [
+        {
+          "nombre": "Diego Sid",
+          "rol": "Forward Deployed Engineer"
+        }
+      ],
+      "link": "landing-manual-fde-diego-sid.html"
+    },
+    {
+      "slug": "curso-intro-ai-product-builder",
+      "nombre": "Conviértete en AI Product Builder: de la idea al sistema funcionando con IA",
+      "desc": "Clase 1: los fundamentals y el criterio para decidir qué construir. Clase 2: lo construyes con IA, en vivo.",
+      "carrera": "AI Product Builder",
+      "fecha": "2026-11-10T21:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "10 NOV",
+      "fechaLarga": "Martes 10 y miércoles 11 de noviembre",
+      "hora": "18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷",
+      "banner": "banner-curso-intro-ai-product-builder.jpg",
+      "speakers": [
+        {
+          "nombre": "Verónica Vargas",
+          "rol": "Fractional CPO en Laburen · Profesora de Product Management en ITBA",
+          "foto": "veronica-vargas-v2.webp"
+        }
+      ],
+      "link": "landing-curso-intro-ai-product-builder.html"
+    },
+    {
+      "slug": "que-es-un-forward-deployed-engineer",
+      "nombre": "Qué es un Forward Deployed Engineer y cómo convertirte en uno en 2026",
+      "desc": "Qué hace un FDE, de dónde nace el rol y por qué explotó en 2026. Una Q&A en vivo para entender si es tu próximo paso.",
+      "carrera": "Forward Deployed Engineer",
+      "fecha": "2026-11-12T20:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "12 NOV",
+      "fechaLarga": "Jueves 12 de noviembre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-que-es-un-fde.jpg",
+      "speakers": [
+        {
+          "nombre": "Milagros Savino",
+          "rol": "Business Lead en Henry",
+          "foto": "milagros-savino.jpg"
+        }
+      ],
+      "link": "landing-que-es-un-forward-deployed-engineer.html"
     }
   ]
 }
