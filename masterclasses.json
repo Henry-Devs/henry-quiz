@@ -2149,6 +2149,26 @@
       "link": "landing-panel-ia-03-11.html"
     },
     {
+      "slug": "mcp-wallbit",
+      "nombre": "MCP es el camino, no el destino",
+      "desc": "Henry × Wallbit: cómo se usan los MCPs para pasar de una conversación a la acción, con el CTO de Wallbit.",
+      "carrera": "AI Engineering",
+      "fecha": "2026-11-05T20:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "05 NOV",
+      "fechaLarga": "Jueves 5 de noviembre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-mcp-wallbit.jpg",
+      "speakers": [
+        {
+          "nombre": "Martín Gira",
+          "rol": "Cofundador y CTO de Wallbit",
+          "foto": "martin-gira-wallbit.webp"
+        }
+      ],
+      "link": "landing-mcp-wallbit.html"
+    },
+    {
       "slug": "manual-fde-diego-sid",
       "nombre": "El manual de FDE: desde el requerimiento del cliente hasta la entrega técnica",
       "desc": "Henry Live · El método paso a paso para llevar un pedido ambiguo del cliente hasta un sistema en producción.",
