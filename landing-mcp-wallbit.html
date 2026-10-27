@@ -74,6 +74,8 @@
       text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 18px;
     }
     .badge.primary { background: var(--yellow); color: var(--black); }
+    .hero-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .hero-badges .badge { margin-bottom: 0; }
     .badge.outline { border: 1.5px solid var(--border); color: var(--gray-dark); background: var(--white); }
     .hero-schedule-line { font-size: 0.88rem; font-weight: 700; color: var(--gray-dark); margin-bottom: 18px; }
     .hero-kicker {
@@ -166,6 +168,10 @@
 
     .people-row { display: flex; gap: 5px; flex-wrap: wrap; }
     .people-row svg { width: 9%; min-width: 18px; height: 28px; }
+    .people-row { flex-wrap: nowrap; }
+    .people-row svg { width: calc((100% - 45px) / 10); min-width: 0; }
+    .stat-visual { height: 110px; min-height: 0; }
+    .stats-header .section-label { text-align: left; }
     .people-row svg circle, .people-row svg path { fill: var(--gray-light); stroke: var(--black); stroke-width: 1.2; }
     .people-row svg.filled circle, .people-row svg.filled path { fill: var(--yellow); }
 
@@ -297,7 +303,7 @@
     .collab-text { font-size: 0.92rem; color: var(--gray-dark); line-height: 1.6; }
     .cred-logo { display: flex; align-items: center; gap: 10px; }
     .cred-logo img { width: 26px; height: 26px; flex-shrink: 0; border-radius: 6px; }
-    .cami-creds { margin-bottom: 24px; }
+    .cami-creds { margin-bottom: 24px; grid-template-columns: 1fr; max-width: 420px; }
     .cami-photo { background: radial-gradient(120% 90% at 50% 100%, #3a3a3a 0%, #1e1e1e 70%); }
     .cami-photo img { object-fit: cover; object-position: center 15%; }
     .speaker-company { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; }
@@ -335,7 +341,10 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <span class="badge primary">En vivo y gratis</span>
+      <div class="hero-badges">
+        <span class="badge primary">En vivo y gratis</span>
+        <span class="badge outline">AI Engineering</span>
+      </div>
 
       <div class="hero-kicker">Henry × Wallbit</div>
       <h1>MCP es el camino, no el destino</h1>
@@ -369,10 +378,6 @@
           <div class="cami-cred">
             <div class="cami-cred-label">Actualmente</div>
             <div class="cami-cred-value cred-logo"><img src="logo-wallbit-icono.png" alt="" />Cofundador y CTO de Wallbit</div>
-          </div>
-          <div class="cami-cred">
-            <div class="cami-cred-label">Trayectoria</div>
-            <div class="cami-cred-value">Ex cofundador y Tech Lead de Tixcode</div>
           </div>
         </div>
         <a class="cami-linkedin" href="https://www.linkedin.com/in/martintg/" target="_blank" rel="noopener">
@@ -565,11 +570,10 @@
         <h2 class="form-recap-title">Una hora con el CTO de Wallbit. Sales entendiendo cómo pasar de un chat a un agente que actúa.</h2>
         <p class="form-recap-facts">Jueves 5 de noviembre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · 60 minutos · En vivo y gratis</p>
         <div class="share" aria-label="Compartir la clase">
-          <p class="share-title">Compártela en LinkedIn</p>
+          <p class="share-title">Comparte el live</p>
           <p class="share-sub">¿Conoces a alguien que está construyendo con IA? Pásale la clase: es gratis.</p>
           <div class="share-row">
-            <button type="button" class="share-btn primary" id="share-post"><span id="share-post-label">Copiar post para LinkedIn</span></button>
-            <a class="share-btn" id="share-in" href="#" target="_blank" rel="noopener">Compartir en LinkedIn</a>
+            <a class="share-btn primary" id="share-in" href="#" target="_blank" rel="noopener">Compartir en LinkedIn</a>
             <button type="button" class="share-btn" id="share-copy"><span id="share-copy-label">Copiar link</span></button>
             <a class="share-btn" id="share-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
           </div>
@@ -632,10 +636,6 @@
       const base = location.origin + location.pathname;
       const link = src => base + '?utm_source=' + src + '&utm_medium=share&utm_campaign=henry-live-mcp-wallbit-05-11';
       const msg = 'MCP es el camino, no el destino: clase en vivo y gratis de Henry × Wallbit con Martín Gira, CTO de Wallbit. Jueves 5/11, 20h ARG.';
-      const post = () => 'Me anoté a esta clase en vivo y gratis: "MCP es el camino, no el destino" 🔌🤖\n\n'
-        + 'Martín Gira, cofundador y CTO de Wallbit, cuenta cómo se usan los MCPs para que un agente de IA pase de conversar a actuar sobre un sistema real.\n\n'
-        + '📅 Jueves 5 de noviembre · 20h ARG / 18h COL / 17h MX\n'
-        + 'Una clase de Henry × Wallbit. Si estás construyendo con IA, te va a servir:\n' + link('linkedin_post');
       document.getElementById('share-in').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(link('linkedin'));
       document.getElementById('share-wa').href = 'https://wa.me/?text=' + encodeURIComponent(msg + ' ' + link('whatsapp'));
       async function copiar(txt, el, ok, vuelta) {
@@ -645,8 +645,6 @@
       }
       document.getElementById('share-copy').addEventListener('click', () =>
         copiar(link('copy_link'), document.getElementById('share-copy-label'), '¡Link copiado!', 'Copiar link'));
-      document.getElementById('share-post').addEventListener('click', () =>
-        copiar(post(), document.getElementById('share-post-label'), '¡Copiado! Pégalo en LinkedIn', 'Copiar post para LinkedIn'));
     })();
   </script>
 
@@ -701,10 +699,10 @@
     hbspt.forms.create({
       region: "na1",
       portalId: "19612811",
-      // 🛑 PROVISORIO: formulario COMPARTIDO de masterclass (7bd5e072). Enrola en el
-      // flujo generico (1861306136). Reemplazar por el form propio del live cuando
-      // se arme su flujo, como en el panel y AI para Lideres.
-      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      // Form propio del live. Dispara el flujo
+      // "live - Henry x Wallbit · MCP con Martín Gira - 05-11" (1911374973):
+      // confirmacion, recordatorio, en vivo y el post bifurcado old/first.
+      formId: "ffc89f12-19bc-4b52-9b36-3f48e62ad786",
       target: "#hs-form-container",
       onFormReady: function() {
         setTimeout(() => {
