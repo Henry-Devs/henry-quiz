@@ -37,7 +37,7 @@ for (const { estado, ruta } of cambios) {
   if (masterclass) {
     avisos.push(
       `\`${ruta}\` es la landing vieja de **${masterclass.nombre}**. Esa página ya no es la ` +
-        `fuente: soyhenry.com/masterclasses/${masterclass.slug} se arma con \`${JSON_PATH}\`. ` +
+        `fuente: soyhenry.com/live-sessions/${masterclass.slug} se arma con \`${JSON_PATH}\`. ` +
         `Llevá el cambio al JSON o se va a perder.`,
     );
     continue;

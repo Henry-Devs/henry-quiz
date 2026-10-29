@@ -244,7 +244,7 @@ try {
   data = JSON.parse(readFileSync(file, 'utf8'));
 } catch (e) {
   console.error(`✗ ${file} no es JSON válido: ${e.message}`);
-  console.error('  Con el JSON roto, soyhenry.com/masterclasses se queda sin masterclasses.');
+  console.error('  Con el JSON roto, soyhenry.com/live-sessions se queda sin masterclasses.');
   process.exit(1);
 }
 

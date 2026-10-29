@@ -1,8 +1,9 @@
 # Cómo cargar una masterclass
 
-Las masterclasses viven en **`masterclasses.json`**. De ese archivo leen el hub,
-`soyhenry.com/masterclasses`, y la página de cada una, `soyhenry.com/masterclasses/<slug>`. El
-cambio se ve segundos después del push, sin tocar nada de soyhenry.com.
+Las masterclasses viven en **`masterclasses.json`**. De ese archivo leen el hub, Henry Live
+Sessions (`soyhenry.com/live-sessions`), y la página de cada una,
+`soyhenry.com/live-sessions/<slug>`. Las URLs viejas `soyhenry.com/masterclasses/…` redirigen ahí.
+El cambio se ve segundos después del push, sin tocar nada de soyhenry.com.
 
 > **El HTML viejo no se edita.** `masterclasses.html` ya no existe: redirige al hub nuevo, y cada
 > `landing-*.html` de masterclass redirige a su página nueva. La de AI Engineering 101 sigue
@@ -16,7 +17,7 @@ cambio se ve segundos después del push, sin tocar nada de soyhenry.com.
 
 | Campo | Qué va | Ejemplo |
 | --- | --- | --- |
-| `slug` | La URL de la página: `soyhenry.com/masterclasses/<slug>`. Minúsculas, números y guiones. Único, y no se cambia una vez publicado. | `roadmap-programador-ia` |
+| `slug` | La URL de la página: `soyhenry.com/live-sessions/<slug>`. Minúsculas, números y guiones. Único, y no se cambia una vez publicado. | `roadmap-programador-ia` |
 | `nombre` | Título de la masterclass. | `El roadmap para convertirte en programador con IA en 2026` |
 | `desc` | Una o dos oraciones. | |
 | `carrera` | Una de: `AI Engineering`, `AI Automation`, `Full Stack AI`, `Data Science`, `Forward Deployed Engineer`, `AI Product Builder`, `AI para Líderes`. Texto exacto, tilde incluida: si no coincide, la masterclass no aparece. | `Full Stack AI` |
@@ -45,7 +46,7 @@ cambio se ve segundos después del push, sin tocar nada de soyhenry.com.
 
 ## La landing de cada masterclass
 
-Una masterclass con el objeto `landing` tiene su propia página en `soyhenry.com/masterclasses/<slug>`.
+Una masterclass con el objeto `landing` tiene su propia página en `soyhenry.com/live-sessions/<slug>`.
 La página se arma sola a partir de estos datos, así que no hay HTML que escribir.
 
 ```jsonc
