@@ -29,6 +29,14 @@ const CARRERAS = [
   'AI Engineering', 'AI Automation', 'Full Stack AI', 'Data Science',
   'Forward Deployed Engineer', 'AI Product Builder', 'AI para Líderes',
 ];
+// Opcionales, para el filtro por tema y el chip de formato del hub. También texto EXACTO, pero
+// un valor que no matchee no descarta la masterclass: el hub lo ignora y la sesión queda fuera
+// del filtro o sin chip.
+const TEMAS = [
+  'Automatizaciones', 'Programación y vibe coding', 'Data Science', 'Producto',
+  'Marketing', 'Ingeniería de IA', 'Liderazgo',
+];
+const FORMATOS = ['Masterclass', 'Henry Live', 'Panel', 'Curso intro'];
 const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const OFFSET = /(Z|[+-]\d{2}:\d{2})$/;
 const YOUTUBE = /(?:youtube\.com\/watch\?|youtu\.be\/)/i;
@@ -253,6 +261,10 @@ for (const [i, m] of (data?.masterclasses ?? []).entries()) {
 
   ['nombre', 'desc', 'fechaCorta', 'fechaLarga', 'hora', 'banner', 'link'].forEach((c) => requerido(m, c, donde));
   if (!CARRERAS.includes(m?.carrera)) error(donde, `"carrera" tiene que ser una de: ${CARRERAS.join(', ')}`);
+  if (m?.tema !== undefined && !TEMAS.includes(m.tema)) error(donde, `"tema" tiene que ser uno de: ${TEMAS.join(', ')} (vino "${m.tema}")`);
+  if (m?.formato !== undefined && !FORMATOS.includes(m.formato)) {
+    error(donde, `"formato" tiene que ser uno de: ${FORMATOS.join(', ')} (vino "${m.formato}")`);
+  }
 
   if (!texto(m?.fecha) || !OFFSET.test(m.fecha) || Number.isNaN(Date.parse(m.fecha))) {
     error(donde, `"fecha" tiene que ser ISO con zona horaria, ej. 2026-09-24T19:00:00-03:00 (vino "${m?.fecha}")`);

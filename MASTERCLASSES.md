@@ -19,7 +19,9 @@ cambio se ve segundos después del push, sin tocar nada de soyhenry.com.
 | `slug` | La URL de la página: `soyhenry.com/masterclasses/<slug>`. Minúsculas, números y guiones. Único, y no se cambia una vez publicado. | `roadmap-programador-ia` |
 | `nombre` | Título de la masterclass. | `El roadmap para convertirte en programador con IA en 2026` |
 | `desc` | Una o dos oraciones. | |
-| `carrera` | Una de: `AI Engineering`, `AI Automation`, `Full Stack AI`, `Data Science`. | `Full Stack AI` |
+| `carrera` | Una de: `AI Engineering`, `AI Automation`, `Full Stack AI`, `Data Science`, `Forward Deployed Engineer`, `AI Product Builder`, `AI para Líderes`. Texto exacto, tilde incluida: si no coincide, la masterclass no aparece. | `Full Stack AI` |
+| `tema` | Opcional. El filtro por tema del hub. Uno de: `Automatizaciones`, `Programación y vibe coding`, `Data Science`, `Producto`, `Marketing`, `Ingeniería de IA`, `Liderazgo`. Texto exacto: si no coincide, la masterclass se muestra igual pero queda fuera del filtro. | `Programación y vibe coding` |
+| `formato` | Opcional. El chip de formato de la card. Uno de: `Masterclass`, `Henry Live`, `Panel`, `Curso intro`. Texto exacto: si no coincide, la card sale sin chip. | `Henry Live` |
 | `fecha` | Inicio, en ISO 8601 **con la zona horaria**. Decide sola si la masterclass es "próxima" o "ya pasó". | `2026-09-09T21:00:00-03:00` |
 | `duracionMin` | Opcional. Minutos que dura. Si no va, se toma 60. | `45` |
 | `fechaCorta` | Tal cual se muestra en la card. | `9 SEP` |
