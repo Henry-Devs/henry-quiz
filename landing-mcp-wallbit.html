@@ -761,5 +761,13 @@
       }
     });
   </script>
+  <!-- La landing cambia sola a "en vivo" y a "grabación" según la hora: ver live-estado.js.
+       Los cortes son los mismos del flujo de HubSpot (henry-marketing: regla_inscriptos_tarde.py). -->
+  <script>
+    window.HENRY_LIVE = {
+      clases: [{ inicio: '2026-11-05T20:00:00-03:00', duracion: 60, video: '' }]   // 🛑 PENDIENTE: link del stream,
+    };
+  </script>
+  <script src="live-estado.js"></script>
 </body>
 </html>
