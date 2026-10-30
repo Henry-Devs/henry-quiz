@@ -592,8 +592,8 @@
     const MASTERCLASS = {
       masterclass_fecha_evento:   String(new Date('2026-11-12T20:00:00-03:00').getTime()),
 
-      // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
-      // flow por evento (infra/17 §3), no solo un texto descriptivo.
+      // El flujo propio (1913399621) entra por el FORMULARIO, no por este nombre. Hasta
+      // el 30/10/2026 la landing usaba el form generico y caia en prospects-masterclass.
       masterclass_nombre:         NOMBRE,
       masterclass_fecha_larga:    'Jueves 12 de noviembre',
       masterclass_hora:           '17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷',
@@ -634,7 +634,7 @@
     hbspt.forms.create({
       region: "na1",
       portalId: "19612811",
-      formId: "7bd5e072-cc53-4105-a8b4-1258d0453c3f",
+      formId: "55049c73-4f26-4ffc-a2e5-1e48f6d65765",
       target: "#hs-form-container",
       onFormReady: function() {
         setTimeout(() => {
