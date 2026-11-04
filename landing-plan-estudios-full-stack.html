@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plan de estudios Full Stack — Henry</title>
   <meta name="robots" content="noindex" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
   <!--
     Landing para creadores de contenido: el plan de estudios de Full Stack detrás de un
@@ -16,117 +13,150 @@
     sitio: se llega sólo con el link (y la UTM) que se le da a cada creador.
   -->
   <style>
+    @font-face { font-family: 'Satoshi'; src: url('fonts/Satoshi-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Satoshi'; src: url('fonts/Satoshi-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+    @font-face { font-family: 'Satoshi'; src: url('fonts/Satoshi-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
     :root {
       --yellow: #FFFF00;
-      --black: #111111;
-      --white: #ffffff;
-      --border: #111111;
-      --gray-mid: #333333;
+      --ink: #222222;
+      --muted: #5f5f5f;
+      --line: #e5e5e2;
+      --surface: rgba(255, 255, 255, 0.78);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #ffffff; }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--yellow);
-      color: var(--black);
+      font-family: 'Satoshi', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: var(--ink);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 32px 16px 48px;
+      position: relative;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
-    .logo { margin-bottom: 40px; }
-    main { width: 100%; max-width: 560px; }
+    /* Halos: luz amarilla difusa, como el hero de soyhenry.com */
+    .halo { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; filter: blur(90px); }
+    .halo-1 { width: 620px; height: 420px; top: -220px; left: -160px; background: rgba(255, 240, 80, 0.55); }
+    .halo-2 { width: 520px; height: 380px; top: -180px; right: -180px; background: rgba(255, 255, 0, 0.35); }
+    .halo-3 { width: 480px; height: 320px; bottom: -220px; left: 30%; background: rgba(255, 236, 120, 0.30); }
+
+    header {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto; padding: 28px 24px;
+    }
+    header img { display: block; width: 111px; height: 20px; }
+
+    main {
+      position: relative; z-index: 1;
+      max-width: 520px; margin: 0 auto; padding: 32px 16px 72px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 500; color: var(--ink);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 6px 12px; margin-bottom: 20px;
+      backdrop-filter: blur(6px);
+    }
+    .badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: radial-gradient(120% 120% at 22% 0%, #FFE84D 0%, #FFFF00 38%, #FFDE00 100%);
+      box-shadow: 0 0 8px rgba(255, 230, 0, 0.9);
+    }
+    .intro { text-align: center; }
     h1 {
-      font-size: clamp(2.2rem, 7vw, 3.4rem);
-      font-weight: 900;
-      line-height: 1.02;
-      letter-spacing: -1.5px;
-      text-align: center;
+      font-weight: 700;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
       margin-bottom: 14px;
     }
     .sub {
-      font-size: 1.1rem;
-      font-weight: 500;
-      text-align: center;
-      margin-bottom: 32px;
+      font-size: 1.05rem; line-height: 1.55; color: var(--muted);
+      margin: 0 auto 32px; max-width: 420px;
     }
     .card {
-      background: var(--white);
-      border: 3px solid var(--black);
+      background: var(--surface);
+      border: 1px solid var(--line);
       border-radius: 20px;
-      padding: 32px 28px;
-      box-shadow: 8px 8px 0 var(--black);
+      padding: 28px 24px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 18px 48px -24px rgba(0,0,0,0.18);
+      backdrop-filter: blur(10px);
     }
 
-    /* Form de HubSpot, grande */
-    #hs-form-container .hs-form-field { margin-bottom: 18px !important; }
+    /* Form de HubSpot (renderRawHtml: el CSS de la página le llega) */
+    #hs-form-container .hs-form-field { margin-bottom: 16px !important; }
     #hs-form-container .hs-form-field label {
-      font-size: 1rem !important; font-weight: 700 !important;
-      color: var(--black) !important; margin-bottom: 8px !important;
-      display: block !important; font-family: 'Inter', sans-serif !important;
+      font-size: 14px !important; font-weight: 500 !important;
+      color: var(--ink) !important; margin-bottom: 6px !important;
+      display: block !important; font-family: inherit !important;
     }
+    #hs-form-container .hs-form-required { color: var(--muted) !important; margin-left: 2px; }
     #hs-form-container .hs-input {
-      background: var(--white) !important; border: 2px solid var(--border) !important;
-      border-radius: 12px !important; color: var(--black) !important;
-      padding: 16px 16px !important; font-size: 1.1rem !important;
-      width: 100% !important; font-family: 'Inter', sans-serif !important;
+      background: #ffffff !important; border: 1px solid var(--line) !important;
+      border-radius: 12px !important; color: var(--ink) !important;
+      padding: 13px 14px !important; font-size: 16px !important;
+      width: 100% !important; font-family: inherit !important;
+      transition: border-color .15s, box-shadow .15s !important;
     }
-    #hs-form-container select.hs-input { padding: 15px 12px !important; }
-    #hs-form-container .hs-input:focus { outline: 3px solid var(--yellow) !important; outline-offset: 0 !important; }
+    #hs-form-container .hs-input:focus {
+      outline: none !important; border-color: #c9c9c4 !important;
+      box-shadow: 0 0 0 4px rgba(255, 255, 0, 0.35) !important;
+    }
     /* El contenedor del teléfono también trae la clase hs-input: sin esto, borde doble */
     #hs-form-container .hs-fieldtype-intl-phone.hs-input {
       border: none !important; padding: 0 !important; background: transparent !important;
-      display: flex !important; gap: 8px !important;
+      box-shadow: none !important; display: flex !important; gap: 0 !important;
     }
-    #hs-form-container .hs-fieldtype-intl-phone select.hs-input { width: 42% !important; flex: none !important; }
-    #hs-form-container .hs-fieldtype-intl-phone input.hs-input { flex: 1 !important; }
+    #hs-form-container .hs-fieldtype-intl-phone select.hs-input { width: 42% !important; flex: none !important; margin-right: 8px !important; }
+    #hs-form-container .hs-fieldtype-intl-phone input[type=hidden] { display: none !important; }
+    #hs-form-container .hs-fieldtype-intl-phone input.hs-input { flex: 1 !important; width: auto !important; min-width: 0 !important; }
     #hs-form-container .hs-button {
-      background: var(--black) !important; color: var(--yellow) !important;
-      border: none !important; border-radius: 14px !important;
-      padding: 20px 28px !important; font-size: 1.2rem !important;
-      font-weight: 900 !important; width: 100% !important;
-      cursor: pointer !important; font-family: 'Inter', sans-serif !important;
-      text-transform: uppercase !important; letter-spacing: 0.5px !important;
-      margin-top: 8px !important; display: block !important;
+      background: var(--yellow) !important; color: var(--ink) !important;
+      border: none !important; border-radius: 12px !important;
+      padding: 15px 20px !important; font-size: 16px !important;
+      font-weight: 500 !important; width: 100% !important;
+      cursor: pointer !important; font-family: inherit !important;
+      margin-top: 6px !important; display: block !important;
+      transition: filter .15s !important;
     }
-    #hs-form-container .hs-button:hover { transform: translateY(-1px) !important; }
+    #hs-form-container .hs-button:hover { filter: brightness(0.96) !important; }
     #hs-form-container .hs-error-msgs {
-      color: #d32f2f !important; font-size: 0.85rem !important; margin-top: 6px !important;
-      list-style: none !important;
+      list-style: none !important; color: #c62828 !important;
+      font-size: 13px !important; margin-top: 6px !important;
     }
     #hs-form-container .hs_submit,
     #hs-form-container .hs_submit .actions { width: 100% !important; }
 
     /* Después del envío */
-    .success { display: none; text-align: center; }
-    .success h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; letter-spacing: -0.5px; }
-    .success p { font-size: 1.05rem; color: var(--gray-mid); margin-bottom: 24px; }
+    .success { display: none; text-align: center; padding: 8px 0; }
+    .success h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .success p { font-size: 1rem; color: var(--muted); margin-bottom: 22px; }
     .program-btn {
-      display: block; background: var(--black); color: var(--yellow);
-      font-size: 1.2rem; font-weight: 900; padding: 20px 28px;
-      border-radius: 14px; text-decoration: none; text-transform: uppercase;
-      letter-spacing: 0.5px;
+      display: block; background: var(--yellow); color: var(--ink);
+      font-size: 16px; font-weight: 500; padding: 15px 20px;
+      border-radius: 12px; text-decoration: none;
     }
+    .program-btn:hover { filter: brightness(0.96); }
   </style>
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
 </head>
 <body>
 
-  <div class="logo" aria-label="Henry">
-    <svg width="140" height="25" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
-      <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
-      <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
-      <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
-      <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
-      <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
-    </svg>
-  </div>
+  <div class="halo halo-1"></div>
+  <div class="halo halo-2"></div>
+  <div class="halo halo-3"></div>
+
+  <header>
+    <a href="https://www.soyhenry.com" target="_blank" rel="noopener"><img src="henry-logo.svg" alt="Henry" width="111" height="20" /></a>
+  </header>
 
   <main>
-    <h1>Descarga el plan de estudios de Full Stack</h1>
-    <p class="sub">Completa tus datos y accede al programa completo.</p>
+    <div class="intro">
+      <span class="badge"><span class="dot"></span>Carrera Full Stack con IA</span>
+      <h1>Descarga el plan de estudios</h1>
+      <p class="sub">Completa tus datos y accede al programa completo, módulo por módulo.</p>
+    </div>
 
     <div class="card">
       <div id="form-wrapper">
