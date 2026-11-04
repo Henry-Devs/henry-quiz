@@ -2196,15 +2196,15 @@
       "carrera": "Forward Deployed Engineer",
       "tema": "Ingeniería de IA",
       "formato": "Henry Live",
-      "fecha": "2026-11-09T20:00:00-03:00",
+      "fecha": "2026-11-09T22:00:00-03:00",
       "duracionMin": 60,
       "fechaCorta": "09 NOV",
       "fechaLarga": "Lunes 9 de noviembre",
-      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
       "banner": "banner-manual-fde-diego-sid-v2.jpg",
       "speakers": [
         {
-          "nombre": "Diego Sid",
+          "nombre": "Diego Cid",
           "rol": "Forward Deployed Engineer"
         }
       ],
