@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan de estudios Full Stack — Henry</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <!--
+    Landing para creadores de contenido: el plan de estudios de Full Stack detrás de un
+    formulario. El form de HubSpot (ed490c0e…) pide nombre, apellido, WhatsApp y mail, y
+    recién después muestra el link al programa. No se linkea desde ningún otro lado del
+    sitio: se llega sólo con el link (y la UTM) que se le da a cada creador.
+  -->
+  <style>
+    :root {
+      --yellow: #FFFF00;
+      --black: #111111;
+      --white: #ffffff;
+      --border: #111111;
+      --gray-mid: #333333;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--yellow);
+      color: var(--black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px 48px;
+    }
+    .logo { margin-bottom: 40px; }
+    main { width: 100%; max-width: 560px; }
+    h1 {
+      font-size: clamp(2.2rem, 7vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.02;
+      letter-spacing: -1.5px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .sub {
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--white);
+      border: 3px solid var(--black);
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 8px 8px 0 var(--black);
+    }
+
+    /* Form de HubSpot, grande */
+    #hs-form-container .hs-form-field { margin-bottom: 18px !important; }
+    #hs-form-container .hs-form-field label {
+      font-size: 1rem !important; font-weight: 700 !important;
+      color: var(--black) !important; margin-bottom: 8px !important;
+      display: block !important; font-family: 'Inter', sans-serif !important;
+    }
+    #hs-form-container .hs-input {
+      background: var(--white) !important; border: 2px solid var(--border) !important;
+      border-radius: 12px !important; color: var(--black) !important;
+      padding: 16px 16px !important; font-size: 1.1rem !important;
+      width: 100% !important; font-family: 'Inter', sans-serif !important;
+    }
+    #hs-form-container select.hs-input { padding: 15px 12px !important; }
+    #hs-form-container .hs-input:focus { outline: 3px solid var(--yellow) !important; outline-offset: 0 !important; }
+    /* El contenedor del teléfono también trae la clase hs-input: sin esto, borde doble */
+    #hs-form-container .hs-fieldtype-intl-phone.hs-input {
+      border: none !important; padding: 0 !important; background: transparent !important;
+      display: flex !important; gap: 8px !important;
+    }
+    #hs-form-container .hs-fieldtype-intl-phone select.hs-input { width: 42% !important; flex: none !important; }
+    #hs-form-container .hs-fieldtype-intl-phone input.hs-input { flex: 1 !important; }
+    #hs-form-container .hs-button {
+      background: var(--black) !important; color: var(--yellow) !important;
+      border: none !important; border-radius: 14px !important;
+      padding: 20px 28px !important; font-size: 1.2rem !important;
+      font-weight: 900 !important; width: 100% !important;
+      cursor: pointer !important; font-family: 'Inter', sans-serif !important;
+      text-transform: uppercase !important; letter-spacing: 0.5px !important;
+      margin-top: 8px !important; display: block !important;
+    }
+    #hs-form-container .hs-button:hover { transform: translateY(-1px) !important; }
+    #hs-form-container .hs-error-msgs {
+      color: #d32f2f !important; font-size: 0.85rem !important; margin-top: 6px !important;
+      list-style: none !important;
+    }
+    #hs-form-container .hs_submit,
+    #hs-form-container .hs_submit .actions { width: 100% !important; }
+
+    /* Después del envío */
+    .success { display: none; text-align: center; }
+    .success h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; letter-spacing: -0.5px; }
+    .success p { font-size: 1.05rem; color: var(--gray-mid); margin-bottom: 24px; }
+    .program-btn {
+      display: block; background: var(--black); color: var(--yellow);
+      font-size: 1.2rem; font-weight: 900; padding: 20px 28px;
+      border-radius: 14px; text-decoration: none; text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','441627673220929');fbq('track','PageView');</script>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/19612811.js"></script>
+</head>
+<body>
+
+  <div class="logo" aria-label="Henry">
+    <svg width="140" height="25" viewBox="0 0 100 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.3267 0H10.7046V17.5791H17.3267V0Z" fill="black"/>
+      <path d="M6.64662 0H0V17.5791H6.64662V0Z" fill="black"/>
+      <path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258" fill="black"/>
+      <path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0Z" fill="black"/>
+      <path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754Z" fill="black"/>
+      <path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521Z" fill="black"/>
+    </svg>
+  </div>
+
+  <main>
+    <h1>Descarga el plan de estudios de Full Stack</h1>
+    <p class="sub">Completa tus datos y accede al programa completo.</p>
+
+    <div class="card">
+      <div id="form-wrapper">
+        <div id="hs-form-container"></div>
+      </div>
+      <div class="success" id="success-state">
+        <h2>¡Listo!</h2>
+        <p>Ya puedes ver el plan de estudios completo.</p>
+        <a class="program-btn" id="program-btn" href="https://lp.soyhenry.com/share/lesson/vjYqHFytZRua/s/gRzEJB9QeA6Q" target="_blank" rel="noopener noreferrer">Ver el plan de estudios</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var PROGRAMA = 'https://lp.soyhenry.com/share/lesson/vjYqHFytZRua/s/gRzEJB9QeA6Q';
+
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    const utms = {
+      utm_source:   getParam('utm_source'),
+      utm_medium:   getParam('utm_medium'),
+      utm_campaign: getParam('utm_campaign'),
+      utm_content:  getParam('utm_content'),
+      utm_term:     getParam('utm_term'),
+    };
+    Object.entries(utms).forEach(([k, v]) => { if (v) sessionStorage.setItem(k, v); });
+    Object.keys(utms).forEach(k => { if (!utms[k]) utms[k] = sessionStorage.getItem(k) || ''; });
+
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "19612811",
+      formId: "ed490c0e-fc7d-4790-8818-df4a5c8f236b",
+      target: "#hs-form-container",
+      onFormReady: function(form) {
+        setTimeout(() => {
+          const btn = form.querySelector('.hs-button');
+          if (btn) btn.value = 'Descargar programa';
+          const utmMap = {
+            'ultima_fuente_utm':  utms.utm_source,
+            'ultimo_medio_utm':   utms.utm_medium,
+            'ultima_campana_utm': utms.utm_campaign,
+            'utm_content':        utms.utm_content,
+            'utm_term':           utms.utm_term,
+          };
+          form.querySelectorAll('input').forEach(input => {
+            const n = input.name || '';
+            if (utmMap[n] !== undefined) input.value = utmMap[n];
+          });
+        }, 600);
+      },
+      onFormSubmit: function() {
+        if (window.fbq) fbq('trackCustom', 'Descarga de contenido', { content_name: 'plan-estudios-full-stack' });
+        setTimeout(() => {
+          document.getElementById('form-wrapper').style.display = 'none';
+          document.getElementById('success-state').style.display = 'block';
+          window.open(PROGRAMA, '_blank', 'noopener');
+        }, 800);
+      }
+    });
+  </script>
+
+</body>
+</html>
