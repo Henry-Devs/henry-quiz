@@ -47,14 +47,14 @@
 
     main {
       position: relative; z-index: 1;
-      max-width: 520px; margin: 0 auto; padding: 32px 16px 72px;
+      max-width: 640px; margin: 0 auto; padding: 8px 16px 56px;
     }
     .badge {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 13px; font-weight: 500; color: var(--ink);
       background: rgba(255, 255, 255, 0.7);
       border: 1px solid var(--line); border-radius: 999px;
-      padding: 6px 12px; margin-bottom: 20px;
+      padding: 6px 12px; margin-bottom: 14px;
       backdrop-filter: blur(6px);
     }
     .badge .dot {
@@ -65,16 +65,20 @@
     .intro { text-align: center; }
     h1 {
       font-weight: 700;
-      font-size: clamp(2rem, 6vw, 3rem);
-      line-height: 1.08;
+      font-size: clamp(1.45rem, 6.6vw, 2.6rem);
+      line-height: 1.1;
+      white-space: nowrap;
       letter-spacing: -0.025em;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
     .sub {
-      font-size: 1.05rem; line-height: 1.55; color: var(--muted);
-      margin: 0 auto 32px; max-width: 420px;
+      font-size: 1.05rem; line-height: 1.5; color: var(--muted);
+      margin: 0 auto 24px; white-space: nowrap;
     }
+    /* En celular la bajada no entra en una línea a un tamaño legible: ahí sí corta */
+    @media (max-width: 600px) { .sub { white-space: normal; font-size: 0.95rem; } }
     .card {
+      max-width: 520px; margin: 0 auto;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 20px;
@@ -153,7 +157,7 @@
 
   <main>
     <div class="intro">
-      <span class="badge"><span class="dot"></span>Carrera Full Stack con IA</span>
+      <span class="badge"><span class="dot"></span>Carrera Full Stack AI</span>
       <h1>Descarga el plan de estudios</h1>
       <p class="sub">Completa tus datos y accede al programa completo, módulo por módulo.</p>
     </div>
