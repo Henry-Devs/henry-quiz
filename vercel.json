@@ -17,6 +17,11 @@
       "headers": { "Location": "https://www.soyhenry.com/live-sessions/$1" }
     },
     {
+      "src": "/landing-que-es-un-forward-deployed-engineer(\\.html)?/?$",
+      "status": 302,
+      "headers": { "Location": "https://www.soyhenry.com/live-sessions" }
+    },
+    {
       "src": "/guias(\\.html)?/?$",
       "status": 301,
       "headers": { "Location": "https://www.soyhenry.com/guias" }
