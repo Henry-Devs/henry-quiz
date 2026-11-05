@@ -15,14 +15,14 @@
   <meta property="og:image" content="https://recursos.soyhenry.com/banner-curso-intro-ai-product-builder.jpg" />
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 
-  <!-- JSON-LD de evento -- Clase 1 (10/11 21hs ARG) como trigger principal; Clase 2 el 11/11, mismo horario. -->
+  <!-- JSON-LD de evento -- Clase 1 (10/11 20hs ARG; movido de 21hs a 20hs el 5/11) como trigger principal; Clase 2 el 11/11, mismo horario. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Curso intro AI Product Builder: arma tu prototipo y complétalo con IA",
-    "startDate": "2026-11-10T21:00:00-03:00",
-    "endDate": "2026-11-11T22:00:00-03:00",
+    "startDate": "2026-11-10T20:00:00-03:00",
+    "endDate": "2026-11-11T21:00:00-03:00",
     "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -372,7 +372,7 @@
         Las da <strong>Verónica Vargas</strong>, Fractional CPO en Laburen, profesora de Product Management en el ITBA y co-organizadora de ProductTank.
       </p>
 
-      <p class="hero-schedule-line">Martes 10 y miércoles 11 de noviembre · 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷</p>
+      <p class="hero-schedule-line">Martes 10 y miércoles 11 de noviembre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷</p>
 
       <a href="#registro" class="cta-btn">Reserva tu lugar →</a>
     </div>
@@ -420,7 +420,7 @@
       <article class="class-card">
         <div class="class-head">
           <span class="class-num">1</span>
-          <div><div class="class-date">Martes 10 de noviembre</div><div class="class-time">18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷</div></div>
+          <div><div class="class-date">Martes 10 de noviembre</div><div class="class-time">17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷</div></div>
         </div>
         <h3 class="class-title">Fundamentals: el criterio antes que el código</h3>
         <p class="class-desc">Antes de abrir cualquier herramienta, un AI Product Builder decide qué vale la pena construir. Tomamos una idea y la bajamos a tierra: qué problema resuelve, para quién y cuál es la versión más chica que lo demuestra.</p>
@@ -434,7 +434,7 @@
       <article class="class-card">
         <div class="class-head">
           <span class="class-num">2</span>
-          <div><div class="class-date">Miércoles 11 de noviembre</div><div class="class-time">18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷</div></div>
+          <div><div class="class-date">Miércoles 11 de noviembre</div><div class="class-time">17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷</div></div>
         </div>
         <h3 class="class-title">Build: de la idea a un producto funcionando con IA</h3>
         <p class="class-desc">Con el brief de la Clase 1, construimos el producto en vivo con un agente de IA. No es una demo armada de antemano: vemos cada decisión, qué le pides al agente y qué revisas tú.</p>
@@ -573,14 +573,14 @@
     <div class="form-inner">
       <div class="form-recap">
         <h2 class="form-recap-title">Dos clases para dejar de describir lo que hay que construir, y construirlo tú.</h2>
-        <p class="form-recap-facts">Martes 10 y miércoles 11 de noviembre · 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷 · En vivo y gratis</p>
+        <p class="form-recap-facts">Martes 10 y miércoles 11 de noviembre · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷 · En vivo y gratis</p>
       </div>
       <div class="form-card">
         <div id="form-wrapper">
           <div class="form-top-bar"></div>
           <h2>Reserva tu lugar en las dos clases</h2>
           <p class="form-sub">Un solo registro para las dos. Te enviamos el link de acceso por mail.</p>
-          <p class="event-compact-facts">Martes 10 y miércoles 11/11 · 18h MX 🇲🇽 / 19h COL 🇨🇴 / 21h ARG 🇦🇷<br>Online, en vivo</p>
+          <p class="event-compact-facts">Martes 10 y miércoles 11/11 · 17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷<br>Online, en vivo</p>
           <div id="hs-form-container"></div>
         </div>
         <div class="success-state" id="success-state">
@@ -640,13 +640,13 @@
 
     const MASTERCLASS = {
       // Clase 1 (10/11) como trigger principal del flujo; la Clase 2 (11/11) se comunica en los temas.
-      masterclass_fecha_evento:   String(new Date('2026-11-10T21:00:00-03:00').getTime()),
+      masterclass_fecha_evento:   String(new Date('2026-11-10T20:00:00-03:00').getTime()),
 
       // masterclass_nombre tiene que ser EXACTO: es la condicion de entrada del
       // flow por evento (infra/17 §3), no solo un texto descriptivo.
       masterclass_nombre:         'Curso intro AI Product Builder: arma tu prototipo y complétalo con IA',
       masterclass_fecha_larga:    'Martes 10 y miércoles 11 de noviembre',
-      masterclass_hora:           '18hs MX 🇲🇽 / 19hs COL 🇨🇴 / 21hs ARG 🇦🇷',
+      masterclass_hora:           '17hs MX 🇲🇽 / 18hs COL 🇨🇴 / 20hs ARG 🇦🇷',
 
       masterclass_speaker_nombre: 'Verónica Vargas',
       masterclass_speaker_bio:    'Verónica Vargas, Fractional CPO en Laburen, profesora de Product Management en el ITBA y co-organizadora de ProductTank. Da las dos clases en vivo.',
@@ -665,10 +665,10 @@
       career_interest:            '',
       masterclass_carrera:        'AI Product Builder',
 
-      // dates = UTC. 21:00 ARG 10/11 = 00:00 UTC 11/11; dura ~1h -> 01:00 UTC 11/11.
+      // dates = UTC. 20:00 ARG 10/11 = 23:00 UTC 10/11; dura ~1h -> 00:00 UTC 11/11.
       masterclass_calendar_link:  'https://calendar.google.com/calendar/render?action=TEMPLATE'
         + '&text=' + encodeURIComponent('Curso intro AI Product Builder: Conviértete en AI Builder + Claude Masterclass')
-        + '&dates=20261111T000000Z/20261111T010000Z'
+        + '&dates=20261110T230000Z/20261111T000000Z'
         + '&details=' + encodeURIComponent('Curso intro en vivo y gratis de Henry Live Sessions sobre AI Product Builder. Clase 1: martes 10/11. Clase 2: miércoles 11/11, mismo horario.')
         + '&location=Online',
     };
@@ -747,8 +747,8 @@
   <script>
     window.HENRY_LIVE = {
       clases: [
-        { inicio: '2026-11-10T21:00:00-03:00', duracion: 60, nombre: 'Clase 1', video: 'https://www.youtube.com/watch?v=besiUQq31cQ' },
-        { inicio: '2026-11-11T21:00:00-03:00', duracion: 60, nombre: 'Clase 2', video: 'https://www.youtube.com/watch?v=b3KwTS5VVRk' },
+        { inicio: '2026-11-10T20:00:00-03:00', duracion: 60, nombre: 'Clase 1', video: 'https://www.youtube.com/watch?v=besiUQq31cQ' },
+        { inicio: '2026-11-11T20:00:00-03:00', duracion: 60, nombre: 'Clase 2', video: 'https://www.youtube.com/watch?v=b3KwTS5VVRk' },
       ],
     };
   </script>
