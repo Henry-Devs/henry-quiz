@@ -2596,10 +2596,10 @@
       "carrera": "AI Automation",
       "tema": "Automatizaciones",
       "formato": "Masterclass",
-      "fecha": "2026-11-26T22:00:00-03:00",
+      "fecha": "2026-11-19T22:00:00-03:00",
       "duracionMin": 60,
-      "fechaCorta": "26 NOV",
-      "fechaLarga": "Jueves 26 de noviembre",
+      "fechaCorta": "19 NOV",
+      "fechaLarga": "Jueves 19 de noviembre",
       "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
       "banner": "banner-prospeccion-de-leads-con-claude-y-n8n.jpg",
       "speakers": [
@@ -2625,7 +2625,7 @@
         },
         "hubspot": {
           "masterclass_nombre": "Automatiza la prospección de leads con Claude y n8n",
-          "masterclass_fecha_larga": "Jueves 26 de noviembre",
+          "masterclass_fecha_larga": "Jueves 19 de noviembre",
           "masterclass_hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
           "masterclass_speaker_nombre": "Mariano Gobea Alcoba",
           "masterclass_speaker_bio": "Tech Lead en Mercado Libre e instructor en Henry",
@@ -2635,8 +2635,8 @@
           "career_interest": "AI Automation",
           "masterclass_carrera": "AI Automation",
           "masterclass_cohorte_texto": "1 de diciembre",
-          "masterclass_cta_url": "https://www.soyhenry.com/carrera-ai-automation?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=26/11",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Automatiza%20la%20prospecci%C3%B3n%20de%20leads%20con%20Claude%20y%20n8n&dates=20261127T010000Z/20261127T020000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry%20con%20Mariano%20Gobea%20Alcoba%3A%20automatizamos%20con%20Claude%20y%20n8n%20la%20b%C3%BAsqueda%2C%20investigaci%C3%B3n%20y%20primer%20contacto%20de%20leads.&location=Online"
+          "masterclass_cta_url": "https://www.soyhenry.com/carrera-ai-automation?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=19/11",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Automatiza%20la%20prospecci%C3%B3n%20de%20leads%20con%20Claude%20y%20n8n&dates=20261120T010000Z/20261120T020000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry%20con%20Mariano%20Gobea%20Alcoba%3A%20automatizamos%20con%20Claude%20y%20n8n%20la%20b%C3%BAsqueda%2C%20investigaci%C3%B3n%20y%20primer%20contacto%20de%20leads.&location=Online"
         },
         "bloques": [
           {
