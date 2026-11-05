@@ -2380,6 +2380,406 @@
           }
         ]
       }
+    },
+    {
+      "slug": "como-convertirte-en-ai-product-builder",
+      "nombre": "Cómo convertirte en AI Product Builder: el rol que decide qué construir cuando la IA construye todo",
+      "desc": "Qué hace hoy quien trabaja en producto cuando la IA ejecuta, qué tienes que saber decidir y cómo es el camino para llegar, sin saber programar. En vivo con el experto de la carrera de AI Product Builder.",
+      "carrera": "AI Product Builder",
+      "tema": "Producto",
+      "formato": "Henry Live",
+      "fecha": "2026-11-18T20:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "18 NOV",
+      "fechaLarga": "Miércoles 18 de noviembre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-como-convertirte-en-ai-product-builder.jpg",
+      "speakers": [
+        {
+          "nombre": "David Dellacha",
+          "rol": "Head of Product & UX en Alephee",
+          "foto": "panel-ia-david-dellacha.webp",
+          "bio": [
+            "Es el experto de la carrera de AI Product Builder en Henry.",
+            "Antes fue VP of Product & UX en Santander. Trae la mirada de quien decide qué construir y cómo se suma la IA a un producto sin que la experiencia se rompa."
+          ]
+        },
+        {
+          "nombre": "Sabrina Stoll",
+          "rol": "Project & Program Manager",
+          "foto": "sabrina-stoll.jpg"
+        }
+      ],
+      "link": "landing-como-convertirte-en-ai-product-builder.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Gratuita",
+            "1 hora"
+          ],
+          "kicker": "No necesitas saber programar.",
+          "bajada": "La IA ya redacta PRDs, sintetiza entrevistas y arma prototipos. Lo que se volvió escaso es saber **qué** construir. En este Henry Live te mostramos qué hace hoy un AI Product Builder y cómo es el camino para convertirte en uno."
+        },
+        "hubspot": {
+          "masterclass_nombre": "Open House AI Product Builder",
+          "masterclass_fecha_larga": "Miércoles 18 de noviembre",
+          "masterclass_hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+          "masterclass_speaker_nombre": "David Dellacha y Sabrina Stoll",
+          "masterclass_speaker_bio": "David Dellacha (Head of Product & UX en Alephee, experto de la carrera de AI Product Builder) y Sabrina Stoll (Project & Program Manager).",
+          "masterclass_tema_1": "Qué hace un AI Product Builder y por qué el primer puesto en producto ya no se gana ejecutando",
+          "masterclass_tema_2": "El ciclo de trabajo: la IA ejecuta, tú revisas y tú decides",
+          "masterclass_tema_3": "Cómo es la carrera por dentro: los cuatro módulos y lo que construyes en cada uno",
+          "career_interest": "AI Product Builder",
+          "masterclass_carrera": "AI Product Builder",
+          "masterclass_cohorte_texto": "24 de noviembre",
+          "masterclass_cta_url": "https://www.soyhenry.com/ai-product-builder?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=18/11",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20C%C3%B3mo%20convertirte%20en%20AI%20Product%20Builder&dates=20261118T230000Z/20261119T000000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%3A%20qu%C3%A9%20hace%20un%20AI%20Product%20Builder%20y%20c%C3%B3mo%20convertirte%20en%20uno%2C%20con%20David%20Dellacha%20y%20Sabrina%20Stoll.&location=Online"
+        },
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Lo que vas a ver en 60 minutos",
+            "items": [
+              {
+                "titulo": "Qué hace hoy un AI Product Builder",
+                "texto": "Por qué el primer puesto en producto ya no se gana redactando y documentando, y qué se espera de quien entra hoy."
+              },
+              {
+                "titulo": "Cómo se trabaja cuando la IA ejecuta",
+                "texto": "El ciclo completo: capturar, ordenar, construir con IA, validar con personas y decidir con evidencia."
+              },
+              {
+                "titulo": "La carrera por dentro",
+                "texto": "Los cuatro módulos, qué construyes en cada uno y cómo se arma tu portfolio. Con tiempo para tus preguntas."
+              }
+            ]
+          },
+          {
+            "tipo": "cifras",
+            "titulo": "El rol ya cambió. *Los avisos lo dicen.*",
+            "items": [
+              {
+                "valor": "12% → 61%",
+                "texto": "de los avisos de producto que piden IA, entre 2024 y 2026"
+              },
+              {
+                "valor": "73%",
+                "texto": "de los product managers ya usa IA todas las semanas"
+              }
+            ],
+            "fuente": "Fuente: State of PM 2026 · 1.200+ PMs, vía Ideaplan"
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Es para ti si",
+            "items": [
+              {
+                "etiqueta": "✓ Buscas tus primeros pasos en producto",
+                "texto": "Porque te acabas de recibir o porque vienes de otra área y quieres reconvertirte."
+              },
+              {
+                "etiqueta": "✓ Tienes pensamiento estructurado",
+                "texto": "Y usas un asistente de IA en tu día a día."
+              },
+              {
+                "etiqueta": "✓ Te interesa decidir qué construir",
+                "texto": "Más que ejecutar tareas operativas. No necesitas experiencia previa en producto."
+              }
+            ]
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Necesito saber programar?",
+                "respuesta": "No. Un AI Product Builder no programa: decide qué construir y usa la IA para pasar del problema al prototipo."
+              },
+              {
+                "pregunta": "¿Es una clase sobre la carrera?",
+                "respuesta": "Sí: es un Open House. Te contamos qué hace el rol y cómo es la carrera por dentro, módulo por módulo, y respondemos tus preguntas en vivo."
+              },
+              {
+                "pregunta": "¿Queda grabado?",
+                "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
+              }
+            ]
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "Después del Henry Live",
+            "titulo": "La carrera de AI Product Builder",
+            "bajada": "Aprende a trabajar como Product Owner: la IA ejecuta, tú decides. Part time, 5 meses, online y en vivo, sin programar. La primera cohorte arranca el 24 de noviembre.",
+            "cta": true,
+            "bloques": [
+              {
+                "tipo": "ficha",
+                "filas": [
+                  {
+                    "label": "Modalidad",
+                    "valor": "Part time, online y en vivo"
+                  },
+                  {
+                    "label": "Duración",
+                    "valor": "5 meses"
+                  },
+                  {
+                    "label": "Clases",
+                    "valor": "2 clases en vivo por semana"
+                  },
+                  {
+                    "label": "Primera cohorte",
+                    "valor": "24 de noviembre de 2026"
+                  },
+                  {
+                    "label": "Experto de la carrera",
+                    "valor": "David Dellacha, Head of Product & UX en Alephee"
+                  }
+                ]
+              },
+              {
+                "tipo": "lista",
+                "estilo": "numerada",
+                "titulo": "Los módulos",
+                "items": [
+                  {
+                    "titulo": "Del pedido al problema",
+                    "texto": "Entender un producto que no conoces y descubrir el problema que vale la pena resolver."
+                  },
+                  {
+                    "titulo": "Del problema al backlog",
+                    "texto": "Flujos, reglas de negocio, PRD y un backlog que desarrollo puede construir sin preguntar."
+                  },
+                  {
+                    "titulo": "Del backlog al MVP con IA",
+                    "texto": "Tu MVP, probado con personas y publicado, con defensa oral."
+                  },
+                  {
+                    "titulo": "Uso real, decisión y entrega",
+                    "texto": "Decidir con evidencia si seguir, ajustar o frenar, y pasarle la posta a desarrollo. Cierra con un proyecto final grupal."
+                  }
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Roles a los que puedes aplicar",
+                "items": [
+                  "Product Owner Jr",
+                  "Product Analyst",
+                  "Product Assistant"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Incluye",
+                "items": [
+                  "Career coach",
+                  "Comunidad Henry",
+                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
+                  "Primera semana de prueba"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "prospeccion-de-leads-con-claude-y-n8n",
+      "nombre": "Automatiza la prospección de leads con Claude y n8n",
+      "desc": "Armamos en vivo, con Claude y n8n, un equipo de agentes que busca empresas, las investiga y escribe el primer mensaje, con una persona aprobando antes de enviar. No hace falta saber programar.",
+      "carrera": "AI Automation",
+      "tema": "Automatizaciones",
+      "formato": "Masterclass",
+      "fecha": "2026-11-26T22:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "26 NOV",
+      "fechaLarga": "Jueves 26 de noviembre",
+      "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+      "banner": "banner-prospeccion-de-leads-con-claude-y-n8n.jpg",
+      "speakers": [
+        {
+          "nombre": "Mariano Gobea Alcoba",
+          "rol": "Tech Lead en Mercado Libre",
+          "foto": "mariano-gobea-alcoba.jpg",
+          "bio": [
+            "Tech Lead en Mercado Libre e instructor en Henry.",
+            "En esta masterclass arma en vivo, paso a paso, un equipo de agentes que hace la prospección de leads de punta a punta."
+          ]
+        }
+      ],
+      "link": "landing-prospeccion-de-leads-con-claude-y-n8n.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Gratuita",
+            "1 hora"
+          ],
+          "kicker": "Sin necesidad de saber programar.",
+          "bajada": "Conseguir leads nuevos es buscar empresas, investigarlas y escribirles una por una. Lo automatizamos en vivo: **n8n** arma el flujo y **Claude** hace el trabajo de cada agente. Tú decides qué sale."
+        },
+        "hubspot": {
+          "masterclass_nombre": "Automatiza la prospección de leads con Claude y n8n",
+          "masterclass_fecha_larga": "Jueves 26 de noviembre",
+          "masterclass_hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+          "masterclass_speaker_nombre": "Mariano Gobea Alcoba",
+          "masterclass_speaker_bio": "Tech Lead en Mercado Libre e instructor en Henry",
+          "masterclass_tema_1": "Dividir la prospección en agentes con un rol cada uno",
+          "masterclass_tema_2": "Del cliente ideal al primer mensaje personalizado, con Claude dentro de n8n",
+          "masterclass_tema_3": "Dónde aprueba una persona antes de que algo salga",
+          "career_interest": "AI Automation",
+          "masterclass_carrera": "AI Automation",
+          "masterclass_cohorte_texto": "1 de diciembre",
+          "masterclass_cta_url": "https://www.soyhenry.com/carrera-ai-automation?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=26/11",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Automatiza%20la%20prospecci%C3%B3n%20de%20leads%20con%20Claude%20y%20n8n&dates=20261127T010000Z/20261127T020000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry%20con%20Mariano%20Gobea%20Alcoba%3A%20automatizamos%20con%20Claude%20y%20n8n%20la%20b%C3%BAsqueda%2C%20investigaci%C3%B3n%20y%20primer%20contacto%20de%20leads.&location=Online"
+        },
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Lo que vas a armar en 60 minutos",
+            "items": [
+              {
+                "titulo": "El agente que busca",
+                "texto": "Le describes tu cliente ideal y arma una lista de empresas que encajan."
+              },
+              {
+                "titulo": "El agente que investiga",
+                "texto": "Revisa cada empresa y deja un resumen: qué hace, qué le duele y por qué le sirve lo que ofreces."
+              },
+              {
+                "titulo": "El agente que escribe",
+                "texto": "Redacta un primer mensaje personalizado para cada lead, con lo que encontró el investigador."
+              },
+              {
+                "titulo": "El flujo en n8n, y tú",
+                "texto": "n8n conecta a los tres agentes, guarda cada lead y te deja todo listo para revisar. Nada sale sin tu aprobación."
+              }
+            ]
+          },
+          {
+            "tipo": "aviso",
+            "texto": "*El momento wow:* cambiamos la descripción del cliente ideal y el flujo entero se reacomoda: otra lista, otra investigación y otros mensajes, en minutos."
+          },
+          {
+            "tipo": "chips",
+            "titulo": "Lo que vas a ver en acción",
+            "items": [
+              "Claude como cerebro de cada agente",
+              "n8n para conectar los pasos del flujo",
+              "Un rol y unas instrucciones claras por agente",
+              "Un paso de aprobación humana antes de enviar",
+              "Cómo se lleva a un proceso real de tu empresa"
+            ]
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Para quién es",
+            "items": [
+              {
+                "etiqueta": "✓ Es para ti si",
+                "texto": "Trabajas en ventas, marketing, operaciones o tienes tu propio negocio y quieres que la IA haga parte del trabajo repetitivo de conseguir leads. No necesitas saber programar."
+              }
+            ]
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Necesito saber programar?",
+                "respuesta": "No. n8n es una herramienta visual: vas a ver cómo se arma cada paso del flujo sin escribir código."
+              },
+              {
+                "pregunta": "¿Qué diferencia hay con usar Claude en un chat?",
+                "respuesta": "En un chat haces una tarea por vez. Acá cada agente tiene un rol, n8n les pasa el trabajo de uno a otro y el proceso corre de punta a punta, con una persona que aprueba al final."
+              },
+              {
+                "pregunta": "¿Los mensajes se mandan solos?",
+                "respuesta": "No. El flujo deja todo listo y una persona revisa y aprueba antes de que algo salga. Así se usa en una empresa de verdad."
+              },
+              {
+                "pregunta": "¿Queda grabado?",
+                "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
+              }
+            ]
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "Después de la masterclass",
+            "titulo": "El siguiente paso: AI Automation",
+            "bajada": "Automatiza procesos y crea agentes con herramientas no-code y low-code como n8n, sin necesidad de programar. Part time, 4 meses, online y en vivo. La próxima cohorte arranca el 1 de diciembre.",
+            "cta": true,
+            "bloques": [
+              {
+                "tipo": "ficha",
+                "filas": [
+                  {
+                    "label": "Modalidad",
+                    "valor": "Part time, online y en vivo"
+                  },
+                  {
+                    "label": "Duración",
+                    "valor": "4 meses · 25 clases en vivo"
+                  },
+                  {
+                    "label": "Próxima cohorte",
+                    "valor": "1 de diciembre de 2026"
+                  },
+                  {
+                    "label": "Estructura",
+                    "valor": "4 módulos, un proyecto real en cada uno"
+                  }
+                ]
+              },
+              {
+                "tipo": "lista",
+                "estilo": "numerada",
+                "titulo": "Los módulos",
+                "items": [
+                  {
+                    "titulo": "Fundamentos de automatización y AI",
+                    "texto": "Proyecto: un flujo de onboarding automatizado."
+                  },
+                  {
+                    "titulo": "IA aplicada a automatizaciones",
+                    "texto": "Proyecto: un agente de atención al cliente."
+                  },
+                  {
+                    "titulo": "Automatización asistida y arquitectura",
+                    "texto": "Proyecto: llevar un workflow a estado productivo."
+                  },
+                  {
+                    "titulo": "Producción y práctica profesional",
+                    "texto": "Proyecto final."
+                  }
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Roles a los que puedes aplicar",
+                "items": [
+                  "AI Automation Specialist",
+                  "AI Automation Engineer / AI Agent Builder",
+                  "Consultor freelance de automatización",
+                  "Process Owner con capacidad técnica"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Incluye",
+                "items": [
+                  "Career coach",
+                  "Comunidad Henry",
+                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
+                  "Primera semana de prueba"
+                ]
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
