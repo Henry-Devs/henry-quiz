@@ -5,8 +5,9 @@ landings de descargables, quizzes y **los datos de las masterclasses**.
 
 ## Masterclasses: la única fuente es `masterclasses.json`
 
-`soyhenry.com/masterclasses` (el hub) y `soyhenry.com/masterclasses/<slug>` (la landing de cada
-una) se arman leyendo **`masterclasses.json` de este repo**. No hay HTML de masterclasses para
+`soyhenry.com/live-sessions` (el hub, Henry Live Sessions) y `soyhenry.com/live-sessions/<slug>`
+(la landing de cada una) se arman leyendo **`masterclasses.json` de este repo**. Las URLs viejas
+`soyhenry.com/masterclasses/…` redirigen ahí. No hay HTML de masterclasses para
 escribir: la página de cada masterclass sale del JSON.
 
 **Para sumar o cambiar una masterclass:**
@@ -33,8 +34,8 @@ escribir: la página de cada masterclass sale del JSON.
 ### El HTML viejo de masterclasses ya no está
 
 `masterclasses.html` se borró: `recursos.soyhenry.com/masterclasses.html` redirige a
-`soyhenry.com/masterclasses`. Las `landing-*.html` que el JSON nombra en `link` redirigen cada una
-a su página nueva, `soyhenry.com/masterclasses/<slug>`. La única que sigue publicada es la de AI
+`soyhenry.com/live-sessions`. Las `landing-*.html` que el JSON nombra en `link` redirigen cada una
+a su página nueva, `soyhenry.com/live-sessions/<slug>`. La única que sigue publicada es la de AI
 Engineering 101, hasta que termine su campaña; cuando cierre, se suma su slug a la misma regla de
 `vercel.json`. **No las edites**: un
 cambio ahí no llega a soyhenry.com y se pierde cuando se borren. Todo cambio de contenido de una
@@ -45,8 +46,8 @@ masterclass va al JSON.
 - **`landing.hubspot.masterclass_nombre` no se cambia con la campaña corriendo.** Es la condición
   de entrada del flow de mails del evento en HubSpot y tiene que coincidir exacto. No siempre es
   igual a `nombre`.
-- **El `slug` es la URL (`/masterclasses/<slug>`) y no se cambia** una vez publicado: rompería los
-  links de las campañas.
+- **El `slug` es la URL (`/live-sessions/<slug>`, y la vieja `/masterclasses/<slug>`) y no se
+  cambia** una vez publicado: rompería los links de las campañas.
 - **`fecha` va con zona horaria** (`2026-09-24T19:00:00-03:00`). Decide sola si la masterclass es
   próxima o pasada: la landing pasa del form de registro al acceso a la grabación sin que nadie la
   toque.
