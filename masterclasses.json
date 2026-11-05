@@ -2823,46 +2823,21 @@
             ]
           },
           {
-            "tipo": "aviso",
-            "texto": "*En vivo:* tomamos un CV real y una vacante real, y vemos el antes y el después del CV adaptado con IA."
-          },
-          {
-            "tipo": "tarjetas",
-            "titulo": "Es para ti si",
+            "tipo": "lista",
+            "titulo": "Es para ti si…",
+            "estilo": "checks",
             "items": [
               {
-                "etiqueta": "✓ Estás buscando trabajo",
+                "titulo": "Estás buscando trabajo",
                 "texto": "Y mandas postulaciones que no tienen respuesta."
               },
               {
-                "etiqueta": "✓ Quieres cambiar de rol o entrar a tech",
+                "titulo": "Quieres cambiar de rol o entrar a tech",
                 "texto": "Y necesitas que tu experiencia se lea bien para el puesto nuevo."
               },
               {
-                "etiqueta": "✓ Ya usas IA, pero no para esto",
+                "titulo": "Ya usas IA, pero no para esto",
                 "texto": "Y quieres usarla bien, sin que tu CV suene escrito por una máquina."
-              }
-            ]
-          },
-          {
-            "tipo": "faq",
-            "titulo": "Preguntas frecuentes",
-            "items": [
-              {
-                "pregunta": "¿Sirve si no trabajo en tecnología?",
-                "respuesta": "Sí. Los filtros automáticos los usan empresas de todas las industrias, y lo que vas a ver sirve para cualquier perfil."
-              },
-              {
-                "pregunta": "¿La IA me escribe el CV?",
-                "respuesta": "No, y no conviene. La usas para revisar, ordenar y adaptar lo que tú hiciste. La experiencia y los logros los pones tú."
-              },
-              {
-                "pregunta": "¿Qué herramienta de IA necesito?",
-                "respuesta": "Alcanza con la versión gratuita de ChatGPT o Claude."
-              },
-              {
-                "pregunta": "¿Queda grabado?",
-                "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
               }
             ]
           },
@@ -2895,6 +2870,28 @@
                   "Reembolso al 100% si buscas trabajo un año y no lo consigues",
                   "Primera semana de prueba"
                 ]
+              }
+            ]
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Sirve si no trabajo en tecnología?",
+                "respuesta": "Sí. Los filtros automáticos los usan empresas de todas las industrias, y lo que vas a ver sirve para cualquier perfil."
+              },
+              {
+                "pregunta": "¿La IA me escribe el CV?",
+                "respuesta": "No, y no conviene. La usas para revisar, ordenar y adaptar lo que tú hiciste. La experiencia y los logros los pones tú."
+              },
+              {
+                "pregunta": "¿Qué herramienta de IA necesito?",
+                "respuesta": "Alcanza con la versión gratuita de ChatGPT o Claude."
+              },
+              {
+                "pregunta": "¿Queda grabado?",
+                "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
               }
             ]
           }
@@ -2971,10 +2968,6 @@
             ]
           },
           {
-            "tipo": "aviso",
-            "texto": "*El momento wow:* hacemos una pregunta nueva en el medio de la clase y el dashboard se actualiza con la respuesta, en el momento."
-          },
-          {
             "tipo": "chips",
             "titulo": "Lo que vas a ver en acción",
             "items": [
@@ -3000,32 +2993,10 @@
             ]
           },
           {
-            "tipo": "faq",
-            "titulo": "Preguntas frecuentes",
-            "items": [
-              {
-                "pregunta": "¿Necesito saber programar?",
-                "respuesta": "No. Todo se hace hablándole a Claude en español. Vas a ver qué pedirle y cómo revisar lo que te devuelve."
-              },
-              {
-                "pregunta": "¿Qué versión de Claude necesito?",
-                "respuesta": "Puedes seguir la clase con la versión gratuita de Claude."
-              },
-              {
-                "pregunta": "¿Es la misma clase que la de agosto?",
-                "respuesta": "No. En agosto Raúl mostró cómo limpiar y explorar datos. Esta vez vamos de las preguntas de negocio a un dashboard, y a cómo verificar los resultados."
-              },
-              {
-                "pregunta": "¿Queda grabado?",
-                "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
-              }
-            ]
-          },
-          {
             "tipo": "seccion",
             "etiqueta": "Después de la masterclass",
             "titulo": "El siguiente paso: Data Science",
-            "bajada": "Aprende análisis de datos y Machine Learning para descubrir insights y potenciar decisiones de negocio, sin conocimientos técnicos previos. Part time, 8 meses, online y en vivo. La próxima cohorte arranca el 30 de noviembre.",
+            "bajada": "Aprende análisis de datos y Machine Learning para descubrir insights y potenciar decisiones de negocio, sin conocimientos técnicos previos. Part time, 8 meses, online y en vivo. La próxima cohorte arranca el ==30 de noviembre==.",
             "cta": true,
             "bloques": [
               {
@@ -3045,13 +3016,12 @@
                   },
                   {
                     "label": "Próxima cohorte",
-                    "valor": "30 de noviembre de 2026"
+                    "valor": "==30 de noviembre de 2026=="
                   }
                 ]
               },
               {
-                "tipo": "lista",
-                "estilo": "numerada",
+                "tipo": "chips",
                 "titulo": "Los módulos",
                 "items": [
                   "Fundamentos de la Ciencia de Datos",
@@ -3081,16 +3051,6 @@
               },
               {
                 "tipo": "chips",
-                "titulo": "Roles a los que puedes aplicar",
-                "items": [
-                  "Data Analyst",
-                  "Junior Data Scientist",
-                  "ML Junior Analyst",
-                  "BI Analyst"
-                ]
-              },
-              {
-                "tipo": "chips",
                 "titulo": "Incluye",
                 "items": [
                   "Career coach",
@@ -3098,6 +3058,28 @@
                   "Reembolso al 100% si buscas trabajo un año y no lo consigues",
                   "Primera semana de prueba"
                 ]
+              }
+            ]
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Necesito saber programar?",
+                "respuesta": "No. Todo se hace hablándole a Claude en español. Vas a ver qué pedirle y cómo revisar lo que te devuelve."
+              },
+              {
+                "pregunta": "¿Qué versión de Claude necesito?",
+                "respuesta": "Puedes seguir la clase con la versión gratuita de Claude."
+              },
+              {
+                "pregunta": "¿Es la misma clase que la de agosto?",
+                "respuesta": "No. En agosto Raúl mostró cómo limpiar y explorar datos. Esta vez vamos de las preguntas de negocio a un dashboard, y a cómo verificar los resultados."
+              },
+              {
+                "pregunta": "¿Queda grabado?",
+                "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
               }
             ]
           }
