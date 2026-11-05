@@ -2247,8 +2247,13 @@
       "banner": "banner-primera-app-con-ia.jpg",
       "speakers": [
         {
-          "nombre": "Equipo Henry",
-          "rol": "Instructores de Henry"
+          "nombre": "Alfredo Salazar",
+          "rol": "Software Engineer",
+          "foto": "alfredo-salazar.jpg",
+          "bio": [
+            "Software Engineer.",
+            "Ya dio con Henry la masterclass «De cero a tu web publicada en 1 hora»: esta vez arma en vivo una app que usa IA."
+          ]
         }
       ],
       "link": "landing-primera-app-con-ia-recetas.html",
@@ -2264,8 +2269,8 @@
           "masterclass_nombre": "Programa tu primera app con IA: arma recetas y calcula el total de tu compra",
           "masterclass_fecha_larga": "Martes 17 de noviembre",
           "masterclass_hora": "20h MX 🇲🇽 / 21h COL 🇨🇴 / 23h ARG 🇦🇷",
-          "masterclass_speaker_nombre": "Equipo Henry",
-          "masterclass_speaker_bio": "Instructores de Henry",
+          "masterclass_speaker_nombre": "Alfredo Salazar",
+          "masterclass_speaker_bio": "Software Engineer",
           "masterclass_tema_1": "Conectar una app con la IA sin exponer la clave de la API",
           "masterclass_tema_2": "Que la IA arme una receta usando solo productos del catálogo",
           "masterclass_tema_3": "Que el total lo calcule el código, no la IA",
@@ -2282,8 +2287,8 @@
             "titulo": "Lo que vas a hacer en 60 minutos",
             "items": [
               {
-                "titulo": "Conectar una app con la IA",
-                "texto": "Y entender por qué la clave de la API nunca va en el navegador."
+                "titulo": "Crear tu app desde cero",
+                "texto": "Armamos en vivo una app web que se conecta con la IA, y vemos por qué la clave de la API nunca va en el navegador."
               },
               {
                 "titulo": "Pasarle a la IA el catálogo de una tienda",
@@ -2294,10 +2299,6 @@
                 "texto": "Con los precios del catálogo, no con lo que la IA \"cree\"."
               }
             ]
-          },
-          {
-            "tipo": "aviso",
-            "texto": "*El momento wow:* cambiamos un precio del catálogo y el total se recalcula al instante. Así se ve que la app trabaja con datos reales y no inventa."
           },
           {
             "tipo": "chips",
@@ -2321,6 +2322,77 @@
             ]
           },
           {
+            "tipo": "seccion",
+            "etiqueta": "Después de la masterclass",
+            "titulo": "La carrera de Full Stack AI",
+            "bajada": "Aprende a diseñar, construir y desplegar aplicaciones web completas, con la IA integrada en todo el proceso. Desde cero, online y en vivo. Las próximas cohortes arrancan el ==23 de noviembre== (full time) y el ==30 de noviembre== (part time).",
+            "cta": true,
+            "bloques": [
+              {
+                "tipo": "ficha",
+                "filas": [
+                  {
+                    "label": "Part time",
+                    "valor": "8 meses · 20 horas por semana"
+                  },
+                  {
+                    "label": "Full time",
+                    "valor": "4 meses · 40 horas por semana"
+                  },
+                  {
+                    "label": "Modalidad",
+                    "valor": "Online y en vivo, +800 horas de código"
+                  },
+                  {
+                    "label": "Próxima cohorte full time",
+                    "valor": "==23 de noviembre de 2026=="
+                  },
+                  {
+                    "label": "Próxima cohorte part time",
+                    "valor": "==30 de noviembre de 2026=="
+                  }
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Los módulos",
+                "items": [
+                  "Fundamentos del Desarrollo Web",
+                  "Backend y APIs",
+                  "Frontend Moderno y SPAs",
+                  "Desarrollo Full Stack Moderno",
+                  "Especialización (opcional)",
+                  "Proyecto Final"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Tecnologías",
+                "items": [
+                  "HTML",
+                  "CSS",
+                  "JavaScript",
+                  "React",
+                  "TypeScript",
+                  "Node.js",
+                  "PostgreSQL",
+                  "AWS",
+                  "GitHub"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Incluye",
+                "items": [
+                  "Career coach",
+                  "Comunidad Henry",
+                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
+                  "Primera semana de prueba"
+                ]
+              }
+            ]
+          },
+          {
             "tipo": "faq",
             "titulo": "Preguntas frecuentes",
             "items": [
@@ -2335,24 +2407,6 @@
               {
                 "pregunta": "¿Por qué la clave de la API no va en el navegador?",
                 "respuesta": "Porque cualquiera podría verla y usarla a tu costo. Lo vemos en vivo: la clave queda guardada en un servidor y el navegador nunca la ve."
-              }
-            ]
-          },
-          {
-            "tipo": "seccion",
-            "etiqueta": "Después de la masterclass",
-            "titulo": "El siguiente paso: Full Stack AI",
-            "bajada": "Lo que ves en la clase es el Módulo 3 de Full Stack AI: consumir APIs, integrar IA y proteger claves. La próxima cohorte arranca el 30 de noviembre.",
-            "cta": true,
-            "bloques": [
-              {
-                "tipo": "chips",
-                "titulo": "Módulo 3 de Full Stack AI",
-                "items": [
-                  "Consumir APIs",
-                  "Integrar IA en una app",
-                  "Proteger claves y datos"
-                ]
               }
             ]
           }
@@ -2428,8 +2482,8 @@
                 "texto": "El ciclo completo: capturar, ordenar, construir con IA, validar con personas y decidir con evidencia."
               },
               {
-                "titulo": "La carrera por dentro",
-                "texto": "Los cuatro módulos, qué construyes en cada uno y cómo se arma tu portfolio. Con tiempo para tus preguntas."
+                "titulo": "Cómo convertirte en AI Product Builder",
+                "texto": "Descubrirás la carrera de AI Product Builder en Henry: los cuatro módulos, qué construyes en cada uno y cómo se arma tu portfolio. Con tiempo para tus preguntas."
               }
             ]
           },
@@ -2449,20 +2503,68 @@
             "fuente": "Fuente: State of PM 2026 · 1.200+ PMs, vía Ideaplan"
           },
           {
-            "tipo": "tarjetas",
-            "titulo": "Es para ti si",
+            "tipo": "lista",
+            "estilo": "checks",
+            "titulo": "Es para ti si…",
             "items": [
               {
-                "etiqueta": "✓ Buscas tus primeros pasos en producto",
+                "titulo": "Buscas tus primeros pasos en producto",
                 "texto": "Porque te acabas de recibir o porque vienes de otra área y quieres reconvertirte."
               },
               {
-                "etiqueta": "✓ Tienes pensamiento estructurado",
+                "titulo": "Tienes pensamiento estructurado",
                 "texto": "Y usas un asistente de IA en tu día a día."
               },
               {
-                "etiqueta": "✓ Te interesa decidir qué construir",
+                "titulo": "Te interesa decidir qué construir",
                 "texto": "Más que ejecutar tareas operativas. No necesitas experiencia previa en producto."
+              }
+            ]
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "Después del Henry Live",
+            "titulo": "La carrera de AI Product Builder",
+            "bajada": "Aprende a trabajar como Product Owner: la IA ejecuta, tú decides. Sin programar. La primera cohorte arranca el ==24 de noviembre==.",
+            "cta": true,
+            "bloques": [
+              {
+                "tipo": "ficha",
+                "filas": [
+                  {
+                    "label": "Modalidad",
+                    "valor": "Part time, online y en vivo"
+                  },
+                  {
+                    "label": "Duración",
+                    "valor": "5 meses · 2 clases en vivo por semana"
+                  },
+                  {
+                    "label": "Primera cohorte",
+                    "valor": "==24 de noviembre de 2026=="
+                  }
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Los módulos",
+                "items": [
+                  "Del pedido al problema",
+                  "Del problema al backlog",
+                  "Del backlog al MVP con IA",
+                  "Uso real, decisión y entrega",
+                  "Proyecto final grupal"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Incluye",
+                "items": [
+                  "Career coach",
+                  "Comunidad Henry",
+                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
+                  "Primera semana de prueba"
+                ]
               }
             ]
           },
@@ -2481,82 +2583,6 @@
               {
                 "pregunta": "¿Queda grabado?",
                 "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
-              }
-            ]
-          },
-          {
-            "tipo": "seccion",
-            "etiqueta": "Después del Henry Live",
-            "titulo": "La carrera de AI Product Builder",
-            "bajada": "Aprende a trabajar como Product Owner: la IA ejecuta, tú decides. Part time, 5 meses, online y en vivo, sin programar. La primera cohorte arranca el 24 de noviembre.",
-            "cta": true,
-            "bloques": [
-              {
-                "tipo": "ficha",
-                "filas": [
-                  {
-                    "label": "Modalidad",
-                    "valor": "Part time, online y en vivo"
-                  },
-                  {
-                    "label": "Duración",
-                    "valor": "5 meses"
-                  },
-                  {
-                    "label": "Clases",
-                    "valor": "2 clases en vivo por semana"
-                  },
-                  {
-                    "label": "Primera cohorte",
-                    "valor": "24 de noviembre de 2026"
-                  },
-                  {
-                    "label": "Experto de la carrera",
-                    "valor": "David Dellacha, Head of Product & UX en Alephee"
-                  }
-                ]
-              },
-              {
-                "tipo": "lista",
-                "estilo": "numerada",
-                "titulo": "Los módulos",
-                "items": [
-                  {
-                    "titulo": "Del pedido al problema",
-                    "texto": "Entender un producto que no conoces y descubrir el problema que vale la pena resolver."
-                  },
-                  {
-                    "titulo": "Del problema al backlog",
-                    "texto": "Flujos, reglas de negocio, PRD y un backlog que desarrollo puede construir sin preguntar."
-                  },
-                  {
-                    "titulo": "Del backlog al MVP con IA",
-                    "texto": "Tu MVP, probado con personas y publicado, con defensa oral."
-                  },
-                  {
-                    "titulo": "Uso real, decisión y entrega",
-                    "texto": "Decidir con evidencia si seguir, ajustar o frenar, y pasarle la posta a desarrollo. Cierra con un proyecto final grupal."
-                  }
-                ]
-              },
-              {
-                "tipo": "chips",
-                "titulo": "Roles a los que puedes aplicar",
-                "items": [
-                  "Product Owner Jr",
-                  "Product Analyst",
-                  "Product Assistant"
-                ]
-              },
-              {
-                "tipo": "chips",
-                "titulo": "Incluye",
-                "items": [
-                  "Career coach",
-                  "Comunidad Henry",
-                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
-                  "Primera semana de prueba"
-                ]
               }
             ]
           }
@@ -2619,26 +2645,22 @@
             "titulo": "Lo que vas a armar en 60 minutos",
             "items": [
               {
-                "titulo": "El agente que busca",
-                "texto": "Le describes tu cliente ideal y arma una lista de empresas que encajan."
+                "titulo": "Claude busca",
+                "texto": "Le describes a Claude tu cliente ideal y arma una lista de empresas que encajan."
               },
               {
-                "titulo": "El agente que investiga",
-                "texto": "Revisa cada empresa y deja un resumen: qué hace, qué le duele y por qué le sirve lo que ofreces."
+                "titulo": "Claude investiga",
+                "texto": "Claude revisa cada empresa y deja un resumen: qué hace, qué le duele y por qué le sirve lo que ofreces."
               },
               {
-                "titulo": "El agente que escribe",
-                "texto": "Redacta un primer mensaje personalizado para cada lead, con lo que encontró el investigador."
+                "titulo": "Claude escribe",
+                "texto": "Claude redacta un primer mensaje personalizado para cada lead, con lo que encontró en la investigación."
               },
               {
-                "titulo": "El flujo en n8n, y tú",
-                "texto": "n8n conecta a los tres agentes, guarda cada lead y te deja todo listo para revisar. Nada sale sin tu aprobación."
+                "titulo": "n8n lo conecta, y tú apruebas",
+                "texto": "n8n une los pasos y guarda cada lead. Claude te deja todo listo para revisar y nada sale sin tu aprobación."
               }
             ]
-          },
-          {
-            "tipo": "aviso",
-            "texto": "*El momento wow:* cambiamos la descripción del cliente ideal y el flujo entero se reacomoda: otra lista, otra investigación y otros mensajes, en minutos."
           },
           {
             "tipo": "chips",
@@ -2662,6 +2684,56 @@
             ]
           },
           {
+            "tipo": "seccion",
+            "etiqueta": "Después de la masterclass",
+            "titulo": "El siguiente paso: AI Automation",
+            "bajada": "Automatiza procesos y crea agentes con herramientas no-code y low-code como n8n, sin necesidad de programar. Part time, 4 meses, online y en vivo. La próxima cohorte arranca el ==1 de diciembre==.",
+            "cta": true,
+            "bloques": [
+              {
+                "tipo": "ficha",
+                "filas": [
+                  {
+                    "label": "Modalidad",
+                    "valor": "Part time, online y en vivo"
+                  },
+                  {
+                    "label": "Duración",
+                    "valor": "4 meses · 25 clases en vivo"
+                  },
+                  {
+                    "label": "Próxima cohorte",
+                    "valor": "==1 de diciembre de 2026=="
+                  },
+                  {
+                    "label": "Estructura",
+                    "valor": "4 módulos, un proyecto real en cada uno"
+                  }
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Los módulos",
+                "items": [
+                  "Fundamentos de automatización y AI",
+                  "IA aplicada a automatizaciones",
+                  "Automatización asistida y arquitectura",
+                  "Producción y práctica profesional"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Incluye",
+                "items": [
+                  "Career coach",
+                  "Comunidad Henry",
+                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
+                  "Primera semana de prueba"
+                ]
+              }
+            ]
+          },
+          {
             "tipo": "faq",
             "titulo": "Preguntas frecuentes",
             "items": [
@@ -2680,79 +2752,6 @@
               {
                 "pregunta": "¿Queda grabado?",
                 "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
-              }
-            ]
-          },
-          {
-            "tipo": "seccion",
-            "etiqueta": "Después de la masterclass",
-            "titulo": "El siguiente paso: AI Automation",
-            "bajada": "Automatiza procesos y crea agentes con herramientas no-code y low-code como n8n, sin necesidad de programar. Part time, 4 meses, online y en vivo. La próxima cohorte arranca el 1 de diciembre.",
-            "cta": true,
-            "bloques": [
-              {
-                "tipo": "ficha",
-                "filas": [
-                  {
-                    "label": "Modalidad",
-                    "valor": "Part time, online y en vivo"
-                  },
-                  {
-                    "label": "Duración",
-                    "valor": "4 meses · 25 clases en vivo"
-                  },
-                  {
-                    "label": "Próxima cohorte",
-                    "valor": "1 de diciembre de 2026"
-                  },
-                  {
-                    "label": "Estructura",
-                    "valor": "4 módulos, un proyecto real en cada uno"
-                  }
-                ]
-              },
-              {
-                "tipo": "lista",
-                "estilo": "numerada",
-                "titulo": "Los módulos",
-                "items": [
-                  {
-                    "titulo": "Fundamentos de automatización y AI",
-                    "texto": "Proyecto: un flujo de onboarding automatizado."
-                  },
-                  {
-                    "titulo": "IA aplicada a automatizaciones",
-                    "texto": "Proyecto: un agente de atención al cliente."
-                  },
-                  {
-                    "titulo": "Automatización asistida y arquitectura",
-                    "texto": "Proyecto: llevar un workflow a estado productivo."
-                  },
-                  {
-                    "titulo": "Producción y práctica profesional",
-                    "texto": "Proyecto final."
-                  }
-                ]
-              },
-              {
-                "tipo": "chips",
-                "titulo": "Roles a los que puedes aplicar",
-                "items": [
-                  "AI Automation Specialist",
-                  "AI Automation Engineer / AI Agent Builder",
-                  "Consultor freelance de automatización",
-                  "Process Owner con capacidad técnica"
-                ]
-              },
-              {
-                "tipo": "chips",
-                "titulo": "Incluye",
-                "items": [
-                  "Career coach",
-                  "Comunidad Henry",
-                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
-                  "Primera semana de prueba"
-                ]
               }
             ]
           }
