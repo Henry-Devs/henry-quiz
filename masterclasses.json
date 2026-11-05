@@ -2253,6 +2253,133 @@
         }
       ],
       "link": "landing-que-es-un-forward-deployed-engineer.html"
+    },
+    {
+      "slug": "primera-app-con-ia-recetas",
+      "nombre": "Programa tu primera app con IA: arma recetas y calcula el total de tu compra",
+      "desc": "Armamos en vivo una app que conecta con la IA, propone una receta con productos reales de un catálogo y calcula el total de la compra. No hace falta saber programar.",
+      "carrera": "Full Stack AI",
+      "tema": "Programación y vibe coding",
+      "formato": "Masterclass",
+      "fecha": "2026-11-17T23:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "17 NOV",
+      "fechaLarga": "Martes 17 de noviembre",
+      "hora": "20h MX 🇲🇽 / 21h COL 🇨🇴 / 23h ARG 🇦🇷",
+      "banner": "banner-primera-app-con-ia.jpg",
+      "speakers": [
+        {
+          "nombre": "Equipo Henry",
+          "rol": "Instructores de Henry"
+        }
+      ],
+      "link": "landing-primera-app-con-ia-recetas.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Gratuita"
+          ],
+          "kicker": "Sin necesidad de saber programar.",
+          "bajada": "Construimos en vivo una app que le pide una receta a la IA y calcula el total de tu compra. La receta es el ejemplo: lo que te llevas es entender cómo se integra la IA en una app de verdad."
+        },
+        "hubspot": {
+          "masterclass_nombre": "Programa tu primera app con IA: arma recetas y calcula el total de tu compra",
+          "masterclass_fecha_larga": "Martes 17 de noviembre",
+          "masterclass_hora": "20h MX 🇲🇽 / 21h COL 🇨🇴 / 23h ARG 🇦🇷",
+          "masterclass_speaker_nombre": "Equipo Henry",
+          "masterclass_speaker_bio": "Instructores de Henry",
+          "masterclass_tema_1": "Conectar una app con la IA sin exponer la clave de la API",
+          "masterclass_tema_2": "Que la IA arme una receta usando solo productos del catálogo",
+          "masterclass_tema_3": "Que el total lo calcule el código, no la IA",
+          "career_interest": "Full Stack AI",
+          "masterclass_carrera": "Full Stack AI",
+          "masterclass_cohorte_texto": "30 de noviembre",
+          "masterclass_cta_url": "https://www.soyhenry.com/webfullstack?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=17/11",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Masterclass%3A%20Programa%20tu%20primera%20app%20con%20IA&dates=20261118T020000Z/20261118T030000Z&details=Masterclass%20en%20vivo%20y%20gratis%20de%20Henry.%20Armamos%20una%20app%20con%20IA%20que%20propone%20recetas%20y%20calcula%20el%20total%20de%20la%20compra.&location=Online"
+        },
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Lo que vas a hacer en 60 minutos",
+            "items": [
+              {
+                "titulo": "Conectar una app con la IA",
+                "texto": "Y entender por qué la clave de la API nunca va en el navegador."
+              },
+              {
+                "titulo": "Pasarle a la IA el catálogo de una tienda",
+                "texto": "La IA devuelve una receta y la lista de compra usando solo productos del catálogo."
+              },
+              {
+                "titulo": "Que el total lo calcule el código",
+                "texto": "Con los precios del catálogo, no con lo que la IA \"cree\"."
+              }
+            ]
+          },
+          {
+            "tipo": "aviso",
+            "texto": "*El momento wow:* cambiamos un precio del catálogo y el total se recalcula al instante. Así se ve que la app trabaja con datos reales y no inventa."
+          },
+          {
+            "tipo": "chips",
+            "titulo": "Lo que vas a ver en acción",
+            "items": [
+              "Un catálogo de 40 a 50 productos con precio",
+              "HTML y JavaScript en el navegador, sin frameworks",
+              "Una función serverless que guarda la clave",
+              "Respuestas de la IA en JSON, por id de producto",
+              "Cómo se integra la IA en las apps de las empresas"
+            ]
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Para quién es",
+            "items": [
+              {
+                "etiqueta": "✓ Es para ti si",
+                "texto": "Quieres aprender a programar con IA y nunca escribiste una línea de código. La app de recetas es el ejemplo; lo que importa es cómo se construye una app que usa IA."
+              }
+            ]
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Necesito saber programar?",
+                "respuesta": "No. Arrancamos desde cero y vas viendo, paso a paso, cómo se arma una app y para qué sirve cada parte."
+              },
+              {
+                "pregunta": "¿En qué se diferencia de usar ChatGPT?",
+                "respuesta": "En ChatGPT la IA responde con lo que sabe y a veces inventa. En una app, la IA trabaja con tus datos: solo elige productos del catálogo y el total lo calcula el código. Así integran la IA las empresas."
+              },
+              {
+                "pregunta": "¿Por qué la clave de la API no va en el navegador?",
+                "respuesta": "Porque cualquiera podría verla y usarla a tu costo. Lo vemos en vivo: la clave queda guardada en un servidor y el navegador nunca la ve."
+              }
+            ]
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "Después de la masterclass",
+            "titulo": "El siguiente paso: Full Stack AI",
+            "bajada": "Lo que ves en la clase es el Módulo 3 de Full Stack AI: consumir APIs, integrar IA y proteger claves. La próxima cohorte arranca el 30 de noviembre.",
+            "cta": true,
+            "bloques": [
+              {
+                "tipo": "chips",
+                "titulo": "Módulo 3 de Full Stack AI",
+                "items": [
+                  "Consumir APIs",
+                  "Integrar IA en una app",
+                  "Proteger claves y datos"
+                ]
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
