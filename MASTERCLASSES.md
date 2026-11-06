@@ -54,6 +54,7 @@ La página se arma sola a partir de estos datos, así que no hay HTML que escrib
   "hero": { "badges": ["1 hora"], "kicker": "…", "bajada": "…" },  // todo opcional
   "grabaciones": [{ "url": "https://www.youtube.com/watch?v=…" }],   // el video, apenas exista el link
   "hubspot": { "masterclass_nombre": "…", /* …los campos del form, tal cual */ },
+  "formId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",                // el form de HubSpot de este live
   "bloques": [ /* las secciones de la página, en orden */ ]
 }
 ```
@@ -64,6 +65,10 @@ La página se arma sola a partir de estos datos, así que no hay HTML que escrib
   `grabaciones`.
 - **`hubspot`** lleva los campos del form de registro con el valor exacto que se manda a HubSpot.
   Sin `hubspot` no hay form: los botones van directo al video.
+- **`formId`** es el id del form de HubSpot de este live, el que dispara sus mails. Si no está,
+  la landing usa el form genérico (`7bd5e072-…`). El form tiene que tener los mismos campos que
+  `hubspot`, más `masterclass_fecha_evento`, que lo carga la página; si falta alguno, HubSpot no
+  guarda ese valor.
 - **`bloques`** son las secciones de la página. Los tipos disponibles son `lista`, `tarjetas`,
   `cifras`, `texto`, `faq`, `empresa`, `mapa`, `aviso`, `testimonios`, `ficha`, `chips`, `seccion`
   y `cierre`. Lo más fácil es copiar una masterclass parecida y editar. En los textos se puede
