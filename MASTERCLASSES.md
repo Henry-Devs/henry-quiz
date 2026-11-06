@@ -33,6 +33,9 @@ El cambio se ve segundos después del push, sin tocar nada de soyhenry.com.
 | `link` | La landing vieja de este repo. Queda por compatibilidad; no se crea una nueva. | `landing-roadmap-programador-ia.html` |
 | `landing` | La página en soyhenry.com. Ver abajo. | |
 
+> **Si copiás una masterclass parecida, borrá su `landing.formId`** o reemplazalo por el del form
+> de este live. Si lo dejás, los registros entran al form de otro live y reciben sus mails.
+
 3. Antes de pushear, validá el JSON:
 
    ```bash
