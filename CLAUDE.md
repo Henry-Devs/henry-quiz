@@ -31,6 +31,36 @@ escribir: la página de cada masterclass sale del JSON.
 **No hace falta crear una landing HTML nueva ni tocar nada de soyhenry.com.** Una masterclass con
 `landing` en el JSON tiene su página sola.
 
+### Regla dura para agentes: preguntá antes de cargar una masterclass nueva
+
+Antes de escribir una entrada nueva en `masterclasses.json`, el agente **tiene que preguntar** a
+quien la está cargando:
+
+1. **¿Este live tiene su propio form de HubSpot? Si lo tiene, ¿cuál es el form ID?** Va en
+   `landing.formId` (formato `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`). Cada form dispara sus propios
+   mails en SendGrid: sin `formId`, la landing usa el form genérico (`7bd5e072-…`) y no salen los
+   mails de este live.
+   - Si la persona dice **explícitamente** que no tiene form propio, se sigue sin `formId`.
+   - **Nunca inventes un `formId` ni dejes el de otra masterclass.** Copiar una entrada parecida
+     copia también su `formId`: borralo o reemplazalo por el que te den. Si no hay respuesta, no
+     lo cargues y avisá que la landing va a usar el form genérico.
+   - El form tiene que tener los mismos campos que `landing.hubspot`, más
+     `masterclass_fecha_evento`. Recordáselo a la persona.
+
+2. **Recordatorio de campos, en un solo mensaje.** Listale todos los campos, incluidos los
+   opcionales, para que complete lo que tenga. Que un campo sea opcional no quiere decir que no
+   haga falta preguntarlo:
+   - Obligatorios: `slug`, `nombre`, `desc`, `carrera`, `fecha` (con zona horaria), `fechaCorta`,
+     `fechaLarga`, `hora`, `banner`, `speakers` (`nombre` y `rol`), `link`.
+   - Opcionales: `tema`, `formato`, `duracionMin` (60 si no va), y `foto`, `bio` y `logo` de cada
+     speaker.
+   - `landing`: `hubspot` (con `masterclass_nombre`, más los campos que use el flow de mails),
+     `formId`, `hero` (`badges`, `kicker`, `bajada`), `bloques`, `grabaciones` (cuando exista el
+     video) y `pixelContentName`.
+
+   Lo que la persona no tenga queda afuera y se lo decís al final, junto con el resultado del
+   validador. Qué va en cada campo: `MASTERCLASSES.md`.
+
 ### El HTML viejo de masterclasses ya no está
 
 `masterclasses.html` se borró: `recursos.soyhenry.com/masterclasses.html` redirige a

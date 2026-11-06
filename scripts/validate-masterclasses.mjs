@@ -40,6 +40,7 @@ const FORMATOS = ['Masterclass', 'Henry Live', 'Panel', 'Curso intro'];
 const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const OFFSET = /(Z|[+-]\d{2}:\d{2})$/;
 const YOUTUBE = /(?:youtube\.com\/watch\?|youtu\.be\/)/i;
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const ESTILOS = ['numerada', 'viñetas', 'checks', 'tarjetas'];
 
 const errores = [];
@@ -224,6 +225,12 @@ function landing(l, m, donde) {
     for (const [k, v] of Object.entries(l.hubspot)) {
       if (typeof v !== 'string') error(`${donde} hubspot`, `"${k}" tiene que ser texto`);
     }
+  }
+
+  // El sitio no descarta la landing por un formId roto: lo ignora y registra en el form
+  // genérico, que no manda los mails de este live. Por eso acá sí es un error.
+  if (l.formId !== undefined && !(typeof l.formId === 'string' && UUID.test(l.formId))) {
+    error(donde, `"formId" tiene que ser el id del form de HubSpot (formato xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx); vino "${l.formId}"`);
   }
 
   opcionalTexto(l, 'pixelContentName', donde);
