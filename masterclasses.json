@@ -2767,11 +2767,11 @@
       "desc": "Antes de que alguien lea tu CV, lo lee un filtro automático. Te mostramos cómo funciona y cómo usar la IA para adaptar tu CV a cada vacante sin que suene genérico. Con la career coach de Henry.",
       "carrera": "AI Automation",
       "formato": "Henry Live",
-      "fecha": "2026-11-25T22:00:00-03:00",
+      "fecha": "2026-11-25T23:00:00-03:00",
       "duracionMin": 60,
       "fechaCorta": "25 NOV",
       "fechaLarga": "Miércoles 25 de noviembre",
-      "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+      "hora": "20h MX 🇲🇽 / 21h COL 🇨🇴 / 23h ARG 🇦🇷",
       "banner": "banner-cv-vs-filtro-de-ia-v3.jpg",
       "speakers": [
         {
@@ -2793,7 +2793,7 @@
         "hubspot": {
           "masterclass_nombre": "CV vs. filtro de IA",
           "masterclass_fecha_larga": "Miércoles 25 de noviembre",
-          "masterclass_hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+          "masterclass_hora": "20h MX 🇲🇽 / 21h COL 🇨🇴 / 23h ARG 🇦🇷",
           "masterclass_speaker_nombre": "Elizabeth Cahue",
           "masterclass_speaker_bio": "Career Coach en Henry",
           "masterclass_tema_1": "Cómo leen tu CV los filtros automáticos y por qué te descartan",
