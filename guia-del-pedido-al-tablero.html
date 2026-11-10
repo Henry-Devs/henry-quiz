@@ -8,8 +8,9 @@
 /* Layout: juego de mesa contemporáneo. Portada oscura con el tablero iluminado; hojas crema con halos, casilleros de vidrio y fichas con volumen. */
 :root{
   color-scheme:light;
-  --desk:#DEDCCD;
-  --paper:#F2F1E3;
+  --desk:#EDEDE8;
+  --paper:#FFFFFF;
+  --tint:#F5F5F0;
   --ink:#141414;
   --soft:#5E5D55;
   --faint:#9C9A8C;
@@ -31,12 +32,12 @@ p{text-wrap:pretty}
 b,strong{font-weight:700}
 
 .pg{position:relative;isolation:isolate;width:100%;max-width:794px;aspect-ratio:210/297;background:var(--paper);padding:40px 52px 34px;
-  display:flex;flex-direction:column;gap:18px;overflow:hidden;border-radius:8px;box-shadow:0 24px 60px rgba(40,36,10,.15)}
+  display:flex;flex-direction:column;gap:18px;overflow:hidden;border-radius:8px;box-shadow:0 10px 40px rgba(17,17,17,.10)}
 .pg.dark{background:var(--night);color:#EDECE4}
 .halo{position:absolute;z-index:-1;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,rgba(255,248,120,.85),rgba(255,250,150,.3) 55%,transparent)}
 .dark .halo{background:radial-gradient(closest-side,rgba(255,255,0,.22),rgba(255,240,0,.07) 55%,transparent)}
 
-.glass{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.9);border-radius:20px;
+.glass{background:rgba(245,245,240,.82);border:1px solid rgba(20,20,20,.08);border-radius:20px;
   -webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);
   box-shadow:0 10px 28px rgba(60,54,10,.08),inset 0 1px 0 rgba(255,255,255,.9)}
 .dark .glass,.glass.dk{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 16px 40px rgba(0,0,0,.3)}
@@ -89,7 +90,7 @@ b,strong{font-weight:700}
 .turn b{display:block;font-size:12.5px;margin-bottom:1px}
 .turn.ia{background:rgba(20,20,20,.9);color:#D8D7CE}
 .turn.ia b{color:var(--y)}
-.turn.tu{background:rgba(255,255,255,.6)}
+.turn.tu{background:var(--tint)}
 .prompt{display:block;margin-top:7px;font-family:var(--mono);font-size:10.5px;color:#BEBDB3;border-left:2px solid var(--y);padding-left:9px;line-height:1.5}
 .trap-row{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;font-size:12.5px;padding:6px 16px 6px 8px;border-radius:999px;background:rgba(229,72,77,.07);border:1px solid rgba(229,72,77,.2)}
 .trap-row b{color:#B8282D}
@@ -149,7 +150,7 @@ b,strong{font-weight:700}
 .rules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .rule{display:flex;flex-direction:column;gap:6px;font-size:12.5px;line-height:1.45;padding-top:10px;border-top:2px solid var(--ink)}
 .rule .rn{font-family:var(--mono);font-size:10px;color:var(--soft)}
-.rule .ex{font-size:11.5px;color:var(--soft);padding:7px 10px;border-radius:10px;background:rgba(255,255,255,.55)}
+.rule .ex{font-size:11.5px;color:var(--soft);padding:7px 10px;border-radius:10px;background:var(--tint)}
 .rule .ex b{color:var(--ink)}
 .piles{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .pile h4{font-size:12.5px;margin-bottom:6px}
@@ -273,13 +274,13 @@ b,strong{font-weight:700}
 .ask small{font-family:var(--mono);font-size:10px;color:var(--faint)}
 /* casillero 3: cartas */
 .rcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:6px 4px}
-.rcard{border-radius:18px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:10px;background:#fff;box-shadow:0 12px 26px rgba(60,54,10,.12),0 1px 0 rgba(20,20,20,.05);position:relative}
+.rcard{border-radius:18px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid rgba(20,20,20,.08);box-shadow:0 12px 26px rgba(60,54,10,.12),0 1px 0 rgba(20,20,20,.05);position:relative}
 .rcard:nth-child(1){transform:rotate(-1.6deg)}.rcard:nth-child(3){transform:rotate(1.4deg)}
 .rcard .hd{display:flex;justify-content:space-between;align-items:center}
 .rcard .hd b{font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 .rcard .hd span{width:24px;height:24px;border-radius:50%;background:var(--y);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
 .rcard .rule-t{font-size:14.5px;font-weight:700;letter-spacing:-.015em;line-height:1.35}
-.rcard .ex{font-size:12px;color:#3A3934;line-height:1.45;padding:9px 11px;border-radius:12px;background:var(--paper)}
+.rcard .ex{font-size:12px;color:#3A3934;line-height:1.45;padding:9px 11px;border-radius:12px;background:var(--tint)}
 .rcard .ex b{display:block;font-size:10.5px;color:var(--soft);margin-bottom:2px}
 .rcard .from{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:auto}
 .def-box{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:16px 20px}
@@ -330,7 +331,7 @@ b,strong{font-weight:700}
 .roles b{font-size:14.5px}
 .roles small{font-size:11.5px;color:var(--soft)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{font-size:12px;padding:7px 13px;border-radius:99px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.9);box-shadow:0 4px 10px rgba(60,54,10,.06)}
+.chips span{font-size:12px;padding:7px 13px;border-radius:99px;background:var(--tint);border:1px solid rgba(255,255,255,.9);box-shadow:0 4px 10px rgba(60,54,10,.06)}
 /* director */
 .dir{display:flex;flex-direction:column;align-items:center;position:relative}
 .dir .photo{width:380px;height:466px;position:relative}
@@ -339,7 +340,7 @@ b,strong{font-weight:700}
 .dir .namecard small{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
 .dir .namecard h3{font-size:32px;letter-spacing:-.04em;margin:3px 0}
 .dir .namecard .tr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;text-align:left}
-.dir .namecard .tr div{padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.6);font-size:12.5px;font-weight:700}
+.dir .namecard .tr div{padding:10px 12px;border-radius:14px;background:var(--tint);font-size:12.5px;font-weight:700}
 .dir .namecard .tr div span{display:block;font-size:10.5px;color:var(--soft);font-weight:500}
 .dir .chipf{position:absolute;padding:10px 16px;border-radius:16px;font-size:13px;font-weight:700;z-index:3}
 .cta2{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 12px 12px 26px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none}
@@ -374,11 +375,22 @@ b,strong{font-weight:700}
 .dir2 p{font-size:14px;font-weight:700}
 .dir2 p.tr{font-size:13px;font-weight:500;color:var(--soft);margin-top:2px}
 @media (max-width:720px){.dur{grid-template-columns:1fr}.dir2{grid-template-columns:1fr;padding:0 0 18px}.dir2 .ph{width:100%}.dir2>div:last-child{padding:0 18px}}
+
+/* fondo blanco: portada en clave clara */
+.cover h1{color:var(--ink)}
+.cover h1 em{color:var(--ink);text-shadow:none;background:linear-gradient(transparent 60%,var(--y) 60%,var(--y) 92%,transparent 92%)}
+.cover .sub{color:#3A3934}
+.cover .chip i{box-shadow:none}
+.pc.card{background:linear-gradient(160deg,#20211D,#0F100E);border-color:#0F100E;color:#EDECE4;box-shadow:0 18px 34px rgba(20,20,10,.22)}
+.pc.die2{background:linear-gradient(150deg,#fff,#EFEFEA);border:1px solid rgba(20,20,20,.14);box-shadow:0 12px 24px rgba(20,20,10,.16),inset 0 -3px 6px rgba(0,0,0,.05)}
+.pc.die2 i{background:#141414;box-shadow:none}
+.pc.tk.ia{box-shadow:0 8px 16px rgba(20,20,10,.25)}
+.pc.tk.tu{border:1px solid rgba(20,20,20,.14);box-shadow:0 8px 16px rgba(20,20,10,.18)}
 </style>
 <main class="pages">
-<section class="pg dark cover" aria-label="Portada">
+<section class="pg cover" aria-label="Portada">
 <div class="halo" style="left:-180px;top:-160px;width:560px;height:560px;opacity:0.9"></div><div class="halo" style="left:300px;top:620px;width:560px;height:560px;opacity:0.8"></div>
-<div class="top"><span><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#F2F1EA"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg></span><span>1 jugador + IA · Nivel inicial</span></div>
+<div class="top"><span><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg></span><span>1 jugador + IA · Nivel inicial</span></div>
 <div style="display:flex;flex-direction:column;gap:22px;margin-top:30px">
  <span class="chip glass"><i></i>Guía práctica · AI Product Builder</span>
  <h1>Del pedido <em>al tablero</em> en 5 casilleros</h1>
@@ -391,8 +403,8 @@ b,strong{font-weight:700}
  <div class="pc die2" style="left:430px;top:90px;transform:rotate(-10deg)"><i></i><i class="x"></i><i></i><i class="x"></i><i class="x"></i><i class="x"></i><i></i><i class="x"></i><i></i></div>
  <div class="pc tk ia" style="left:560px;top:200px">IA</div>
  <div class="pc tk tu" style="left:600px;top:225px">TÚ</div>
- <div class="pc mini-board" style="left:520px;top:40px"><svg width="150" height="120" viewBox="0 0 150 120"><path d="M10 100 L45 40 L80 100 L115 40 L140 90" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/>
- <rect x="32" y="27" width="26" height="26" rx="8" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.3)"/><rect x="67" y="87" width="26" height="26" rx="8" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.3)"/><rect x="102" y="27" width="26" height="26" rx="8" fill="#FFFF00"/><text x="115" y="45" text-anchor="middle" font-family="Satoshi,sans-serif" font-weight="700" font-size="12" fill="#141414">★</text></svg></div>
+ <div class="pc mini-board" style="left:520px;top:40px"><svg width="150" height="120" viewBox="0 0 150 120"><path d="M10 100 L45 40 L80 100 L115 40 L140 90" fill="none" stroke="rgba(20,20,20,.35)" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/>
+ <rect x="32" y="27" width="26" height="26" rx="8" fill="rgba(20,20,20,.05)" stroke="rgba(20,20,20,.35)"/><rect x="67" y="87" width="26" height="26" rx="8" fill="rgba(20,20,20,.05)" stroke="rgba(20,20,20,.35)"/><rect x="102" y="27" width="26" height="26" rx="8" fill="#FFFF00"/><text x="115" y="45" text-anchor="middle" font-family="Satoshi,sans-serif" font-weight="700" font-size="12" fill="#141414">★</text></svg></div>
 </div>
 </section><section class="pg" aria-label="Índice">
 <div class="halo" style="left:380px;top:40px;width:520px;height:520px;opacity:1"></div><div class="halo" style="left:-200px;top:760px;width:520px;height:520px;opacity:0.7"></div>
