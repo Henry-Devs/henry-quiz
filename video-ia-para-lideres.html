@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>IA para Líderes | Henry</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F3F0DC;--card:#FFFFFF;--ink:#111111;--y:#FFFF00;--muted:#4F4D3F;--dim:#8E8B76;--line:#ECE6BE;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Satoshi',Helvetica,Arial,sans-serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:24px 16px 48px;}
+  .card{background:linear-gradient(180deg,#FFFDF2 0%,#FFF7B8 100%);border-radius:26px;padding:24px;}
+  .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px;}
+  .logo{background:var(--ink);border-radius:8px;padding:7px 10px;display:inline-block;line-height:0;}
+  .ruta{font-size:12px;font-weight:700;}
+  .video{border-radius:20px;overflow:hidden;background:var(--ink);line-height:0;box-shadow:0 14px 30px rgba(80,70,0,.18);}
+  video{width:100%;height:auto;display:block;}
+  .pill{display:inline-block;border:1.5px solid var(--ink);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:700;margin-top:26px;}
+  h1{font-size:clamp(28px,4.8vw,40px);line-height:1.12;letter-spacing:-1.2px;margin:14px 0 6px;}
+  .res{display:inline-block;background:linear-gradient(135deg,#FFFFA6 0%,#FFFF00 45%,#E9E000 100%);border:1.5px solid #D9CF00;border-radius:14px;padding:2px 14px 6px;}
+  p{font-size:17px;line-height:1.55;color:var(--muted);margin:16px 0 22px;}
+  .cta{background:linear-gradient(135deg,#FFFFA6 0%,#FFFF00 45%,#E9E000 100%);border:1.5px solid #D9CF00;border-radius:22px;padding:24px;}
+  .cta h2{margin:0 0 18px;font-size:24px;line-height:1.2;letter-spacing:-0.5px;}
+  .btn{display:inline-block;background:var(--ink);color:var(--y);border-radius:999px;padding:16px 26px;font-weight:700;font-size:17px;text-decoration:none;}
+  .wa{margin:16px 0 0;font-size:14px;color:var(--ink);}
+  .wa a{color:var(--ink);font-weight:700;}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+  <div class="top">
+    <a class="logo" href="https://www.soyhenry.com/ai-para-lideres"><img src="https://recursos.soyhenry.com/mail/17392218-5ffc-8063-8425-3f209041d22d.png" alt="Henry" width="84"></a>
+    <div class="ruta">IA para Líderes</div>
+  </div>
+  <div class="video">
+    <video controls playsinline preload="metadata" poster="https://recursos.soyhenry.com/mail/lideres-video-cami-thumb.jpg">
+      <source src="videos/ia-para-lideres-oficial.mp4" type="video/mp4">
+    </video>
+  </div>
+  <span class="pill">Carrera</span>
+  <h1>La IA ya está en tu empresa.<br><span class="res">¿Quién la está liderando?</span></h1>
+  <p>IA para Líderes es un programa para quienes toman esas decisiones: gerentes, directores, dueños y líderes de área. 6 semanas, online y en vivo. Sin programar.</p>
+  <div class="cta">
+    <h2>¿Lo charlamos en 15 minutos con un asesor?</h2>
+    <a class="btn" id="agenda" href="https://recursos.soyhenry.com/henry-landing-call.html">Agendá una asesoría gratuita &rarr;</a>
+    <p class="wa">¿Preferís WhatsApp? <a href="https://wa.me/14066434707?text=%C2%A1Hola%21%20Vi%20el%20video%20de%20IA%20para%20L%C3%ADderes%20y%20quiero%20saber%20m%C3%A1s." target="_blank" rel="noopener">Escribinos por acá</a>.</p>
+  </div>
+</div></div>
+<script>
+  // Las UTMs con las que llegó la visita se reenvían a la agenda (mismo criterio que henry-landing-call).
+  (function(){var q=new URLSearchParams(location.search),o=new URLSearchParams();
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(q.get(k))o.set(k,q.get(k));});
+    if([...o].length){var a=document.getElementById('agenda');a.href=a.href+'?'+o.toString();}})();
+</script>
+</body>
+</html>
