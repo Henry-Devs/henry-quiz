@@ -17,7 +17,10 @@
   .ruta{font-size:12px;font-weight:700;}
   .ruta span{color:var(--dim);font-weight:500;}
   .video{border:1.5px solid var(--ink);border-right-width:4px;border-bottom-width:4px;border-radius:18px;overflow:hidden;background:var(--ink);line-height:0;}
-  video{width:100%;height:auto;display:block;}
+  .ratio{position:relative;padding-top:56.25%;}
+  .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .yt{margin:12px 0 0;font-size:14px;}
+  .yt a{color:var(--ink);font-weight:700;}
   h1{font-size:clamp(26px,4.5vw,38px);line-height:1.12;letter-spacing:-1px;margin:24px 0 10px;}
   p{font-size:17px;line-height:1.55;color:var(--muted);margin:0 0 20px;}
   .cta{background:var(--y);border:1.5px solid var(--ink);border-right-width:4px;border-bottom-width:4px;border-radius:20px;padding:24px;margin-top:8px;}
@@ -33,11 +36,11 @@
     <a class="logo" href="https://www.soyhenry.com/ai-product-builder"><img src="https://recursos.soyhenry.com/mail/17392218-5ffc-8063-8425-3f209041d22d.png" alt="Henry" width="84"></a>
     <div class="ruta">AI Product Builder</div>
   </div>
-  <div class="video">
-    <video controls playsinline preload="metadata" poster="https://recursos.soyhenry.com/mail/apb-video-oficial-thumb-v2.jpg">
-      <source src="videos/ai-product-builder-oficial.mp4" type="video/mp4">
-    </video>
-  </div>
+  <!-- Reproductor de YouTube embebido: las vistas suman al video del canal y la agenda queda abajo. -->
+  <div class="video"><div class="ratio">
+    <iframe src="https://www.youtube.com/embed/RQfRkCArM2c?rel=0&modestbranding=1&playsinline=1" title="Estudia AI Product Builder en Soy Henry" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div></div>
+  <p class="yt"><a href="https://www.youtube.com/watch?v=RQfRkCArM2c" target="_blank" rel="noopener">&#9654;&nbsp; Míralo en YouTube</a></p>
   <h1>Las empresas ya no buscan a quien ejecuta. Buscan a quien decide qué construir.</h1>
   <p>AI Product Builder: aprende a trabajar como Product Owner con la IA haciendo el trabajo de ejecución. 5 meses, part time, online y en vivo. Sin programar.</p>
   <div class="cta">
