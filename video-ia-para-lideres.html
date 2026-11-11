@@ -16,8 +16,11 @@
   .logo{background:var(--ink);border-radius:8px;padding:7px 10px;display:inline-block;line-height:0;}
   .ruta{font-size:12px;font-weight:700;}
   .video{border-radius:20px;overflow:hidden;background:var(--ink);line-height:0;box-shadow:0 14px 30px rgba(80,70,0,.18);}
-  video{width:100%;height:auto;display:block;}
-  .pill{display:inline-block;border:1.5px solid var(--ink);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:700;margin-top:26px;}
+  .ratio{position:relative;padding-top:56.25%;}
+  .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .yt{margin:12px 0 0;font-size:14px;}
+  .yt a{color:var(--ink);font-weight:700;}
+  .pill{display:inline-block;border:1.5px solid var(--ink);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:700;margin-top:18px;}
   h1{font-size:clamp(28px,4.8vw,40px);line-height:1.12;letter-spacing:-1.2px;margin:14px 0 6px;}
   .res{display:inline-block;background:linear-gradient(135deg,#FFFFA6 0%,#FFFF00 45%,#E9E000 100%);border:1.5px solid #D9CF00;border-radius:14px;padding:2px 14px 6px;}
   p{font-size:17px;line-height:1.55;color:var(--muted);margin:16px 0 22px;}
@@ -34,11 +37,11 @@
     <a class="logo" href="https://www.soyhenry.com/ai-para-lideres"><img src="https://recursos.soyhenry.com/mail/17392218-5ffc-8063-8425-3f209041d22d.png" alt="Henry" width="84"></a>
     <div class="ruta">IA para Líderes</div>
   </div>
-  <div class="video">
-    <video controls playsinline preload="metadata" poster="https://recursos.soyhenry.com/mail/lideres-video-cami-thumb.jpg">
-      <source src="videos/ia-para-lideres-oficial.mp4" type="video/mp4">
-    </video>
-  </div>
+  <!-- Reproductor de YouTube embebido: las vistas suman al video del canal y la agenda queda abajo. -->
+  <div class="video"><div class="ratio">
+    <iframe src="https://www.youtube-nocookie.com/embed/0A0czpO3JE4?rel=0&modestbranding=1&playsinline=1" title="Estudia IA para Líderes en Soy Henry" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div></div>
+  <p class="yt"><a href="https://www.youtube.com/watch?v=0A0czpO3JE4" target="_blank" rel="noopener">&#9654;&nbsp; Verlo en YouTube</a></p>
   <span class="pill">Carrera</span>
   <h1>La IA ya está en tu empresa.<br><span class="res">¿Quién la está liderando?</span></h1>
   <p>IA para Líderes es un programa para quienes toman esas decisiones: gerentes, directores, dueños y líderes de área. 6 semanas, online y en vivo. Sin programar.</p>
