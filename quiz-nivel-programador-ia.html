@@ -515,9 +515,13 @@
     },
   };
 
-  // CTA secundario -- igual para las dos carreras, UTMs fijas pedidas para atribuir
-  // toda reserva de asesoría que viene del quiz a esta campaña puntual.
-  const ADVISOR_URL = "https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g?utm_source=instagram&utm_medium=organico&utm_campaign=Quiz_FS_AIE&utm_content=";
+  // CTA secundario (agendar con un asesor) -- igual para las dos carreras.
+  // Lleva los UTMs de la campaña que trajo a la persona al quiz (los de Meta en
+  // la URL del ad), así la reunión queda atribuida a esa campaña y no a un
+  // "instagram / organico" fijo. Las UTMs fijas quedan sólo como respaldo para
+  // el tráfico que llega al quiz sin UTMs (orgánico).
+  const ADVISOR_BASE = "https://bodcb.share.hsforms.com/2_wgFflgsQx-V4U9gEnLw9g";
+  const ADVISOR_FALLBACK_PARAMS = "utm_source=instagram&utm_medium=organico&utm_campaign=Quiz_FS_AIE&utm_content=quiz";
 
   /* =========================================================================
      QUIZ -- 8 preguntas
@@ -868,7 +872,8 @@
       primaryBtn.textContent = career.ctaLabel;
     }
 
-    document.getElementById("r-secondary").href = ADVISOR_URL;
+    document.getElementById("r-secondary").href =
+      `${ADVISOR_BASE}?${utms.utm_source ? params : ADVISOR_FALLBACK_PARAMS}`;
     document.getElementById("nav-cta").href = (career.hsValue === "Full Stack AI" ? "https://www.soyhenry.com/webfullstack" : "https://www.soyhenry.com/carrera-ai-engineering") + (params ? "?" + params : "");
 
     if (window.fbq) fbq("trackCustom", CONFIG.fbEvent + " - Resultado", { carrera: career.name, match_pct: pct });
