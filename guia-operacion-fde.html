@@ -8,17 +8,16 @@
 /* Layout: hojas A4 oscuras tipo HUD de misión: marco con esquinas de mira, grano y líneas de scan finas, halos amarillos detrás de tarjetas de vidrio redondeadas. */
 :root{
   color-scheme:light;
-  --desk:#EDEDE8;
+  --desk:#ECEBE6;
   --bg:#FFFFFF;
-  --fg:#111111;
-  --soft:#55554F;
-  --faint:#86867E;
-  --line:rgba(17,17,17,.12);
+  --fg:#141414;
+  --soft:#5A5952;
+  --faint:#86857B;
+  --line:rgba(17,17,17,.10);
   --y:#FFFF00;
-  --yg:rgba(255,255,0,.16);
-  --glass:#F6F6F2;
-  --glass-b:rgba(17,17,17,.10);
-  --ya:#111111;
+  --yg:rgba(255,222,0,0.304);
+  --glass:rgba(17,17,17,0.666);
+  --glass-b:rgba(17,17,17,.09);
   --sans:"Satoshi","Helvetica Neue",Arial,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
@@ -34,17 +33,17 @@ b,strong{font-weight:700}
 
 /* hoja */
 .pg{position:relative;isolation:isolate;width:100%;max-width:794px;aspect-ratio:210/297;background:var(--bg);padding:42px 52px 36px;
-  display:flex;flex-direction:column;gap:20px;overflow:hidden;border-radius:8px;box-shadow:0 10px 40px rgba(17,17,17,.10)}
-.pg::before{display:none;content:"";position:absolute;inset:0;z-index:5;pointer-events:none;
-  background:repeating-linear-gradient(0deg,rgba(17,17,17,.028) 0 1px,transparent 1px 3px)}
-.pg::after{display:none;content:"";position:absolute;inset:0;z-index:6;pointer-events:none;opacity:.22;mix-blend-mode:overlay;
+  display:flex;flex-direction:column;gap:20px;overflow:hidden;border-radius:8px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.pg::before{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(17,17,17,0.025) 0 1px,transparent 1px 3px)}
+.pg::after{content:"";position:absolute;inset:0;z-index:6;pointer-events:none;opacity:.22;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.halo{position:absolute;z-index:-1;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,rgba(255,255,0,.28),rgba(255,240,0,.08) 55%,transparent)}
-.glitch{position:absolute;left:0;right:0;height:1px;background:rgba(255,255,0,.22);z-index:4;pointer-events:none}
-.glitch.w{height:2px;background:rgba(17,17,17,.05)}
+.halo{position:absolute;z-index:-1;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,rgba(255,222,0,0.380),rgba(255,240,0,.07) 55%,transparent)}
+.glitch{position:absolute;left:0;right:0;height:1px;background:rgba(255,222,0,0.418);z-index:4;pointer-events:none}
+.glitch.w{height:2px;background:rgba(17,17,17,0.045)}
 /* marco de mira */
 .frame{position:absolute;inset:16px;z-index:4;pointer-events:none}
-.frame i{position:absolute;width:18px;height:18px;border-color:rgba(17,17,17,.35);border-style:solid;border-width:0}
+.frame i{position:absolute;width:18px;height:18px;border-color:rgba(17,17,17,0.315);border-style:solid;border-width:0}
 .frame i:nth-child(1){left:0;top:0;border-left-width:1.5px;border-top-width:1.5px;border-top-left-radius:6px}
 .frame i:nth-child(2){right:0;top:0;border-right-width:1.5px;border-top-width:1.5px;border-top-right-radius:6px}
 .frame i:nth-child(3){left:0;bottom:0;border-left-width:1.5px;border-bottom-width:1.5px;border-bottom-left-radius:6px}
@@ -52,8 +51,8 @@ b,strong{font-weight:700}
 
 .glass{background:var(--glass);border:1px solid var(--glass-b);border-radius:20px;
   -webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);
-  box-shadow:0 1px 2px rgba(17,17,17,.04)}
-.glass.y{background:#FFFF00;border-color:#E6E600}
+  box-shadow:inset 0 1px 0 rgba(17,17,17,0.072),0 16px 40px rgba(0,0,0,.35)}
+.glass.y{background:linear-gradient(150deg,rgba(255,222,0,0.380),rgba(255,222,0,0.114));border-color:rgba(255,222,0,0.665)}
 
 /* HUD superior */
 .hud{display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--soft)}
@@ -62,7 +61,7 @@ b,strong{font-weight:700}
 .hud .r{display:flex;align-items:center;gap:14px}
 .rec{display:inline-flex;align-items:center;gap:7px}
 .rec i{width:7px;height:7px;border-radius:50%;background:var(--y);box-shadow:0 0 10px var(--y)}
-.barcode{height:20px;width:70px;flex:none;color:rgba(17,17,17,.55);background:repeating-linear-gradient(90deg,currentColor 0 2px,transparent 2px 4px,currentColor 4px 5px,transparent 5px 8px,currentColor 8px 11px,transparent 11px 12px);border-radius:2px}
+.barcode{height:20px;width:70px;flex:none;color:rgba(17,17,17,0.495);background:repeating-linear-gradient(90deg,currentColor 0 2px,transparent 2px 4px,currentColor 4px 5px,transparent 5px 8px,currentColor 8px 11px,transparent 11px 12px);border-radius:2px}
 .foot{margin-top:auto;display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:10.5px;color:var(--faint);padding-top:12px;border-top:1px solid var(--line)}
 .foot b{color:var(--soft);font-weight:500}
 
@@ -71,12 +70,12 @@ b,strong{font-weight:700}
 .tagm .d{width:18px;height:18px;border-radius:50%;background:var(--y);color:#111;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:700}
 .head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}
 .head h2{font-size:42px;line-height:1.04;font-weight:700;letter-spacing:-.04em}
-.head h2 em{font-style:normal;color:var(--ya)}
-.lead{font-size:15.5px;line-height:1.5;color:#2B2B27;max-width:60ch}
+.head h2 em{font-style:normal;color:var(--yt)}
+.lead{font-size:15.5px;line-height:1.5;color:#3A3934;max-width:60ch}
 .small{font-size:11.5px;color:var(--soft)}
 .mono{font-family:var(--mono)}
 .label{font-family:var(--mono);font-size:10.5px;color:var(--soft);letter-spacing:.04em}
-.label::before{content:"▸ ";color:var(--ya)}
+.label::before{content:"▸ ";color:var(--yt)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
@@ -85,8 +84,8 @@ b,strong{font-weight:700}
 
 /* orbe de vidrio amarillo (iconos) */
 .orb{width:84px;height:84px;border-radius:50%;flex:none;position:relative;display:flex;align-items:center;justify-content:center;
-  background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.85),rgba(255,255,140,.55) 22%,rgba(255,255,0,.30) 52%,rgba(120,110,0,.25) 100%);
-  border:1px solid rgba(255,255,170,.55);box-shadow:0 0 40px rgba(255,255,0,.25),inset 0 -8px 18px rgba(80,70,0,.35),inset 0 4px 10px rgba(255,255,255,.4)}
+  background:radial-gradient(circle at 32% 26%,rgba(17,17,17,0.765),rgba(255,255,140,.55) 22%,rgba(255,222,0,0.570) 52%,rgba(120,110,0,.25) 100%);
+  border:1px solid rgba(255,255,170,.55);box-shadow:0 0 40px rgba(255,222,0,0.475),inset 0 -8px 18px rgba(80,70,0,.35),inset 0 4px 10px rgba(17,17,17,0.360)}
 .orb svg{width:42px;height:42px;fill:none;stroke:#141414;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .orb.sm{width:56px;height:56px}.orb.sm svg{width:28px;height:28px}
 
@@ -94,123 +93,123 @@ b,strong{font-weight:700}
 .cover{justify-content:space-between}
 .cover .op{display:flex;align-items:center;gap:12px}
 .cover h1{font-size:92px;line-height:.94;font-weight:700;letter-spacing:-.055em;max-width:9ch}
-.cover h1 em{font-style:normal;color:var(--ya);}
-.cover .sub{font-size:20px;line-height:1.35;color:#2B2B27;max-width:26ch}
+.cover h1 em{font-style:normal;color:var(--yt);text-shadow:none}
+.cover .sub{font-size:20px;line-height:1.35;color:#3A3934;max-width:26ch}
 .target{position:absolute;right:-90px;top:250px;width:470px;height:470px;z-index:-1}
 .target svg{width:100%;height:100%}
 .start{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px 16px 24px;border-radius:999px}
-.start .k{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--ya)}
-.start kbd{font-family:var(--mono);font-size:11px;color:#111;background:var(--y);border-radius:8px;padding:5px 10px;box-shadow:0 3px 0 #9E9E00}
+.start .k{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--yt)}
+.start kbd{font-family:var(--mono);font-size:11px;color:#111;background:var(--y);border-radius:8px;padding:5px 10px;box-shadow:0 3px 0 #C9B200}
 .start .meta{font-family:var(--mono);font-size:10.5px;color:var(--soft);text-align:right;line-height:1.6}
 
 /* ---------- ÍNDICE ---------- */
 .mlist{display:flex;flex-direction:column;gap:8px}
 .mrow{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:16px 20px;border-radius:18px}
-.mrow .n{font-family:var(--mono);font-size:11px;color:var(--ya);width:76px}
+.mrow .n{font-family:var(--mono);font-size:11px;color:var(--yt);width:76px}
 .mrow b{font-size:17px;letter-spacing:-.02em}
 .mrow small{display:block;font-size:12px;color:var(--soft);font-weight:500;margin-top:2px}
 .mrow .p{font-family:var(--mono);font-size:11px;color:var(--soft)}
-.mrow.on{border-color:rgba(17,17,17,.35)}
+.mrow.on{border-color:rgba(255,222,0,0.760)}
 
 /* ---------- QUÉ ES ---------- */
 .def{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;padding:22px 24px}
 .def p{font-size:18px;line-height:1.38;font-weight:700;letter-spacing:-.02em}
-.def p span{color:var(--ya)}
+.def p span{color:var(--yt)}
 .step{padding:16px 16px;display:flex;flex-direction:column;gap:5px}
-.step .k{font-family:var(--mono);font-size:10.5px;color:var(--ya)}
+.step .k{font-family:var(--mono);font-size:10.5px;color:var(--yt)}
 .step h4{font-size:15px;letter-spacing:-.01em}
 .step p{font-size:12px;color:var(--soft);line-height:1.45}
 .bridge{padding:14px 16px 10px}
 .bridge svg{width:100%;height:auto;display:block}
 .file{position:relative;margin-top:12px}
-.file .tab{position:absolute;top:-22px;left:22px;height:24px;padding:4px 14px 0;border-radius:10px 10px 0 0;font-family:var(--mono);font-size:10px;color:var(--soft);background:rgba(17,17,17,.07);border:1px solid var(--glass-b);border-bottom:0}
+.file .tab{position:absolute;top:-22px;left:22px;height:24px;padding:4px 14px 0;border-radius:10px 10px 0 0;font-family:var(--mono);font-size:10px;color:var(--soft);background:rgba(17,17,17,0.063);border:1px solid var(--glass-b);border-bottom:0}
 .file .in{padding:18px 22px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;border-top-left-radius:6px}
 .file h3{font-size:20px;letter-spacing:-.02em;margin:2px 0 4px}
-.file p{font-size:12.5px;color:#3A3A35}
-.stamp{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--ya);border:1.5px solid #111;border-radius:10px;padding:8px 12px;transform:rotate(-7deg);white-space:nowrap;box-shadow:0 0 18px rgba(255,255,0,.18)}
+.file p{font-size:12.5px;color:#3A3934}
+.stamp{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--yt);border:1.5px solid var(--y);border-radius:10px;padding:8px 12px;transform:rotate(-7deg);white-space:nowrap;box-shadow:0 0 18px rgba(255,222,0,0.342)}
 
 /* ---------- CICLO ---------- */
 .loop{position:relative;width:100%;aspect-ratio:1.55/1}
 .loop svg.ring{position:absolute;inset:0;width:100%;height:100%}
 .node{position:absolute;width:31%;padding:12px 14px;display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;transform:translate(-50%,-50%);border-radius:18px}
-.node .n{width:30px;height:30px;border-radius:50%;background:var(--y);color:#111;font-family:var(--mono);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(255,255,0,.4)}
+.node .n{width:30px;height:30px;border-radius:50%;background:var(--y);color:#111;font-family:var(--mono);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(255,222,0,0.760)}
 .node h4{font-size:14.5px;line-height:1.15}
 .node p{font-size:11.5px;color:var(--soft)}
 .loop .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
 .loop .center b{font-size:22px;letter-spacing:-.03em;line-height:1.05}
 .loop .center span{font-family:var(--mono);font-size:10.5px;color:var(--soft)}
-.stg{padding:14px 14px;display:flex;flex-direction:column;gap:5px;font-size:12px;color:#3A3A35;line-height:1.45}
-.stg .k{font-family:var(--mono);font-size:10px;color:var(--ya)}
+.stg{padding:14px 14px;display:flex;flex-direction:column;gap:5px;font-size:12px;color:#3A3934;line-height:1.45}
+.stg .k{font-family:var(--mono);font-size:10px;color:var(--yt)}
 .stg h4{font-size:14px;color:var(--fg);line-height:1.2}
 .stg small{font-family:var(--mono);font-size:10px;color:var(--soft);border-top:1px dashed var(--line);padding-top:6px;margin-top:auto}
 
 /* ---------- MARTÍN ---------- */
 .xp{padding:16px 18px;display:flex;flex-direction:column;gap:12px}
 .xp .track{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.xp .bar{position:absolute;left:8%;right:8%;top:13px;height:4px;border-radius:9px;background:rgba(17,17,17,.1)}
-.xp .bar i{display:block;height:100%;width:50%;border-radius:9px;background:linear-gradient(90deg,#fff,var(--y));box-shadow:0 0 12px rgba(255,255,0,.5)}
+.xp .bar{position:absolute;left:8%;right:8%;top:13px;height:4px;border-radius:9px;background:rgba(17,17,17,0.090)}
+.xp .bar i{display:block;height:100%;width:50%;border-radius:9px;background:linear-gradient(90deg,#fff,var(--y));box-shadow:0 0 12px rgba(255,222,0,0.950)}
 .lv{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:0 6px}
-.lv .pt{width:30px;height:30px;border-radius:50%;border:2px solid rgba(17,17,17,.3);background:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px}
-.lv.done .pt{background:#fff;color:#111;border-color:#fff}
-.lv.here .pt{background:var(--y);color:#111;border-color:var(--ya);box-shadow:0 0 0 6px rgba(255,255,0,.15)}
-.lv.goal .pt{border-style:dashed;border-color:var(--ya);color:var(--ya)}
+.lv .pt{width:30px;height:30px;border-radius:50%;border:2px solid rgba(17,17,17,0.270);background:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px}
+.lv.done .pt{background:#fff;color:#111;border-color:#141414}
+.lv.here .pt{background:var(--y);color:#111;border-color:var(--yt);box-shadow:0 0 0 6px rgba(255,222,0,0.285)}
+.lv.goal .pt{border-style:dashed;border-color:var(--yt);color:var(--yt)}
 .lv b{font-size:14px}
 .lv small{font-size:11px;color:var(--soft);line-height:1.35}
 .lv .you{font-family:var(--mono);font-size:9.5px;color:#111;background:var(--y);border-radius:99px;padding:1px 8px}
 .player{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:18px 20px}
-.avatar{width:96px;height:96px;border-radius:24px;background:linear-gradient(160deg,rgba(255,255,0,.35),rgba(255,255,0,.05));border:1px solid rgba(17,17,17,.35);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.avatar{width:96px;height:96px;border-radius:24px;background:linear-gradient(160deg,rgba(255,222,0,0.665),rgba(255,222,0,0.095));border:1px solid rgba(255,222,0,0.760);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
 .avatar svg{width:78px;height:78px}
 .player h3{font-size:22px;letter-spacing:-.03em}
 .player .role{font-family:var(--mono);font-size:10.5px;color:var(--soft);margin:2px 0 10px}
-.stats{display:grid;grid-template-columns:96px 1fr;gap:6px 14px;font-size:12.5px;margin:0;color:#2B2B27}
+.stats{display:grid;grid-template-columns:96px 1fr;gap:6px 14px;font-size:12.5px;margin:0;color:#3A3934}
 .stats dt{font-family:var(--mono);font-size:10px;color:var(--soft);padding-top:2px}
 .stats dd{margin:0}
-.stats dd.mood{color:var(--ya)}
-.kw{font-family:var(--mono);font-size:.9em;background:rgba(17,17,17,.08);padding:1px 5px;border-radius:5px}
-.quote{font-size:20px;font-weight:700;letter-spacing:-.025em;line-height:1.3;padding:4px 0 4px 18px;border-left:3px solid var(--y)}
+.stats dd.mood{color:var(--yt)}
+.kw{font-family:var(--mono);font-size:.9em;background:rgba(17,17,17,0.072);padding:1px 5px;border-radius:5px}
+.quote{font-size:20px;font-weight:700;letter-spacing:-.025em;line-height:1.3;padding:4px 0 4px 18px;border-left:2px solid var(--y)}
 .skill{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch}
 .skill .box{padding:14px 16px;display:flex;flex-direction:column;gap:10px}
 .skill .box h4{font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--soft)}
 .skill .plus{align-self:center;width:34px;height:34px;border-radius:50%;background:var(--y);color:#111;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tags span{font-family:var(--mono);font-size:10.5px;padding:4px 10px;border-radius:99px;background:rgba(17,17,17,.07);border:1px solid var(--line)}
-.glass.y .tags span{background:rgba(255,255,0,.12);border-color:rgba(255,255,0,.3);color:#111}
+.tags span{font-family:var(--mono);font-size:10.5px;padding:4px 10px;border-radius:99px;background:rgba(17,17,17,0.063);border:1px solid var(--line)}
+.glass.y .tags span{background:rgba(255,222,0,0.228);border-color:rgba(255,222,0,0.570);color:#3A3934}
 .note{font-size:11px;color:var(--faint);display:flex;gap:8px;align-items:center}
 .note i{font-style:normal;width:16px;height:16px;border-radius:50%;border:1px solid var(--faint);display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-family:var(--mono)}
 
 /* ---------- ETAPAS ---------- */
-.brief{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:13px 18px 13px 13px;border-radius:999px;font-size:13px;color:#2B2B27}
+.brief{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:13px 18px 13px 13px;border-radius:999px;font-size:13px;color:#3A3934}
 .brief b{font-family:var(--mono);font-size:10px;color:#111;background:var(--y);border-radius:99px;padding:5px 12px;white-space:nowrap}
 .stage{display:flex;flex-direction:column;gap:10px}
 .sh{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
-.sh .num{width:46px;height:46px;border-radius:14px;background:linear-gradient(150deg,rgba(255,255,0,.35),rgba(255,255,0,.08));border:1px solid rgba(255,255,0,.45);color:var(--ya);font-family:var(--mono);font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(255,255,0,.15)}
+.sh .num{width:46px;height:46px;border-radius:14px;background:linear-gradient(150deg,rgba(255,222,0,0.665),rgba(255,222,0,0.152));border:1px solid rgba(255,222,0,0.855);color:var(--yt);font-family:var(--mono);font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(255,222,0,0.285)}
 .sh .eb{font-family:var(--mono);font-size:10.5px;color:var(--soft)}
 .sh h2{font-size:28px;letter-spacing:-.035em;line-height:1.05}
 .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;align-items:stretch}
 .cols>*{min-width:0}
-.who{padding:14px 16px;display:flex;flex-direction:column;gap:7px;font-size:12.5px;color:#2B2B27;line-height:1.5}
-.who .k{font-family:var(--mono);font-size:10px;color:var(--ya)}
+.who{padding:14px 16px;display:flex;flex-direction:column;gap:7px;font-size:12.5px;color:#3A3934;line-height:1.5}
+.who .k{font-family:var(--mono);font-size:10px;color:var(--yt)}
 .who b{color:var(--fg)}
-.term{border-radius:16px;overflow:hidden;font-family:var(--mono);font-size:11px;background:#F6F6F2;border:1px solid var(--line)}
+.term{border-radius:16px;overflow:hidden;font-family:var(--mono);font-size:11px;background:rgba(0,0,0,.45);border:1px solid var(--line)}
 .term .th{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid var(--line);color:var(--soft);font-size:10px}
-.term .th .dots{display:flex;gap:5px}.term .th .dots i{width:8px;height:8px;border-radius:50%;background:rgba(17,17,17,.18)}.term .th .dots i:first-child{background:var(--y)}
+.term .th .dots{display:flex;gap:5px}.term .th .dots i{width:8px;height:8px;border-radius:50%;background:rgba(17,17,17,0.162)}.term .th .dots i:first-child{background:var(--y)}
 .term ul{list-style:none;margin:0;padding:10px 12px;display:flex;flex-direction:column;gap:7px}
-.term li{display:grid;grid-template-columns:96px 1fr;gap:8px;line-height:1.4;color:#3A3A35}
-.term li b{color:var(--ya);font-weight:500}
-.term pre{margin:0;padding:10px 12px;white-space:pre-wrap;line-height:1.6;color:#3A3A35}
-.term pre .y{color:var(--ya)}.term pre .g{color:var(--faint)}
-.out{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:10px 16px 10px 10px;border-radius:999px;font-size:12.5px;color:#2B2B27}
-.out b{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--ya);border:1px solid rgba(17,17,17,.35);border-radius:99px;padding:4px 11px}
+.term li{display:grid;grid-template-columns:96px 1fr;gap:8px;line-height:1.4;color:#3A3934}
+.term li b{color:var(--yt);font-weight:500}
+.term pre{margin:0;padding:10px 12px;white-space:pre-wrap;line-height:1.6;color:#3A3934}
+.term pre .y{color:var(--yt)}.term pre .g{color:var(--faint)}
+.out{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:10px 16px 10px 10px;border-radius:999px;font-size:12.5px;color:#3A3934}
+.out b{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--yt);border:1px solid rgba(255,222,0,0.760);border-radius:99px;padding:4px 11px}
 .arch{padding:12px 14px}
 .arch svg{width:100%;height:auto;display:block}
 .metric{padding:14px 14px;display:flex;flex-direction:column;gap:4px}
-.metric .v{font-size:28px;font-weight:700;letter-spacing:-.04em;color:var(--ya);line-height:1.05;}
+.metric .v{font-size:28px;font-weight:700;letter-spacing:-.04em;color:var(--yt);line-height:1.05;text-shadow:none}
 .metric span{font-size:11.5px;color:var(--soft);line-height:1.35}
 
 /* ---------- DEMANDA ---------- */
 .big{padding:20px 22px;display:flex;flex-direction:column;gap:8px}
-.big .v{font-size:58px;font-weight:700;letter-spacing:-.05em;line-height:1;color:var(--ya);}
-.big p{font-size:13.5px;color:#2B2B27}
+.big .v{font-size:58px;font-weight:700;letter-spacing:-.05em;line-height:1;color:var(--yt);text-shadow:none}
+.big p{font-size:13.5px;color:#3A3934}
 .big small{font-family:var(--mono);font-size:10px;color:var(--faint)}
 .shots{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .shot{padding:6px;border-radius:16px}
@@ -219,17 +218,17 @@ b,strong{font-weight:700}
 
 /* ---------- HENRY ---------- */
 .fact{padding:14px 14px;display:flex;flex-direction:column;gap:3px}
-.fact .v{font-size:20px;font-weight:700;letter-spacing:-.03em;color:var(--ya)}
+.fact .v{font-size:20px;font-weight:700;letter-spacing:-.03em;color:var(--yt)}
 .fact span{font-size:11.5px;color:var(--soft);line-height:1.35}
-.hbox{padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#2B2B27;line-height:1.5}
-.hbox h4{font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--ya)}
+.hbox{padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#3A3934;line-height:1.5}
+.hbox h4{font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--yt)}
 .mod{padding:13px 14px;display:flex;flex-direction:column;gap:4px;font-size:11.5px;color:var(--soft);line-height:1.4}
-.mod .k{font-family:var(--mono);font-size:10px;color:var(--ya)}
+.mod .k{font-family:var(--mono);font-size:10px;color:var(--yt)}
 .mod h5{font-size:13.5px;color:var(--fg);letter-spacing:-.01em}
-.mod small{font-family:var(--mono);font-size:10px;color:#3A3A35;border-top:1px dashed var(--line);padding-top:6px;margin-top:auto}
+.mod small{font-family:var(--mono);font-size:10px;color:#3A3934;border-top:1px dashed var(--line);padding-top:6px;margin-top:auto}
 .cta{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 12px 12px 24px;border-radius:999px;text-decoration:none;color:var(--fg)}
 .cta b{font-size:16px;letter-spacing:-.02em}
-.cta span{display:inline-flex;align-items:center;gap:10px;background:var(--y);color:#111;border-radius:999px;padding:11px 18px;font-weight:700;font-size:13.5px;box-shadow:0 0 24px rgba(255,255,0,.35)}
+.cta span{display:inline-flex;align-items:center;gap:10px;background:var(--y);color:#111;border-radius:999px;padding:11px 18px;font-weight:700;font-size:13.5px;box-shadow:0 0 24px rgba(255,222,0,0.665)}
 .cta:focus-visible{outline:2px dashed var(--y);outline-offset:4px}
 
 @media (max-width:720px){
@@ -254,14 +253,14 @@ b,strong{font-weight:700}
 .mrow b{font-size:19px}
 .mrow .n{width:84px;font-size:12px}
 .side{padding:12px 16px;display:flex;flex-direction:column;gap:2px}
-.side b{color:var(--ya);font-size:15px}
-.side span{font-size:13px;color:#2B2B27}
+.side b{color:var(--yt);font-size:15px}
+.side span{font-size:13px;color:#3A3934}
 .side em{font-style:normal;color:var(--fg);font-weight:700}
 .scene{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px}
 .scene svg{width:100%;height:auto;display:block}
-.scene p{font-size:12px;color:#3A3A35;line-height:1.45}
+.scene p{font-size:12px;color:#3A3934;line-height:1.45}
 .scene .st{align-self:flex-start;font-family:var(--mono);font-size:10.5px;padding:3px 10px;border-radius:99px}
-.scene .st.off{color:#C2321F;border:1px solid rgba(194,50,31,.45)}
+.scene .st.off{color:#C2372C;border:1px solid rgba(255,107,90,.45)}
 .scene .st.on{color:#111;background:var(--y)}
 /* v3: más liviano. Menos tarjetas, más filetes; tipos y alturas más chicos */
 body{font-size:13px}
@@ -277,13 +276,13 @@ body{font-size:13px}
 .mrow b{font-size:16px}
 .mrow small{font-size:11.5px}
 .mrow .n{font-size:11px;width:76px}
-.mrow.on b{color:var(--ya)}
+.mrow.on b{color:var(--yt)}
 .step,.stg,.mod,.fact,.metric{padding:10px 0 0;border-top:1px solid var(--line)!important}
 .stg,.mod{padding-right:6px}
 .step h4{font-size:14px}
 .def{padding:0;grid-template-columns:auto 1fr;gap:16px}
 .def p{font-size:16px;line-height:1.4}
-.side{padding:0 0 0 14px;border-left:3px solid var(--y)!important}
+.side{padding:0 0 0 14px;border-left:2px solid var(--y)!important}
 .side b{font-size:14px}
 .side span{font-size:12.5px}
 .hbox{padding:10px 0 0;border-top:1px solid var(--line)!important}
@@ -307,31 +306,63 @@ body{font-size:13px}
 .head{align-items:center}
 .mrow{padding:20px 4px}
 .pg{gap:20px}
-
-/* fondo blanco: el amarillo pasa de color de texto a resaltador */
-.head h2 em,.cover h1 em{background:linear-gradient(transparent 58%,var(--y) 58%,var(--y) 92%,transparent 92%);padding:0 .06em}
-.metric .v,.big .v,.fact .v{display:inline;align-self:flex-start;background:linear-gradient(transparent 60%,var(--y) 60%,var(--y) 92%,transparent 92%)}
-.mrow.on b{background:linear-gradient(transparent 60%,var(--y) 60%)}
-.rec i{box-shadow:0 0 0 2px #111}
-.lv.here .pt{box-shadow:0 0 0 6px rgba(255,255,0,.45)}
-.lv.done .pt{background:#111;color:#fff;border-color:#111}
-.xp .bar i{background:linear-gradient(90deg,#111,#FFFF00);box-shadow:none}
-.cta span,.node .n{box-shadow:none}
-.shot{background:#fff}
-.shot div{border:1px solid var(--line)}
-.term pre .y,.term li b{color:#111;font-weight:700}
+/* ===== Versión clara (fondo blanco, sistema de soyhenry.com/ai-product-builder).
+   El amarillo pasa a ser sólo relleno: los acentos de texto van en tinta con marcador amarillo. ===== */
+:root{--yt:#141414;--mark:linear-gradient(transparent 58%,#FFF200 58%,#FFF200 92%,transparent 92%)}
+.pg{box-shadow:0 1px 0 rgba(17,17,17,.04),0 24px 60px rgba(40,36,10,.10);border:1px solid rgba(17,17,17,.06)}
+.pg::before{background:repeating-linear-gradient(0deg,rgba(17,17,17,.018) 0 1px,transparent 1px 3px)}
+.pg::after{opacity:.10;mix-blend-mode:multiply}
+.halo{background:radial-gradient(closest-side,rgba(255,236,60,.55),rgba(255,244,140,.22) 55%,transparent)}
+.glitch{background:rgba(232,196,0,.35)}.glitch.w{background:rgba(17,17,17,.05)}
+.frame i{border-color:rgba(17,17,17,.30)}
+.glass{background:rgba(255,255,255,.72);border-color:rgba(17,17,17,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 30px rgba(40,36,10,.08)}
+.glass.y{background:linear-gradient(150deg,rgba(255,240,70,.55),rgba(255,250,190,.35));border-color:rgba(214,186,0,.55)}
+.cover h1 em,.head h2 em,.def p span{color:#141414;background:var(--mark);padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.mrow.on b{background:var(--mark)}
+.rec i{box-shadow:0 0 0 3px rgba(255,236,60,.35)}
+.label::before{color:#C9A800}
+.barcode{color:rgba(17,17,17,.6)}
+.orb{background:radial-gradient(circle at 32% 26%,#fff,#FFFBA8 24%,#FFEE3A 58%,#E7C800 100%);border-color:rgba(200,170,0,.55);box-shadow:0 10px 28px rgba(230,200,0,.35),inset 0 -8px 18px rgba(150,120,0,.25),inset 0 4px 10px rgba(255,255,255,.7)}
+.start .k{color:#141414}
+.start kbd{box-shadow:0 3px 0 #C9B200}
+.mrow .n,.step .k,.stg .k,.who .k,.mod .k,.hbox h4,.side b{color:#7A6900}
+.node .n,.skill .plus,.lv .you,.brief b{box-shadow:none}
+.lv .pt{border-color:rgba(17,17,17,.25);background:#fff;color:#141414}
+.lv.done .pt{background:#141414;color:#fff;border-color:#141414}
+.lv.goal .pt{border-color:#C9A800;color:#141414}
+.xp .bar{background:rgba(17,17,17,.10)}.xp .bar i{background:linear-gradient(90deg,#141414,#FFE600);box-shadow:none}
+.avatar{background:linear-gradient(160deg,rgba(255,236,60,.7),rgba(255,250,190,.4));border-color:rgba(214,186,0,.55)}
+.stats dd.mood{color:#141414;font-weight:700}
+.kw{background:rgba(17,17,17,.06)}
+.quote{border-left-color:#FFE600;border-left-width:3px}
+.tags span{background:rgba(17,17,17,.04);border-color:rgba(17,17,17,.10);color:#3A3934}
+.glass.y .tags span{background:rgba(255,255,255,.6);border-color:rgba(200,170,0,.45);color:#141414}
+.stamp{color:#141414;border-color:#141414;background:#FFE600;box-shadow:none}
+.file .tab{background:#F4F3EE;border-color:rgba(17,17,17,.09)}
+.term{background:#F6F5F0;border-color:rgba(17,17,17,.09)}
+.term .th .dots i{background:rgba(17,17,17,.15)}.term .th .dots i:first-child{background:#FFE600}
+.term li b,.term pre .y{color:#7A6900;font-weight:700}
+.out b{color:#141414;background:#FFF6A0;border-color:rgba(200,170,0,.55)}
+.metric .v,.big .v,.fact .v{color:#141414}
+.metric .v,.big .v{background:var(--mark);align-self:flex-start;padding:0 .08em}
+.fact .v{text-decoration:underline;text-decoration-color:#FFE600;text-decoration-thickness:5px;text-underline-offset:-1px;text-decoration-skip-ink:none}
+.shot{background:rgba(255,255,255,.8)}.shot div{border:1px solid rgba(17,17,17,.06)}
+.cta{color:#fff;background:#141414!important;border-color:#141414!important;box-shadow:0 12px 30px rgba(17,17,17,.18)!important}
+.cta span{box-shadow:none}
+.scene .st.on{color:#141414}
+.node .n{box-shadow:0 0 0 4px rgba(255,236,60,.35)}
 </style>
 <main class="pages">
 <section class="pg cover" aria-label="Portada">
 <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="halo" style="left:-160px;top:-140px;width:560px;height:560px;opacity:0.8"></div><div class="target" aria-hidden="true"><svg viewBox="0 0 500 500">
 <defs><radialGradient id="tg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFFF00" stop-opacity=".45"/><stop offset=".45" stop-color="#FFFF00" stop-opacity=".08"/><stop offset="1" stop-color="#FFFF00" stop-opacity="0"/></radialGradient></defs>
-<circle cx="250" cy="250" r="240" fill="url(#tg)"/><circle cx="250" cy="250" r="240" fill="none" stroke="rgba(17,17,17,0.06)" stroke-width="1"/><circle cx="250" cy="250" r="190" fill="none" stroke="rgba(17,17,17,0.09)" stroke-width="1"/><circle cx="250" cy="250" r="130" fill="none" stroke="rgba(17,17,17,0.12)" stroke-width="1"/><circle cx="250" cy="250" r="70" fill="none" stroke="rgba(17,17,17,0.18)" stroke-width="1"/>
-<g stroke="rgba(17,17,17,.35)" stroke-width="1"><line x1="250" y1="0" x2="250" y2="200"/><line x1="250" y1="300" x2="250" y2="500"/><line x1="120" y1="250" x2="200" y2="250"/><line x1="300" y1="250" x2="500" y2="250"/></g>
-<g stroke="#FFFF00" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M210 222v-12h12"/><path d="M290 222v-12h-12"/><path d="M210 278v12h12"/><path d="M290 278v12h-12"/></g>
+<circle cx="250" cy="250" r="240" fill="url(#tg)"/><circle cx="250" cy="250" r="240" fill="none" stroke="rgba(17,17,17,0.054)" stroke-width="1"/><circle cx="250" cy="250" r="190" fill="none" stroke="rgba(17,17,17,0.081)" stroke-width="1"/><circle cx="250" cy="250" r="130" fill="none" stroke="rgba(17,17,17,0.108)" stroke-width="1"/><circle cx="250" cy="250" r="70" fill="none" stroke="rgba(17,17,17,0.162)" stroke-width="1"/>
+<g stroke="rgba(17,17,17,0.315)" stroke-width="1"><line x1="250" y1="0" x2="250" y2="200"/><line x1="250" y1="300" x2="250" y2="500"/><line x1="120" y1="250" x2="200" y2="250"/><line x1="300" y1="250" x2="500" y2="250"/></g>
+<g stroke="#E8C400" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M210 222v-12h12"/><path d="M290 222v-12h-12"/><path d="M210 278v12h12"/><path d="M290 278v12h-12"/></g>
 <circle cx="250" cy="250" r="5" fill="#FFFF00"/>
-<g font-family="JetBrains Mono,monospace" font-size="11" fill="rgba(17,17,17,.45)"><text x="262" y="150">LAT −34.60</text><text x="262" y="166">LON −58.38</text><text x="262" y="346">objetivo: producción</text></g>
+<g font-family="JetBrains Mono,monospace" font-size="11" fill="rgba(17,17,17,0.405)"><text x="262" y="150">LAT −34.60</text><text x="262" y="166">LON −58.38</text><text x="262" y="346">objetivo: producción</text></g>
 </svg></div>
-<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#111111"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Guía técnica</span></span><span class="r"><span class="barcode" aria-hidden="true"></span></span></div>
+<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Guía técnica</span></span><span class="r"><span class="barcode" aria-hidden="true"></span></span></div>
 <div style="display:flex;flex-direction:column;gap:22px;margin-top:40px">
  <span class="tagm glass"><span class="d">◎</span>Operación</span>
  <h1>Forward <em>Deployed</em> Engineer</h1>
@@ -343,14 +374,14 @@ body{font-size:13px}
 </div>
 </section><section class="pg" aria-label="Índice">
 <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="halo" style="left:380px;top:60px;width:520px;height:520px;opacity:0.7"></div><div class="halo" style="left:-200px;top:700px;width:520px;height:520px;opacity:0.6"></div>
-<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#111111"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>2 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
+<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>2 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
 <div class="head" style="margin-top:6px"><h2>Índice de la <em>operación</em></h2><span class="orb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 10h18"/></svg></span></div>
 <p class="lead">Siete misiones cortas para entender qué hace un Forward Deployed Engineer, cómo trabaja y por qué es uno de los roles más buscados de la IA.</p>
 <div class="mlist"><div class="mrow glass on"><span class="n">Misión 1</span><span><b>Qué es un FDE</b><small>El rol y por qué existe</small></span><span class="p">Página 3</span></div><div class="mrow glass"><span class="n">Misión 2</span><span><b>Qué hace un FDE</b><small>Un ciclo de 4 etapas</small></span><span class="p">Página 4</span></div><div class="mrow glass"><span class="n">Misión 3</span><span><b>El caso de Martín</b><small>De AI Engineer a FDE</small></span><span class="p">Página 5</span></div><div class="mrow glass"><span class="n">Misión 4</span><span><b>El caso de uso</b><small>Etapas 1 y 2: entender y diseñar</small></span><span class="p">Página 6</span></div><div class="mrow glass"><span class="n">Misión 5</span><span><b>El caso de uso, segunda parte</b><small>Etapas 3 y 4: medir y ajustar</small></span><span class="p">Página 7</span></div><div class="mrow glass"><span class="n">Misión 6</span><span><b>La demanda</b><small>Uno de los roles más buscados de la IA</small></span><span class="p">Página 8</span></div><div class="mrow glass"><span class="n">Misión 7</span><span><b>FDE en Henry</b><small>La especialización</small></span><span class="p">Página 9</span></div></div>
 <div class="foot"><span>Operación FDE · Henry</span><span>Siguiente <b>▸ Misión 1</b></span></div>
 </section><section class="pg" aria-label="Qué es un FDE">
 <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="halo" style="left:420px;top:40px;width:480px;height:480px;opacity:0.8"></div><div class="halo" style="left:-160px;top:720px;width:520px;height:520px;opacity:0.6"></div>
-<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#111111"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>3 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
+<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>3 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
 <span class="tagm glass"><span class="d">◎</span>Misión 1 · Qué es un FDE</span>
 <div class="head"><h2>Qué es un <em>Forward Deployed Engineer</em></h2><span class="orb" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg></span></div>
 <div class="def glass"><span class="orb sm" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg></span><p>Un ingeniero que trabaja <span>dentro de la organización del cliente</span> y es dueño del proyecto de IA de punta a punta: desde definir qué construir hasta demostrar que funciona en producción.</p></div>
@@ -366,8 +397,8 @@ body{font-size:13px}
   <div class="side glass"><b>El equipo técnico</b><span>Sabe construir, <em>pero</em> no conoce el negocio.</span></div>
  </div>
  <div class="grid2">
-  <div class="scene glass"><span class="st off">Sin FDE</span><svg viewBox="0 0 320 130" aria-hidden="true"><rect x="0" y="40" width="96" height="90" rx="12" fill="rgba(17,17,17,.07)" stroke="rgba(17,17,17,.18)"/><rect x="224" y="40" width="96" height="90" rx="12" fill="rgba(17,17,17,.07)" stroke="rgba(17,17,17,.18)"/><g font-family="JetBrains Mono,monospace" font-size="10" fill="#55554F" text-anchor="middle"><text x="48" y="90">cliente</text><text x="272" y="90">equipo</text></g><g transform="rotate(22 160 96)"><rect x="124" y="82" width="72" height="26" rx="8" fill="rgba(17,17,17,.08)" stroke="rgba(17,17,17,.35)" stroke-dasharray="4 3"/><text x="160" y="99" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#111111">proyecto IA</text></g><path d="M160 30 L160 62" stroke="#C2321F" stroke-width="2" stroke-linecap="round"/><path d="M154 56 L160 64 L166 56" fill="none" stroke="#C2321F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="160" y="20" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#C2321F">se cae</text></svg><p>El proyecto cae en la brecha: funciona en la demo y nunca llega a usarse.</p></div>
-  <div class="scene glass y"><span class="st on">Con FDE</span><svg viewBox="0 0 320 130" aria-hidden="true"><rect x="0" y="40" width="96" height="90" rx="12" fill="rgba(17,17,17,.07)" stroke="rgba(17,17,17,.18)"/><rect x="224" y="40" width="96" height="90" rx="12" fill="rgba(17,17,17,.07)" stroke="rgba(17,17,17,.18)"/><g font-family="JetBrains Mono,monospace" font-size="10" fill="#55554F" text-anchor="middle"><text x="48" y="90">cliente</text><text x="272" y="90">equipo</text></g><rect x="92" y="40" width="136" height="16" rx="8" fill="#FFFF00"/><text x="160" y="52" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#111">FDE</text><rect x="124" y="8" width="72" height="26" rx="8" fill="rgba(17,17,17,.1)" stroke="rgba(17,17,17,.45)"/><text x="160" y="25" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#111111">proyecto IA</text><circle cx="160" cy="88" r="13" fill="none" stroke="#FFFF00" stroke-width="1.6"/><path d="M154 88 l4 4 l8 -8" fill="none" stroke="#FFFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="160" y="122" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#111">en producción</text></svg><p>El FDE es el puente entre el problema del cliente y lo que el equipo construye.</p></div>
+  <div class="scene glass"><span class="st off">Sin FDE</span><svg viewBox="0 0 320 130" aria-hidden="true"><rect x="0" y="40" width="96" height="90" rx="12" fill="rgba(17,17,17,0.063)" stroke="rgba(17,17,17,0.162)"/><rect x="224" y="40" width="96" height="90" rx="12" fill="rgba(17,17,17,0.063)" stroke="rgba(17,17,17,0.162)"/><g font-family="JetBrains Mono,monospace" font-size="10" fill="#5A5952" text-anchor="middle"><text x="48" y="90">cliente</text><text x="272" y="90">equipo</text></g><g transform="rotate(22 160 96)"><rect x="124" y="82" width="72" height="26" rx="8" fill="rgba(17,17,17,0.072)" stroke="rgba(17,17,17,0.315)" stroke-dasharray="4 3"/><text x="160" y="99" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#141414">proyecto IA</text></g><path d="M160 30 L160 62" stroke="#E5484D" stroke-width="2" stroke-linecap="round"/><path d="M154 56 L160 64 L166 56" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="160" y="20" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#C2372C">se cae</text></svg><p>El proyecto cae en la brecha: funciona en la demo y nunca llega a usarse.</p></div>
+  <div class="scene glass y"><span class="st on">Con FDE</span><svg viewBox="0 0 320 130" aria-hidden="true"><rect x="0" y="40" width="96" height="90" rx="12" fill="rgba(17,17,17,0.063)" stroke="rgba(17,17,17,0.162)"/><rect x="224" y="40" width="96" height="90" rx="12" fill="rgba(17,17,17,0.063)" stroke="rgba(17,17,17,0.162)"/><g font-family="JetBrains Mono,monospace" font-size="10" fill="#5A5952" text-anchor="middle"><text x="48" y="90">cliente</text><text x="272" y="90">equipo</text></g><rect x="92" y="40" width="136" height="16" rx="8" fill="#FFFF00"/><text x="160" y="52" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#111">FDE</text><rect x="124" y="8" width="72" height="26" rx="8" fill="rgba(17,17,17,0.090)" stroke="rgba(17,17,17,0.405)"/><text x="160" y="25" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#141414">proyecto IA</text><circle cx="160" cy="88" r="13" fill="none" stroke="#E8C400" stroke-width="1.6"/><path d="M154 88 l4 4 l8 -8" fill="none" stroke="#E8C400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="160" y="122" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#3A3934">en producción</text></svg><p>El FDE es el puente entre el problema del cliente y lo que el equipo construye.</p></div>
  </div>
 </div>
 <div class="file">
@@ -377,14 +408,14 @@ body{font-size:13px}
 <div class="foot"><span>Operación FDE · Henry</span><span>Siguiente <b>▸ Misión 2</b></span></div>
 </section><section class="pg" aria-label="Qué hace un FDE">
 <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="halo" style="left:170px;top:330px;width:460px;height:460px;opacity:1"></div>
-<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#111111"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>4 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
+<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>4 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
 <span class="tagm glass"><span class="d">◎</span>Misión 2 · Qué hace un FDE</span>
 <div class="head"><h2>Un rol que trabaja en un <em>ciclo de 4 etapas</em></h2><span class="orb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14 5.3"/><path d="M4 12a8 8 0 0 1 14-5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span></div>
 <p class="lead">El FDE no entrega y se va. Cuando termina la etapa 4 vuelve a la 1 con lo que aprendió en producción: cada vuelta cambia el sistema, el alcance o lo que el producto tiene que resolver.</p>
 <div class="loop" aria-label="Ciclo del FDE: entender el problema, diseñar la solución, medir, ajustar">
  <svg class="ring" viewBox="0 0 155 100" preserveAspectRatio="none" aria-hidden="true">
-  <ellipse cx="77.5" cy="50" rx="54" ry="38" fill="none" stroke="rgba(17,17,17,.18)" stroke-width=".4" stroke-dasharray="1.2 1.4"/>
-  <path d="M77.5 12 A54 38 0 0 1 131.5 50" fill="none" stroke="#FFFF00" stroke-width=".9" stroke-linecap="round"/>
+  <ellipse cx="77.5" cy="50" rx="54" ry="38" fill="none" stroke="rgba(17,17,17,0.162)" stroke-width=".4" stroke-dasharray="1.2 1.4"/>
+  <path d="M77.5 12 A54 38 0 0 1 131.5 50" fill="none" stroke="#E8C400" stroke-width=".9" stroke-linecap="round"/>
  </svg>
  <div class="center"><span class="orb sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14 5.3"/><path d="M4 12a8 8 0 0 1 14-5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><b>El ciclo<br>del FDE</b><span>1 → 2 → 3 → 4 → 1</span></div>
  <div class="node glass" style="left:50%;top:11%"><span class="n">1</span><div><h4>Entender el problema</h4><p>mano a mano con el cliente</p></div></div>
@@ -401,7 +432,7 @@ body{font-size:13px}
 <div class="foot"><span>Operación FDE · Henry</span><span>Siguiente <b>▸ Misión 3</b></span></div>
 </section><section class="pg" aria-label="El caso de Martín">
 <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="halo" style="left:380px;top:120px;width:480px;height:480px;opacity:0.8"></div><div class="halo" style="left:-180px;top:760px;width:500px;height:500px;opacity:0.6"></div>
-<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#111111"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>5 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
+<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>5 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
 <span class="tagm glass"><span class="d">◎</span>Misión 3 · El caso de Martín</span>
 <div class="head"><h2>El caso de <em>Martín</em></h2><span class="orb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 8h10a4 4 0 0 1 4 4v2.5a3 3 0 0 1-5.4 1.8L14.5 15h-5l-1.1 1.3A3 3 0 0 1 3 14.5V12a4 4 0 0 1 4-4z"/><path d="M8 11v3M6.5 12.5h3"/><circle cx="15.5" cy="11.5" r=".6"/><circle cx="17.5" cy="13.5" r=".6"/></svg></span></div>
 <div class="xp glass">
@@ -436,7 +467,7 @@ body{font-size:13px}
 <div class="foot"><span>Operación FDE · Henry</span><span>Siguiente <b>▸ Misión 4</b></span></div>
 </section><section class="pg" aria-label="Etapas 1 y 2 en un caso real">
 <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="halo" style="left:420px;top:180px;width:440px;height:440px;opacity:0.7"></div><div class="halo" style="left:-180px;top:640px;width:480px;height:480px;opacity:0.6"></div>
-<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#111111"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>6 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
+<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>6 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
 <span class="tagm glass"><span class="d">◎</span>Misión 4 · El caso de uso</span>
 <div class="brief glass"><b>El caso</b><span>Una aseguradora contrata a la software factory de Martín con un pedido: “un chatbot para el call center”. Martín va como FDE.</span></div>
 <article class="stage">
@@ -450,15 +481,15 @@ body{font-size:13px}
 <article class="stage">
  <div class="sh"><span class="num">2</span><div><span class="eb">Arquitectura, POC e integración</span><h2>Diseñar la solución</h2></div></div>
  <div class="arch glass"><svg viewBox="0 0 720 150" role="img" aria-label="Arquitectura: login con SSO, agente con tool calling, wrapper REST sobre SOAP, RAG con permisos y trazas">
-<g font-family="JetBrains Mono,monospace" font-size="11" text-anchor="middle" fill="#111111">
-<rect x="4" y="50" width="110" height="50" rx="12" fill="rgba(17,17,17,.06)" stroke="rgba(17,17,17,.18)"/><text x="59" y="72">Operador</text><text x="59" y="87" fill="#55554F">call center</text>
-<rect x="150" y="50" width="110" height="50" rx="12" fill="rgba(17,17,17,.06)" stroke="rgba(17,17,17,.18)"/><text x="205" y="72" fill="#111111">SSO · OIDC</text><text x="205" y="87" fill="#55554F">Keycloak</text>
-<rect x="296" y="38" width="130" height="74" rx="14" fill="rgba(255,255,0,.14)" stroke="rgba(17,17,17,.45)"/><text x="361" y="64" fill="#111111" font-weight="700">Agente LLM</text><text x="361" y="80" fill="#3A3A35">guardrails</text><text x="361" y="95" fill="#3A3A35">tool calling</text>
-<rect x="466" y="8" width="132" height="48" rx="12" fill="rgba(17,17,17,.06)" stroke="rgba(17,17,17,.18)"/><text x="532" y="28">Wrapper REST</text><text x="532" y="44" fill="#55554F">→ SOAP siniestros</text>
-<rect x="466" y="94" width="132" height="48" rx="12" fill="rgba(17,17,17,.06)" stroke="rgba(17,17,17,.18)"/><text x="532" y="114">RAG pólizas</text><text x="532" y="130" fill="#55554F">filtro por permisos</text>
-<rect x="622" y="50" width="96" height="50" rx="12" fill="rgba(17,17,17,.06)" stroke="rgba(17,17,17,.18)"/><text x="670" y="72">Langfuse</text><text x="670" y="87" font-size="10" fill="#55554F">trazas · evals</text>
+<g font-family="JetBrains Mono,monospace" font-size="11" text-anchor="middle" fill="#141414">
+<rect x="4" y="50" width="110" height="50" rx="12" fill="rgba(17,17,17,0.054)" stroke="rgba(17,17,17,0.162)"/><text x="59" y="72">Operador</text><text x="59" y="87" fill="#5A5952">call center</text>
+<rect x="150" y="50" width="110" height="50" rx="12" fill="rgba(17,17,17,0.054)" stroke="rgba(17,17,17,0.162)"/><text x="205" y="72" fill="#141414">SSO · OIDC</text><text x="205" y="87" fill="#5A5952">Keycloak</text>
+<rect x="296" y="38" width="130" height="74" rx="14" fill="rgba(255,222,0,0.266)" stroke="rgba(255,222,0,1.000)"/><text x="361" y="64" fill="#141414" font-weight="700">Agente LLM</text><text x="361" y="80" fill="#3A3934">guardrails</text><text x="361" y="95" fill="#3A3934">tool calling</text>
+<rect x="466" y="8" width="132" height="48" rx="12" fill="rgba(17,17,17,0.054)" stroke="rgba(17,17,17,0.162)"/><text x="532" y="28">Wrapper REST</text><text x="532" y="44" fill="#5A5952">→ SOAP siniestros</text>
+<rect x="466" y="94" width="132" height="48" rx="12" fill="rgba(17,17,17,0.054)" stroke="rgba(17,17,17,0.162)"/><text x="532" y="114">RAG pólizas</text><text x="532" y="130" fill="#5A5952">filtro por permisos</text>
+<rect x="622" y="50" width="96" height="50" rx="12" fill="rgba(17,17,17,0.054)" stroke="rgba(17,17,17,0.162)"/><text x="670" y="72">Langfuse</text><text x="670" y="87" font-size="10" fill="#5A5952">trazas · evals</text>
 </g>
-<g stroke="rgba(17,17,17,.35)" stroke-width="1.5" fill="none"><path d="M114 75 H150"/><path d="M260 75 H296"/><path d="M426 62 L466 34"/><path d="M426 90 L466 116"/><path d="M598 32 L622 64"/><path d="M598 118 L622 86"/></g>
+<g stroke="rgba(17,17,17,0.315)" stroke-width="1.5" fill="none"><path d="M114 75 H150"/><path d="M260 75 H296"/><path d="M426 62 L466 34"/><path d="M426 90 L466 116"/><path d="M598 32 L622 64"/><path d="M598 118 L622 86"/></g>
 </svg></div>
  <div class="cols">
   <div class="who glass"><span class="k">Lo que decide Martín</span><p>Los datos no pueden salir de la red del cliente, así que el modelo se elige por dónde corre y no sólo por cuánto acierta. Arma un slice vertical, de punta a punta, para una sola consulta.</p></div>
@@ -469,7 +500,7 @@ body{font-size:13px}
 <div class="foot"><span>Operación FDE · Henry</span><span>Siguiente <b>▸ Misión 5</b></span></div>
 </section><section class="pg" aria-label="Etapas 3 y 4 en un caso real">
 <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="halo" style="left:360px;top:60px;width:480px;height:480px;opacity:0.8"></div><div class="halo" style="left:-160px;top:720px;width:480px;height:480px;opacity:0.6"></div>
-<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#111111"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>7 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
+<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>7 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
 <span class="tagm glass"><span class="d">◎</span>Misión 5 · El caso de uso, segunda parte</span>
 <article class="stage">
  <div class="sh"><span class="num">3</span><div><span class="eb">Evals e impacto</span><h2>Medir</h2></div></div>
@@ -501,7 +532,7 @@ body{font-size:13px}
 <div class="foot"><span>Operación FDE · Henry</span><span>Siguiente <b>▸ Misión 6</b></span></div>
 </section><section class="pg" aria-label="La demanda">
 <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="halo" style="left:400px;top:60px;width:480px;height:480px;opacity:0.9"></div><div class="halo" style="left:-160px;top:700px;width:520px;height:520px;opacity:0.6"></div>
-<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#111111"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>8 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
+<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>8 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
 <span class="tagm glass"><span class="d">◎</span>Misión 6 · La demanda</span>
 <div class="head"><h2>Uno de los roles más buscados de la <em>IA</em></h2><span class="orb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18l5-6 4 3 7-9"/><path d="M15 6h5v5"/></svg></span></div>
 <div class="grid2">
@@ -516,7 +547,7 @@ body{font-size:13px}
 <div class="foot"><span>Operación FDE · Henry</span><span>Siguiente <b>▸ Misión 7</b></span></div>
 </section><section class="pg" aria-label="FDE en Henry">
 <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="halo" style="left:300px;top:-80px;width:560px;height:560px;opacity:0.9"></div><div class="halo" style="left:-200px;top:760px;width:520px;height:520px;opacity:0.6"></div>
-<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#111111"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>9 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
+<div class="hud"><span class="l"><svg class="logo" viewBox="0 0 100 18" role="img" aria-label="Henry"><g fill="#141414"><path d="M17.3267 0H10.7046V17.5791H17.3267V0V0"/><path d="M6.64662 0H0V17.5791H6.64662V0V0"/><path d="M29.5484 11.0168V12.5898H36.6158V17.5824H22.9507V0H36.2439V4.99262H29.5484V6.49258V11.0168"/><path d="M41.4966 0H48.8898L52.7437 8.58988V0H58.6199V17.5824H52.3131L47.3931 7.99319V17.5824H41.4966V0V0"/><path d="M93.6521 0L93.4836 0.471697C93.4766 0.483539 93.471 0.495381 93.4661 0.50788L93.097 1.54732L91.4514 6.1268L89.4542 0.471697L89.2962 0H82.1274L87.8667 10.13V17.5791H94.5238V10.1069L100 0H93.6514H93.6521V0"/><path d="M77.239 10.5754C78.8335 9.71493 79.8527 8.33668 79.8527 6.02819V5.93609C79.8527 2.12436 77.3997 0.000732422 72.0883 0.000732422H64.2715V17.5825H70.8692V11.9997H71.2404L74.0051 17.5825H80.9006L77.239 10.5754V10.5754"/></g><g fill="#FFFF00"><path d="M69.6042 6.08069C64.2187 6.44318 58.6053 6.90172 52.8486 7.45894C42.0636 8.50102 31.3184 9.86414 20.613 11.5476C13.6966 12.6456 6.8046 13.9318 0 15.5706V10.0076C5.28416 9.30823 11.1038 8.64904 17.3268 8.05893C24.685 7.3596 32.5935 6.73989 40.8451 6.27477C51.0345 5.68465 60.7472 5.34848 69.549 5.24585V5.71426C69.549 5.83596 69.57 5.94517 69.5875 6.04385C69.5903 6.05701 69.5966 6.06951 69.6049 6.08004Z"/></g></svg><span class="rec"><i></i>Operación FDE</span></span><span class="r"><span>9 / 9</span><span class="barcode" aria-hidden="true"></span></span></div>
 <span class="tagm glass"><span class="d">◎</span>Misión 7 · FDE en Henry</span>
 <div class="head"><h2>Forward Deployed Engineer <em>en Henry</em></h2><span class="orb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></span></div>
 <p class="lead">Una especialización para dar el paso que dio Martín: sumar la capa de engagement a lo que ya sabes construir.</p>
