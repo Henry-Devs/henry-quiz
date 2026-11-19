@@ -2453,6 +2453,11 @@
           "kicker": "No necesitas saber programar.",
           "bajada": "La IA ya redacta PRDs, sintetiza entrevistas y arma prototipos. Lo que se volvió escaso es saber **qué** construir. En este Henry Live te mostramos qué hace hoy un AI Product Builder y cómo es el camino para convertirte en uno."
         },
+        "grabaciones": [
+          {
+            "url": "https://www.youtube.com/watch?v=GLCZAKnDo2s"
+          }
+        ],
         "hubspot": {
           "masterclass_nombre": "Open House AI Product Builder",
           "masterclass_fecha_larga": "Miércoles 18 de noviembre",
