@@ -3144,23 +3144,19 @@
           {
             "tipo": "lista",
             "estilo": "numerada",
-            "titulo": "Lo que vas a ver en 60 minutos",
+            "titulo": "Lo que vas a hacer en 60 minutos",
             "items": [
               {
-                "titulo": "Qué es MCP y para qué sirve",
-                "texto": "El estándar abierto que creó Anthropic para conectar la IA con herramientas y datos: qué problema resuelve y en qué se diferencia de una API."
+                "titulo": "Qué es MCP y qué problema resuelve",
+                "texto": "El estándar abierto que creó Anthropic para conectar la IA con tus herramientas y datos, y en qué se diferencia de una API."
               },
               {
-                "titulo": "Cómo conectar Claude a tus herramientas",
-                "texto": "Conectores y servidores MCP en Claude Desktop y Claude Code: archivos, Notion, GitHub, Slack. Qué puedes pedirle y qué ve de tu información."
+                "titulo": "Conectar Claude a tus herramientas",
+                "texto": "Conectores y servidores MCP en Claude Desktop y Claude Code: archivos, Notion, GitHub, Slack. Qué le pides y qué información ve."
               },
               {
                 "titulo": "Cómo se arma un servidor MCP",
-                "texto": "Qué piezas lo componen (herramientas, recursos y prompts) y cómo darle a Claude acceso a tus propios datos."
-              },
-              {
-                "titulo": "Seguridad: qué le dejas hacer a la IA",
-                "texto": "Un servidor MCP es código que corre con acceso a tu sesión. Cómo elegir en cuáles confiar y cuándo pedir confirmación."
+                "texto": "Las piezas que lo componen y cómo darle a Claude acceso a tus propios datos, con los permisos justos."
               }
             ]
           },
@@ -3168,77 +3164,77 @@
             "tipo": "chips",
             "titulo": "Lo que vas a ver en acción",
             "items": [
-              "Model Context Protocol",
-              "Claude Desktop",
-              "Claude Code",
-              "Servidores MCP",
-              "Conectores",
-              "Agentes de IA",
-              "Automatización",
-              "APIs"
+              "Model Context Protocol explicado sin vueltas",
+              "Claude conectado a tus apps",
+              "Un servidor MCP funcionando",
+              "Permisos y seguridad",
+              "Qué es un agente de IA"
             ]
           },
           {
-            "tipo": "lista",
-            "estilo": "checks",
-            "titulo": "Es para ti si…",
+            "tipo": "tarjetas",
+            "titulo": "Es para ti si",
             "items": [
               {
-                "titulo": "Ya usas Claude o ChatGPT",
+                "etiqueta": "✓ Ya usas Claude o ChatGPT",
                 "texto": "Y quieres que trabaje con tus archivos, tu código y tus herramientas, en lugar de pegarle todo en el chat."
               },
               {
-                "titulo": "Programas o estás aprendiendo",
-                "texto": "Y quieres entender MCP, una de las piezas con las que hoy se construyen agentes de IA."
-              },
-              {
-                "titulo": "Te interesa trabajar en IA",
-                "texto": "Y quieres ver qué hace un AI Engineer con estas herramientas en el día a día."
+                "etiqueta": "✓ Programas o quieres entrar a AI Engineering",
+                "texto": "Y quieres entender una de las piezas con las que hoy se construyen agentes de IA."
               }
             ]
           },
           {
             "tipo": "seccion",
             "etiqueta": "Después del Henry Live",
-            "titulo": "La carrera de AI Engineering",
-            "bajada": "Diseña, entrena y despliega sistemas de IA que resuelven problemas complejos a escala, con las mismas herramientas que usa un AI Engineer real.",
+            "titulo": "El siguiente paso: AI Engineering",
+            "bajada": "Si ya sabes programar, ahora tienes que saber construir con IA: diseña, evalúa y lleva a producción sistemas de IA que funcionen de verdad. Part time, 3 meses, online y en vivo. La próxima cohorte arranca el ==26 de enero==.",
             "cta": true,
             "bloques": [
-              {
-                "tipo": "lista",
-                "estilo": "numerada",
-                "items": [
-                  "Construye aplicaciones impulsadas por IA integrando modelos y APIs",
-                  "Crea agentes autónomos y soluciones multimodales",
-                  "Implementa arquitecturas end-to-end de IA con servicios cloud",
-                  "Desarrolla proyectos técnicos para tu portfolio profesional"
-                ]
-              },
-              {
-                "tipo": "chips",
-                "titulo": "Herramientas que vas a usar",
-                "items": [
-                  "Python",
-                  "OpenAI",
-                  "Claude",
-                  "Gemini",
-                  "LangChain",
-                  "Hugging Face",
-                  "Pinecone",
-                  "RAG"
-                ]
-              },
               {
                 "tipo": "ficha",
                 "filas": [
                   {
                     "label": "Modalidad",
-                    "valor": "Part time, online y en vivo · 10 hs semanales"
+                    "valor": "Part time, online y en vivo"
                   },
                   {
                     "label": "Duración",
-                    "valor": "14 semanas + nivelación asincrónica previa"
+                    "valor": "3 meses · 2 clases en vivo por semana"
+                  },
+                  {
+                    "label": "Requisitos",
+                    "valor": "Pensada para quienes ya programan"
+                  },
+                  {
+                    "label": "Próxima cohorte",
+                    "valor": "==26 de enero de 2027=="
                   }
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Los módulos",
+                "items": [
+                  "Fundamentos y Prompt Engineering",
+                  "Fundamentos y Ecosistema de Modelos Pre-Entrenados",
+                  "Orquestación y Agentes Autónomos + AI",
+                  "IA Multimodal y Fundamentos de Arquitectura"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Herramientas",
+                "items": [
+                  "OpenAI",
+                  "LangChain",
+                  "FastAPI",
+                  "Hugging Face",
+                  "Ollama",
+                  "RAG",
+                  "Agentes",
+                  "MCP"
                 ]
               },
               {
@@ -3263,11 +3259,11 @@
               },
               {
                 "pregunta": "¿MCP reemplaza a las APIs?",
-                "respuesta": "No. Un servidor MCP suele usar APIs por debajo. MCP es la capa común que permite que la IA las use sin tener que programar una integración distinta para cada herramienta."
+                "respuesta": "No. Un servidor MCP suele usar APIs por debajo. MCP es la capa común que permite que la IA las use sin programar una integración distinta para cada herramienta."
               },
               {
                 "pregunta": "¿Necesito saber programar?",
-                "respuesta": "Para entender qué es MCP y cómo se conecta, no. La parte de construir un servidor se muestra en vivo, paso a paso."
+                "respuesta": "Para entender qué es MCP y cómo se conecta a Claude, no. La carrera de AI Engineering sí está pensada para quienes ya programan."
               },
               {
                 "pregunta": "¿Queda grabado?",
@@ -3326,7 +3322,7 @@
           {
             "tipo": "lista",
             "estilo": "numerada",
-            "titulo": "Lo que vas a ver en 60 minutos",
+            "titulo": "Lo que vas a hacer en 60 minutos",
             "items": [
               {
                 "titulo": "Cómo se decide qué construir",
@@ -3335,10 +3331,6 @@
               {
                 "titulo": "Del backlog al MVP con IA",
                 "texto": "Qué parte del trabajo ejecuta la IA (specs, prototipos, primeras versiones) y qué parte sigues decidiendo tú."
-              },
-              {
-                "titulo": "Qué mira una empresa de producto con IA",
-                "texto": "El criterio que se espera de quien entra hoy: validar con personas, medir y decidir con evidencia."
               },
               {
                 "titulo": "Cómo empezar sin programar",
@@ -3350,39 +3342,32 @@
             "tipo": "chips",
             "titulo": "Lo que vas a ver en acción",
             "items": [
-              "Product management",
-              "Product owner",
-              "Backlog",
-              "MVP",
-              "Prototipos con IA",
-              "Discovery",
-              "Métricas de producto"
+              "Del pedido al problema",
+              "Un backlog construible",
+              "Un MVP hecho con IA",
+              "Validar con personas",
+              "Decidir con evidencia"
             ]
           },
           {
-            "tipo": "lista",
-            "estilo": "checks",
-            "titulo": "Es para ti si…",
+            "tipo": "tarjetas",
+            "titulo": "Es para ti si",
             "items": [
               {
-                "titulo": "Quieres entrar a producto",
-                "texto": "Y vienes de diseño, datos, marketing, operaciones o ingeniería, o recién te recibiste."
+                "etiqueta": "✓ Quieres entrar a producto",
+                "texto": "Y vienes de diseño, datos, marketing, operaciones o ingeniería, o te acabas de recibir."
               },
               {
-                "titulo": "Ya usas IA en tu trabajo",
+                "etiqueta": "✓ Ya usas IA en tu trabajo",
                 "texto": "Y quieres pasar de usarla a construir productos con ella."
-              },
-              {
-                "titulo": "Te interesa decidir qué construir",
-                "texto": "Más que ejecutar tareas operativas. No necesitas experiencia previa en producto."
               }
             ]
           },
           {
             "tipo": "seccion",
             "etiqueta": "Después del Henry Live",
-            "titulo": "La carrera de AI Product Builder",
-            "bajada": "Aprende a trabajar como Product Owner: la IA ejecuta, tú decides. Sin programar.",
+            "titulo": "El siguiente paso: AI Product Builder",
+            "bajada": "Aprende a trabajar como Product Owner: la IA ejecuta, tú decides. Part time, 5 meses, online y en vivo, y con un portfolio al terminar.",
             "cta": true,
             "bloques": [
               {
@@ -3395,6 +3380,10 @@
                   {
                     "label": "Duración",
                     "valor": "5 meses · 2 clases en vivo por semana"
+                  },
+                  {
+                    "label": "Requisitos",
+                    "valor": "No necesitas experiencia previa en producto ni saber programar"
                   }
                 ]
               },
@@ -3407,6 +3396,16 @@
                   "Del backlog al MVP con IA",
                   "Uso real, decisión y entrega",
                   "Proyecto final grupal"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Lo que te llevas",
+                "items": [
+                  "Kit de trabajo del PO",
+                  "Registro de revisión",
+                  "Portfolio: una pieza por módulo",
+                  "MVP probado y publicado"
                 ]
               },
               {
@@ -3493,7 +3492,7 @@
           {
             "tipo": "lista",
             "estilo": "numerada",
-            "titulo": "Lo que vas a ver en 60 minutos",
+            "titulo": "Lo que vas a hacer en 60 minutos",
             "items": [
               {
                 "titulo": "Qué pasó con el trabajo junior",
@@ -3505,51 +3504,39 @@
               },
               {
                 "titulo": "Qué aprender primero en 2027",
-                "texto": "Fundamentos, herramientas y proyectos: el orden que conviene si empiezas desde cero, con IA de por medio."
-              },
-              {
-                "titulo": "Cómo armar un portfolio que se note",
-                "texto": "Qué mostrar para que una empresa vea que entiendes lo que construyes, no solo que lo generaste."
+                "texto": "Fundamentos, herramientas y proyectos: el orden que conviene si empiezas desde cero, y cómo armar un portfolio que se note."
               }
             ]
           },
           {
             "tipo": "chips",
-            "titulo": "De qué vamos a hablar",
+            "titulo": "Lo que vas a ver en acción",
             "items": [
               "Programar con IA",
               "Vibe coding",
               "Trabajo junior",
-              "Full Stack",
-              "JavaScript",
-              "React",
-              "Portfolio",
-              "Entrevistas técnicas"
+              "Qué aprender primero",
+              "Cómo armar tu portfolio"
             ]
           },
           {
-            "tipo": "lista",
-            "estilo": "checks",
-            "titulo": "Es para ti si…",
+            "tipo": "tarjetas",
+            "titulo": "Es para ti si",
             "items": [
               {
-                "titulo": "Estás pensando en aprender a programar",
+                "etiqueta": "✓ Estás pensando en aprender a programar",
                 "texto": "Y no sabes si tiene sentido ahora que la IA escribe código."
               },
               {
-                "titulo": "Ya usas IA para programar",
+                "etiqueta": "✓ Ya usas IA para programar",
                 "texto": "Y quieres saber si estás aprendiendo o solo copiando lo que genera."
-              },
-              {
-                "titulo": "Quieres cambiar de carrera hacia tech",
-                "texto": "Y buscas una mirada realista de qué se pide hoy y cómo prepararte."
               }
             ]
           },
           {
             "tipo": "seccion",
             "etiqueta": "Después del Henry Live",
-            "titulo": "La carrera de Full Stack AI",
+            "titulo": "El siguiente paso: Full Stack AI",
             "bajada": "Aprende a diseñar, construir y desplegar aplicaciones web completas, con la IA integrada en todo el proceso. Desde cero, online y en vivo.",
             "cta": true,
             "bloques": [
@@ -3558,15 +3545,19 @@
                 "filas": [
                   {
                     "label": "Part time",
-                    "valor": "8 meses · 20 horas por semana"
+                    "valor": "8 meses"
                   },
                   {
                     "label": "Full time",
-                    "valor": "4 meses · 40 horas por semana"
+                    "valor": "4 meses"
                   },
                   {
                     "label": "Modalidad",
                     "valor": "Online y en vivo, +800 horas de código"
+                  },
+                  {
+                    "label": "Requisitos",
+                    "valor": "Puedes empezar desde cero, aunque nunca hayas programado"
                   }
                 ]
               },
@@ -3584,7 +3575,7 @@
               },
               {
                 "tipo": "chips",
-                "titulo": "Tecnologías",
+                "titulo": "Herramientas",
                 "items": [
                   "HTML",
                   "CSS",
