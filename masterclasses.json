@@ -3477,7 +3477,7 @@
             "Gratuita",
             "40 minutos"
           ],
-          "kicker": "¿Vale la pena aprender a programar en 2027? ¿Hay lugar para un junior en la era de la IA?",
+          "kicker": "¿Hay lugar para un junior en la era de la IA? ¿Cómo se empieza a programar hoy desde cero?",
           "bajada": "La inteligencia artificial cambió la forma de escribir código, y con ella la forma de entrar a la industria tech. Con **David Choi**, desarrollador de software en **Mercado Libre** y tech creator, conversamos sobre cómo está hoy el mercado laboral para juniors, qué se espera de quien arranca y cómo empezar a aprender a programar en 2027."
         },
         "hubspot": {
@@ -3526,20 +3526,26 @@
             ]
           },
           {
-            "tipo": "tarjetas",
-            "titulo": "Para quién es esta charla",
-            "items": [
+            "tipo": "seccion",
+            "titulo": "Es para ti si…",
+            "bloques": [
               {
-                "etiqueta": "✓ Estás pensando en aprender a programar",
-                "texto": "Y la IA te hace dudar de si todavía tiene sentido empezar. Es una duda razonable, y de eso se trata la charla."
-              },
-              {
-                "etiqueta": "✓ Ya programas con ayuda de la IA",
-                "texto": "Y quieres saber si estás construyendo una base sólida o solo acelerando."
-              },
-              {
-                "etiqueta": "✓ Te preocupa el futuro de los puestos junior",
-                "texto": "Entendemos que haya miedo ante tanto cambio. David lo vive desde adentro y te cuenta cómo lo ve."
+                "tipo": "tarjetas",
+                "titulo": "Para quién es esta charla",
+                "items": [
+                  {
+                    "etiqueta": "✓ Estás pensando en aprender a programar",
+                    "texto": "Y la IA te hace dudar de si todavía tiene sentido empezar. Es una duda razonable, y de eso se trata la charla."
+                  },
+                  {
+                    "etiqueta": "✓ Ya programas con ayuda de la IA",
+                    "texto": "Y quieres saber si estás construyendo una base sólida o solo acelerando."
+                  },
+                  {
+                    "etiqueta": "✓ Te preocupa el futuro de los puestos junior",
+                    "texto": "Entendemos que haya miedo ante tanto cambio. David lo vive desde adentro y te cuenta cómo lo ve."
+                  }
+                ]
               }
             ]
           },
@@ -3616,15 +3622,27 @@
             "items": [
               {
                 "pregunta": "¿Vale la pena aprender a programar en 2027 con IA?",
-                "respuesta": "Es la pregunta que respondemos en vivo con David Choi, que trabaja como desarrollador de software en Mercado Libre. Un dato para ubicarte: hoy se construye más software que antes, y las empresas buscan perfiles que sepan trabajar con IA."
+                "respuesta": "Es la pregunta de fondo de esta charla con David Choi, desarrollador de software en Mercado Libre. Para ubicarte: hoy se construye más software que antes y las empresas buscan perfiles que sepan programar y trabajar con inteligencia artificial."
               },
               {
                 "pregunta": "¿Hay lugar para un junior en la era de la IA?",
-                "respuesta": "Es el centro de la conversación: cómo cambió el perfil que buscan las empresas y qué se espera hoy de quien arranca."
+                "respuesta": "Es el centro de la conversación: cómo cambió el perfil que buscan las empresas y qué se espera hoy de quien arranca su primer trabajo como desarrollador."
+              },
+              {
+                "pregunta": "¿Qué se le pide hoy a un desarrollador junior?",
+                "respuesta": "Entender los fundamentos de la programación, usar la IA como copiloto para trabajar más rápido y poder explicar y revisar lo que construye. David lo cuenta desde su experiencia en una empresa tech."
               },
               {
                 "pregunta": "¿Las empresas dejaron de construir software?",
                 "respuesta": "No: hoy se construye más software y más personalizado. Según McKinsey, el 32% de las organizaciones decidió no comprar un software porque podía construirlo internamente con IA."
+              },
+              {
+                "pregunta": "¿Qué es el vibe coding y reemplaza a aprender a programar?",
+                "respuesta": "Vibe coding es programar pidiéndole el código a una IA con instrucciones en lenguaje natural. Sirve para prototipar rápido, pero para mantener, corregir y asegurar una aplicación hace falta entender el código."
+              },
+              {
+                "pregunta": "¿Por dónde empiezo a aprender a programar desde cero en 2027?",
+                "respuesta": "Con los fundamentos del desarrollo web (HTML, CSS y JavaScript) y proyectos reales, sumando la IA como copiloto desde el principio. Es justo lo que David desarrolla en la charla."
               },
               {
                 "pregunta": "¿Necesito saber programar para ver el live?",
@@ -3633,6 +3651,34 @@
               {
                 "pregunta": "¿Queda grabado?",
                 "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
+              },
+              {
+                "pregunta": "¿Qué es la carrera de Full Stack AI de Henry?",
+                "respuesta": "Es una carrera online y en vivo para aprender a diseñar, construir y desplegar aplicaciones web completas (frontend, backend y bases de datos) con la IA integrada en todo el proceso. Se puede empezar desde cero."
+              },
+              {
+                "pregunta": "¿Cuánto dura la carrera de Full Stack AI?",
+                "respuesta": "Full time: 4 meses, con 40 horas por semana. Part time: 8 meses, con 20 horas por semana. En ambos casos son más de 800 horas de código, online y en vivo."
+              },
+              {
+                "pregunta": "¿Necesito experiencia previa para estudiar Full Stack en Henry?",
+                "respuesta": "No. Puedes empezar desde cero, aunque nunca hayas escrito una línea de código."
+              },
+              {
+                "pregunta": "¿Qué tecnologías se aprenden en la carrera de Full Stack?",
+                "respuesta": "HTML, CSS, JavaScript, React, TypeScript, Node.js, PostgreSQL, AWS y GitHub, junto con el uso de inteligencia artificial en el flujo de desarrollo."
+              },
+              {
+                "pregunta": "¿A qué puestos puedo aplicar al terminar la carrera?",
+                "respuesta": "A roles de Desarrollador Full Stack, Backend Developer y Frontend Developer."
+              },
+              {
+                "pregunta": "¿Henry me ayuda a conseguir trabajo como programador?",
+                "respuesta": "Sí. La carrera incluye career coach y comunidad Henry, y un reembolso del 100% si, después de graduarte, buscas trabajo activamente durante un año y no lo consigues. Además tienes una primera semana de prueba."
+              },
+              {
+                "pregunta": "¿Qué es Henry?",
+                "respuesta": "Un bootcamp online de tecnología, con carreras en vivo, proyectos reales y una comunidad de más de 20.000 estudiantes."
               }
             ]
           }
