@@ -3292,10 +3292,7 @@
           "nombre": "Sebastián Rinaldi",
           "rol": "Fundador de Laburen.com",
           "foto": "sebastian-rinaldi.jpg",
-          "logo": "logo-laburen-com.png",
-          "bio": [
-            "Fundador de Laburen.com, la startup argentina que implementa agentes de IA dentro de empresas."
-          ]
+          "logo": "logo-laburen-com.png"
         }
       ],
       "link": "landing-que-es-forward-deployed-engineer-como-convertirte-en-uno.html",
@@ -3305,7 +3302,7 @@
             "Gratuita",
             "1 hora"
           ],
-          "bajada": "Las empresas ya compraron IA y a casi ninguna le sobra quién la meta en su operación. Ese hueco lo cubre un **Forward Deployed Engineer**: el ingeniero que se sienta con el cliente, entiende el problema y responde por el resultado. En este Henry Live, **Sebastián Rinaldi**, founder de **Laburen**, cuenta cómo trabaja ese rol, de dónde nace y cómo convertirte en uno."
+          "bajada": "La IA cambió lo que el mercado espera de quien trabaja en tech, y una pregunta se volvió clave: ¿cómo te vuelves más útil? Una de las respuestas es el **Forward Deployed Engineer**: quien se sienta con el cliente, entiende su problema y lo resuelve con IA hasta que funciona. En este Henry Live, **Sebastián Rinaldi**, fundador de **Laburen.com**, te cuenta qué hace en el día a día, de dónde nace el rol y cómo convertirte en uno."
         },
         "hubspot": {
           "masterclass_nombre": "¿Qué es un Forward Deployed Engineer y cómo convertirte en uno?",
@@ -3473,7 +3470,7 @@
                 "respuesta": "Dura 3 meses, part time, con 2 encuentros en vivo por semana. La próxima cohorte arranca el 26 de enero de 2027."
               },
               {
-                "pregunta": "¿Queda grabado?",
+                "pregunta": "¿Queda grabado el live?",
                 "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
               }
             ]
