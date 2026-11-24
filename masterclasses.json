@@ -3448,7 +3448,7 @@
     {
       "slug": "vale-la-pena-aprender-a-programar-2027-ia",
       "nombre": "¿Vale la pena aprender a programar en 2027 con IA?",
-      "desc": "¿Hay lugar para juniors en la era de la IA? Con David Choi, desarrollador de software en Mercado Libre, hablamos del mercado laboral para juniors, si vale la pena programar y cómo empezar a aprender en 2027.",
+      "desc": "Conversación con David Choi, desarrollador de software en Mercado Libre y tech creator, sobre si vale la pena aprender a programar en 2027 con inteligencia artificial: cómo está el mercado laboral para juniors, qué se espera hoy de quien arranca y por dónde empezar.",
       "carrera": "Full Stack AI",
       "tema": "Programación y vibe coding",
       "formato": "Henry Live",
@@ -3477,8 +3477,8 @@
             "Gratuita",
             "40 minutos"
           ],
-          "kicker": "¿Hay lugar para juniors en la era de la IA? Sí, pero no para el mismo junior de hace unos años.",
-          "bajada": "Lo que más se automatizó es justo lo que antes se le pedía a un junior. Con **David Choi**, desarrollador en **Mercado Libre**, hablamos del mercado laboral, de si hoy vale la pena aprender a programar y de cómo empezar en 2027."
+          "kicker": "¿Vale la pena aprender a programar en 2027? ¿Hay lugar para un junior en la era de la IA?",
+          "bajada": "La inteligencia artificial cambió la forma de escribir código, y con ella la forma de entrar a la industria tech. Con **David Choi**, desarrollador de software en **Mercado Libre** y tech creator, conversamos sobre cómo está hoy el mercado laboral para juniors, qué se espera de quien arranca y cómo empezar a aprender a programar en 2027."
         },
         "hubspot": {
           "masterclass_nombre": "Vale la pena aprender a programar en 2027 con IA",
@@ -3502,15 +3502,15 @@
             "items": [
               {
                 "titulo": "Cómo está el mercado para juniors",
-                "texto": "Qué se automatizó (armar un formulario, hacer una pantalla simple, arreglar un error chico) y por qué las empresas igual siguen construyendo software, y cada vez más."
+                "texto": "Un panorama sin dramatismo de cómo cambió la entrada a la industria con la inteligencia artificial: qué está pasando con las búsquedas de desarrolladores junior y qué lugar queda para quien recién empieza."
               },
               {
                 "titulo": "El junior que buscan hoy",
-                "texto": "Entiende los fundamentos, usa la IA para ir más rápido y se da cuenta cuando lo que le devuelve no cumple con lo que necesita el negocio."
+                "texto": "Qué mira un equipo técnico al incorporar a alguien sin experiencia, y qué distingue a un desarrollador junior que sabe trabajar con IA como parte de su día a día."
               },
               {
                 "titulo": "Cómo empezar a aprender a programar",
-                "texto": "Por dónde arrancar desde cero en 2027, con proyectos reales y la IA de copiloto."
+                "texto": "Una guía práctica para arrancar desde cero en 2027: qué aprender primero, cómo ordenar el camino y cómo sumar la IA como copiloto sin perder la base."
               }
             ]
           },
@@ -3519,23 +3519,27 @@
             "titulo": "De qué vamos a hablar",
             "items": [
               "Mercado laboral para juniors",
-              "Qué automatizó la IA",
+              "Programar con IA en 2027",
               "Fundamentos + IA de copiloto",
               "Por dónde empezar a programar",
-              "Cómo revisar lo que genera la IA"
+              "Empleo tech en la era de la IA"
             ]
           },
           {
             "tipo": "tarjetas",
-            "titulo": "Es para ti si",
+            "titulo": "Para quién es esta charla",
             "items": [
               {
                 "etiqueta": "✓ Estás pensando en aprender a programar",
-                "texto": "Y no sabes si tiene sentido ahora que la IA escribe código."
+                "texto": "Y la IA te hace dudar de si todavía tiene sentido empezar. Es una duda razonable, y de eso se trata la charla."
               },
               {
-                "etiqueta": "✓ Ya usas IA para programar",
-                "texto": "Y quieres saber si estás aprendiendo o solo copiando lo que genera."
+                "etiqueta": "✓ Ya programas con ayuda de la IA",
+                "texto": "Y quieres saber si estás construyendo una base sólida o solo acelerando."
+              },
+              {
+                "etiqueta": "✓ Te preocupa el futuro de los puestos junior",
+                "texto": "Entendemos que haya miedo ante tanto cambio. David lo vive desde adentro y te cuenta cómo lo ve."
               }
             ]
           },
@@ -3543,7 +3547,7 @@
             "tipo": "seccion",
             "etiqueta": "Después del Henry Live",
             "titulo": "El siguiente paso: Full Stack AI",
-            "bajada": "Es el perfil que forma la carrera de Full Stack AI: arrancas desde cero, aprendes los fundamentos con proyectos reales y usas la IA de copiloto. Online y en vivo.",
+            "bajada": "Si quieres aprender a programar desde cero con IA, la carrera de Full Stack AI de Henry te lleva de los fundamentos a construir aplicaciones web completas, con proyectos reales y la IA como copiloto. Online y en vivo.",
             "cta": true,
             "bloques": [
               {
@@ -3611,8 +3615,12 @@
             "titulo": "Preguntas frecuentes",
             "items": [
               {
-                "pregunta": "¿Hay lugar para juniors en la era de la IA?",
-                "respuesta": "Sí, pero no para el mismo junior de hace unos años. Lo que más se automatizó es lo que antes se le pedía a un junior: armar un formulario, hacer una pantalla simple o arreglar un error chico."
+                "pregunta": "¿Vale la pena aprender a programar en 2027 con IA?",
+                "respuesta": "Es la pregunta que respondemos en vivo con David Choi, que trabaja como desarrollador de software en Mercado Libre. Un dato para ubicarte: hoy se construye más software que antes, y las empresas buscan perfiles que sepan trabajar con IA."
+              },
+              {
+                "pregunta": "¿Hay lugar para un junior en la era de la IA?",
+                "respuesta": "Es el centro de la conversación: cómo cambió el perfil que buscan las empresas y qué se espera hoy de quien arranca."
               },
               {
                 "pregunta": "¿Las empresas dejaron de construir software?",
@@ -3620,7 +3628,7 @@
               },
               {
                 "pregunta": "¿Necesito saber programar para ver el live?",
-                "respuesta": "No. Es una conversación pensada para quien todavía está decidiendo si empezar."
+                "respuesta": "No. Es una conversación pensada para quien todavía está decidiendo si empezar a programar."
               },
               {
                 "pregunta": "¿Queda grabado?",
