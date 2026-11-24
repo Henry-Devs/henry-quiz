@@ -3544,6 +3544,10 @@
                   {
                     "etiqueta": "✓ Te preocupa el futuro de los puestos junior",
                     "texto": "Entendemos que haya miedo ante tanto cambio. David lo vive desde adentro y te cuenta cómo lo ve."
+                  },
+                  {
+                    "etiqueta": "✓ Quieres cambiar de carrera hacia tech",
+                    "texto": "Y buscas una mirada realista de cómo se entra hoy a la industria."
                   }
                 ]
               }
@@ -3553,7 +3557,7 @@
             "tipo": "seccion",
             "etiqueta": "Después del Henry Live",
             "titulo": "El siguiente paso: Full Stack AI",
-            "bajada": "Si quieres aprender a programar desde cero con IA, la carrera de Full Stack AI de Henry te lleva de los fundamentos a construir aplicaciones web completas, con proyectos reales y la IA como copiloto. Online y en vivo.",
+            "bajada": "Si quieres aprender a programar desde cero con IA, la carrera de Full Stack AI de Henry te lleva de los fundamentos a construir aplicaciones web completas, con proyectos reales y la IA como copiloto. Online y en vivo. La próxima cohorte, full time y part time, arranca el ==11 de enero==.",
             "cta": true,
             "bloques": [
               {
@@ -3574,6 +3578,10 @@
                   {
                     "label": "Requisitos",
                     "valor": "Puedes empezar desde cero, aunque nunca hayas programado"
+                  },
+                  {
+                    "label": "Próxima cohorte",
+                    "valor": "==11 de enero de 2027== (full time y part time)"
                   }
                 ]
               },
@@ -3659,6 +3667,10 @@
               {
                 "pregunta": "¿Cuánto dura la carrera de Full Stack AI?",
                 "respuesta": "Full time: 4 meses, con 40 horas por semana. Part time: 8 meses, con 20 horas por semana. En ambos casos son más de 800 horas de código, online y en vivo."
+              },
+              {
+                "pregunta": "¿Cuándo empieza la próxima cohorte de Full Stack AI?",
+                "respuesta": "La próxima cohorte, tanto full time como part time, arranca el 11 de enero de 2027."
               },
               {
                 "pregunta": "¿Necesito experiencia previa para estudiar Full Stack en Henry?",
