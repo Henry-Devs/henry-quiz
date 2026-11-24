@@ -3104,12 +3104,12 @@
       "carrera": "AI Engineering",
       "tema": "Ingeniería de IA",
       "formato": "Henry Live",
-      "fecha": "2026-12-03T22:00:00-03:00",
+      "fecha": "2026-12-17T22:00:00-03:00",
       "duracionMin": 60,
-      "fechaCorta": "03 DIC",
-      "fechaLarga": "Jueves 3 de diciembre",
+      "fechaCorta": "17 DIC",
+      "fechaLarga": "Jueves 17 de diciembre",
       "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
-      "banner": "banner-que-es-mcp-conectar-claude-herramientas-v1.jpg",
+      "banner": "banner-que-es-mcp-conectar-claude-herramientas-v2.jpg",
       "speakers": [
         {
           "nombre": "Equipo de AI Engineering",
@@ -3128,7 +3128,7 @@
         },
         "hubspot": {
           "masterclass_nombre": "Qué es MCP y cómo conectar Claude a tus herramientas",
-          "masterclass_fecha_larga": "Jueves 3 de diciembre",
+          "masterclass_fecha_larga": "Jueves 17 de diciembre",
           "masterclass_hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
           "masterclass_speaker_nombre": "Equipo de AI Engineering",
           "masterclass_speaker_bio": "Docentes de Henry",
@@ -3137,8 +3137,8 @@
           "masterclass_tema_3": "Cómo se arma un servidor MCP y qué permisos darle",
           "career_interest": "AI Engineering",
           "masterclass_carrera": "AI Engineering",
-          "masterclass_cta_url": "https://www.soyhenry.com/carrera-ai-engineering?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=3/12",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20%C2%BFQu%C3%A9%20es%20MCP%20y%20c%C3%B3mo%20conectar%20Claude%20a%20tus%20herramientas%3F&dates=20261204T010000Z/20261204T020000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%3A%20qu%C3%A9%20es%20MCP%20%28Model%20Context%20Protocol%29%2C%20c%C3%B3mo%20conectar%20Claude%20a%20tus%20herramientas%20y%20c%C3%B3mo%20se%20arma%20un%20servidor%20MCP.&location=Online"
+          "masterclass_cta_url": "https://www.soyhenry.com/carrera-ai-engineering?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=17/12",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20%C2%BFQu%C3%A9%20es%20MCP%20y%20c%C3%B3mo%20conectar%20Claude%20a%20tus%20herramientas%3F&dates=20261218T010000Z/20261218T020000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%3A%20qu%C3%A9%20es%20MCP%20%28Model%20Context%20Protocol%29%2C%20c%C3%B3mo%20conectar%20Claude%20a%20tus%20herramientas%20y%20c%C3%B3mo%20se%20arma%20un%20servidor%20MCP.&location=Online"
         },
         "bloques": [
           {
@@ -3281,12 +3281,12 @@
       "carrera": "AI Product Builder",
       "tema": "Producto",
       "formato": "Henry Live",
-      "fecha": "2026-12-07T20:00:00-03:00",
+      "fecha": "2026-12-09T20:00:00-03:00",
       "duracionMin": 60,
-      "fechaCorta": "07 DIC",
-      "fechaLarga": "Lunes 7 de diciembre",
+      "fechaCorta": "09 DIC",
+      "fechaLarga": "Miércoles 9 de diciembre",
       "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
-      "banner": "banner-ai-product-builder-henry-laburen-v1.jpg",
+      "banner": "banner-ai-product-builder-henry-laburen-v2.jpg",
       "speakers": [
         {
           "nombre": "Equipo de Laburen",
@@ -3306,7 +3306,7 @@
         },
         "hubspot": {
           "masterclass_nombre": "AI Product Builder en la práctica",
-          "masterclass_fecha_larga": "Lunes 7 de diciembre",
+          "masterclass_fecha_larga": "Miércoles 9 de diciembre",
           "masterclass_hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
           "masterclass_speaker_nombre": "Equipo de Laburen",
           "masterclass_speaker_bio": "Henry × Laburen",
@@ -3315,8 +3315,8 @@
           "masterclass_tema_3": "Cómo empezar en producto con IA sin saber programar",
           "career_interest": "AI Product Builder",
           "masterclass_carrera": "AI Product Builder",
-          "masterclass_cta_url": "https://www.soyhenry.com/ai-product-builder?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=7/12",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20AI%20Product%20Builder%20en%20la%20pr%C3%A1ctica&dates=20261207T230000Z/20261208T000000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20Laburen%3A%20c%C3%B3mo%20se%20decide%20qu%C3%A9%20construir%20y%20c%C3%B3mo%20se%20arma%20un%20producto%20con%20IA.&location=Online"
+          "masterclass_cta_url": "https://www.soyhenry.com/ai-product-builder?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=9/12",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20AI%20Product%20Builder%20en%20la%20pr%C3%A1ctica&dates=20261209T230000Z/20261210T000000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20Laburen%3A%20c%C3%B3mo%20se%20decide%20qu%C3%A9%20construir%20y%20c%C3%B3mo%20se%20arma%20un%20producto%20con%20IA.&location=Online"
         },
         "bloques": [
           {
@@ -3448,20 +3448,26 @@
     {
       "slug": "vale-la-pena-aprender-a-programar-2027-ia",
       "nombre": "¿Vale la pena aprender a programar en 2027 con IA?",
-      "desc": "La IA ya escribe código. ¿Tiene sentido aprender a programar? Lo conversamos con David Choi, creador de contenido de programación: qué pasó con el trabajo junior, qué es el vibe coding y qué aprender primero.",
+      "desc": "¿Hay lugar para juniors en la era de la IA? Con David Choi, desarrollador de software en Mercado Libre, hablamos del mercado laboral para juniors, si vale la pena programar y cómo empezar a aprender en 2027.",
       "carrera": "Full Stack AI",
       "tema": "Programación y vibe coding",
       "formato": "Henry Live",
-      "fecha": "2026-12-09T20:00:00-03:00",
-      "duracionMin": 60,
-      "fechaCorta": "09 DIC",
-      "fechaLarga": "Miércoles 9 de diciembre",
+      "fecha": "2026-12-03T20:00:00-03:00",
+      "duracionMin": 40,
+      "fechaCorta": "03 DIC",
+      "fechaLarga": "Jueves 3 de diciembre",
       "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
-      "banner": "banner-vale-la-pena-aprender-a-programar-2027-ia-v1.jpg",
+      "banner": "banner-vale-la-pena-aprender-a-programar-2027-ia-v2.jpg",
       "speakers": [
         {
           "nombre": "David Choi",
-          "rol": "Creador de contenido · Full Stack Argentina"
+          "rol": "Software Developer en Mercado Libre · Creador de contenido",
+          "logo": "panel-ia-logo-mercadolibre.svg",
+          "bio": [
+            "Desarrollador de software en Mercado Libre.",
+            "Creador de contenido de programación. YouTube: youtube.com/@deivchoi · TikTok: tiktok.com/@deivchoi · Instagram: instagram.com/deivchoi"
+          ],
+          "foto": "david-choi.jpg"
         }
       ],
       "link": "landing-vale-la-pena-aprender-a-programar-2027-ia.html",
@@ -3469,54 +3475,54 @@
         "hero": {
           "badges": [
             "Gratuita",
-            "1 hora"
+            "40 minutos"
           ],
-          "kicker": "Para quien está pensando en aprender a programar, o en dejarlo.",
-          "bajada": "La IA ya escribe código, y cambió lo que piden las empresas. Con **David Choi** conversamos, sin humo, si hoy vale la pena aprender a programar: qué pasa con los puestos junior, qué es el **vibe coding** y qué conviene aprender primero."
+          "kicker": "¿Hay lugar para juniors en la era de la IA? Sí, pero no para el mismo junior de hace unos años.",
+          "bajada": "Lo que más se automatizó es justo lo que antes se le pedía a un junior. Con **David Choi**, desarrollador en **Mercado Libre**, hablamos del mercado laboral, de si hoy vale la pena aprender a programar y de cómo empezar en 2027."
         },
         "hubspot": {
           "masterclass_nombre": "Vale la pena aprender a programar en 2027 con IA",
-          "masterclass_fecha_larga": "Miércoles 9 de diciembre",
+          "masterclass_fecha_larga": "Jueves 3 de diciembre",
           "masterclass_hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
           "masterclass_speaker_nombre": "David Choi",
-          "masterclass_speaker_bio": "Creador de contenido · Full Stack Argentina",
-          "masterclass_tema_1": "Qué pasó con el trabajo junior en programación y qué piden hoy las empresas",
-          "masterclass_tema_2": "Vibe coding vs. entender el código: qué diferencia hay al llegar a una entrevista",
-          "masterclass_tema_3": "Qué aprender primero en 2027 y cómo armar un portfolio que se note",
+          "masterclass_speaker_bio": "Software Developer en Mercado Libre · Creador de contenido",
+          "masterclass_tema_1": "Cómo está el mercado laboral para juniors en la era de la IA",
+          "masterclass_tema_2": "Qué perfil junior buscan hoy las empresas",
+          "masterclass_tema_3": "Cómo empezar a aprender a programar en 2027",
           "career_interest": "Full Stack AI",
           "masterclass_carrera": "Full Stack AI",
-          "masterclass_cta_url": "https://www.soyhenry.com/webfullstack?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=9/12",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20%C2%BFVale%20la%20pena%20aprender%20a%20programar%20en%202027%20con%20IA%3F&dates=20261209T230000Z/20261210T000000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20David%20Choi%3A%20si%20vale%20la%20pena%20aprender%20a%20programar%20en%202027%20con%20IA%2C%20qu%C3%A9%20pasa%20con%20el%20trabajo%20junior%20y%20qu%C3%A9%20aprender%20primero.&location=Online"
+          "masterclass_cta_url": "https://www.soyhenry.com/webfullstack?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=3/12",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20%C2%BFVale%20la%20pena%20aprender%20a%20programar%20en%202027%20con%20IA%3F&dates=20261203T230000Z/20261203T234000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20David%20Choi%2C%20desarrollador%20de%20software%20en%20Mercado%20Libre%3A%20mercado%20laboral%20para%20juniors%2C%20si%20vale%20la%20pena%20programar%20y%20c%C3%B3mo%20empezar%20en%202027.&location=Online"
         },
         "bloques": [
           {
             "tipo": "lista",
             "estilo": "numerada",
-            "titulo": "Lo que vas a hacer en 60 minutos",
+            "titulo": "Lo que vas a escuchar en 40 minutos",
             "items": [
               {
-                "titulo": "Qué pasó con el trabajo junior",
-                "texto": "Cómo cambió la entrada a programación con la IA, y qué esperan hoy las empresas de quien busca su primer puesto."
+                "titulo": "Cómo está el mercado para juniors",
+                "texto": "Qué se automatizó (armar un formulario, hacer una pantalla simple, arreglar un error chico) y por qué las empresas igual siguen construyendo software, y cada vez más."
               },
               {
-                "titulo": "Vibe coding vs. entender el código",
-                "texto": "Para qué sirve pedirle código a la IA, y qué pasa cuando aparece el primer error o un problema de seguridad."
+                "titulo": "El junior que buscan hoy",
+                "texto": "Entiende los fundamentos, usa la IA para ir más rápido y se da cuenta cuando lo que le devuelve no cumple con lo que necesita el negocio."
               },
               {
-                "titulo": "Qué aprender primero en 2027",
-                "texto": "Fundamentos, herramientas y proyectos: el orden que conviene si empiezas desde cero, y cómo armar un portfolio que se note."
+                "titulo": "Cómo empezar a aprender a programar",
+                "texto": "Por dónde arrancar desde cero en 2027, con proyectos reales y la IA de copiloto."
               }
             ]
           },
           {
             "tipo": "chips",
-            "titulo": "Lo que vas a ver en acción",
+            "titulo": "De qué vamos a hablar",
             "items": [
-              "Programar con IA",
-              "Vibe coding",
-              "Trabajo junior",
-              "Qué aprender primero",
-              "Cómo armar tu portfolio"
+              "Mercado laboral para juniors",
+              "Qué automatizó la IA",
+              "Fundamentos + IA de copiloto",
+              "Por dónde empezar a programar",
+              "Cómo revisar lo que genera la IA"
             ]
           },
           {
@@ -3537,7 +3543,7 @@
             "tipo": "seccion",
             "etiqueta": "Después del Henry Live",
             "titulo": "El siguiente paso: Full Stack AI",
-            "bajada": "Aprende a diseñar, construir y desplegar aplicaciones web completas, con la IA integrada en todo el proceso. Desde cero, online y en vivo.",
+            "bajada": "Es el perfil que forma la carrera de Full Stack AI: arrancas desde cero, aprendes los fundamentos con proyectos reales y usas la IA de copiloto. Online y en vivo.",
             "cta": true,
             "bloques": [
               {
@@ -3605,12 +3611,12 @@
             "titulo": "Preguntas frecuentes",
             "items": [
               {
-                "pregunta": "¿Vale la pena aprender a programar con IA?",
-                "respuesta": "Es justo lo que conversamos en vivo. La idea de fondo: la IA acelera a quien entiende el código, así que el valor está en saber qué genera, revisarlo y responder por el resultado."
+                "pregunta": "¿Hay lugar para juniors en la era de la IA?",
+                "respuesta": "Sí, pero no para el mismo junior de hace unos años. Lo que más se automatizó es lo que antes se le pedía a un junior: armar un formulario, hacer una pantalla simple o arreglar un error chico."
               },
               {
-                "pregunta": "¿El vibe coding reemplaza aprender a programar?",
-                "respuesta": "Sirve para prototipar rápido. Pero cuando aparece un error o un problema de seguridad hace falta entender el código, y es lo que las empresas evalúan en una entrevista."
+                "pregunta": "¿Las empresas dejaron de construir software?",
+                "respuesta": "No: hoy se construye más software y más personalizado. Según McKinsey, el 32% de las organizaciones decidió no comprar un software porque podía construirlo internamente con IA."
               },
               {
                 "pregunta": "¿Necesito saber programar para ver el live?",
