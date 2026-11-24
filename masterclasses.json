@@ -3275,99 +3275,121 @@
       }
     },
     {
-      "slug": "ai-product-builder-henry-laburen",
-      "nombre": "AI Product Builder en la práctica: de la idea al producto con IA",
-      "desc": "Henry × Laburen: cómo se decide qué construir y cómo se arma un producto cuando la IA ejecuta. Una conversación sobre el trabajo real de quien hace producto con IA. No necesitas saber programar.",
-      "carrera": "AI Product Builder",
-      "tema": "Producto",
+      "slug": "que-es-forward-deployed-engineer-como-convertirte-en-uno",
+      "nombre": "¿Qué es un Forward Deployed Engineer y cómo convertirte en uno?",
+      "desc": "Henry Live con Sebastián Rinaldi, founder de Laburen: qué es un Forward Deployed Engineer, de dónde nace el rol y cómo convertirte en uno. En vivo y gratis.",
+      "carrera": "Forward Deployed Engineer",
+      "tema": "Ingeniería de IA",
       "formato": "Henry Live",
       "fecha": "2026-12-09T20:00:00-03:00",
       "duracionMin": 60,
       "fechaCorta": "09 DIC",
       "fechaLarga": "Miércoles 9 de diciembre",
       "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
-      "banner": "banner-ai-product-builder-henry-laburen-v2.jpg",
+      "banner": "banner-que-es-forward-deployed-engineer-como-convertirte-en-uno-v1.jpg",
       "speakers": [
         {
-          "nombre": "Equipo de Laburen",
-          "rol": "Henry × Laburen",
-          "logo": "logo-laburen.png"
+          "nombre": "Sebastián Rinaldi",
+          "rol": "Fundador de Laburen.com",
+          "foto": "sebastian-rinaldi.jpg",
+          "logo": "logo-laburen-com.png",
+          "bio": [
+            "Fundador de Laburen.com, la startup argentina que implementa agentes de IA dentro de empresas."
+          ]
         }
       ],
-      "link": "landing-ai-product-builder-henry-laburen.html",
+      "link": "landing-que-es-forward-deployed-engineer-como-convertirte-en-uno.html",
       "landing": {
         "hero": {
           "badges": [
             "Gratuita",
             "1 hora"
           ],
-          "kicker": "No necesitas saber programar.",
-          "bajada": "La IA ya redacta, prototipa y programa. Lo que se volvió escaso es saber **qué** construir y para quién. En este Henry Live, junto con **Laburen**, vemos cómo trabaja un AI Product Builder: cómo se pasa de un problema real a un producto funcionando con IA."
+          "bajada": "Las empresas ya compraron IA y a casi ninguna le sobra quién la meta en su operación. Ese hueco lo cubre un **Forward Deployed Engineer**: el ingeniero que se sienta con el cliente, entiende el problema y responde por el resultado. En este Henry Live, **Sebastián Rinaldi**, founder de **Laburen**, cuenta cómo trabaja ese rol, de dónde nace y cómo convertirte en uno."
         },
         "hubspot": {
-          "masterclass_nombre": "AI Product Builder en la práctica",
+          "masterclass_nombre": "¿Qué es un Forward Deployed Engineer y cómo convertirte en uno?",
           "masterclass_fecha_larga": "Miércoles 9 de diciembre",
           "masterclass_hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
-          "masterclass_speaker_nombre": "Equipo de Laburen",
-          "masterclass_speaker_bio": "Henry × Laburen",
-          "masterclass_tema_1": "Cómo se decide qué construir: del problema al backlog",
-          "masterclass_tema_2": "Del backlog al MVP con IA: qué hace la IA y qué sigues decidiendo tú",
-          "masterclass_tema_3": "Cómo empezar en producto con IA sin saber programar",
-          "career_interest": "AI Product Builder",
-          "masterclass_carrera": "AI Product Builder",
-          "masterclass_cta_url": "https://www.soyhenry.com/ai-product-builder?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=9/12",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20AI%20Product%20Builder%20en%20la%20pr%C3%A1ctica&dates=20261209T230000Z/20261210T000000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20Laburen%3A%20c%C3%B3mo%20se%20decide%20qu%C3%A9%20construir%20y%20c%C3%B3mo%20se%20arma%20un%20producto%20con%20IA.&location=Online"
+          "masterclass_speaker_nombre": "Sebastián Rinaldi",
+          "masterclass_speaker_bio": "Fundador de Laburen.com",
+          "masterclass_tema_1": "Qué es un Forward Deployed Engineer y qué hace en el día a día",
+          "masterclass_tema_2": "De dónde nace el rol y por qué hoy lo buscan las empresas",
+          "masterclass_tema_3": "Cómo convertirte en Forward Deployed Engineer",
+          "career_interest": "Forward Deployed Engineer",
+          "masterclass_carrera": "Forward Deployed Engineer",
+          "masterclass_cta_url": "https://www.soyhenry.com/forward-deployed-engineer?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=9/12",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20%C2%BFQu%C3%A9%20es%20un%20Forward%20Deployed%20Engineer%20y%20c%C3%B3mo%20convertirte%20en%20uno%3F&dates=20261209T230000Z/20261210T000000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20Sebasti%C3%A1n%20Rinaldi%2C%20founder%20de%20Laburen%3A%20qu%C3%A9%20es%20un%20Forward%20Deployed%20Engineer%2C%20de%20d%C3%B3nde%20nace%20el%20rol%20y%20c%C3%B3mo%20convertirte%20en%20uno.&location=Online"
         },
         "bloques": [
           {
             "tipo": "lista",
             "estilo": "numerada",
-            "titulo": "Lo que vas a hacer en 60 minutos",
+            "titulo": "De qué vamos a hablar",
             "items": [
               {
-                "titulo": "Cómo se decide qué construir",
-                "texto": "Del pedido al problema y del problema al backlog: cómo se prioriza cuando construir se volvió barato y decidir no."
+                "titulo": "Qué es un Forward Deployed Engineer",
+                "texto": "Un ingeniero que trabaja embebido con el cliente y responde por el resultado, no solo por el código. En qué se diferencia de un desarrollador, de un AI Engineer y de un consultor."
               },
               {
-                "titulo": "Del backlog al MVP con IA",
-                "texto": "Qué parte del trabajo ejecuta la IA (specs, prototipos, primeras versiones) y qué parte sigues decidiendo tú."
+                "titulo": "De dónde nace el rol y por qué hoy",
+                "texto": "El modelo nació en Palantir a principios de los 2010 y hoy lo adoptan las empresas de IA para llevar sus productos a la operación real. Por qué la demanda se disparó."
               },
               {
-                "titulo": "Cómo empezar sin programar",
-                "texto": "El camino para convertirte en AI Product Builder, con tiempo para tus preguntas."
+                "titulo": "Cómo convertirte en uno",
+                "texto": "Qué sabe hacer un FDE (discovery, prototipo, integración y entrega), qué se pide para entrar y cómo es el camino del código al primer cliente, con tiempo para tus preguntas."
               }
             ]
+          },
+          {
+            "tipo": "empresa",
+            "logo": "logo-laburen-com.png",
+            "texto": "Laburen es una startup argentina, nacida en Córdoba, que crea y pone a trabajar agentes de IA dentro de empresas: atención al cliente, ventas, logística y soporte operativo. Los conecta a los sistemas que la empresa ya usa, como CRM, ERP y WhatsApp, y los implementa con un equipo de Forward Deployed Engineers. Por eso Sebastián habla del rol desde la práctica y no desde la teoría.",
+            "link": {
+              "texto": "laburen.com →",
+              "url": "https://www.laburen.com"
+            }
           },
           {
             "tipo": "chips",
             "titulo": "Lo que vas a ver en acción",
             "items": [
-              "Del pedido al problema",
-              "Un backlog construible",
-              "Un MVP hecho con IA",
-              "Validar con personas",
-              "Decidir con evidencia"
+              "Un día de trabajo de un FDE",
+              "Del problema ambiguo a la solución",
+              "Discovery con el cliente",
+              "Prototipo rápido con IA",
+              "Integración y entrega",
+              "Cómo medir el valor"
             ]
           },
           {
-            "tipo": "tarjetas",
-            "titulo": "Es para ti si",
-            "items": [
+            "tipo": "seccion",
+            "titulo": "Es para ti si…",
+            "bloques": [
               {
-                "etiqueta": "✓ Quieres entrar a producto",
-                "texto": "Y vienes de diseño, datos, marketing, operaciones o ingeniería, o te acabas de recibir."
-              },
-              {
-                "etiqueta": "✓ Ya usas IA en tu trabajo",
-                "texto": "Y quieres pasar de usarla a construir productos con ella."
+                "tipo": "tarjetas",
+                "items": [
+                  {
+                    "etiqueta": "✓ Programas y ya construyes con IA",
+                    "texto": "Y quieres pasar de entregar código a ser dueño del problema frente al cliente."
+                  },
+                  {
+                    "etiqueta": "✓ Te intriga el rol",
+                    "texto": "Escuchaste Forward Deployed Engineer y quieres entender qué es, qué hace y si es para ti."
+                  },
+                  {
+                    "etiqueta": "✓ Evalúas tu próximo paso en tech",
+                    "texto": "Y quieres ver hacia dónde se mueve el empleo tech con la IA."
+                  }
+                ]
               }
             ]
           },
           {
             "tipo": "seccion",
             "etiqueta": "Después del Henry Live",
-            "titulo": "El siguiente paso: AI Product Builder",
-            "bajada": "Aprende a trabajar como Product Owner: la IA ejecuta, tú decides. Part time, 5 meses, online y en vivo, y con un portfolio al terminar.",
+            "titulo": "El siguiente paso: Forward Deployed Engineer",
+            "bajada": "Del código al cliente: aprendes a convertir un problema de negocio en una solución con IA y a responder por el resultado. Part time, 3 meses, online y en vivo. La próxima cohorte arranca el ==26 de enero==.",
             "cta": true,
             "bloques": [
               {
@@ -3379,11 +3401,19 @@
                   },
                   {
                     "label": "Duración",
-                    "valor": "5 meses · 2 clases en vivo por semana"
+                    "valor": "3 meses · 2 encuentros por semana"
                   },
                   {
                     "label": "Requisitos",
-                    "valor": "No necesitas experiencia previa en producto ni saber programar"
+                    "valor": "Ya construyes con LLMs: egresado de AI Engineering o experiencia equivalente"
+                  },
+                  {
+                    "label": "Próxima cohorte",
+                    "valor": "==26 de enero de 2027=="
+                  },
+                  {
+                    "label": "Director de la carrera",
+                    "valor": "Alexander Vicondoa, Head of LATAM Forward Deployed Engineering"
                   }
                 ]
               },
@@ -3391,21 +3421,19 @@
                 "tipo": "chips",
                 "titulo": "Los módulos",
                 "items": [
-                  "Del pedido al problema",
-                  "Del problema al backlog",
-                  "Del backlog al MVP con IA",
-                  "Uso real, decisión y entrega",
-                  "Proyecto final grupal"
+                  "Discovery y scoping",
+                  "POC Sprint",
+                  "Integración enterprise y producción",
+                  "Delivery, demos y valor"
                 ]
               },
               {
                 "tipo": "chips",
-                "titulo": "Lo que te llevas",
+                "titulo": "Roles a los que podrás aplicar",
                 "items": [
-                  "Kit de trabajo del PO",
-                  "Registro de revisión",
-                  "Portfolio: una pieza por módulo",
-                  "MVP probado y publicado"
+                  "Forward Deployed Engineer",
+                  "AI Solutions Engineer",
+                  "Solutions Architect"
                 ]
               },
               {
@@ -3414,8 +3442,8 @@
                 "items": [
                   "Career coach",
                   "Comunidad Henry",
-                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
-                  "Primera semana de prueba"
+                  "Henry AI, tu tutor 24/7",
+                  "Reembolso al 100% si buscas trabajo un año y no lo consigues"
                 ]
               }
             ]
@@ -3425,16 +3453,24 @@
             "titulo": "Preguntas frecuentes",
             "items": [
               {
-                "pregunta": "¿Qué es un AI Product Builder?",
-                "respuesta": "Quien decide qué construir y usa la IA para armarlo: pasa del problema al prototipo y valida con personas, sin depender de programar cada pieza."
+                "pregunta": "¿Qué es un Forward Deployed Engineer?",
+                "respuesta": "Un ingeniero que trabaja embebido con el cliente y responde por el resultado. Entiende un problema que ni el cliente sabe explicar del todo, lo convierte en una solución con IA y la integra a sus sistemas. El modelo nació en Palantir a principios de los 2010."
               },
               {
-                "pregunta": "¿En qué se diferencia de un Product Manager?",
-                "respuesta": "Un Product Manager suele coordinar a quienes construyen. Un AI Product Builder además construye, con IA, las primeras versiones del producto."
+                "pregunta": "¿En qué se diferencia un Forward Deployed Engineer de un AI Engineer?",
+                "respuesta": "Un AI Engineer diseña, evalúa y pone en producción sistemas de IA. Un Forward Deployed Engineer los lleva a la operación de un cliente y responde por el resultado: hace el discovery, el prototipo, la integración y la entrega. No compiten: son dos escalones."
               },
               {
-                "pregunta": "¿Necesito saber programar?",
-                "respuesta": "No. Un AI Product Builder no programa: decide qué construir y usa la IA para pasar del problema al prototipo."
+                "pregunta": "¿Cómo me convierto en Forward Deployed Engineer?",
+                "respuesta": "Con una base técnica sólida, práctica construyendo con IA y experiencia trabajando sobre problemas reales de un cliente. En la carrera de Henry lo haces durante 3 meses, con un cliente asignado y una defensa final ante un panel de FDEs."
+              },
+              {
+                "pregunta": "¿Necesito saber programar para ser Forward Deployed Engineer?",
+                "respuesta": "Sí. Es un rol técnico, y la carrera de Henry parte de que ya construyes con LLMs: egresados de AI Engineering o experiencia equivalente. El Henry Live, en cambio, es abierto a cualquier persona con curiosidad por el rol."
+              },
+              {
+                "pregunta": "¿Cuánto dura la carrera y cuándo empieza la próxima cohorte?",
+                "respuesta": "Dura 3 meses, part time, con 2 encuentros en vivo por semana. La próxima cohorte arranca el 26 de enero de 2027."
               },
               {
                 "pregunta": "¿Queda grabado?",
