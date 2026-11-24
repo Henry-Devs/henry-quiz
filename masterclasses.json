@@ -3480,7 +3480,7 @@
     },
     {
       "slug": "vale-la-pena-aprender-a-programar-2027-ia",
-      "nombre": "¿Vale la pena aprender a programar en 2027 con IA?",
+      "nombre": "¿Vale la pena aprender a programar con IA en 2027?",
       "desc": "Conversación con David Choi, desarrollador de software en Mercado Libre y tech creator, sobre si vale la pena aprender a programar en 2027 con inteligencia artificial: cómo está el mercado laboral para juniors, qué se espera hoy de quien arranca y por dónde empezar.",
       "carrera": "Full Stack AI",
       "tema": "Programación y vibe coding",
@@ -3513,7 +3513,7 @@
           "bajada": "La inteligencia artificial cambió la forma de escribir código, y con ella la forma de entrar a la industria tech. Con **David Choi**, desarrollador de software en **Mercado Libre** y tech creator, conversamos sobre cómo está hoy el mercado laboral para juniors, qué se espera de quien arranca y cómo empezar a aprender a programar en 2027."
         },
         "hubspot": {
-          "masterclass_nombre": "Vale la pena aprender a programar en 2027 con IA",
+          "masterclass_nombre": "Vale la pena aprender a programar con IA en 2027",
           "masterclass_fecha_larga": "Jueves 3 de diciembre",
           "masterclass_hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
           "masterclass_speaker_nombre": "David Choi",
@@ -3524,7 +3524,7 @@
           "career_interest": "Full Stack AI",
           "masterclass_carrera": "Full Stack AI",
           "masterclass_cta_url": "https://www.soyhenry.com/webfullstack?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=3/12",
-          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20%C2%BFVale%20la%20pena%20aprender%20a%20programar%20en%202027%20con%20IA%3F&dates=20261203T230000Z/20261203T234000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20David%20Choi%2C%20desarrollador%20de%20software%20en%20Mercado%20Libre%3A%20mercado%20laboral%20para%20juniors%2C%20si%20vale%20la%20pena%20programar%20y%20c%C3%B3mo%20empezar%20en%202027.&location=Online"
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20%C2%BFVale%20la%20pena%20aprender%20a%20programar%20con%20IA%20en%202027%3F&dates=20261203T230000Z/20261203T234000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20David%20Choi%2C%20desarrollador%20de%20software%20en%20Mercado%20Libre%3A%20mercado%20laboral%20para%20juniors%2C%20si%20vale%20la%20pena%20programar%20y%20c%C3%B3mo%20empezar%20en%202027.&location=Online"
         },
         "bloques": [
           {
@@ -3661,7 +3661,7 @@
             "titulo": "Preguntas frecuentes",
             "items": [
               {
-                "pregunta": "¿Vale la pena aprender a programar en 2027 con IA?",
+                "pregunta": "¿Vale la pena aprender a programar con IA en 2027?",
                 "respuesta": "Es la pregunta de fondo de esta charla con David Choi, desarrollador de software en Mercado Libre y tech creator. Hoy se construye más software que antes, y las empresas buscan perfiles que entiendan los fundamentos y sepan trabajar con inteligencia artificial. En el live conversamos sobre cómo está el mercado laboral para juniors, qué se espera de quien arranca y por dónde empezar a aprender a programar desde cero en 2027."
               },
               {
