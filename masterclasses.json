@@ -3096,6 +3096,534 @@
           }
         ]
       }
+    },
+    {
+      "slug": "que-es-mcp-conectar-claude-herramientas",
+      "nombre": "¿Qué es MCP y cómo conectar Claude a tus herramientas?",
+      "desc": "MCP (Model Context Protocol) es el estándar que permite que Claude trabaje con tus archivos, tus apps y tus datos, no solo con lo que le escribes en el chat. En vivo: qué es, cómo se conecta y cómo se arma un servidor MCP.",
+      "carrera": "AI Engineering",
+      "tema": "Ingeniería de IA",
+      "formato": "Henry Live",
+      "fecha": "2026-12-03T22:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "03 DIC",
+      "fechaLarga": "Jueves 3 de diciembre",
+      "hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+      "banner": "banner-que-es-mcp-conectar-claude-herramientas-v1.jpg",
+      "speakers": [
+        {
+          "nombre": "Equipo de AI Engineering",
+          "rol": "Docentes de Henry"
+        }
+      ],
+      "link": "landing-que-es-mcp-conectar-claude-herramientas.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Gratuita",
+            "1 hora"
+          ],
+          "kicker": "Para quien ya usa Claude y quiere que haga más que conversar.",
+          "bajada": "Claude escribe, resume y analiza. Con **MCP** también puede leer tus archivos, consultar una base de datos, crear una tarea o publicar un mensaje. En este Henry Live te explicamos qué es el **Model Context Protocol**, cómo conectar Claude a tus herramientas y cómo se construye un servidor MCP."
+        },
+        "hubspot": {
+          "masterclass_nombre": "Qué es MCP y cómo conectar Claude a tus herramientas",
+          "masterclass_fecha_larga": "Jueves 3 de diciembre",
+          "masterclass_hora": "19h MX 🇲🇽 / 20h COL 🇨🇴 / 22h ARG 🇦🇷",
+          "masterclass_speaker_nombre": "Equipo de AI Engineering",
+          "masterclass_speaker_bio": "Docentes de Henry",
+          "masterclass_tema_1": "Qué es MCP y qué problema resuelve",
+          "masterclass_tema_2": "Cómo conectar Claude a tus herramientas con conectores y servidores MCP",
+          "masterclass_tema_3": "Cómo se arma un servidor MCP y qué permisos darle",
+          "career_interest": "AI Engineering",
+          "masterclass_carrera": "AI Engineering",
+          "masterclass_cta_url": "https://www.soyhenry.com/carrera-ai-engineering?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=3/12",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20%C2%BFQu%C3%A9%20es%20MCP%20y%20c%C3%B3mo%20conectar%20Claude%20a%20tus%20herramientas%3F&dates=20261204T010000Z/20261204T020000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%3A%20qu%C3%A9%20es%20MCP%20%28Model%20Context%20Protocol%29%2C%20c%C3%B3mo%20conectar%20Claude%20a%20tus%20herramientas%20y%20c%C3%B3mo%20se%20arma%20un%20servidor%20MCP.&location=Online"
+        },
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Lo que vas a hacer en 60 minutos",
+            "items": [
+              {
+                "titulo": "Qué es MCP y qué problema resuelve",
+                "texto": "El estándar abierto que creó Anthropic para conectar la IA con tus herramientas y datos, y en qué se diferencia de una API."
+              },
+              {
+                "titulo": "Conectar Claude a tus herramientas",
+                "texto": "Conectores y servidores MCP en Claude Desktop y Claude Code: archivos, Notion, GitHub, Slack. Qué le pides y qué información ve."
+              },
+              {
+                "titulo": "Cómo se arma un servidor MCP",
+                "texto": "Las piezas que lo componen y cómo darle a Claude acceso a tus propios datos, con los permisos justos."
+              }
+            ]
+          },
+          {
+            "tipo": "chips",
+            "titulo": "Lo que vas a ver en acción",
+            "items": [
+              "Model Context Protocol explicado sin vueltas",
+              "Claude conectado a tus apps",
+              "Un servidor MCP funcionando",
+              "Permisos y seguridad",
+              "Qué es un agente de IA"
+            ]
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Es para ti si",
+            "items": [
+              {
+                "etiqueta": "✓ Ya usas Claude o ChatGPT",
+                "texto": "Y quieres que trabaje con tus archivos, tu código y tus herramientas, en lugar de pegarle todo en el chat."
+              },
+              {
+                "etiqueta": "✓ Programas o quieres entrar a AI Engineering",
+                "texto": "Y quieres entender una de las piezas con las que hoy se construyen agentes de IA."
+              }
+            ]
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "Después del Henry Live",
+            "titulo": "El siguiente paso: AI Engineering",
+            "bajada": "Si ya sabes programar, ahora tienes que saber construir con IA: diseña, evalúa y lleva a producción sistemas de IA que funcionen de verdad. Part time, 3 meses, online y en vivo. La próxima cohorte arranca el ==26 de enero==.",
+            "cta": true,
+            "bloques": [
+              {
+                "tipo": "ficha",
+                "filas": [
+                  {
+                    "label": "Modalidad",
+                    "valor": "Part time, online y en vivo"
+                  },
+                  {
+                    "label": "Duración",
+                    "valor": "3 meses · 2 clases en vivo por semana"
+                  },
+                  {
+                    "label": "Requisitos",
+                    "valor": "Pensada para quienes ya programan"
+                  },
+                  {
+                    "label": "Próxima cohorte",
+                    "valor": "==26 de enero de 2027=="
+                  }
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Los módulos",
+                "items": [
+                  "Fundamentos y Prompt Engineering",
+                  "Fundamentos y Ecosistema de Modelos Pre-Entrenados",
+                  "Orquestación y Agentes Autónomos + AI",
+                  "IA Multimodal y Fundamentos de Arquitectura"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Herramientas",
+                "items": [
+                  "OpenAI",
+                  "LangChain",
+                  "FastAPI",
+                  "Hugging Face",
+                  "Ollama",
+                  "RAG",
+                  "Agentes",
+                  "MCP"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Incluye",
+                "items": [
+                  "Career coach",
+                  "Comunidad Henry",
+                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
+                  "Primera semana de prueba"
+                ]
+              }
+            ]
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Qué es MCP en una frase?",
+                "respuesta": "Un estándar abierto que permite que un modelo de IA, como Claude, se conecte a herramientas y datos externos de forma ordenada. Se lo suele comparar con un puerto USB-C para la IA."
+              },
+              {
+                "pregunta": "¿MCP reemplaza a las APIs?",
+                "respuesta": "No. Un servidor MCP suele usar APIs por debajo. MCP es la capa común que permite que la IA las use sin programar una integración distinta para cada herramienta."
+              },
+              {
+                "pregunta": "¿Necesito saber programar?",
+                "respuesta": "Para entender qué es MCP y cómo se conecta a Claude, no. La carrera de AI Engineering sí está pensada para quienes ya programan."
+              },
+              {
+                "pregunta": "¿Queda grabado?",
+                "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ai-product-builder-henry-laburen",
+      "nombre": "AI Product Builder en la práctica: de la idea al producto con IA",
+      "desc": "Henry × Laburen: cómo se decide qué construir y cómo se arma un producto cuando la IA ejecuta. Una conversación sobre el trabajo real de quien hace producto con IA. No necesitas saber programar.",
+      "carrera": "AI Product Builder",
+      "tema": "Producto",
+      "formato": "Henry Live",
+      "fecha": "2026-12-07T20:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "07 DIC",
+      "fechaLarga": "Lunes 7 de diciembre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-ai-product-builder-henry-laburen-v1.jpg",
+      "speakers": [
+        {
+          "nombre": "Equipo de Laburen",
+          "rol": "Henry × Laburen",
+          "logo": "logo-laburen.png"
+        }
+      ],
+      "link": "landing-ai-product-builder-henry-laburen.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Gratuita",
+            "1 hora"
+          ],
+          "kicker": "No necesitas saber programar.",
+          "bajada": "La IA ya redacta, prototipa y programa. Lo que se volvió escaso es saber **qué** construir y para quién. En este Henry Live, junto con **Laburen**, vemos cómo trabaja un AI Product Builder: cómo se pasa de un problema real a un producto funcionando con IA."
+        },
+        "hubspot": {
+          "masterclass_nombre": "AI Product Builder en la práctica",
+          "masterclass_fecha_larga": "Lunes 7 de diciembre",
+          "masterclass_hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+          "masterclass_speaker_nombre": "Equipo de Laburen",
+          "masterclass_speaker_bio": "Henry × Laburen",
+          "masterclass_tema_1": "Cómo se decide qué construir: del problema al backlog",
+          "masterclass_tema_2": "Del backlog al MVP con IA: qué hace la IA y qué sigues decidiendo tú",
+          "masterclass_tema_3": "Cómo empezar en producto con IA sin saber programar",
+          "career_interest": "AI Product Builder",
+          "masterclass_carrera": "AI Product Builder",
+          "masterclass_cta_url": "https://www.soyhenry.com/ai-product-builder?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=7/12",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20AI%20Product%20Builder%20en%20la%20pr%C3%A1ctica&dates=20261207T230000Z/20261208T000000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20Laburen%3A%20c%C3%B3mo%20se%20decide%20qu%C3%A9%20construir%20y%20c%C3%B3mo%20se%20arma%20un%20producto%20con%20IA.&location=Online"
+        },
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Lo que vas a hacer en 60 minutos",
+            "items": [
+              {
+                "titulo": "Cómo se decide qué construir",
+                "texto": "Del pedido al problema y del problema al backlog: cómo se prioriza cuando construir se volvió barato y decidir no."
+              },
+              {
+                "titulo": "Del backlog al MVP con IA",
+                "texto": "Qué parte del trabajo ejecuta la IA (specs, prototipos, primeras versiones) y qué parte sigues decidiendo tú."
+              },
+              {
+                "titulo": "Cómo empezar sin programar",
+                "texto": "El camino para convertirte en AI Product Builder, con tiempo para tus preguntas."
+              }
+            ]
+          },
+          {
+            "tipo": "chips",
+            "titulo": "Lo que vas a ver en acción",
+            "items": [
+              "Del pedido al problema",
+              "Un backlog construible",
+              "Un MVP hecho con IA",
+              "Validar con personas",
+              "Decidir con evidencia"
+            ]
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Es para ti si",
+            "items": [
+              {
+                "etiqueta": "✓ Quieres entrar a producto",
+                "texto": "Y vienes de diseño, datos, marketing, operaciones o ingeniería, o te acabas de recibir."
+              },
+              {
+                "etiqueta": "✓ Ya usas IA en tu trabajo",
+                "texto": "Y quieres pasar de usarla a construir productos con ella."
+              }
+            ]
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "Después del Henry Live",
+            "titulo": "El siguiente paso: AI Product Builder",
+            "bajada": "Aprende a trabajar como Product Owner: la IA ejecuta, tú decides. Part time, 5 meses, online y en vivo, y con un portfolio al terminar.",
+            "cta": true,
+            "bloques": [
+              {
+                "tipo": "ficha",
+                "filas": [
+                  {
+                    "label": "Modalidad",
+                    "valor": "Part time, online y en vivo"
+                  },
+                  {
+                    "label": "Duración",
+                    "valor": "5 meses · 2 clases en vivo por semana"
+                  },
+                  {
+                    "label": "Requisitos",
+                    "valor": "No necesitas experiencia previa en producto ni saber programar"
+                  }
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Los módulos",
+                "items": [
+                  "Del pedido al problema",
+                  "Del problema al backlog",
+                  "Del backlog al MVP con IA",
+                  "Uso real, decisión y entrega",
+                  "Proyecto final grupal"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Lo que te llevas",
+                "items": [
+                  "Kit de trabajo del PO",
+                  "Registro de revisión",
+                  "Portfolio: una pieza por módulo",
+                  "MVP probado y publicado"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Incluye",
+                "items": [
+                  "Career coach",
+                  "Comunidad Henry",
+                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
+                  "Primera semana de prueba"
+                ]
+              }
+            ]
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Qué es un AI Product Builder?",
+                "respuesta": "Quien decide qué construir y usa la IA para armarlo: pasa del problema al prototipo y valida con personas, sin depender de programar cada pieza."
+              },
+              {
+                "pregunta": "¿En qué se diferencia de un Product Manager?",
+                "respuesta": "Un Product Manager suele coordinar a quienes construyen. Un AI Product Builder además construye, con IA, las primeras versiones del producto."
+              },
+              {
+                "pregunta": "¿Necesito saber programar?",
+                "respuesta": "No. Un AI Product Builder no programa: decide qué construir y usa la IA para pasar del problema al prototipo."
+              },
+              {
+                "pregunta": "¿Queda grabado?",
+                "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "vale-la-pena-aprender-a-programar-2027-ia",
+      "nombre": "¿Vale la pena aprender a programar en 2027 con IA?",
+      "desc": "La IA ya escribe código. ¿Tiene sentido aprender a programar? Lo conversamos con David Choi, creador de contenido de programación: qué pasó con el trabajo junior, qué es el vibe coding y qué aprender primero.",
+      "carrera": "Full Stack AI",
+      "tema": "Programación y vibe coding",
+      "formato": "Henry Live",
+      "fecha": "2026-12-09T20:00:00-03:00",
+      "duracionMin": 60,
+      "fechaCorta": "09 DIC",
+      "fechaLarga": "Miércoles 9 de diciembre",
+      "hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+      "banner": "banner-vale-la-pena-aprender-a-programar-2027-ia-v1.jpg",
+      "speakers": [
+        {
+          "nombre": "David Choi",
+          "rol": "Creador de contenido · Full Stack Argentina"
+        }
+      ],
+      "link": "landing-vale-la-pena-aprender-a-programar-2027-ia.html",
+      "landing": {
+        "hero": {
+          "badges": [
+            "Gratuita",
+            "1 hora"
+          ],
+          "kicker": "Para quien está pensando en aprender a programar, o en dejarlo.",
+          "bajada": "La IA ya escribe código, y cambió lo que piden las empresas. Con **David Choi** conversamos, sin humo, si hoy vale la pena aprender a programar: qué pasa con los puestos junior, qué es el **vibe coding** y qué conviene aprender primero."
+        },
+        "hubspot": {
+          "masterclass_nombre": "Vale la pena aprender a programar en 2027 con IA",
+          "masterclass_fecha_larga": "Miércoles 9 de diciembre",
+          "masterclass_hora": "17h MX 🇲🇽 / 18h COL 🇨🇴 / 20h ARG 🇦🇷",
+          "masterclass_speaker_nombre": "David Choi",
+          "masterclass_speaker_bio": "Creador de contenido · Full Stack Argentina",
+          "masterclass_tema_1": "Qué pasó con el trabajo junior en programación y qué piden hoy las empresas",
+          "masterclass_tema_2": "Vibe coding vs. entender el código: qué diferencia hay al llegar a una entrevista",
+          "masterclass_tema_3": "Qué aprender primero en 2027 y cómo armar un portfolio que se note",
+          "career_interest": "Full Stack AI",
+          "masterclass_carrera": "Full Stack AI",
+          "masterclass_cta_url": "https://www.soyhenry.com/webfullstack?utm_source=mail&utm_medium=organic&utm_campaign=mc&utm_content=9/12",
+          "masterclass_calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Henry%20Live%3A%20%C2%BFVale%20la%20pena%20aprender%20a%20programar%20en%202027%20con%20IA%3F&dates=20261209T230000Z/20261210T000000Z&details=Henry%20Live%20en%20vivo%20y%20gratis%20con%20David%20Choi%3A%20si%20vale%20la%20pena%20aprender%20a%20programar%20en%202027%20con%20IA%2C%20qu%C3%A9%20pasa%20con%20el%20trabajo%20junior%20y%20qu%C3%A9%20aprender%20primero.&location=Online"
+        },
+        "bloques": [
+          {
+            "tipo": "lista",
+            "estilo": "numerada",
+            "titulo": "Lo que vas a hacer en 60 minutos",
+            "items": [
+              {
+                "titulo": "Qué pasó con el trabajo junior",
+                "texto": "Cómo cambió la entrada a programación con la IA, y qué esperan hoy las empresas de quien busca su primer puesto."
+              },
+              {
+                "titulo": "Vibe coding vs. entender el código",
+                "texto": "Para qué sirve pedirle código a la IA, y qué pasa cuando aparece el primer error o un problema de seguridad."
+              },
+              {
+                "titulo": "Qué aprender primero en 2027",
+                "texto": "Fundamentos, herramientas y proyectos: el orden que conviene si empiezas desde cero, y cómo armar un portfolio que se note."
+              }
+            ]
+          },
+          {
+            "tipo": "chips",
+            "titulo": "Lo que vas a ver en acción",
+            "items": [
+              "Programar con IA",
+              "Vibe coding",
+              "Trabajo junior",
+              "Qué aprender primero",
+              "Cómo armar tu portfolio"
+            ]
+          },
+          {
+            "tipo": "tarjetas",
+            "titulo": "Es para ti si",
+            "items": [
+              {
+                "etiqueta": "✓ Estás pensando en aprender a programar",
+                "texto": "Y no sabes si tiene sentido ahora que la IA escribe código."
+              },
+              {
+                "etiqueta": "✓ Ya usas IA para programar",
+                "texto": "Y quieres saber si estás aprendiendo o solo copiando lo que genera."
+              }
+            ]
+          },
+          {
+            "tipo": "seccion",
+            "etiqueta": "Después del Henry Live",
+            "titulo": "El siguiente paso: Full Stack AI",
+            "bajada": "Aprende a diseñar, construir y desplegar aplicaciones web completas, con la IA integrada en todo el proceso. Desde cero, online y en vivo.",
+            "cta": true,
+            "bloques": [
+              {
+                "tipo": "ficha",
+                "filas": [
+                  {
+                    "label": "Part time",
+                    "valor": "8 meses"
+                  },
+                  {
+                    "label": "Full time",
+                    "valor": "4 meses"
+                  },
+                  {
+                    "label": "Modalidad",
+                    "valor": "Online y en vivo, +800 horas de código"
+                  },
+                  {
+                    "label": "Requisitos",
+                    "valor": "Puedes empezar desde cero, aunque nunca hayas programado"
+                  }
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Los módulos",
+                "items": [
+                  "Fundamentos del Desarrollo Web",
+                  "Backend y APIs",
+                  "Frontend Moderno y SPAs",
+                  "Desarrollo Full Stack Moderno",
+                  "Especialización (opcional)",
+                  "Proyecto Final"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Herramientas",
+                "items": [
+                  "HTML",
+                  "CSS",
+                  "JavaScript",
+                  "React",
+                  "TypeScript",
+                  "Node.js",
+                  "PostgreSQL",
+                  "AWS",
+                  "GitHub"
+                ]
+              },
+              {
+                "tipo": "chips",
+                "titulo": "Incluye",
+                "items": [
+                  "Career coach",
+                  "Comunidad Henry",
+                  "Reembolso al 100% si buscas trabajo un año y no lo consigues",
+                  "Primera semana de prueba"
+                ]
+              }
+            ]
+          },
+          {
+            "tipo": "faq",
+            "titulo": "Preguntas frecuentes",
+            "items": [
+              {
+                "pregunta": "¿Vale la pena aprender a programar con IA?",
+                "respuesta": "Es justo lo que conversamos en vivo. La idea de fondo: la IA acelera a quien entiende el código, así que el valor está en saber qué genera, revisarlo y responder por el resultado."
+              },
+              {
+                "pregunta": "¿El vibe coding reemplaza aprender a programar?",
+                "respuesta": "Sirve para prototipar rápido. Pero cuando aparece un error o un problema de seguridad hace falta entender el código, y es lo que las empresas evalúan en una entrevista."
+              },
+              {
+                "pregunta": "¿Necesito saber programar para ver el live?",
+                "respuesta": "No. Es una conversación pensada para quien todavía está decidiendo si empezar."
+              },
+              {
+                "pregunta": "¿Queda grabado?",
+                "respuesta": "Sí. Si te registras, te mandamos la grabación aunque no puedas conectarte en vivo."
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
